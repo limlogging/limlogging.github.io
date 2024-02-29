@@ -106,7 +106,7 @@ analytics:
 # Site Author
 author:
   name             : "Lim HyeongSub" #블로그 닉네임 
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg" #블로그 프로필 사진 
+  avatar           : "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg" #블로그 프로필 사진 
   # bio              : #"I am an **amazing** person."
   # location         : "South Korea"
   # email            :
@@ -289,13 +289,13 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
+      read_time: true
       show_date: true
       comments: true
       toc_ads: true
       toc_sticky: true
-      # share: true
-      related: false
+      share: true
+      related: true
       #sidebar 추가 
       siderbar: 
         nav: "categories"
@@ -307,9 +307,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
-      comments: false
+      read_time: true
+      comments: true
       share: true
-      related: false
+      related: true
       toc_ads: true
       toc_sticky: true
+      share: true
