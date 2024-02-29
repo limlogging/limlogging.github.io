@@ -1,11 +1,7 @@
 # main links
 main:
-  - title: "Home"
-    url: https://limlogging.github.io/
-  - title: "About"
-    url: /about/
-  - title: "GitHub"
-    url: https://github.com/limlogging/    
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
@@ -14,11 +10,3 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
-  
-# sidebar navigation (categories)
-# 2022.02.15 sidebar update : simple ver.
-categories:
-  - title: "Swift"
-    url: /categories/swift/
-  - title: "iOS"
-    url: /categories/ios/
