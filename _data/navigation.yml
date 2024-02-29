@@ -15,3 +15,22 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+#왼쪽 메뉴 Custom sidebar navigation menu (https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu) 
+#docs: 
+categories:
+  - title: "iOS"    
+    children: 
+      - title: "Swift"
+        url: /categories/swift/   #_pages - categorie에 md 파일 생성 , 실제 글은 _post 
+      - title: "SwiftUI"
+        url: /categories/swiftui/ 
+  - title: "etc"
+    children:
+      - title: "내배캠 부트캠프"
+        url: /categories/sparta/
+# sidebar:
+#   #nav: "docs"
+#   nav: "categories"
+#sidebar 추가 후 _config.yml 파일 sidebar 관련 추가 필요  
+

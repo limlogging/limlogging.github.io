@@ -8,4 +8,4 @@ layout: default
 - 🧑🏻‍💻 iOS Developer
 - 🌱 Swift
 - 🌿 currently learning Storyboard, SwiftUI
-- ⚡ github pages: <a href="https://limlogging.github.io/">https://limlogging.github.io/</a>
+- ⚡ github blog: <a href="https://limlogging.github.io/">https://limlogging.github.io/</a>
