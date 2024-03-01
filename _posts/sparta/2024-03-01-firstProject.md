@@ -56,11 +56,11 @@ Asset에 Image를 추가 후, 삽입.
 
 ## 서수영 
 1. 코드베이스로 컬렉션 뷰 구현, 스택 뷰 레이아웃 설정, 컬렉션 뷰 터치 이벤트를 구현하려고 하였습니다. 
-![](/assets/images/categories/sparta/firstProjectseo1.png)
+![](/assets/images/categories/sparta/firstProjectSeo1.png)
 
 ## 임형섭 
 1. xcode에 포함된 스포이드를 사용하여 선정된 디자인과 동일한 색상 및 디자인을 구현하였습니다. 
-![](/assets/images/categories/sparta/firstProjectlim1.png)
+![](/assets/images/categories/sparta/firstProjectLim1.png)
 2. 팀원들의 제안을 받아 Scroll View, Table View를 추가하였습니다. 
 ![](/assets/images/categories/sparta/firstProject5.png)
 3. 다양한 기능보다 우선 완성할 수 있도록 진행하였습니다.  

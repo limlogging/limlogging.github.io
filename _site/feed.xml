@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-01T21:07:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">Mac에서 github blog 만들기 - 1</title><link href="http://localhost:4000/GitHubBlog/start1/" rel="alternate" type="text/html" title="Mac에서 github blog 만들기 - 1" /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogstart</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/start1/"><![CDATA[<h1 id="개발자-블로그-">개발자 블로그 ???</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-01T21:26:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">Mac에서 github blog 만들기 - 1</title><link href="http://localhost:4000/GitHubBlog/start1/" rel="alternate" type="text/html" title="Mac에서 github blog 만들기 - 1" /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogstart</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/start1/"><![CDATA[<h1 id="개발자-블로그-">개발자 블로그 ???</h1>
 
 <p>요즘 개발자들은 취업, 포트폴리오, TIL(Today I Learned) 등 각자의 이유로 블로그를 운영하고 있습니다. 저도 부트캠프를 계기로 개발자 블로그를 운영해보기로 하였습니다.</p>
 
@@ -147,13 +147,13 @@ Asset에 Image를 추가 후, 삽입.</li>
 <h2 id="서수영">서수영</h2>
 <ol>
   <li>코드베이스로 컬렉션 뷰 구현, 스택 뷰 레이아웃 설정, 컬렉션 뷰 터치 이벤트를 구현하려고 하였습니다. 
-<img src="/assets/images/categories/sparta/firstProjectseo1.png" alt="" /></li>
+<img src="/assets/images/categories/sparta/firstProjectSeo1.png" alt="" /></li>
 </ol>
 
 <h2 id="임형섭">임형섭</h2>
 <ol>
   <li>xcode에 포함된 스포이드를 사용하여 선정된 디자인과 동일한 색상 및 디자인을 구현하였습니다. 
-<img src="/assets/images/categories/sparta/firstProjectlim1.png" alt="" /></li>
+<img src="/assets/images/categories/sparta/firstProjectLim1.png" alt="" /></li>
   <li>팀원들의 제안을 받아 Scroll View, Table View를 추가하였습니다. 
 <img src="/assets/images/categories/sparta/firstProject5.png" alt="" /></li>
   <li>다양한 기능보다 우선 완성할 수 있도록 진행하였습니다.</li>
