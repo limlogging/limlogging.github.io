@@ -16,4 +16,10 @@ var store = [{
         "tags": ["bootcamp"],
         "url": "/sparta/test/",
         "teaser": null
+      },{
+        "title": "Mac에서 github blog 만들기 - 2",
+        "excerpt":"1편에 이어 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하는 방법입니다. 1. Homebrew 설치 Homebrew는 macOS 및 Linux 운영 체제를 위한 오픈 소스 패키지 관리자입니다. 이를 통해 사용자는 명령줄 인터페이스를 통해 손쉽게 소프트웨어를 설치, 업데이트, 관리할 수 있습니다. 일반적으로 Homebrew를 사용하면 다음과 같은 작업을 수행할 수 있습니다. Homebrew Homepage...","categories": ["GitHubBlog"],
+        "tags": ["GitHub","blog","GitHub blog"],
+        "url": "/GitHubBlog/start2/",
+        "teaser": null
       }]
