@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-01T15:38:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">Mac에서 github blog 만들기 - 1</title><link href="http://localhost:4000/GitHubBlog/start1/" rel="alternate" type="text/html" title="Mac에서 github blog 만들기 - 1" /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogstart</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/start1/"><![CDATA[<h1 id="개발자-블로그-">개발자 블로그 ???</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-01T21:07:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">Mac에서 github blog 만들기 - 1</title><link href="http://localhost:4000/GitHubBlog/start1/" rel="alternate" type="text/html" title="Mac에서 github blog 만들기 - 1" /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogstart</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/start1/"><![CDATA[<h1 id="개발자-블로그-">개발자 블로그 ???</h1>
 
 <p>요즘 개발자들은 취업, 포트폴리오, TIL(Today I Learned) 등 각자의 이유로 블로그를 운영하고 있습니다. 저도 부트캠프를 계기로 개발자 블로그를 운영해보기로 하였습니다.</p>
 
@@ -90,7 +90,112 @@ git push 명령어를 통해 저장소에 업로드 합니다.
 <h1 id="github-repository-파일-업로드-확인">GitHub Repository 파일 업로드 확인</h1>
 <p>GitHub 저장소에도 html 파일이 추가된 것을 확인 할 수 있습니다.</p>
 
-<p>이후 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하고 Repository에 등록이 필요한데 다음 포스팅에 작성해보도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><summary type="html"><![CDATA[github blog 만들기]]></summary></entry><entry><title type="html">[내배캠] 글쓰기 테스트 입니다.</title><link href="http://localhost:4000/sparta/test/" rel="alternate" type="text/html" title="[내배캠] 글쓰기 테스트 입니다." /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/sparta/test</id><content type="html" xml:base="http://localhost:4000/sparta/test/"><![CDATA[<h3 id="test">TEST</h3>
+<p>이후 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하고 Repository에 등록이 필요한데 다음 포스팅에 작성해보도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><summary type="html"><![CDATA[github blog 만들기]]></summary></entry><entry><title type="html">[내배캠] 온보딩 주차 프로젝트 만들기</title><link href="http://localhost:4000/sparta/firstProject/" rel="alternate" type="text/html" title="[내배캠] 온보딩 주차 프로젝트 만들기" /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
+<ol>
+  <li>프로젝트 주제: 팀 소개 앱 만들기</li>
+  <li>프로젝트 기간: 2/26(월) ~ 2/29(목)</li>
+  <li>인원: 4명 (팀장: 김건응 / 팀원: 박중권, 서수영, 임형섭)</li>
+  <li>주요 기능: 팀원명 선택 시 해당 팀원 정보 확인 가능</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="프로젝트-진행-프로세스">프로젝트 진행 프로세스</h1>
+<ol>
+  <li>사다리 타기를 통해 팀장 선정 
+<br />네이버 사다리를 통해 김건응님 팀장 선정</li>
+  <li>개발 전 프로그램 디자인 하기
+<br />종이에 그리기, figma 웹, 스토리보드에 그리기 등</li>
+  <li>다수결에 의한 디자인 선정<br />
+figma로 작성하신 김건응 팀장님 디자인으로 진행하기로 하였습니다. 
+<img src="/assets/images/categories/sparta/firstProjectDesign.png" alt="" /></li>
+  <li>선출된 디자인을 각자 구현 (매일 저녁 진행 단계 확인)</li>
+  <li>다수결에 의한 결과물 선정</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="역할-분담">역할 분담</h1>
+<h2 id="김건응">김건응</h2>
+<ol>
+  <li>스토리보드 기반 컬렉션뷰를 사용한 하단 바를 구현하려 했고, 각 팀원의 이름과 사진을 버튼으로 만들어 클릭 시 해당 프로필과 소개가 나오는 기능을 구현하려 하였습니다.
+<img src="/assets/images/categories/sparta/firstProjectKim1.png" alt="" /></li>
+</ol>
+
+<h2 id="박중권">박중권</h2>
+<ol>
+  <li>Button (홈, 김건응, 임형섭, 서수영, 박중권, More)
+Button을 눌렀을 때, 홈은 홈 화면으로, 맴버들 이름을 눌렀을 땐 각 맴버의 소개 페이지로 이동할 수 있는 버튼을 만들었습니다.
+<img src="/assets/images/categories/sparta/firstProjectPark1.png" alt="" /></li>
+  <li>UIView 음영
+기본 UIView가 View와 배경색이 같은 경우, 경계를 알 수 있게 음영을 추가해서 이펙트를 넣었습니다.
+<img src="/assets/images/categories/sparta/firstProjectPark2.png" alt="" /></li>
+  <li>원형 Button 
+스토리보드를 통해서 Button의 모양을 바꾸는데 있어서 제한적인 부분이 많아, 구글링을 한 후 Button의 모양을 코드를 사용해 변경했습니다.
+<img src="/assets/images/categories/sparta/firstProjectPark3_1.png" alt="" />
+버튼을 둥글게 하기 위해
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="kt">RoundButton1</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="kc">true</span> 
+<span class="k">self</span><span class="o">.</span><span class="kt">RoundButton1</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">masksToBounds</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="kt">RoundButton1</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span> 
+</code></pre></div>    </div>
+    <p>코드를 사용하여 아래와 같이 구현하였습니다. 
+<img src="/assets/images/categories/sparta/firstProjectPark3_2.png" alt="" /></p>
+  </li>
+  <li>Image 추가
+Asset에 Image를 추가 후, 삽입.</li>
+</ol>
+
+<h2 id="서수영">서수영</h2>
+<ol>
+  <li>코드베이스로 컬렉션 뷰 구현, 스택 뷰 레이아웃 설정, 컬렉션 뷰 터치 이벤트를 구현하려고 하였습니다. 
+<img src="/assets/images/categories/sparta/firstProjectseo1.png" alt="" /></li>
+</ol>
+
+<h2 id="임형섭">임형섭</h2>
+<ol>
+  <li>xcode에 포함된 스포이드를 사용하여 선정된 디자인과 동일한 색상 및 디자인을 구현하였습니다. 
+<img src="/assets/images/categories/sparta/firstProjectlim1.png" alt="" /></li>
+  <li>팀원들의 제안을 받아 Scroll View, Table View를 추가하였습니다. 
+<img src="/assets/images/categories/sparta/firstProject5.png" alt="" /></li>
+  <li>다양한 기능보다 우선 완성할 수 있도록 진행하였습니다.</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="어려웠던-점">어려웠던 점</h1>
+<ul>
+  <li>실제로 그린 디자인을 구현하려면 어떤 button, controller 등을 사용해야하는지 몰라 어려웠습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="해결한-내용">해결한 내용</h1>
+<ol>
+  <li>Scroll View에서 inspectors에서 추가적인 설정을 통한 Scroll 기능 구현</li>
+  <li>button 5개의 이벤트를 1개의 함수로 구현하였습니다.</li>
+  <li>구조체를 사용하여 팀원 정보 인스턴스를 생성하였습니다.</li>
+  <li>Table View, Table View Cell 사용 시 필수로 사용해야하는 함수를 확인하여 구현하였습니다.</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="해결하지-못한-내용">해결하지 못한 내용</h1>
+<p>TableView에서 데이터를 표출하고 다음 view로 이동하는것에 어려움이 있었습니다.<br />
+Tab Bar, Navigation Controller는 사용하지 못했습니다.</p>
+
+<p><br /></p>
+
+<h1 id="최종-결과물">최종 결과물</h1>
+<p><img src="/assets/images/categories/sparta/firstProject1.png" alt="" />
+<img src="/assets/images/categories/sparta/firstProject2.png" alt="" />
+<img src="/assets/images/categories/sparta/firstProject3.png" alt="" />
+<img src="/assets/images/categories/sparta/firstProject4.png" alt="" />
+<img src="/assets/images/categories/sparta/firstProject5.png" alt="" /></p>
+
+<p><br /></p>
+
+<h1 id="느낀-점">느낀 점</h1>
+<p>짧은 기간이지만 기본적인 Button, Lable 사용, 사진 넣기, 단축키 등 조금 익숙해 질 수 있었습니다.<br />
+또한 실제 디자인과 구현은 차이가 있다는 걸 알았습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[짧은 기간(4일)에 간단한 앱 만들기 프로젝트 진행하였습니다. (진짜 간단)]]></summary></entry><entry><title type="html">[내배캠] 글쓰기 테스트 입니다.</title><link href="http://localhost:4000/sparta/test/" rel="alternate" type="text/html" title="[내배캠] 글쓰기 테스트 입니다." /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/sparta/test</id><content type="html" xml:base="http://localhost:4000/sparta/test/"><![CDATA[<h3 id="test">TEST</h3>
 
 <ul>
   <li>As Is</li>

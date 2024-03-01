@@ -5,6 +5,12 @@ var store = [{
         "url": "/GitHubBlog/start1/",
         "teaser": null
       },{
+        "title": "[내배캠] 온보딩 주차 프로젝트 만들기",
+        "excerpt":"프로젝트 프로젝트 주제: 팀 소개 앱 만들기 프로젝트 기간: 2/26(월) ~ 2/29(목) 인원: 4명 (팀장: 김건응 / 팀원: 박중권, 서수영, 임형섭) 주요 기능: 팀원명 선택 시 해당 팀원 정보 확인 가능 프로젝트 진행 프로세스 사다리 타기를 통해 팀장 선정 네이버 사다리를 통해 김건응님 팀장 선정 개발 전 프로그램 디자인 하기...","categories": ["sparta"],
+        "tags": ["mini Project"],
+        "url": "/sparta/firstProject/",
+        "teaser": null
+      },{
         "title": "[내배캠] 글쓰기 테스트 입니다.",
         "excerpt":"TEST      As Is   let a: Int = 1 let b: Int = 2      TEST    TEST2   print(test)   print(test) : test   TEST3   var a: Int = 1    TEST입니다.      TEST   TEST4     TEST            TEST          ","categories": ["sparta"],
         "tags": ["bootcamp"],
