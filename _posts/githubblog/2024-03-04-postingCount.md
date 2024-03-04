@@ -5,8 +5,9 @@ categories: GitHubBlog
 tags: [GitHub, blog, GitHub blog, Posting Count]
 
 permalink: /GitHubBlog/postingCount/ #md 파일 제목과 다르게 url을 지정할 수 있음, 미지정 시 md 파일 명으로 따라감   
-toc: true         #On this page 보이기 
-toc_sticky: true  #on this page 스크롤에 따라 움직이도록 
+toc: true           #On this page 보이기 
+toc_sticky: true    #on this page 스크롤에 따라 움직이도록 
+comments: true      #댓글
 --- 
 
 # Posting Count 추가하기 

@@ -5,8 +5,9 @@ categories: sparta
 tags: [mini Project]
 
 permalink: /sparta/firstProject/ #md 파일 제목과 다르게 url을 지정할 수 있음, 미지정 시 md 파일 명으로 따라감   
-toc: true         #On this page 보이기 
-toc_sticky: true  #on this page 스크롤에 따라 움직이도록 
+toc: true           #On this page 보이기 
+toc_sticky: true    #on this page 스크롤에 따라 움직이도록 
+comments: true      #댓글
 ---
 # 프로젝트 
 1. 프로젝트 주제: 팀 소개 앱 만들기 
