@@ -22,4 +22,10 @@ var store = [{
         "tags": ["GitHub","blog","GitHub blog"],
         "url": "/GitHubBlog/start2/",
         "teaser": null
+      },{
+        "title": "[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고 ",
+        "excerpt":"온보딩 프로젝트 KPT 회고 온보딩 프로젝트 발표가 끝났습니다. 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다. Keep: 앱을 구현하는데 있어 필요한 기능을 검색하고 최선의 방법을 찾아 사용하려고 하였습니다. Problem: 처음 프로젝트를 진행 함에 있어 필요한 요소, 기능에 대한...","categories": ["sparta"],
+        "tags": ["KPT 회고"],
+        "url": "/sparta/firstProjectKPT/",
+        "teaser": null
       }]
