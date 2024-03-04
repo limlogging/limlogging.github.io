@@ -1,4 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-04T16:35:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고" /><published>2024-03-04T00:00:00+09:00</published><updated>2024-03-04T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-04T19:27:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">카테고리 옆 posting Count 추가하기 (minimal-mistakes)</title><link href="http://localhost:4000/GitHubBlog/postingCount/" rel="alternate" type="text/html" title="카테고리 옆 posting Count 추가하기 (minimal-mistakes)" /><published>2024-03-04T00:00:00+09:00</published><updated>2024-03-04T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/postingCount</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/postingCount/"><![CDATA[<h1 id="posting-count-추가하기">Posting Count 추가하기</h1>
+<p>우여곡절 끝에 카테고리를 만들고 TEST 게시물을 작성하였는데요. 뭔가 허전해보여 생각했더니 Posting Count가 없었습니다.</p>
+
+<h1 id="1-navigationyml-수정하기">1. navigation.yml 수정하기</h1>
+<p>children 하위에 category 항목을 추가합니다.</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">iOS"</span>    
+    <span class="na">children</span><span class="pi">:</span> 
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Swift"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/swift/</span>       
+        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Swift"</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SwiftUI"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/swiftui/</span> 
+        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SwiftUI"</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">git"</span> 
+    <span class="na">children</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Git"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/git/</span>
+        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">git"</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">Blog"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/GitHubBlog/</span>
+        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHubBlog"</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">etc"</span>
+    <span class="na">children</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">내배캠</span><span class="nv"> </span><span class="s">부트캠프"</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/sparta/</span>
+        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">sparta"</span>
+</code></pre></div></div>
+
+<h1 id="2-nav_list-수정">2. nav_list 수정</h1>
+<p>아래 부분 코드를 주석하고</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+&lt;li&gt;&lt;a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}&gt;{{ child.title }}&lt;/a&gt;&lt;/li&gt; 
+
+</code></pre></div></div>
+<p>새로 코드를 추가합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% assign post_cnt = 0 %}
+{% for category in site.categories %}
+    {% if category[0] == child.category  %}
+    {% assign post_cnt = category[1].size %}
+    {% endif %}
+{% endfor %}
+&lt;li&gt;&lt;a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}&gt;{{ child.title }}({{ post_cnt }})&lt;/a&gt;&lt;/li&gt;
+
+</code></pre></div></div>
+
+<p>수정된 코드입니다. 
+<img src="/assets/images/categories/githubblog/2024-03-04-postingCount.png" alt="" /></p>
+
+<h1 id="3-결과-확인">3. 결과 확인</h1>
+<p>카테고리 옆에 해당 카테고리의 전체 포스팅 수를 확인할 수 있습니다.<br />
+<img src="/assets/images/categories/githubblog/2024-03-04-postingCountResult.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Posting Count" /><summary type="html"><![CDATA[카테고리 옆 posting Count 추가하는 방법입니다.]]></summary></entry><entry><title type="html">[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고" /><published>2024-03-04T00:00:00+09:00</published><updated>2024-03-04T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
 <p>온보딩 프로젝트 발표가 끝났습니다. <br />
 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
 
@@ -108,10 +160,10 @@ jekyll 4.3.3
 <h1 id="6-jekyll-테마-다운로드-및-github-repository에-반영">6. jekyll 테마 다운로드 및 github repository에 반영</h1>
 <p>GitHub Pages에서 지원하는 인기있는 jekyll 테마 중 Minimal Mistakes를 다운로드 합니다. 
 <br /><a href="https://github.com/mmistakes/minimal-mistakes/" target="_blank">minimal-mistakes Download 바로가기</a>
-<img src="/assets/images/categories/githubblog/%202024-03-02-minimal-mistakes-download.png" alt="" /></p>
+<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-download.png" alt="" /></p>
 
 <p>다운로드 받은 파일을 git clone을 통하여 복사한 README.md 파일이 있는 폴더에 덮어씁니다. 
-<img src="/assets/images/categories/githubblog/%202024-03-02-minimal-mistakes-copy.png" alt="" /></p>
+<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-copy.png" alt="" /></p>
 
 <p>복사한 폴더에서 터미널 창을 열어 깃허브 저장소로 업로드 합니다.</p>
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro limlogging.github.io % git add.

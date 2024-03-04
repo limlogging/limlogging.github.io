@@ -22,24 +22,24 @@ categories:
   - title: "iOS"    
     children: 
       - title: "Swift"
-        url: /categories/swift/   #_pages - categorie에 md 파일 생성 , 실제 글은 _post 
-        # category: "Swift"
+        url: /categories/swift/       #_pages - categorie에 md 파일 생성 , 실제 글은 _post 
+        category: "Swift"
       - title: "SwiftUI"
         url: /categories/swiftui/ 
-        # category: "SwiftUI"
+        category: "SwiftUI"
   - title: "git" 
     children:
       - title: "Git"
         url: /categories/git/
-        # category: "git"
+        category: "git"
       - title: "GitHub Blog"
         url: /categories/GitHubBlog/
-        # category: "GitHubBlog"
+        category: "GitHubBlog"
   - title: "etc"
     children:
       - title: "내배캠 부트캠프"
         url: /categories/sparta/
-        # category: "sparta"
+        category: "sparta"
 # sidebar:
 #   #nav: "docs"
 #   nav: "categories"

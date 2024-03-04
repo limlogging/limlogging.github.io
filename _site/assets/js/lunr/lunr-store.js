@@ -23,6 +23,12 @@ var store = [{
         "url": "/GitHubBlog/start2/",
         "teaser": null
       },{
+        "title": "카테고리 옆 posting Count 추가하기 (minimal-mistakes)",
+        "excerpt":"Posting Count 추가하기 우여곡절 끝에 카테고리를 만들고 TEST 게시물을 작성하였는데요. 뭔가 허전해보여 생각했더니 Posting Count가 없었습니다. 1. navigation.yml 수정하기 children 하위에 category 항목을 추가합니다. categories: - title: \"iOS\" children: - title: \"Swift\" url: /categories/swift/ category: \"Swift\" - title: \"SwiftUI\" url: /categories/swiftui/ category: \"SwiftUI\" - title: \"git\" children: - title: \"Git\"...","categories": ["GitHubBlog"],
+        "tags": ["GitHub","blog","GitHub blog","Posting Count"],
+        "url": "/GitHubBlog/postingCount/",
+        "teaser": null
+      },{
         "title": "[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고 ",
         "excerpt":"온보딩 프로젝트 KPT 회고 온보딩 프로젝트 발표가 끝났습니다. 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다. Keep: 앱을 구현하는데 있어 필요한 기능을 검색하고 최선의 방법을 찾아 사용하려고 하였습니다. Problem: 처음 프로젝트를 진행 함에 있어 필요한 요소, 기능에...","categories": ["sparta"],
         "tags": ["KPT 회고"],
