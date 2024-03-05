@@ -23,7 +23,7 @@ categories:
     children: 
       - title: "Swift"
         url: /categories/swift/       #_pages - categorie에 md 파일 생성 , 실제 글은 _post 
-        category: "Swift"
+        category: "swift"
       - title: "SwiftUI"
         url: /categories/swiftui/ 
         category: "SwiftUI"
@@ -35,7 +35,15 @@ categories:
       - title: "GitHub Blog"
         url: /categories/GitHubBlog/
         category: "GitHubBlog"
-  - title: "etc"
+  - title: "etc" 
+    children: 
+      - title: "Today I Learned"
+        url: /categories/TIL/
+        category: "TIL" 
+      - title: "알고리즘 문제"
+        url: /categories/Algorithm/
+        category: "Algorithm"
+  - title: "내배캠"
     children:
       - title: "내배캠 부트캠프"
         url: /categories/sparta/

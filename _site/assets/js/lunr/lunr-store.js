@@ -40,4 +40,10 @@ var store = [{
         "tags": ["GitHub","blog","GitHub blog","utterances","Comments"],
         "url": "/GitHubBlog/comments/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 6일차",
+        "excerpt":"1~5일차는? 인터넷 뉴스 댓글, 유튜브 댓글도 작성하지 않는데 매일 매일 블로그 작성하라니… 시작하기 조금 어려웠다. 1~5일차 온보딩 프로젝트를 진행하면서 TIL은 흐지부지 되는 듯 했으나 오늘부터 본격적으로 강의를 시작하고 새로 팀을 구성하면서 팀원들의 TIL을 확인하고 나도 작성해보기로 했다. (그래도 알고리즘 문제는 매일 풀었다!) 오늘부터 시작, 데일리 스크럼부터 1~5일차 같은 노션 템플릿으로...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/test/",
+        "teaser": null
       }]

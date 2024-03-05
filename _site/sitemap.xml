@@ -29,10 +29,17 @@
 <lastmod>2024-03-05T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/TIL/test/</loc>
+<lastmod>2024-03-05T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/Algorithm/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/git/</loc>
@@ -48,6 +55,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/swiftui/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/TIL/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
