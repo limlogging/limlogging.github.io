@@ -34,4 +34,10 @@ var store = [{
         "tags": ["KPT 회고"],
         "url": "/sparta/firstProjectKPT/",
         "teaser": null
+      },{
+        "title": "GitHub utterances 댓글 기능 추가하기 (minimal-mistakes)",
+        "excerpt":"utteranc.es는 GitHub의 Issue를 기반으로 한 댓글 시스템입니다. GitHub 저장소의 Issue에 댓글을 추가하여 웹사이트나 블로그 등에 댓글 시스템을 쉽게 추가할 수 있습니다. 이를 통해 사용자는 GitHub 계정을 통해 댓글을 작성하고 관리할 수 있습니다. Utterances는 정적 웹사이트를 호스팅하는 데 매우 인기가 있으며, GitHub Issue를 사용하여 댓글을 저장하므로 데이터 손실없이 무료로 사용할 수...","categories": ["GitHubBlog"],
+        "tags": ["GitHub","blog","GitHub blog","utterances","Comments"],
+        "url": "/GitHubBlog/comments/",
+        "teaser": null
       }]
