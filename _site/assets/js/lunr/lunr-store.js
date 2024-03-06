@@ -52,4 +52,16 @@ var store = [{
         "tags": ["swift","variable","constant"],
         "url": "/swift/variableAndConstant/",
         "teaser": null
+      },{
+        "title": "[Swift] 데이터 타입 ",
+        "excerpt":"데이터 타입 데이터 타입은 데이터 종류입니다. 첫 글자가 대문자로 시작하는 대문자 카멜케이스 사용합니다. Int, UInt Int: +, - 부호가 있는 정수입니다. UInt: - 를 포함하지 않는 0을 포함한 양의 정수입니다. var a: Int = 0 var b: UInt = 0 a = 9223372036854775807 + 1 // 범위를 벗어나면 에러가 발생합니다....","categories": ["swift"],
+        "tags": ["swift","Data Type","constant"],
+        "url": "/swift/variableAndConstant/",
+        "teaser": null
+      },{
+        "title": "[Swift] 옵셔널(Optional)",
+        "excerpt":"옵셔널? Swift에서 옵셔널(Optional)은 값이 있을 수도 있고 없을 수도 있는 값을 나타내는 형식입니다. 변수 또는 상수에 값을 갖지 않을 수 있는 경우에 사용합니다. nil? Swift에서 값이 없으면 nil로 나타냅니다. “” 같은 빈 문자열과 다름 옵셔널 사용 물음표로 나타냅니다. var num1: Int? = 1 //? 사용하여 축약 타입 표현 var num2:...","categories": ["swift"],
+        "tags": ["swift","optional","Nil Coalescing"],
+        "url": "/swift/optional/",
+        "teaser": null
       }]
