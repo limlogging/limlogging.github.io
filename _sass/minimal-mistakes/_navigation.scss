@@ -179,10 +179,12 @@
   min-height: $nav-height;
   background: $background-color;
 
+  //바로가기 색상 변경 
   a {
     display: block;
     margin: 0 1rem;
-    color: $masthead-link-color;
+    //color: $masthead-link-color;
+    color: black;
     text-decoration: none;
     -webkit-transition: none;
     transition: none;

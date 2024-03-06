@@ -44,6 +44,12 @@ var store = [{
         "title": "[TIL] 내배캠 iOS앱 개발 공부 6일차",
         "excerpt":"1~5일차는? 인터넷 뉴스 댓글, 유튜브 댓글도 작성하지 않는데 매일 매일 블로그 작성하라니… 시작하기 조금 어려웠다. 1~5일차 온보딩 프로젝트를 진행하면서 TIL은 흐지부지 되는 듯 했으나 오늘부터 본격적으로 강의를 시작하고 새로 팀을 구성하면서 팀원들의 TIL을 확인하고 나도 작성해보기로 했다. (그래도 알고리즘 문제는 매일 풀었다!) 오늘부터 시작, 데일리 스크럼부터 1~5일차 같은 노션 템플릿으로...","categories": ["TIL"],
         "tags": ["TIL"],
-        "url": "/TIL/test/",
+        "url": "/TIL/til6/",
+        "teaser": null
+      },{
+        "title": "[Swift] 변수와 상수 ",
+        "excerpt":"변수와 상수 변수나 상수를 이용하여 프로그램에서 사용되는 데이터를 메모리에 저장합니다. let a: Int = 1 let b: Int = 2 변수 생성 후 데이터 변경 가능합니다. var 변수명: 데이터 타입 = 값 var myMoney: Int = 10000 //현재 내 돈 만원 myMoney = 20000 // 알고보니 이만원, 이만원으로 수정 상수...","categories": ["swift"],
+        "tags": ["swift","variable","constant"],
+        "url": "/swift/variableAndConstant/",
         "teaser": null
       }]
