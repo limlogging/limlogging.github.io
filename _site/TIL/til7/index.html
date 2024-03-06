@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Mac에서 github blog 만들기 - 2 - limlogging Devlog</title>
-<meta name="description" content="github blog 만들기">
+<!-- begin _includes/seo.html --><title>[TIL] 내배캠 iOS앱 개발 공부 7일차 - limlogging Devlog</title>
+<meta name="description" content="내배캠 iOS앱 개발 공부 7일차 이야기">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="Mac에서 github blog 만들기 - 2">
-<meta property="og:url" content="http://localhost:4000/GitHubBlog/start2/">
+<meta property="og:title" content="[TIL] 내배캠 iOS앱 개발 공부 7일차">
+<meta property="og:url" content="http://localhost:4000/TIL/til7/">
 
 
-  <meta property="og:description" content="github blog 만들기">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-02T00:00:00+09:00">
+  <meta property="og:description" content="내배캠 iOS앱 개발 공부 7일차 이야기">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-05T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/GitHubBlog/start2/">
+
+<link rel="canonical" href="http://localhost:4000/TIL/til7/">
 
 
 
@@ -387,16 +387,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Mac에서 github blog 만들기 - 2">
-    <meta itemprop="description" content="github blog 만들기">
-    <meta itemprop="datePublished" content="2024-03-02T00:00:00+09:00">
+    <meta itemprop="headline" content="[TIL] 내배캠 iOS앱 개발 공부 7일차">
+    <meta itemprop="description" content="내배캠 iOS앱 개발 공부 7일차 이야기">
+    <meta itemprop="datePublished" content="2024-03-05T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/GitHubBlog/start2/" class="u-url" itemprop="url">Mac에서 github blog 만들기 - 2
+            <a href="http://localhost:4000/TIL/til7/" class="u-url" itemprop="url">[TIL] 내배캠 iOS앱 개발 공부 7일차
 </a>
           </h1>
           
@@ -413,7 +413,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -428,118 +428,47 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#1-homebrew-설치">1. Homebrew 설치</a></li><li><a href="#2-homebrew-update">2. Homebrew Update</a></li><li><a href="#3-ruby-버전관리도구-및-build-설치">3. Ruby 버전관리도구 및 build 설치</a></li><li><a href="#4-rbenv-설치-및-환경-설정">4. rbenv 설치 및 환경 설정</a></li><li><a href="#5-jekyll과-bundler를-시스템에-설치">5. Jekyll과 Bundler를 시스템에 설치</a></li><li><a href="#6-jekyll-테마-다운로드-및-github-repository에-반영">6. jekyll 테마 다운로드 및 github repository에 반영</a></li><li><a href="#7-blog에-접속해-확인합니다">7. blog에 접속해 확인합니다.</a></li></ul>
+              <ul class="toc__menu"><li><a href="#데일리-스크럼">데일리 스크럼</a></li><li><a href="#알고리즘">알고리즘</a></li><li><a href="#내일은">내일은?</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>1편에 이어 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하는 방법입니다.</p>
+        <h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-06-til7.png" alt="" /></p>
 
-<h1 id="1-homebrew-설치">1. Homebrew 설치</h1>
-<p>Homebrew는 macOS 및 Linux 운영 체제를 위한 오픈 소스 패키지 관리자입니다. 이를 통해 사용자는 명령줄 인터페이스를 통해 손쉽게 소프트웨어를 설치, 업데이트, 관리할 수 있습니다.
-일반적으로 Homebrew를 사용하면 다음과 같은 작업을 수행할 수 있습니다. 
-<br /><a href="https://brew.sh/" target="_blank">Homebrew Homepage 바로가기</a></p>
-
-<h1 id="2-homebrew-update">2. Homebrew Update</h1>
-<p>brew update 명령어를 통해 Homebrew 패키지 관리자의 패키지 목록을 최신 상태로 업데이트합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % brew update
-</span></code></pre></div></div>
-<p>Homebrew를 사용하여 패키지를 설치하기 전에 항상 이 명령을 실행하여 최신 버전의 패키지 목록을 가져와야 합니다. 이를 통해 최신 버전의 패키지를 사용할 수 있고, 패키지 관련 문제를 방지할 수 있습니다.</p>
-
-<h1 id="3-ruby-버전관리도구-및-build-설치">3. Ruby 버전관리도구 및 build 설치</h1>
-<p>brew install rbenv ruby-build 명령으로 rbenv와 ruby-build라는 두 가지 패키지를 Homebrew를 통해 설치합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % brew install rbenv ruby-build
-</span></code></pre></div></div>
+<h3 id="알고리즘">알고리즘</h3>
+<p>오늘의 데일리 스크럼을 작성하고 오늘의 알고리즘 문제를 바로 풀었는데….</p>
 <ul>
-  <li>rbenv는 Ruby 버전 관리 도구로, 여러 버전의 Ruby를 시스템에 설치하고 각 프로젝트에 필요한 버전을 선택할 수 있게 해줍니다. 이를 통해 서로 다른 프로젝트에서 다른 Ruby 버전을 사용할 수 있습니다.</li>
-  <li>ruby-build는 Ruby 버전을 컴파일하고 설치하는 데 사용되는 스크립트입니다. rbenv와 함께 사용되어 rbenv로 관리되는 Ruby 버전을 설치할 수 있도록 돕습니다.
-이 명령을 사용하여 rbenv와 ruby-build를 설치하면 Ruby 개발 환경을 설정하는 데 필요한 도구를 간편하게 설치할 수 있습니다.</li>
+  <li>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</li>
 </ul>
+<table>
+    <tr>
+        <td>n (10진법)</td>
+        <td>n (3진법)</td>
+        <td>앞뒤 반전(3진법)</td>	
+        <td>10진법으로 표현</td>
+    </tr>
+    <tr>
+        <td>45</td>	
+        <td>1200</td>	
+        <td>0021</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>125</td>	
+        <td>11122</td>	
+        <td>22111</td>
+        <td>229</td>
+    </tr>
+</table>
 
-<h1 id="4-rbenv-설치-및-환경-설정">4. rbenv 설치 및 환경 설정</h1>
-<p>rbenv versions 명령어로 설치된 버전을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv versions
-system
-</span></code></pre></div></div>
-<p>system이라고 표시되는 경우, 이는 현재 시스템에 기본적으로 설치된 Ruby 버전을 나타냅니다.</p>
+<p>앞뒤 반전(3진법)에서 10진법으로 만드는 과정에서 제곱때문에 함수를 새로 만드느라 시간이 오래걸렸다. 그리고 답안을 제출했는데 1개가 계속 맞지 않아서 블로그 기능 확인 및 추가시간까지 알고리즘 문제를 풀었다. 아직 못해서 저녁 9시 이후에 다 지우고 새로 풀어볼 예정! <br />
+<img src="/assets/images/categories/til/2024-03-06-til7-2.png" alt="" /></p>
 
-<p>rbenv install -l 명령어를 통하여 설치할 수 있는 Ruby 버전 목록을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv install -l
-3.0.6
-3.1.4
-3.2.3
-3.3.0
-jruby-9.4.6.0
-mruby-3.3.0
-picoruby-3.0.0
-truffleruby-23.1.2
-truffleruby+graalvm-23.1.2
+<p>옵셔널 강의듣고 정의, nil, Unwapping, optional binding, Nil Coalescing, chaining… 관련해서 정리하면서 글을 썼더니 오후 시간이 다 가버렸다. 작성하는 내용이 맞는지 안맞는지 확인하고 플레이그라운드에 실행해보고 하는 시간이 너무 오래 걸렸다.</p>
 
-Only latest stable releases for each Ruby implementation are shown.
-Use 'rbenv install --list-all' to show all local versions.
-</span></code></pre></div></div>
-<p>저는 최신버전인 3.3.0 버전을 설치하였습니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv install 3.3.0
-</span></code></pre></div></div>
-<p>다시 rbenv version을 확인해봅니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv versions
-* system
-  3.3.0
-</span></code></pre></div></div>
-<p>* 표시는 현재 활성화(선택된) Ruby 버전을 나타냅니다. 
-설치된 버전으로 변경하기 위해 아래 명령어를 입력합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv global 3.3.0
-imhs@imhsui-MacBookPro ~ % rbenv versions
-  system
-* 3.3.0 (set by /Users/imhs/. rbenv/version)
-</span></code></pre></div></div>
-<p>terminal 콘솔 창 상단에 zsh 셸을 확인하고 zsh 셸 환경을 설정합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % vim ~/.zshrc
-</span></code></pre></div></div>
-<p>파일에 아래 내용을 추가합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">[[ -d ~/.rbenv  ]] &amp;&amp; \
-</span><span class="gp">  export PATH=$</span><span class="o">{</span>HOME<span class="o">}</span>/.rbenv/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<span class="gp">  eval "$</span><span class="o">(</span>rbenv init -<span class="o">)</span><span class="s2">"
-</span></code></pre></div></div>
-
-<p>수정된 내용을 적용하기 위하여 아래 명령어를 입력합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % source ~/.zshrc
-</span></code></pre></div></div>
-
-<p>아래 명령어를 통하여 시스템에 Bundler를 설치하여 Ruby 프로젝트의 의존성을 관리할 수 있도록 합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % gem install bundler
-</span></code></pre></div></div>
-<ul>
-  <li>gem: RubyGems는 Ruby 패키지 관리자입니다. RubyGems를 사용하면 Ruby 프로그래밍 언어로 작성된 소프트웨어 패키지를 설치, 관리 및 배포할 수 있습니다. gem 명령어는 RubyGems의 명령줄 인터페이스를 제공하며, 패키지의 설치, 업데이트, 삭제 등 다양한 작업을 수행할 수 있습니다.</li>
-  <li>install: gem install은 RubyGems를 사용하여 패키지를 시스템에 설치하는 명령어입니다. 이를 통해 지정된 패키지를 로컬 시스템에 다운로드하고 설치할 수 있습니다.</li>
-  <li>bundler: Bundler는 Ruby 프로젝트의 의존성을 관리하는 도구입니다. Bundler를 사용하면 프로젝트에 필요한 라이브러리 및 gem을 쉽게 관리할 수 있습니다.</li>
-</ul>
-
-<h1 id="5-jekyll과-bundler를-시스템에-설치">5. Jekyll과 Bundler를 시스템에 설치</h1>
-<p>아래 명령어를 사용하여 Jekyll과 Bundler를 시스템에 설치합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % gem install jekyll bundler
-</span></code></pre></div></div>
-<p>jekyll 버전을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % jekyll -v
-jekyll 4.3.3
-</span></code></pre></div></div>
-
-<h1 id="6-jekyll-테마-다운로드-및-github-repository에-반영">6. jekyll 테마 다운로드 및 github repository에 반영</h1>
-<p>GitHub Pages에서 지원하는 인기있는 jekyll 테마 중 Minimal Mistakes를 다운로드 합니다. 
-<br /><a href="https://github.com/mmistakes/minimal-mistakes/" target="_blank">minimal-mistakes Download 바로가기</a>
-<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-download.png" alt="" /></p>
-
-<p>다운로드 받은 파일을 git clone을 통하여 복사한 README.md 파일이 있는 폴더에 덮어씁니다. 
-<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-copy.png" alt="" /></p>
-
-<p>복사한 폴더에서 터미널 창을 열어 깃허브 저장소로 업로드 합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro limlogging.github.io % git add.
-imhs@imhsui-MacBookPro limlogging.github.io % git commit -m "테마 업로드"
-imhs@imhsui-MacBookPro limlogging.github.io % git push
-</span></code></pre></div></div>
-
-<h1 id="7-blog에-접속해-확인합니다">7. blog에 접속해 확인합니다.</h1>
-<p>https://깃허브ID.github.io에 접속하면, 테마가 적용된 블로그를 확인할 수 있습니다. 적용까지 1 ~ 2분 걸리는 것 같습니다.</p>
+<h3 id="내일은">내일은?</h3>
+<p>개인 과제를 아직 진행하지 못해서 내일은 개인 과제를 먼저 진행해야겠다.</p>
 
         
       </section>
@@ -556,11 +485,7 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a><span class="sep">, </span>
-    
-      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">GitHub</a><span class="sep">, </span>
-    
-      <a href="/tags/#github-blog" class="page__taxonomy-item p-category" rel="tag">GitHub blog</a>
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -577,7 +502,7 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#githubblog" class="page__taxonomy-item p-category" rel="tag">GitHubBlog</a>
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -585,7 +510,7 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-02T00:00:00+09:00">March 2, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-05T00:00:00+09:00">March 5, 2024</time></p>
 
       </footer>
 
@@ -594,22 +519,22 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Mac%EC%97%90%EC%84%9C+github+blog+%EB%A7%8C%EB%93%A4%EA%B8%B0+-+2%20http%3A%2F%2Flocalhost%3A4000%2FGitHubBlog%2Fstart2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BTIL%5D+%EB%82%B4%EB%B0%B0%EC%BA%A0+iOS%EC%95%B1+%EA%B0%9C%EB%B0%9C+%EA%B3%B5%EB%B6%80+7%EC%9D%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil7%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FGitHubBlog%2Fstart2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil7%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FGitHubBlog%2Fstart2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil7%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/sparta/test/" class="pagination--pager" title="[내배캠] 글쓰기 테스트 입니다.
+      <a href="/TIL/til6/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 6일차
 ">이전</a>
     
     
-      <a href="/GitHubBlog/postingCount/" class="pagination--pager" title="카테고리 옆 posting Count 추가하기 (minimal-mistakes)
+      <a href="/swift/variableAndConstant/" class="pagination--pager" title="[Swift] 변수와 상수
 ">다음</a>
     
   </nav>
@@ -754,7 +679,7 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/TIL/til7/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 7일차
+        <a href="/TIL/til6/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 6일차
 </a>
       
     </h2>
@@ -779,7 +704,7 @@ imhs@imhsui-MacBookPro limlogging.github.io % git push
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 7일차 이야기
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 6일차 이야기
 </p>
   </article>
 </div>

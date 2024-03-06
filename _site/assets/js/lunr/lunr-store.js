@@ -47,6 +47,12 @@ var store = [{
         "url": "/TIL/til6/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 7일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘의 데일리 스크럼을 작성하고 오늘의 알고리즘 문제를 바로 풀었는데…. 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요. n (10진법) n (3진법) 앞뒤 반전(3진법) 10진법으로 표현 45 1200 0021 7 125 11122 22111 229 앞뒤 반전(3진법)에서...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til7/",
+        "teaser": null
+      },{
         "title": "[Swift] 변수와 상수 ",
         "excerpt":"변수와 상수 변수나 상수를 이용하여 프로그램에서 사용되는 데이터를 메모리에 저장합니다. let a: Int = 1 let b: Int = 2 변수 생성 후 데이터 변경 가능합니다. var 변수명: 데이터 타입 = 값 var myMoney: Int = 10000 //현재 내 돈 만원 myMoney = 20000 // 알고보니 이만원, 이만원으로 수정 상수...","categories": ["swift"],
         "tags": ["swift","variable","constant"],
@@ -55,8 +61,8 @@ var store = [{
       },{
         "title": "[Swift] 데이터 타입 ",
         "excerpt":"데이터 타입 데이터 타입은 데이터 종류입니다. 첫 글자가 대문자로 시작하는 대문자 카멜케이스 사용합니다. Int, UInt Int: +, - 부호가 있는 정수입니다. UInt: - 를 포함하지 않는 0을 포함한 양의 정수입니다. var a: Int = 0 var b: UInt = 0 a = 9223372036854775807 + 1 // 범위를 벗어나면 에러가 발생합니다....","categories": ["swift"],
-        "tags": ["swift","Data Type","constant"],
-        "url": "/swift/variableAndConstant/",
+        "tags": ["swift","Data Type"],
+        "url": "/swift/dataType/",
         "teaser": null
       },{
         "title": "[Swift] 옵셔널(Optional)",
