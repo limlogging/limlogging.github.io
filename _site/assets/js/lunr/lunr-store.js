@@ -53,6 +53,12 @@ var store = [{
         "url": "/TIL/til7/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 8일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘 오전에는 그동안 아침에 풀었던 알고리즘 문제와 나의 풀이, 다른사람의 풀이를 정리해서 포스팅했다. 내가 했던 풀이 다시 보면서 다른 사람들 풀이를 다시 보는데 너무 짧고 쉽게 푼 사람들이 많더라 공부 시급 😭 협업 관련 Git &amp; Github으로 협업하는 법 특강을 들었다. 블로그 때문에 git add. / git...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til8/",
+        "teaser": null
+      },{
         "title": "[Swift] 변수와 상수 ",
         "excerpt":"변수와 상수 변수나 상수를 이용하여 프로그램에서 사용되는 데이터를 메모리에 저장합니다. let a: Int = 1 let b: Int = 2 변수 생성 후 데이터 변경 가능합니다. var 변수명: 데이터 타입 = 값 var myMoney: Int = 10000 //현재 내 돈 만원 myMoney = 20000 // 알고보니 이만원, 이만원으로 수정 상수...","categories": ["swift"],
         "tags": ["swift","variable","constant"],
