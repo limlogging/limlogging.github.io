@@ -1,629 +1,711 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-06T19:53:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[Swift] 변수와 상수</title><link href="http://localhost:4000/swift/variableAndConstant/" rel="alternate" type="text/html" title="[Swift] 변수와 상수" /><published>2024-03-06T00:00:00+09:00</published><updated>2024-03-06T00:00:00+09:00</updated><id>http://localhost:4000/swift/VariableAndConstant</id><content type="html" xml:base="http://localhost:4000/swift/variableAndConstant/"><![CDATA[<h3 id="변수와-상수">변수와 상수</h3>
-
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-07T13:22:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 정수 내림차순으로 배치하기</title><link href="http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 정수 내림차순으로 배치하기" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>변수나 상수를 이용하여 프로그램에서 사용되는 데이터를 메모리에 저장합니다.</li>
+  <li>함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12933" target="_blank">정수 내림차순으로 배치하기 문제 풀기</a></li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">let</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">2</span>
-</code></pre></div></div>
-
-<h3 id="변수">변수</h3>
+<h1 id="제한사항">제한사항</h1>
 <ul>
-  <li>생성 후 데이터 변경 가능합니다.</li>
-  <li>var 변수명: 데이터 타입 = 값
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">myMoney</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1">//현재 내 돈 만원</span>
-<span class="n">myMoney</span> <span class="o">=</span> <span class="mi">20000</span> <span class="c1">// 알고보니 이만원, 이만원으로 수정  </span>
-</code></pre></div>    </div>
-  </li>
+  <li>n은 1이상 8000000000 이하인 자연수입니다.</li>
 </ul>
 
-<h3 id="상수">상수</h3>
-<ul>
-  <li>한번 값을 설정하면 다음에 변경 할 수 없습니다.</li>
-  <li>let 상수명: 데이터 타입 = 값
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">tenWon</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">//10원  </span>
-<span class="n">tenWon</span> <span class="o">=</span> <span class="mi">20</span>          <span class="c1">//에러 발생 10원은 10원   </span>
-</code></pre></div>    </div>
-    <p>상수로 선언된 10원을 20원으로 수정하면 에러가 발생합니다. 
-let을 var로 변경하여 값을 변경 가능하게 만들어야합니다.</p>
-  </li>
-</ul>
+<h1 id="입출력-예">입출력 예</h1>
 
-<h3 id="상수-값-변경-시-에러">상수 값 변경 시 에러</h3>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">error: MyPlayground.playground:60:1: error: cannot assign to value: 'tenWon' is a 'let' constant
-tenWon = 20
-^~~~~~
-
-MyPlayground.playground:59:1: note: change 'let' to 'var' to make it mutable
-let tenWon: Int = 10
-^~~
-var
-
-</span></code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="variable" /><category term="constant" /><summary type="html"><![CDATA[변수(값 변경 가능) var, 상수(값 변경 불가능) let]]></summary></entry><entry><title type="html">[Swift] 데이터 타입</title><link href="http://localhost:4000/swift/dataType/" rel="alternate" type="text/html" title="[Swift] 데이터 타입" /><published>2024-03-06T00:00:00+09:00</published><updated>2024-03-06T00:00:00+09:00</updated><id>http://localhost:4000/swift/dataType</id><content type="html" xml:base="http://localhost:4000/swift/dataType/"><![CDATA[<h1 id="데이터-타입">데이터 타입</h1>
-<ul>
-  <li>데이터 타입은 데이터 종류입니다.</li>
-  <li>첫 글자가 대문자로 시작하는 대문자 카멜케이스 사용합니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="int-uint">Int, UInt</h1>
-<ul>
-  <li>Int: +, - 부호가 있는 정수입니다.</li>
-  <li>UInt: - 를 포함하지 않는 0을 포함한 양의 정수입니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">var</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">9223372036854775807</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1">// 범위를 벗어나면 에러가 발생합니다.  </span>
-
-<span class="nf">print</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>  <span class="c1">// -9223372036854775808</span>
-<span class="nf">print</span><span class="p">(</span><span class="kt">Int</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>  <span class="c1">// 9223372036854775807</span>
-<span class="nf">print</span><span class="p">(</span><span class="kt">UInt</span><span class="o">.</span><span class="n">min</span><span class="p">)</span> <span class="c1">// 0</span>
-<span class="nf">print</span><span class="p">(</span><span class="kt">UInt</span><span class="o">.</span><span class="n">max</span><span class="p">)</span> <span class="c1">// 18446744073709551615</span>
-</code></pre></div></div>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">error: MyPlayground.playground:62:25: error: arithmetic operation '9223372036854775807 + 1' (on type 'Int') results in an overflow
-a = 9223372036854775807 + 1
-    ~~~~~~~~~~~~~~~~~~~ ^ ~
-</span></code></pre></div></div>
-<p><br /></p>
-
-<h1 id="float-double">Float, Double</h1>
-<h2 id="float">Float</h2>
-<ul>
-  <li>소수점을 표현하는 데이터 타입으로 32비트 부동 소수를 표현할 수 있습니다.</li>
-  <li>Float의 정밀도는 소수점 이하 6자리까지 가능합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">interestRate</span><span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">1.2345678910</span> <span class="c1">// Float 타입</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"이자율은 </span><span class="se">\(</span><span class="n">interestRate</span><span class="se">)</span><span class="s"> % 입니다"</span><span class="p">)</span>
-<span class="c1">// 출력값: 이자율은 1.2345679 % 입니다</span>
-</code></pre></div></div>
-
-<h2 id="double">Double</h2>
-<ul>
-  <li>소수점을 표현하는 데이터 타입으로 64비트 부동소수를 표현할 수 있습니다.</li>
-  <li>Double의 정밀도는 소수점 이하 15자리 이상 가능합니다.</li>
-  <li>두 유형 모두 적합한 상황에서는 Double을 사용하는 것이 좋습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">interestRate</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1.2345678910123456789</span> <span class="c1">// Double 타입</span>
-<span class="nf">print</span><span class="p">(</span><span class="s">"이자율은 </span><span class="se">\(</span><span class="n">interestRate</span><span class="se">)</span><span class="s"> % 입니다"</span><span class="p">)</span>
-<span class="c1">// 출력값: 이자율은 1.2345678910123457 % 입니다</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="boolean">Boolean</h1>
-<ul>
-  <li>참(true), 거짓(false)만 값으로 가집니다.</li>
-  <li>true, false 가 아니면 에러가 발생합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">isTrue</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="k">var</span> <span class="nv">isFalse</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
-<span class="n">isTrue</span> <span class="o">=</span> <span class="mi">100</span>    <span class="c1">//에러</span>
-<span class="n">isTrue</span> <span class="o">=</span> <span class="s">"true"</span> <span class="c1">//에러   </span>
-</code></pre></div></div>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">error: MyPlayground.playground:64:10: error: cannot assign value of type 'Int' to type 'Bool'
-isTrue = 100
-         ^~~
-
-error: MyPlayground.playground:65:10: error: cannot assign value of type 'String' to type 'Bool'
-isTrue = "True"
-         ^~~~~~
-</span></code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="character">Character</h1>
-<ul>
-  <li>단 하나의 문자입니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"a"</span> 
-<span class="n">a</span> <span class="o">=</span> <span class="s">"aa"</span> <span class="c1">//에러 </span>
-</code></pre></div></div>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">error: MyPlayground.playground:62:5: error: cannot assign value of type 'String' to type 'Character'
-a = "aa"
-    ^~~~
-</span></code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="string">String</h1>
-<ul>
-  <li>문자열을 표현하는 데이터 타입 입니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"string"</span> 
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="any">Any</h1>
-<ul>
-  <li>모든 데이터 타입을 사용할 수 있습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="s">"a"</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s">"aa"</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mf">1234.5678</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="tuple">Tuple</h1>
-<ul>
-  <li>튜플은 여러 값을 하나로 그룹화한 값입니다.</li>
-  <li>Tuple은 관련 값의 단순한 그룹에 유용합니다. 복잡한 데이터 구조를 만드는 데는 적합하지 않습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="c1">//튜플 값에 접근하려면 순서를 알고 있어야합니다. </span>
-<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//홍길동</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//20 </span>
-<span class="k">var</span> <span class="nv">test</span><span class="p">:</span> <span class="p">(</span><span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="nv">aaaa</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">bbbb</span><span class="p">:</span> <span class="s">"TEST"</span><span class="p">)</span> <span class="c1">//엘리먼트에 이름 붙일 수 있습니다. </span>
-<span class="c1">// 많은 데이터를 담는 데는 적합하지 않다 - 사용하는 쪽에서 또 매핑(Mapping)을 해야 함</span>
-<span class="k">let</span> <span class="nv">myInfo</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="o">=</span> 
-<span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"peter"</span><span class="p">,</span> <span class="nv">registrationNumber</span><span class="p">:</span> <span class="mi">970212</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">185</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="nv">job</span><span class="p">:</span> <span class="s">"developer"</span><span class="p">,</span> <span class="nv">hobby</span><span class="p">:</span> <span class="s">"soccer"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="배열">배열</h1>
-<ul>
-  <li>같은 타입의 데이터를 순서대로 저장합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="dictionary">Dictionary</h1>
-<ul>
-  <li>key, value 쌍의 모음입니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">fruit</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"바나나"</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span> <span class="s">"사과"</span><span class="p">:</span> <span class="mi">6000</span><span class="p">,</span> <span class="s">"키위"</span><span class="p">:</span> <span class="mi">8000</span><span class="p">]</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="set">Set</h1>
-<ul>
-  <li>같은 타입의 데이터를 순서 없이 하나의 묶음으로 저장합니다..</li>
-  <li>중복된 값이 존재 하지 않습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">name1</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span> <span class="c1">//빈 세트 생성 </span>
-<span class="k">var</span> <span class="nv">name2</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">//빈 세트 생성</span>
-<span class="k">var</span> <span class="nv">name3</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="s">"aaa"</span><span class="p">,</span> <span class="s">"bbb"</span><span class="p">,</span> <span class="s">"ccc"</span><span class="p">]</span>
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Data Type" /><summary type="html"><![CDATA[swift에서 사용하는 데이터 타입입니다.]]></summary></entry><entry><title type="html">[Swift] 옵셔널(Optional)</title><link href="http://localhost:4000/swift/optional/" rel="alternate" type="text/html" title="[Swift] 옵셔널(Optional)" /><published>2024-03-06T00:00:00+09:00</published><updated>2024-03-06T00:00:00+09:00</updated><id>http://localhost:4000/swift/optional</id><content type="html" xml:base="http://localhost:4000/swift/optional/"><![CDATA[<h1 id="옵셔널">옵셔널?</h1>
-<p>Swift에서 옵셔널(Optional)은 값이 있을 수도 있고 없을 수도 있는 값을 나타내는 형식입니다. 변수 또는 상수에 값을 갖지 않을 수 있는 경우에 사용합니다.</p>
-
-<h1 id="nil">nil?</h1>
-<p>Swift에서 값이 없으면 nil로 나타냅니다. “” 같은 빈 문자열과 다름</p>
-
-<h1 id="옵셔널-사용">옵셔널 사용</h1>
-<ul>
-  <li>물음표로 나타냅니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">num1</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1">//? 사용하여 축약 타입 표현</span>
-<span class="k">var</span> <span class="nv">num2</span><span class="p">:</span> <span class="kt">Optional</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">//정식 타입 표현  </span>
- 
-<span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="c1">//옵셔널 타입끼리 연산이 불가능, 에러 발생  </span>
-</code></pre></div></div>
-
-<h1 id="optional-추출-unwapping">Optional 추출 (Unwapping)</h1>
-<ul>
-  <li>옵셔널의 값을 옵셔널이 아닌 값으로 추출하는 방법입니다.</li>
-</ul>
-
-<h2 id="1-강제-추출">1. 강제 추출</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//강제 추출  </span>
-<span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    <span class="c1">//결과: Optional(1)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="o">!</span><span class="p">)</span>   <span class="c1">//결과: 1 </span>
-
-<span class="c1">//if문으로 nil만 확인하고 강제 추출 </span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="o">!</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="2-옵셔널-바인딩">2. 옵셔널 바인딩</h2>
-<p>옵셔널 값이 빈 값인지 아닌지 검사 후 값이 있는 경우 그 값을 다른 변수/상수에 대입시키는 것입니다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> 
-<span class="k">if</span> <span class="k">let</span> <span class="nv">number</span> <span class="o">=</span> <span class="n">num</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="c1">//출력 값 없음</span>
-<span class="p">}</span>
-
-<span class="k">var</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="mi">1</span> 
-<span class="k">if</span> <span class="k">let</span> <span class="nv">xx</span> <span class="o">=</span> <span class="n">x</span> <span class="p">{</span> 
-    <span class="nf">print</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>   <span class="c1">//1 출력 </span>
-<span class="p">}</span>
-
-<span class="c1">//옵셔널 바인딩 할 변수가 여러개 인 경우 콤마 사용 </span>
-<span class="k">var</span> <span class="nv">boyName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"김철수"</span>
-<span class="k">var</span> <span class="nv">girlName2</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"김영희"</span> 
-
-<span class="k">if</span> <span class="k">let</span> <span class="nv">boy</span> <span class="o">=</span> <span class="n">boyName</span><span class="p">,</span> <span class="k">let</span> <span class="nv">girl</span> <span class="o">=</span> <span class="n">girlName</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">boy</span><span class="p">,</span> <span class="n">girl</span><span class="p">)</span>    <span class="c1">//김철수, 김영희 출력 </span>
-<span class="p">}</span>
-
-<span class="c1">// guard let 사용</span>
-<span class="kd">func</span> <span class="nf">opbinding</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">x</span> <span class="o">=</span> <span class="n">x</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">y</span> <span class="o">=</span> <span class="n">y</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">// y는 nil 이므로 여기서 return</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c1">// 위에서 return 하였기 때문에 이 코드 라인은 실행되지 않음</span>
-<span class="p">}</span>
-
-<span class="nf">opbinding</span><span class="p">()</span>
-<span class="c1">// 출력값: 10</span>
-</code></pre></div></div>
-
-<h2 id="3-nil-coalescing-닐-코얼레싱">3. Nil Coalescing 닐 코얼레싱</h2>
-<p>값이 nil일때 기본 값을 적용</p>
-<ul>
-  <li>옵셔널 ?? 기본값</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="k">var</span> <span class="nv">number</span> <span class="o">=</span> <span class="n">num</span> <span class="p">??</span> <span class="mi">0</span>   <span class="c1">// num이 nill이면 기본 값으로 0 </span>
-<span class="nf">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>      <span class="c1">// 출력: nil 0 </span>
-</code></pre></div></div>
-
-<h1 id="옵셔널-체이닝">옵셔널 체이닝</h1>
-<p>옵셔널 체이닝(Optional Chaining)은 Swift에서 옵셔널 값의 체인을 따라 연속적으로 값을 가져오는 방법을 말합니다.</p>
-<ul>
-  <li>옵셔널 값이 있는 여러 단계의 프로퍼티 또는 메소드 호출을 수행할 때 유용합니다.</li>
-  <li>옵셔널 체이닝을 사용하면 옵셔널이 nil일 때도 에러가 발생하지 않고, 안전하게 체인을 따라 값에 접근할 수 있습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Person</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">pet</span><span class="p">:</span> <span class="kt">Animal</span><span class="p">?</span>
-    
-    <span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">pet</span><span class="p">:</span> <span class="kt">Animal</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">pet</span> <span class="o">=</span> <span class="n">pet</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kd">class</span> <span class="kt">Animal</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">animalName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
-    
-    <span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">animalName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">type</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">animalName</span> <span class="o">=</span> <span class="n">animalName</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">let</span> <span class="nv">park</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"박"</span><span class="p">,</span> <span class="nv">pet</span><span class="p">:</span> <span class="kt">Animal</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="s">"dog"</span><span class="p">,</span> <span class="nv">animalName</span><span class="p">:</span> <span class="s">"멍멍이"</span><span class="p">))</span>
-<span class="k">let</span> <span class="nv">kim</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"김"</span><span class="p">,</span> <span class="nv">pet</span><span class="p">:</span> <span class="kt">Animal</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="s">"cat"</span><span class="p">))</span>
-<span class="k">let</span> <span class="nv">lim</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"임"</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">park</span><span class="o">.</span><span class="n">pet</span><span class="p">?</span><span class="o">.</span><span class="n">animalName</span><span class="p">)</span> <span class="c1">// Optional("호두")</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">kim</span><span class="o">.</span><span class="n">pet</span><span class="p">?</span><span class="o">.</span><span class="n">animalName</span><span class="p">)</span>  <span class="c1">// nil</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">lim</span><span class="o">.</span><span class="n">pet</span><span class="p">?</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>        <span class="c1">// nil</span>
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="optional" /><category term="Nil Coalescing" /><summary type="html"><![CDATA[값이 있을 수도 있고 없을 수도 있는 값]]></summary></entry><entry><title type="html">GitHub utterances 댓글 기능 추가하기 (minimal-mistakes)</title><link href="http://localhost:4000/GitHubBlog/comments/" rel="alternate" type="text/html" title="GitHub utterances 댓글 기능 추가하기 (minimal-mistakes)" /><published>2024-03-05T00:00:00+09:00</published><updated>2024-03-05T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/comments</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/comments/"><![CDATA[<p><a href="https://github.com/apps/utterances" target="_blank">utteranc.es</a>는 GitHub의 Issue를 기반으로 한 댓글 시스템입니다. GitHub 저장소의 Issue에 댓글을 추가하여 웹사이트나 블로그 등에 댓글 시스템을 쉽게 추가할 수 있습니다. 이를 통해 사용자는 GitHub 계정을 통해 댓글을 작성하고 관리할 수 있습니다. Utterances는 정적 웹사이트를 호스팅하는 데 매우 인기가 있으며, GitHub Issue를 사용하여 댓글을 저장하므로 데이터 손실없이 무료로 사용할 수 있습니다.</p>
-
-<h1 id="1-utterances-설치하기">1. utterances 설치하기</h1>
-<p><a href="https://github.com/apps/utterances" target="_blank">https://github.com/apps/utterances</a>에 접속하셔서 Install합니다. 
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesInstall.png" alt="" /></p>
-
-<p>깃허브 저장소를 선택하고 Instal합니다.
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesInstall2.png" alt="" /></p>
-
-<h1 id="2-저장소--맵핑-설정">2. 저장소 / 맵핑 설정</h1>
-<ul>
-  <li>repo에 소유자/저장소이름을 입력합니다.</li>
-  <li>Issue title contains page pathname을 선택합니다. 
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesContiguration.png" alt="" /></li>
-</ul>
-
-<h1 id="3-테마-설정하기">3. 테마 설정하기</h1>
-<ul>
-  <li>원하는 테마를 선택합니다.</li>
-  <li>Enable Utterance에 설정된 정보를 _config.yml에 복사해야하기때문에 복사해놓습니다. 
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesTheme.png" alt="" /></li>
-</ul>
-
-<h1 id="4-_configyml-설정하기">4. _config.yml 설정하기</h1>
-<ul>
-  <li>3번 Enable Utterance에서 확인한 repo 정보를 repository 항모에 넣습니다. 
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesConfigyml1.png" alt="" /></li>
-  <li>provider에 “utterances” 입력합니다.</li>
-  <li>3번 Enable Utterance에서 확인한 theme 정보를 theme 항목에 넣습니다.</li>
-  <li>3번 Enable Utterance에서 확인한 issue-term 정보를 issue-term 항목에 넣습니다. 
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesConfigyml2.png" alt="" /></li>
-</ul>
-
-<h1 id="5-블로그-포스팅-시-comments-true-추가">5. 블로그 포스팅 시 comments: true 추가</h1>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">utterances</span><span class="nv"> </span><span class="s">댓글</span><span class="nv"> </span><span class="s">기능</span><span class="nv"> </span><span class="s">추가하기</span><span class="nv"> </span><span class="s">(minimal-mistakes)"</span>
-<span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">게시글에</span><span class="nv"> </span><span class="s">utterances</span><span class="nv"> </span><span class="s">댓글</span><span class="nv"> </span><span class="s">기능</span><span class="nv"> </span><span class="s">추가하는</span><span class="nv"> </span><span class="s">방법입니다."</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="s">GitHubBlog</span>
-<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">GitHub</span><span class="pi">,</span> <span class="nv">blog</span><span class="pi">,</span> <span class="nv">GitHub blog</span><span class="pi">,</span> <span class="nv">utterances</span><span class="pi">,</span> <span class="nv">Comments</span><span class="pi">]</span>
-
-<span class="na">permalink</span><span class="pi">:</span> <span class="s">/GitHubBlog/comments/</span> 
-<span class="na">toc</span><span class="pi">:</span> <span class="kc">true</span>          
-<span class="na">toc_sticky</span><span class="pi">:</span> <span class="kc">true</span>    
-<span class="na">comments</span><span class="pi">:</span> <span class="kc">true</span>      <span class="c1">#댓글</span>
-<span class="nn">---</span> 
-</code></pre></div></div>
-
-<h1 id="6-깃허브-push">6. 깃허브 Push</h1>
-<p>적용된 모습을 확인할 수 있습니다. (로컬에서 실행하면 추가된 내용이 보이지 않는 것 같습니다.)
-<img src="/assets/images/categories/githubblog/2024-03-05-utterancesComments.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="utterances" /><category term="Comments" /><summary type="html"><![CDATA[게시글에 utterances 댓글 기능 추가하는 방법입니다.]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 7일차</title><link href="http://localhost:4000/TIL/til7/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 7일차" /><published>2024-03-05T00:00:00+09:00</published><updated>2024-03-05T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til7</id><content type="html" xml:base="http://localhost:4000/TIL/til7/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-06-til7.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<p>오늘의 데일리 스크럼을 작성하고 오늘의 알고리즘 문제를 바로 풀었는데….</p>
-<ul>
-  <li>자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.</li>
-</ul>
 <table>
+  <thead>
     <tr>
-        <td>n (10진법)</td>
-        <td>n (3진법)</td>
-        <td>앞뒤 반전(3진법)</td>	
-        <td>10진법으로 표현</td>
+      <th>n</th>
+      <th>result</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-        <td>45</td>	
-        <td>1200</td>	
-        <td>0021</td>
-        <td>7</td>
+      <td>118372</td>
+      <td>873211</td>
     </tr>
-    <tr>
-        <td>125</td>	
-        <td>11122</td>	
-        <td>22111</td>
-        <td>229</td>
-    </tr>
+  </tbody>
 </table>
 
-<p>앞뒤 반전(3진법)에서 10진법으로 만드는 과정에서 제곱때문에 함수를 새로 만드느라 시간이 오래걸렸다. 그리고 답안을 제출했는데 1개가 계속 맞지 않아서 블로그 기능 확인 및 추가시간까지 알고리즘 문제를 풀었다. 아직 못해서 저녁 9시 이후에 다 지우고 새로 풀어볼 예정! <br />
-<img src="/assets/images/categories/til/2024-03-06-til7-2.png" alt="" /></p>
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int64</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="k">var</span> <span class="nv">temp</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">var</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">Int64</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">8000000000</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">str</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="p">}</span>
 
-<p>옵셔널 강의듣고 정의, nil, Unwapping, optional binding, Nil Coalescing, chaining… 관련해서 정리하면서 글을 썼더니 오후 시간이 다 가버렸다. 작성하는 내용이 맞는지 안맞는지 확인하고 플레이그라운드에 실행해보고 하는 시간이 너무 오래 걸렸다.</p>
-
-<h3 id="내일은">내일은?</h3>
-<p>개인 과제를 아직 진행하지 못해서 내일은 개인 과제를 먼저 진행해야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 7일차 이야기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 6일차</title><link href="http://localhost:4000/TIL/til6/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 6일차" /><published>2024-03-05T00:00:00+09:00</published><updated>2024-03-05T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til6</id><content type="html" xml:base="http://localhost:4000/TIL/til6/"><![CDATA[<h1 id="15일차는">1~5일차는?</h1>
-<p>인터넷 뉴스 댓글, 유튜브 댓글도 작성하지 않는데 매일 매일 블로그 작성하라니… 시작하기 조금 어려웠다. 1~5일차 온보딩 프로젝트를 진행하면서 TIL은 흐지부지 되는 듯 했으나 오늘부터 본격적으로 강의를 시작하고 새로 팀을 구성하면서 팀원들의 TIL을 확인하고 나도 작성해보기로 했다. (그래도 알고리즘 문제는 매일 풀었다!)</p>
-
-<h1 id="오늘부터-시작-데일리-스크럼부터">오늘부터 시작, 데일리 스크럼부터</h1>
-<p>1~5일차 같은 노션 템플릿으로 팀 약속, 목표만 작성하고 데일리 스크럼은 다들 작성하지 않았다. <font style="text-decoration:line-through">(변명하자면 다들 작성 경험이 없어서... 누군가 먼저 작성했더라면 다들 적었을 것 같다.)</font> 팀이 변경되고 처음부터 꾸준히 적은 팀원을 만나 작성된 내용을 확인하고 나도 데일리 스크럼을 작성하였다.</p>
-
-<p><img src="/assets/images/categories/til/2024-03-05-til6.png" alt="" /></p>
-
-<p>TIL 저녁에 작성하기로 했는데 오늘은 처음 작성하는거라 30분만에 작성하기 힘들 것 같아 조금씩 적었다.</p>
-
-<p>이번주는 Swift 기초 문법 강의를 듣고 개인 과제도 만들어야하는데 강의 12개, 길이가 최대 30분이라 한번 듣고 다시 들으면서 swift 카테고리에 정리해봐야겠다.</p>
-
-<h1 id="앞으로">앞으로</h1>
-<p>다들 너무 열심히 해서 열심히 해야겠다.<br />
-노션, 깃, 강의, 실습, 블로그 관리까지… TIL 계속 쓸 수 있겠지?</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 6일차 이야기]]></summary></entry><entry><title type="html">카테고리 옆 posting Count 추가하기 (minimal-mistakes)</title><link href="http://localhost:4000/GitHubBlog/postingCount/" rel="alternate" type="text/html" title="카테고리 옆 posting Count 추가하기 (minimal-mistakes)" /><published>2024-03-04T00:00:00+09:00</published><updated>2024-03-04T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/postingCount</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/postingCount/"><![CDATA[<h1 id="posting-count-추가하기">Posting Count 추가하기</h1>
-<p>우여곡절 끝에 카테고리를 만들고 TEST 게시물을 작성하였는데요. 뭔가 허전해보여 생각했더니 Posting Count가 없었습니다.</p>
-
-<h1 id="1-navigationyml-수정하기">1. navigation.yml 수정하기</h1>
-<p>children 하위에 category 항목을 추가합니다.</p>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">categories</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">iOS"</span>    
-    <span class="na">children</span><span class="pi">:</span> 
-      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Swift"</span>
-        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/swift/</span>       
-        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Swift"</span>
-      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SwiftUI"</span>
-        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/swiftui/</span> 
-        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">SwiftUI"</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">git"</span> 
-    <span class="na">children</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Git"</span>
-        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/git/</span>
-        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">git"</span>
-      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">Blog"</span>
-        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/GitHubBlog/</span>
-        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHubBlog"</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">etc"</span>
-    <span class="na">children</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">내배캠</span><span class="nv"> </span><span class="s">부트캠프"</span>
-        <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/sparta/</span>
-        <span class="na">category</span><span class="pi">:</span> <span class="s2">"</span><span class="s">sparta"</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> 
+                    <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span> 
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="kt">Int64</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">""</span><span class="p">))</span><span class="o">!</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">num</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int64</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Int64</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}))</span><span class="o">!</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h1 id="2-nav_list-수정">2. nav_list 수정</h1>
-<p>아래 부분 코드를 주석하고</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-&lt;li&gt;&lt;a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}&gt;{{ child.title }}&lt;/a&gt;&lt;/li&gt; 
-
-</code></pre></div></div>
-<p>새로 코드를 추가합니다.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-{% assign post_cnt = 0 %}
-{% for category in site.categories %}
-    {% if category[0] == child.category  %}
-    {% assign post_cnt = category[1].size %}
-    {% endif %}
-{% endfor %}
-&lt;li&gt;&lt;a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}&gt;{{ child.title }}({{ post_cnt }})&lt;/a&gt;&lt;/li&gt;
-
-</code></pre></div></div>
-
-<p>수정된 코드입니다. 
-<img src="/assets/images/categories/githubblog/2024-03-04-postingCount.png" alt="" /></p>
-
-<h1 id="3-결과-확인">3. 결과 확인</h1>
-<p>카테고리 옆에 해당 카테고리의 전체 포스팅 수를 확인할 수 있습니다.<br />
-<img src="/assets/images/categories/githubblog/2024-03-04-postingCountResult.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Posting Count" /><summary type="html"><![CDATA[카테고리 옆 posting Count 추가하는 방법입니다.]]></summary></entry><entry><title type="html">[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 온보딩 주차 프로젝트 만들기 / KPT 회고" /><published>2024-03-04T00:00:00+09:00</published><updated>2024-03-04T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
-<p>온보딩 프로젝트 발표가 끝났습니다. <br />
-팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
-
+<h1 id="의견">의견</h1>
 <ul>
+  <li>고민 끝에 풀었는데 다른 사람은 한줄로 해결? ..</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="정수 내림차순으로 배치하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 정수 내림차순으로 배치하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 정수 제곱근 판별</title><link href="http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EC%A0%9C%EA%B3%B1%EA%B7%BC%ED%8C%90%EB%B3%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 정수 제곱근 판별" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EC%A0%9C%EA%B3%B1%EA%B7%BC%ED%8C%90%EB%B3%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A0%95%EC%88%98%EC%A0%9C%EA%B3%B1%EA%B7%BC%ED%8C%90%EB%B3%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
+n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12934" target="_blank">정수 제곱근 판별 문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>n은 1이상, 50000000000000 이하인 양의 정수입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>121</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>121은 양의 정수 11의 제곱이므로, (11+1)를 제곱한 144를 리턴합니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>3은 양의 정수의 제곱이 아니므로, -1을 리턴합니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int64</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">Int64</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">50000000000000</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="kt">Int64</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">n</span> <span class="p">{</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="kt">Int64</span><span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="k">break</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="kt">Int64</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">num</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int64</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">t</span> <span class="o">=</span> <span class="kt">Int64</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">*</span> <span class="n">t</span> <span class="o">==</span> <span class="n">n</span> <span class="p">?</span> <span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>sqrt가 제곱근 구하기.. pow가 제곱구하기..</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="정수 제곱근 판별" /><summary type="html"><![CDATA[[프로그래머스/Swift] 정수 제곱근 판별]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 제일 작은 수 제거하기</title><link href="http://localhost:4000/algorithm/%EC%A0%9C%EC%9D%BC%EC%9E%91%EC%9D%80%EC%88%98%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 제일 작은 수 제거하기" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A0%9C%EC%9D%BC%EC%9E%91%EC%9D%80%EC%88%98%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A0%9C%EC%9D%BC%EC%9E%91%EC%9D%80%EC%88%98%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12935" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>arr은 길이 1 이상인 배열입니다.</li>
+  <li>인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>arr</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[4,3,2,1]</td>
+      <td>[4,3,2]</td>
+    </tr>
+    <tr>
+      <td>[10]</td>
+      <td>[-1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">arr</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">rtnArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  
+    <span class="k">var</span> <span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span> 
+    
+    <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="n">rtnArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>   
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">min</span> <span class="p">{</span>
+                <span class="n">rtnArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">rtnArr</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">arr</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">min</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+     <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">?</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span> <span class="n">arr</span><span class="o">.</span><span class="nf">compactMap</span><span class="p">({</span> <span class="k">return</span> <span class="nv">$0</span> <span class="o">!=</span> <span class="n">min</span> <span class="p">?</span> <span class="nv">$0</span> <span class="p">:</span> <span class="kc">nil</span> <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>나도 좀 더 쉽게 할 수 있는 방향으로..</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="제일 작은 수 제거하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 제일 작은 수 제거하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 직사각형 별찍기</title><link href="http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 직사각형 별찍기" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
+별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12969" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>n과 m은 각각 1000 이하인 자연수입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">//입력
+5 3
+//출력
+*****
+*****
+*****
+</span></code></pre></div></div>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span> 
+<span class="k">if</span> <span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">m</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+                        <span class="n">str</span> <span class="o">+=</span> <span class="s">"*"</span>
+                    <span class="p">}</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+                    <span class="n">str</span> <span class="o">=</span> <span class="s">""</span> 
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">components</span><span class="p">(</span><span class="nv">separatedBy</span><span class="p">:</span> <span class="p">[</span><span class="s">" "</span><span class="p">])</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">a</span><span class="p">,</span> <span class="nv">b</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">b</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="s">"*"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="nf">joined</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>오늘도.. 다른 사람 풀이로 배웁니다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="직사각형 별찍기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 직사각형 별찍기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 짝수와 홀수</title><link href="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%99%80%ED%99%80%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 짝수와 홀수" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%99%80%ED%99%80%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%99%80%ED%99%80%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12937" target="_blank">짝수와 홀수</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>0 &lt; n ≤ 1000</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>num</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>“Odd”</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>“Even”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Even"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Odd"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="s">"Even"</span> <span class="p">:</span> <span class="s">"Odd"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>삼항연산자로 간단하게 푼 사람들이 많았다. 문제 풀땐 생각이 잘 안난단 말이지 ..</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="짝수와 홀수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 짝수와 홀수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 짝수의 합</title><link href="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 짝수의 합" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120831" target="_blank">짝수의 합 문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>0 &lt; n ≤ 1000</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>num1</th>
+      <th>num2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>n이 10이므로 2 + 4 + 6 + 8 + 10 = 30을 return 합니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>n이 4이므로 2 + 4 = 6을 return 합니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">n</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span> 
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">n</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="n">sum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span> <span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>다른 사람들은 고차함수 사용을 많이 하였다. 난 생각도 못했는데… 고차 함수 공부가 필요하다 ㅠ</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="짝수의 합" /><summary type="html"><![CDATA[[프로그래머스/Swift] 짝수의 합]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 최대공약수와 최소공배수</title><link href="http://localhost:4000/algorithm/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 최대공약수와 최소공배수" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12940" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>두 수는 1이상 1000000이하의 자연수입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>m</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>12</td>
+      <td>[3, 12]</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>[1, 10]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>문제의 설명과 같습니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>자연수 2와 5의 최대공약수는 1, 최소공배수는 10이므로 [1, 10]을 리턴해야 합니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">max</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
+    
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">m</span> <span class="p">{</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="p">{</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">m</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">n</span> 
+    <span class="p">}</span>
+        
+    <span class="k">var</span> <span class="nv">temp</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="c1">//작은 수로 최대공약수 구하기 </span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">min</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">m</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">i</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    
+    <span class="c1">//최대공약수로 나누기 </span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">temp</span> 
+    <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">arr</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">mod</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">mod</span> <span class="p">?</span> <span class="nf">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">:</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">lcm</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">/</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nf">gcd</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="nf">lcm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>다른 사람 코드는 역시 어렵다</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="최대공약수와 최소공배수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 최대공약수와 최소공배수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 콜라츠 추측</title><link href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EC%B8%A0%EC%B6%94%EC%B8%A1/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 콜라츠 추측" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EC%B8%A0%EC%B6%94%EC%B8%A1</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EC%B8%A0%EC%B6%94%EC%B8%A1/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과 같습니다.</li>
+  <li>1-1. 입력된 수가 짝수라면 2로 나눕니다.</li>
+  <li>1-2. 입력된 수가 홀수라면 3을 곱하고 1을 더합니다.</li>
   <li>
-    <p>Keep: 앱을 구현하는데 있어 필요한 기능을 검색하고 최선의 방법을 찾아 사용하려고 하였습니다.</p>
+    <ol>
+      <li>결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.</li>
+    </ol>
   </li>
-  <li>
-    <p>Problem: 처음 프로젝트를 진행 함에 있어 필요한 요소, 기능에 대한 막연함이 있었습니다. 다양한 실습을 통해 막연함을 구체화 시키도록 해야합니다.</p>
-  </li>
-  <li>
-    <p>Try: 조금 더 소통해야 할 것 같습니다. 시간을 정하고 소통하였으나 유연하게 소통하고 의사결정을 해야합니다.</p>
-  </li>
+  <li>예를 들어, 주어진 수가 6이라면 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야 하는지 반환하는 함수, solution을 완성해 주세요. 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 –1을 반환해 주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12943" target="_blank">문제 풀기</a></li>
 </ul>
 
-<p>이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[온보딩 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">Mac에서 github blog 만들기 - 2</title><link href="http://localhost:4000/GitHubBlog/start2/" rel="alternate" type="text/html" title="Mac에서 github blog 만들기 - 2" /><published>2024-03-02T00:00:00+09:00</published><updated>2024-03-02T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogstart2</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/start2/"><![CDATA[<p>1편에 이어 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하는 방법입니다.</p>
-
-<h1 id="1-homebrew-설치">1. Homebrew 설치</h1>
-<p>Homebrew는 macOS 및 Linux 운영 체제를 위한 오픈 소스 패키지 관리자입니다. 이를 통해 사용자는 명령줄 인터페이스를 통해 손쉽게 소프트웨어를 설치, 업데이트, 관리할 수 있습니다.
-일반적으로 Homebrew를 사용하면 다음과 같은 작업을 수행할 수 있습니다. 
-<br /><a href="https://brew.sh/" target="_blank">Homebrew Homepage 바로가기</a></p>
-
-<h1 id="2-homebrew-update">2. Homebrew Update</h1>
-<p>brew update 명령어를 통해 Homebrew 패키지 관리자의 패키지 목록을 최신 상태로 업데이트합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % brew update
-</span></code></pre></div></div>
-<p>Homebrew를 사용하여 패키지를 설치하기 전에 항상 이 명령을 실행하여 최신 버전의 패키지 목록을 가져와야 합니다. 이를 통해 최신 버전의 패키지를 사용할 수 있고, 패키지 관련 문제를 방지할 수 있습니다.</p>
-
-<h1 id="3-ruby-버전관리도구-및-build-설치">3. Ruby 버전관리도구 및 build 설치</h1>
-<p>brew install rbenv ruby-build 명령으로 rbenv와 ruby-build라는 두 가지 패키지를 Homebrew를 통해 설치합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % brew install rbenv ruby-build
-</span></code></pre></div></div>
+<h1 id="제한사항">제한사항</h1>
 <ul>
-  <li>rbenv는 Ruby 버전 관리 도구로, 여러 버전의 Ruby를 시스템에 설치하고 각 프로젝트에 필요한 버전을 선택할 수 있게 해줍니다. 이를 통해 서로 다른 프로젝트에서 다른 Ruby 버전을 사용할 수 있습니다.</li>
-  <li>ruby-build는 Ruby 버전을 컴파일하고 설치하는 데 사용되는 스크립트입니다. rbenv와 함께 사용되어 rbenv로 관리되는 Ruby 버전을 설치할 수 있도록 돕습니다.
-이 명령을 사용하여 rbenv와 ruby-build를 설치하면 Ruby 개발 환경을 설정하는 데 필요한 도구를 간편하게 설치할 수 있습니다.</li>
+  <li>입력된 수, num은 1 이상 8,000,000 미만인 정수입니다.</li>
 </ul>
 
-<h1 id="4-rbenv-설치-및-환경-설정">4. rbenv 설치 및 환경 설정</h1>
-<p>rbenv versions 명령어로 설치된 버전을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv versions
-system
-</span></code></pre></div></div>
-<p>system이라고 표시되는 경우, 이는 현재 시스템에 기본적으로 설치된 Ruby 버전을 나타냅니다.</p>
+<h1 id="입출력-예">입출력 예</h1>
 
-<p>rbenv install -l 명령어를 통하여 설치할 수 있는 Ruby 버전 목록을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv install -l
-3.0.6
-3.1.4
-3.2.3
-3.3.0
-jruby-9.4.6.0
-mruby-3.3.0
-picoruby-3.0.0
-truffleruby-23.1.2
-truffleruby+graalvm-23.1.2
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>626331</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
 
-Only latest stable releases for each Ruby implementation are shown.
-Use 'rbenv install --list-all' to show all local versions.
-</span></code></pre></div></div>
-<p>저는 최신버전인 3.3.0 버전을 설치하였습니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv install 3.3.0
-</span></code></pre></div></div>
-<p>다시 rbenv version을 확인해봅니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv versions
-* system
-  3.3.0
-</span></code></pre></div></div>
-<p>* 표시는 현재 활성화(선택된) Ruby 버전을 나타냅니다. 
-설치된 버전으로 변경하기 위해 아래 명령어를 입력합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % rbenv global 3.3.0
-imhs@imhsui-MacBookPro ~ % rbenv versions
-  system
-* 3.3.0 (set by /Users/imhs/. rbenv/version)
-</span></code></pre></div></div>
-<p>terminal 콘솔 창 상단에 zsh 셸을 확인하고 zsh 셸 환경을 설정합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % vim ~/.zshrc
-</span></code></pre></div></div>
-<p>파일에 아래 내용을 추가합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">[[ -d ~/.rbenv  ]] &amp;&amp; \
-</span><span class="gp">  export PATH=$</span><span class="o">{</span>HOME<span class="o">}</span>/.rbenv/bin:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-<span class="gp">  eval "$</span><span class="o">(</span>rbenv init -<span class="o">)</span><span class="s2">"
-</span></code></pre></div></div>
-
-<p>수정된 내용을 적용하기 위하여 아래 명령어를 입력합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % source ~/.zshrc
-</span></code></pre></div></div>
-
-<p>아래 명령어를 통하여 시스템에 Bundler를 설치하여 Ruby 프로젝트의 의존성을 관리할 수 있도록 합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % gem install bundler
-</span></code></pre></div></div>
+<h2 id="입출력-예-1">입출력 예 #1</h2>
 <ul>
-  <li>gem: RubyGems는 Ruby 패키지 관리자입니다. RubyGems를 사용하면 Ruby 프로그래밍 언어로 작성된 소프트웨어 패키지를 설치, 관리 및 배포할 수 있습니다. gem 명령어는 RubyGems의 명령줄 인터페이스를 제공하며, 패키지의 설치, 업데이트, 삭제 등 다양한 작업을 수행할 수 있습니다.</li>
-  <li>install: gem install은 RubyGems를 사용하여 패키지를 시스템에 설치하는 명령어입니다. 이를 통해 지정된 패키지를 로컬 시스템에 다운로드하고 설치할 수 있습니다.</li>
-  <li>bundler: Bundler는 Ruby 프로젝트의 의존성을 관리하는 도구입니다. Bundler를 사용하면 프로젝트에 필요한 라이브러리 및 gem을 쉽게 관리할 수 있습니다.</li>
+  <li>문제의 설명과 같습니다.</li>
 </ul>
 
-<h1 id="5-jekyll과-bundler를-시스템에-설치">5. Jekyll과 Bundler를 시스템에 설치</h1>
-<p>아래 명령어를 사용하여 Jekyll과 Bundler를 시스템에 설치합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % gem install jekyll bundler
-</span></code></pre></div></div>
-<p>jekyll 버전을 확인합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % jekyll -v
-jekyll 4.3.3
-</span></code></pre></div></div>
-
-<h1 id="6-jekyll-테마-다운로드-및-github-repository에-반영">6. jekyll 테마 다운로드 및 github repository에 반영</h1>
-<p>GitHub Pages에서 지원하는 인기있는 jekyll 테마 중 Minimal Mistakes를 다운로드 합니다. 
-<br /><a href="https://github.com/mmistakes/minimal-mistakes/" target="_blank">minimal-mistakes Download 바로가기</a>
-<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-download.png" alt="" /></p>
-
-<p>다운로드 받은 파일을 git clone을 통하여 복사한 README.md 파일이 있는 폴더에 덮어씁니다. 
-<img src="/assets/images/categories/githubblog/2024-03-02-minimal-mistakes-copy.png" alt="" /></p>
-
-<p>복사한 폴더에서 터미널 창을 열어 깃허브 저장소로 업로드 합니다.</p>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro limlogging.github.io % git add.
-imhs@imhsui-MacBookPro limlogging.github.io % git commit -m "테마 업로드"
-imhs@imhsui-MacBookPro limlogging.github.io % git push
-</span></code></pre></div></div>
-
-<h1 id="7-blog에-접속해-확인합니다">7. blog에 접속해 확인합니다.</h1>
-<p>https://깃허브ID.github.io에 접속하면, 테마가 적용된 블로그를 확인할 수 있습니다. 적용까지 1 ~ 2분 걸리는 것 같습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><summary type="html"><![CDATA[github blog 만들기]]></summary></entry><entry><title type="html">[내배캠] 글쓰기 테스트 입니다.</title><link href="http://localhost:4000/sparta/test/" rel="alternate" type="text/html" title="[내배캠] 글쓰기 테스트 입니다." /><published>2024-03-01T00:00:00+09:00</published><updated>2024-03-01T00:00:00+09:00</updated><id>http://localhost:4000/sparta/test</id><content type="html" xml:base="http://localhost:4000/sparta/test/"><![CDATA[<h3 id="test">TEST</h3>
-
+<h2 id="입출력-예-2">입출력 예 #2</h2>
 <ul>
-  <li>As Is</li>
+  <li>16 → 8 → 4 → 2 → 1 이 되어 총 4번 만에 1이 됩니다.</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">a</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">let</span> <span class="nv">b</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">2</span>
+<h2 id="입출력-예-3">입출력 예 #3</h2>
+<ul>
+  <li>626331은 500번을 시도해도 1이 되지 못하므로 -1을 리턴해야 합니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">num</span> 
+    
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">8000000</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="n">number</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">number</span> <span class="o">=</span> <span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span> 
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;=</span> <span class="mi">500</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">!=</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">cnt</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">odd</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">even</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">ans</span> <span class="o">=</span> <span class="n">num</span>
+    <span class="k">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">ans</span> <span class="o">!=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">500</span> <span class="p">{</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="nf">even</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span> <span class="p">:</span> <span class="nf">odd</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">500</span> <span class="p">?</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="n">count</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p>TEST</p>
-</blockquote>
-
-<h3 id="test2">TEST2</h3>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">print(test)</code> : test</p>
-
-<h3 id="test3">TEST3</h3>
-
-<p><code class="language-plaintext highlighter-rouge">var a: Int = 1 </code></p>
-
-<p>TEST입니다.</p>
-
+<h1 id="의견">의견</h1>
 <ul>
-  <li><a href="https://limlogging.github.io">TEST</a></li>
+  <li>매개변수 1일때 조건이 없어서 실행 시 바로 통과되지 않아 애먹었다 ㅠ</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라츠 추측" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라츠 추측]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 평균 구하기</title><link href="http://localhost:4000/algorithm/%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 평균 구하기" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%8F%89%EA%B7%A0%20%EA%B5%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12944" target="_blank">평균 구하기 문제 풀기</a></li>
 </ul>
 
-<h3 id="test4">TEST4</h3>
+<h1 id="제한사항">제한사항</h1>
 <ul>
-  <li>TEST
-    <ul>
-      <li><a href="https://limlogging.github.io">TEST</a></li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="bootcamp" /><summary type="html"><![CDATA[글 작성 테스트]]></summary></entry></feed>
+  <li>arr은 길이 1 이상, 100 이하인 배열입니다.</li>
+  <li>arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>arr</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1,2,3,4]</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>[5,5]</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">arr</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">arr</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kt">Double</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">arr</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Double</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Double</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">+</span><span class="p">))</span><span class="o">/</span><span class="kt">Double</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>다른 사람들은 고차함수 사용을 많이 하였다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="평균 구하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 평균 구하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 하샤드 수</title><link href="http://localhost:4000/algorithm/%ED%95%98%EC%83%A4%EB%93%9C%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 하샤드 수" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%95%98%EC%83%A4%EB%93%9C%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%95%98%EC%83%A4%EB%93%9C%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12947" target="_blank">하샤드 수</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>x는 1 이상, 10000 이하인 정수입니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>x</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>10의 모든 자릿수의 합은 1입니다. 10은 1로 나누어 떨어지므로 10은 하샤드 수입니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>12의 모든 자릿수의 합은 3입니다. 12는 3으로 나누어 떨어지므로 12는 하샤드 수입니다.</li>
+</ul>
+
+<h2 id="입출력-예-3">입출력 예 #3</h2>
+<ul>
+  <li>11의 모든 자릿수의 합은 2입니다. 11은 2로 나누어 떨어지지 않으므로 11는 하샤드 수가 아닙니다.</li>
+</ul>
+
+<h2 id="입출력-예-4">입출력 예 #4</h2>
+<ul>
+  <li>13의 모든 자릿수의 합은 4입니다. 13은 4로 나누어 떨어지지 않으므로 13은 하샤드 수가 아닙니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">num</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">var</span> <span class="nv">flag</span> <span class="o">=</span> <span class="kc">false</span> 
+    
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10000</span> <span class="p">{</span> 
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">num</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">!</span> 
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">sum</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="kc">true</span> 
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> 
+            <span class="n">flag</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">flag</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="kt">String</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">{</span><span class="nv">$0</span><span class="o">+</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$1</span><span class="p">))</span><span class="o">!</span><span class="p">})</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>고차함수..</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="하샤드 수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 하샤드 수]]></summary></entry></feed>

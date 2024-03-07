@@ -70,4 +70,250 @@ var store = [{
         "tags": ["swift","optional","Nil Coalescing"],
         "url": "/swift/optional/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 3진법 뒤집기",
+        "excerpt":"문제 설명 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 n은 1 이상 100,000,000 이하인 자연수입니다. 입출력 예 n return 45 7 125 229 입출력 예 #1 답을 도출하는 과정은 다음과 같습니다. n (10진법) n...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","3진법 뒤집기"],
+        "url": "/algorithm/3%EC%A7%84%EB%B2%95%EB%92%A4%EC%A7%91%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] x만큼 간격이 있는 n개의 숫자",
+        "excerpt":"문제 설명 함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요. x만큼 간격이 있는 n개의 숫자 문제 풀기 제한사항 x는 -10000000 이상, 10000000 이하인 정수입니다. n은 1000 이하인 자연수입니다. 입출력 예 x...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","x만큼 간격이 있는 n개의 숫자"],
+        "url": "/algorithm/x%EB%A7%8C%ED%81%BC%EA%B0%84%EA%B2%A9%EC%9D%B4%EC%9E%88%EB%8A%94n%EA%B0%9C%EC%9D%98%EC%88%AB%EC%9E%90/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 가운데 글자 가져오기",
+        "excerpt":"문제 설명 단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요. 단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다. 문제 풀기 제한사항 s는 길이가 1 이상, 100이하인 스트링입니다. 입출력 예 s return “abcde” “c” “qwer” “we” 나의 풀이 func solution(_ s:String) -&gt; String { var gubun: Bool = true var half:...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","가운데 글자 가져오기"],
+        "url": "/algorithm/%EA%B0%80%EC%9A%B4%EB%8D%B0%EA%B8%80%EC%9E%90%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 각도기",
+        "excerpt":"문제 설명 각에서 0도 초과 90도 미만은 예각, 90도는 직각, 90도 초과 180도 미만은 둔각 180도는 평각으로 분류합니다. 각 angle이 매개변수로 주어질 때 예각일 때 1, 직각일 때 2, 둔각일 때 3, 평각일 때 4를 return하도록 solution 함수를 완성해주세요. 예각 : 0 &lt; angle &lt; 90 직각 : angle =...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","각도기"],
+        "url": "/algorithm/%EA%B0%81%EB%8F%84%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 나누어 떨어지는 숫자 배열",
+        "excerpt":"문제 설명 array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요. divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요. 문제 풀기 제한사항 arr은 자연수를 담은 배열입니다. 정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다. divisor는 자연수입니다. array는 길이...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","나누어 떨어지는 숫자 배열"],
+        "url": "/algorithm/%EB%82%98%EB%88%84%EC%96%B4%EB%96%A8%EC%96%B4%EC%A7%80%EB%8A%94%EC%88%AB%EC%9E%90%EB%B0%B0%EC%97%B4/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 나머지가 1이 되는 수 찾기",
+        "excerpt":"문제 설명 자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다. 나머지가 1이 되는 수 찾기 문제 풀기 제한사항 3 ≤ n ≤ 1,000,000 입출력 예 n result 10 3 12 11 입출력...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","나머지가 1이 되는 수 찾기"],
+        "url": "/algorithm/%EB%82%98%EB%A8%B8%EC%A7%80%EA%B0%801%EC%9D%B4%EB%90%98%EB%8A%94%EC%88%98%EC%B0%BE%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 나이 출력",
+        "excerpt":"문제 설명 머쓱이는 40살인 선생님이 몇 년도에 태어났는지 궁금해졌습니다. 나이 age가 주어질 때, 2022년을 기준 출생 연도를 return 하는 solution 함수를 완성해주세요. 나이 출력 문제 풀기 제한사항 0 &lt; age ≤ 120 나이는 태어난 연도에 1살이며 1년마다 1씩 증가합니다. 입출력 예 age result 40 1983 23 2000 입출력 예 #1...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","나이 출력"],
+        "url": "/algorithm/%EB%82%98%EC%9D%B4%EC%B6%9C%EB%A0%A5/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 내적",
+        "excerpt":"문제 설명 길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요. 이때, a와 b의 내적은 a[0]b[0] + a[1]b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이) 문제 풀기 제한사항 a, b의 길이는 1 이상 1,000 이하입니다. a, b의 모든 수는...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","내적"],
+        "url": "/algorithm/%EB%82%B4%EC%A0%81/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 수의 곱",
+        "excerpt":"문제 설명 정수 num1, num2가 매개변수 주어집니다. num1과 num2를 곱한 값을 return 하도록 solution 함수를 완성해주세요. 두수의 곱 문제 풀기 제한사항 0 ≤ num1 ≤ 100 0 ≤ num2 ≤ 100 입출력 예 num1 num2 result 3 4 12 27 19 513 입출력 예 #1 num1이 3, num2가 4이므로 3...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두수의 곱"],
+        "url": "/algorithm/%EB%91%90%EC%88%98%EC%9D%98%EA%B3%B1/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 수의 나눗셈",
+        "excerpt":"문제 설명 정수 num1과 num2가 매개변수로 주어질 때, num1을 num2로 나눈 값에 1,000을 곱한 후 정수 부분을 return 하도록 soltuion 함수를 완성해주세요. 두 수의 나눗셈 문제 풀기 제한사항 0 ≤ num1 ≤ 100 0 ≤ num2 ≤ 100 입출력 예 num1 num2 result 3 2 1500 7 3 2333 1...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두수의 나눗셈"],
+        "url": "/algorithm/%EB%91%90%EC%88%98%EC%9D%98%EB%82%98%EB%88%97%EC%85%88/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 수의 차",
+        "excerpt":"문제 설명 정수 num1과 num2가 주어질 때, num1에서 num2를 뺀 값을 return하도록 soltuion 함수를 완성해주세요. 두수의 차 문제 풀기 제한사항 -50000 ≤ num1 ≤ 50000 -50000 ≤ num2 ≤ 50000 입출력 예 num1 num2 result 2 3 -1 100 2 98 입출력 예 #1 num1이 2이고 num2가 3이므로 2 -...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두수의 차"],
+        "url": "/algorithm/%EB%91%90%EC%88%98%EC%9D%98%EC%B0%A8/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 수의 합",
+        "excerpt":"문제 설명 정수 num1과 num2가 주어질 때, num1과 num2의 합을 return하도록 soltuion 함수를 완성해주세요. 두 수의 합 문제 풀기 제한사항 -50,000 ≤ num1 ≤ 50,000 -50,000 ≤ num2 ≤ 50,000 입출력 예 num1 num2 result 2 3 5 100 2 102 입출력 예 #1 num1이 2이고 num2가 3이므로 2 +...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두 수의 합"],
+        "url": "/algorithm/%EB%91%90%EC%88%98%EC%9D%98%ED%95%A9/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 정수 사이의 합",
+        "excerpt":"문제 설명 두 정수 a, b가 주어졌을 때 a와 b 사이에 속한 모든 정수의 합을 리턴하는 함수, solution을 완성하세요. 예를 들어 a = 3, b = 5인 경우, 3 + 4 + 5 = 12이므로 12를 리턴합니다. 두 정수 사이의 합 문제 풀기 제한사항 a와 b가 같은 경우는 둘 중...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두 정수 사이의 합"],
+        "url": "/algorithm/%EB%91%90%EC%A0%95%EC%88%98%EC%82%AC%EC%9D%B4%EC%9D%98%ED%95%A9/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 몫 구하기",
+        "excerpt":"문제 설명 정수 num1, num2가 매개변수로 주어질 때, num1을 num2로 나눈 몫을 return 하도록 solution 함수를 완성해주세요. 몫 구하기 문제 풀기 제한사항 0 &lt; num1 ≤ 100 0 &lt; num2 ≤ 100 입출력 예 num1 num2 result 10 5 2 7 2 3 입출력 예 #1 num1이 10, num2가 5이므로...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","몫 구하기"],
+        "url": "/algorithm/%EB%AA%AB%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 문자열 내림차순으로 배치하기",
+        "excerpt":"문제 설명 문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요. s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다. 문제 풀기 제한사항 str은 길이 1 이상인 문자열입니다. 입출력 예 s return “Zbcdefg” “gfedcbZ” 나의 풀이 func solution(_ s:String) -&gt; String { var str:...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","문자열 내림차순으로 배치하기"],
+        "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 문자열 다루기 기본",
+        "excerpt":"문제 설명 문자열 s의 길이가 4 혹은 6이고, 숫자로만 구성돼있는지 확인해주는 함수, solution을 완성하세요. 예를 들어 s가 “a234”이면 False를 리턴하고 “1234”라면 True를 리턴하면 됩니다. 문제 풀기 제한사항 s는 길이 1 이상, 길이 8 이하인 문자열입니다. s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져 있습니다. 입출력 예 s return “a234”...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","문자열 다루기 기본"],
+        "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%8B%A4%EB%A3%A8%EA%B8%B0%EA%B8%B0%EB%B3%B8/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 문자열을 정수로 바꾸기",
+        "excerpt":"문제 설명 문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요. 문자열을 정수로 바꾸기 문제 풀기 제한사항 s의 길이는 1 이상 5이하입니다. s의 맨앞에는 부호(+, -)가 올 수 있습니다. s는 부호와 숫자로만 이루어져있습니다. s는 “0”으로 시작하지 않습니다. 입출력 예 예를들어 str이 “1234”이면 1234를 반환하고, “-1234”이면 -1234를 반환하면 됩니다. str은 부호(+,-)와...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","문자열을 정수로 바꾸기"],
+        "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%EC%A0%95%EC%88%98%EB%A1%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 배열의 평균값",
+        "excerpt":"문제 설명 정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록 solution 함수를 완성해주세요. 배열의 평균값 제한사항 0 ≤ numbers의 원소 ≤ 1,000 1 ≤ numbers의 길이 ≤ 100 정답의 소수 부분이 .0 또는 .5인 경우만 입력으로 주어집니다. 입출력 예 numbers result [1, 2, 3, 4, 5, 6, 7, 8,...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","배열의 평균값"],
+        "url": "/algorithm/%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%8F%89%EA%B7%A0%EA%B0%92/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 부족한 금액 계산하기",
+        "excerpt":"문제 설명 새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를 받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다. 놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","부족한 금액 계산하기"],
+        "url": "/algorithm/%EB%B6%80%EC%A1%B1%ED%95%9C%EA%B8%88%EC%95%A1%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 서울에서 김서방 찾기",
+        "excerpt":"문제 설명 String형 배열 seoul의 element중 “Kim”의 위치 x를 찾아, “김서방은 x에 있다”는 String을 반환하는 함수, solution을 완성하세요. seoul에 “Kim”은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다. 문제 풀기 제한사항 seoul은 길이 1 이상, 1000 이하인 배열입니다. seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다. “Kim”은 반드시 seoul...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","서울에서 김서방 찾기"],
+        "url": "/algorithm/%EC%84%9C%EC%9A%B8%EC%97%90%EC%84%9C%EA%B9%80%EC%84%9C%EB%B0%A9%EC%B0%BE%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 수박수박수박수박수박수?",
+        "excerpt":"문제 설명 길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다. 문제 풀기 제한사항 n은 길이 10,000이하인 자연수입니다. 입출력 예 n result 3 “수박수” 4 “수박수박” 나의 풀이 func solution(_ n:Int) -&gt; String { var str: String = \"\"...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","수박수박수박수박수박수?"],
+        "url": "/algorithm/%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 숫자 비교하기",
+        "excerpt":"문제 설명 정수 num1과 num2가 매개변수로 주어집니다. 두 수가 같으면 1 다르면 -1을 retrun하도록 solution 함수를 완성해주세요. 숫자 비교하기 문제 풀기 제한사항 0 ≤ num1 ≤ 10,000 0 ≤ num2 ≤ 10,000 입출력 예 num1 num2 result 2 3 -1 11 11 1 7 99 -1 입출력 예 #1 num1이...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","숫자 비교하기"],
+        "url": "/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 약수의 개수와 덧셈",
+        "excerpt":"문제 설명 두 정수 left와 right가 매개변수로 주어집니다. left부터 right까지의 모든 수들 중에서, 약수의 개수가 짝수인 수는 더하고, 약수의 개수가 홀수인 수는 뺀 수를 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 1 ≤ left ≤ right ≤ 1,000 입출력 예 left right result 13 17 43 24 27 52...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","약수의 개수와 덧셈"],
+        "url": "/algorithm/%EC%95%BD%EC%88%98%EC%9D%98%EA%B0%9C%EC%88%98%EC%99%80%EB%8D%A7%EC%85%88/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 약수의 합",
+        "excerpt":"문제 설명 정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요. 약수의 합 문제 풀기 제한사항 n은 0 이상 3000이하인 정수입니다. 입출력 예 n result 12 28 5 6 입출력 예 #1 12의 약수는 1, 2, 3, 4, 6, 12입니다. 이를 모두 더하면 28입니다. 입출력 예 #2...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","약수의 합"],
+        "url": "/algorithm/%EC%95%BD%EC%88%98%EC%9D%98%ED%95%A9/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 없는 숫자 더하기",
+        "excerpt":"문제 설명 0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 1 ≤ numbers의 길이 ≤ 9 0 ≤ numbers의 모든 원소 ≤ 9 numbers의 모든 원소는 서로 다릅니다....","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","없는 숫자 더하기"],
+        "url": "/algorithm/%EC%97%86%EB%8A%94%EC%88%AB%EC%9E%90%EB%8D%94%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 음양 더하기",
+        "excerpt":"문제 설명 어떤 정수들이 있습니다. 이 정수들의 절댓값을 차례대로 담은 정수 배열 absolutes와 이 정수들의 부호를 차례대로 담은 불리언 배열 signs가 매개변수로 주어집니다. 실제 정수들의 합을 구하여 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 absolutes의 길이는 1 이상 1,000 이하입니다. absolutes의 모든 수는 각각 1 이상 1,000 이하입니다. signs의...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","음양 더하기"],
+        "url": "/algorithm/%EC%9D%8C%EC%96%91%EB%8D%94%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 이상한 문자 만들기",
+        "excerpt":"문제 설명 문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요. 문제 풀기 제한사항 문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다. 첫 번째 글자는 0번째 인덱스로 보아...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","이상한 문자 만들기"],
+        "url": "/algorithm/%EC%9D%B4%EC%83%81%ED%95%9C%EB%AC%B8%EC%9E%90%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 자릿수 더하기",
+        "excerpt":"문제 설명 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요. 예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다. 자릿수 더하기 문제 풀기 제한사항 N의 범위 : 100,000,000 이하의 자연수 입출력 예 N answer 123 6 987 24 입출력...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","자릿수 더하기"],
+        "url": "/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 자연수 뒤집어 배열로 만들기",
+        "excerpt":"문제 설명 자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다. 자연수 뒤집어 배열로 만들기 제한사항 n은 10,000,000,000이하인 자연수입니다. 입출력 예 n answer 12345 [5,4,3,2,1] 나의 풀이 func solution(_ n:Int64) -&gt; [Int] { var str: String = String(n) var arr: [Int] = []...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","자연수 뒤집어 배열로 만들기"],
+        "url": "/algorithm/%EC%9E%90%EC%97%B0%EC%88%98%EB%92%A4%EC%A7%91%EC%96%B4%EB%B0%B0%EC%97%B4%EB%A1%9C%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 정수 내림차순으로 배치하기",
+        "excerpt":"문제 설명 함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다. 정수 내림차순으로 배치하기 문제 풀기 제한사항 n은 1이상 8000000000 이하인 자연수입니다. 입출력 예 n result 118372 873211 나의 풀이 func solution(_ n:Int64) -&gt; Int64 { var...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","정수 내림차순으로 배치하기"],
+        "url": "/algorithm/%EC%A0%95%EC%88%98%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C%EC%9C%BC%EB%A1%9C%EB%B0%B0%EC%B9%98%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 정수 제곱근 판별",
+        "excerpt":"문제 설명 임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다. n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요. 정수 제곱근 판별 문제 풀기 제한사항 n은 1이상, 50000000000000 이하인 양의 정수입니다. 입출력 예 n result...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","정수 제곱근 판별"],
+        "url": "/algorithm/%EC%A0%95%EC%88%98%EC%A0%9C%EA%B3%B1%EA%B7%BC%ED%8C%90%EB%B3%84/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 제일 작은 수 제거하기",
+        "excerpt":"문제 설명 정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다. 문제 풀기 제한사항 arr은 길이 1 이상인 배열입니다. 인덱스 i, j에 대해 i...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","제일 작은 수 제거하기"],
+        "url": "/algorithm/%EC%A0%9C%EC%9D%BC%EC%9E%91%EC%9D%80%EC%88%98%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 직사각형 별찍기",
+        "excerpt":"문제 설명 이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다. 별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요. 문제 풀기 제한사항 n과 m은 각각 1000 이하인 자연수입니다. 입출력 예 //입력 5 3 //출력 ***** ***** ***** 나의 풀이 import Foundation var str: String =...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","직사각형 별찍기"],
+        "url": "/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 짝수와 홀수",
+        "excerpt":"문제 설명 정수 num이 짝수일 경우 “Even”을 반환하고 홀수인 경우 “Odd”를 반환하는 함수, solution을 완성해주세요. 짝수와 홀수 제한사항 0 &lt; n ≤ 1000 입출력 예 num return 3 “Odd” 4 “Even” 나의 풀이 func solution(_ num:Int) -&gt; String { if num % 2 == 0 { return \"Even\" } else...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","짝수와 홀수"],
+        "url": "/algorithm/%EC%A7%9D%EC%88%98%EC%99%80%ED%99%80%EC%88%98/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 짝수의 합",
+        "excerpt":"문제 설명 정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요. 짝수의 합 문제 풀기 제한사항 0 &lt; n ≤ 1000 입출력 예 num1 num2 10 30 4 6 입출력 예 #1 n이 10이므로 2 + 4 + 6 + 8 + 10 = 30을...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","짝수의 합"],
+        "url": "/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 최대공약수와 최소공배수",
+        "excerpt":"문제 설명 두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다. 예를 들어 두 수 3, 12의 최대공약수는 3, 최소공배수는 12이므로 solution(3, 12)는 [3, 12]를 반환해야 합니다. 문제 풀기 제한사항 두 수는 1이상 1000000이하의 자연수입니다. 입출력 예 n...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","최대공약수와 최소공배수"],
+        "url": "/algorithm/%EC%B5%9C%EB%8C%80%EA%B3%B5%EC%95%BD%EC%88%98%EC%99%80%EC%B5%9C%EC%86%8C%EA%B3%B5%EB%B0%B0%EC%88%98/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 콜라츠 추측",
+        "excerpt":"문제 설명 1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과 같습니다. 1-1. 입력된 수가 짝수라면 2로 나눕니다. 1-2. 입력된 수가 홀수라면 3을 곱하고 1을 더합니다. 결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다....","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","콜라츠 추측"],
+        "url": "/algorithm/%EC%BD%9C%EB%9D%BC%EC%B8%A0%EC%B6%94%EC%B8%A1/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 평균 구하기",
+        "excerpt":"문제 설명 정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요. 평균 구하기 문제 풀기 제한사항 arr은 길이 1 이상, 100 이하인 배열입니다. arr의 원소는 -10,000 이상 10,000 이하인 정수입니다. 입출력 예 arr return [1,2,3,4] 2.5 [5,5] 5 나의 풀이 func solution(_ arr:[Int]) -&gt; Double { var sum: Int...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","평균 구하기"],
+        "url": "/algorithm/%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 하샤드 수",
+        "excerpt":"문제 설명 양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요. 하샤드 수 제한사항 x는 1 이상, 10000 이하인 정수입니다. 입출력 예 x return...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","하샤드 수"],
+        "url": "/algorithm/%ED%95%98%EC%83%A4%EB%93%9C%EC%88%98/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 핸드폰 번호 가리기",
+        "excerpt":"문제 설명 프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다. 전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요. 문제 풀기 제한사항 phone_number는 길이 4 이상, 20이하인 문자열입니다. 입출력 예 phone_number return “01033334444” “***4444” “027778888” “*****8888”...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","핸드폰 번호 가리기"],
+        "url": "/algorithm/%ED%95%B8%EB%93%9C%ED%8F%B0%EB%B2%88%ED%98%B8%EA%B0%80%EB%A6%AC%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 행렬의 덧셈",
+        "excerpt":"문제 설명 행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요. 문제 풀기 제한사항 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다. 입출력 예 arr1 arr2 return [[1,2],[2,3]] [[3,4],[5,6]]...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","행렬의 덧셈"],
+        "url": "/algorithm/%ED%96%89%EB%A0%AC%EC%9D%98%EB%8D%A7%EC%85%88/",
+        "teaser": null
       }]
