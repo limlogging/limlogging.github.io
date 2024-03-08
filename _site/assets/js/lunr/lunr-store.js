@@ -47,18 +47,6 @@ var store = [{
         "url": "/TIL/til6/",
         "teaser": null
       },{
-        "title": "[TIL] 내배캠 iOS앱 개발 공부 7일차",
-        "excerpt":"데일리 스크럼 알고리즘 오늘의 데일리 스크럼을 작성하고 오늘의 알고리즘 문제를 바로 풀었는데…. 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요. n (10진법) n (3진법) 앞뒤 반전(3진법) 10진법으로 표현 45 1200 0021 7 125 11122 22111 229 앞뒤 반전(3진법)에서...","categories": ["TIL"],
-        "tags": ["TIL"],
-        "url": "/TIL/til7/",
-        "teaser": null
-      },{
-        "title": "[TIL] 내배캠 iOS앱 개발 공부 8일차",
-        "excerpt":"데일리 스크럼 알고리즘 오늘 오전에는 그동안 아침에 풀었던 알고리즘 문제와 나의 풀이, 다른사람의 풀이를 정리해서 포스팅했다. 내가 했던 풀이 다시 보면서 다른 사람들 풀이를 다시 보는데 너무 짧고 쉽게 푼 사람들이 많더라 공부 시급 😭 협업 관련 Git &amp; Github으로 협업하는 법 특강을 들었다. 블로그 때문에 git add. / git...","categories": ["TIL"],
-        "tags": ["TIL"],
-        "url": "/TIL/til8/",
-        "teaser": null
-      },{
         "title": "[Swift] 변수와 상수 ",
         "excerpt":"변수와 상수 변수나 상수를 이용하여 프로그램에서 사용되는 데이터를 메모리에 저장합니다. let a: Int = 1 let b: Int = 2 변수 생성 후 데이터 변경 가능합니다. var 변수명: 데이터 타입 = 값 var myMoney: Int = 10000 //현재 내 돈 만원 myMoney = 20000 // 알고보니 이만원, 이만원으로 수정 상수...","categories": ["swift"],
         "tags": ["swift","variable","constant"],
@@ -75,6 +63,12 @@ var store = [{
         "excerpt":"옵셔널? Swift에서 옵셔널(Optional)은 값이 있을 수도 있고 없을 수도 있는 값을 나타내는 형식입니다. 변수 또는 상수에 값을 갖지 않을 수 있는 경우에 사용합니다. nil? Swift에서 값이 없으면 nil로 나타냅니다. “” 같은 빈 문자열과 다름 옵셔널 사용 물음표로 나타냅니다. var num1: Int? = 1 //? 사용하여 축약 타입 표현 var num2:...","categories": ["swift"],
         "tags": ["swift","optional","Nil Coalescing"],
         "url": "/swift/optional/",
+        "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 7일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘의 데일리 스크럼을 작성하고 오늘의 알고리즘 문제를 바로 풀었는데…. 자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요. n (10진법) n (3진법) 앞뒤 반전(3진법) 10진법으로 표현 45 1200 0021 7 125 11122 22111 229 앞뒤 반전(3진법)에서...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til7/",
         "teaser": null
       },{
         "title": "[프로그래머스/Swift] 3진법 뒤집기",
@@ -323,6 +317,12 @@ var store = [{
         "url": "/algorithm/%ED%96%89%EB%A0%AC%EC%9D%98%EB%8D%A7%EC%85%88/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 8일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘 오전에는 그동안 아침에 풀었던 알고리즘 문제와 나의 풀이, 다른사람의 풀이를 정리해서 포스팅했다. 내가 했던 풀이 다시 보면서 다른 사람들 풀이를 다시 보는데 너무 짧고 쉽게 푼 사람들이 많더라 공부 시급 😭 협업 관련 Git &amp; Github으로 협업하는 법 특강을 들었다. 블로그 때문에 git add. / git...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til8/",
+        "teaser": null
+      },{
         "title": "[프로그래머스/Swift] 삼총사",
         "excerpt":"문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로...","categories": ["Algorithm"],
         "tags": ["Algorithm","coding test","삼총사"],
@@ -333,5 +333,11 @@ var store = [{
         "excerpt":"깃허브 블로그는 댓글, 포스팅 개수, 조회수까지 하나씩 등록해줘야하는데요. 이번에는 많은 깃허브 블로그에서 사용하는 Hits를 추가했습니다. hits에서 새로고침이 되었는지 알려주는 API를 제공합니다. 1. hits API 커스터마이징 hits에서는 기본 badge를 변경할 수 없어 https://hits.seeyoufarm.com/에 접속하셔서 TARGET URL을 입력하시고 원하는 색상 등 옵션을 선택합니다. 저는 색상만 통일했습니다. 2. HTML Link 복사하기 3. 메인...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog","hits","조회수"],
         "url": "/GitHubBlog/hits/",
+        "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 9일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘 알고리즘은 for문을 3번 중첩하여 조금은 빨리 풀었다. 다른 사람도 풀이가 비슷했는데 반복 범위가 달라서 해당 부분은 고민해볼 수 있었다. 블로그 조회수 추가 (새로고침 추가) 화요일 저녁에 팀원 블로그 댓글 남기기 미션이 있어 화요일 오전에 댓글 기능을 급하게 추가하고 그 뒤로 포스팅 수 추가까지 했다. 오늘은 조회수...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til9/",
         "teaser": null
       }]
