@@ -322,4 +322,10 @@ var store = [{
         "tags": ["Algorithm","coding test","행렬의 덧셈"],
         "url": "/algorithm/%ED%96%89%EB%A0%AC%EC%9D%98%EB%8D%A7%EC%85%88/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 삼총사",
+        "excerpt":"문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","삼총사"],
+        "url": "/algorithm/%EC%82%BC%EC%B4%9D%EC%82%AC/",
+        "teaser": null
       }]

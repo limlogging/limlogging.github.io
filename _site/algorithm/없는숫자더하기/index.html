@@ -351,7 +351,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/Algorithm/">알고리즘 문제(41)</a></li>
+            <li><a href="/categories/Algorithm/">알고리즘 문제(42)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -415,7 +415,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -506,19 +506,14 @@
 <span class="p">}</span>
 </code></pre></div></div>
 <h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">num1</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">,</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">num2</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="p">}</span>
-    <span class="k">return</span>  <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span> 
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">numbers</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="o">!</span><span class="n">numbers</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h1 id="의견">의견</h1>
 <ul>
-  <li>제한사항이 있으나 없어도 통과는 되었다. 다른 사람도 대부분 제한사항이 없었으나 추가한 사람이 있어 비교해보았다. 우선 제한사항 없이 풀어볼 예정</li>
+  <li>1~28번까지 문제 풀면서 고차함수를 사용하면 짧게 풀 수 있는걸 알았다…</li>
 </ul>
 
         
@@ -604,6 +599,46 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%82%BC%EC%B4%9D%EC%82%AC/" rel="permalink">[프로그래머스/Swift] 삼총사
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 삼총사
+</p>
+  </article>
+</div>
+
         
           
 
@@ -720,46 +755,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 하샤드 수
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%ED%8F%89%EA%B7%A0-%EA%B5%AC%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 평균 구하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 평균 구하기
 </p>
   </article>
 </div>
