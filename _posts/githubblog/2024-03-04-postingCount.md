@@ -1,6 +1,6 @@
 ---
-title: "카테고리 옆 posting Count 추가하기 (minimal-mistakes)"
-excerpt: "카테고리 옆 posting Count 추가하는 방법입니다."
+title: "[minimal-mistakes]카테고리 옆 posting Count 추가하기"
+excerpt: "[minimal-mistakes]카테고리 옆 posting Count 추가하는 방법입니다."
 categories: GitHubBlog
 tags: [GitHub, blog, GitHub blog, Posting Count]
 

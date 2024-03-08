@@ -23,7 +23,7 @@ var store = [{
         "url": "/GitHubBlog/start2/",
         "teaser": null
       },{
-        "title": "카테고리 옆 posting Count 추가하기 (minimal-mistakes)",
+        "title": "[minimal-mistakes]카테고리 옆 posting Count 추가하기",
         "excerpt":"Posting Count 추가하기 우여곡절 끝에 카테고리를 만들고 TEST 게시물을 작성하였는데요. 뭔가 허전해보여 생각했더니 Posting Count가 없었습니다. 1. navigation.yml 수정하기 children 하위에 category 항목을 추가합니다. categories: - title: \"iOS\" children: - title: \"Swift\" url: /categories/swift/ category: \"Swift\" - title: \"SwiftUI\" url: /categories/swiftui/ category: \"SwiftUI\" - title: \"git\" children: - title: \"Git\"...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog","Posting Count"],
         "url": "/GitHubBlog/postingCount/",
@@ -35,7 +35,7 @@ var store = [{
         "url": "/sparta/firstProjectKPT/",
         "teaser": null
       },{
-        "title": "GitHub utterances 댓글 기능 추가하기 (minimal-mistakes)",
+        "title": "[minimal-mistakes]GitHub utterances 댓글 기능 추가하기 ",
         "excerpt":"utteranc.es는 GitHub의 Issue를 기반으로 한 댓글 시스템입니다. GitHub 저장소의 Issue에 댓글을 추가하여 웹사이트나 블로그 등에 댓글 시스템을 쉽게 추가할 수 있습니다. 이를 통해 사용자는 GitHub 계정을 통해 댓글을 작성하고 관리할 수 있습니다. Utterances는 정적 웹사이트를 호스팅하는 데 매우 인기가 있으며, GitHub Issue를 사용하여 댓글을 저장하므로 데이터 손실없이 무료로 사용할 수...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog","utterances","Comments"],
         "url": "/GitHubBlog/comments/",
@@ -327,5 +327,11 @@ var store = [{
         "excerpt":"문제 설명 한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다. 이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다. 예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때, 첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로...","categories": ["Algorithm"],
         "tags": ["Algorithm","coding test","삼총사"],
         "url": "/algorithm/%EC%82%BC%EC%B4%9D%EC%82%AC/",
+        "teaser": null
+      },{
+        "title": "[minimal-mistakes]조회수 추가하기 ",
+        "excerpt":"깃허브 블로그는 댓글, 포스팅 개수, 조회수까지 하나씩 등록해줘야하는데요. 이번에는 많은 깃허브 블로그에서 사용하는 Hits를 추가했습니다. hits에서 새로고침이 되었는지 알려주는 API를 제공합니다. 1. hits API 커스터마이징 hits에서는 기본 badge를 변경할 수 없어 https://hits.seeyoufarm.com/에 접속하셔서 TARGET URL을 입력하시고 원하는 색상 등 옵션을 선택합니다. 저는 색상만 통일했습니다. 2. HTML Link 복사하기 3. 메인...","categories": ["GitHubBlog"],
+        "tags": ["GitHub","blog","GitHub blog","hits","조회수"],
+        "url": "/GitHubBlog/hits/",
         "teaser": null
       }]
