@@ -346,4 +346,10 @@ var store = [{
         "tags": ["Algorithm","coding test","크기가 작은 부분 문자열"],
         "url": "/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 10일차",
+        "excerpt":"데일리 스크럼 알고리즘 주말에 야곰님 책으로 클로저와 고차함수 공부를 했다. 오늘 오전에 알고리즘 문제에 응용할 수 있을지 고민했는데 사용하지 못했다. 다른 사람 풀이를 보니 Swift가 제공하는 문자열 함수를 사용하여 풀었더라. 조금씩 함수형 프로그래밍을 생각하며 익숙해져야겠다. 깃 허브 강의 다시 듣기 브랜치 생성, 목록 보기, 이동, 명령어를 통한 합치기, Github에서 합치기...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til10/",
+        "teaser": null
       }]

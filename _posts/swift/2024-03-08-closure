@@ -14,31 +14,44 @@ comments: true      #댓글
 ---
 
 # 클로저란? 
-- 일정 기능을 하는 코드를 하나의 블록으로 모아놓은 것을 말합니다. = 함수입니다. 
+- 일정 기능을 하는 코드를 하나의 블록으로 모아놓은 것을 말합니다. = 이름 없는 함수입니다. 
 - 함수는 클로저의 한 형태입니다. 
 
 ```swift
-//함수의 정의 
+//함수의 형태
 func nameFunction(str: String) -> String {
     return "Hello, \(str)"
 }
 print(nameFunction(str: "imhs"))   //출력: Hello, imhs
 
-// nameFunction을 클로저의 형태로 변경하면 아래와 같습니다. 
-// name 변수에 함수를 담을 수 있습니다. 
+//클로저의 형태 (nameFunction 함수를 클로저로 변경) 
+//name 변수에 함수를 담을 수 있음 
 var name = {(str: String) -> String in
     return "Hello, \(str)"
 }
 print(name("imhs")) //출력: Hello, imhs
 ```
+
+``` swift 
+//클로저의 형태
+{ (<#parameters#>) -> <#return type#> in
+    <#statements#>
+}
+```
+
 - 클로저는 변수나 상수가 선언된 위치에서 참조를 획득하고 저장할 수 있습니다. 이를 변수나 상수의 클로징(잠금)이라고 하며 클로저는 여기서 착안된 이름입니다. 
 ![](/assets/images/categories/swift/2024-03-08-closure.png)
+
+- 값(value) 캡처: 클로저가 변수나 상수의 값을 캡처합니다. 이때, 클로저 내부에서 캡처한 값이 변경되어도 원본 값은 변경되지 않습니다.
+- 참조(reference) 캡처: 클로저가 변수나 상수의 참조를 캡처합니다. 따라서 클로저 내에서 해당 변수나 상수를 변경하면 원본 값도 변경됩니다.
 
 # 클로저는 일급 객체 (First-class object)  
 1급 객체란 다음 세 가지 조건을 만족하는 객체를 가리킵니다. 
 1. 변수나 데이터 구조 안에 담을 수 있어야 합니다.
 2. 파라미터로 전달할 수 있어야 합니다. 
 3. 함수에서 반환값으로 사용할 수 있어야 합니다.  
+
+> 함수는 타입이고 중괄호는 클로저(함수)다! 
 
 ```swift 
 //1. 변수에 할당 
@@ -67,8 +80,31 @@ greetingFunction() // "Hello!"를 출력합니다.
 let closure = { (name: String) -> String in 
     return "Hello \(name)"
 }
-//컴파일러가 타입 추론 가능한 경우 생략 가능 
+print(closure("철수")) //출력: Hello 철수 
+
+//컴파일러가 타입 추론 가능한 경우 리턴형에 대한 표기를 생략 가능 
+//Hello + 이름으로 문자열로 리턴하기 때문에 타입 추론 가능하여 String 생략 
 let closure = { (name: String) in 
     return "Hello \(name)"
 }
+print(closure("철수")) //출력: Hello 철수 
+
+// 컴파일러가 타입 추론 가능한 경우 생략 가능
+let closure = { name in
+    return "Hello ~ " + name
+}
+print(closure("철수"))  //출력: Hello ~ 철수
+
+//void 생략
+//let closure = { () -> () in
+let closure {}
+    print("Hello 클로저")
+}
+closure()   //출력: Hello 클로저
 ```
+
+ # 문법 최적화(간소화)
+ - 1) 문맥상에서 파라미터와 리턴밸류 타입 추론(Type Inference)
+ - 2) 싱글 익스프레션인 경우(한줄), 리턴을 안 적어도 됨(Implicit Return)
+ - 3) 아규먼트 이름을 축약(Shorthand Argements) ===> $0, $1
+ - 4) 트레일링 클로저 문법: 함수의 마지막 전달 인자(아규먼트)로 클로저 전달되는 경우, 소괄호를 생략 가능
