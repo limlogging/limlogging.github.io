@@ -64,6 +64,10 @@ greetingFunction() // "Hello!"를 출력합니다.
 
 # 클로저의 형태 
 ```swift
+let closure = { (name: String) -> String in 
+    return "Hello \(name)"
+}
+//컴파일러가 타입 추론 가능한 경우 생략 가능 
 let closure = { (name: String) in 
     return "Hello \(name)"
 }
