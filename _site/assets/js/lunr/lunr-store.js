@@ -352,4 +352,10 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til10/",
         "teaser": null
+      },{
+        "title": "[Swift] 클로저(Closure)",
+        "excerpt":"1. 클로저란? 일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다. 함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.) 클로저는 변수나 상수가 선언된 위치에서 참조를 획득하고 저장할 수 있습니다. 이를 변수나 상수의 클로징(잠금)이라고 하며 클로저는 여기서 착안된 이름입니다. 2. 클로저는 일급 객체 (First-class object) 1급 객체란 다음 세 가지 조건을 만족하는...","categories": ["swift"],
+        "tags": ["swift","Closure"],
+        "url": "/swift/closure/",
+        "teaser": null
       }]

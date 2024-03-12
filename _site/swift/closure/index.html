@@ -1,0 +1,1135 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Swift] 클로저(Closure) - limlogging Devlog</title>
+<meta name="description" content="클로저(Closure)는 함수">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[Swift] 클로저(Closure)">
+<meta property="og:url" content="http://localhost:4000/swift/closure/">
+
+
+  <meta property="og:description" content="클로저(Closure)는 함수">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-03-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/swift/closure/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(4)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swiftui/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swiftui/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(43)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(3)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Swift] 클로저(Closure)">
+    <meta itemprop="description" content="클로저(Closure)는 함수">
+    <meta itemprop="datePublished" content="2024-03-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/swift/closure/" class="u-url" itemprop="url">[Swift] 클로저(Closure)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/swift/closure/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/swift/closure/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-클로저란">1. 클로저란?</a></li><li><a href="#2-클로저는-일급-객체-first-class-object">2. 클로저는 일급 객체 (First-class object)</a></li><li><a href="#3-클로저-사용-이유">3. 클로저 사용 이유</a></li><li><a href="#4-클로저의-형태">4. 클로저의 형태</a><ul><li><a href="#클로저-형태-예시">클로저 형태 예시</a></li></ul></li><li><a href="#5-함수를-클로저로-변경">5. 함수를 클로저로 변경</a></li><li><a href="#6-문법-최적화간소화">6. 문법 최적화(간소화)</a><ul><li><a href="#타입-추론type-inference">타입 추론(Type Inference)</a></li><li><a href="#싱글-익스프레션인-경우한줄-리턴을-생략-가능-implicit-return">싱글 익스프레션인 경우(한줄), 리턴을 생략 가능 (Implicit Return)</a></li><li><a href="#아규먼트-이름-축약shorthand-argements">아규먼트 이름 축약(Shorthand Argements)</a></li><li><a href="#트레일링trailing-클로저-문법후행-클로저-문법">트레일링(Trailing) 클로저 문법(후행 클로저 문법)</a><ul><li><a href="#트레일링-클로저-예시">트레일링 클로저 예시</a></li></ul></li></ul></li><li><a href="#7-캡처-현상">7. 캡처 현상</a><ul><li><a href="#값value-캡처">값(value) 캡처</a></li><li><a href="#참조reference-캡처">참조(reference) 캡처</a></li></ul></li><li><a href="#8-탈출escaping-클로저">8. 탈출(escaping) 클로저</a><ul><li><a href="#순차적-실행">순차적 실행</a></li><li><a href="#비동기-실행">비동기 실행</a></li><li><a href="#탈출-클로저escaping-closure">탈출 클로저(escaping closure)</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="1-클로저란">1. 클로저란?</h1>
+<ul>
+  <li>일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다.</li>
+  <li>함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.)</li>
+  <li>클로저는 변수나 상수가 선언된 위치에서 참조를 획득하고 저장할 수 있습니다. 이를 변수나 상수의 클로징(잠금)이라고 하며 클로저는 여기서 착안된 이름입니다. 
+<img src="/assets/images/categories/swift/2024-03-08-closure.png" alt="" /></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="2-클로저는-일급-객체-first-class-object">2. 클로저는 일급 객체 (First-class object)</h1>
+<p>1급 객체란 다음 세 가지 조건을 만족하는 객체를 가리킵니다.</p>
+<ol>
+  <li>변수나 데이터 구조 안에 담을 수 있어야 합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sayHello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+ <span class="nf">print</span><span class="p">(</span><span class="s">"Hello!"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//변수에 할당 </span>
+<span class="k">let</span> <span class="nv">myFunction</span> <span class="o">=</span> <span class="n">sayHello</span>
+<span class="nf">myFunction</span><span class="p">()</span> <span class="c1">// "Hello!"를 출력합니다.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>파라미터로 전달할 수 있어야 합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sayHello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+ <span class="nf">print</span><span class="p">(</span><span class="s">"Hello!"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">performAction</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nf">action</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//다른 함수의 인자로 전달</span>
+<span class="nf">performAction</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="n">sayHello</span><span class="p">)</span> <span class="c1">// "Hello!"를 출력합니다.</span>
+</code></pre></div>    </div>
+  </li>
+  <li>함수에서 반환값으로 사용할 수 있어야 합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sayHello</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+ <span class="nf">print</span><span class="p">(</span><span class="s">"Hello!"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">createGreetingFunction</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+ <span class="c1">//함수의 반환값으로 사용</span>
+ <span class="k">return</span> <span class="n">sayHello</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">greetingFunction</span> <span class="o">=</span> <span class="nf">createGreetingFunction</span><span class="p">()</span>
+<span class="nf">greetingFunction</span><span class="p">()</span> <span class="c1">// "Hello!"를 출력합니다.</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="3-클로저-사용-이유">3. 클로저 사용 이유</h1>
+<ol>
+  <li>코드 간결성
+    <ul>
+      <li>클로저를 사용하면 간단한 작업을 짧은 문법으로 처리할 수 있습니다. 특히 함수형 프로그래밍 스타일을 채택한 경우에는 더욱 간결한 코드를 작성할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>유연성
+    <ul>
+      <li>클로저를 사용하면 함수를 변수나 상수에 할당하거나, 함수의 인자로 전달할 수 있습니다. 이는 함수를 다른 함수의 인자로 전달하거나 함수를 반환하는 고차 함수를 구현하는 데 유용합니다.</li>
+    </ul>
+  </li>
+  <li>캡처링
+    <ul>
+      <li>클로저는 자신을 둘러싼 범위에 있는 변수나 상수를 캡처할 수 있습니다. 이는 클로저가 생성된 시점의 상태를 유지하거나 변경할 수 있게 해줍니다.</li>
+    </ul>
+  </li>
+  <li>비동기 작업
+    <ul>
+      <li>비동기 작업을 처리할 때 클로저를 사용하면 코드를 간결하게 작성할 수 있습니다. 주로 Grand Central Dispatch (GCD)나 Operation Queue와 함께 사용되어 비동기 작업을 처리합니다.</li>
+    </ul>
+  </li>
+  <li>콜백 함수
+    <ul>
+      <li>주로 이벤트 처리나 네트워크 요청과 같은 비동기 작업에서 콜백 함수로 활용됩니다. 클로저를 사용하여 이러한 작업을 처리하면 코드의 일관성을 유지하면서도 비동기적인 작업을 처리할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>컬렉션의 변형
+    <ul>
+      <li>Swift에서는 클로저를 사용하여 배열이나 딕셔너리 등의 컬렉션을 변형하는 메서드에 전달할 수 있습니다. 이를 통해 컬렉션을 필터링, 매핑, 정렬하는 등의 작업을 수행할 수 있습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="4-클로저의-형태">4. 클로저의 형태</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//클로저의 형태</span>
+<span class="p">{</span> <span class="p">(</span><span class="o">&lt;</span><span class="k">#parameters</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="o">&lt;</span><span class="k">#return</span> <span class="n">type</span><span class="err">#</span><span class="o">&gt;</span> <span class="k">in</span>
+    <span class="o">&lt;</span><span class="k">#statements</span><span class="err">#</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="클로저-형태-예시">클로저 형태 예시</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">closure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span> 
+    <span class="k">return</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">closure</span><span class="p">(</span><span class="s">"철수"</span><span class="p">))</span> <span class="c1">//출력: Hello 철수 </span>
+
+<span class="c1">//컴파일러가 타입 추론 가능한 경우 리턴형에 대한 표기를 생략 가능 </span>
+<span class="c1">//Hello + 이름으로 문자열로 리턴하기 때문에 타입 추론 가능하여 String 생략 </span>
+<span class="k">let</span> <span class="nv">closure</span> <span class="o">=</span> <span class="p">{</span> <span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="k">return</span> <span class="s">"Hello </span><span class="se">\(</span><span class="n">name</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">closure</span><span class="p">(</span><span class="s">"철수"</span><span class="p">))</span> <span class="c1">//출력: Hello 철수 </span>
+
+<span class="c1">// 컴파일러가 타입 추론 가능한 경우 생략 가능</span>
+<span class="k">let</span> <span class="nv">closure</span> <span class="o">=</span> <span class="p">{</span> <span class="n">name</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="s">"Hello ~ "</span> <span class="o">+</span> <span class="n">name</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">closure</span><span class="p">(</span><span class="s">"철수"</span><span class="p">))</span>  <span class="c1">//출력: Hello ~ 철수</span>
+
+<span class="c1">//void 생략</span>
+<span class="c1">//let closure = { () -&gt; () in</span>
+<span class="k">let</span> <span class="nv">closure</span> <span class="p">{}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Hello 클로저"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">closure</span><span class="p">()</span>   <span class="c1">//출력: Hello 클로저</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="5-함수를-클로저로-변경">5. 함수를 클로저로 변경</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//함수의 형태 </span>
+<span class="kd">func</span> <span class="nf">nameFunction</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello, </span><span class="se">\(</span><span class="n">str</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">nameFunction</span><span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="s">"imhs"</span><span class="p">))</span>   <span class="c1">//출력: Hello, imhs</span>
+
+<span class="c1">// 클로저로 변경 (nameFunction 함수를 클로저로 변경)</span>
+<span class="c1">//name 변수에 함수를 담을 수 있음 </span>
+<span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="s">"Hello, </span><span class="se">\(</span><span class="n">str</span><span class="se">)</span><span class="s">"</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">name</span><span class="p">(</span><span class="s">"imhs"</span><span class="p">))</span> <span class="c1">//출력: Hello, imhs</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="6-문법-최적화간소화">6. 문법 최적화(간소화)</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//함수 정의</span>
+<span class="kd">func</span> <span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">closure</span><span class="p">(</span><span class="s">"swift"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="타입-추론type-inference">타입 추론(Type Inference)</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">str</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">str</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span>
+<span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="n">str</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<h2 id="싱글-익스프레션인-경우한줄-리턴을-생략-가능-implicit-return">싱글 익스프레션인 경우(한줄), 리턴을 생략 가능 (Implicit Return)</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span> <span class="n">str</span> <span class="k">in</span>
+    <span class="n">str</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="아규먼트-이름-축약shorthand-argements">아규먼트 이름 축약(Shorthand Argements)</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="nv">$0</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="트레일링trailing-클로저-문법후행-클로저-문법">트레일링(Trailing) 클로저 문법(후행 클로저 문법)</h2>
+<ul>
+  <li>함수의 마지막 전달 인자(Argements)로 클로저 전달되는 경우, 소괄호를 생략 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span>
+<span class="nf">closureFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="o">.</span><span class="n">count</span>
+<span class="p">}</span>
+<span class="n">closureFunction</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="트레일링-클로저-예시">트레일링 클로저 예시</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//1. 클로저를 파라미터로 받는 함수 정의</span>
+<span class="kd">func</span> <span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"함수 시작"</span><span class="p">)</span>
+    <span class="nf">closure</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="c1">//2. 함수를 실행할때 마지막 전달 인자를 클로저 형태로 전달(소괄호를 생략 가능)</span>
+<span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"함수 종료"</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="nf">closureFunction</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">)</span> <span class="p">{</span>      <span class="c1">// 소괄호를 앞으로 가져오기</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"함수 종료"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">closureFunction</span><span class="p">()</span> <span class="p">{</span>               <span class="c1">// 아규먼트 생략가능</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"함수 종료"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 소괄호 생략 </span>
+<span class="n">closureFunction</span> <span class="p">{</span> <span class="c1">//함수를 실행하고 마지막 아규먼트로 클로저를 전달했다는걸 익숙해지기 </span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"함수 종료"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="7-캡처-현상">7. 캡처 현상</h1>
+<h2 id="값value-캡처">값(value) 캡처</h2>
+<ul>
+  <li>클로저가 변수나 상수의 값을 캡처합니다. 이때, 클로저 내부에서 캡처한 값이 변경되어도 원본 값은 변경되지 않습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">makeIncrementer</span><span class="p">(</span><span class="n">forIncrement</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">total</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1">// 클로저를 반환합니다.</span>
+    <span class="k">let</span> <span class="nv">incrementer</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">// total 변수를 캡처하여 저장합니다.</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">amount</span>
+        <span class="k">return</span> <span class="n">total</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">incrementer</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">incrementByTen</span> <span class="o">=</span> <span class="nf">makeIncrementer</span><span class="p">(</span><span class="nv">forIncrement</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">incrementByTen</span><span class="p">())</span> <span class="c1">// total = 10, 결과: 10</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">incrementByTen</span><span class="p">())</span> <span class="c1">// total = 20, 결과: 20</span>
+</code></pre></div></div>
+
+<h2 id="참조reference-캡처">참조(reference) 캡처</h2>
+<ul>
+  <li>클로저가 변수나 상수의 참조를 캡처합니다. 따라서 클로저 내에서 해당 변수나 상수를 변경하면 원본 값도 변경됩니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SimpleClass</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">createClosure</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">instance</span> <span class="o">=</span> <span class="kt">SimpleClass</span><span class="p">()</span>
+    
+    <span class="c1">// 참조 캡처를 사용하여 SimpleClass의 인스턴스를 캡처합니다.</span>
+    <span class="k">let</span> <span class="nv">closure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">// 클로저가 참조하는 인스턴스의 속성을 업데이트합니다.</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">value</span> <span class="o">*=</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">.</span><span class="n">value</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">closure</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="8-탈출escaping-클로저">8. 탈출(escaping) 클로저</h1>
+<h2 id="순차적-실행">순차적 실행</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sequentialExecutionExample</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Start"</span><span class="p">)</span>
+
+    <span class="c1">// 1. 첫 번째 작업</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">3</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Task </span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 2. 두 번째 작업</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Next Task"</span><span class="p">)</span>
+
+    <span class="c1">// 3. 세 번째 작업</span>
+    <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Result: </span><span class="se">\(</span><span class="n">result</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="s">"End"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">sequentialExecutionExample</span><span class="p">()</span>
+<span class="cm">/*
+위의 코드는 함수 sequentialExecutionExample 내에서 순차적으로 실행됩니다.
+각각의 작업은 순서대로 실행되며, 한 작업이 끝나야 다음 작업이 실행됩니다. 
+이 예시에서는 
+'Start', 'Task 1', 'Task 2', 'Task 3', 'Next Task', 'Result: 8', 'End'
+와 같은 순서로 출력됩니다.
+*/</span>
+</code></pre></div></div>
+
+<h2 id="비동기-실행">비동기 실행</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">asynchronousExecutionExample</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Start"</span><span class="p">)</span>
+
+    <span class="c1">// 1. 비동기로 실행되는 작업</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">3</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Async Task </span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 2. 순차적으로 실행되는 작업</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Next Task"</span><span class="p">)</span>
+
+    <span class="c1">// 3. 또 다른 비동기 작업</span>
+    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Async Result: </span><span class="se">\(</span><span class="n">result</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 4. 끝 부분</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"End"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">asynchronousExecutionExample</span><span class="p">()</span>
+<span class="cm">/*
+위의 코드는 비동기적으로 실행되는 예시입니다. 
+DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서 비동기적으로 실행됩니다. 
+따라서 비동기 작업은 순차적인 흐름을 방해하지 않고 별도의 스레드에서 실행됩니다.
+
+실행 결과는 
+'Start', 'Next Task', 'End' 순서로 출력되고, 
+비동기 작업은 나중에 완료되어 
+'Async Task 1', 'Async Task 2', 'Async Task 3', 'Async Result: 8'와 같이 
+순서는 보장되지 않는 시점에 출력됩니다. 
+이는 비동기 작업이 별도의 스레드에서 동작하기 때문에, 
+주 스레드의 작업과 병행적으로 실행됨을 보여줍니다.
+*/</span>
+</code></pre></div></div>
+
+<h2 id="탈출-클로저escaping-closure">탈출 클로저(escaping closure)</h2>
+<ul>
+  <li>파라미터 타입 앞에 @escaping이라는 키워드를 명시</li>
+  <li>어떤 함수의 내부에 존재하는 클로저(함수)를 외부 변수에 저장하는 경우
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">defaultFunction</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">()</span> <span class="o">=</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="s">"출력"</span><span class="p">)</span> <span class="p">}</span>
+<span class="kd">func</span> <span class="nf">escapingFunc</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+  <span class="c1">// 클로저를 실행하는 것이 아니라  aSavedFunction 변수에 저장. </span>
+  <span class="c1">// 함수는 변수와 달리 기본적으로 외부 할당이 불가능</span>
+  <span class="n">defaultFunction</span> <span class="o">=</span> <span class="n">closure</span>        
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>이스케이핑 클로저는 클로저가 메서드의 인자로 전달됐을 때, 메서드의 실행이 종료된 후 실행되는 클로저(비동기)
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">asyncEscaping</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">"철수"</span>
+    
+  <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//3초뒤에 실행하도록 만들기</span>
+      <span class="nf">closure</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">asyncEscaping</span> <span class="p">{</span> 
+  <span class="nf">print</span><span class="p">(</span><span class="s">"name : </span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>@escaping 를 사용하는 클로저에서 self의 요소를 사용할 경우, self를 명시적으로 언급해야 합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">completionHandlers</span><span class="p">:</span> <span class="p">[()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kd">func</span> <span class="nf">someFunctionWithEscapingClosure</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">completionHandlers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">completionHandler</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">someFunctionWithNonescapingClosure</span><span class="p">(</span><span class="nv">closure</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nf">closure</span><span class="p">()</span>    <span class="c1">// 함수 안에서 끝나는 클로저</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="kt">SomeClass</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">x</span> <span class="o">=</span> <span class="mi">10</span>
+  <span class="kd">func</span> <span class="nf">doSomething</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">someFunctionWithEscapingClosure</span> <span class="p">{</span> <span class="k">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">100</span> <span class="p">}</span> <span class="c1">// 명시적으로 self를 적어줘야 합니다.</span>
+      <span class="n">someFunctionWithNonescapingClosure</span> <span class="p">{</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">200</span> <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">instance</span> <span class="o">=</span> <span class="kt">SomeClass</span><span class="p">()</span>
+<span class="n">instance</span><span class="o">.</span><span class="nf">doSomething</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">// Prints "200"</span>
+<span class="n">completionHandlers</span><span class="o">.</span><span class="nf">first</span><span class="p">?()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">// Prints "100"</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#closure" class="page__taxonomy-item p-category" rel="tag">Closure</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-12T00:00:00+09:00">March 12, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BSwift%5D+%ED%81%B4%EB%A1%9C%EC%A0%80%28Closure%29%20http%3A%2F%2Flocalhost%3A4000%2Fswift%2Fclosure%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fswift%2Fclosure%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fswift%2Fclosure%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/TIL/til10/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 10일차
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til10/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 10일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 10일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="permalink">[프로그래머스/Swift] 크기가 작은 부분 문자열
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 크기가 작은 부분 문자열
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til9/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 9일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 9일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/GitHubBlog/hits/" rel="permalink">[minimal-mistakes]조회수 추가하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[minimal-mistakes] 조회수 추가하기입니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
