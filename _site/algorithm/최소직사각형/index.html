@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[프로그래머스/Swift] 숫자 비교하기 - limlogging Devlog</title>
-<meta name="description" content="[프로그래머스/Swift] 숫자 비교하기">
+<!-- begin _includes/seo.html --><title>[프로그래머스/Swift] 최소직사각형 - limlogging Devlog</title>
+<meta name="description" content="[프로그래머스/Swift] 최소직사각형">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[프로그래머스/Swift] 숫자 비교하기">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/">
+<meta property="og:title" content="[프로그래머스/Swift] 최소직사각형">
+<meta property="og:url" content="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/">
 
 
-  <meta property="og:description" content="[프로그래머스/Swift] 숫자 비교하기">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-07T00:00:00+09:00">
+  <meta property="og:description" content="[프로그래머스/Swift] 최소직사각형">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-12T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/">
+
+<link rel="canonical" href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/">
 
 
 
@@ -381,16 +381,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[프로그래머스/Swift] 숫자 비교하기">
-    <meta itemprop="description" content="[프로그래머스/Swift] 숫자 비교하기">
-    <meta itemprop="datePublished" content="2024-03-07T00:00:00+09:00">
+    <meta itemprop="headline" content="[프로그래머스/Swift] 최소직사각형">
+    <meta itemprop="description" content="[프로그래머스/Swift] 최소직사각형">
+    <meta itemprop="datePublished" content="2024-03-12T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/" class="u-url" itemprop="url">[프로그래머스/Swift] 숫자 비교하기
+            <a href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" class="u-url" itemprop="url">[프로그래머스/Swift] 최소직사각형
 </a>
           </h1>
           
@@ -407,7 +407,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -417,8 +417,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -436,14 +436,58 @@
         
         <h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>정수 num1과 num2가 매개변수로 주어집니다. 두 수가 같으면 1 다르면 -1을 retrun하도록 solution 함수를 완성해주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120807" target="_blank">숫자 비교하기 문제 풀기</a></li>
+  <li>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</li>
+  <li>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>명함 번호</th>
+      <th>가로 길이</th>
+      <th>세로 길이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>60</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>30</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>60</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>80</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</li>
+  <li>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
 </ul>
 
 <h1 id="제한사항">제한사항</h1>
 <ul>
-  <li>0 ≤ num1 ≤ 10,000</li>
-  <li>0 ≤ num2 ≤ 10,000</li>
+  <li>sizes의 길이는 1 이상 10,000 이하입니다.
+    <ul>
+      <li>sizes의 원소는 [w, h] 형식입니다.</li>
+      <li>w는 명함의 가로 길이를 나타냅니다.</li>
+      <li>h는 명함의 세로 길이를 나타냅니다.</li>
+      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
+    </ul>
+  </li>
 </ul>
 
 <h1 id="입출력-예">입출력 예</h1>
@@ -451,66 +495,78 @@
 <table>
   <thead>
     <tr>
-      <th>num1</th>
-      <th>num2</th>
+      <th>sizes</th>
       <th>result</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2</td>
-      <td>3</td>
-      <td>-1</td>
+      <td>[[60, 50], [30, 70], [60, 30], [80, 40]]</td>
+      <td>4000</td>
     </tr>
     <tr>
-      <td>11</td>
-      <td>11</td>
-      <td>1</td>
+      <td>[[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]</td>
+      <td>120</td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>99</td>
-      <td>-1</td>
+      <td>[[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]</td>
+      <td>133</td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="입출력-예-1">입출력 예 #1</h2>
 <ul>
-  <li>num1이 2이고 num2가 3이므로 다릅니다. 따라서 -1을 return합니다.</li>
+  <li>문제 예시와 같습니다.</li>
 </ul>
 
 <h2 id="입출력-예-2">입출력 예 #2</h2>
 <ul>
-  <li>num1이 11이고 num2가 11이므로 같습니다. 따라서 1을 return합니다.</li>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 3번째 명함(가로: 8, 세로: 15)이 다른 모든 명함보다 크기가 큽니다. 따라서 지갑의 크기는 3번째 명함의 크기와 같으며, 120(=8 x 15)을 return 합니다.</li>
 </ul>
 
 <h2 id="입출력-예-3">입출력 예 #3</h2>
 <ul>
-  <li>num1이 7이고 num2가 99이므로 다릅니다. 따라서 -1을 return합니다.</li>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.</li>
 </ul>
 
 <h1 id="나의-풀이">나의 풀이</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">num1</span> <span class="o">==</span> <span class="n">num2</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span> 
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">secondNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="c1">//정렬해서 각 자리수에서 가장 큰 값 구하기</span>
+        <span class="k">if</span> <span class="n">firstNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">firstNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">secondNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">secondNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">firstNum</span> <span class="o">*</span> <span class="n">secondNum</span>
 <span class="p">}</span>
 </code></pre></div></div>
 <h1 id="다른-사람-풀이">다른 사람 풀이</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">maxNum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">minNum</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">num1</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">num2</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">num1</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="p">,</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">num2</span> <span class="o">&lt;=</span> <span class="mi">10000</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">size</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="n">maxNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">minNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">minNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">num1</span> <span class="o">==</span> <span class="n">num2</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">minNum</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h1 id="의견">의견</h1>
 <ul>
-  <li>제한사항이 있으나 없어도 통과는 되었다. 다른 사람도 대부분 제한사항이 없었으나 추가한 사람이 있어 비교해보았다. 우선 제한사항 없이 풀어볼 예정</li>
+  <li>이번에는 무작정 for문을 사용한 정렬 아닌 sort함수를 써서 풀었다. 다른 사람 코드도 큰 풀이방법은 비슷한데 사용하는 함수가 달랐다. 다른 사람의 풀이도 자주보면서 내것으로 만들 수 있도록 해야겠다.</li>
 </ul>
 
         
@@ -532,7 +588,7 @@
     
       <a href="/tags/#coding-test" class="page__taxonomy-item p-category" rel="tag">coding test</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%88%AB%EC%9E%90-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0" class="page__taxonomy-item p-category" rel="tag">숫자 비교하기</a>
+      <a href="/tags/#%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95" class="page__taxonomy-item p-category" rel="tag">최소직사각형</a>
     
     </span>
   </p>
@@ -557,7 +613,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-07T00:00:00+09:00">March 7, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-12T00:00:00+09:00">March 12, 2024</time></p>
 
       </footer>
 
@@ -566,22 +622,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%2FSwift%5D+%EC%88%AB%EC%9E%90+%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2588%25AB%25EC%259E%2590%25EB%25B9%2584%25EA%25B5%2590%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%2FSwift%5D+%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25B5%259C%25EC%2586%258C%25EC%25A7%2581%25EC%2582%25AC%25EA%25B0%2581%25ED%2598%2595%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2588%25AB%25EC%259E%2590%25EB%25B9%2584%25EA%25B5%2590%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25B5%259C%25EC%2586%258C%25EC%25A7%2581%25EC%2582%25AC%25EA%25B0%2581%25ED%2598%2595%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%2588%25AB%25EC%259E%2590%25EB%25B9%2584%25EA%25B5%2590%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25B5%259C%25EC%2586%258C%25EC%25A7%2581%25EC%2582%25AC%25EA%25B0%2581%25ED%2598%2595%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98%EB%B0%95%EC%88%98/" class="pagination--pager" title="[프로그래머스/Swift] 수박수박수박수박수박수?
+      <a href="/TIL/til10/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 10일차
 ">이전</a>
     
     
-      <a href="/algorithm/%EC%95%BD%EC%88%98%EC%9D%98%EA%B0%9C%EC%88%98%EC%99%80%EB%8D%A7%EC%85%88/" class="pagination--pager" title="[프로그래머스/Swift] 약수의 개수와 덧셈
+      <a href="/swift/closure/" class="pagination--pager" title="[Swift] 클로저(Closure)
 ">다음</a>
     
   </nav>
@@ -686,46 +742,6 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="permalink">[프로그래머스/Swift] 최소직사각형
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 최소직사각형
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/TIL/til10/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 10일차
 </a>
       
@@ -752,6 +768,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 10일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="permalink">[프로그래머스/Swift] 크기가 작은 부분 문자열
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 크기가 작은 부분 문자열
 </p>
   </article>
 </div>
