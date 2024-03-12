@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-12T14:40:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-12T15:46:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
 <ul>
   <li>일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다.</li>
   <li>함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.)</li>
@@ -365,7 +365,81 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <span class="c1">// Prints "100"</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 10일차</title><link href="http://localhost:4000/TIL/til10/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 10일차" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til10</id><content type="html" xml:base="http://localhost:4000/TIL/til10/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
+<ul>
+  <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
+  <li>클로저를 공부해야 원활한 사용 가능</li>
+  <li>알고리즘 문제 풀면서 익숙해집시다.</li>
+</ul>
+
+<h1 id="map">Map</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">map</code> 함수는 컬렉션 내부의 <strong>기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성</strong>합니다.</li>
+  <li>기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//문자열 배열을 정수형으로 변경하기 </span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">strArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"5"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">strArr</span><span class="p">)</span>   <span class="c1">//출력 ["1", "2", "3", "4", "5"]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">strArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">intArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">strArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span> <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+
+<span class="c1">//Map 사용</span>
+<span class="n">intArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span>   <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+</code></pre></div></div>
+<ul>
+  <li>클로저의 매개변수 이름이 필요하지 않은 경우 단축 인자 이름을 활용할 수 있습니다.($0, $1)</li>
+  <li>단축 인자이름은 순서대로 $0 , $1 , $2, $3 …으로 표현합니다.</li>
+  <li>$0 은 첫번째 인자, $1은 두번째 인자를 뜻합니다.</li>
+</ul>
+
+<h1 id="filter">filter</h1>
+<ul>
+  <li>기존 컨테이너의 요소 중 조건에 만족하는 값에 대해 새로운 컨테이너를 만들어 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//짝수만 뽑아 내기</span>
+<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+
+<span class="c1">//filter 사용</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<h1 id="reduce">reduce</h1>
+<ul>
+  <li>기존의 컨테이너의 요소에 대해 정의한 클로저로 매핑한 결과를 새로운 컨테이너로 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//배열 합 구하기</span>
+<span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>  <span class="c1">//출력 55</span>
+
+<span class="c1">//reduce 사용</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 10일차</title><link href="http://localhost:4000/TIL/til10/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 10일차" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til10</id><content type="html" xml:base="http://localhost:4000/TIL/til10/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-11-til10.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -818,69 +892,4 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <h1 id="의견">의견</h1>
 <ul>
   <li>삼항연산자로 간단하게 푼 사람들이 많았다. 문제 풀땐 생각이 잘 안난단 말이지 ..</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="짝수와 홀수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 짝수와 홀수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 짝수의 합</title><link href="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 짝수의 합" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A7%9D%EC%88%98%EC%9D%98%ED%95%A9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>정수 n이 주어질 때, n이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120831" target="_blank">짝수의 합 문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>0 &lt; n ≤ 1000</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>num1</th>
-      <th>num2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>10</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>6</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>n이 10이므로 2 + 4 + 6 + 8 + 10 = 30을 return 합니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>n이 4이므로 2 + 4 = 6을 return 합니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">n</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span> 
-        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
-            <span class="n">sum</span> <span class="o">+=</span> <span class="n">n</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-    <span class="k">return</span> <span class="n">sum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span> <span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span> <span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>다른 사람들은 고차함수 사용을 많이 하였다. 난 생각도 못했는데… 고차 함수 공부가 필요하다 ㅠ</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="짝수의 합" /><summary type="html"><![CDATA[[프로그래머스/Swift] 짝수의 합]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="짝수와 홀수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 짝수와 홀수]]></summary></entry></feed>

@@ -358,4 +358,10 @@ var store = [{
         "tags": ["swift","Closure"],
         "url": "/swift/closure/",
         "teaser": null
+      },{
+        "title": "[Swift] 고차함수",
+        "excerpt":"고차함수 다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수 클로저를 공부해야 원활한 사용 가능 알고리즘 문제 풀면서 익숙해집시다. Map map 함수는 컬렉션 내부의 기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성합니다. 기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다. //문자열 배열을 정수형으로 변경하기 var intArr: [Int] = [] var...","categories": ["swift"],
+        "tags": ["swift","고차함수"],
+        "url": "/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/",
+        "teaser": null
       }]
