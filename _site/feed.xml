@@ -1,211 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-12T18:52:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
-<ul>
-  <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
-  <li>클로저를 공부해야 원활한 사용 가능</li>
-  <li>알고리즘 문제 풀면서 익숙해집시다.</li>
-</ul>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-12T19:48:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 11일차</title><link href="http://localhost:4000/TIL/til11/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 11일차" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til11</id><content type="html" xml:base="http://localhost:4000/TIL/til11/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-12-til11.png" alt="" /></p>
 
-<h1 id="map">Map</h1>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">map</code> 함수는 컬렉션 내부의 <strong>기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성</strong>합니다.</li>
-  <li>기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다.</li>
-</ul>
+<h3 id="알고리즘">알고리즘</h3>
+<p>함수형 프로그래밍과 클로저, 고차함수를 생각하면서 무작정 for문을 쓰지 않으려고 신경써서 풀었다. 정렬은 sort 함수로 썼는데 너무 편하고 좋더라. 무작정 푸는게 아니라 생각해보고 풀어야겠다.</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//문자열 배열을 정수형으로 변경하기 </span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">var</span> <span class="nv">strArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"5"</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">strArr</span><span class="p">)</span>   <span class="c1">//출력 ["1", "2", "3", "4", "5"]</span>
+<h3 id="타입캐스팅">타입캐스팅</h3>
+<p>팀원들하고 타입캐스팅 관련해서 어려운 점을 이야기하고 각자 공부해서 이야기하는 시간으로 도움이 많이 됐던 것 같다.</p>
 
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">strArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="n">intArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">strArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span> <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+<h3 id="심화-강의">심화 강의</h3>
+<p>심화 강의는 절반 정도 봤는데 전부 이해하지 못해도 완강하고 과제 하면서 다시 봐야겠다.</p>
 
-<span class="c1">//Map 사용</span>
-<span class="n">intArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span>   <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-<ul>
-  <li>클로저의 매개변수 이름이 필요하지 않은 경우 단축 인자 이름을 활용할 수 있습니다.($0, $1)</li>
-  <li>단축 인자이름은 순서대로 $0 , $1 , $2, $3 …으로 표현합니다.</li>
-  <li>$0 은 첫번째 인자, $1은 두번째 인자를 뜻합니다.</li>
-</ul>
-
-<h1 id="filter">filter</h1>
-<ul>
-  <li>기존 컨테이너의 요소 중 조건에 만족하는 값에 대해 새로운 컨테이너를 만들어 반환합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//짝수만 뽑아 내기</span>
-<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
-
-<span class="c1">//filter 사용</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
-</code></pre></div></div>
-
-<h1 id="reduce">reduce</h1>
-<ul>
-  <li>기존의 컨테이너의 요소에 대해 정의한 클로저로 매핑한 결과를 새로운 컨테이너로 반환합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//배열 합 구하기</span>
-<span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="n">sum</span> <span class="o">+=</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>  <span class="c1">//출력 55</span>
-
-<span class="c1">//reduce 사용</span>
-<span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 최소직사각형</title><link href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 최소직사각형" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</li>
-  <li>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th>명함 번호</th>
-      <th>가로 길이</th>
-      <th>세로 길이</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>60</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>30</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>60</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>80</td>
-      <td>40</td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</li>
-  <li>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>sizes의 길이는 1 이상 10,000 이하입니다.
-    <ul>
-      <li>sizes의 원소는 [w, h] 형식입니다.</li>
-      <li>w는 명함의 가로 길이를 나타냅니다.</li>
-      <li>h는 명함의 세로 길이를 나타냅니다.</li>
-      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>sizes</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[[60, 50], [30, 70], [60, 30], [80, 40]]</td>
-      <td>4000</td>
-    </tr>
-    <tr>
-      <td>[[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]</td>
-      <td>120</td>
-    </tr>
-    <tr>
-      <td>[[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]</td>
-      <td>133</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>문제 예시와 같습니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>명함들을 적절히 회전시켜 겹쳤을 때, 3번째 명함(가로: 8, 세로: 15)이 다른 모든 명함보다 크기가 큽니다. 따라서 지갑의 크기는 3번째 명함의 크기와 같으며, 120(=8 x 15)을 return 합니다.</li>
-</ul>
-
-<h2 id="입출력-예-3">입출력 예 #3</h2>
-<ul>
-  <li>명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">secondNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
-        <span class="c1">//정렬해서 각 자리수에서 가장 큰 값 구하기</span>
-        <span class="k">if</span> <span class="n">firstNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">firstNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">secondNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">secondNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">firstNum</span> <span class="o">*</span> <span class="n">secondNum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">maxNum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">minNum</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">size</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
-        <span class="n">maxNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
-        <span class="n">minNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">minNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">minNum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>이번에는 무작정 for문을 사용한 정렬 아닌 sort함수를 써서 풀었다. 다른 사람 코드도 큰 풀이방법은 비슷한데 사용하는 함수가 달랐다. 다른 사람의 풀이도 자주보면서 내것으로 만들 수 있도록 해야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="최소직사각형" /><summary type="html"><![CDATA[[프로그래머스/Swift] 최소직사각형]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
+<h3 id="내일은">내일은?</h3>
+<p>강의를 완강하고 개인과제를 다시 읽어보고 풀어볼예정 !!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 11일차 이야기]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
 <ul>
   <li>일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다.</li>
   <li>함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.)</li>
@@ -572,7 +378,214 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <span class="c1">// Prints "100"</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 크기가 작은 부분 문자열</title><link href="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 크기가 작은 부분 문자열" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 최소직사각형</title><link href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 최소직사각형" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</li>
+  <li>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>명함 번호</th>
+      <th>가로 길이</th>
+      <th>세로 길이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>60</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>30</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>60</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>80</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</li>
+  <li>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>sizes의 길이는 1 이상 10,000 이하입니다.
+    <ul>
+      <li>sizes의 원소는 [w, h] 형식입니다.</li>
+      <li>w는 명함의 가로 길이를 나타냅니다.</li>
+      <li>h는 명함의 세로 길이를 나타냅니다.</li>
+      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>sizes</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[[60, 50], [30, 70], [60, 30], [80, 40]]</td>
+      <td>4000</td>
+    </tr>
+    <tr>
+      <td>[[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>[[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]</td>
+      <td>133</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>문제 예시와 같습니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 3번째 명함(가로: 8, 세로: 15)이 다른 모든 명함보다 크기가 큽니다. 따라서 지갑의 크기는 3번째 명함의 크기와 같으며, 120(=8 x 15)을 return 합니다.</li>
+</ul>
+
+<h2 id="입출력-예-3">입출력 예 #3</h2>
+<ul>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">secondNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="c1">//정렬해서 각 자리수에서 가장 큰 값 구하기</span>
+        <span class="k">if</span> <span class="n">firstNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">firstNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">secondNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">secondNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">firstNum</span> <span class="o">*</span> <span class="n">secondNum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">maxNum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">minNum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">size</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="n">maxNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">minNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">minNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">minNum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>이번에는 무작정 for문을 사용한 정렬 아닌 sort함수를 써서 풀었다. 다른 사람 코드도 큰 풀이방법은 비슷한데 사용하는 함수가 달랐다. 다른 사람의 풀이도 자주보면서 내것으로 만들 수 있도록 해야겠다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="최소직사각형" /><summary type="html"><![CDATA[[프로그래머스/Swift] 최소직사각형]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
+<ul>
+  <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
+  <li>클로저를 공부해야 원활한 사용 가능</li>
+  <li>알고리즘 문제 풀면서 익숙해집시다.</li>
+</ul>
+
+<h1 id="map">Map</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">map</code> 함수는 컬렉션 내부의 <strong>기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성</strong>합니다.</li>
+  <li>기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//문자열 배열을 정수형으로 변경하기 </span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">strArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"5"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">strArr</span><span class="p">)</span>   <span class="c1">//출력 ["1", "2", "3", "4", "5"]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">strArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">intArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">strArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span> <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+
+<span class="c1">//Map 사용</span>
+<span class="n">intArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span>   <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+</code></pre></div></div>
+<ul>
+  <li>클로저의 매개변수 이름이 필요하지 않은 경우 단축 인자 이름을 활용할 수 있습니다.($0, $1)</li>
+  <li>단축 인자이름은 순서대로 $0 , $1 , $2, $3 …으로 표현합니다.</li>
+  <li>$0 은 첫번째 인자, $1은 두번째 인자를 뜻합니다.</li>
+</ul>
+
+<h1 id="filter">filter</h1>
+<ul>
+  <li>기존 컨테이너의 요소 중 조건에 만족하는 값에 대해 새로운 컨테이너를 만들어 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//짝수만 뽑아 내기</span>
+<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+
+<span class="c1">//filter 사용</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<h1 id="reduce">reduce</h1>
+<ul>
+  <li>기존의 컨테이너의 요소에 대해 정의한 클로저로 매핑한 결과를 새로운 컨테이너로 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//배열 합 구하기</span>
+<span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>  <span class="c1">//출력 55</span>
+
+<span class="c1">//reduce 사용</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 크기가 작은 부분 문자열</title><link href="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 크기가 작은 부분 문자열" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>숫자로 이루어진 문자열 t와 p가 주어질 때, t에서 p와 길이가 같은 부분문자열 중에서, 이 부분문자열이 나타내는 수가 p가 나타내는 수보다 작거나 같은 것이 나오는 횟수를 return하는 함수 solution을 완성하세요.</li>
   <li>예를 들어, t=”3141592”이고 p=”271” 인 경우, t의 길이가 3인 부분 문자열은 314, 141, 415, 159, 592입니다. 이 문자열이 나타내는 수 중 271보다 작거나 같은 수는 141, 159 2개 입니다.</li>
@@ -919,60 +932,4 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <h1 id="의견">의견</h1>
 <ul>
   <li>나도 좀 더 쉽게 할 수 있는 방향으로..</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="제일 작은 수 제거하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 제일 작은 수 제거하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 직사각형 별찍기</title><link href="http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 직사각형 별찍기" /><published>2024-03-07T00:00:00+09:00</published><updated>2024-03-07T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
-별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12969" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>n과 m은 각각 1000 이하인 자연수입니다.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">//입력
-5 3
-//출력
-*****
-*****
-*****
-</span></code></pre></div></div>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span> 
-<span class="k">if</span> <span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">numbers</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">m</span> <span class="p">{</span>
-                    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
-                        <span class="n">str</span> <span class="o">+=</span> <span class="s">"*"</span>
-                    <span class="p">}</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-                    <span class="n">str</span> <span class="o">=</span> <span class="s">""</span> 
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span> 
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">components</span><span class="p">(</span><span class="nv">separatedBy</span><span class="p">:</span> <span class="p">[</span><span class="s">" "</span><span class="p">])</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
-<span class="k">let</span> <span class="p">(</span><span class="nv">a</span><span class="p">,</span> <span class="nv">b</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">b</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="s">"*"</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="nf">joined</span><span class="p">())</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>오늘도.. 다른 사람 풀이로 배웁니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="직사각형 별찍기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 직사각형 별찍기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="제일 작은 수 제거하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 제일 작은 수 제거하기]]></summary></entry></feed>
