@@ -376,4 +376,10 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til11/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 12일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 문법을 찾아서 해결했다. var str: Character = \"a\" //문자를 아스키 코드로 변환 str.asciiValue! //출력: 97 //아스키 코드에 1을 더하고 아스키 코드를 문자로 변환 Character(UnicodeScalar(str.asciiValue! + 1)) //출력: b 문제 풀고 적용했는데 중간에...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til11/",
+        "teaser": null
       }]
