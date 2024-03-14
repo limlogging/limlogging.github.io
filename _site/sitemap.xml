@@ -261,6 +261,10 @@
 <lastmod>2024-03-13T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/</loc>
+<lastmod>2024-03-14T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -325,5 +329,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page13/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page14/</loc>
 </url>
 </urlset>
