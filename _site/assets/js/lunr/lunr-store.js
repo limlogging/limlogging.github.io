@@ -377,8 +377,14 @@ var store = [{
         "url": "/TIL/til11/",
         "teaser": null
       },{
+        "title": "[프로그래머스/Swift] 시저 암호",
+        "excerpt":"문제 설명 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요. 문제 풀기 제한사항...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","시저 암호"],
+        "url": "/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/",
+        "teaser": null
+      },{
         "title": "[TIL] 내배캠 iOS앱 개발 공부 12일차",
-        "excerpt":"데일리 스크럼 알고리즘 오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 문법을 찾아서 해결했다. var str: Character = \"a\" //문자를 아스키 코드로 변환 str.asciiValue! //출력: 97 //아스키 코드에 1을 더하고 아스키 코드를 문자로 변환 Character(UnicodeScalar(str.asciiValue! + 1)) //출력: b 문제 풀고 적용했는데 중간에...","categories": ["TIL"],
+        "excerpt":"데일리 스크럼 알고리즘 오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다. var str: Character = \"a\" //문자를 아스키 코드로 변환 str.asciiValue! //출력: 97 //아스키 코드에 1을 더하고 아스키 코드를 문자로 변환 Character(UnicodeScalar(str.asciiValue! + 1)) //출력: b 문제 풀고 적용했는데...","categories": ["TIL"],
         "tags": ["TIL"],
         "url": "/TIL/til11/",
         "teaser": null
