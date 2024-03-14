@@ -392,12 +392,18 @@ var store = [{
         "title": "[TIL] 내배캠 iOS앱 개발 공부 12일차",
         "excerpt":"데일리 스크럼 알고리즘 오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다. var str: Character = \"a\" //문자를 아스키 코드로 변환 str.asciiValue! //출력: 97 //아스키 코드에 1을 더하고 아스키 코드를 문자로 변환 Character(UnicodeScalar(str.asciiValue! + 1)) //출력: b 문제 풀고 적용했는데...","categories": ["TIL"],
         "tags": ["TIL"],
-        "url": "/TIL/til11/",
+        "url": "/TIL/til12/",
         "teaser": null
       },{
         "title": "[프로그래머스/Swift] 숫자 문자열과 영단어",
         "excerpt":"문제 설명 네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다. 다음은 숫자의 일부 자릿수를 영단어로 바꾸는 예시입니다. 1478 → “one4seveneight” 234567 → “23four5six7” 10203 → “1zerotwozero3” 이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열...","categories": ["Algorithm"],
         "tags": ["Algorithm","coding test","숫자 문자열과 영단어"],
         "url": "/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/",
+        "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 13일차",
+        "excerpt":"데일리 스크럼 알고리즘 어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다. 개인과제 내일 정오까지 과제 제출해야하는데...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til13/",
         "teaser": null
       }]

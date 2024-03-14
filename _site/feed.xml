@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-14T11:23:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-14T19:55:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 13일차</title><link href="http://localhost:4000/TIL/til13/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 13일차" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til13</id><content type="html" xml:base="http://localhost:4000/TIL/til13/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-14-til13.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다.</p>
+
+<h3 id="개인과제">개인과제</h3>
+<p>내일 정오까지 과제 제출해야하는데 아직 1번밖에 풀지 못했다. 
+클래스, 함수, 반복문 어떻게 하면 잘 활용할 수 있을까 고민했는데 시간이 너무 많이 지났다. 내일 오전까지 우선 완성은 시켜놓고 조금씩 코드 리펙토링을 진행해야겠다.</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>다음주 부터는 UIKit으로 앱 만들기 강의가 시작 되는데 개인 2주간의 문법강의를 마무리하면서 복습하는 시간을 가져야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 13일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.</p>
@@ -267,29 +278,7 @@
 <ul>
   <li>최초 코드 작성 시 무조건 이동시키고 a-z / A-Z 범위인지 확인하고 범위를 넘으면 -26을 시켜주었다. 테스트 문제까지 이상없었고 답안 제출때 오답으로 나왔다. a-z 아스키코드는 97-122, A-Z는 65-90 대문자에서 이동을 많이시키면 a-z 소문자로 변경되어 -26이 안되는 문제를 확인하였다.</li>
   <li>좋아요 많이 받은 다른 사람 코드를 봤는데 역시 대단… 다양하게 생각하는 것이 어려운 것 같다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="시저 암호" /><summary type="html"><![CDATA[[프로그래머스/Swift] 시저 암호]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til11/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til11/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-13-til12.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<p>오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"a"</span>
-
-<span class="c1">//문자를 아스키 코드로 변환</span>
-<span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="c1">//출력: 97 </span>
-
-<span class="c1">//아스키 코드에 1을 더하고 아스키 코드를 문자로 변환</span>
-<span class="kt">Character</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//출력: b </span>
-</code></pre></div></div>
-
-<p>문제 풀고 적용했는데 중간에 실패가 계속 떴다 ㅠ 강의듣고 과제해야하니까 우선 저녁에 다시 해보는걸로 .. 
-<img src="/assets/images/categories/til/2024-03-13-til12-2.png" alt="" /></p>
-
-<h3 id="심화-강의">심화 강의</h3>
-<p>심화 강의는 완강 했으나 한 파트를 10분에 끝내니 한번에 숙지 못하는건 어쩌면 당연한걸까? 과제하고 다시 보는걸로!</p>
-
-<h3 id="내일은">내일은?</h3>
-<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry><entry><title type="html">[Swift] 아스키 코드</title><link href="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/" rel="alternate" type="text/html" title="[Swift] 아스키 코드" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C</id><content type="html" xml:base="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/"><![CDATA[<h1 id="아스키ascii">아스키(ASCII)</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="시저 암호" /><summary type="html"><![CDATA[[프로그래머스/Swift] 시저 암호]]></summary></entry><entry><title type="html">[Swift] 아스키 코드</title><link href="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/" rel="alternate" type="text/html" title="[Swift] 아스키 코드" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C</id><content type="html" xml:base="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/"><![CDATA[<h1 id="아스키ascii">아스키(ASCII)</h1>
 <ul>
   <li>ASCII(American Standard Code for Information Interchange, 미국 정보 교환 표준 부호)는 컴퓨터와 통신 장비에서 텍스트를 표현하기 위해 사용되는 표준 문자 인코딩 방식</li>
   <li><a href="https://namu.wiki/w/%EC%95%84%EC%8A%A4%ED%82%A4%20%EC%BD%94%EB%93%9C" target="_blank">나무위키 아스키코드 바로가기</a></li>
@@ -319,7 +308,29 @@
   <li>타입 안정성: UInt8은 부호 없는 8비트 정수를 나타내므로 음수 값을 가질 수 없습니다. 이는 아스키 코드 값의 범위가 0부터 127까지이므로 부호 없는 타입을 사용하는 것이 논리적입니다.</li>
 </ol>
 
-<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
+<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til12/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til12/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-13-til12.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"a"</span>
+
+<span class="c1">//문자를 아스키 코드로 변환</span>
+<span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="c1">//출력: 97 </span>
+
+<span class="c1">//아스키 코드에 1을 더하고 아스키 코드를 문자로 변환</span>
+<span class="kt">Character</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//출력: b </span>
+</code></pre></div></div>
+
+<p>문제 풀고 적용했는데 중간에 실패가 계속 떴다 ㅠ 강의듣고 과제해야하니까 우선 저녁에 다시 해보는걸로 .. 
+<img src="/assets/images/categories/til/2024-03-13-til12-2.png" alt="" /></p>
+
+<h3 id="심화-강의">심화 강의</h3>
+<p>심화 강의는 완강 했으나 한 파트를 10분에 끝내니 한번에 숙지 못하는건 어쩌면 당연한걸까? 과제하고 다시 보는걸로!</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
 <ul>
   <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
   <li>클로저를 공부해야 원활한 사용 가능</li>
@@ -393,153 +404,7 @@
 <span class="c1">//reduce 사용</span>
 <span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 최소직사각형</title><link href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 최소직사각형" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</li>
-  <li>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th>명함 번호</th>
-      <th>가로 길이</th>
-      <th>세로 길이</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>60</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>30</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>60</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>80</td>
-      <td>40</td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</li>
-  <li>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>sizes의 길이는 1 이상 10,000 이하입니다.
-    <ul>
-      <li>sizes의 원소는 [w, h] 형식입니다.</li>
-      <li>w는 명함의 가로 길이를 나타냅니다.</li>
-      <li>h는 명함의 세로 길이를 나타냅니다.</li>
-      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>sizes</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[[60, 50], [30, 70], [60, 30], [80, 40]]</td>
-      <td>4000</td>
-    </tr>
-    <tr>
-      <td>[[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]</td>
-      <td>120</td>
-    </tr>
-    <tr>
-      <td>[[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]</td>
-      <td>133</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>문제 예시와 같습니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>명함들을 적절히 회전시켜 겹쳤을 때, 3번째 명함(가로: 8, 세로: 15)이 다른 모든 명함보다 크기가 큽니다. 따라서 지갑의 크기는 3번째 명함의 크기와 같으며, 120(=8 x 15)을 return 합니다.</li>
-</ul>
-
-<h2 id="입출력-예-3">입출력 예 #3</h2>
-<ul>
-  <li>명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">secondNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
-        <span class="c1">//정렬해서 각 자리수에서 가장 큰 값 구하기</span>
-        <span class="k">if</span> <span class="n">firstNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">firstNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">secondNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">secondNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">firstNum</span> <span class="o">*</span> <span class="n">secondNum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">maxNum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">minNum</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">size</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
-        <span class="n">maxNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
-        <span class="n">minNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">minNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">minNum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>이번에는 무작정 for문을 사용한 정렬 아닌 sort함수를 써서 풀었다. 다른 사람 코드도 큰 풀이방법은 비슷한데 사용하는 함수가 달랐다. 다른 사람의 풀이도 자주보면서 내것으로 만들 수 있도록 해야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="최소직사각형" /><summary type="html"><![CDATA[[프로그래머스/Swift] 최소직사각형]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 11일차</title><link href="http://localhost:4000/TIL/til11/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 11일차" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til11</id><content type="html" xml:base="http://localhost:4000/TIL/til11/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-12-til11.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<p>함수형 프로그래밍과 클로저, 고차함수를 생각하면서 무작정 for문을 쓰지 않으려고 신경써서 풀었다. 정렬은 sort 함수로 썼는데 너무 편하고 좋더라. 무작정 푸는게 아니라 생각해보고 풀어야겠다.</p>
-
-<h3 id="타입캐스팅">타입캐스팅</h3>
-<p>팀원들하고 타입캐스팅 관련해서 어려운 점을 이야기하고 각자 공부해서 이야기하는 시간으로 도움이 많이 됐던 것 같다.</p>
-
-<h3 id="심화-강의">심화 강의</h3>
-<p>심화 강의는 절반 정도 봤는데 전부 이해하지 못해도 완강하고 과제 하면서 다시 봐야겠다.</p>
-
-<h3 id="내일은">내일은?</h3>
-<p>강의를 완강하고 개인과제를 다시 읽어보고 풀어볼예정 !!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 11일차 이야기]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
 <ul>
   <li>일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다.</li>
   <li>함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.)</li>
@@ -906,7 +771,153 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <span class="c1">// Prints "100"</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 10일차</title><link href="http://localhost:4000/TIL/til10/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 10일차" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til10</id><content type="html" xml:base="http://localhost:4000/TIL/til10/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="Closure" /><summary type="html"><![CDATA[클로저(Closure)는 함수]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 최소직사각형</title><link href="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 최소직사각형" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B5%9C%EC%86%8C%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서, 작아서 들고 다니기 편한 지갑을 만들어야 합니다. 이러한 요건을 만족하는 지갑을 만들기 위해 디자인팀은 모든 명함의 가로 길이와 세로 길이를 조사했습니다.</li>
+  <li>아래 표는 4가지 명함의 가로 길이와 세로 길이를 나타냅니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>명함 번호</th>
+      <th>가로 길이</th>
+      <th>세로 길이</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>60</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>30</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>60</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>80</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>가장 긴 가로 길이와 세로 길이가 각각 80, 70이기 때문에 80(가로) x 70(세로) 크기의 지갑을 만들면 모든 명함들을 수납할 수 있습니다. 하지만 2번 명함을 가로로 눕혀 수납한다면 80(가로) x 50(세로) 크기의 지갑으로 모든 명함들을 수납할 수 있습니다. 이때의 지갑 크기는 4000(=80 x 50)입니다.</li>
+  <li>모든 명함의 가로 길이와 세로 길이를 나타내는 2차원 배열 sizes가 매개변수로 주어집니다. 모든 명함을 수납할 수 있는 가장 작은 지갑을 만들 때, 지갑의 크기를 return 하도록 solution 함수를 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>sizes의 길이는 1 이상 10,000 이하입니다.
+    <ul>
+      <li>sizes의 원소는 [w, h] 형식입니다.</li>
+      <li>w는 명함의 가로 길이를 나타냅니다.</li>
+      <li>h는 명함의 세로 길이를 나타냅니다.</li>
+      <li>w와 h는 1 이상 1,000 이하인 자연수입니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>sizes</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[[60, 50], [30, 70], [60, 30], [80, 40]]</td>
+      <td>4000</td>
+    </tr>
+    <tr>
+      <td>[[10, 7], [12, 3], [8, 15], [14, 7], [5, 15]]</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <td>[[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]</td>
+      <td>133</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-1">입출력 예 #1</h2>
+<ul>
+  <li>문제 예시와 같습니다.</li>
+</ul>
+
+<h2 id="입출력-예-2">입출력 예 #2</h2>
+<ul>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 3번째 명함(가로: 8, 세로: 15)이 다른 모든 명함보다 크기가 큽니다. 따라서 지갑의 크기는 3번째 명함의 크기와 같으며, 120(=8 x 15)을 return 합니다.</li>
+</ul>
+
+<h2 id="입출력-예-3">입출력 예 #3</h2>
+<ul>
+  <li>명함들을 적절히 회전시켜 겹쳤을 때, 모든 명함을 포함하는 가장 작은 지갑의 크기는 133(=19 x 7)입니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">secondNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="c1">//정렬해서 각 자리수에서 가장 큰 값 구하기</span>
+        <span class="k">if</span> <span class="n">firstNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">firstNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">secondNum</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">secondNum</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">firstNum</span> <span class="o">*</span> <span class="n">secondNum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">sizes</span><span class="p">:[[</span><span class="kt">Int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">maxNum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">minNum</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">size</span> <span class="k">in</span> <span class="n">sizes</span> <span class="p">{</span>
+        <span class="n">maxNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">maxNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+        <span class="n">minNum</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="n">minNum</span><span class="p">,</span> <span class="n">size</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">minNum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>이번에는 무작정 for문을 사용한 정렬 아닌 sort함수를 써서 풀었다. 다른 사람 코드도 큰 풀이방법은 비슷한데 사용하는 함수가 달랐다. 다른 사람의 풀이도 자주보면서 내것으로 만들 수 있도록 해야겠다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="최소직사각형" /><summary type="html"><![CDATA[[프로그래머스/Swift] 최소직사각형]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 11일차</title><link href="http://localhost:4000/TIL/til11/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 11일차" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til11</id><content type="html" xml:base="http://localhost:4000/TIL/til11/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-12-til11.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>함수형 프로그래밍과 클로저, 고차함수를 생각하면서 무작정 for문을 쓰지 않으려고 신경써서 풀었다. 정렬은 sort 함수로 썼는데 너무 편하고 좋더라. 무작정 푸는게 아니라 생각해보고 풀어야겠다.</p>
+
+<h3 id="타입캐스팅">타입캐스팅</h3>
+<p>팀원들하고 타입캐스팅 관련해서 어려운 점을 이야기하고 각자 공부해서 이야기하는 시간으로 도움이 많이 됐던 것 같다.</p>
+
+<h3 id="심화-강의">심화 강의</h3>
+<p>심화 강의는 절반 정도 봤는데 전부 이해하지 못해도 완강하고 과제 하면서 다시 봐야겠다.</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>강의를 완강하고 개인과제를 다시 읽어보고 풀어볼예정 !!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 11일차 이야기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 10일차</title><link href="http://localhost:4000/TIL/til10/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 10일차" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til10</id><content type="html" xml:base="http://localhost:4000/TIL/til10/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-11-til10.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -919,118 +930,4 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <p>지난 주 금요일에 공부했던 클로저를 정리하면서 블로그에 올릴 준비를 하는데 생각보다 깔끔하게 정리하는게 어려운 것 같다. 다시 큰 주제를 생각하고 구체화시켜 작성해봐야겠다. 잘 쓰려고 고집부린건 아닌데 어려운 것 같다.</p>
 
 <h3 id="내일은">내일은?</h3>
-<p>오늘 공개된 강의를 하나밖에 못들어서 강의를 마저 듣고 블로그 작성할 예정. 강의는 들었으나 정리된 내용이 부족한 것 같다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 10일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 크기가 작은 부분 문자열</title><link href="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 크기가 작은 부분 문자열" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%81%AC%EA%B8%B0%EA%B0%80%EC%9E%91%EC%9D%80%EB%B6%80%EB%B6%84%EB%AC%B8%EC%9E%90%EC%97%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>숫자로 이루어진 문자열 t와 p가 주어질 때, t에서 p와 길이가 같은 부분문자열 중에서, 이 부분문자열이 나타내는 수가 p가 나타내는 수보다 작거나 같은 것이 나오는 횟수를 return하는 함수 solution을 완성하세요.</li>
-  <li>예를 들어, t=”3141592”이고 p=”271” 인 경우, t의 길이가 3인 부분 문자열은 314, 141, 415, 159, 592입니다. 이 문자열이 나타내는 수 중 271보다 작거나 같은 수는 141, 159 2개 입니다.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/147355?language=swift" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ p의 길이 ≤ 18</li>
-  <li>p의 길이 ≤ t의 길이 ≤ 10,000</li>
-  <li>t와 p는 숫자로만 이루어진 문자열이며, 0으로 시작하지 않습니다.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>t</th>
-      <th>p</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“3141592”</td>
-      <td>“271”</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>“500220839878”</td>
-      <td>“7”</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>“10203”</td>
-      <td>“15”</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>문제 예시와 같습니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>p의 길이가 1이므로 t의 부분문자열은 “5”, “0”, 0”, “2”, “2”, “0”, “8”, “3”, “9”, “8”, “7”, “8”이며 이중 7보다 작거나 같은 숫자는 “5”, “0”, “0”, “2”, “2”, “0”, “3”, “7” 이렇게 8개가 있습니다.</li>
-</ul>
-
-<h2 id="입출력-예-3">입출력 예 #3</h2>
-<ul>
-  <li>p의 길이가 2이므로 t의 부분문자열은 “10”, “02”, “20”, “03”이며, 이중 15보다 작거나 같은 숫자는 “10”, “02”, “03” 이렇게 3개입니다. “02”와 “03”은 각각 2, 3에 해당한다는 점에 주의하세요</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">t</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">p</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
-    <span class="k">var</span> <span class="nv">temp</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span> 
-    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> 
-    
-    <span class="c1">//배열 변환 </span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">t</span> <span class="p">{</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-    <span class="p">}</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
-        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="kt">Int</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="o">!</span> <span class="o">&lt;=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">!</span> <span class="p">{</span>
-                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="p">}</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">{</span>
-                <span class="n">temp</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-                
-                <span class="c1">//길이가 같으면 숫자 비교 </span>
-                <span class="k">if</span> <span class="n">temp</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
-                    <span class="k">if</span> <span class="kt">Int</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="o">!</span> <span class="o">&lt;=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">!</span> <span class="p">{</span>
-                        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="p">}</span>
-                    <span class="k">break</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>       
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">cnt</span> 
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">t</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">p</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">answer</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span> <span class="o">...</span> <span class="n">t</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">subStr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="nf">dropFirst</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="nf">prefix</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">comp</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">subStr</span><span class="p">),</span> <span class="k">let</span> <span class="nv">val</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">answer</span> <span class="o">+=</span> <span class="n">comp</span> <span class="o">-</span> <span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">answer</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>주말에 고차함수 공부를 해서 고차함수를 사용하여 문제를 풀어보려고했는데 아직 내공이 부족한 것 같다. 기본 제공하는 함수를 많이 사용해봐야할듯…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="크기가 작은 부분 문자열" /><summary type="html"><![CDATA[[프로그래머스/Swift] 크기가 작은 부분 문자열]]></summary></entry></feed>
+<p>오늘 공개된 강의를 하나밖에 못들어서 강의를 마저 듣고 블로그 작성할 예정. 강의는 들었으나 정리된 내용이 부족한 것 같다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 10일차 이야기]]></summary></entry></feed>
