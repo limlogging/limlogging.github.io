@@ -383,6 +383,12 @@ var store = [{
         "url": "/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/",
         "teaser": null
       },{
+        "title": "[Swift] 아스키 코드",
+        "excerpt":"아스키(ASCII) ASCII(American Standard Code for Information Interchange, 미국 정보 교환 표준 부호)는 컴퓨터와 통신 장비에서 텍스트를 표현하기 위해 사용되는 표준 문자 인코딩 방식 나무위키 아스키코드 바로가기 아스키 코드 -&gt; 문자 let asciiValue: UInt8 = 65 let character = Character(UnicodeScalar(asciiValue)) print(character) // 출력: \"A\" 문자 -&gt; 아스키 코드 let character: Character...","categories": ["swift"],
+        "tags": ["swift","아스키 코드"],
+        "url": "/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/",
+        "teaser": null
+      },{
         "title": "[TIL] 내배캠 iOS앱 개발 공부 12일차",
         "excerpt":"데일리 스크럼 알고리즘 오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다. var str: Character = \"a\" //문자를 아스키 코드로 변환 str.asciiValue! //출력: 97 //아스키 코드에 1을 더하고 아스키 코드를 문자로 변환 Character(UnicodeScalar(str.asciiValue! + 1)) //출력: b 문제 풀고 적용했는데...","categories": ["TIL"],
         "tags": ["TIL"],
