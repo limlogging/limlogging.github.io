@@ -11,12 +11,6 @@ var store = [{
         "url": "/sparta/firstProject/",
         "teaser": null
       },{
-        "title": "[내배캠] 글쓰기 테스트 입니다.",
-        "excerpt":"TEST      As Is   let a: Int = 1 let b: Int = 2      TEST    TEST2   print(test)   print(test) : test   TEST3   var a: Int = 1    TEST입니다.      TEST   TEST4     TEST            TEST          ","categories": ["sparta"],
-        "tags": ["bootcamp"],
-        "url": "/sparta/test/",
-        "teaser": null
-      },{
         "title": "Mac에서 github blog 만들기 - 2",
         "excerpt":"1편에 이어 Ruby, Jekyll, bundler 설치, 테마를 다운로드 받아 로컬환경에서 실행하는 방법입니다. 1. Homebrew 설치 Homebrew는 macOS 및 Linux 운영 체제를 위한 오픈 소스 패키지 관리자입니다. 이를 통해 사용자는 명령줄 인터페이스를 통해 손쉽게 소프트웨어를 설치, 업데이트, 관리할 수 있습니다. 일반적으로 Homebrew를 사용하면 다음과 같은 작업을 수행할 수 있습니다. Homebrew Homepage...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog"],
@@ -405,5 +399,11 @@ var store = [{
         "excerpt":"데일리 스크럼 알고리즘 어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다. 개인과제 내일 정오까지 과제 제출해야하는데...","categories": ["TIL"],
         "tags": ["TIL"],
         "url": "/TIL/til13/",
+        "teaser": null
+      },{
+        "title": "[내배캠] 3주차 개인과제 - 야구게임",
+        "excerpt":"개인과제 후기 1주차 온보딩, 2,3 주차 문법강의가 끝났습니다. 배운 내용을 바탕으로 과제를 만들어 제출하였습니다. 중복값을 제외하고 랜덤 값 뽑기, 스트라이크/볼 판단하는 부분에서 고민하는 시간이 많았습니다. 제출 시간이 촉박하여 우선 완성시켜놓고 최대한 기능별로 나누는 작업을 진행하였습니다. 배웠던 내용을 많이 적용하지 못한 것 같아 아쉬움이 남습니다. Lv1 문제 1에서 9까지의 서로 다른...","categories": ["sparta"],
+        "tags": ["야구게임"],
+        "url": "/sparta/baseballGame/",
         "teaser": null
       }]

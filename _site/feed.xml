@@ -1,15 +1,381 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-14T19:55:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 13일차</title><link href="http://localhost:4000/TIL/til13/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 13일차" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til13</id><content type="html" xml:base="http://localhost:4000/TIL/til13/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-14-til13.png" alt="" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-15T11:40:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 3주차 개인과제 - 야구게임</title><link href="http://localhost:4000/sparta/baseballGame/" rel="alternate" type="text/html" title="[내배캠] 3주차 개인과제 - 야구게임" /><published>2024-03-15T00:00:00+09:00</published><updated>2024-03-15T00:00:00+09:00</updated><id>http://localhost:4000/sparta/baseballGame</id><content type="html" xml:base="http://localhost:4000/sparta/baseballGame/"><![CDATA[<h1 id="개인과제-후기">개인과제 후기</h1>
+<p>1주차 온보딩, 2,3 주차 문법강의가 끝났습니다. 
+배운 내용을 바탕으로 과제를 만들어 제출하였습니다. 중복값을 제외하고 랜덤 값 뽑기, 스트라이크/볼 판단하는 부분에서 고민하는 시간이 많았습니다. 제출 시간이 촉박하여 우선 완성시켜놓고 최대한 기능별로 나누는 작업을 진행하였습니다. 배웠던 내용을 많이 적용하지 못한 것 같아 아쉬움이 남습니다.</p>
 
-<h3 id="알고리즘">알고리즘</h3>
-<p>어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다.</p>
+<h1 id="lv1-문제">Lv1 문제</h1>
+<ul>
+  <li>1에서 9까지의 서로 다른 임의의 수 3개를 정하고 맞추는 게임</li>
+  <li>정답은 랜덤으로 만듭니다. 1에서 9까지의 서로 다른 임의의 수 3자리</li>
+</ul>
 
-<h3 id="개인과제">개인과제</h3>
-<p>내일 정오까지 과제 제출해야하는데 아직 1번밖에 풀지 못했다. 
-클래스, 함수, 반복문 어떻게 하면 잘 활용할 수 있을까 고민했는데 시간이 너무 많이 지났다. 내일 오전까지 우선 완성은 시켜놓고 조금씩 코드 리펙토링을 진행해야겠다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">class</span> <span class="kt">Random</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="n">randomNumberCount</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+        <span class="c1">//1. 배열에 범위만큼의 숫자 할당</span>
+        <span class="k">var</span> <span class="nv">arrNumber</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">9</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">arrRandomNumber</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1">//임의 개수만큼 반복</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">cnt</span> <span class="p">{</span>
+            <span class="c1">//2. 배열 범위에서 랜덤 숫자 인덱스 할당</span>
+            <span class="k">var</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="n">arrNumber</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="c1">//3. 할당된 숫자를 새로운 배열에 저장</span>
+            <span class="n">arrRandomNumber</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">arrNumber</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="c1">//4. 할당된 숫자의 Index를 제거</span>
+            <span class="n">arrNumber</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">arrRandomNumber</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//정답 확인</span>
+<span class="kd">func</span> <span class="nf">answerCheck</span><span class="p">(</span><span class="n">comArr</span> <span class="nv">comArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">myArr</span> <span class="nv">myArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="c1">//맞춘 개수 확인</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myArrNum</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">myArrNum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">comArrNum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">rightCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<h3 id="내일은">내일은?</h3>
-<p>다음주 부터는 UIKit으로 앱 만들기 강의가 시작 되는데 개인 2주간의 문법강의를 마무리하면서 복습하는 시간을 가져야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 13일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+    <span class="k">return</span> <span class="n">rightCnt</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">?</span> <span class="s">"정답입니다."</span> <span class="p">:</span> <span class="s">"틀렸습니다! (</span><span class="se">\(</span><span class="n">rightCnt</span><span class="se">)</span><span class="s">개 맞췄습니다.)"</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">comRandom</span><span class="p">:</span> <span class="kt">Random</span> <span class="o">=</span> <span class="kt">Random</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">comArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="n">comRandom</span><span class="o">.</span><span class="nf">randomNumber</span><span class="p">(</span><span class="nv">randomNumberCount</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">myRandom</span><span class="p">:</span> <span class="kt">Random</span> <span class="o">=</span> <span class="kt">Random</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">myArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="n">myRandom</span><span class="o">.</span><span class="nf">randomNumber</span><span class="p">(</span><span class="nv">randomNumberCount</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">var</span> <span class="nv">rightCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">"컴퓨터 선택: </span><span class="se">\(</span><span class="n">comArrNum</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"내 선택: </span><span class="se">\(</span><span class="n">myArrNum</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">answerCheck</span><span class="p">(</span><span class="nv">comArr</span><span class="p">:</span> <span class="n">comArrNum</span><span class="p">,</span> <span class="nv">myArr</span><span class="p">:</span> <span class="n">myArrNum</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="lv2-문제">Lv2 문제</h1>
+<ul>
+  <li>정답을 맞추기 위해 3자리수를 입력하고 힌트를 받습니다
+    <ul>
+      <li>힌트는 야구용어인 볼과 스트라이크입니다.</li>
+      <li>같은 자리에 같은 숫자가 있는 경우 스트라이크, 다른 자리에 숫자가 있는 경우 볼입니다.</li>
+    </ul>
+  </li>
+  <li>ex) 정답 : 456 인 경우
+    <ul>
+      <li>435를 입력한 경우 → 1스트라이크 1볼</li>
+      <li>357를 입력한 경우 → 1스트라이크</li>
+      <li>678를 입력한 경우 → 1볼</li>
+      <li>123를 입력한 경우 → Nothing</li>
+    </ul>
+  </li>
+  <li>ex) 정답 : 456 인 경우
+    <ul>
+      <li>435를 입력한 경우 → 1스트라이크 1볼</li>
+      <li>357를 입력한 경우 → 1스트라이크</li>
+      <li>678를 입력한 경우 → 1볼</li>
+      <li>123를 입력한 경우 → Nothing</li>
+    </ul>
+  </li>
+  <li>만약 올바르지 않은 입력값에 대해서는 오류 문구를 보여주세요</li>
+  <li>3자리 숫자가 정답과 같은 경우 게임이 종료됩니다</li>
+  <li>실행 예시(정답 : 456)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span> <span class="n">게임을</span> <span class="n">시작합니다</span> <span class="o">&gt;</span>
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">435</span>
+<span class="mi">1</span><span class="n">스트라이크</span> <span class="mi">1</span><span class="n">볼</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">357</span>
+<span class="mi">1</span><span class="n">스트라이크</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">123</span>
+<span class="kt">Nothing</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="n">dfg</span> <span class="c1">// 세 자리 숫자가 아니어서 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">199</span> <span class="c1">// 9가 두번 사용되어 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">103</span> <span class="c1">// 0이 사용되어 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">456</span>
+<span class="n">정답입니다</span><span class="o">!</span>
+</code></pre></div></div>
+
+<h1 id="lv3-문제">Lv3 문제</h1>
+<ul>
+  <li>정답이 되는 숫자를 0에서 9까지의 서로 다른 3자리의 숫자로 바꿔주세요
+    <ul>
+      <li>맨 앞자리에 0이 오는 것은 불가능합니다
+        <ul>
+          <li>092 → 불가능</li>
+          <li>870 → 가능</li>
+          <li>300 → 불가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lv4-문제">Lv4 문제</h1>
+<ul>
+  <li>프로그램을 시작할 때 안내문구를 보여주세요
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+</code></pre></div>    </div>
+  </li>
+  <li>1번 게임 시작하기의 경우 “필수 구현 기능” 의 예시처럼 게임이 진행됩니다
+    <ul>
+      <li>정답을 맞혀 게임이 종료된 경우 위 안내문구를 다시 보여주세요</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">1</span> <span class="c1">// 1번 게임 시작하기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">게임을</span> <span class="n">시작합니다</span> <span class="o">&gt;</span>
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+</code></pre></div></div>
+
+<h1 id="lv5-문제">Lv5 문제</h1>
+<ul>
+  <li>2번 게임 기록 보기의 경우 완료한 게임들에 대해 시도 횟수를 보여줍니다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">2</span> <span class="c1">// 2번 게임 기록 보기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span> <span class="o">&gt;</span>
+<span class="mi">1</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">14</span>
+<span class="mi">2</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">9</span>
+<span class="mi">3</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">12</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+</code></pre></div></div>
+
+<h1 id="lv6-문제">Lv6 문제</h1>
+<ul>
+  <li>3번 종료하기의 경우 프로그램이 종료됩니다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">3</span> <span class="c1">// 3번 종료하기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">숫자</span> <span class="n">야구</span> <span class="n">게임을</span> <span class="n">종료합니다</span> <span class="o">&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>1, 2, 3 이외의 입력값에 대해서는 오류 메시지를 보여주세요</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">4</span>
+
+<span class="n">올바른</span> <span class="n">숫자를</span> <span class="n">입력해주세요</span><span class="o">!</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="제출-코드">제출 코드</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">class</span> <span class="kt">BaseballGame</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">comNum</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span> <span class="c1">//컴퓨터 랜덤 값</span>
+    <span class="k">var</span> <span class="nv">strike</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1">//스트라이크 개수</span>
+    <span class="k">var</span> <span class="nv">ball</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1">//볼 개수</span>
+    <span class="k">var</span> <span class="nv">flag</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>  <span class="c1">//게임 정답 유무 확인</span>
+    
+    <span class="k">var</span> <span class="nv">inputCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//입력횟수</span>
+    
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"&lt; 게임을 시작합니다. &gt;"</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">comNum</span> <span class="o">=</span> <span class="nf">randomNum</span><span class="p">()</span>   <span class="c1">//컴퓨터 기본 값 셋팅</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//컴퓨터 초기 값 셋팅</span>
+    <span class="kd">func</span> <span class="nf">randomNum</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">var</span> <span class="nv">ranNum</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="mi">9</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="mi">2</span> <span class="p">{</span>
+            <span class="k">repeat</span> <span class="p">{</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//index가 0(첫번째 숫자가 0)이면 다른 숫자가 나올때까지 반복</span>
+            <span class="n">ranNum</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">ranNum</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//입력 값 받아오기</span>
+    <span class="kd">func</span> <span class="nf">inputData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">inputCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"-------------------------------"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"숫자를 입력하세요"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">inputData</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">inputData</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//데이터 체크</span>
+    <span class="kd">func</span> <span class="nf">inputDataValidation</span><span class="p">(</span><span class="n">_</span> <span class="nv">inputData</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">inputData</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (3자리 입력)"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//숫자/문자 체크</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">number</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//숫자 중복값 체크</span>
+                <span class="k">if</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">number</span><span class="p">))</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="kc">true</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (중복 값)"</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">false</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (문자 포함)"</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">gameStart</span><span class="p">(</span><span class="n">_</span> <span class="nv">myNum</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//print("내입력값: \(myNum), 컴터입력값: \(comNum)")</span>
+        <span class="k">let</span> <span class="nv">myNumArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="n">myNum</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">comNumArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="n">comNum</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myNumArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+            <span class="c1">//숫자가 일치하면 스트라이크</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myNumArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="c1">//print("i: \(i), j: \(j), comNumArr[\(i)]: \(comNumArr[i]), myNumArr[\(j)]: \(myNumArr[j])")</span>
+
+                <span class="c1">//index와 값이 일치하면 스트라이크</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">comNumArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">myNumArr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">strike</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="c1">//값이 일치하지만 index가 다르면 ball</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">comNumArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">myNumArr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">ball</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//결과 확인</span>
+    <span class="kd">func</span> <span class="nf">gameResult</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">strike</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"정답입니다!!!!!!!!!!!!!!!!!!!!!!!!"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"-------------------------------"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">strike</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ball</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Nothing"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">strike</span><span class="se">)</span><span class="s"> 스트라이크, </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">ball</span><span class="se">)</span><span class="s"> 볼"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">recordClear</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">ball</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">GameRecord</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">gameRecordDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span><span class="kt">Int</span><span class="p">]()</span>
+<span class="p">}</span>
+
+<span class="c1">//게임 횟수 저장</span>
+<span class="k">let</span> <span class="nv">gameRecord</span><span class="p">:</span> <span class="kt">GameRecord</span> <span class="o">=</span> <span class="kt">GameRecord</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"환영합니다! 원하시는 번호를 입력해주세요."</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"1. 게임 시작하기 2. 게임 기록 보기 3. 종료하기"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">inputData</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">number</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="n">number</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1">//컴퓨터 숫자 초기화</span>
+                <span class="k">let</span> <span class="nv">baseballGame</span><span class="p">:</span> <span class="kt">BaseballGame</span> <span class="o">=</span> <span class="kt">BaseballGame</span><span class="p">()</span>
+                
+                <span class="c1">//print("컴터 선택 값: \(baseballGame.num)")</span>
+                <span class="k">repeat</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">myNum</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">inputData</span><span class="p">()</span> <span class="c1">//내 입력 숫자</span>
+                
+                    <span class="c1">//입력값 체크</span>
+                    <span class="k">if</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">inputDataValidation</span><span class="p">(</span><span class="n">myNum</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">//게임 시작</span>
+                        <span class="n">baseballGame</span><span class="o">.</span><span class="nf">gameStart</span><span class="p">(</span><span class="n">myNum</span><span class="p">)</span>
+                        <span class="c1">//결과보기</span>
+                        <span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">gameResult</span><span class="p">()</span>
+                        
+                        <span class="k">if</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="p">{</span>
+                            <span class="c1">//정답시 게임 기록</span>
+                            <span class="k">if</span> <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
+                                <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span>
+                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                                <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span>
+                            <span class="p">}</span>
+                            <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//입력 횟수 초기화</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="c1">//오답 시 초기화</span>
+                            <span class="n">baseballGame</span><span class="o">.</span><span class="nf">recordClear</span><span class="p">()</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">//true가 될때까지 반복</span>
+                
+                <span class="k">break</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"----------------------------------"</span><span class="p">)</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"게임 기록 보기"</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"진행한 게임이 없습니다."</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s">번째 게임 : 시도 횟수 - </span><span class="se">\(</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"----------------------------------"</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"&lt;숫자 야구 게임을 종료합니다.&gt;"</span><span class="p">)</span>
+                <span class="nf">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"올바른 숫자를 입력해주세요!"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"올바른 숫자를 입력해주세요!"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="야구게임" /><summary type="html"><![CDATA[3주차 개인과제 - 야구게임]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.</p>
@@ -185,7 +551,40 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">modifiedString</span><span class="p">)</span> <span class="c1">// 출력: "Hello, Swift!"</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="숫자 문자열과 영단어" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 문자열과 영단어]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 시저 암호</title><link href="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 시저 암호" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="숫자 문자열과 영단어" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 문자열과 영단어]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 13일차</title><link href="http://localhost:4000/TIL/til13/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 13일차" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til13</id><content type="html" xml:base="http://localhost:4000/TIL/til13/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-14-til13.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다.</p>
+
+<h3 id="개인과제">개인과제</h3>
+<p>내일 정오까지 과제 제출해야하는데 아직 1번밖에 풀지 못했다. 
+클래스, 함수, 반복문 어떻게 하면 잘 활용할 수 있을까 고민했는데 시간이 너무 많이 지났다. 내일 오전까지 우선 완성은 시켜놓고 조금씩 코드 리펙토링을 진행해야겠다.</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>다음주 부터는 UIKit으로 앱 만들기 강의가 시작 되는데 개인 2주간의 문법강의를 마무리하면서 복습하는 시간을 가져야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 13일차 이야기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til12/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til12/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-13-til12.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"a"</span>
+
+<span class="c1">//문자를 아스키 코드로 변환</span>
+<span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="c1">//출력: 97 </span>
+
+<span class="c1">//아스키 코드에 1을 더하고 아스키 코드를 문자로 변환</span>
+<span class="kt">Character</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//출력: b </span>
+</code></pre></div></div>
+
+<p>문제 풀고 적용했는데 중간에 실패가 계속 떴다 ㅠ 강의듣고 과제해야하니까 우선 저녁에 다시 해보는걸로 .. 
+<img src="/assets/images/categories/til/2024-03-13-til12-2.png" alt="" /></p>
+
+<h3 id="심화-강의">심화 강의</h3>
+<p>심화 강의는 완강 했으나 한 파트를 10분에 끝내니 한번에 숙지 못하는건 어쩌면 당연한걸까? 과제하고 다시 보는걸로!</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 시저 암호</title><link href="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 시저 암호" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
@@ -308,103 +707,7 @@
   <li>타입 안정성: UInt8은 부호 없는 8비트 정수를 나타내므로 음수 값을 가질 수 없습니다. 이는 아스키 코드 값의 범위가 0부터 127까지이므로 부호 없는 타입을 사용하는 것이 논리적입니다.</li>
 </ol>
 
-<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til12/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til12/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-13-til12.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<p>오늘의 오전 알고리즘은 시간이 꽤 오래걸렸는데 아직 제출하지 못했다. 문자를 아스키 코드로 변환하는 방법이 swift에서 낯설어 문법을 찾아서 해결했다.</p>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">str</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"a"</span>
-
-<span class="c1">//문자를 아스키 코드로 변환</span>
-<span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="c1">//출력: 97 </span>
-
-<span class="c1">//아스키 코드에 1을 더하고 아스키 코드를 문자로 변환</span>
-<span class="kt">Character</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//출력: b </span>
-</code></pre></div></div>
-
-<p>문제 풀고 적용했는데 중간에 실패가 계속 떴다 ㅠ 강의듣고 과제해야하니까 우선 저녁에 다시 해보는걸로 .. 
-<img src="/assets/images/categories/til/2024-03-13-til12-2.png" alt="" /></p>
-
-<h3 id="심화-강의">심화 강의</h3>
-<p>심화 강의는 완강 했으나 한 파트를 10분에 끝내니 한번에 숙지 못하는건 어쩌면 당연한걸까? 과제하고 다시 보는걸로!</p>
-
-<h3 id="내일은">내일은?</h3>
-<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
-<ul>
-  <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
-  <li>클로저를 공부해야 원활한 사용 가능</li>
-  <li>알고리즘 문제 풀면서 익숙해집시다.</li>
-</ul>
-
-<h1 id="map">Map</h1>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">map</code> 함수는 컬렉션 내부의 <strong>기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성</strong>합니다.</li>
-  <li>기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//문자열 배열을 정수형으로 변경하기 </span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">var</span> <span class="nv">strArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"5"</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">strArr</span><span class="p">)</span>   <span class="c1">//출력 ["1", "2", "3", "4", "5"]</span>
-
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">strArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="n">intArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">strArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span> <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
-
-<span class="c1">//Map 사용</span>
-<span class="n">intArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span>   <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
-</code></pre></div></div>
-<ul>
-  <li>클로저의 매개변수 이름이 필요하지 않은 경우 단축 인자 이름을 활용할 수 있습니다.($0, $1)</li>
-  <li>단축 인자이름은 순서대로 $0 , $1 , $2, $3 …으로 표현합니다.</li>
-  <li>$0 은 첫번째 인자, $1은 두번째 인자를 뜻합니다.</li>
-</ul>
-
-<h1 id="filter">filter</h1>
-<ul>
-  <li>기존 컨테이너의 요소 중 조건에 만족하는 값에 대해 새로운 컨테이너를 만들어 반환합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//짝수만 뽑아 내기</span>
-<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
-
-<span class="c1">//filter 사용</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
-</code></pre></div></div>
-
-<h1 id="reduce">reduce</h1>
-<ul>
-  <li>기존의 컨테이너의 요소에 대해 정의한 클로저로 매핑한 결과를 새로운 컨테이너로 반환합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//배열 합 구하기</span>
-<span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-
-<span class="c1">//for문 사용</span>
-<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-    <span class="n">sum</span> <span class="o">+=</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>  <span class="c1">//출력 55</span>
-
-<span class="c1">//reduce 사용</span>
-<span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
+<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry><entry><title type="html">[Swift] 클로저(Closure)</title><link href="http://localhost:4000/swift/closure/" rel="alternate" type="text/html" title="[Swift] 클로저(Closure)" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/closure</id><content type="html" xml:base="http://localhost:4000/swift/closure/"><![CDATA[<h1 id="1-클로저란">1. 클로저란?</h1>
 <ul>
   <li>일정 기능을 하는 코드를 하나의 블록(중괄호)으로 모아놓은 것을 말합니다.</li>
   <li>함수는 클로저의 한 형태입니다. (이름 없는 함수입니다.)</li>
@@ -917,17 +1220,78 @@ DispatchQueue.global().async를 사용하여 클로저가 다른 스레드에서
 <p>심화 강의는 절반 정도 봤는데 전부 이해하지 못해도 완강하고 과제 하면서 다시 봐야겠다.</p>
 
 <h3 id="내일은">내일은?</h3>
-<p>강의를 완강하고 개인과제를 다시 읽어보고 풀어볼예정 !!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 11일차 이야기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 10일차</title><link href="http://localhost:4000/TIL/til10/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 10일차" /><published>2024-03-11T00:00:00+09:00</published><updated>2024-03-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til10</id><content type="html" xml:base="http://localhost:4000/TIL/til10/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-11-til10.png" alt="" /></p>
+<p>강의를 완강하고 개인과제를 다시 읽어보고 풀어볼예정 !!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 11일차 이야기]]></summary></entry><entry><title type="html">[Swift] 고차함수</title><link href="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="alternate" type="text/html" title="[Swift] 고차함수" /><published>2024-03-12T00:00:00+09:00</published><updated>2024-03-12T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/"><![CDATA[<h1 id="고차함수">고차함수</h1>
+<ul>
+  <li>다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수</li>
+  <li>클로저를 공부해야 원활한 사용 가능</li>
+  <li>알고리즘 문제 풀면서 익숙해집시다.</li>
+</ul>
 
-<h3 id="알고리즘">알고리즘</h3>
-<p>주말에 야곰님 책으로 클로저와 고차함수 공부를 했다. 오늘 오전에 알고리즘 문제에 응용할 수 있을지 고민했는데 사용하지 못했다. 다른 사람 풀이를 보니 Swift가 제공하는 문자열 함수를 사용하여 풀었더라. 조금씩 함수형 프로그래밍을 생각하며 익숙해져야겠다.</p>
+<h1 id="map">Map</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">map</code> 함수는 컬렉션 내부의 <strong>기존 데이터를 변형(transform)하여 새로운 컬렉션를 생성</strong>합니다.</li>
+  <li>기존의 컬렉션의 요소에 대해 정의한 익명함수로 매핑한 결과를 새로운 컬렉션으로 반환합니다.</li>
+</ul>
 
-<h3 id="깃-허브-강의-다시-듣기">깃 허브 강의 다시 듣기</h3>
-<p>브랜치 생성, 목록 보기, 이동, 명령어를 통한 합치기, Github에서 합치기 등 기본 내용을 다시 숙지했다. 이번주 개인 과제 업로드 할때 배운 내용을 써먹어볼 예정!</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//문자열 배열을 정수형으로 변경하기 </span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">strArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"1"</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="s">"5"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">strArr</span><span class="p">)</span>   <span class="c1">//출력 ["1", "2", "3", "4", "5"]</span>
 
-<h3 id="클로저">클로저</h3>
-<p>지난 주 금요일에 공부했던 클로저를 정리하면서 블로그에 올릴 준비를 하는데 생각보다 깔끔하게 정리하는게 어려운 것 같다. 다시 큰 주제를 생각하고 구체화시켜 작성해봐야겠다. 잘 쓰려고 고집부린건 아닌데 어려운 것 같다.</p>
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">strArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">intArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">Int</span><span class="p">(</span><span class="n">strArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">!</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span> <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
 
-<h3 id="내일은">내일은?</h3>
-<p>오늘 공개된 강의를 하나밖에 못들어서 강의를 마저 듣고 블로그 작성할 예정. 강의는 들었으나 정리된 내용이 부족한 것 같다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 10일차 이야기]]></summary></entry></feed>
+<span class="c1">//Map 사용</span>
+<span class="n">intArr</span> <span class="o">=</span> <span class="n">strArr</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intArr</span><span class="p">)</span>   <span class="c1">//출력 [1, 2, 3, 4, 5]</span>
+</code></pre></div></div>
+<ul>
+  <li>클로저의 매개변수 이름이 필요하지 않은 경우 단축 인자 이름을 활용할 수 있습니다.($0, $1)</li>
+  <li>단축 인자이름은 순서대로 $0 , $1 , $2, $3 …으로 표현합니다.</li>
+  <li>$0 은 첫번째 인자, $1은 두번째 인자를 뜻합니다.</li>
+</ul>
+
+<h1 id="filter">filter</h1>
+<ul>
+  <li>기존 컨테이너의 요소 중 조건에 만족하는 값에 대해 새로운 컨테이너를 만들어 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//짝수만 뽑아 내기</span>
+<span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+
+<span class="c1">//filter 사용</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>  <span class="c1">//출력 [2, 4, 6, 8, 10]</span>
+</code></pre></div></div>
+
+<h1 id="reduce">reduce</h1>
+<ul>
+  <li>기존의 컨테이너의 요소에 대해 정의한 클로저로 매핑한 결과를 새로운 컨테이너로 반환합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//배열 합 구하기</span>
+<span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">var</span> <span class="nv">intArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="c1">//for문 사용</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">intArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">intArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>  <span class="c1">//출력 55</span>
+
+<span class="c1">//reduce 사용</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">intArr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span> <span class="c1">//출력 55</span>
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="고차함수" /><summary type="html"><![CDATA[다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수]]></summary></entry></feed>

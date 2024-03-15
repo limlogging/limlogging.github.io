@@ -1,0 +1,1143 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[내배캠] 3주차 개인과제 - 야구게임 - limlogging Devlog</title>
+<meta name="description" content="3주차 개인과제 - 야구게임">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[내배캠] 3주차 개인과제 - 야구게임">
+<meta property="og:url" content="http://localhost:4000/sparta/baseballGame/">
+
+
+  <meta property="og:description" content="3주차 개인과제 - 야구게임">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-03-15T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sparta/baseballGame/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(6)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swiftui/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swiftui/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(46)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(3)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[내배캠] 3주차 개인과제 - 야구게임">
+    <meta itemprop="description" content="3주차 개인과제 - 야구게임">
+    <meta itemprop="datePublished" content="2024-03-15T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/sparta/baseballGame/" class="u-url" itemprop="url">[내배캠] 3주차 개인과제 - 야구게임
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/sparta/baseballGame/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/sparta/baseballGame/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#개인과제-후기">개인과제 후기</a></li><li><a href="#lv1-문제">Lv1 문제</a></li><li><a href="#lv2-문제">Lv2 문제</a></li><li><a href="#lv3-문제">Lv3 문제</a></li><li><a href="#lv4-문제">Lv4 문제</a></li><li><a href="#lv5-문제">Lv5 문제</a></li><li><a href="#lv6-문제">Lv6 문제</a></li><li><a href="#제출-코드">제출 코드</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="개인과제-후기">개인과제 후기</h1>
+<p>1주차 온보딩, 2,3 주차 문법강의가 끝났습니다. 
+배운 내용을 바탕으로 과제를 만들어 제출하였습니다. 중복값을 제외하고 랜덤 값 뽑기, 스트라이크/볼 판단하는 부분에서 고민하는 시간이 많았습니다. 제출 시간이 촉박하여 우선 완성시켜놓고 최대한 기능별로 나누는 작업을 진행하였습니다. 배웠던 내용을 많이 적용하지 못한 것 같아 아쉬움이 남습니다.</p>
+
+<h1 id="lv1-문제">Lv1 문제</h1>
+<ul>
+  <li>1에서 9까지의 서로 다른 임의의 수 3개를 정하고 맞추는 게임</li>
+  <li>정답은 랜덤으로 만듭니다. 1에서 9까지의 서로 다른 임의의 수 3자리</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">class</span> <span class="kt">Random</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">randomNumber</span><span class="p">(</span><span class="n">randomNumberCount</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+        <span class="c1">//1. 배열에 범위만큼의 숫자 할당</span>
+        <span class="k">var</span> <span class="nv">arrNumber</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">9</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">arrRandomNumber</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1">//임의 개수만큼 반복</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">cnt</span> <span class="p">{</span>
+            <span class="c1">//2. 배열 범위에서 랜덤 숫자 인덱스 할당</span>
+            <span class="k">var</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="n">arrNumber</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="c1">//3. 할당된 숫자를 새로운 배열에 저장</span>
+            <span class="n">arrRandomNumber</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">arrNumber</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="c1">//4. 할당된 숫자의 Index를 제거</span>
+            <span class="n">arrNumber</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">arrRandomNumber</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//정답 확인</span>
+<span class="kd">func</span> <span class="nf">answerCheck</span><span class="p">(</span><span class="n">comArr</span> <span class="nv">comArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">myArr</span> <span class="nv">myArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="c1">//맞춘 개수 확인</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myArrNum</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">myArrNum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">comArrNum</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">rightCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">rightCnt</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">?</span> <span class="s">"정답입니다."</span> <span class="p">:</span> <span class="s">"틀렸습니다! (</span><span class="se">\(</span><span class="n">rightCnt</span><span class="se">)</span><span class="s">개 맞췄습니다.)"</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">comRandom</span><span class="p">:</span> <span class="kt">Random</span> <span class="o">=</span> <span class="kt">Random</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">comArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="n">comRandom</span><span class="o">.</span><span class="nf">randomNumber</span><span class="p">(</span><span class="nv">randomNumberCount</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">myRandom</span><span class="p">:</span> <span class="kt">Random</span> <span class="o">=</span> <span class="kt">Random</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">myArrNum</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="n">myRandom</span><span class="o">.</span><span class="nf">randomNumber</span><span class="p">(</span><span class="nv">randomNumberCount</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+<span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">var</span> <span class="nv">rightCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="s">"컴퓨터 선택: </span><span class="se">\(</span><span class="n">comArrNum</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"내 선택: </span><span class="se">\(</span><span class="n">myArrNum</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">answerCheck</span><span class="p">(</span><span class="nv">comArr</span><span class="p">:</span> <span class="n">comArrNum</span><span class="p">,</span> <span class="nv">myArr</span><span class="p">:</span> <span class="n">myArrNum</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="lv2-문제">Lv2 문제</h1>
+<ul>
+  <li>정답을 맞추기 위해 3자리수를 입력하고 힌트를 받습니다
+    <ul>
+      <li>힌트는 야구용어인 볼과 스트라이크입니다.</li>
+      <li>같은 자리에 같은 숫자가 있는 경우 스트라이크, 다른 자리에 숫자가 있는 경우 볼입니다.</li>
+    </ul>
+  </li>
+  <li>ex) 정답 : 456 인 경우
+    <ul>
+      <li>435를 입력한 경우 → 1스트라이크 1볼</li>
+      <li>357를 입력한 경우 → 1스트라이크</li>
+      <li>678를 입력한 경우 → 1볼</li>
+      <li>123를 입력한 경우 → Nothing</li>
+    </ul>
+  </li>
+  <li>ex) 정답 : 456 인 경우
+    <ul>
+      <li>435를 입력한 경우 → 1스트라이크 1볼</li>
+      <li>357를 입력한 경우 → 1스트라이크</li>
+      <li>678를 입력한 경우 → 1볼</li>
+      <li>123를 입력한 경우 → Nothing</li>
+    </ul>
+  </li>
+  <li>만약 올바르지 않은 입력값에 대해서는 오류 문구를 보여주세요</li>
+  <li>3자리 숫자가 정답과 같은 경우 게임이 종료됩니다</li>
+  <li>실행 예시(정답 : 456)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span> <span class="n">게임을</span> <span class="n">시작합니다</span> <span class="o">&gt;</span>
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">435</span>
+<span class="mi">1</span><span class="n">스트라이크</span> <span class="mi">1</span><span class="n">볼</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">357</span>
+<span class="mi">1</span><span class="n">스트라이크</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">123</span>
+<span class="kt">Nothing</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="n">dfg</span> <span class="c1">// 세 자리 숫자가 아니어서 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">199</span> <span class="c1">// 9가 두번 사용되어 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">103</span> <span class="c1">// 0이 사용되어 올바르지 않은 입력값</span>
+<span class="n">올바르지</span> <span class="n">않은</span> <span class="n">입력값입니다</span>
+
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="mi">456</span>
+<span class="n">정답입니다</span><span class="o">!</span>
+</code></pre></div></div>
+
+<h1 id="lv3-문제">Lv3 문제</h1>
+<ul>
+  <li>정답이 되는 숫자를 0에서 9까지의 서로 다른 3자리의 숫자로 바꿔주세요
+    <ul>
+      <li>맨 앞자리에 0이 오는 것은 불가능합니다
+        <ul>
+          <li>092 → 불가능</li>
+          <li>870 → 가능</li>
+          <li>300 → 불가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lv4-문제">Lv4 문제</h1>
+<ul>
+  <li>프로그램을 시작할 때 안내문구를 보여주세요
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+</code></pre></div>    </div>
+  </li>
+  <li>1번 게임 시작하기의 경우 “필수 구현 기능” 의 예시처럼 게임이 진행됩니다
+    <ul>
+      <li>정답을 맞혀 게임이 종료된 경우 위 안내문구를 다시 보여주세요</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">1</span> <span class="c1">// 1번 게임 시작하기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">게임을</span> <span class="n">시작합니다</span> <span class="o">&gt;</span>
+<span class="n">숫자를</span> <span class="n">입력하세요</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+</code></pre></div></div>
+
+<h1 id="lv5-문제">Lv5 문제</h1>
+<ul>
+  <li>2번 게임 기록 보기의 경우 완료한 게임들에 대해 시도 횟수를 보여줍니다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">2</span> <span class="c1">// 2번 게임 기록 보기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span> <span class="o">&gt;</span>
+<span class="mi">1</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">14</span>
+<span class="mi">2</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">9</span>
+<span class="mi">3</span><span class="n">번째</span> <span class="nv">게임</span> <span class="p">:</span> <span class="n">시도</span> <span class="n">횟수</span> <span class="o">-</span> <span class="mi">12</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+</code></pre></div></div>
+
+<h1 id="lv6-문제">Lv6 문제</h1>
+<ul>
+  <li>3번 종료하기의 경우 프로그램이 종료됩니다</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">3</span> <span class="c1">// 3번 종료하기 입력</span>
+
+<span class="o">&lt;</span> <span class="n">숫자</span> <span class="n">야구</span> <span class="n">게임을</span> <span class="n">종료합니다</span> <span class="o">&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>1, 2, 3 이외의 입력값에 대해서는 오류 메시지를 보여주세요</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 예시</span>
+<span class="n">환영합니다</span><span class="o">!</span> <span class="n">원하시는</span> <span class="n">번호를</span> <span class="n">입력해주세요</span>
+<span class="mi">1</span><span class="o">.</span> <span class="n">게임</span> <span class="n">시작하기</span>  <span class="mi">2</span><span class="o">.</span> <span class="n">게임</span> <span class="n">기록</span> <span class="n">보기</span>  <span class="mi">3</span><span class="o">.</span> <span class="n">종료하기</span>
+<span class="mi">4</span>
+
+<span class="n">올바른</span> <span class="n">숫자를</span> <span class="n">입력해주세요</span><span class="o">!</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="제출-코드">제출 코드</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">class</span> <span class="kt">BaseballGame</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">comNum</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span> <span class="c1">//컴퓨터 랜덤 값</span>
+    <span class="k">var</span> <span class="nv">strike</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1">//스트라이크 개수</span>
+    <span class="k">var</span> <span class="nv">ball</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1">//볼 개수</span>
+    <span class="k">var</span> <span class="nv">flag</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>  <span class="c1">//게임 정답 유무 확인</span>
+    
+    <span class="k">var</span> <span class="nv">inputCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//입력횟수</span>
+    
+    <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"&lt; 게임을 시작합니다. &gt;"</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">comNum</span> <span class="o">=</span> <span class="nf">randomNum</span><span class="p">()</span>   <span class="c1">//컴퓨터 기본 값 셋팅</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//컴퓨터 초기 값 셋팅</span>
+    <span class="kd">func</span> <span class="nf">randomNum</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">var</span> <span class="nv">ranNum</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="mi">0</span><span class="o">...</span><span class="mi">9</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="mi">2</span> <span class="p">{</span>
+            <span class="k">repeat</span> <span class="p">{</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">0</span><span class="o">...</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//index가 0(첫번째 숫자가 0)이면 다른 숫자가 나올때까지 반복</span>
+            <span class="n">ranNum</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">ranNum</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//입력 값 받아오기</span>
+    <span class="kd">func</span> <span class="nf">inputData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">inputCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"-------------------------------"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"숫자를 입력하세요"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">inputData</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">inputData</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">""</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//데이터 체크</span>
+    <span class="kd">func</span> <span class="nf">inputDataValidation</span><span class="p">(</span><span class="n">_</span> <span class="nv">inputData</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">inputData</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (3자리 입력)"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//숫자/문자 체크</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">number</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//숫자 중복값 체크</span>
+                <span class="k">if</span> <span class="kt">Set</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">number</span><span class="p">))</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="kc">true</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (중복 값)"</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">false</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"올바르지 않은 입력값입니다. (문자 포함)"</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">false</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">gameStart</span><span class="p">(</span><span class="n">_</span> <span class="nv">myNum</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//print("내입력값: \(myNum), 컴터입력값: \(comNum)")</span>
+        <span class="k">let</span> <span class="nv">myNumArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="n">myNum</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">comNumArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="n">comNum</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myNumArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+            <span class="c1">//숫자가 일치하면 스트라이크</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">myNumArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+                <span class="c1">//print("i: \(i), j: \(j), comNumArr[\(i)]: \(comNumArr[i]), myNumArr[\(j)]: \(myNumArr[j])")</span>
+
+                <span class="c1">//index와 값이 일치하면 스트라이크</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">comNumArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">myNumArr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">strike</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="c1">//값이 일치하지만 index가 다르면 ball</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">comNumArr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">myNumArr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">ball</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//결과 확인</span>
+    <span class="kd">func</span> <span class="nf">gameResult</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">strike</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"정답입니다!!!!!!!!!!!!!!!!!!!!!!!!"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"-------------------------------"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">strike</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ball</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Nothing"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">strike</span><span class="se">)</span><span class="s"> 스트라이크, </span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">ball</span><span class="se">)</span><span class="s"> 볼"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">recordClear</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">ball</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">GameRecord</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">gameRecordDictionary</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span><span class="kt">Int</span><span class="p">]()</span>
+<span class="p">}</span>
+
+<span class="c1">//게임 횟수 저장</span>
+<span class="k">let</span> <span class="nv">gameRecord</span><span class="p">:</span> <span class="kt">GameRecord</span> <span class="o">=</span> <span class="kt">GameRecord</span><span class="p">()</span>
+
+<span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"환영합니다! 원하시는 번호를 입력해주세요."</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"1. 게임 시작하기 2. 게임 기록 보기 3. 종료하기"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">inputData</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">number</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="n">inputData</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="n">number</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="c1">//컴퓨터 숫자 초기화</span>
+                <span class="k">let</span> <span class="nv">baseballGame</span><span class="p">:</span> <span class="kt">BaseballGame</span> <span class="o">=</span> <span class="kt">BaseballGame</span><span class="p">()</span>
+                
+                <span class="c1">//print("컴터 선택 값: \(baseballGame.num)")</span>
+                <span class="k">repeat</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">myNum</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">inputData</span><span class="p">()</span> <span class="c1">//내 입력 숫자</span>
+                
+                    <span class="c1">//입력값 체크</span>
+                    <span class="k">if</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">inputDataValidation</span><span class="p">(</span><span class="n">myNum</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c1">//게임 시작</span>
+                        <span class="n">baseballGame</span><span class="o">.</span><span class="nf">gameStart</span><span class="p">(</span><span class="n">myNum</span><span class="p">)</span>
+                        <span class="c1">//결과보기</span>
+                        <span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="nf">gameResult</span><span class="p">()</span>
+                        
+                        <span class="k">if</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="p">{</span>
+                            <span class="c1">//정답시 게임 기록</span>
+                            <span class="k">if</span> <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">{</span>
+                                <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span>
+                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                                <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span>
+                            <span class="p">}</span>
+                            <span class="n">baseballGame</span><span class="o">.</span><span class="n">inputCnt</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//입력 횟수 초기화</span>
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="c1">//오답 시 초기화</span>
+                            <span class="n">baseballGame</span><span class="o">.</span><span class="nf">recordClear</span><span class="p">()</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">baseballGame</span><span class="o">.</span><span class="n">flag</span> <span class="o">!=</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">//true가 될때까지 반복</span>
+                
+                <span class="k">break</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"----------------------------------"</span><span class="p">)</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"게임 기록 보기"</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"진행한 게임이 없습니다."</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="nf">print</span><span class="p">(</span><span class="s">"</span><span class="se">\(</span><span class="n">i</span><span class="se">)</span><span class="s">번째 게임 : 시도 횟수 - </span><span class="se">\(</span><span class="n">gameRecord</span><span class="o">.</span><span class="n">gameRecordDictionary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"----------------------------------"</span><span class="p">)</span>
+                <span class="k">break</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"&lt;숫자 야구 게임을 종료합니다.&gt;"</span><span class="p">)</span>
+                <span class="nf">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"올바른 숫자를 입력해주세요!"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"올바른 숫자를 입력해주세요!"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%EC%95%BC%EA%B5%AC%EA%B2%8C%EC%9E%84" class="page__taxonomy-item p-category" rel="tag">야구게임</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sparta" class="page__taxonomy-item p-category" rel="tag">sparta</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-15T00:00:00+09:00">March 15, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%82%B4%EB%B0%B0%EC%BA%A0%5D+3%EC%A3%BC%EC%B0%A8+%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C+-+%EC%95%BC%EA%B5%AC%EA%B2%8C%EC%9E%84%20http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FbaseballGame%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FbaseballGame%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FbaseballGame%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/TIL/til13/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 13일차
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til13/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 13일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 13일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="permalink">[프로그래머스/Swift] 숫자 문자열과 영단어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 숫자 문자열과 영단어
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til12/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 12일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 12일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/" rel="permalink">[Swift] 아스키 코드
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">swift에서 아스키 코드 사용 방법
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
