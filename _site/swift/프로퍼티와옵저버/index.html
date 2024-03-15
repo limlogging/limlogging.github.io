@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[TIL] 내배캠 iOS앱 개발 공부 6일차 - limlogging Devlog</title>
-<meta name="description" content="내배캠 iOS앱 개발 공부 6일차 이야기">
+<!-- begin _includes/seo.html --><title>[Swift] 타입 캐스팅 - limlogging Devlog</title>
+<meta name="description" content="타입 캐스팅은 다른 데이터 타입으로 값의 형식을 변환하는 프로세스">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[TIL] 내배캠 iOS앱 개발 공부 6일차">
-<meta property="og:url" content="http://localhost:4000/TIL/til6/">
+<meta property="og:title" content="[Swift] 타입 캐스팅">
+<meta property="og:url" content="http://localhost:4000/swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%EC%98%B5%EC%A0%80%EB%B2%84/">
 
 
-  <meta property="og:description" content="내배캠 iOS앱 개발 공부 6일차 이야기">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-05T00:00:00+09:00">
+  <meta property="og:description" content="타입 캐스팅은 다른 데이터 타입으로 값의 형식을 변환하는 프로세스">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-11T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/TIL/til6/">
+
+<link rel="canonical" href="http://localhost:4000/swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%EC%98%B5%EC%A0%80%EB%B2%84/">
 
 
 
@@ -381,16 +381,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[TIL] 내배캠 iOS앱 개발 공부 6일차">
-    <meta itemprop="description" content="내배캠 iOS앱 개발 공부 6일차 이야기">
-    <meta itemprop="datePublished" content="2024-03-05T00:00:00+09:00">
+    <meta itemprop="headline" content="[Swift] 타입 캐스팅">
+    <meta itemprop="description" content="타입 캐스팅은 다른 데이터 타입으로 값의 형식을 변환하는 프로세스">
+    <meta itemprop="datePublished" content="2024-03-11T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/TIL/til6/" class="u-url" itemprop="url">[TIL] 내배캠 iOS앱 개발 공부 6일차
+            <a href="http://localhost:4000/swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%EC%98%B5%EC%A0%80%EB%B2%84/" class="u-url" itemprop="url">[Swift] 타입 캐스팅
 </a>
           </h1>
           
@@ -407,7 +407,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -417,8 +417,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/TIL/til6/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/TIL/til6/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/swift/프로퍼티와옵저버/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/swift/프로퍼티와옵저버/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -429,26 +429,124 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#15일차는">1~5일차는?</a></li><li><a href="#오늘부터-시작-데일리-스크럼부터">오늘부터 시작, 데일리 스크럼부터</a></li><li><a href="#앞으로">앞으로</a></li></ul>
+              <ul class="toc__menu"><li><a href="#타입-캐스팅">타입 캐스팅</a></li><li><a href="#is-type-check-operator">is (type check operator)</a></li><li><a href="#업캐스팅-upcasting">업캐스팅 (Upcasting)</a><ul><li><a href="#as">as</a></li></ul></li><li><a href="#다운캐스팅-downcasting">다운캐스팅 (DownCasting)</a><ul><li><a href="#as-옵셔널-타입-캐스팅">as? (옵셔널 타입 캐스팅)</a></li><li><a href="#as-강제-타입-캐스팅">as! (강제 타입 캐스팅)</a></li></ul></li><li><a href="#예시-코드">예시 코드</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="15일차는">1~5일차는?</h1>
-<p>인터넷 뉴스 댓글, 유튜브 댓글도 작성하지 않는데 매일 매일 블로그 작성하라니… 시작하기 조금 어려웠다. 1~5일차 온보딩 프로젝트를 진행하면서 TIL은 흐지부지 되는 듯 했으나 오늘부터 본격적으로 강의를 시작하고 새로 팀을 구성하면서 팀원들의 TIL을 확인하고 나도 작성해보기로 했다. (그래도 알고리즘 문제는 매일 풀었다!)</p>
+        <h1 id="타입-캐스팅">타입 캐스팅</h1>
+<ul>
+  <li>인스턴스의 “타입”을 확인 하거나, 해당 인스턴스를 슈퍼 클래스(부모 클래스)나 하위 클래스(자식 클래스)로 취급하는 방법</li>
+</ul>
 
-<h1 id="오늘부터-시작-데일리-스크럼부터">오늘부터 시작, 데일리 스크럼부터</h1>
-<p>1~5일차 같은 노션 템플릿으로 팀 약속, 목표만 작성하고 데일리 스크럼은 다들 작성하지 않았다. <font style="text-decoration:line-through">(변명하자면 다들 작성 경험이 없어서... 누군가 먼저 작성했더라면 다들 적었을 것 같다.)</font> 팀이 변경되고 처음부터 꾸준히 적은 팀원을 만나 작성된 내용을 확인하고 나도 데일리 스크럼을 작성하였다.</p>
+<h1 id="is-type-check-operator">is (type check operator)</h1>
+<ul>
+  <li>is 연산자는 타입을 체크하는 연산자로, 비교 결과를 bool 타입을 반환합니다.(타입 체킹)</li>
+  <li>예시 코드</li>
+</ul>
 
-<p><img src="/assets/images/categories/til/2024-03-05-til6.png" alt="" /></p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">char</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"A"</span>
+ 
+<span class="nf">print</span><span class="p">(</span><span class="n">char</span> <span class="k">is</span> <span class="kt">Character</span><span class="p">)</span>
+<span class="c1">// 출력값: true</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">char</span> <span class="k">is</span> <span class="kt">String</span><span class="p">)</span>   
+<span class="c1">// 출력값: false</span>
+ 
+<span class="k">let</span> <span class="nv">bool</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span>
 
-<p>TIL 저녁에 작성하기로 했는데 오늘은 처음 작성하는거라 30분만에 작성하기 힘들 것 같아 조금씩 적었다.</p>
+<span class="nf">print</span><span class="p">(</span><span class="n">bool</span> <span class="k">is</span> <span class="kt">Bool</span><span class="p">)</span>     
+<span class="c1">// 출력값: true</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bool</span> <span class="k">is</span> <span class="kt">Character</span><span class="p">)</span>
+<span class="c1">// 출력값: false</span>
+</code></pre></div></div>
 
-<p>이번주는 Swift 기초 문법 강의를 듣고 개인 과제도 만들어야하는데 강의 12개, 길이가 최대 30분이라 한번 듣고 다시 들으면서 swift 카테고리에 정리해봐야겠다.</p>
+<h1 id="업캐스팅-upcasting">업캐스팅 (Upcasting)</h1>
+<ul>
+  <li>하위클래스의 메모리구조로 저장된 인스턴스를 상위클래스 타입으로 캐스팅</li>
+</ul>
 
-<h1 id="앞으로">앞으로</h1>
-<p>다들 너무 열심히 해서 열심히 해야겠다.<br />
-노션, 깃, 강의, 실습, 블로그 관리까지… TIL 계속 쓸 수 있겠지?</p>
+<h2 id="as">as</h2>
+<ul>
+  <li>사용: 인스턴스 as 타입</li>
+  <li>as 연산자는 컴파일 단계에서 캐스팅이 실행됩니다. 따라서 항상 타입 캐스팅이 성공할 경우에만 사용할 수 있습니다.</li>
+  <li>캐스팅에 실패할 경우 에러가 발생합니다.</li>
+  <li>캐스팅하려는 타입이 같은 타입 이거나 수퍼클래스 타입이라는 것을 알 때 <code class="language-plaintext highlighter-rouge">as</code> 연사자를 사용합니다.</li>
+</ul>
+
+<h1 id="다운캐스팅-downcasting">다운캐스팅 (DownCasting)</h1>
+<ul>
+  <li>실패 가능성이 있음</li>
+  <li>사용: 인스턴스 as? 타입 / 인스턴스 as! 타입</li>
+</ul>
+
+<h2 id="as-옵셔널-타입-캐스팅">as? (옵셔널 타입 캐스팅)</h2>
+<ul>
+  <li>as? 연산자는 런타임에 캐스팅이 실행됩니다.</li>
+  <li>성공하면 옵셔널 타입의 인스턴스를 반환하고 실패하면 <em>nil</em> 을 반환합니다.</li>
+  <li>실패할 가능성이 있으면 as?를 사용하는 것이 좋습니다.</li>
+</ul>
+
+<h2 id="as-강제-타입-캐스팅">as! (강제 타입 캐스팅)</h2>
+<ul>
+  <li>as! 연산자는 런타임에 특정 타입으로 강제 캐스팅합니다.</li>
+  <li>강제 타입 캐스팅에 실패할 경우 런타임 에러가 발생할 수 있습니다.</li>
+  <li>캐스팅에 성공한 경우 인스턴스를 반환합니다.(옵셔널 x)</li>
+</ul>
+
+<h1 id="예시-코드">예시 코드</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">name</span> <span class="o">=</span> <span class="s">"name"</span>
+    <span class="k">var</span> <span class="nv">email</span> <span class="o">=</span> <span class="s">"hgk@gmail.com"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">Worker</span><span class="p">:</span> <span class="kt">Person</span> <span class="p">{</span>
+    <span class="c1">// id</span>
+    <span class="c1">// name</span>
+    <span class="c1">// email</span>
+    <span class="k">var</span> <span class="nv">salary</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">Programmer</span><span class="p">:</span> <span class="kt">Worker</span> <span class="p">{</span>
+    <span class="c1">// id</span>
+    <span class="c1">// name</span>
+    <span class="c1">// email</span>
+    <span class="c1">// salary</span>
+    <span class="k">var</span> <span class="nv">lang</span> <span class="o">=</span> <span class="s">"Swift"</span>
+<span class="p">}</span>
+
+
+<span class="c1">// 업캐스팅 - as</span>
+<span class="k">let</span> <span class="nv">person1</span> <span class="o">=</span> <span class="kt">Person</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">worker1</span> <span class="o">=</span> <span class="kt">Worker</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">programmer1</span> <span class="o">=</span> <span class="kt">Programmer</span><span class="p">()</span>
+
+<span class="k">let</span> <span class="nv">personList</span> <span class="o">=</span> <span class="p">[</span><span class="n">person1</span><span class="p">,</span> <span class="n">worker1</span><span class="p">,</span> <span class="n">programmer1</span><span class="p">]</span> <span class="c1">// 타입을 선언하지 않았지만 Person 타입으로 인식 -&gt; 즉 업캐스팅이 되었음</span>
+<span class="n">personList</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<span class="c1">//personList[1].salary // Person 타입으로 보고 있기 때문에 salary에 접근하지 못함</span>
+
+<span class="k">let</span> <span class="nv">worker2</span> <span class="o">=</span> <span class="kt">Worker</span><span class="p">()</span>
+<span class="n">worker2</span><span class="o">.</span><span class="n">salary</span>
+
+<span class="k">let</span> <span class="nv">workerPerson</span> <span class="o">=</span> <span class="n">worker2</span> <span class="k">as</span> <span class="kt">Person</span>
+<span class="c1">//workerPerson.salary // Person 타입으로 보고 있기 때문에 salary에 접근하지 못함</span>
+
+
+<span class="c1">// 다운캐스팅 - as? / as!</span>
+<span class="c1">// as?</span>
+<span class="k">let</span> <span class="nv">pro</span> <span class="o">=</span> <span class="n">programmer1</span> <span class="k">as?</span> <span class="kt">Programmer</span> <span class="c1">// 타입 변환이 될 수도 있고 안될 수도 있기 때문에 옵셔널을 리턴</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">person2</span> <span class="o">=</span> <span class="n">programmer1</span> <span class="k">as?</span> <span class="kt">Programmer</span> <span class="p">{</span>
+    <span class="n">person2</span><span class="o">.</span><span class="n">lang</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">person3</span> <span class="o">=</span> <span class="n">worker1</span> <span class="k">as?</span> <span class="kt">Programmer</span> <span class="p">{</span>
+    <span class="n">person3</span><span class="o">.</span><span class="n">lang</span>
+<span class="p">}</span>
+
+<span class="c1">// as!</span>
+<span class="k">let</span> <span class="nv">pro2</span> <span class="o">=</span> <span class="n">worker2</span> <span class="k">as!</span> <span class="kt">Programmer</span> <span class="c1">// Error : 타입 변환 실패시 오류</span>
+</code></pre></div></div>
 
         
       </section>
@@ -465,7 +563,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#type-casting" class="page__taxonomy-item p-category" rel="tag">Type Casting</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%83%80%EC%9E%85-%EC%BA%90%EC%8A%A4%ED%8C%85" class="page__taxonomy-item p-category" rel="tag">타입 캐스팅</a>
     
     </span>
   </p>
@@ -482,7 +584,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
+      <a href="/categories/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a>
     
     </span>
   </p>
@@ -490,7 +592,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-05T00:00:00+09:00">March 5, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-11T00:00:00+09:00">March 11, 2024</time></p>
 
       </footer>
 
@@ -499,22 +601,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BTIL%5D+%EB%82%B4%EB%B0%B0%EC%BA%A0+iOS%EC%95%B1+%EA%B0%9C%EB%B0%9C+%EA%B3%B5%EB%B6%80+6%EC%9D%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil6%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BSwift%5D+%ED%83%80%EC%9E%85+%EC%BA%90%EC%8A%A4%ED%8C%85%20http%3A%2F%2Flocalhost%3A4000%2Fswift%2F%25ED%2594%2584%25EB%25A1%259C%25ED%258D%25BC%25ED%258B%25B0%25EC%2599%2580%25EC%2598%25B5%25EC%25A0%2580%25EB%25B2%2584%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil6%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fswift%2F%25ED%2594%2584%25EB%25A1%259C%25ED%258D%25BC%25ED%258B%25B0%25EC%2599%2580%25EC%2598%25B5%25EC%25A0%2580%25EB%25B2%2584%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil6%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fswift%2F%25ED%2594%2584%25EB%25A1%259C%25ED%258D%25BC%25ED%258B%25B0%25EC%2599%2580%25EC%2598%25B5%25EC%25A0%2580%25EB%25B2%2584%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/GitHubBlog/comments/" class="pagination--pager" title="[minimal-mistakes]GitHub utterances 댓글 기능 추가하기
+      <a href="/swift/%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EC%99%80%EC%98%B5%EC%A0%80%EB%B2%84/" class="pagination--pager" title="[Swift] 프로퍼티와 옵저버
 ">이전</a>
     
     
-      <a href="/swift/variableAndConstant/" class="pagination--pager" title="[Swift] 변수와 상수
+      <a href="/TIL/til10/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 10일차
 ">다음</a>
     
   </nav>
