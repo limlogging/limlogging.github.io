@@ -418,4 +418,10 @@ var store = [{
         "tags": ["야구게임"],
         "url": "/sparta/baseballGame/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 14일차",
+        "excerpt":"데일리 스크럼 개인과제 맑은 정신으로 오전에 후다닥 과제를 마무리했다. 하루를 시작하는 오전에 집중이 가장 잘되는 느낌! 우선 레벨 6번까지 완성하고 제출하고 이후 공개된 해설 영상을 보았다. 랜덤 숫자를 뽑아내는 과정에서 shuffle을 사용할 수 있다는 것과 배열의 Index를 뽑아내기 위해서 항상 for문을 사용했는데 enumerated를 사용하면 인덱스와 값을 함께 출력할 수 있다는...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til14/",
+        "teaser": null
       }]
