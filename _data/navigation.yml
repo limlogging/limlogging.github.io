@@ -26,8 +26,11 @@ categories:
       - title: "Swift"
         url: /categories/swift/       #_pages - categorie에 md 파일 생성 , 실제 글은 _post 
         category: "swift"
+      - title: "UIKit"
+        url: /categories/UIKit/ 
+        category: "UIKit"
       - title: "SwiftUI"
-        url: /categories/swiftui/ 
+        url: /categories/SwiftUI/ 
         category: "SwiftUI"
   - title: "git" 
     children:
