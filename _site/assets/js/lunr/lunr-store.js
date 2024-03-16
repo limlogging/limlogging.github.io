@@ -424,4 +424,10 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til14/",
         "teaser": null
+      },{
+        "title": "깃(git)과 깃허브(GitHub)란?",
+        "excerpt":"깃(Git)이란? Git은 분산 버전 관리 시스템(Distributed Version Control System)으로, 소프트웨어 개발에서 사용되는 파일들의 변경 사항을 추적하고 관리하는 도구입니다. 개발자들은 Git을 사용하여 프로젝트의 모든 버전을 기록하고, 여러 명의 개발자가 동시에 작업할 수 있도록 하며, 변경 사항을 추적하고 병합하는 등의 작업을 할 수 있습니다. Git은 분산형이기 때문에 모든 개발자가 전체 프로젝트의 복사본을...","categories": ["git"],
+        "tags": ["git","github"],
+        "url": "/git/git/",
+        "teaser": null
       }]
