@@ -1,0 +1,898 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[UIKit] UITableView - 데이터 목록 표시 - limlogging Devlog</title>
+<meta name="description" content="UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[UIKit] UITableView - 데이터 목록 표시">
+<meta property="og:url" content="http://localhost:4000/UIKit/UITableView/">
+
+
+  <meta property="og:description" content="UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UIKit/UITableView/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(14)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(1)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(9)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(46)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(3)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[UIKit] UITableView - 데이터 목록 표시">
+    <meta itemprop="description" content="UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소">
+    <meta itemprop="datePublished" content="2023-03-18T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/UIKit/UITableView/" class="u-url" itemprop="url">[UIKit] UITableView - 데이터 목록 표시
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UITableView/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UITableView/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#uitableview">UITableView</a><ul><li><a href="#특징">특징</a></li><li><a href="#사용">사용</a></li></ul></li><li><a href="#주요-속성">주요 속성</a><ul><li><a href="#datasource">dataSource</a></li><li><a href="#delegate">delegate</a></li><li><a href="#rowheight">rowHeight</a></li><li><a href="#separatorstyle">separatorStyle</a></li><li><a href="#separatorcolor">separatorColor</a></li><li><a href="#allowsselection">allowsSelection</a></li></ul></li><li><a href="#uitableview-설정">UITableView 설정</a><ul><li><a href="#예제-코드">예제 코드</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="uitableview">UITableView</h1>
+<ul>
+  <li>iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다.</li>
+  <li>테이블 뷰는 여러 행으로 구성되며, 각 행에는 하나 이상의 셀이 포함됩니다.</li>
+  <li>각 셀은 사용자 인터페이스에 정보를 표시하거나 사용자 상호 작용을 위한 컨트롤을 제공합니다.</li>
+</ul>
+
+<h2 id="특징">특징</h2>
+<ul>
+  <li>다양한 셀 유형
+    <ul>
+      <li>UITableView는 특정 유형의 데이터를 표시하기 위해 다양한 스타일과 레이아웃의 셀을 지원합니다. 텍스트, 이미지, 버튼 등 다양한 컨텐츠를 포함할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>스크롤 기능
+    <ul>
+      <li>테이블 뷰는 데이터가 많거나 너무 긴 경우에도 스크롤하여 모든 데이터에 접근할 수 있도록 합니다.</li>
+    </ul>
+  </li>
+  <li>섹션 및 인덱스
+    <ul>
+      <li>UITableView는 섹션을 사용하여 데이터를 구성하고 섹션 인덱스를 제공하여 사용자가 특정 부분으로 빠르게 이동할 수 있도록 합니다.</li>
+    </ul>
+  </li>
+  <li>셀 재사용
+    <ul>
+      <li>UITableView는 셀을 효율적으로 관리하기 위해 셀 재사용 메커니즘을 사용합니다. 이는 메모리 사용량을 최적화하고 성능을 향상시킵니다.</li>
+    </ul>
+  </li>
+  <li>델리게이트 및 데이터 소스
+    <ul>
+      <li>UITableView는 UITableViewDelegate 및 UITableViewDataSource 프로토콜을 사용하여 사용자 상호 작용 및 데이터 관리를 처리합니다. 데이터 소스는 UITableView에 표시할 데이터를 제공하고, 델리게이트는 사용자 상호 작용 및 테이블 뷰의 동작을 제어합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="사용">사용</h2>
+<ul>
+  <li>iOS 애플리케이션에서 매우 일반적으로 사용됩니다.</li>
+  <li>메시지 리스트, 설정 화면, 사용자 목록 등</li>
+</ul>
+
+<h1 id="주요-속성">주요 속성</h1>
+<h2 id="datasource">dataSource</h2>
+<ul>
+  <li>UITableView의 데이터를 제공하는 객체를 설정합니다.</li>
+</ul>
+
+<h2 id="delegate">delegate</h2>
+<ul>
+  <li>UITableView의 이벤트를 처리하는 객체를 설정합니다.</li>
+</ul>
+
+<h2 id="rowheight">rowHeight</h2>
+<ul>
+  <li>각 행의 높이를 설정합니다.</li>
+</ul>
+
+<h2 id="separatorstyle">separatorStyle</h2>
+<ul>
+  <li>행 간 구분선의 스타일을 설정합니다.</li>
+</ul>
+
+<h2 id="separatorcolor">separatorColor</h2>
+<ul>
+  <li>행 간 구분선의 색상을 설정합니다.</li>
+</ul>
+
+<h2 id="allowsselection">allowsSelection</h2>
+<ul>
+  <li>테이블 뷰에서 행 선택을 허용할지 여부를 설정합니다.</li>
+</ul>
+
+<h1 id="uitableview-설정">UITableView 설정</h1>
+<h2 id="예제-코드">예제 코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+  
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>  
+      
+    <span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="kt">UITableView</span><span class="p">()</span>  
+    <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Item 1"</span><span class="p">,</span> <span class="s">"Item 2"</span><span class="p">,</span> <span class="s">"Item 3"</span><span class="p">]</span>  
+      
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>  
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>  
+        <span class="c1">//tableView의 프레임을 현재 뷰의 경계에 맞게 설정</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">bounds</span>  
+        
+        <span class="c1">//UITableView의 데이터 소스 및 델리게이트를 ViewController로 설정</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>  
+        <span class="n">tableView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>  
+
+        <span class="n">tableView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">UITableViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellReuseIdentifier</span><span class="p">:</span> <span class="s">"Cell"</span><span class="p">)</span>  
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">tableView</span><span class="p">)</span>  
+    <span class="p">}</span>  
+      
+    <span class="c1">// UITableViewDataSource		</span>
+    <span class="cm">/* [필수] 테이블의 행 수를 보고합니다. */</span>
+    <span class="c1">// section: 테이블뷰의 section을 나타내는 식별자 입니다. 이를 바탕으로 해당 섹션의 count를 반환합니다.</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>  
+        <span class="k">return</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span>  
+    <span class="p">}</span>  
+    
+    <span class="cm">/* [필수] 테이블의 각 행에 대한 셀을 제공합니다. */</span>
+    <span class="c1">// indexPath: 테이블뷰에서 Row(행)을 찾는 경로입니다. 이를 바탕으로 적절한 cell을 반환합니다.</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>  
+        <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"Cell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>  
+        <span class="n">cell</span><span class="o">.</span><span class="n">textLabel</span><span class="p">?</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>  
+        <span class="k">return</span> <span class="n">cell</span>  
+    <span class="p">}</span>  
+      
+    <span class="c1">// UITableViewDelegate	</span>
+    <span class="cm">/* 행이 선택되었을 때 호출 */</span>
+    <span class="c1">// indexPath: 테이블뷰에서 선택된 Row(행)을 찾는 경로입니다. 이를 바탕으로 어떤 행이 선택되었는지 파악할 수 있습니다.</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>  
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Selected: </span><span class="se">\(</span><span class="n">data</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>  
+        <span class="n">tableView</span><span class="o">.</span><span class="nf">deselectRow</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>  
+    <span class="p">}</span>  
+<span class="p">}</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#uitableview" class="page__taxonomy-item p-category" rel="tag">UITableView</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-18T00:00:00+09:00">March 18, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UITableView+-+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%AA%A9%EB%A1%9D+%ED%91%9C%EC%8B%9C%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITableView%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITableView%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITableView%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UIKit/UISwitch/" class="pagination--pager" title="[UIKit] UISwitch - on/off 상태를 표시하고 제어
+">이전</a>
+    
+    
+      <a href="/UIKit/UITextField/" class="pagination--pager" title="[UIKit] UITextField - 사용자에게 텍스트 입력 받기
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/git/" rel="permalink">깃(git)과 깃허브(GitHub)란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">git, GitHub란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til14/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 14일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 14일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/baseballGame/" rel="permalink">[내배캠] 3주차 개인과제 - 야구게임
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">3주차 개인과제 - 야구게임
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til13/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 13일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 13일차 이야기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

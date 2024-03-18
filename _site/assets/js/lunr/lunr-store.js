@@ -1,4 +1,88 @@
 var store = [{
+        "title": "[UIKit] AutoLayout - 인터페이스 요소 크기 및 위치 관리",
+        "excerpt":"AutoLayout iOS 및 macOS 애플리케이션에서 사용되는 레이아웃 시스템으로, 사용자 인터페이스 요소들의 크기 및 위치를 관리하는 데 사용됩니다. AutoLayout은 다양한 화면 크기와 기기 방향에 대응하여 일관된 사용자 경험을 제공하고, 다양한 기기에서 애플리케이션이 잘 동작하도록 돕습니다. 특징 유연성 AutoLayout은 유연한 레이아웃 시스템으로, 다양한 화면 크기와 방향에 맞게 뷰의 크기 및 위치를 동적으로...","categories": ["UIKit"],
+        "tags": ["swift","iOS","AutoLayout"],
+        "url": "/UIKit/AutoLayout/",
+        "teaser": null
+      },{
+        "title": "[UIKit] LifeCycle - 생명주기",
+        "excerpt":"생명주기(LifeCycle) UIKit에서의 라이프사이클은 애플리케이션과 앱의 다양한 객체들이 어떻게 생성되고, 표시되고, 사용되고, 제거되는지에 관한 개념입니다. App LifeCycle Not Running 실행되지 않거나 종료된 상태. InActive 앱이 Foreground 상태로 돌아가지만, 이벤트는 받지 않는 상태, 잠시 존재하는 상태. 아래에서 위로 스와이프 하는 순간 InActive 상태가 된다. Active 일반적으로 앱이 돌아가는 상태(이벤트를 받는 단계) Background...","categories": ["UIKit"],
+        "tags": ["swift","iOS","LifeCycle"],
+        "url": "/UIKit/LifeCycle/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UIButton - 사용자와 상호작용하기",
+        "excerpt":"UIButton 사용자와의 상호작용을 위해 화면에 버튼을 표시하는 데 사용되는 UIKit 프레임워크의 클래스 UIButton은 터치 이벤트를 감지하여 사용자의 상호작용에 반응하며, 다양한 시각적 스타일과 상태에 따른 동작을 지원 버튼의 주요 기능 탭 핸들링(Tap Handling): 사용자가 버튼을 탭할 때 발생하는 이벤트를 감지하여 적절한 동작을 수행할 수 있습니다. 상태 관리(State Management): 버튼은 일반적으로 여러...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIButton"],
+        "url": "/UIKit/UIButton/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UICollectionView - 그리드나 리스트 표시",
+        "excerpt":"UICollectionView iOS 애플리케이션에서 그리드나 리스트 형식으로 데이터를 표시하는 데 사용되는 유연한 레이아웃을 가진 뷰입니다. UICollectionView는 UITableView와 유사하지만, 보다 다양한 레이아웃과 사용자 정의 가능한 셀 디자인을 제공합니다. 특징 다양한 레이아웃 UICollectionView는 그리드, 리스트, 덱스(Stack), 커스텀 등 다양한 레이아웃을 지원합니다. 이를 통해 다양한 종류의 데이터를 효과적으로 표시할 수 있습니다. 셀 재사용 UICollectionView는...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UICollectionView"],
+        "url": "/UIKit/UICollectionView/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UIImageView - 이미지 표시",
+        "excerpt":"UIImageView UIKit 프레임워크에서 제공하는 클래스로, 이미지를 표시하는 데 사용 UIImageView 생성 let imageView = UIImageView() UIImageView 설정 표시할 이미지 설정 //이미지 파일명으로 UIImage 객체 생성 let image = UIImage(named: \"exampleImage\") imageView.image = image UIImageView 위치와 크기를 정의 //화면에서 (x: 50, y: 100)에 위치하고, 너비가 200포인트이고 높이가 150포인트인 사각형 영역에 해당하는...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIImageView"],
+        "url": "/UIKit/UIImageView/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UILabel - 텍스트 표시 ",
+        "excerpt":"UILabel 텍스트를 표시하는데 사용되는 UI 요소 UILabel 생성 let label = UILabel() UILabel 설정 텍스트 입력 label.text = \"나는 UILabel 입니다. 폰트 크기 설정 label.font = UIFont.systemFont(ofSize: 20) 텍스트 색상 설정 label.textColor = UIColor.black 정렬 label.textAlignment = .left label.textAlignment = .center label.textAlignment = .right 최대 표시 줄 label.numberOfLines = 2...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UILabel"],
+        "url": "/UIKit/UILabel/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UIPickerView - 회전 가능한 휠 형식",
+        "excerpt":"UIPickerView iOS 애플리케이션에서 선택지를 제공하고 사용자가 그 중 하나를 선택할 수 있도록 하는 뷰입니다. 주로 특정한 선택지를 제공하고 사용자가 그 중 하나를 선택할 때 사용됩니다. 특징 선택지 표시 UIPickerView는 여러 개의 컴포넌트를 가질 수 있으며, 각 컴포넌트에는 여러 개의 행(row)이 포함될 수 있습니다. 각 행은 하나의 선택지를 나타냅니다. 스크롤 기능...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIPickerView"],
+        "url": "/UIKit/UIPickerView/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UIScrollView - 화면에서 스크롤 가능한 영역을 제공",
+        "excerpt":"UIScrollView iOS 애플리케이션에서 스크롤 가능한 컨텐츠를 표시하고 제어하기 위해 사용되는 컨테이너 뷰입니다. UIScrollView는 화면에 표시되는 컨텐츠의 크기가 스크린 크기보다 큰 경우 사용자가 화면을 스크롤하여 컨텐츠를 탐색할 수 있도록 합니다. 특징 스크롤 가능한 영역 UIScrollView는 보통 자신의 bounds보다 큰 컨텐츠를 포함할 수 있습니다. 사용자는 스크롤하여 이 컨텐츠의 다른 부분을 볼 수...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIScrollView"],
+        "url": "/UIKit/UIScrollView/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택",
+        "excerpt":"UISegmentedControl iOS 앱에서 여러 개의 상호 배타적인 옵션 중 하나를 선택할 수 있는 컨트롤입니다. 사용자는 UISegmentedControl을 탭하여 여러 세그먼트 중 하나를 선택할 수 있습니다. 각 세그먼트는 다른 옵션을 나타내며, 사용자는 이를 탭하여 해당 옵션을 선택합니다. 특징 상호 배타적인 선택 여러 옵션 중 하나만 선택할 수 있습니다. 한 번에 한 옵션만...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UISegmentedControl"],
+        "url": "/UIKit/UISegmentedControl/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택",
+        "excerpt":"UISlider 사용자 인터페이스(UI)에서 수치 범위를 나타내는 데 사용되는 컨트롤입니다. 사용자가 슬라이더를 조작하여 값이 변경될 때 이벤트가 발생합니다. UISlider 생성 let slider = UISlider() UISlider 설정 초기 값 설정 slider.value = 50 최대/최소 값 설정 slider.minimumValue = 0 slider.maximumValue = 100 트랙 색상 설정 slider.minimumTrackTintColor = UIColor.red //왼쪽 트랙 색상 설정...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UISlider"],
+        "url": "/UIKit/UISlider/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UISwitch - on/off 상태를 표시하고 제어",
+        "excerpt":"UISwitch UISwitch는 UIKit 프레임워크에서 제공하는 사용자 인터페이스 컨트롤 중 하나로, 이진(on/off) 상태를 표시하고 제어하는 데 사용합니다. 사용자가 어떤 설정을 켜고 끌 수 있는 옵션을 제공하는 데 사용합니다. UISwitch 생성 let mySwitch = UISwitch() UISwitch 설정 스위치 초기 상태 설정 mySwitch.isOn = true 스위치가 켜져있을 때 배경 색상 mySwitch.onTintColor = UIColor.systemPink...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UISwitch"],
+        "url": "/UIKit/UISwitch/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UITableView - 데이터 목록 표시",
+        "excerpt":"UITableView iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다. 테이블 뷰는 여러 행으로 구성되며, 각 행에는 하나 이상의 셀이 포함됩니다. 각 셀은 사용자 인터페이스에 정보를 표시하거나 사용자 상호 작용을 위한 컨트롤을 제공합니다. 특징 다양한 셀 유형 UITableView는 특정 유형의 데이터를 표시하기 위해 다양한 스타일과 레이아웃의 셀을...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UITableView"],
+        "url": "/UIKit/UITableView/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UITextField - 사용자에게 텍스트 입력 받기",
+        "excerpt":"UITextField UITextField는 UIKit 프레임워크에서 제공하는 클래스 중 하나로, 사용자로부터 텍스트를 입력받는 데 사용 텍스트 필드, 검색 상자 또는 비밀번호 필드 등을 생성할 때 사용 UITextField 생성 let textField = UITextField() UITextField 설정 입력 유도 메시지 textField.placeholder = \"텍스트를 입력하세요.\" UITextField 모양 //둥근 테두리 textField.borderStyle = .roundedRect 입력용 키보드 설정 사용자가...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UITextField"],
+        "url": "/UIKit/UITextField/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UIView - 가장 기본적인 뷰",
+        "excerpt":"UIView iOS 및 macOS 애플리케이션에서 사용자 인터페이스를 구성하는 데 사용되는 기본적인 뷰(위젯)입니다. UIView는 화면에 무엇인가를 그리는 데 사용되며, 많은 UI 요소들이 UIView의 하위 클래스로 구현됩니다. 특징 컨테이너 역할 다른 뷰 및 UI 요소들을 포함하고 배치하는 데 사용됩니다. 즉, 여러 개의 서브뷰를 가질 수 있으며, 이를 통해 복잡한 사용자 인터페이스를 구성할...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIView"],
+        "url": "/UIKit/UIView/",
+        "teaser": null
+      },{
         "title": "Mac에서 github blog 만들기 - 1",
         "excerpt":"개발자 블로그 ??? 요즘 개발자들은 취업, 포트폴리오, TIL(Today I Learned) 등 각자의 이유로 블로그를 운영하고 있습니다. 저도 부트캠프를 계기로 개발자 블로그를 운영해보기로 하였습니다. 네이버 블로그, 티스토리, 벨로그, 깃허브 블로그 등 다양한 플랫폼 중 깃허브 블로그를 선택하였습니다. (벨로그에 테스트로 글 두번 썼는데 제 마음에 들지 않았습니다.) GitHub 블로그 선택 이유 GitHub...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog"],

@@ -1,0 +1,834 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택 - limlogging Devlog</title>
+<meta name="description" content="UISlider - 수치 범위를 나타내는 데 사용되는 컨트롤">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택">
+<meta property="og:url" content="http://localhost:4000/UIKit/UISlider/">
+
+
+  <meta property="og:description" content="UISlider - 수치 범위를 나타내는 데 사용되는 컨트롤">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UIKit/UISlider/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(14)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(1)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(9)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(46)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(3)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택">
+    <meta itemprop="description" content="UISlider - 수치 범위를 나타내는 데 사용되는 컨트롤">
+    <meta itemprop="datePublished" content="2023-03-18T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/UIKit/UISlider/" class="u-url" itemprop="url">[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UISlider/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UISlider/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#uislider">UISlider</a></li><li><a href="#uislider-생성">UISlider 생성</a></li><li><a href="#uislider-설정">UISlider 설정</a><ul><li><a href="#초기-값-설정">초기 값 설정</a></li><li><a href="#최대최소-값-설정">최대/최소 값 설정</a></li><li><a href="#트랙-색상-설정">트랙 색상 설정</a></li><li><a href="#슬라이더-값-변경-이벤트-처리">슬라이더 값 변경 이벤트 처리</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="uislider">UISlider</h1>
+<ul>
+  <li>사용자 인터페이스(UI)에서 수치 범위를 나타내는 데 사용되는 컨트롤입니다.</li>
+  <li>사용자가 슬라이더를 조작하여 값이 변경될 때 이벤트가 발생합니다.</li>
+</ul>
+
+<h1 id="uislider-생성">UISlider 생성</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">slider</span> <span class="o">=</span> <span class="kt">UISlider</span><span class="p">()</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h1 id="uislider-설정">UISlider 설정</h1>
+<h2 id="초기-값-설정">초기 값 설정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">slider</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">50</span>  
+</code></pre></div></div>
+
+<h2 id="최대최소-값-설정">최대/최소 값 설정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">slider</span><span class="o">.</span><span class="n">minimumValue</span> <span class="o">=</span> <span class="mi">0</span>     
+<span class="n">slider</span><span class="o">.</span><span class="n">maximumValue</span> <span class="o">=</span> <span class="mi">100</span> 
+</code></pre></div></div>
+
+<h2 id="트랙-색상-설정">트랙 색상 설정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">slider</span><span class="o">.</span><span class="n">minimumTrackTintColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">red</span>      <span class="c1">//왼쪽 트랙 색상 설정  </span>
+<span class="n">slider</span><span class="o">.</span><span class="n">maximumTrackTintColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span>     <span class="c1">//오른쪽 트랙 색상 설정</span>
+</code></pre></div></div>
+
+<h2 id="슬라이더-값-변경-이벤트-처리">슬라이더 값 변경 이벤트 처리</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">slider</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">sliderValueChange</span><span class="p">(</span><span class="nv">_</span><span class="p">:)),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
+<span class="cm">/*
+첫 번째 매개변수 self는 이벤트를 수신할 대상을 나타냅니다. 일반적으로는 현재의 뷰 컨트롤러를 가리킵니다.
+두 번째 매개변수 action은 이벤트가 발생했을때 호출될 메서드, @objc 어노테이션이 붙어있어야함. 
+- #selector는 Objective-C에서 메서드를 식별하는 문법 
+- @objc는 Swift 코드와 Objective-C와 상호작용하게 해줌
+세 번째 매개변수 for는 이벤트 처리기 선택, valueChange는 버튼이 눌렀을때 호출 
+*/</span>
+<span class="cm">/* .valueChange에 들어갈 수 있는 이벤트 
+.touchDown: 사용자가 스위치를 터치할 때 호출됩니다.
+.touchDownRepeat: 사용자가 스위치를 연속해서 터치할 때 호출됩니다.
+.touchDragInside: 사용자가 스위치를 내부로 드래그할 때 호출됩니다.
+.touchDragOutside: 사용자가 스위치를 외부로 드래그할 때 호출됩니다.
+.touchDragEnter: 사용자가 스위치의 영역으로 드래그할 때 호출됩니다.
+.touchDragExit: 사용자가 스위치의 영역을 벗어날 때 호출됩니다.
+.touchUpInside: 사용자가 스위치를 터치하고 놓을 때 호출됩니다. (가장 흔히 사용됨)
+.touchUpOutside: 사용자가 스위치 외부에서 터치하고 놓을 때 호출됩니다.
+.valueChanged: 스위치의 값이 변경될 때 호출됩니다. (가장 흔히 사용됨)
+.primaryActionTriggered: 주요 작업이 트리거될 때 호출됩니다. (예: 터치를 누를 때)
+.editingDidBegin: 편집이 시작될 때 호출됩니다. (예: 텍스트 필드 편집이 시작될 때)
+.editingChanged: 편집 내용이 변경될 때 호출됩니다. (예: 텍스트 필드의 텍스트가 변경될 때)
+.editingDidEnd: 편집이 종료될 때 호출됩니다. (예: 텍스트 필드 편집이 종료될 때)
+*/</span>
+
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">sliderValueChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISlider</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Slider value: </span><span class="se">\(</span><span class="n">sender</span><span class="o">.</span><span class="n">value</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#uislider" class="page__taxonomy-item p-category" rel="tag">UISlider</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-18T00:00:00+09:00">March 18, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UISlider+-+%EA%B0%92%EC%9D%98+%EB%B2%94%EC%9C%84%EB%A5%BC+%EA%B0%80%EC%A7%80%EA%B3%A0+%EC%82%AC%EC%9A%A9%EC%9E%90%EA%B0%80+%EC%9B%90%ED%95%98%EB%8A%94+%EA%B0%92%EC%9D%84+%EC%84%A0%ED%83%9D%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISlider%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISlider%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISlider%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UIKit/UISegmentedControl/" class="pagination--pager" title="[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택
+">이전</a>
+    
+    
+      <a href="/UIKit/UISwitch/" class="pagination--pager" title="[UIKit] UISwitch - on/off 상태를 표시하고 제어
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/git/" rel="permalink">깃(git)과 깃허브(GitHub)란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">git, GitHub란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til14/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 14일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 14일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/baseballGame/" rel="permalink">[내배캠] 3주차 개인과제 - 야구게임
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">3주차 개인과제 - 야구게임
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til13/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 13일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 13일차 이야기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

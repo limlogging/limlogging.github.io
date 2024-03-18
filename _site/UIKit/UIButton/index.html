@@ -1,0 +1,841 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[UIKit] UIButton - 사용자와 상호작용하기 - limlogging Devlog</title>
+<meta name="description" content="UIButton - 사용자가 터치하여 상호작용할 수 있는 UI 요소">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[UIKit] UIButton - 사용자와 상호작용하기">
+<meta property="og:url" content="http://localhost:4000/UIKit/UIButton/">
+
+
+  <meta property="og:description" content="UIButton - 사용자가 터치하여 상호작용할 수 있는 UI 요소">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-18T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UIKit/UIButton/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(14)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(1)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(9)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(46)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(3)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[UIKit] UIButton - 사용자와 상호작용하기">
+    <meta itemprop="description" content="UIButton - 사용자가 터치하여 상호작용할 수 있는 UI 요소">
+    <meta itemprop="datePublished" content="2023-03-18T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/UIKit/UIButton/" class="u-url" itemprop="url">[UIKit] UIButton - 사용자와 상호작용하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UIButton/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UIButton/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#uibutton">UIButton</a></li><li><a href="#uibutton-생성">UIButton 생성</a></li><li><a href="#uibutton-설정">UIButton 설정</a><ul><li><a href="#버튼에-표시될-텍스트">버튼에 표시될 텍스트</a></li><li><a href="#버튼-배경색">버튼 배경색</a></li><li><a href="#버튼-텍스트-색상-설정">버튼 텍스트 색상 설정</a></li><li><a href="#버튼-위치와-크기-지정">버튼 위치와 크기 지정</a></li><li><a href="#버튼에-대한-액션-설정-버튼이-탭-되었을때-실행될-함수">버튼에 대한 액션 설정 (버튼이 탭 되었을때 실행될 함수)</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="uibutton">UIButton</h1>
+<ul>
+  <li>사용자와의 상호작용을 위해 화면에 버튼을 표시하는 데 사용되는 UIKit 프레임워크의 클래스</li>
+  <li>UIButton은 터치 이벤트를 감지하여 사용자의 상호작용에 반응하며, 다양한 시각적 스타일과 상태에 따른 동작을 지원</li>
+  <li>버튼의 주요 기능
+    <ol>
+      <li>탭 핸들링(Tap Handling): 사용자가 버튼을 탭할 때 발생하는 이벤트를 감지하여 적절한 동작을 수행할 수 있습니다.</li>
+      <li>상태 관리(State Management): 버튼은 일반적으로 여러 가지 상태를 가지며, 상태에 따라 다른 시각적 스타일을 표시할 수 있습니다. 주요 상태로는 보통 상태, 선택된 상태, 비활성 상태 등이 있습니다.</li>
+      <li>시각적 스타일링(Visual Styling): 버튼은 배경 이미지, 텍스트, 텍스트 색상, 글꼴 등을 사용하여 시각적으로 스타일링할 수 있습니다.</li>
+      <li>이벤트 처리(Event Handling): 버튼은 다양한 이벤트를 처리할 수 있으며, 특히 터치 이벤트에 대한 처리가 주요 기능입니다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h1 id="uibutton-생성">UIButton 생성</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//시스템 스타일의 버튼 생성 </span>
+<span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="n">system</span><span class="p">)</span>     
+<span class="cm">/* 버튼 타입 종류 
+1. system: 시스템 기본 스타일을 가진 버튼입니다. 시스템 버튼은 일반적으로 시스템의 텍스트 색상 및 스타일을 따르며, 사용자의 시스템 설정에 따라 다를 수 있습니다.
+2. custom: 사용자 지정 스타일을 가진 버튼입니다. 이 타입을 사용하면 버튼의 외관을 완전히 사용자가 지정할 수 있습니다.
+3. roundedRect: iOS 6 이전 버전에서 사용되던 둥근 직사각형 스타일을 가진 버튼입니다. 이제는 잘 사용되지 않으며, system 버튼을 대체하여 사용하는 것이 좋습니다.
+*/</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h1 id="uibutton-설정">UIButton 설정</h1>
+<h2 id="버튼에-표시될-텍스트">버튼에 표시될 텍스트</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"나는 버튼입니다."</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span> <span class="c1">// 일반 상태에서의 텍스트 설정</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"선택됨"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">selected</span><span class="p">)</span> <span class="c1">// 선택된 상태에서의 텍스트 설정</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"비활성화됨"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">disabled</span><span class="p">)</span> <span class="c1">// 비활성화된 상태에서의 텍스트 설정</span>
+</code></pre></div></div>
+
+<h2 id="버튼-배경색">버튼 배경색</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">systemPink</span>
+</code></pre></div></div>
+
+<h2 id="버튼-텍스트-색상-설정">버튼 텍스트 색상 설정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">button</span><span class="o">.</span><span class="nf">setTitleColor</span><span class="p">(</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span> <span class="c1">// 일반 상태에서의 텍스트 색상 설정</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitleColor</span><span class="p">(</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">gray</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">selected</span><span class="p">)</span> <span class="c1">// 선택된 상태에서의 텍스트 색상 설정</span>
+<span class="n">button</span><span class="o">.</span><span class="nf">setTitleColor</span><span class="p">(</span><span class="kt">UIColor</span><span class="o">.</span><span class="n">lightGray</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">disabled</span><span class="p">)</span> <span class="c1">// 비활성화된 상태에서의 텍스트 색상 설정</span>
+</code></pre></div></div>
+
+<h2 id="버튼-위치와-크기-지정">버튼 위치와 크기 지정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//화면의 (50, 100) 위치에 위치하고, 너비가 200, 높이가 50인 사각형 영역에 버튼이 배치</span>
+<span class="n">button</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="버튼에-대한-액션-설정-버튼이-탭-되었을때-실행될-함수">버튼에 대한 액션 설정 (버튼이 탭 되었을때 실행될 함수)</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//버튼을 눌렀을때 text(버튼을 눌렀습니다.)가 print되는 코드 </span>
+<span class="n">button</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">buttonTapped</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
+<span class="cm">/*
+첫 번째 매개변수 self는 이벤트를 수신할 대상을 나타냅니다. 일반적으로는 현재의 뷰 컨트롤러를 가리킵니다.
+두 번째 매개변수 action은 이벤트가 발생했을때 호출될 메서드, @objc 어노테이션이 붙어있어야함. 
+- #selector는 Objective-C에서 메서드를 식별하는 문법 
+- @objc는 Swift 코드와 Objective-C와 상호작용하게 해줌
+세 번째 매개변수 for는 이벤트 처리기 선택, touchUpInside는 버튼이 눌렀을때 호출 
+*/</span>
+
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">buttonTapped</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"버튼을 눌렀습니다."</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
+    
+      <a href="/tags/#uibutton" class="page__taxonomy-item p-category" rel="tag">UIButton</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-03-18T00:00:00+09:00">March 18, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UIButton+-+%EC%82%AC%EC%9A%A9%EC%9E%90%EC%99%80+%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUIButton%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUIButton%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUIButton%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UIKit/LifeCycle/" class="pagination--pager" title="[UIKit] LifeCycle - 생명주기
+">이전</a>
+    
+    
+      <a href="/UIKit/UICollectionView/" class="pagination--pager" title="[UIKit] UICollectionView - 그리드나 리스트 표시
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/git/" rel="permalink">깃(git)과 깃허브(GitHub)란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">git, GitHub란?
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til14/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 14일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 14일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/baseballGame/" rel="permalink">[내배캠] 3주차 개인과제 - 야구게임
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">3주차 개인과제 - 야구게임
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til13/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 13일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 13일차 이야기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
