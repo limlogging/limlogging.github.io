@@ -526,4 +526,10 @@ var store = [{
         "tags": ["Algorithm","coding test","문자열 내 마음대로 정렬하기"],
         "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
+      },{
+        "title": "[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기",
+        "excerpt":"간단한 카운터 앱 만들기 swift 문법 강의 주차가 끝나고 ios 앱 개발 입문 강의를 들으며 강의에 포함된 간단한 카운터 앱 만들기 과제를 만들었습니다. 요구사항 화면 레이아웃 요구사항 UILabel이 가운데 위치하게 해 주세요. UILabel을 기준으로 상단에는 감소 버튼, 아래에는 증가 버튼을 위치시켜 주세요. UILabel과 UIButton사이의 간격은 16px로 설정해 주세요. AutoLayout을 사용해...","categories": ["sparta"],
+        "tags": ["간단한카운터앱"],
+        "url": "/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/",
+        "teaser": null
       }]

@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-19T13:27:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기</title><link href="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 문자열 내 마음대로 정렬하기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-19T14:28:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기</title><link href="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1</id><content type="html" xml:base="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/"><![CDATA[<h1 id="간단한-카운터-앱-만들기">간단한 카운터 앱 만들기</h1>
+<ul>
+  <li>swift 문법 강의 주차가 끝나고 ios 앱 개발 입문 강의를 들으며 강의에 포함된 간단한 카운터 앱 만들기 과제를 만들었습니다.</li>
+</ul>
+
+<h1 id="요구사항">요구사항</h1>
+<h2 id="화면">화면</h2>
+<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱.png" alt="카운터앱" /></p>
+
+<h2 id="레이아웃-요구사항">레이아웃 요구사항</h2>
+<ul>
+  <li>UILabel이 가운데 위치하게 해 주세요.</li>
+  <li>UILabel을 기준으로 상단에는 감소 버튼, 아래에는 증가 버튼을 위치시켜 주세요.</li>
+  <li>UILabel과 UIButton사이의 간격은 16px로 설정해 주세요.</li>
+  <li>AutoLayout을 사용해 주세요.</li>
+</ul>
+
+<h2 id="로직-요구사항">로직 요구사항</h2>
+<ul>
+  <li>count의 시작은 0으로 시작해 주세요.</li>
+  <li>감소버튼을 눌렀을 때, -1씩 감소시켜 UILabel에 표시해 주세요.</li>
+  <li>증가버튼을 눌렀을 때, +1씩 증가시켜 UILabel에 표시해 주세요.</li>
+</ul>
+
+<h1 id="과제-완성">과제 완성</h1>
+<h2 id="나의-화면">나의 화면</h2>
+<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱과제완성.png" alt="카운터앱과제완성" /></p>
+
+<h2 id="제약-조건">제약 조건</h2>
+<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱과제제약조건.png" alt="카운터앱과제제약조건" /></p>
+
+<h2 id="나의-코드">나의 코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">//  ViewController.swift</span>
+<span class="c1">//  SimpleCounter</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by imhs on 3/18/24.</span>
+<span class="c1">//</span>
+
+<span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">counterLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">//감소</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">decreaseButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//증가</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">increaseButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="강의-구현-코드">강의 구현 코드</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">textLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
+
+    <span class="c1">// 감소 버튼이 클릭된 경우 </span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedDecreaseButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1">// count를 -1 합니다. </span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="c1">// textLabel을 새로고침 합니다. </span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 증가 버튼이 클릭된 경우  </span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedIncreaseButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">// count를 +1 합니다. </span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="c1">// textLabel을 새로고침 합니다. </span>
+    <span class="p">}</span>
+
+    <span class="c1">// count값을 self.textLabel의 text에 반영합니다. </span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">textLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// viewDidLoad 생명주기 활용 </span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="생명주기-활용-">생명주기 활용 ?</h2>
+<ul>
+  <li>강의 코드에서 생명주기 활용은 ViewController의 생명주기 메서드 중 하나인 viewDidLoad() 메서드를 활용하는 것을 의미</li>
+  <li>viewDidLoad() 메서드는 ViewController의 view가 메모리에 로드된 직후 호출, ViewController가 생성된 직후 초기화 작업을 수행할 때 유용</li>
+  <li>iewDidLoad() 메서드를 활용하여 textLabel의 초기 값을 설정하는 refreshTextLabel() 메서드를 호출</li>
+  <li>생명주기 활용은 ViewController의 뷰가 로드되는 시점에 필요한 초기화 작업을 수행하여 화면을 적절히 설정하는 것을 의미합니다.</li>
+</ul>
+
+<p>필요한 작업이 적절하게 배치가 됐는지 생각해보자!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="간단한카운터앱" /><summary type="html"><![CDATA[iOS 앱 개발 입문 - 간단한 카운터 앱 만들기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기</title><link href="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 문자열 내 마음대로 정렬하기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 예를 들어 strings가 [“sun”, “bed”, “car”]이고 n이 1이면 각 단어의 인덱스 1의 문자 “u”, “e”, “a”로 strings를 정렬합니다.</p>
@@ -588,7 +693,18 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="야구게임" /><summary type="html"><![CDATA[3주차 개인과제 - 야구게임]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="야구게임" /><summary type="html"><![CDATA[3주차 개인과제 - 야구게임]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 13일차</title><link href="http://localhost:4000/TIL/til13/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 13일차" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til13</id><content type="html" xml:base="http://localhost:4000/TIL/til13/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-14-til13.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<p>어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다.</p>
+
+<h3 id="개인과제">개인과제</h3>
+<p>내일 정오까지 과제 제출해야하는데 아직 1번밖에 풀지 못했다. 
+클래스, 함수, 반복문 어떻게 하면 잘 활용할 수 있을까 고민했는데 시간이 너무 많이 지났다. 내일 오전까지 우선 완성은 시켜놓고 조금씩 코드 리펙토링을 진행해야겠다.</p>
+
+<h3 id="내일은">내일은?</h3>
+<p>다음주 부터는 UIKit으로 앱 만들기 강의가 시작 되는데 개인 2주간의 문법강의를 마무리하면서 복습하는 시간을 가져야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 13일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 숫자 문자열과 영단어</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 숫자 문자열과 영단어" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>네오와 프로도가 숫자놀이를 하고 있습니다. 네오가 프로도에게 숫자를 건넬 때 일부 자릿수를 영단어로 바꾼 카드를 건네주면 프로도는 원래 숫자를 찾는 게임입니다.</p>
@@ -764,18 +880,7 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">modifiedString</span><span class="p">)</span> <span class="c1">// 출력: "Hello, Swift!"</span>
 </code></pre></div>    </div>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="숫자 문자열과 영단어" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 문자열과 영단어]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 13일차</title><link href="http://localhost:4000/TIL/til13/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 13일차" /><published>2024-03-14T00:00:00+09:00</published><updated>2024-03-14T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til13</id><content type="html" xml:base="http://localhost:4000/TIL/til13/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-14-til13.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<p>어제 풀지 못했던 알고리즘 시저 암호 문제를 오전에 해결했다! 자고 일어났더니 문제가 풀린 기분, 원인은 내가 먼저 알파벳을 이동 시키고 알파벳 범위를 넘어가면 다시 a부터 시작하도록 -26을 빼줬는데 이동을 많이 시키는 경우 대문자가 소문자로 변경되어 다시 A부터 시작해야하는데 정상범위라고 판단하여 발생한 문제였다.</p>
-
-<h3 id="개인과제">개인과제</h3>
-<p>내일 정오까지 과제 제출해야하는데 아직 1번밖에 풀지 못했다. 
-클래스, 함수, 반복문 어떻게 하면 잘 활용할 수 있을까 고민했는데 시간이 너무 많이 지났다. 내일 오전까지 우선 완성은 시켜놓고 조금씩 코드 리펙토링을 진행해야겠다.</p>
-
-<h3 id="내일은">내일은?</h3>
-<p>다음주 부터는 UIKit으로 앱 만들기 강의가 시작 되는데 개인 2주간의 문법강의를 마무리하면서 복습하는 시간을 가져야겠다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 13일차 이야기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til12/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til12/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="숫자 문자열과 영단어" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 문자열과 영단어]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 12일차</title><link href="http://localhost:4000/TIL/til12/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 12일차" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til12</id><content type="html" xml:base="http://localhost:4000/TIL/til12/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-13-til12.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -827,97 +932,4 @@
   <li>타입 안정성: UInt8은 부호 없는 8비트 정수를 나타내므로 음수 값을 가질 수 없습니다. 이는 아스키 코드 값의 범위가 0부터 127까지이므로 부호 없는 타입을 사용하는 것이 논리적입니다.</li>
 </ol>
 
-<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 시저 암호</title><link href="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 시저 암호" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80%20%EC%95%94%ED%98%B8</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%8B%9C%EC%A0%80-%EC%95%94%ED%98%B8/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>
-    <p>어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 “AB”는 1만큼 밀면 “BC”가 되고, 3만큼 밀면 “DE”가 됩니다. “z”는 1만큼 밀면 “a”가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.</p>
-  </li>
-  <li>
-    <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12926" target="_blank">문제 풀기</a></p>
-  </li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>공백은 아무리 밀어도 공백입니다.</li>
-  <li>s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.</li>
-  <li>s의 길이는 8000이하입니다.</li>
-  <li>n은 1 이상, 25이하인 자연수입니다.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>n</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“AB”</td>
-      <td>1</td>
-      <td>“BC”</td>
-    </tr>
-    <tr>
-      <td>“z”</td>
-      <td>1</td>
-      <td>“a”</td>
-    </tr>
-    <tr>
-      <td>“a B z”</td>
-      <td>4</td>
-      <td>“e F d”</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>문제 예시와 같습니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>  
-    <span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
-        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s">" "</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="s">" "</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="s">"a"</span> <span class="o">&amp;&amp;</span> <span class="n">item</span> <span class="o">&lt;=</span> <span class="s">"z"</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="s">"z"</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">26</span><span class="p">))</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-            <span class="p">}</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;=</span> <span class="s">"A"</span> <span class="o">&amp;&amp;</span> <span class="n">item</span> <span class="o">&lt;=</span> <span class="s">"Z"</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="s">"Z"</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="mi">26</span><span class="p">))</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">asciiValue</span><span class="o">!</span> <span class="o">+</span> <span class="kt">UInt8</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="s">""</span>
-    <span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="s">""</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span> <span class="p">}</span> 
-    
-    <span class="k">return</span> <span class="n">arr</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">alphabets</span> <span class="o">=</span> <span class="s">"abcdefghijklmnopqrstuvwxyz"</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="p">}</span>
-    <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">alphabets</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="kt">Character</span><span class="p">(</span><span class="nv">$0</span><span class="o">.</span><span class="nf">lowercased</span><span class="p">()))</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="nv">$0</span> <span class="p">}</span>
-        <span class="k">let</span> <span class="nv">letter</span> <span class="o">=</span> <span class="n">alphabets</span><span class="p">[(</span><span class="n">index</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="n">alphabets</span><span class="o">.</span><span class="n">count</span><span class="p">]</span>
-        <span class="k">return</span> <span class="nv">$0</span><span class="o">.</span><span class="n">isUppercase</span> <span class="p">?</span> <span class="kt">Character</span><span class="p">(</span><span class="n">letter</span><span class="o">.</span><span class="nf">uppercased</span><span class="p">())</span> <span class="p">:</span> <span class="n">letter</span>
-    <span class="p">})</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>최초 코드 작성 시 무조건 이동시키고 a-z / A-Z 범위인지 확인하고 범위를 넘으면 -26을 시켜주었다. 테스트 문제까지 이상없었고 답안 제출때 오답으로 나왔다. a-z 아스키코드는 97-122, A-Z는 65-90 대문자에서 이동을 많이시키면 a-z 소문자로 변경되어 -26이 안되는 문제를 확인하였다.</li>
-  <li>좋아요 많이 받은 다른 사람 코드를 봤는데 역시 대단… 다양하게 생각하는 것이 어려운 것 같다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="시저 암호" /><summary type="html"><![CDATA[[프로그래머스/Swift] 시저 암호]]></summary></entry></feed>
+<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry></feed>
