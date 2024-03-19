@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-19T14:28:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기</title><link href="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1</id><content type="html" xml:base="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/"><![CDATA[<h1 id="간단한-카운터-앱-만들기">간단한 카운터 앱 만들기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-19T16:25:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기</title><link href="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1</id><content type="html" xml:base="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/"><![CDATA[<h1 id="간단한-카운터-앱-만들기">간단한 카운터 앱 만들기</h1>
 <ul>
   <li>swift 문법 강의 주차가 끝나고 ios 앱 개발 입문 강의를 들으며 강의에 포함된 간단한 카운터 앱 만들기 과제를 만들었습니다.</li>
 </ul>
@@ -197,7 +197,144 @@
     </ol>
   </li>
   <li><strong>쉽게 쉽게 푸는 다른 사람들의 풀이를 보면서 오늘도 존경심을 가진다.</strong></li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="문자열 내 마음대로 정렬하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 문자열 내 마음대로 정렬하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 15일차</title><link href="http://localhost:4000/TIL/til15/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 15일차" /><published>2024-03-18T00:00:00+09:00</published><updated>2024-03-18T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til15</id><content type="html" xml:base="http://localhost:4000/TIL/til15/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="문자열 내 마음대로 정렬하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 문자열 내 마음대로 정렬하기]]></summary></entry><entry><title type="html">Xcode 프로젝트 깃허브(GitHub)에 추가하기</title><link href="http://localhost:4000/git/gitProjectAdd/" rel="alternate" type="text/html" title="Xcode 프로젝트 깃허브(GitHub)에 추가하기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/git/gitProjectAdd</id><content type="html" xml:base="http://localhost:4000/git/gitProjectAdd/"><![CDATA[<h1 id="1-원격-저장소-추가">1. 원격 저장소 추가</h1>
+<ul>
+  <li>GitHub에 새로운 원격 저장소를 생성하고 로컬 저장소에 해당 원격 저장소를 추가합니다.
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd1.png" alt="" /></li>
+</ul>
+
+<h1 id="2-xcode-프로젝트-생성">2. XCode 프로젝트 생성</h1>
+<ul>
+  <li>Xcode 프로젝트의 이름과 GitHub 레포지토리의 이름이 반드시 같을 필요는 없습니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd2.png" alt="" /></li>
+</ul>
+
+<h1 id="3-터미널-오픈">3. 터미널 오픈</h1>
+<ul>
+  <li>프로젝트 폴더에서 우클릭 후 터미널 오픈합니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd3.png" alt="" /></li>
+</ul>
+
+<h1 id="4-git-init---저장소-초기화">4. git init - 저장소 초기화</h1>
+<ul>
+  <li>명령어는 새로운 Git 저장소를 초기화하는 데 사용됩니다.</li>
+  <li>git init
+    <ul>
+      <li>해당 명령어로 현재 디렉토리에 새로운 Git 저장소를 만듭니다. 이 저장소에는 프로젝트의 모든 변경 내역을 추적하고 관리할 수 있는 .git 디렉토리가 생성됩니다.
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git init
+</span></code></pre></div>        </div>
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">힌트 = : Using 'master' as the name for the initial branch. This default branch name
+힌트: is subject to change. To configure the initial branch name to use in all
+힌트 : of your new repositories, which will suppress this warning, call:
+힌트 :
+</span><span class="gp">힌트 : git config -global init.defaultBranch ‹name&gt;</span><span class="w">
+</span><span class="go">힌트 : 
+힌트 : Names commonly chosen instead of 'master' are 'main', 'trunk' and
+힌트 : 'development'. The just-created branch can be renamed via this command:
+힌트 :
+</span><span class="gp">힌트 : git branch -m &lt;name&gt;</span><span class="w">
+</span><span class="go">/users/imhs/Desktop/내배캠 스파르타/실습과제/MyTodoList/.git/ 안의 빈 깃 저 장소를 다시 초기화했습니다 
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="5-git-add----스테이징-영역에-추가">5. git add . - 스테이징 영역에 추가</h1>
+<ul>
+  <li>명령어는 Git에서 변경된 모든 파일을 스테이징 영역에 추가하는 역할을 합니다.</li>
+  <li>git add .
+    <ul>
+      <li>현재 디렉토리 및 하위 디렉토리에서 변경된 모든 파일을 찾습니다.</li>
+      <li>변경된 파일을 스테이징 영역에 추가합니다. 이는 Git이 해당 파일의 변경 내용을 추적하고, 다음 커밋에 포함시키기 위한 준비 단계입니다.
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git add . 
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="6-git-commit--m-커밋메시지---저장소에-기록">6. git commit -m “커밋메시지” - 저장소에 기록</h1>
+<ul>
+  <li>스테이징 영역에 추가된 파일은 git commit 명령어를 사용하여 커밋할 수 있습니다. 스테이징 영역에 추가된 파일은 이후 커밋에 반영되며, 커밋을 통해 변경 내용이 저장소에 영구적으로 기록됩니다.</li>
+  <li>git commit -m “MyTodoList 추가”
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git commit -m "MyTodoList 추가" 
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="7-git-branch--m-main---기본-브랜치-이름-변경">7. git branch -M main - 기본 브랜치 이름 변경</h1>
+<ul>
+  <li>기본적으로 Git 저장소를 초기화하면 “master”라는 이름의 기본 브랜치가 생성됩니다. 그러나 최근의 표준화 노력과 함께 이를 “main”으로 변경하는 추세가 있습니다.</li>
+  <li>git branch -M main 명령어는 현재 작업 중인 브랜치를 “main”으로 변경합니다.</li>
+  <li>git branch -M main
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git commit -m "MyTodoList 추가" 
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="8-git-remote-add-origin-저장소url---git-저장소에-원격-저장소-추가">8. git remote add origin 저장소URL - git 저장소에 원격 저장소 추가</h1>
+<ul>
+  <li>현재 Git 저장소에 origin이라는 이름으로 URL의 원격 저장소를 추가</li>
+  <li>git remote add origin https://github.com/limlogging/MyTodoList.git
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git remote add origin https://github.com/limlogging/MyTodoList.git
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="9-git-push--u-origin-main---작업-중인-브랜치를-원격-저장소에-푸시">9. git push -u origin main - 작업 중인 브랜치를 원격 저장소에 푸시</h1>
+<ul>
+  <li>현재 작업 중인 브랜치를 원격 저장소에 푸시하는 역할을 합니다.</li>
+  <li>-u 옵션은 해당 브랜치를 원격 저장소의 기본 브랜치로 설정하는 역할을 합니다.
+    <ul>
+      <li>이 옵션을 사용하면 이후에는 git push 명령어를 실행할 때 -u 옵션 없이도 동일한 원격 저장소 및 브랜치로 푸시할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>git push -u origin main
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git push -u origin main
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="10-깃허브-확인">10. 깃허브 확인</h1>
+<ul>
+  <li>main 브랜치가 default로 생기고 commit 메시지도 확인할 수 있습니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd4.png" alt="" /></li>
+</ul>
+
+<h1 id="11-브랜치-새로-만들어서-작업">11. 브랜치 새로 만들어서 작업</h1>
+<ul>
+  <li>git branch로 현재 브랜치를 확인합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git branch
+* main
+</span></code></pre></div></div>
+
+<ul>
+  <li>dev 브랜치를 만들고 생성된 브랜치로 이동합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git checkout -b dev 
+</span></code></pre></div></div>
+
+<ul>
+  <li>브랜치를 확인합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git branch 
+* dev
+  main
+</span></code></pre></div></div>
+
+<ul>
+  <li>작업 후 커밋합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git add .
+imhs@imhsui-MacBookPro MyTodoList % git commit -m "기능추가" 
+imhs@imhsui-MacBookPro MyTodoList % git push origin dev
+</span></code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="git" /><category term="git" /><category term="github" /><category term="xcode" /><category term="add" /><category term="commit" /><category term="push" /><summary type="html"><![CDATA[Xcode 프로젝트 깃허브(GitHub)에 추가하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 15일차</title><link href="http://localhost:4000/TIL/til15/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 15일차" /><published>2024-03-18T00:00:00+09:00</published><updated>2024-03-18T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til15</id><content type="html" xml:base="http://localhost:4000/TIL/til15/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-18-til15.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -902,34 +1039,4 @@
 <p>심화 강의는 완강 했으나 한 파트를 10분에 끝내니 한번에 숙지 못하는건 어쩌면 당연한걸까? 과제하고 다시 보는걸로!</p>
 
 <h3 id="내일은">내일은?</h3>
-<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry><entry><title type="html">[Swift] 아스키 코드</title><link href="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/" rel="alternate" type="text/html" title="[Swift] 아스키 코드" /><published>2024-03-13T00:00:00+09:00</published><updated>2024-03-13T00:00:00+09:00</updated><id>http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C</id><content type="html" xml:base="http://localhost:4000/swift/%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C/"><![CDATA[<h1 id="아스키ascii">아스키(ASCII)</h1>
-<ul>
-  <li>ASCII(American Standard Code for Information Interchange, 미국 정보 교환 표준 부호)는 컴퓨터와 통신 장비에서 텍스트를 표현하기 위해 사용되는 표준 문자 인코딩 방식</li>
-  <li><a href="https://namu.wiki/w/%EC%95%84%EC%8A%A4%ED%82%A4%20%EC%BD%94%EB%93%9C" target="_blank">나무위키 아스키코드 바로가기</a></li>
-</ul>
-
-<h1 id="아스키-코드---문자">아스키 코드 -&gt; 문자</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">asciiValue</span><span class="p">:</span> <span class="kt">UInt8</span> <span class="o">=</span> <span class="mi">65</span>
-<span class="k">let</span> <span class="nv">character</span> <span class="o">=</span> <span class="kt">Character</span><span class="p">(</span><span class="kt">UnicodeScalar</span><span class="p">(</span><span class="n">asciiValue</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span> <span class="c1">// 출력: "A"</span>
-</code></pre></div></div>
-
-<h1 id="문자---아스키-코드">문자 -&gt; 아스키 코드</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">character</span><span class="p">:</span> <span class="kt">Character</span> <span class="o">=</span> <span class="s">"A"</span>
-<span class="k">if</span> <span class="k">let</span> <span class="nv">asciiValue</span> <span class="o">=</span> <span class="n">character</span><span class="o">.</span><span class="n">asciiValue</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">asciiValue</span><span class="p">)</span> <span class="c1">// 출력: 65</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="swift에서-아스키코드-uint8-타입-사용">Swift에서 아스키코드 UInt8 타입 사용</h1>
-<ul>
-  <li>Swift에서 ASCII 문자를 처리할 때 일반적으로 UInt8 타입을 사용하는 이유입니다.</li>
-</ul>
-
-<ol>
-  <li>아스키 코드의 범위: 아스키 코드는 0부터 127까지의 값을 가집니다. 이는 7비트로 표현되는 숫자입니다. 따라서 UInt8은 0부터 255까지의 값을 가지므로 아스키 코드의 범위 내에 있습니다.</li>
-  <li>메모리 사용량: UInt8은 1바이트의 메모리를 사용하므로 ASCII 문자를 표현하는 데 최소한의 메모리를 사용합니다. 이는 메모리 사용량을 최적화하고 메모리 소비를 줄이는 데 도움이 됩니다.</li>
-  <li>타입 안정성: UInt8은 부호 없는 8비트 정수를 나타내므로 음수 값을 가질 수 없습니다. 이는 아스키 코드 값의 범위가 0부터 127까지이므로 부호 없는 타입을 사용하는 것이 논리적입니다.</li>
-</ol>
-
-<p>따라서 UInt8을 사용하는 것은 메모리 사용량을 최소화하고 아스키 코드를 나타내기에 적절한 데이터 타입을 선택하는 것입니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="swift" /><category term="swift" /><category term="아스키 코드" /><summary type="html"><![CDATA[swift에서 아스키 코드 사용 방법]]></summary></entry></feed>
+<p>오늘은 개인과제 1번을 제출했는데 내일도 과제를 우선 풀고 남은 내용은 블로그 작성하기</p>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 12일차 이야기]]></summary></entry></feed>

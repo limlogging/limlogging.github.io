@@ -527,6 +527,12 @@ var store = [{
         "url": "/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/",
         "teaser": null
       },{
+        "title": "Xcode 프로젝트 깃허브(GitHub)에 추가하기",
+        "excerpt":"1. 원격 저장소 추가 GitHub에 새로운 원격 저장소를 생성하고 로컬 저장소에 해당 원격 저장소를 추가합니다. 2. XCode 프로젝트 생성 Xcode 프로젝트의 이름과 GitHub 레포지토리의 이름이 반드시 같을 필요는 없습니다. 3. 터미널 오픈 프로젝트 폴더에서 우클릭 후 터미널 오픈합니다. 4. git init - 저장소 초기화 명령어는 새로운 Git 저장소를 초기화하는 데...","categories": ["git"],
+        "tags": ["git","github","xcode","add","commit","push"],
+        "url": "/git/gitProjectAdd/",
+        "teaser": null
+      },{
         "title": "[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기",
         "excerpt":"간단한 카운터 앱 만들기 swift 문법 강의 주차가 끝나고 ios 앱 개발 입문 강의를 들으며 강의에 포함된 간단한 카운터 앱 만들기 과제를 만들었습니다. 요구사항 화면 레이아웃 요구사항 UILabel이 가운데 위치하게 해 주세요. UILabel을 기준으로 상단에는 감소 버튼, 아래에는 증가 버튼을 위치시켜 주세요. UILabel과 UIButton사이의 간격은 16px로 설정해 주세요. AutoLayout을 사용해...","categories": ["sparta"],
         "tags": ["간단한카운터앱"],

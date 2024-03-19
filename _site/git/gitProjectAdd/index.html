@@ -1,0 +1,923 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Xcode 프로젝트 깃허브(GitHub)에 추가하기 - limlogging Devlog</title>
+<meta name="description" content="Xcode 프로젝트 깃허브(GitHub)에 추가하기">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="Xcode 프로젝트 깃허브(GitHub)에 추가하기">
+<meta property="og:url" content="http://localhost:4000/git/gitProjectAdd/">
+
+
+  <meta property="og:description" content="Xcode 프로젝트 깃허브(GitHub)에 추가하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-03-19T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/git/gitProjectAdd/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>공부하며 기록하는 블로그입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(14)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(2)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(10)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(47)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(4)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Xcode 프로젝트 깃허브(GitHub)에 추가하기">
+    <meta itemprop="description" content="Xcode 프로젝트 깃허브(GitHub)에 추가하기">
+    <meta itemprop="datePublished" content="2024-03-19T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/git/gitProjectAdd/" class="u-url" itemprop="url">Xcode 프로젝트 깃허브(GitHub)에 추가하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/git/gitProjectAdd/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/git/gitProjectAdd/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-원격-저장소-추가">1. 원격 저장소 추가</a></li><li><a href="#2-xcode-프로젝트-생성">2. XCode 프로젝트 생성</a></li><li><a href="#3-터미널-오픈">3. 터미널 오픈</a></li><li><a href="#4-git-init---저장소-초기화">4. git init - 저장소 초기화</a></li><li><a href="#5-git-add----스테이징-영역에-추가">5. git add . - 스테이징 영역에 추가</a></li><li><a href="#6-git-commit--m-커밋메시지---저장소에-기록">6. git commit -m “커밋메시지” - 저장소에 기록</a></li><li><a href="#7-git-branch--m-main---기본-브랜치-이름-변경">7. git branch -M main - 기본 브랜치 이름 변경</a></li><li><a href="#8-git-remote-add-origin-저장소url---git-저장소에-원격-저장소-추가">8. git remote add origin 저장소URL - git 저장소에 원격 저장소 추가</a></li><li><a href="#9-git-push--u-origin-main---작업-중인-브랜치를-원격-저장소에-푸시">9. git push -u origin main - 작업 중인 브랜치를 원격 저장소에 푸시</a></li><li><a href="#10-깃허브-확인">10. 깃허브 확인</a></li><li><a href="#11-브랜치-새로-만들어서-작업">11. 브랜치 새로 만들어서 작업</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="1-원격-저장소-추가">1. 원격 저장소 추가</h1>
+<ul>
+  <li>GitHub에 새로운 원격 저장소를 생성하고 로컬 저장소에 해당 원격 저장소를 추가합니다.
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd1.png" alt="" /></li>
+</ul>
+
+<h1 id="2-xcode-프로젝트-생성">2. XCode 프로젝트 생성</h1>
+<ul>
+  <li>Xcode 프로젝트의 이름과 GitHub 레포지토리의 이름이 반드시 같을 필요는 없습니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd2.png" alt="" /></li>
+</ul>
+
+<h1 id="3-터미널-오픈">3. 터미널 오픈</h1>
+<ul>
+  <li>프로젝트 폴더에서 우클릭 후 터미널 오픈합니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd3.png" alt="" /></li>
+</ul>
+
+<h1 id="4-git-init---저장소-초기화">4. git init - 저장소 초기화</h1>
+<ul>
+  <li>명령어는 새로운 Git 저장소를 초기화하는 데 사용됩니다.</li>
+  <li>git init
+    <ul>
+      <li>해당 명령어로 현재 디렉토리에 새로운 Git 저장소를 만듭니다. 이 저장소에는 프로젝트의 모든 변경 내역을 추적하고 관리할 수 있는 .git 디렉토리가 생성됩니다.
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git init
+</span></code></pre></div>        </div>
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">힌트 = : Using 'master' as the name for the initial branch. This default branch name
+힌트: is subject to change. To configure the initial branch name to use in all
+힌트 : of your new repositories, which will suppress this warning, call:
+힌트 :
+</span><span class="gp">힌트 : git config -global init.defaultBranch ‹name&gt;</span><span class="w">
+</span><span class="go">힌트 : 
+힌트 : Names commonly chosen instead of 'master' are 'main', 'trunk' and
+힌트 : 'development'. The just-created branch can be renamed via this command:
+힌트 :
+</span><span class="gp">힌트 : git branch -m &lt;name&gt;</span><span class="w">
+</span><span class="go">/users/imhs/Desktop/내배캠 스파르타/실습과제/MyTodoList/.git/ 안의 빈 깃 저 장소를 다시 초기화했습니다 
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="5-git-add----스테이징-영역에-추가">5. git add . - 스테이징 영역에 추가</h1>
+<ul>
+  <li>명령어는 Git에서 변경된 모든 파일을 스테이징 영역에 추가하는 역할을 합니다.</li>
+  <li>git add .
+    <ul>
+      <li>현재 디렉토리 및 하위 디렉토리에서 변경된 모든 파일을 찾습니다.</li>
+      <li>변경된 파일을 스테이징 영역에 추가합니다. 이는 Git이 해당 파일의 변경 내용을 추적하고, 다음 커밋에 포함시키기 위한 준비 단계입니다.
+        <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git add . 
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="6-git-commit--m-커밋메시지---저장소에-기록">6. git commit -m “커밋메시지” - 저장소에 기록</h1>
+<ul>
+  <li>스테이징 영역에 추가된 파일은 git commit 명령어를 사용하여 커밋할 수 있습니다. 스테이징 영역에 추가된 파일은 이후 커밋에 반영되며, 커밋을 통해 변경 내용이 저장소에 영구적으로 기록됩니다.</li>
+  <li>git commit -m “MyTodoList 추가”
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git commit -m "MyTodoList 추가" 
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="7-git-branch--m-main---기본-브랜치-이름-변경">7. git branch -M main - 기본 브랜치 이름 변경</h1>
+<ul>
+  <li>기본적으로 Git 저장소를 초기화하면 “master”라는 이름의 기본 브랜치가 생성됩니다. 그러나 최근의 표준화 노력과 함께 이를 “main”으로 변경하는 추세가 있습니다.</li>
+  <li>git branch -M main 명령어는 현재 작업 중인 브랜치를 “main”으로 변경합니다.</li>
+  <li>git branch -M main
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git commit -m "MyTodoList 추가" 
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="8-git-remote-add-origin-저장소url---git-저장소에-원격-저장소-추가">8. git remote add origin 저장소URL - git 저장소에 원격 저장소 추가</h1>
+<ul>
+  <li>현재 Git 저장소에 origin이라는 이름으로 URL의 원격 저장소를 추가</li>
+  <li>git remote add origin https://github.com/limlogging/MyTodoList.git
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git remote add origin https://github.com/limlogging/MyTodoList.git
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="9-git-push--u-origin-main---작업-중인-브랜치를-원격-저장소에-푸시">9. git push -u origin main - 작업 중인 브랜치를 원격 저장소에 푸시</h1>
+<ul>
+  <li>현재 작업 중인 브랜치를 원격 저장소에 푸시하는 역할을 합니다.</li>
+  <li>-u 옵션은 해당 브랜치를 원격 저장소의 기본 브랜치로 설정하는 역할을 합니다.
+    <ul>
+      <li>이 옵션을 사용하면 이후에는 git push 명령어를 실행할 때 -u 옵션 없이도 동일한 원격 저장소 및 브랜치로 푸시할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>git push -u origin main
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git push -u origin main
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="10-깃허브-확인">10. 깃허브 확인</h1>
+<ul>
+  <li>main 브랜치가 default로 생기고 commit 메시지도 확인할 수 있습니다. 
+<img src="/assets/images/categories/git/2024-03-19-gitProjectAdd4.png" alt="" /></li>
+</ul>
+
+<h1 id="11-브랜치-새로-만들어서-작업">11. 브랜치 새로 만들어서 작업</h1>
+<ul>
+  <li>git branch로 현재 브랜치를 확인합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git branch
+* main
+</span></code></pre></div></div>
+
+<ul>
+  <li>dev 브랜치를 만들고 생성된 브랜치로 이동합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git checkout -b dev 
+</span></code></pre></div></div>
+
+<ul>
+  <li>브랜치를 확인합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git branch 
+* dev
+  main
+</span></code></pre></div></div>
+
+<ul>
+  <li>작업 후 커밋합니다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyTodoList % git add .
+imhs@imhsui-MacBookPro MyTodoList % git commit -m "기능추가" 
+imhs@imhsui-MacBookPro MyTodoList % git push origin dev
+</span></code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#add" class="page__taxonomy-item p-category" rel="tag">add</a><span class="sep">, </span>
+    
+      <a href="/tags/#commit" class="page__taxonomy-item p-category" rel="tag">commit</a><span class="sep">, </span>
+    
+      <a href="/tags/#git" class="page__taxonomy-item p-category" rel="tag">git</a><span class="sep">, </span>
+    
+      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">github</a><span class="sep">, </span>
+    
+      <a href="/tags/#push" class="page__taxonomy-item p-category" rel="tag">push</a><span class="sep">, </span>
+    
+      <a href="/tags/#xcode" class="page__taxonomy-item p-category" rel="tag">xcode</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#git" class="page__taxonomy-item p-category" rel="tag">git</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-19T00:00:00+09:00">March 19, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Xcode+%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8+%EA%B9%83%ED%97%88%EB%B8%8C%28GitHub%29%EC%97%90+%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fgit%2FgitProjectAdd%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgit%2FgitProjectAdd%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgit%2FgitProjectAdd%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" class="pagination--pager" title="[프로그래머스/Swift] 문자열 내 마음대로 정렬하기
+">이전</a>
+    
+    
+      <a href="/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" class="pagination--pager" title="[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" rel="permalink">[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 입문 - 간단한 카운터 앱 만들기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til15/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 15일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 15일차 이야기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/git/" rel="permalink">깃(git)과 깃허브(GitHub)란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">git, GitHub란?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
