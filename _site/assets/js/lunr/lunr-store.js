@@ -544,4 +544,10 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til16/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] K번째수",
+        "excerpt":"문제 설명 배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다. 예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면 array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다. 1에서 나온 배열을 정렬하면 [2, 3, 5,...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","K번째수"],
+        "url": "/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/",
+        "teaser": null
       }]
