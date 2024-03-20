@@ -83,6 +83,12 @@ var store = [{
         "url": "/UIKit/UIView/",
         "teaser": null
       },{
+        "title": "[UIKit] 델리게이트(Delegate) 패턴 ",
+        "excerpt":"델리게이트(Delegate) 패턴 / 위임 패턴 객체 지향 프로그래밍에서 자주 사용되는 디자인 패턴 중 하나입니다. 객체 사이의 행동을 분리하고, 특정 객체가 다른 객체의 대리자(delegate) 역할을 수행하여 해당 객체의 동작을 확장하거나 커스터마이징할 수 있도록 합니다. 델리게이트 패턴은 소프트웨어의 모듈성을 높이고 객체 간의 결합도를 줄여 유지보수와 확장성을 향상시킬 수 있습니다. 애플의 프레임워크에 사용하는...","categories": ["UIKit"],
+        "tags": ["swift","iOS","Delegate"],
+        "url": "/UIKit/Delegate/",
+        "teaser": null
+      },{
         "title": "Mac에서 github blog 만들기 - 1",
         "excerpt":"개발자 블로그 ??? 요즘 개발자들은 취업, 포트폴리오, TIL(Today I Learned) 등 각자의 이유로 블로그를 운영하고 있습니다. 저도 부트캠프를 계기로 개발자 블로그를 운영해보기로 하였습니다. 네이버 블로그, 티스토리, 벨로그, 깃허브 블로그 등 다양한 플랫폼 중 깃허브 블로그를 선택하였습니다. (벨로그에 테스트로 글 두번 썼는데 제 마음에 들지 않았습니다.) GitHub 블로그 선택 이유 GitHub...","categories": ["GitHubBlog"],
         "tags": ["GitHub","blog","GitHub blog"],
