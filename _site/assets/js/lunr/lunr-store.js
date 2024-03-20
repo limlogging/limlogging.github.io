@@ -550,4 +550,10 @@ var store = [{
         "tags": ["Algorithm","coding test","K번째수"],
         "url": "/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 두 개 뽑아서 더하기",
+        "excerpt":"문제 설명 정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 numbers의 길이는 2 이상 100 이하입니다. numbers의 모든 수는 0 이상 100 이하입니다. 입출력 예 numbers result [2,1,3,4,1]...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","두 개 뽑아서 더하기"],
+        "url": "/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/",
+        "teaser": null
       }]
