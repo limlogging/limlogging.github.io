@@ -574,4 +574,10 @@ var store = [{
         "tags": ["Algorithm","coding test","가장 가까운 같은 글자"],
         "url": "/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/",
         "teaser": null
+      },{
+        "title": "[UIKit] 코드로 화면 이동 ",
+        "excerpt":"코드로 화면 이동 스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다. 1. cocoa touch class 파일 생성 프로젝트에서 우클릭 코코아 터치 클래스 선택 클래스 이름을 정하고 Subclass를 UIViewController로 설정 파일 생성 2. ViewController에서 추가한 컨트롤러 불러오기 버튼 생성 및 코드 추가 ViewController에서 버튼을 생성하고 연결합니다. 화면 연결을...","categories": ["UIKit"],
+        "tags": ["swift","iOS","present","dismiss"],
+        "url": "/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/",
+        "teaser": null
       }]
