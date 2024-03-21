@@ -581,6 +581,12 @@ var store = [{
         "url": "/TIL/til18/",
         "teaser": null
       },{
+        "title": "[UIKit] 얼러트 컨트롤러(UIAlertController) ",
+        "excerpt":"얼러트 컨트롤러(UIAlertController)란? iOS 애플리케이션에서 경고 메시지, 알림 창, 또는 사용자에게 선택 옵션을 제공하는 팝업 창을 표시하는 데 사용되는 클래스입니다. UIKit 프레임워크에서 제공되며, 모든 iOS 버전에서 사용할 수 있습니다. 스타일 .alert (경고 메시지 / 알림) .actionSheet (사용자 선택 옵션 목록) 예제 코드 1. 버튼 추가 버튼을 선택했을 때 Alert 창을 띄우기...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UIAlertController"],
+        "url": "/UIKit/UIAlertController/",
+        "teaser": null
+      },{
         "title": "[UIKit] 코드로 화면 이동 ",
         "excerpt":"코드로 화면 이동 스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다. 1. cocoa touch class 파일 생성 프로젝트에서 우클릭 코코아 터치 클래스 선택 클래스 이름을 정하고 Subclass를 UIViewController로 설정 파일 생성 2. ViewController에서 추가한 컨트롤러 불러오기 버튼 생성 및 코드 추가 ViewController에서 버튼을 생성하고 연결합니다. 화면 연결을...","categories": ["UIKit"],
         "tags": ["swift","iOS","present","dismiss"],
