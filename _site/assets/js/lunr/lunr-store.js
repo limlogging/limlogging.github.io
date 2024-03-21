@@ -575,6 +575,12 @@ var store = [{
         "url": "/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 18일차",
+        "excerpt":"데일리 스크럼 알고리즘 빨리 풀긴 했는데 초기 값과, 반복문 횟수 등 다른 사람과의 다른 점을 확인하면서 고민해볼 수 있었다. 풀이 보기 가장 가까운 같은 글자 개인 과제 공부 오늘은 화면 이동 관련해서 공부했다. 화면이동에는 4가지 방법 (1.코드로 화면이동, 2.코드로 스토리보드 객체를 생성해서 화면이동, 3.스토리보드에서 간접 세그웨이를 통한 화면이동, 4.스토리보드에서 직접...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til18/",
+        "teaser": null
+      },{
         "title": "[UIKit] 코드로 화면 이동 ",
         "excerpt":"코드로 화면 이동 스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다. 1. cocoa touch class 파일 생성 프로젝트에서 우클릭 코코아 터치 클래스 선택 클래스 이름을 정하고 Subclass를 UIViewController로 설정 파일 생성 2. ViewController에서 추가한 컨트롤러 불러오기 버튼 생성 및 코드 추가 ViewController에서 버튼을 생성하고 연결합니다. 화면 연결을...","categories": ["UIKit"],
         "tags": ["swift","iOS","present","dismiss"],

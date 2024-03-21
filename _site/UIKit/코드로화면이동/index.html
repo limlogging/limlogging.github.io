@@ -343,7 +343,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/TIL/">Today I Learned(12)</a></li>
+            <li><a href="/categories/TIL/">Today I Learned(13)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -438,7 +438,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#코드로-화면-이동">코드로 화면 이동</a></li><li><a href="#1-cocoa-touch-class-파일-생성">1. cocoa touch class 파일 생성</a></li><li><a href="#2-viewcontroller에서-추가한-컨트롤러-불러오기">2. ViewController에서 추가한 컨트롤러 불러오기</a><ul><li><a href="#버튼-생성-및-코드-추가">버튼 생성 및 코드 추가</a></li><li><a href="#실행">실행</a></li></ul></li><li><a href="#3-새로-만든-클래스-파일-수정">3. 새로 만든 클래스 파일 수정</a><ul><li><a href="#label-추가">Label 추가</a><ul><li><a href="#실행-1">실행</a></li></ul></li><li><a href="#오토레이아웃-설정">오토레이아웃 설정</a><ul><li><a href="#실행-2">실행</a></li></ul></li></ul></li><li><a href="#view-컨트롤러에서-text값-전달하여-화면에-출력">View 컨트롤러에서 Text값 전달하여 화면에 출력</a><ul><li><a href="#추가한-클래스-수정">추가한 클래스 수정</a></li><li><a href="#view-controller-수정">View Controller 수정</a></li><li><a href="#실행-3">실행</a></li></ul></li><li><a href="#버튼을-만들어서-버튼으로-화면-닫기">버튼을 만들어서 버튼으로 화면 닫기</a><ul><li><a href="#화면">화면</a></li><li><a href="#마무리">마무리</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#코드로-화면-이동">코드로 화면 이동</a></li><li><a href="#1-cocoa-touch-class-파일-생성">1. cocoa touch class 파일 생성</a></li><li><a href="#2-viewcontroller에서-추가한-컨트롤러-불러오기">2. ViewController에서 추가한 컨트롤러 불러오기</a><ul><li><a href="#버튼-생성-및-코드-추가">버튼 생성 및 코드 추가</a></li><li><a href="#실행">실행</a></li></ul></li><li><a href="#3-새로-만든-클래스-파일-수정">3. 새로 만든 클래스 파일 수정</a><ul><li><a href="#label-추가">Label 추가</a><ul><li><a href="#실행-1">실행</a></li></ul></li><li><a href="#오토레이아웃-설정">오토레이아웃 설정</a><ul><li><a href="#실행-2">실행</a></li></ul></li></ul></li><li><a href="#4-view-컨트롤러에서-text값-전달하여-화면에-출력">4. View 컨트롤러에서 Text값 전달하여 화면에 출력</a><ul><li><a href="#추가한-클래스-수정">추가한 클래스 수정</a></li><li><a href="#view-controller-수정">View Controller 수정</a></li><li><a href="#실행-3">실행</a></li></ul></li><li><a href="#5-버튼을-만들어서-버튼으로-화면-닫기">5. 버튼을 만들어서 버튼으로 화면 닫기</a><ul><li><a href="#화면">화면</a></li><li><a href="#마무리">마무리</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -494,12 +494,11 @@
 </table>
 
 <h1 id="3-새로-만든-클래스-파일-수정">3. 새로 만든 클래스 파일 수정</h1>
+<h2 id="label-추가">Label 추가</h2>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">class</span> <span class="kt">NextViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">nextViewLabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span> <span class="c1">//Label 추가 </span>
 </code></pre></div></div>
-
-<h2 id="label-추가">Label 추가</h2>
 <ul>
   <li>화면에서 label을 볼 수 있게 기본 text를 입력하고 view.addSubview(nextViewLabel) 코드를 추가합니다.
     <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
@@ -557,7 +556,7 @@
 <img src="/assets/images/categories/uikit/2024-03-21-화면이동10.png" alt="" /></li>
 </ul>
 
-<h1 id="view-컨트롤러에서-text값-전달하여-화면에-출력">View 컨트롤러에서 Text값 전달하여 화면에 출력</h1>
+<h1 id="4-view-컨트롤러에서-text값-전달하여-화면에-출력">4. View 컨트롤러에서 Text값 전달하여 화면에 출력</h1>
 <ul>
   <li>Hello 고정 값이 아닌 ViewController에서 문자열을 받아와 출력하는 방법입니다.</li>
 </ul>
@@ -598,7 +597,7 @@
 <img src="/assets/images/categories/uikit/2024-03-21-화면이동12.png" alt="" /></li>
 </ul>
 
-<h1 id="버튼을-만들어서-버튼으로-화면-닫기">버튼을 만들어서 버튼으로 화면 닫기</h1>
+<h1 id="5-버튼을-만들어서-버튼으로-화면-닫기">5. 버튼을 만들어서 버튼으로 화면 닫기</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">nextViewLabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
 <span class="k">var</span> <span class="nv">testLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>  
 <span class="k">var</span> <span class="nv">backButton</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>     <span class="c1">//버튼 추가 </span>
@@ -708,7 +707,7 @@
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" class="pagination--pager" title="[프로그래머스/Swift] 가장 가까운 같은 글자
+      <a href="/TIL/til18/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 18일차
 ">이전</a>
     
     
@@ -726,6 +725,46 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til18/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 18일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 18일차 이야기
+</p>
+  </article>
+</div>
+
         
           
 
@@ -842,46 +881,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 17일차 이야기
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 두 개 뽑아서 더하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 두 개 뽑아서 더하기
 </p>
   </article>
 </div>
