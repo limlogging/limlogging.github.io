@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[프로그래머스/Swift] 내적 - limlogging Devlog</title>
-<meta name="description" content="[프로그래머스/Swift] 내적">
+<!-- begin _includes/seo.html --><title>[TIL] 내배캠 iOS앱 개발 공부 19일차 - limlogging Devlog</title>
+<meta name="description" content="내배캠 iOS앱 개발 공부 19일차 이야기">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[프로그래머스/Swift] 내적">
-<meta property="og:url" content="http://localhost:4000/algorithm/%EB%82%B4%EC%A0%81/">
+<meta property="og:title" content="[TIL] 내배캠 iOS앱 개발 공부 19일차">
+<meta property="og:url" content="http://localhost:4000/TIL/til19/">
 
 
-  <meta property="og:description" content="[프로그래머스/Swift] 내적">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-07T00:00:00+09:00">
+  <meta property="og:description" content="내배캠 iOS앱 개발 공부 19일차 이야기">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-22T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/algorithm/%EB%82%B4%EC%A0%81/">
+
+<link rel="canonical" href="http://localhost:4000/TIL/til19/">
 
 
 
@@ -390,16 +390,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[프로그래머스/Swift] 내적">
-    <meta itemprop="description" content="[프로그래머스/Swift] 내적">
-    <meta itemprop="datePublished" content="2024-03-07T00:00:00+09:00">
+    <meta itemprop="headline" content="[TIL] 내배캠 iOS앱 개발 공부 19일차">
+    <meta itemprop="description" content="내배캠 iOS앱 개발 공부 19일차 이야기">
+    <meta itemprop="datePublished" content="2024-03-22T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/algorithm/%EB%82%B4%EC%A0%81/" class="u-url" itemprop="url">[프로그래머스/Swift] 내적
+            <a href="http://localhost:4000/TIL/til19/" class="u-url" itemprop="url">[TIL] 내배캠 iOS앱 개발 공부 19일차
 </a>
           </h1>
           
@@ -426,8 +426,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/algorithm/%EB%82%B4%EC%A0%81/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/algorithm/%EB%82%B4%EC%A0%81/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/TIL/til19/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/TIL/til19/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -438,80 +438,40 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#문제-설명">문제 설명</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예">입출력 예</a><ul><li><a href="#입출력-예-1">입출력 예 #1</a></li><li><a href="#입출력-예-2">입출력 예 #2</a></li></ul></li><li><a href="#나의-풀이">나의 풀이</a></li><li><a href="#다른-사람-풀이">다른 사람 풀이</a></li><li><a href="#의견">의견</a></li></ul>
+              <ul class="toc__menu"><li><a href="#데일리-스크럼">데일리 스크럼</a></li><li><a href="#알고리즘">알고리즘</a></li><li><a href="#개인-과제-공부">개인 과제 공부</a></li><li><a href="#내일-목표">내일 목표</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="문제-설명">문제 설명</h1>
+        <h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-22-til19.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
 <ul>
-  <li>길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.</li>
-  <li>이때, a와 b의 내적은 a[0]<em>b[0] + a[1]</em>b[1] + … + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/70128" target="_blank">문제 풀기</a></li>
+  <li>map, enumerated, reversed, reduce 골고루 사용해서 풀었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" target="_blank">푸드 파이트 대회</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="제한사항">제한사항</h1>
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
 <ul>
-  <li>a, b의 길이는 1 이상 1,000 이하입니다.</li>
-  <li>a, b의 모든 수는 -1,000 이상 1,000 이하입니다.</li>
+  <li>오늘은 개인 과제 키워드 중 하나인 AlertController에 대해서 공부하고 실습했다.</li>
+  <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다.
+    <ul>
+      <li><a href="https://limlogging.github.io/UIKit/UIAlertController/" target="_blank">얼러트 컨트롤러</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>a</th>
-      <th>b</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[1,2,3,4]</td>
-      <td>[-3,-1,0,2]</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>[-1,0,1]</td>
-      <td>[1,0,-1]</td>
-      <td>-2</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
+<h3 id="내일-목표">내일 목표</h3>
 <ul>
-  <li>a와 b의 내적은 1<em>(-3) + 2</em>(-1) + 3<em>0 + 4</em>2 = 3 입니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>a와 b의 내적은 (-1)<em>1 + 0</em>0 + 1*(-1) = -2 입니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">a</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">sum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nf">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>다른 사람들 풀이로 많이 배우면서 생각하게 되는듯</li>
+  <li>table View Cell에서 처리한 데이터를 주고 받는 공부가 필요한 것 같다.</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>키워드 하나씩 실습 하기</li>
+  <li>과제 풀기</li>
 </ul>
 
         
@@ -529,11 +489,7 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a><span class="sep">, </span>
-    
-      <a href="/tags/#coding-test" class="page__taxonomy-item p-category" rel="tag">coding test</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EB%82%B4%EC%A0%81" class="page__taxonomy-item p-category" rel="tag">내적</a>
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -550,7 +506,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -558,7 +514,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-07T00:00:00+09:00">March 7, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-22T00:00:00+09:00">March 22, 2024</time></p>
 
       </footer>
 
@@ -567,23 +523,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%2FSwift%5D+%EB%82%B4%EC%A0%81%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%2582%25B4%25EC%25A0%2581%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BTIL%5D+%EB%82%B4%EB%B0%B0%EC%BA%A0+iOS%EC%95%B1+%EA%B0%9C%EB%B0%9C+%EA%B3%B5%EB%B6%80+19%EC%9D%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil19%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%2582%25B4%25EC%25A0%2581%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil19%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EB%2582%25B4%25EC%25A0%2581%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil19%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/algorithm/%EB%82%98%EC%9D%B4%EC%B6%9C%EB%A0%A5/" class="pagination--pager" title="[프로그래머스/Swift] 나이 출력
+      <a href="/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" class="pagination--pager" title="[프로그래머스/Swift] 푸드 파이트 대회
 ">이전</a>
     
     
-      <a href="/algorithm/%EB%91%90%EC%88%98%EC%9D%98%EA%B3%B1/" class="pagination--pager" title="[프로그래머스/Swift] 두 수의 곱
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -597,46 +552,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/TIL/til19/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 19일차
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 19일차 이야기
-</p>
-  </article>
-</div>
-
         
           
 
@@ -753,6 +668,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til18/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 18일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 18일차 이야기
 </p>
   </article>
 </div>

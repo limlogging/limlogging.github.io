@@ -598,4 +598,10 @@ var store = [{
         "tags": ["Algorithm","coding test","푸드 파이트 대회"],
         "url": "/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 19일차",
+        "excerpt":"데일리 스크럼 알고리즘 map, enumerated, reversed, reduce 골고루 사용해서 풀었다. 풀이 보기 푸드 파이트 대회 개인 과제 공부 오늘은 개인 과제 키워드 중 하나인 AlertController에 대해서 공부하고 실습했다. UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다. 얼러트 컨트롤러 내일 목표 table View Cell에서 처리한 데이터를 주고 받는 공부가...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til19/",
+        "teaser": null
       }]
