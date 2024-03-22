@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-21T22:54:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-22T09:56:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 푸드 파이트 대회</title><link href="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 푸드 파이트 대회" /><published>2024-03-22T00:00:00+09:00</published><updated>2024-03-22T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>수웅이는 매달 주어진 음식을 빨리 먹는 푸드 파이트 대회를 개최합니다. 이 대회에서 선수들은 1대 1로 대결하며, 매 대결마다 음식의 종류와 양이 바뀝니다. 대결은 준비된 음식들을 일렬로 배치한 뒤, 한 선수는 제일 왼쪽에 있는 음식부터 오른쪽으로, 다른 선수는 제일 오른쪽에 있는 음식부터 왼쪽으로 순서대로 먹는 방식으로 진행됩니다. 중앙에는 물을 배치하고, 물을 먼저 먹는 선수가 승리하게 됩니다.</li>
+  <li>이때, 대회의 공정성을 위해 두 선수가 먹는 음식의 종류와 양이 같아야 하며, 음식을 먹는 순서도 같아야 합니다. 또한, 이번 대회부터는 칼로리가 낮은 음식을 먼저 먹을 수 있게 배치하여 선수들이 음식을 더 잘 먹을 수 있게 하려고 합니다. 이번 대회를 위해 수웅이는 음식을 주문했는데, 대회의 조건을 고려하지 않고 음식을 주문하여 몇 개의 음식은 대회에 사용하지 못하게 되었습니다.</li>
+  <li>예를 들어, 3가지의 음식이 준비되어 있으며, 칼로리가 적은 순서대로 1번 음식을 3개, 2번 음식을 4개, 3번 음식을 6개 준비했으며, 물을 편의상 0번 음식이라고 칭한다면, 두 선수는 1번 음식 1개, 2번 음식 2개, 3번 음식 3개씩을 먹게 되므로 음식의 배치는 “1223330333221”이 됩니다. 따라서 1번 음식 1개는 대회에 사용하지 못합니다.</li>
+  <li>
+    <p>수웅이가 준비한 음식의 양을 칼로리가 적은 순서대로 나타내는 정수 배열 food가 주어졌을 때, 대회를 위한 음식의 배치를 나타내는 문자열을 return 하는 solution 함수를 완성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/134240" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>2 ≤ food의 길이 ≤ 9</li>
+  <li>1 ≤ food의 각 원소 ≤ 1,000</li>
+  <li>food에는 칼로리가 적은 순서대로 음식의 양이 담겨 있습니다.</li>
+  <li>food[i]는 i번 음식의 수입니다.</li>
+  <li>food[0]은 수웅이가 준비한 물의 양이며, 항상 1입니다.</li>
+  <li>정답의 길이가 3 이상인 경우만 입력으로 주어집니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+<p>|food|result|
+|[1, 3, 4, 6]|”1223330333221”|
+|[1, 7, 1, 2]|”111303111”|</p>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>문제 예시와 같습니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>두 선수는 1번 음식 3개, 3번 음식 1개를 먹게 되므로 음식의 배치는 “111303111”입니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">food</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">//배열 앞부분 구하기</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">food</span><span class="o">.</span><span class="nf">dropFirst</span><span class="p">()</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="nv">$0</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">})</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">value</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//배열 뒷부분은 추가</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reversed</span><span class="p">()</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="c1">//0번일땐 두개 추가 </span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//문자열로 변경</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="s">""</span><span class="p">){</span><span class="nv">$0</span> <span class="o">+</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$1</span><span class="p">)}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">food</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">food</span><span class="o">.</span><span class="n">indices</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="n">food</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span> <span class="o">+</span> <span class="s">"0"</span> <span class="o">+</span> <span class="n">result</span><span class="o">.</span><span class="nf">reversed</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>map, enumerated, reversed, reduce에 조금 익숙해졌고 첫번째 값을 버릴 수 있는 dropFirst를 알았다.</li>
+  <li>다른 사람들은 append를 잘 사용하지 않는 것 같다. 다른 방법에 대해서도 찾아보고 익숙해져야겠다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="푸드 파이트 대회" /><summary type="html"><![CDATA[[프로그래머스/Swift] 푸드 파이트 대회]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
 <ul>
   <li>iOS 애플리케이션에서 경고 메시지, 알림 창, 또는 사용자에게 선택 옵션을 제공하는 팝업 창을 표시하는 데 사용되는 클래스입니다.</li>
   <li>UIKit 프레임워크에서 제공되며, 모든 iOS 버전에서 사용할 수 있습니다.</li>
@@ -478,7 +557,109 @@
   <li>알고리즘 문제 풀기</li>
   <li>키워드 하나씩 실습 하기</li>
   <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 17일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] K번째수</title><link href="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] K번째수" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 17일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 델리게이트(Delegate) 패턴</title><link href="http://localhost:4000/UIKit/Delegate/" rel="alternate" type="text/html" title="[UIKit] 델리게이트(Delegate) 패턴" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/Delegate</id><content type="html" xml:base="http://localhost:4000/UIKit/Delegate/"><![CDATA[<h1 id="델리게이트delegate-패턴--위임-패턴">델리게이트(Delegate) 패턴 / 위임 패턴</h1>
+<ul>
+  <li>객체 지향 프로그래밍에서 자주 사용되는 디자인 패턴 중 하나입니다.</li>
+  <li>객체 사이의 행동을 분리하고, 특정 객체가 다른 객체의 대리자(delegate) 역할을 수행하여 해당 객체의 동작을 확장하거나 커스터마이징할 수 있도록 합니다.</li>
+  <li>델리게이트 패턴은 소프트웨어의 모듈성을 높이고 객체 간의 결합도를 줄여 유지보수와 확장성을 향상시킬 수 있습니다.</li>
+  <li>
+    <p><strong>애플의 프레임워크에 사용하는 델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></p>
+  </li>
+  <li>객체와 객체간의 의사소통을 위함</li>
+</ul>
+
+<h1 id="예제-코드">예제 코드</h1>
+<ul>
+  <li>ViewController와 TextField는 서로 다른 객체입니다.</li>
+  <li>TextField를 ViewController위에 올려 놓습니다.
+    <ul>
+      <li>Object를 View에 올려놓는 행위와 같은 말
+        <ul>
+          <li>인터페이스 빌더(Interface Builder)에서 UI 요소를 배치한다.</li>
+          <li>인터페이스 빌더(Interface Builder)에서 UI를 구성한다.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>View에 올려놓은 TextField의 동작을 View에게 전달하기 위해서는 델리게이트 패턴을 적용해야합니다.</li>
+  <li>View 와 TextField(Object)간의 의사소통을 위해서 델리게이트 패턴 사용합니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ViewController</th>
+      <th style="text-align: center">TextFieldObject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateViewController.png" alt="" /></td>
+      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateTextFieldObject.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="1-인터페이스-구성-요소의-연결">1. 인터페이스 구성 요소의 연결</h2>
+<ul>
+  <li>textField를 control을 누른 상태로 드래그하여 속성을 연결합니다. 
+<img src="/assets/images/categories/uikit/2024-03-20-Delegate1.png" alt="" /></li>
+</ul>
+
+<h2 id="2-인터페이스의-델리게이트-설정">2. 인터페이스의 델리게이트 설정</h2>
+<ul>
+  <li>textField의 대리자를 ViewController로 설정합니다.</li>
+  <li>myTextField.delegate = self 추가
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span> <span class="c1">//화면 로드</span>
+      <span class="n">myTextField</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span> <span class="c1">//추가! TextField의 대리자는 ViewController</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>TextField의 대리자는 self(ViewController)로 설정합니다.</li>
+  <li>TextField와 ViewController가 소통이 가능해졌습니다.
+    <ul>
+      <li>textField의 입력, 수정, 포커스 등 이벤트를 ViewController에서 수신하고 처리할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>ViewController가 화면이 로드된 후에 텍스트 필드의 델리게이트를 설정하기 위해서 super.viewDidLoad() 아래에 코드를 적습니다.</li>
+</ul>
+
+<h2 id="3-델리게이트-프로토콜-채택">3. 델리게이트 프로토콜 채택</h2>
+<h3 id="프로토콜-채택-전">프로토콜 채택 전</h3>
+<ul>
+  <li>코드 입력 창에 text라고 입력하면 textField에 관한 메서드가 보이지 않습니다. 
+<img src="/assets/images/categories/uikit/2024-03-20-Delegate2.png" alt="" /></li>
+</ul>
+
+<h3 id="프로토콜-채택">프로토콜 채택</h3>
+<ul>
+  <li>Class 선언 부분의 마지막에 UITextFieldDelegate를 추가합니다.
+    <ul>
+      <li><strong>델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></li>
+    </ul>
+  </li>
+  <li><img src="/assets/images/categories/uikit/2024-03-20-Delegate4.png" alt="" /></li>
+</ul>
+
+<h3 id="프로토콜-채택-후">프로토콜 채택 후</h3>
+<ul>
+  <li>코드 입력 창에 text를 입력하면 textField에 관한 메서드가 보입니다.<br />
+<img src="/assets/images/categories/uikit/2024-03-20-Delegate3.png" alt="" /></li>
+</ul>
+
+<h2 id="4-필요한-프로토콜-메서드를-구현">4. 필요한 프로토콜 메서드를 구현</h2>
+<ul>
+  <li>필요한 메서드를 추가하여 사용할 수 있습니다.</li>
+  <li>원하는 프로토콜 메서드의 기능은 검색 / 실습을 통해 확인해야합니다.</li>
+  <li>어떤 글자를 입력 받았는지 확인하는 메서드를 추가하여 테스트하였습니다. 
+<img src="/assets/images/categories/uikit/2024-03-20-Delegate5.png" alt="" /></li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>델리게이트 패턴은 view와 object간의 데이터를 주고 받는 등 소통을 위해 사용!</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Delegate" /><summary type="html"><![CDATA[Delegate - 객체의 대리자 역할]]></summary></entry><entry><title type="html">[프로그래머스/Swift] K번째수</title><link href="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] K번째수" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.</li>
   <li>예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면
@@ -654,109 +835,7 @@
 <ul>
   <li>개인과제로 야구게임할때 중복체크하는 부분에 Set을 썼는데 이번에 잊지않고 사용했다!</li>
   <li>다른 사람 풀이도 비슷</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="두 개 뽑아서 더하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 두 개 뽑아서 더하기]]></summary></entry><entry><title type="html">[UIKit] 델리게이트(Delegate) 패턴</title><link href="http://localhost:4000/UIKit/Delegate/" rel="alternate" type="text/html" title="[UIKit] 델리게이트(Delegate) 패턴" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/Delegate</id><content type="html" xml:base="http://localhost:4000/UIKit/Delegate/"><![CDATA[<h1 id="델리게이트delegate-패턴--위임-패턴">델리게이트(Delegate) 패턴 / 위임 패턴</h1>
-<ul>
-  <li>객체 지향 프로그래밍에서 자주 사용되는 디자인 패턴 중 하나입니다.</li>
-  <li>객체 사이의 행동을 분리하고, 특정 객체가 다른 객체의 대리자(delegate) 역할을 수행하여 해당 객체의 동작을 확장하거나 커스터마이징할 수 있도록 합니다.</li>
-  <li>델리게이트 패턴은 소프트웨어의 모듈성을 높이고 객체 간의 결합도를 줄여 유지보수와 확장성을 향상시킬 수 있습니다.</li>
-  <li>
-    <p><strong>애플의 프레임워크에 사용하는 델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></p>
-  </li>
-  <li>객체와 객체간의 의사소통을 위함</li>
-</ul>
-
-<h1 id="예제-코드">예제 코드</h1>
-<ul>
-  <li>ViewController와 TextField는 서로 다른 객체입니다.</li>
-  <li>TextField를 ViewController위에 올려 놓습니다.
-    <ul>
-      <li>Object를 View에 올려놓는 행위와 같은 말
-        <ul>
-          <li>인터페이스 빌더(Interface Builder)에서 UI 요소를 배치한다.</li>
-          <li>인터페이스 빌더(Interface Builder)에서 UI를 구성한다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>View에 올려놓은 TextField의 동작을 View에게 전달하기 위해서는 델리게이트 패턴을 적용해야합니다.</li>
-  <li>View 와 TextField(Object)간의 의사소통을 위해서 델리게이트 패턴 사용합니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">ViewController</th>
-      <th style="text-align: center">TextFieldObject</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateViewController.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateTextFieldObject.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="1-인터페이스-구성-요소의-연결">1. 인터페이스 구성 요소의 연결</h2>
-<ul>
-  <li>textField를 control을 누른 상태로 드래그하여 속성을 연결합니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate1.png" alt="" /></li>
-</ul>
-
-<h2 id="2-인터페이스의-델리게이트-설정">2. 인터페이스의 델리게이트 설정</h2>
-<ul>
-  <li>textField의 대리자를 ViewController로 설정합니다.</li>
-  <li>myTextField.delegate = self 추가
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span> <span class="c1">//화면 로드</span>
-      <span class="n">myTextField</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span> <span class="c1">//추가! TextField의 대리자는 ViewController</span>
-  <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>TextField의 대리자는 self(ViewController)로 설정합니다.</li>
-  <li>TextField와 ViewController가 소통이 가능해졌습니다.
-    <ul>
-      <li>textField의 입력, 수정, 포커스 등 이벤트를 ViewController에서 수신하고 처리할 수 있습니다.</li>
-    </ul>
-  </li>
-  <li>ViewController가 화면이 로드된 후에 텍스트 필드의 델리게이트를 설정하기 위해서 super.viewDidLoad() 아래에 코드를 적습니다.</li>
-</ul>
-
-<h2 id="3-델리게이트-프로토콜-채택">3. 델리게이트 프로토콜 채택</h2>
-<h3 id="프로토콜-채택-전">프로토콜 채택 전</h3>
-<ul>
-  <li>코드 입력 창에 text라고 입력하면 textField에 관한 메서드가 보이지 않습니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate2.png" alt="" /></li>
-</ul>
-
-<h3 id="프로토콜-채택">프로토콜 채택</h3>
-<ul>
-  <li>Class 선언 부분의 마지막에 UITextFieldDelegate를 추가합니다.
-    <ul>
-      <li><strong>델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></li>
-    </ul>
-  </li>
-  <li><img src="/assets/images/categories/uikit/2024-03-20-Delegate4.png" alt="" /></li>
-</ul>
-
-<h3 id="프로토콜-채택-후">프로토콜 채택 후</h3>
-<ul>
-  <li>코드 입력 창에 text를 입력하면 textField에 관한 메서드가 보입니다.<br />
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate3.png" alt="" /></li>
-</ul>
-
-<h2 id="4-필요한-프로토콜-메서드를-구현">4. 필요한 프로토콜 메서드를 구현</h2>
-<ul>
-  <li>필요한 메서드를 추가하여 사용할 수 있습니다.</li>
-  <li>원하는 프로토콜 메서드의 기능은 검색 / 실습을 통해 확인해야합니다.</li>
-  <li>어떤 글자를 입력 받았는지 확인하는 메서드를 추가하여 테스트하였습니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate5.png" alt="" /></li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>델리게이트 패턴은 view와 object간의 데이터를 주고 받는 등 소통을 위해 사용!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Delegate" /><summary type="html"><![CDATA[Delegate - 객체의 대리자 역할]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기</title><link href="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 문자열 내 마음대로 정렬하기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="두 개 뽑아서 더하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 두 개 뽑아서 더하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 문자열 내 마음대로 정렬하기</title><link href="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 문자열 내 마음대로 정렬하기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EB%82%B4%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>
     <p>문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 예를 들어 strings가 [“sun”, “bed”, “car”]이고 n이 1이면 각 단어의 인덱스 1의 문자 “u”, “e”, “a”로 strings를 정렬합니다.</p>
@@ -850,109 +929,4 @@
     </ol>
   </li>
   <li><strong>쉽게 쉽게 푸는 다른 사람들의 풀이를 보면서 오늘도 존경심을 가진다.</strong></li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="문자열 내 마음대로 정렬하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 문자열 내 마음대로 정렬하기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기</title><link href="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - 간단한 카운터 앱 만들기" /><published>2024-03-19T00:00:00+09:00</published><updated>2024-03-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1</id><content type="html" xml:base="http://localhost:4000/sparta/%EA%B0%84%EB%8B%A8%ED%95%9C%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%95%B1/"><![CDATA[<h1 id="간단한-카운터-앱-만들기">간단한 카운터 앱 만들기</h1>
-<ul>
-  <li>swift 문법 강의 주차가 끝나고 ios 앱 개발 입문 강의를 들으며 강의에 포함된 간단한 카운터 앱 만들기 과제를 만들었습니다.</li>
-</ul>
-
-<h1 id="요구사항">요구사항</h1>
-<h2 id="화면">화면</h2>
-<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱.png" alt="카운터앱" /></p>
-
-<h2 id="레이아웃-요구사항">레이아웃 요구사항</h2>
-<ul>
-  <li>UILabel이 가운데 위치하게 해 주세요.</li>
-  <li>UILabel을 기준으로 상단에는 감소 버튼, 아래에는 증가 버튼을 위치시켜 주세요.</li>
-  <li>UILabel과 UIButton사이의 간격은 16px로 설정해 주세요.</li>
-  <li>AutoLayout을 사용해 주세요.</li>
-</ul>
-
-<h2 id="로직-요구사항">로직 요구사항</h2>
-<ul>
-  <li>count의 시작은 0으로 시작해 주세요.</li>
-  <li>감소버튼을 눌렀을 때, -1씩 감소시켜 UILabel에 표시해 주세요.</li>
-  <li>증가버튼을 눌렀을 때, +1씩 증가시켜 UILabel에 표시해 주세요.</li>
-</ul>
-
-<h1 id="과제-완성">과제 완성</h1>
-<h2 id="나의-화면">나의 화면</h2>
-<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱과제완성.png" alt="카운터앱과제완성" /></p>
-
-<h2 id="제약-조건">제약 조건</h2>
-<p><img src="/assets/images/categories/sparta/2024-03-19-카운터앱과제제약조건.png" alt="카운터앱과제제약조건" /></p>
-
-<h2 id="나의-코드">나의 코드</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
-<span class="c1">//  ViewController.swift</span>
-<span class="c1">//  SimpleCounter</span>
-<span class="c1">//</span>
-<span class="c1">//  Created by imhs on 3/18/24.</span>
-<span class="c1">//</span>
-
-<span class="kd">import</span> <span class="kt">UIKit</span>
-
-<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">counterLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
-    
-    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="c1">//감소</span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">decreaseButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="c1">//증가</span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">increaseButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">counterLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="강의-구현-코드">강의 구현 코드</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
-
-<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">textLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
-    <span class="kd">private</span> <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span> 
-
-    <span class="c1">// 감소 버튼이 클릭된 경우 </span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedDecreaseButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span> <span class="c1">// count를 -1 합니다. </span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="c1">// textLabel을 새로고침 합니다. </span>
-    <span class="p">}</span>
-    
-    <span class="c1">// 증가 버튼이 클릭된 경우  </span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedIncreaseButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">// count를 +1 합니다. </span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="c1">// textLabel을 새로고침 합니다. </span>
-    <span class="p">}</span>
-
-    <span class="c1">// count값을 self.textLabel의 text에 반영합니다. </span>
-    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">refreshTextLabel</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">textLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
-    <span class="p">}</span>
-
-    <span class="c1">// viewDidLoad 생명주기 활용 </span>
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">refreshTextLabel</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="생명주기-활용-">생명주기 활용 ?</h2>
-<ul>
-  <li>강의 코드에서 생명주기 활용은 ViewController의 생명주기 메서드 중 하나인 viewDidLoad() 메서드를 활용하는 것을 의미</li>
-  <li>viewDidLoad() 메서드는 ViewController의 view가 메모리에 로드된 직후 호출, ViewController가 생성된 직후 초기화 작업을 수행할 때 유용</li>
-  <li>iewDidLoad() 메서드를 활용하여 textLabel의 초기 값을 설정하는 refreshTextLabel() 메서드를 호출</li>
-  <li>생명주기 활용은 ViewController의 뷰가 로드되는 시점에 필요한 초기화 작업을 수행하여 화면을 적절히 설정하는 것을 의미합니다.</li>
-</ul>
-
-<p>필요한 작업이 적절하게 배치가 됐는지 생각해보자!</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="간단한카운터앱" /><summary type="html"><![CDATA[iOS 앱 개발 입문 - 간단한 카운터 앱 만들기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="문자열 내 마음대로 정렬하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 문자열 내 마음대로 정렬하기]]></summary></entry></feed>

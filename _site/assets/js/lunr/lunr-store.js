@@ -592,4 +592,10 @@ var store = [{
         "tags": ["swift","iOS","present","dismiss"],
         "url": "/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 푸드 파이트 대회",
+        "excerpt":"문제 설명 수웅이는 매달 주어진 음식을 빨리 먹는 푸드 파이트 대회를 개최합니다. 이 대회에서 선수들은 1대 1로 대결하며, 매 대결마다 음식의 종류와 양이 바뀝니다. 대결은 준비된 음식들을 일렬로 배치한 뒤, 한 선수는 제일 왼쪽에 있는 음식부터 오른쪽으로, 다른 선수는 제일 오른쪽에 있는 음식부터 왼쪽으로 순서대로 먹는 방식으로 진행됩니다. 중앙에는 물을...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","푸드 파이트 대회"],
+        "url": "/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/",
+        "teaser": null
       }]
