@@ -604,4 +604,10 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til19/",
         "teaser": null
+      },{
+        "title": "[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기",
+        "excerpt":"NSAttributedString 텍스트에 대한 서식 및 스타일을 적용하는 데 사용되는 클래스입니다. NSAttributedString을 사용하면 단순한 문자열을 포맷하고, 텍스트에 다양한 스타일, 폰트, 색상, 그리기 속성 등을 적용할 수 있습니다. UILabel, UITextView 및 UITextField와 같은 텍스트 표시 및 입력 컨트롤에서 사용할 수 있습니다. 예제 코드 Label을 추가하고 버튼을 선택했을 때 Label에 밑줄 및 취소선이...","categories": ["UIKit"],
+        "tags": ["swift","iOS","underline","Strikethrough"],
+        "url": "/UIKit/underlineAndStrikethrough/",
+        "teaser": null
       }]
