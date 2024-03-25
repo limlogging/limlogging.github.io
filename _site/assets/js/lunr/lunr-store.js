@@ -503,12 +503,6 @@ var store = [{
         "url": "/UIKit/UISwitch/",
         "teaser": null
       },{
-        "title": "[UIKit] UITableView - 데이터 목록 표시",
-        "excerpt":"UITableView 세로로만 스크롤 가능한 뷰 iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다. 테이블 뷰는 여러 행으로 구성되며, 각 행에는 하나 이상의 셀이 포함됩니다. 각 셀은 사용자 인터페이스에 정보를 표시하거나 사용자 상호 작용을 위한 컨트롤을 제공합니다. 특징 다양한 셀 유형 UITableView는 특정 유형의 데이터를 표시하기 위해...","categories": ["UIKit"],
-        "tags": ["swift","iOS","UITableView"],
-        "url": "/UIKit/UITableView/",
-        "teaser": null
-      },{
         "title": "[UIKit] UITextField - 사용자에게 텍스트 입력 받기",
         "excerpt":"UITextField UITextField는 UIKit 프레임워크에서 제공하는 클래스 중 하나로, 사용자로부터 텍스트를 입력받는 데 사용 텍스트 필드, 검색 상자 또는 비밀번호 필드 등을 생성할 때 사용 UITextField 생성 let textField = UITextField() UITextField 설정 입력 유도 메시지 textField.placeholder = \"텍스트를 입력하세요.\" UITextField 모양 //둥근 테두리 textField.borderStyle = .roundedRect 입력용 키보드 설정 사용자가...","categories": ["UIKit"],
         "tags": ["swift","iOS","UITextField"],
@@ -615,5 +609,11 @@ var store = [{
         "excerpt":"문제 설명 오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다. 정답은 아무에게도 말하지 마세요. 콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가? 단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다. 문제를 풀던 상빈이는 콜라...","categories": ["Algorithm"],
         "tags": ["Algorithm","coding test","콜라 문제"],
         "url": "/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/",
+        "teaser": null
+      },{
+        "title": "[UIKit] UITableView - 데이터 목록 표시",
+        "excerpt":"UITableView 세로로만 스크롤 가능한 뷰 iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다. 테이블 뷰는 여러 행으로 구성되며, 각 행에는 하나 이상의 셀이 포함됩니다. 각 셀은 사용자 인터페이스에 정보를 표시하거나 사용자 상호 작용을 위한 컨트롤을 제공합니다. 특징 다양한 셀 유형 UITableView는 특정 유형의 데이터를 표시하기 위해...","categories": ["UIKit"],
+        "tags": ["swift","iOS","UITableView"],
+        "url": "/UIKit/UITableView/",
         "teaser": null
       }]
