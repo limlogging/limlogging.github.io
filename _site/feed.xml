@@ -1,4 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-23T21:45:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</title><link href="http://localhost:4000/UIKit/underlineAndStrikethrough/" rel="alternate" type="text/html" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기" /><published>2024-03-23T00:00:00+09:00</published><updated>2024-03-23T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/StrikethroughAndUnderline</id><content type="html" xml:base="http://localhost:4000/UIKit/underlineAndStrikethrough/"><![CDATA[<h1 id="nsattributedstring">NSAttributedString</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-25T10:11:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 콜라 문제</title><link href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 콜라 문제" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다.
+    <ul>
+      <li>정답은 아무에게도 말하지 마세요.</li>
+      <li>콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가?</li>
+      <li>단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다.</li>
+    </ul>
+  </li>
+  <li>문제를 풀던 상빈이는 콜라 문제의 완벽한 해답을 찾았습니다. 상빈이가 푼 방법은 아래 그림과 같습니다. 우선 콜라 빈 병 20병을 가져가서 10병을 받습니다. 받은 10병을 모두 마신 뒤, 가져가서 5병을 받습니다. 5병 중 4병을 모두 마신 뒤 가져가서 2병을 받고, 또 2병을 모두 마신 뒤 가져가서 1병을 받습니다. 받은 1병과 5병을 받았을 때 남은 1병을 모두 마신 뒤 가져가면 1병을 또 받을 수 있습니다. 이 경우 상빈이는 총 10 + 5 + 2 + 1 + 1 = 19병의 콜라를 받을 수 있습니다.</li>
+  <li>문제를 열심히 풀던 상빈이는 일반화된 콜라 문제를 생각했습니다. 이 문제는 빈 병 a개를 가져다주면 콜라 b병을 주는 마트가 있을 때, 빈 병 n개를 가져다주면 몇 병을 받을 수 있는지 계산하는 문제입니다. 기존 콜라 문제와 마찬가지로, 보유 중인 빈 병이 a개 미만이면, 추가적으로 빈 병을 받을 순 없습니다. 상빈이는 열심히 고심했지만, 일반화된 콜라 문제의 답을 찾을 수 없었습니다. 상빈이를 도와, 일반화된 콜라 문제를 해결하는 프로그램을 만들어 주세요.</li>
+  <li>
+    <p>콜라를 받기 위해 마트에 주어야 하는 병 수 a, 빈 병 a개를 가져다 주면 마트가 주는 콜라 병 수 b, 상빈이가 가지고 있는 빈 병의 개수 n이 매개변수로 주어집니다. 상빈이가 받을 수 있는 콜라의 병 수를 return 하도록 solution 함수를 작성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/132267" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ b &lt; a ≤ n ≤ 1,000,000</li>
+  <li>정답은 항상 int 범위를 넘지 않게 주어집니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+      <td>20</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>20</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>본문에서 설명한 예시입니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>빈 병 20개 중 18개를 마트에 가져가서, 6병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 8(20 – 18 + 6 = 8)개 입니다.</li>
+  <li>빈 병 8개 중 6개를 마트에 가져가서, 2병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 4(8 – 6 + 2 = 4)개 입니다.</li>
+  <li>빈 병 4 개중 3개를 마트에 가져가서, 1병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 2(4 – 3 + 1 = 2)개 입니다.</li>
+  <li>3번의 교환 동안 상빈이는 9(6 + 2 + 1 = 9)병의 콜라를 받았습니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">//a = 반납 콜라, b = 받는 콜라, n = 가진 콜라</span>
+    <span class="k">var</span> <span class="nv">quotient</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//몫</span>
+    <span class="k">var</span> <span class="nv">remainder</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">//나머지</span>
+    <span class="k">var</span> <span class="nv">myCoke</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">break</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">quotient</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span>
+            <span class="n">remainder</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">%</span> <span class="n">a</span>
+            
+            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//받는 콜라 계산</span>
+            <span class="n">myCoke</span> <span class="o">=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">?</span> <span class="n">n</span> <span class="o">-</span> <span class="nv">b</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>벽이 느껴지는 다른 사람의 풀이에 감탄했다…</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라 문제" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라 문제]]></summary></entry><entry><title type="html">[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</title><link href="http://localhost:4000/UIKit/underlineAndStrikethrough/" rel="alternate" type="text/html" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기" /><published>2024-03-23T00:00:00+09:00</published><updated>2024-03-23T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/StrikethroughAndUnderline</id><content type="html" xml:base="http://localhost:4000/UIKit/underlineAndStrikethrough/"><![CDATA[<h1 id="nsattributedstring">NSAttributedString</h1>
 <ul>
   <li>텍스트에 대한 서식 및 스타일을 적용하는 데 사용되는 클래스입니다.</li>
   <li>NSAttributedString을 사용하면 단순한 문자열을 포맷하고, 텍스트에 다양한 스타일, 폰트, 색상, 그리기 속성 등을 적용할 수 있습니다.</li>
@@ -13,7 +110,7 @@
 <h2 id="1-label-및-버튼-추가">1. Label 및 버튼 추가</h2>
 <p><img src="/assets/images/categories/uikit/2024-03-23-StrikethroughAndUnderlineMain.png" alt="" /></p>
 
-<h2 id="2-string-확장extention-메서드-구현">2. String 확장(extention) 메서드 구현</h2>
+<h2 id="2-string-확장extension-메서드-구현">2. String 확장(extension) 메서드 구현</h2>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
     <span class="c1">// MARK: - 밑줄</span>
     <span class="kd">func</span> <span class="nf">underScore</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
@@ -28,6 +125,7 @@
         <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 
         <span class="c1">// 전체 문자열에 가운데 밑줄 스타일 속성을 추가</span>
+        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
         <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>        
         <span class="k">return</span> <span class="n">attributeString</span>
     <span class="p">}</span>
@@ -115,9 +213,25 @@
 </ul>
 
 <h1 id="입출력-예">입출력 예</h1>
-<p>|food|result|
-|[1, 3, 4, 6]|”1223330333221”|
-|[1, 7, 1, 2]|”111303111”|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>food</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1, 3, 4, 6]</td>
+      <td>“1223330333221”</td>
+    </tr>
+    <tr>
+      <td>[1, 7, 1, 2]</td>
+      <td>“111303111”</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="입출력-예-설명">입출력 예 설명</h2>
 <h3 id="입출력-예-1">입출력 예 #1</h3>
@@ -317,9 +431,25 @@
 </ul>
 
 <h1 id="입출력-예">입출력 예</h1>
-<p>|s|result|
-|”banana”|[-1, -1, -1, 2, 2, 2]|
-|”foobar”|[-1, -1, 1, -1, -1, -1]|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>s</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“banana”</td>
+      <td>[-1, -1, -1, 2, 2, 2]</td>
+    </tr>
+    <tr>
+      <td>“foobar”</td>
+      <td>[-1, -1, 1, -1, -1, -1]</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="입출력-예-설명">입출력 예 설명</h2>
 <h3 id="입출력-예-1">입출력 예 #1</h3>
@@ -397,7 +527,37 @@
 <ul>
   <li>난 문자가 존재하는지 찾기 위해서 반복문을 한번 더 썼는데 딕셔너리로 푼 사람들이 많은 것 같다.</li>
   <li>반복문 줄이는 연습을 해보자 …</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="가장 가까운 같은 글자" /><summary type="html"><![CDATA[[프로그래머스/Swift] 가장 가까운 같은 글자]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="코드로-화면-이동">코드로 화면 이동</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="가장 가까운 같은 글자" /><summary type="html"><![CDATA[[프로그래머스/Swift] 가장 가까운 같은 글자]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 18일차</title><link href="http://localhost:4000/TIL/til18/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 18일차" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til18</id><content type="html" xml:base="http://localhost:4000/TIL/til18/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-21-til18.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>빨리 풀긴 했는데 초기 값과, 반복문 횟수 등 다른 사람과의 다른 점을 확인하면서 고민해볼 수 있었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" target="_blank">가장 가까운 같은 글자</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>오늘은 화면 이동 관련해서 공부했다.</li>
+  <li>화면이동에는 4가지 방법 <strong>(1.코드로 화면이동, 2.코드로 스토리보드 객체를 생성해서 화면이동, 3.스토리보드에서 간접 세그웨이를 통한 화면이동, 4.스토리보드에서 직접 세그웨이를 통한 화면이동)</strong>이 있는데 그 중 코드로 화면이동을 공부했다.</li>
+  <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()
+    <ul>
+      <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">코드로 화면 이동</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>과제 제출이 다음주 금요일까지긴 하지만 벌써 3레벨 이상 달성한 팀원들을 보면서 속도를 내야겠다고 생각했다 ㅠㅠ</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>키워드 하나씩 실습 하기</li>
+  <li>과제 풀기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 18일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="코드로-화면-이동">코드로 화면 이동</h1>
 <ul>
   <li>스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다.</li>
 </ul>
@@ -593,37 +753,36 @@
 <h2 id="마무리">마무리</h2>
 <ul>
   <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 18일차</title><link href="http://localhost:4000/TIL/til18/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 18일차" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til18</id><content type="html" xml:base="http://localhost:4000/TIL/til18/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-21-til18.png" alt="" /></p>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 17일차</title><link href="http://localhost:4000/TIL/til17/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 17일차" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til17</id><content type="html" xml:base="http://localhost:4000/TIL/til17/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-20-til17.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
 <ul>
-  <li>빨리 풀긴 했는데 초기 값과, 반복문 횟수 등 다른 사람과의 다른 점을 확인하면서 고민해볼 수 있었다.</li>
+  <li>어제 문자열 관련해서 고민을 많이 했어서 그런지 한문제를 금방 풀어 두 문제를 풀었다.</li>
   <li>풀이 보기
     <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" target="_blank">가장 가까운 같은 글자</a></li>
+      <li><a href="https://limlogging.github.io/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" target="_blank">K번째수</a></li>
+      <li><a href="https://limlogging.github.io/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/" target="_blank">두 개 뽑아서 더하기</a></li>
     </ul>
   </li>
 </ul>
 
 <h3 id="개인-과제-공부">개인 과제 공부</h3>
 <ul>
-  <li>오늘은 화면 이동 관련해서 공부했다.</li>
-  <li>화면이동에는 4가지 방법 <strong>(1.코드로 화면이동, 2.코드로 스토리보드 객체를 생성해서 화면이동, 3.스토리보드에서 간접 세그웨이를 통한 화면이동, 4.스토리보드에서 직접 세그웨이를 통한 화면이동)</strong>이 있는데 그 중 코드로 화면이동을 공부했다.</li>
-  <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()
+  <li>델리게이트 패턴에 대해서 알게 되었다.</li>
+  <li>뷰와 오브젝트간의 의사소통을 위한 패턴
     <ul>
-      <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">코드로 화면 이동</a></li>
+      <li><a href="https://limlogging.github.io/UIKit/Delegate/" target="_blank">델리게이트 패턴</a></li>
     </ul>
   </li>
 </ul>
 
 <h3 id="내일-목표">내일 목표</h3>
 <ul>
-  <li>과제 제출이 다음주 금요일까지긴 하지만 벌써 3레벨 이상 달성한 팀원들을 보면서 속도를 내야겠다고 생각했다 ㅠㅠ</li>
   <li>알고리즘 문제 풀기</li>
   <li>키워드 하나씩 실습 하기</li>
   <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 18일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] K번째수</title><link href="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] K번째수" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 17일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] K번째수</title><link href="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] K번째수" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.</li>
   <li>예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면
@@ -650,12 +809,14 @@
 <h1 id="입출력-예">입출력 예</h1>
 
 <table>
-  <tbody>
+  <thead>
     <tr>
-      <td>array</td>
-      <td>commands</td>
-      <td>return</td>
+      <th>array</th>
+      <th>commands</th>
+      <th>return</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>[1, 5, 2, 6, 3, 7, 4]</td>
       <td>[[2, 5, 3], [4, 4, 1], [1, 7, 3]]</td>
@@ -703,135 +864,4 @@
 </code></pre></div>    </div>
     <p>그치만 배열 따로 만들어서 추가 해야겠다고 생각했는데 array에서 바로 return은 생각도 못했는데 저렇게도 되는구나 ..</p>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="K번째수" /><summary type="html"><![CDATA[[프로그래머스/Swift] K번째수]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 17일차</title><link href="http://localhost:4000/TIL/til17/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 17일차" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til17</id><content type="html" xml:base="http://localhost:4000/TIL/til17/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-20-til17.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>어제 문자열 관련해서 고민을 많이 했어서 그런지 한문제를 금방 풀어 두 문제를 풀었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/K%EB%B2%88%EC%A7%B8%EC%88%98/" target="_blank">K번째수</a></li>
-      <li><a href="https://limlogging.github.io/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/" target="_blank">두 개 뽑아서 더하기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>델리게이트 패턴에 대해서 알게 되었다.</li>
-  <li>뷰와 오브젝트간의 의사소통을 위한 패턴
-    <ul>
-      <li><a href="https://limlogging.github.io/UIKit/Delegate/" target="_blank">델리게이트 패턴</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>알고리즘 문제 풀기</li>
-  <li>키워드 하나씩 실습 하기</li>
-  <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 17일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 델리게이트(Delegate) 패턴</title><link href="http://localhost:4000/UIKit/Delegate/" rel="alternate" type="text/html" title="[UIKit] 델리게이트(Delegate) 패턴" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/Delegate</id><content type="html" xml:base="http://localhost:4000/UIKit/Delegate/"><![CDATA[<h1 id="델리게이트delegate-패턴--위임-패턴">델리게이트(Delegate) 패턴 / 위임 패턴</h1>
-<ul>
-  <li>객체 지향 프로그래밍에서 자주 사용되는 디자인 패턴 중 하나입니다.</li>
-  <li>객체 사이의 행동을 분리하고, 특정 객체가 다른 객체의 대리자(delegate) 역할을 수행하여 해당 객체의 동작을 확장하거나 커스터마이징할 수 있도록 합니다.</li>
-  <li>델리게이트 패턴은 소프트웨어의 모듈성을 높이고 객체 간의 결합도를 줄여 유지보수와 확장성을 향상시킬 수 있습니다.</li>
-  <li>
-    <p><strong>애플의 프레임워크에 사용하는 델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></p>
-  </li>
-  <li>객체와 객체간의 의사소통을 위함</li>
-</ul>
-
-<h1 id="예제-코드">예제 코드</h1>
-<ul>
-  <li>ViewController와 TextField는 서로 다른 객체입니다.</li>
-  <li>TextField를 ViewController위에 올려 놓습니다.
-    <ul>
-      <li>Object를 View에 올려놓는 행위와 같은 말
-        <ul>
-          <li>인터페이스 빌더(Interface Builder)에서 UI 요소를 배치한다.</li>
-          <li>인터페이스 빌더(Interface Builder)에서 UI를 구성한다.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>View에 올려놓은 TextField의 동작을 View에게 전달하기 위해서는 델리게이트 패턴을 적용해야합니다.</li>
-  <li>View 와 TextField(Object)간의 의사소통을 위해서 델리게이트 패턴 사용합니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">ViewController</th>
-      <th style="text-align: center">TextFieldObject</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateViewController.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-20-DelegateTextFieldObject.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="1-인터페이스-구성-요소의-연결">1. 인터페이스 구성 요소의 연결</h2>
-<ul>
-  <li>textField를 control을 누른 상태로 드래그하여 속성을 연결합니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate1.png" alt="" /></li>
-</ul>
-
-<h2 id="2-인터페이스의-델리게이트-설정">2. 인터페이스의 델리게이트 설정</h2>
-<ul>
-  <li>textField의 대리자를 ViewController로 설정합니다.</li>
-  <li>myTextField.delegate = self 추가
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span> <span class="c1">//화면 로드</span>
-      <span class="n">myTextField</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span> <span class="c1">//추가! TextField의 대리자는 ViewController</span>
-  <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>TextField의 대리자는 self(ViewController)로 설정합니다.</li>
-  <li>TextField와 ViewController가 소통이 가능해졌습니다.
-    <ul>
-      <li>textField의 입력, 수정, 포커스 등 이벤트를 ViewController에서 수신하고 처리할 수 있습니다.</li>
-    </ul>
-  </li>
-  <li>ViewController가 화면이 로드된 후에 텍스트 필드의 델리게이트를 설정하기 위해서 super.viewDidLoad() 아래에 코드를 적습니다.</li>
-</ul>
-
-<h2 id="3-델리게이트-프로토콜-채택">3. 델리게이트 프로토콜 채택</h2>
-<h3 id="프로토콜-채택-전">프로토콜 채택 전</h3>
-<ul>
-  <li>코드 입력 창에 text라고 입력하면 textField에 관한 메서드가 보이지 않습니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate2.png" alt="" /></li>
-</ul>
-
-<h3 id="프로토콜-채택">프로토콜 채택</h3>
-<ul>
-  <li>Class 선언 부분의 마지막에 UITextFieldDelegate를 추가합니다.
-    <ul>
-      <li><strong>델리게이트 패턴을 위해 다양한 프로토콜이 XXXXDelegate라는 식의 이름으로 정의되어 있습니다.</strong></li>
-    </ul>
-  </li>
-  <li><img src="/assets/images/categories/uikit/2024-03-20-Delegate4.png" alt="" /></li>
-</ul>
-
-<h3 id="프로토콜-채택-후">프로토콜 채택 후</h3>
-<ul>
-  <li>코드 입력 창에 text를 입력하면 textField에 관한 메서드가 보입니다.<br />
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate3.png" alt="" /></li>
-</ul>
-
-<h2 id="4-필요한-프로토콜-메서드를-구현">4. 필요한 프로토콜 메서드를 구현</h2>
-<ul>
-  <li>필요한 메서드를 추가하여 사용할 수 있습니다.</li>
-  <li>원하는 프로토콜 메서드의 기능은 검색 / 실습을 통해 확인해야합니다.</li>
-  <li>어떤 글자를 입력 받았는지 확인하는 메서드를 추가하여 테스트하였습니다. 
-<img src="/assets/images/categories/uikit/2024-03-20-Delegate5.png" alt="" /></li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>델리게이트 패턴은 view와 object간의 데이터를 주고 받는 등 소통을 위해 사용!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Delegate" /><summary type="html"><![CDATA[Delegate - 객체의 대리자 역할]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="K번째수" /><summary type="html"><![CDATA[[프로그래머스/Swift] K번째수]]></summary></entry></feed>

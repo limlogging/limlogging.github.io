@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[UIKit] UILabel - 텍스트 표시  - limlogging Devlog</title>
-<meta name="description" content="UILabel - 텍스트를 표시하는데 사용">
+<!-- begin _includes/seo.html --><title>[프로그래머스/Swift] 콜라 문제 - limlogging Devlog</title>
+<meta name="description" content="[프로그래머스/Swift] 콜라 문제">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[UIKit] UILabel - 텍스트 표시">
-<meta property="og:url" content="http://localhost:4000/UIKit/UILabel/">
+<meta property="og:title" content="[프로그래머스/Swift] 콜라 문제">
+<meta property="og:url" content="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/">
 
 
-  <meta property="og:description" content="UILabel - 텍스트를 표시하는데 사용">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-18T00:00:00+09:00">
+  <meta property="og:description" content="[프로그래머스/Swift] 콜라 문제">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-25T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/UIKit/UILabel/">
+
+<link rel="canonical" href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/">
 
 
 
@@ -400,16 +400,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[UIKit] UILabel - 텍스트 표시">
-    <meta itemprop="description" content="UILabel - 텍스트를 표시하는데 사용">
-    <meta itemprop="datePublished" content="2024-03-18T00:00:00+09:00">
+    <meta itemprop="headline" content="[프로그래머스/Swift] 콜라 문제">
+    <meta itemprop="description" content="[프로그래머스/Swift] 콜라 문제">
+    <meta itemprop="datePublished" content="2024-03-25T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/UIKit/UILabel/" class="u-url" itemprop="url">[UIKit] UILabel - 텍스트 표시
+            <a href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" class="u-url" itemprop="url">[프로그래머스/Swift] 콜라 문제
 </a>
           </h1>
           
@@ -426,7 +426,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -436,8 +436,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UILabel/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UILabel/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -448,50 +448,109 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#uilabel">UILabel</a></li><li><a href="#uilabel-생성">UILabel 생성</a></li><li><a href="#uilabel-설정">UILabel 설정</a><ul><li><a href="#텍스트-입력">텍스트 입력</a></li><li><a href="#폰트-크기-설정">폰트 크기 설정</a></li><li><a href="#텍스트-색상-설정">텍스트 색상 설정</a></li><li><a href="#정렬">정렬</a></li><li><a href="#최대-표시-줄">최대 표시 줄</a></li><li><a href="#텍스트가-주어진-공간을-벗어날-경우">텍스트가 주어진 공간을 벗어날 경우</a></li><li><a href="#uilabel-위치와-크기를-정의">UILabel 위치와 크기를 정의</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#문제-설명">문제 설명</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예">입출력 예</a><ul><li><a href="#입출력-예-설명">입출력 예 설명</a><ul><li><a href="#입출력-예-1">입출력 예 #1</a></li><li><a href="#입출력-예-2">입출력 예 #2</a></li></ul></li></ul></li><li><a href="#나의-풀이">나의 풀이</a></li><li><a href="#다른-사람-풀이">다른 사람 풀이</a></li><li><a href="#의견">의견</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="uilabel">UILabel</h1>
+        <h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>텍스트를 표시하는데 사용되는 UI 요소</li>
+  <li>오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다.
+    <ul>
+      <li>정답은 아무에게도 말하지 마세요.</li>
+      <li>콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가?</li>
+      <li>단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다.</li>
+    </ul>
+  </li>
+  <li>문제를 풀던 상빈이는 콜라 문제의 완벽한 해답을 찾았습니다. 상빈이가 푼 방법은 아래 그림과 같습니다. 우선 콜라 빈 병 20병을 가져가서 10병을 받습니다. 받은 10병을 모두 마신 뒤, 가져가서 5병을 받습니다. 5병 중 4병을 모두 마신 뒤 가져가서 2병을 받고, 또 2병을 모두 마신 뒤 가져가서 1병을 받습니다. 받은 1병과 5병을 받았을 때 남은 1병을 모두 마신 뒤 가져가면 1병을 또 받을 수 있습니다. 이 경우 상빈이는 총 10 + 5 + 2 + 1 + 1 = 19병의 콜라를 받을 수 있습니다.</li>
+  <li>문제를 열심히 풀던 상빈이는 일반화된 콜라 문제를 생각했습니다. 이 문제는 빈 병 a개를 가져다주면 콜라 b병을 주는 마트가 있을 때, 빈 병 n개를 가져다주면 몇 병을 받을 수 있는지 계산하는 문제입니다. 기존 콜라 문제와 마찬가지로, 보유 중인 빈 병이 a개 미만이면, 추가적으로 빈 병을 받을 순 없습니다. 상빈이는 열심히 고심했지만, 일반화된 콜라 문제의 답을 찾을 수 없었습니다. 상빈이를 도와, 일반화된 콜라 문제를 해결하는 프로그램을 만들어 주세요.</li>
+  <li>
+    <p>콜라를 받기 위해 마트에 주어야 하는 병 수 a, 빈 병 a개를 가져다 주면 마트가 주는 콜라 병 수 b, 상빈이가 가지고 있는 빈 병의 개수 n이 매개변수로 주어집니다. 상빈이가 받을 수 있는 콜라의 병 수를 return 하도록 solution 함수를 작성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/132267" target="_blank">문제 풀기</a></li>
 </ul>
 
-<h1 id="uilabel-생성">UILabel 생성</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span> 
-</code></pre></div></div>
-<p><br /></p>
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ b &lt; a ≤ n ≤ 1,000,000</li>
+  <li>정답은 항상 int 범위를 넘지 않게 주어집니다.</li>
+</ul>
 
-<h1 id="uilabel-설정">UILabel 설정</h1>
-<h2 id="텍스트-입력">텍스트 입력</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"나는 UILabel 입니다.  
-</span></code></pre></div></div>
-<h2 id="폰트-크기-설정">폰트 크기 설정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
-</code></pre></div></div>
-<h2 id="텍스트-색상-설정">텍스트 색상 설정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">black</span>
-</code></pre></div></div>
-<h2 id="정렬">정렬</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">textAlignment</span> <span class="o">=</span> <span class="o">.</span><span class="k">left</span> 
-<span class="n">label</span><span class="o">.</span><span class="n">textAlignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span> 
-<span class="n">label</span><span class="o">.</span><span class="n">textAlignment</span> <span class="o">=</span> <span class="o">.</span><span class="k">right</span> 
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+      <td>20</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>20</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>본문에서 설명한 예시입니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>빈 병 20개 중 18개를 마트에 가져가서, 6병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 8(20 – 18 + 6 = 8)개 입니다.</li>
+  <li>빈 병 8개 중 6개를 마트에 가져가서, 2병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 4(8 – 6 + 2 = 4)개 입니다.</li>
+  <li>빈 병 4 개중 3개를 마트에 가져가서, 1병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 2(4 – 3 + 1 = 2)개 입니다.</li>
+  <li>3번의 교환 동안 상빈이는 9(6 + 2 + 1 = 9)병의 콜라를 받았습니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">//a = 반납 콜라, b = 받는 콜라, n = 가진 콜라</span>
+    <span class="k">var</span> <span class="nv">quotient</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//몫</span>
+    <span class="k">var</span> <span class="nv">remainder</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">//나머지</span>
+    <span class="k">var</span> <span class="nv">myCoke</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">break</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">quotient</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span>
+            <span class="n">remainder</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">%</span> <span class="n">a</span>
+            
+            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//받는 콜라 계산</span>
+            <span class="n">myCoke</span> <span class="o">=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="최대-표시-줄">최대 표시 줄</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">//최대 2줄까지 표시 (0으로 설정하면 자동 줄바꿈)</span>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">?</span> <span class="n">n</span> <span class="o">-</span> <span class="nv">b</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="텍스트가-주어진-공간을-벗어날-경우">텍스트가 주어진 공간을 벗어날 경우</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//텍스트가 UILabel의 끝 부분에서 생략되고 "..."이 표시</span>
-<span class="n">label</span><span class="o">.</span><span class="n">lineBreakMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">byTruncatingTail</span>
-</code></pre></div></div>
-
-<h2 id="uilabel-위치와-크기를-정의">UILabel 위치와 크기를 정의</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//x축과 y축으로 각각 100포인트씩 이동하고, 너비와 높이를 각각 200포인트로 설정</span>
-<span class="n">label</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">200</span><span class="p">)</span> 
-</code></pre></div></div>
+<h1 id="의견">의견</h1>
+<ul>
+  <li>벽이 느껴지는 다른 사람의 풀이에 감탄했다…</li>
+</ul>
 
         
       </section>
@@ -508,11 +567,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+      <a href="/tags/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a><span class="sep">, </span>
     
-      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
+      <a href="/tags/#coding-test" class="page__taxonomy-item p-category" rel="tag">coding test</a><span class="sep">, </span>
     
-      <a href="/tags/#uilabel" class="page__taxonomy-item p-category" rel="tag">UILabel</a>
+      <a href="/tags/#%EC%BD%9C%EB%9D%BC-%EB%AC%B8%EC%A0%9C" class="page__taxonomy-item p-category" rel="tag">콜라 문제</a>
     
     </span>
   </p>
@@ -529,7 +588,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+      <a href="/categories/#algorithm" class="page__taxonomy-item p-category" rel="tag">Algorithm</a>
     
     </span>
   </p>
@@ -537,7 +596,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-18T00:00:00+09:00">March 18, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-25T00:00:00+09:00">March 25, 2024</time></p>
 
       </footer>
 
@@ -546,23 +605,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UILabel+-+%ED%85%8D%EC%8A%A4%ED%8A%B8+%ED%91%9C%EC%8B%9C+%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUILabel%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%2FSwift%5D+%EC%BD%9C%EB%9D%BC+%EB%AC%B8%EC%A0%9C%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25BD%259C%25EB%259D%25BC%25EB%25AC%25B8%25EC%25A0%259C%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUILabel%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25BD%259C%25EB%259D%25BC%25EB%25AC%25B8%25EC%25A0%259C%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUILabel%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2F%25EC%25BD%259C%25EB%259D%25BC%25EB%25AC%25B8%25EC%25A0%259C%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/UIKit/UIImageView/" class="pagination--pager" title="[UIKit] UIImageView - 이미지 표시
+      <a href="/UIKit/underlineAndStrikethrough/" class="pagination--pager" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기
 ">이전</a>
     
     
-      <a href="/UIKit/UIPickerView/" class="pagination--pager" title="[UIKit] UIPickerView - 회전 가능한 휠 형식
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -576,46 +634,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="permalink">[프로그래머스/Swift] 콜라 문제
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 콜라 문제
-</p>
-  </article>
-</div>
-
         
           
 
@@ -732,6 +750,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 푸드 파이트 대회
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="permalink">[UIKit] 코드로 화면 이동
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기
 </p>
   </article>
 </div>

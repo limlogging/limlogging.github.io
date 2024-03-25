@@ -362,7 +362,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/Algorithm/">알고리즘 문제(51)</a></li>
+            <li><a href="/categories/Algorithm/">알고리즘 문제(52)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -426,7 +426,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -448,7 +448,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#nsattributedstring">NSAttributedString</a></li><li><a href="#예제-코드">예제 코드</a><ul><li><a href="#1-label-및-버튼-추가">1. Label 및 버튼 추가</a></li><li><a href="#2-string-확장extention-메서드-구현">2. String 확장(extention) 메서드 구현</a></li><li><a href="#3-밑줄underline-버튼-이벤트">3. 밑줄(underline) 버튼 이벤트</a></li><li><a href="#4-취소선strikethough-버튼-이벤트">4. 취소선(strikethough) 버튼 이벤트</a></li><li><a href="#5-실행-확인">5. 실행 확인</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+              <ul class="toc__menu"><li><a href="#nsattributedstring">NSAttributedString</a></li><li><a href="#예제-코드">예제 코드</a><ul><li><a href="#1-label-및-버튼-추가">1. Label 및 버튼 추가</a></li><li><a href="#2-string-확장extension-메서드-구현">2. String 확장(extension) 메서드 구현</a></li><li><a href="#3-밑줄underline-버튼-이벤트">3. 밑줄(underline) 버튼 이벤트</a></li><li><a href="#4-취소선strikethough-버튼-이벤트">4. 취소선(strikethough) 버튼 이벤트</a></li><li><a href="#5-실행-확인">5. 실행 확인</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
 
             </nav>
           </aside>
@@ -468,7 +468,7 @@
 <h2 id="1-label-및-버튼-추가">1. Label 및 버튼 추가</h2>
 <p><img src="/assets/images/categories/uikit/2024-03-23-StrikethroughAndUnderlineMain.png" alt="" /></p>
 
-<h2 id="2-string-확장extention-메서드-구현">2. String 확장(extention) 메서드 구현</h2>
+<h2 id="2-string-확장extension-메서드-구현">2. String 확장(extension) 메서드 구현</h2>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
     <span class="c1">// MARK: - 밑줄</span>
     <span class="kd">func</span> <span class="nf">underScore</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
@@ -483,6 +483,7 @@
         <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 
         <span class="c1">// 전체 문자열에 가운데 밑줄 스타일 속성을 추가</span>
+        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
         <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>        
         <span class="k">return</span> <span class="n">attributeString</span>
     <span class="p">}</span>
@@ -591,7 +592,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" class="pagination--pager" title="[프로그래머스/Swift] 콜라 문제
+">다음</a>
     
   </nav>
 
@@ -605,6 +607,46 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="permalink">[프로그래머스/Swift] 콜라 문제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 콜라 문제
+</p>
+  </article>
+</div>
+
         
           
 
@@ -721,46 +763,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/UIKit/UIAlertController/" rel="permalink">[UIKit] 얼러트 컨트롤러(UIAlertController)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공
 </p>
   </article>
 </div>

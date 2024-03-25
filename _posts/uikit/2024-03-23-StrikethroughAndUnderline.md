@@ -23,7 +23,7 @@ comments: true
 ## 1. Label 및 버튼 추가 
 ![](/assets/images/categories/uikit/2024-03-23-StrikethroughAndUnderlineMain.png)
 
-## 2. String 확장(extention) 메서드 구현 
+## 2. String 확장(extension) 메서드 구현 
 ```swift
 extension String {
     // MARK: - 밑줄
