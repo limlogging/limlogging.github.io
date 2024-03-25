@@ -611,6 +611,12 @@ var store = [{
         "url": "/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 20일차",
+        "excerpt":"데일리 스크럼 알고리즘 반복문 없이 고차함수 없이 한 줄로 푼 사람이 있어 벽을 느꼈다. 풀이 보기 콜라문제 개인 과제 공부 TableView에서 Datasource 필수 메서드 구현 및 TableViewCell을 상속받아 클래스를 만들기, TableView에서 row수와 row의 cell 데이터 출력 방법을 공부했다. 데이터 목록 표시 내일 목표 오늘 알고리즘에서도 약간 자존감 떨어졌는데 개인 과제의...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til20/",
+        "teaser": null
+      },{
         "title": "[UIKit] UITableView - 데이터 목록 표시",
         "excerpt":"UITableView 세로로만 스크롤 가능한 뷰 iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다. 테이블 뷰는 여러 행으로 구성되며, 각 행에는 하나 이상의 셀이 포함됩니다. 각 셀은 사용자 인터페이스에 정보를 표시하거나 사용자 상호 작용을 위한 컨트롤을 제공합니다. 특징 다양한 셀 유형 UITableView는 특정 유형의 데이터를 표시하기 위해...","categories": ["UIKit"],
         "tags": ["swift","iOS","UITableView"],

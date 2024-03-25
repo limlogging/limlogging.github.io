@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-25T17:38:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] UITableView - 데이터 목록 표시</title><link href="http://localhost:4000/UIKit/UITableView/" rel="alternate" type="text/html" title="[UIKit] UITableView - 데이터 목록 표시" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableView</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableView/"><![CDATA[<h1 id="uitableview">UITableView</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-25T21:42:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-25-til20.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>반복문 없이 고차함수 없이 한 줄로 푼 사람이 있어 벽을 느꼈다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" target="_blank">콜라문제</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>TableView에서 Datasource 필수 메서드 구현 및 TableViewCell을 상속받아 클래스를 만들기, TableView에서 row수와 row의 cell 데이터 출력 방법을 공부했다.
+    <ul>
+      <li><a href="https://limlogging.github.io/UIKit/UITableView/" target="_blank">데이터 목록 표시</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>오늘 알고리즘에서도 약간 자존감 떨어졌는데 개인 과제의 속도도 빠르고 꾸미기도 잘 꾸미신분을 보고 자극을 받았다! 내일은 조금 더 속도를 내보는 걸로</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>키워드 하나씩 실습 하기</li>
+  <li>과제 풀기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 20일차 이야기]]></summary></entry><entry><title type="html">[UIKit] UITableView - 데이터 목록 표시</title><link href="http://localhost:4000/UIKit/UITableView/" rel="alternate" type="text/html" title="[UIKit] UITableView - 데이터 목록 표시" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableView</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableView/"><![CDATA[<h1 id="uitableview">UITableView</h1>
 <ul>
   <li>세로로만 스크롤 가능한 뷰</li>
   <li>iOS 애플리케이션에서 테이블 형식의 데이터를 표시하고 관리하는 데 사용되는 중요한 뷰 컴포넌트입니다.</li>
@@ -196,7 +224,7 @@
 
 <h1 id="마무리">마무리</h1>
 <ul>
-  <li>Table View에서 row와 cell의 데이터는 TableViewDatasource 프로토콜을 채택하여 필수 메서드 구현</li>
+  <li>Table View에서 row와 cell의 데이터는 TableViewDatasource 프로토콜을 채택하여 필수 메서드 구현, viewDidLoad 밑 datasource 설정 필수</li>
   <li>UITableViewCell을 상속받는 클래스를 만들고 스토리보드의 Cell과 연결시키기, 스토리보드 Cell의 식별자 추가하기</li>
 </ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UITableView" /><summary type="html"><![CDATA[UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 콜라 문제</title><link href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 콜라 문제" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
@@ -319,7 +347,6 @@
         <span class="n">underScore</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="o">.</span><span class="n">underlineStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">underScore</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">underScore</span>
     <span class="p">}</span>
-
     <span class="c1">// MARK: - 가운데 밑줄</span>
     <span class="kd">func</span> <span class="nf">strikeThrough</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
@@ -486,163 +513,7 @@
   <li>알고리즘 문제 풀기</li>
   <li>키워드 하나씩 실습 하기</li>
   <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 19일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 가장 가까운 같은 글자</title><link href="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 가장 가까운 같은 글자" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서, 자신과 가장 가까운 곳에 있는 같은 글자가 어디 있는지 알고 싶습니다.
-예를 들어, s=”banana”라고 할 때,  각 글자들을 왼쪽부터 오른쪽으로 읽어 나가면서 다음과 같이 진행할 수 있습니다.
-    <ul>
-      <li>b는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>a는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>n은 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>a는 자신보다 두 칸 앞에 a가 있습니다. 이는 2로 표현합니다.</li>
-      <li>n도 자신보다 두 칸 앞에 n이 있습니다. 이는 2로 표현합니다.</li>
-      <li>a는 자신보다 두 칸, 네 칸 앞에 a가 있습니다. 이 중 가까운 것은 두 칸 앞이고, 이는 2로 표현합니다.</li>
-    </ul>
-  </li>
-  <li>따라서 최종 결과물은 [-1, -1, -1, 2, 2, 2]가 됩니다.</li>
-  <li>
-    <p>문자열 s이 주어질 때, 위와 같이 정의된 연산을 수행하는 함수 solution을 완성해주세요.</p>
-  </li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/142086" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ s의 길이 ≤ 10,000
-    <ul>
-      <li>s은 영어 소문자로만 이루어져 있습니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“banana”</td>
-      <td>[-1, -1, -1, 2, 2, 2]</td>
-    </tr>
-    <tr>
-      <td>“foobar”</td>
-      <td>[-1, -1, 1, -1, -1, -1]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>지문과 같습니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>설명 생략</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">chArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Character</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">numArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">chIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="c1">//초기값 0으로 하면 0번째 문자가 중복되면 계산 못해서 임의로 -100</span>
-    
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span> <span class="k">in</span> <span class="n">s</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//처음에는 무조건 배열 추가</span>
-        <span class="k">if</span> <span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-            <span class="c1">//print("-1")</span>
-            <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">//따로 저장한 배열 확인</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">chArr</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-                <span class="c1">//같은 값 있으면 마지막 index 확인</span>
-                <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">value</span> <span class="p">{</span>
-                    <span class="n">chIndex</span> <span class="o">=</span> <span class="n">j</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="c1">//없으면 추가.</span>
-            <span class="k">if</span> <span class="n">chIndex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">100</span> <span class="p">{</span>
-                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-                <span class="c1">//print("-1")</span>
-                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="c1">//있으면 전체 수 - 인덱스 위치</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">chIndex</span><span class="p">)</span>
-                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-                                
-                <span class="n">chIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-    <span class="c1">//print("chArr: \(chArr)")</span>
-    <span class="k">return</span> <span class="n">numArr</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">word</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
-    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Array</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">beforeIndex</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">beforeIndex</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-
-        <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">result</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>난 문자가 존재하는지 찾기 위해서 반복문을 한번 더 썼는데 딕셔너리로 푼 사람들이 많은 것 같다.</li>
-  <li>반복문 줄이는 연습을 해보자 …</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="가장 가까운 같은 글자" /><summary type="html"><![CDATA[[프로그래머스/Swift] 가장 가까운 같은 글자]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 18일차</title><link href="http://localhost:4000/TIL/til18/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 18일차" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til18</id><content type="html" xml:base="http://localhost:4000/TIL/til18/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-21-til18.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>빨리 풀긴 했는데 초기 값과, 반복문 횟수 등 다른 사람과의 다른 점을 확인하면서 고민해볼 수 있었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" target="_blank">가장 가까운 같은 글자</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>오늘은 화면 이동 관련해서 공부했다.</li>
-  <li>화면이동에는 4가지 방법 <strong>(1.코드로 화면이동, 2.코드로 스토리보드 객체를 생성해서 화면이동, 3.스토리보드에서 간접 세그웨이를 통한 화면이동, 4.스토리보드에서 직접 세그웨이를 통한 화면이동)</strong>이 있는데 그 중 코드로 화면이동을 공부했다.</li>
-  <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()
-    <ul>
-      <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">코드로 화면 이동</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>과제 제출이 다음주 금요일까지긴 하지만 벌써 3레벨 이상 달성한 팀원들을 보면서 속도를 내야겠다고 생각했다 ㅠㅠ</li>
-  <li>알고리즘 문제 풀기</li>
-  <li>키워드 하나씩 실습 하기</li>
-  <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 18일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="코드로-화면-이동">코드로 화면 이동</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 19일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="코드로-화면-이동">코드로 화면 이동</h1>
 <ul>
   <li>스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다.</li>
 </ul>
@@ -838,7 +709,163 @@
 <h2 id="마무리">마무리</h2>
 <ul>
   <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 가장 가까운 같은 글자</title><link href="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 가장 가까운 같은 글자" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서, 자신과 가장 가까운 곳에 있는 같은 글자가 어디 있는지 알고 싶습니다.
+예를 들어, s=”banana”라고 할 때,  각 글자들을 왼쪽부터 오른쪽으로 읽어 나가면서 다음과 같이 진행할 수 있습니다.
+    <ul>
+      <li>b는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
+      <li>a는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
+      <li>n은 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
+      <li>a는 자신보다 두 칸 앞에 a가 있습니다. 이는 2로 표현합니다.</li>
+      <li>n도 자신보다 두 칸 앞에 n이 있습니다. 이는 2로 표현합니다.</li>
+      <li>a는 자신보다 두 칸, 네 칸 앞에 a가 있습니다. 이 중 가까운 것은 두 칸 앞이고, 이는 2로 표현합니다.</li>
+    </ul>
+  </li>
+  <li>따라서 최종 결과물은 [-1, -1, -1, 2, 2, 2]가 됩니다.</li>
+  <li>
+    <p>문자열 s이 주어질 때, 위와 같이 정의된 연산을 수행하는 함수 solution을 완성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/142086" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ s의 길이 ≤ 10,000
+    <ul>
+      <li>s은 영어 소문자로만 이루어져 있습니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>s</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“banana”</td>
+      <td>[-1, -1, -1, 2, 2, 2]</td>
+    </tr>
+    <tr>
+      <td>“foobar”</td>
+      <td>[-1, -1, 1, -1, -1, -1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>지문과 같습니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>설명 생략</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">chArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Character</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">numArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">chIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="c1">//초기값 0으로 하면 0번째 문자가 중복되면 계산 못해서 임의로 -100</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span> <span class="k">in</span> <span class="n">s</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//처음에는 무조건 배열 추가</span>
+        <span class="k">if</span> <span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+            <span class="c1">//print("-1")</span>
+            <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//따로 저장한 배열 확인</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">chArr</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+                <span class="c1">//같은 값 있으면 마지막 index 확인</span>
+                <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">value</span> <span class="p">{</span>
+                    <span class="n">chIndex</span> <span class="o">=</span> <span class="n">j</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="c1">//없으면 추가.</span>
+            <span class="k">if</span> <span class="n">chIndex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">100</span> <span class="p">{</span>
+                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+                <span class="c1">//print("-1")</span>
+                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1">//있으면 전체 수 - 인덱스 위치</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">chIndex</span><span class="p">)</span>
+                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+                                
+                <span class="n">chIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
+    <span class="c1">//print("chArr: \(chArr)")</span>
+    <span class="k">return</span> <span class="n">numArr</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">word</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Array</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">beforeIndex</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">beforeIndex</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>난 문자가 존재하는지 찾기 위해서 반복문을 한번 더 썼는데 딕셔너리로 푼 사람들이 많은 것 같다.</li>
+  <li>반복문 줄이는 연습을 해보자 …</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="가장 가까운 같은 글자" /><summary type="html"><![CDATA[[프로그래머스/Swift] 가장 가까운 같은 글자]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 18일차</title><link href="http://localhost:4000/TIL/til18/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 18일차" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til18</id><content type="html" xml:base="http://localhost:4000/TIL/til18/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-21-til18.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>빨리 풀긴 했는데 초기 값과, 반복문 횟수 등 다른 사람과의 다른 점을 확인하면서 고민해볼 수 있었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" target="_blank">가장 가까운 같은 글자</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>오늘은 화면 이동 관련해서 공부했다.</li>
+  <li>화면이동에는 4가지 방법 <strong>(1.코드로 화면이동, 2.코드로 스토리보드 객체를 생성해서 화면이동, 3.스토리보드에서 간접 세그웨이를 통한 화면이동, 4.스토리보드에서 직접 세그웨이를 통한 화면이동)</strong>이 있는데 그 중 코드로 화면이동을 공부했다.</li>
+  <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()
+    <ul>
+      <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">코드로 화면 이동</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>과제 제출이 다음주 금요일까지긴 하지만 벌써 3레벨 이상 달성한 팀원들을 보면서 속도를 내야겠다고 생각했다 ㅠㅠ</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>키워드 하나씩 실습 하기</li>
+  <li>과제 풀기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 18일차 이야기]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
 <ul>
   <li>iOS 애플리케이션에서 경고 메시지, 알림 창, 또는 사용자에게 선택 옵션을 제공하는 팝업 창을 표시하는 데 사용되는 클래스입니다.</li>
   <li>UIKit 프레임워크에서 제공되며, 모든 iOS 버전에서 사용할 수 있습니다.</li>
@@ -953,102 +980,4 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다 !!!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIAlertController" /><summary type="html"><![CDATA[UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 두 개 뽑아서 더하기</title><link href="http://localhost:4000/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 두 개 뽑아서 더하기" /><published>2024-03-20T00:00:00+09:00</published><updated>2024-03-20T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%91%90%EA%B0%9C%EB%BD%91%EC%95%84%EC%84%9C%EB%8D%94%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>
-    <p>정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.</p>
-  </li>
-  <li>
-    <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/68644" target="_blank">문제 풀기</a></p>
-  </li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>numbers의 길이는 2 이상 100 이하입니다.
-    <ul>
-      <li>numbers의 모든 수는 0 이상 100 이하입니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>numbers</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[2,1,3,4,1]</td>
-      <td>[2,3,4,5,6,7]</td>
-    </tr>
-    <tr>
-      <td>[5,0,2,7]</td>
-      <td>[2,5,7,9,12]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-1">입출력 예 #1</h2>
-<ul>
-  <li>2 = 1 + 1 입니다. (1이 numbers에 두 개 있습니다.)</li>
-  <li>3 = 2 + 1 입니다.</li>
-  <li>4 = 1 + 3 입니다.</li>
-  <li>5 = 1 + 4 = 2 + 3 입니다.</li>
-  <li>6 = 2 + 4 입니다.</li>
-  <li>7 = 3 + 4 입니다.</li>
-  <li>따라서 [2,3,4,5,6,7] 을 return 해야 합니다.</li>
-</ul>
-
-<h2 id="입출력-예-2">입출력 예 #2</h2>
-<ul>
-  <li>2 = 0 + 2 입니다.</li>
-  <li>5 = 5 + 0 입니다.</li>
-  <li>7 = 0 + 7 = 5 + 2 입니다.</li>
-  <li>9 = 2 + 7 입니다.</li>
-  <li>12 = 5 + 7 입니다.</li>
-  <li>따라서 [2,5,7,9,12] 를 return 해야 합니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">numbers</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">...</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">{</span>
-            <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">//중복제거 후 정렬 값 리턴</span>
-    <span class="k">return</span> <span class="kt">Set</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">numbers</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span> <span class="o">..&lt;</span> <span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">..&lt;</span> <span class="n">numbers</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
-            <span class="k">let</span> <span class="nv">num</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-            <span class="k">if</span> <span class="o">!</span><span class="n">result</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>개인과제로 야구게임할때 중복체크하는 부분에 Set을 썼는데 이번에 잊지않고 사용했다!</li>
-  <li>다른 사람 풀이도 비슷</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="두 개 뽑아서 더하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 두 개 뽑아서 더하기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIAlertController" /><summary type="html"><![CDATA[UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공]]></summary></entry></feed>

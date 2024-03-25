@@ -12,6 +12,7 @@ toc: true
 toc_sticky: true   
 comments: true      
 ---
+
 # NSAttributedString
 - 텍스트에 대한 서식 및 스타일을 적용하는 데 사용되는 클래스입니다. 
 - NSAttributedString을 사용하면 단순한 문자열을 포맷하고, 텍스트에 다양한 스타일, 폰트, 색상, 그리기 속성 등을 적용할 수 있습니다.
@@ -33,7 +34,6 @@ extension String {
         underScore.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, underScore.length))
         return underScore
     }
-
     // MARK: - 가운데 밑줄
     func strikeThrough() -> NSAttributedString {
         let attributeString = NSMutableAttributedString(string: self)

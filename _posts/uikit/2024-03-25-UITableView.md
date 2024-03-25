@@ -168,5 +168,5 @@ extension ViewController: UITableViewDataSource {
 ![](../../assets/images/categories/uikit/2024-03-25-TableViewCell2.png)
 
 # 마무리 
-- Table View에서 row와 cell의 데이터는 TableViewDatasource 프로토콜을 채택하여 필수 메서드 구현 
+- Table View에서 row와 cell의 데이터는 TableViewDatasource 프로토콜을 채택하여 필수 메서드 구현, viewDidLoad 밑 datasource 설정 필수 
 - UITableViewCell을 상속받는 클래스를 만들고 스토리보드의 Cell과 연결시키기, 스토리보드 Cell의 식별자 추가하기  
