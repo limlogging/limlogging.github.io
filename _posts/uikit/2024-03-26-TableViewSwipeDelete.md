@@ -40,3 +40,17 @@ comments: true
 - TableView의 편집 버튼을 눌러 삭제를 시도할 수 있지만 Swipe로 삭제 가능 
 - 삭제를 되물어보는 기능이 없어 따로 만들어야함 
 - 해당 메서드가 XCode에서 자동검색이 되지 않는 것 같다. 
+    - ⭐️⭐️⭐️더 찾아보니 내 클래스 파일은 UIViewController를 상속받는 클래스인데 <font color="red">UITableViewController</font>를 상속받는 클래스 파일을 만들면 주석처리된 메서드가 그냥 보인다!!!!!⭐️⭐️⭐️ 
+    ```swift
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+    ```
