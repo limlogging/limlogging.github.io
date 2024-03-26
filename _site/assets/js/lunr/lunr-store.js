@@ -622,4 +622,10 @@ var store = [{
         "tags": ["swift","iOS","UITableView"],
         "url": "/UIKit/UITableView/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 명예의 전당",
+        "excerpt":"문제 설명 “명예의 전당”이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게 점수를 부여합니다. 매일 출연한 가수의 점수가 지금까지 출연 가수들의 점수 중 상위 k번째 이내이면 해당 가수의 점수를 명예의 전당이라는 목록에 올려 기념합니다. 즉 프로그램 시작 이후 초기에 k일까지는 모든 출연 가수의 점수가 명예의 전당에 오르게...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","명예의 전당"],
+        "url": "/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/",
+        "teaser": null
       }]
