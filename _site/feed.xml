@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T13:59:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Tableview Cell에서 Delegate 사용</title><link href="http://localhost:4000/UIKit/UITableViewCellDelegate/" rel="alternate" type="text/html" title="[UIKit] Tableview Cell에서 Delegate 사용" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableViewCellDelegate</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableViewCellDelegate/"><![CDATA[<h1 id="tableviewcell과-viewcontroller와-상호작용">TableViewCell과 ViewController와 상호작용</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T14:25:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Tableview에서 Swipe로 Row 삭제하기</title><link href="http://localhost:4000/UIKit/TableViewSwipeDelete/" rel="alternate" type="text/html" title="[UIKit] Tableview에서 Swipe로 Row 삭제하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/TableViewSwipeDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/TableViewSwipeDelete/"><![CDATA[<h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
+<ul>
+  <li>TableView에서 Row을 움직여 삭제할 수 있습니다.</li>
+  <li>UITableViewDataSource를 채택하고 사용합니다.</li>
+</ul>
+
+<h1 id="예제-코드">예제 코드</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 편집 스타일이 삭제인 경우 </span>
+        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
+            <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
+            <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+            <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
+            <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+        <span class="p">}</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="실행화면">실행화면</h1>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>TableView의 편집 버튼을 눌러 삭제를 시도할 수 있지만 Swipe로 삭제 가능</li>
+  <li>삭제를 되물어보는 기능이 없어 따로 만들어야함</li>
+  <li>해당 메서드가 XCode에서 자동검색이 되지 않는 것 같다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[UIKit] Tableview Cell에서 Delegate 사용</title><link href="http://localhost:4000/UIKit/UITableViewCellDelegate/" rel="alternate" type="text/html" title="[UIKit] Tableview Cell에서 Delegate 사용" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableViewCellDelegate</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableViewCellDelegate/"><![CDATA[<h1 id="tableviewcell과-viewcontroller와-상호작용">TableViewCell과 ViewController와 상호작용</h1>
 <ul>
   <li>TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다.</li>
   <li>Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다.</li>
@@ -174,18 +203,10 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>데이터를 주는 곳에서 델리게이트를 만들고 데이터를 받는 곳에서 델리게이터를 채택하고 사용
-    <ul>
-      <li>
-        <ol>
-          <li>Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행</li>
-        </ol>
-      </li>
-      <li>
-        <ol>
-          <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
-        </ol>
-      </li>
-    </ul>
+    <ol>
+      <li>Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행</li>
+      <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
+    </ol>
   </li>
 </ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 명예의 전당</title><link href="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 명예의 전당" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
@@ -390,104 +411,7 @@
 <ul>
   <li>런타임 에러가 발생해서 제한사항을 추가했다. 보통 없어도 통과인데 간혹 제한사항 추가해야하는 문제가 있다.</li>
   <li>대부분 비슷한 풀이인데 짧게 푼 코드를 찾았다. 다른 사람 코드로 또 배우는 중..</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="명예의 전당" /><summary type="html"><![CDATA[[프로그래머스/Swift] 명예의 전당]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 콜라 문제</title><link href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 콜라 문제" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다.
-    <ul>
-      <li>정답은 아무에게도 말하지 마세요.</li>
-      <li>콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가?</li>
-      <li>단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다.</li>
-    </ul>
-  </li>
-  <li>문제를 풀던 상빈이는 콜라 문제의 완벽한 해답을 찾았습니다. 상빈이가 푼 방법은 아래 그림과 같습니다. 우선 콜라 빈 병 20병을 가져가서 10병을 받습니다. 받은 10병을 모두 마신 뒤, 가져가서 5병을 받습니다. 5병 중 4병을 모두 마신 뒤 가져가서 2병을 받고, 또 2병을 모두 마신 뒤 가져가서 1병을 받습니다. 받은 1병과 5병을 받았을 때 남은 1병을 모두 마신 뒤 가져가면 1병을 또 받을 수 있습니다. 이 경우 상빈이는 총 10 + 5 + 2 + 1 + 1 = 19병의 콜라를 받을 수 있습니다.</li>
-  <li>문제를 열심히 풀던 상빈이는 일반화된 콜라 문제를 생각했습니다. 이 문제는 빈 병 a개를 가져다주면 콜라 b병을 주는 마트가 있을 때, 빈 병 n개를 가져다주면 몇 병을 받을 수 있는지 계산하는 문제입니다. 기존 콜라 문제와 마찬가지로, 보유 중인 빈 병이 a개 미만이면, 추가적으로 빈 병을 받을 순 없습니다. 상빈이는 열심히 고심했지만, 일반화된 콜라 문제의 답을 찾을 수 없었습니다. 상빈이를 도와, 일반화된 콜라 문제를 해결하는 프로그램을 만들어 주세요.</li>
-  <li>
-    <p>콜라를 받기 위해 마트에 주어야 하는 병 수 a, 빈 병 a개를 가져다 주면 마트가 주는 콜라 병 수 b, 상빈이가 가지고 있는 빈 병의 개수 n이 매개변수로 주어집니다. 상빈이가 받을 수 있는 콜라의 병 수를 return 하도록 solution 함수를 작성해주세요.</p>
-  </li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/132267" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ b &lt; a ≤ n ≤ 1,000,000</li>
-  <li>정답은 항상 int 범위를 넘지 않게 주어집니다.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>a</th>
-      <th>b</th>
-      <th>n</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>2</td>
-      <td>1</td>
-      <td>20</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>1</td>
-      <td>20</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>본문에서 설명한 예시입니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>빈 병 20개 중 18개를 마트에 가져가서, 6병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 8(20 – 18 + 6 = 8)개 입니다.</li>
-  <li>빈 병 8개 중 6개를 마트에 가져가서, 2병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 4(8 – 6 + 2 = 4)개 입니다.</li>
-  <li>빈 병 4 개중 3개를 마트에 가져가서, 1병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 2(4 – 3 + 1 = 2)개 입니다.</li>
-  <li>3번의 교환 동안 상빈이는 9(6 + 2 + 1 = 9)병의 콜라를 받았습니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="c1">//a = 반납 콜라, b = 받는 콜라, n = 가진 콜라</span>
-    <span class="k">var</span> <span class="nv">quotient</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//몫</span>
-    <span class="k">var</span> <span class="nv">remainder</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">//나머지</span>
-    <span class="k">var</span> <span class="nv">myCoke</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span>
-    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="k">break</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">quotient</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span>
-            <span class="n">remainder</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">%</span> <span class="n">a</span>
-            
-            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//받는 콜라 계산</span>
-            <span class="n">myCoke</span> <span class="o">=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">result</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">?</span> <span class="n">n</span> <span class="o">-</span> <span class="nv">b</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>벽이 느껴지는 다른 사람의 풀이에 감탄했다…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라 문제" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라 문제]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="명예의 전당" /><summary type="html"><![CDATA[[프로그래머스/Swift] 명예의 전당]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-25-til20.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -715,7 +639,104 @@
 <ul>
   <li>Table View에서 row와 cell의 데이터는 TableViewDatasource 프로토콜을 채택하여 필수 메서드 구현, viewDidLoad 밑 datasource 설정 필수</li>
   <li>UITableViewCell을 상속받는 클래스를 만들고 스토리보드의 Cell과 연결시키기, 스토리보드 Cell의 식별자 추가하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UITableView" /><summary type="html"><![CDATA[UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소]]></summary></entry><entry><title type="html">[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</title><link href="http://localhost:4000/UIKit/underlineAndStrikethrough/" rel="alternate" type="text/html" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기" /><published>2024-03-23T00:00:00+09:00</published><updated>2024-03-23T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/StrikethroughAndUnderline</id><content type="html" xml:base="http://localhost:4000/UIKit/underlineAndStrikethrough/"><![CDATA[<h1 id="nsattributedstring">NSAttributedString</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UITableView" /><summary type="html"><![CDATA[UITableView - 데이터 목록을 표시하고 사용자와 상호 작용할 수 있는 스크롤 가능한 UI 요소]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 콜라 문제</title><link href="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 콜라 문제" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>오래전 유행했던 콜라 문제가 있습니다. 콜라 문제의 지문은 다음과 같습니다.
+    <ul>
+      <li>정답은 아무에게도 말하지 마세요.</li>
+      <li>콜라 빈 병 2개를 가져다주면 콜라 1병을 주는 마트가 있다. 빈 병 20개를 가져다주면 몇 병을 받을 수 있는가?</li>
+      <li>단, 보유 중인 빈 병이 2개 미만이면, 콜라를 받을 수 없다.</li>
+    </ul>
+  </li>
+  <li>문제를 풀던 상빈이는 콜라 문제의 완벽한 해답을 찾았습니다. 상빈이가 푼 방법은 아래 그림과 같습니다. 우선 콜라 빈 병 20병을 가져가서 10병을 받습니다. 받은 10병을 모두 마신 뒤, 가져가서 5병을 받습니다. 5병 중 4병을 모두 마신 뒤 가져가서 2병을 받고, 또 2병을 모두 마신 뒤 가져가서 1병을 받습니다. 받은 1병과 5병을 받았을 때 남은 1병을 모두 마신 뒤 가져가면 1병을 또 받을 수 있습니다. 이 경우 상빈이는 총 10 + 5 + 2 + 1 + 1 = 19병의 콜라를 받을 수 있습니다.</li>
+  <li>문제를 열심히 풀던 상빈이는 일반화된 콜라 문제를 생각했습니다. 이 문제는 빈 병 a개를 가져다주면 콜라 b병을 주는 마트가 있을 때, 빈 병 n개를 가져다주면 몇 병을 받을 수 있는지 계산하는 문제입니다. 기존 콜라 문제와 마찬가지로, 보유 중인 빈 병이 a개 미만이면, 추가적으로 빈 병을 받을 순 없습니다. 상빈이는 열심히 고심했지만, 일반화된 콜라 문제의 답을 찾을 수 없었습니다. 상빈이를 도와, 일반화된 콜라 문제를 해결하는 프로그램을 만들어 주세요.</li>
+  <li>
+    <p>콜라를 받기 위해 마트에 주어야 하는 병 수 a, 빈 병 a개를 가져다 주면 마트가 주는 콜라 병 수 b, 상빈이가 가지고 있는 빈 병의 개수 n이 매개변수로 주어집니다. 상빈이가 받을 수 있는 콜라의 병 수를 return 하도록 solution 함수를 작성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/132267" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ b &lt; a ≤ n ≤ 1,000,000</li>
+  <li>정답은 항상 int 범위를 넘지 않게 주어집니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+      <td>20</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>20</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>본문에서 설명한 예시입니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>빈 병 20개 중 18개를 마트에 가져가서, 6병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 8(20 – 18 + 6 = 8)개 입니다.</li>
+  <li>빈 병 8개 중 6개를 마트에 가져가서, 2병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 4(8 – 6 + 2 = 4)개 입니다.</li>
+  <li>빈 병 4 개중 3개를 마트에 가져가서, 1병의 콜라를 받습니다. 이때 상빈이가 가지고 있는 콜라 병의 수는 2(4 – 3 + 1 = 2)개 입니다.</li>
+  <li>3번의 교환 동안 상빈이는 9(6 + 2 + 1 = 9)병의 콜라를 받았습니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="c1">//a = 반납 콜라, b = 받는 콜라, n = 가진 콜라</span>
+    <span class="k">var</span> <span class="nv">quotient</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//몫</span>
+    <span class="k">var</span> <span class="nv">remainder</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">//나머지</span>
+    <span class="k">var</span> <span class="nv">myCoke</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">while</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="k">break</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">quotient</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">/</span> <span class="n">a</span>
+            <span class="n">remainder</span> <span class="o">=</span> <span class="n">myCoke</span> <span class="o">%</span> <span class="n">a</span>
+            
+            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//받는 콜라 계산</span>
+            <span class="n">myCoke</span> <span class="o">=</span> <span class="p">(</span><span class="n">quotient</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">remainder</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">?</span> <span class="n">n</span> <span class="o">-</span> <span class="nv">b</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>벽이 느껴지는 다른 사람의 풀이에 감탄했다…</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라 문제" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라 문제]]></summary></entry><entry><title type="html">[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</title><link href="http://localhost:4000/UIKit/underlineAndStrikethrough/" rel="alternate" type="text/html" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기" /><published>2024-03-23T00:00:00+09:00</published><updated>2024-03-23T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/StrikethroughAndUnderline</id><content type="html" xml:base="http://localhost:4000/UIKit/underlineAndStrikethrough/"><![CDATA[<h1 id="nsattributedstring">NSAttributedString</h1>
 <ul>
   <li>텍스트에 대한 서식 및 스타일을 적용하는 데 사용되는 클래스입니다.</li>
   <li>NSAttributedString을 사용하면 단순한 문자열을 포맷하고, 텍스트에 다양한 스타일, 폰트, 색상, 그리기 속성 등을 적용할 수 있습니다.</li>
@@ -1020,200 +1041,4 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다 !!!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIAlertController" /><summary type="html"><![CDATA[UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="코드로-화면-이동">코드로 화면 이동</h1>
-<ul>
-  <li>스토리보드 라이브러리에서 view Controller를 추가하지 않고 코드로 작성하여 화면을 이동하는 방법입니다.</li>
-</ul>
-
-<h1 id="1-cocoa-touch-class-파일-생성">1. cocoa touch class 파일 생성</h1>
-<ul>
-  <li>프로젝트에서 우클릭
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동1.png" alt="" /></li>
-  <li>코코아 터치 클래스 선택 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동2.png" alt="" /></li>
-  <li>클래스 이름을 정하고 Subclass를 UIViewController로 설정 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동3.png" alt="" /></li>
-  <li>파일 생성 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동4.png" alt="" /></li>
-</ul>
-
-<h1 id="2-viewcontroller에서-추가한-컨트롤러-불러오기">2. ViewController에서 추가한 컨트롤러 불러오기</h1>
-<h2 id="버튼-생성-및-코드-추가">버튼 생성 및 코드 추가</h2>
-<ul>
-  <li>ViewController에서 버튼을 생성하고 연결합니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동5.png" alt="" /></li>
-  <li>화면 연결을 위해 코드를 추가합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="kt">NextViewController</span><span class="p">()</span>   <span class="c1">//새로만든 클래스 인스턴스 생성하고 변수에 할당 </span>
-
-  <span class="c1">//present메서드를 사용하여 nextVC를 화면에 표시합니다. </span>
-  <span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>   
-  <span class="cm">/*
-  첫 번째 매개변수 (nextVC): 표시할 뷰 컨트롤러
-  두 번째 매개변수 (animated): 화면에 애니메이션 표시 유무 
-  세 번째 매개변수 (completion): 뷰 컨트롤러가 표시된 후에 실행할 클로저, 없으면 nil  
-  */</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-    <h2 id="실행">실행</h2>
-  </li>
-  <li>실행하면 뭐가 화면이 뜬건지 기존 화면이 작아진 건지 알 수 없습니다.</li>
-  <li>만들어진 클래스에서 코드를 수정합니다.</li>
-</ul>
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="/assets/images/categories/uikit/2024-03-21-화면이동6.png" alt="" /></td>
-      <td><img src="/assets/images/categories/uikit/2024-03-21-화면이동7.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="3-새로-만든-클래스-파일-수정">3. 새로 만든 클래스 파일 수정</h1>
-<h2 id="label-추가">Label 추가</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
-<span class="kd">class</span> <span class="kt">NextViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">nextViewLabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span> <span class="c1">//Label 추가 </span>
-</code></pre></div></div>
-<ul>
-  <li>화면에서 label을 볼 수 있게 기본 text를 입력하고 view.addSubview(nextViewLabel) 코드를 추가합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-  <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">systemPink</span>  <span class="c1">//화면 배경색을 핑크로 </span>
-            
-  <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Hello"</span>
-
-  <span class="c1">//현재 UIViewController의 뷰 계층 구조에 새로운 UILabel을 추가</span>
-  <span class="c1">//화면에 새로운 텍스트 레이블이 추가되어 사용자에게 표시 </span>
-  <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">nextViewLabel</span><span class="p">)</span>  
-<span class="p">}</span>
-</code></pre></div>    </div>
-    <h3 id="실행-1">실행</h3>
-  </li>
-  <li>오토레이아웃을 설정하지 않아서 Hello가 보이지 않습니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동8.png" alt="" /></li>
-</ul>
-
-<h2 id="오토레이아웃-설정">오토레이아웃 설정</h2>
-<ul>
-  <li>오토레이아웃을 설정합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-  <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">systemPink</span>  <span class="c1">//화면 배경색을 핑크로 </span>
-            
-  <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Hello"</span>
-
-  <span class="c1">//현재 UIViewController의 뷰 계층 구조에 새로운 UILabel을 추가</span>
-  <span class="c1">//화면에 새로운 텍스트 레이블이 추가되어 사용자에게 표시 </span>
-  <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">nextViewLabel</span><span class="p">)</span>  
-    
-  <span class="c1">// nextViewLabel의 autoresizing mask를 사용하지 않고 수동으로 레이아웃을 설정</span>
-  <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
-  <span class="c1">//x축 가운데 위치</span>
-  <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-  <span class="c1">//y축 가운데 위치</span>
-  <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>스토리보드에서 하는 x,y 설정이 아래 3줄 코드와 같습니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동9.png" alt="" />
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nextViewLabel</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
-<span class="n">nextViewLabel</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="n">nextViewLabel</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h3 id="실행-2">실행</h3>
-<ul>
-  <li>정상적으로 Hello가 출력 된 것을 알 수 있습니다.</li>
-  <li>화면을 아래로 드래그하면 화면이 닫힙니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동10.png" alt="" /></li>
-</ul>
-
-<h1 id="4-view-컨트롤러에서-text값-전달하여-화면에-출력">4. View 컨트롤러에서 Text값 전달하여 화면에 출력</h1>
-<ul>
-  <li>Hello 고정 값이 아닌 ViewController에서 문자열을 받아와 출력하는 방법입니다.</li>
-</ul>
-
-<h2 id="추가한-클래스-수정">추가한 클래스 수정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">nextViewLabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span> <span class="c1">//Label 추가 </span>
-<span class="c1">//label 아래에 옵셔널 변수를 추가합니다. </span>
-<span class="k">var</span> <span class="nv">testLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>  <span class="c1">//View에서 문자열을 받기 위해 추가</span>
-
-<span class="c1">// 그리고 ViewDidLoad 함수 안에 코드를 수정합니다. </span>
-<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-    <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">systemPink</span>  <span class="c1">//화면 배경색</span>
-            
-    <span class="c1">//nextViewLabel.text = "Hello"  //기존코드 주석</span>
-    <span class="n">nextViewLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">testLabel</span>  <span class="c1">//Hello 문자열을 변수로 변경 </span>
-</code></pre></div></div>
-<ul>
-  <li>text가 옵셔널 타입으로 되어있어 옵셔널 변수를 추가
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동11.png" alt="" /></li>
-</ul>
-
-<h2 id="view-controller-수정">View Controller 수정</h2>
-<ul>
-  <li>기존 코드에 넘겨줄 문자열을 추가합니다
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="kt">NextViewController</span><span class="p">()</span>   
-  <span class="n">nextVC</span><span class="o">.</span><span class="n">testLabel</span> <span class="o">=</span> <span class="s">"안녕하세요~~!!"</span> <span class="c1">//추가</span>
-  <span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>   
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="실행-3">실행</h2>
-<ul>
-  <li>정상적으로 문자열을 받아 출력
-<img src="/assets/images/categories/uikit/2024-03-21-화면이동12.png" alt="" /></li>
-</ul>
-
-<h1 id="5-버튼을-만들어서-버튼으로-화면-닫기">5. 버튼을 만들어서 버튼으로 화면 닫기</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">nextViewLabel</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
-<span class="k">var</span> <span class="nv">testLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>  
-<span class="k">var</span> <span class="nv">backButton</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>     <span class="c1">//버튼 추가 </span>
-
-<span class="c1">//버튼 셋팅 추가 </span>
-<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">backButton</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"뒤로가기!"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
-    <span class="n">backButton</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">backButtonTapped</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">touchUpInside</span><span class="p">)</span>
-    <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">backButton</span><span class="p">)</span>
-
-    <span class="n">backButton</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
-    
-    <span class="n">backButton</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="n">backButton</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="n">backButton</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="n">backButton</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">)</span><span class="o">.</span><span class="n">isActive</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="p">}</span>
-<span class="c1">// 버튼 종료 추가 </span>
-<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">backButtonTapped</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">//dissmiss는 모달로 표시된 뷰 컨트롤러를 제거함 </span>
-    <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>    <span class="c1">// 전 화면으로 돌아가기</span>
-    <span class="cm">/*
-    첫번째 파라미터: 모달이 제거되는 애니메이션 실행 유무 
-    두번째 파라미터: 모달이 제거된 후에 실행할 클로저, 없으면 nil 
-    */</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h2 id="화면">화면</h2>
-
-<table>
-  <tbody>
-    <tr>
-      <td><img src="/assets/images/categories/uikit/2024-03-21-화면이동13.png" alt="" /></td>
-      <td><img src="/assets/images/categories/uikit/2024-03-21-화면이동6.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="마무리">마무리</h2>
-<ul>
-  <li>코드로 화면표시 present(), 코드로 화면 닫기 dismiss()</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 view 컨트롤러를 추가하지 않고 코드로 이동하기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIAlertController" /><summary type="html"><![CDATA[UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공]]></summary></entry></feed>

@@ -180,5 +180,5 @@ extension ViewController: MyToDoListCellDelegate {
 
 # 마무리 
 - 데이터를 주는 곳에서 델리게이트를 만들고 데이터를 받는 곳에서 델리게이터를 채택하고 사용 
-  - 1. Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행 
-  - 2. View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리 
+  1. Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행 
+  2. View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리 

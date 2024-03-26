@@ -629,6 +629,12 @@ var store = [{
         "url": "/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/",
         "teaser": null
       },{
+        "title": "[UIKit] Tableview에서 Swipe로 Row 삭제하기",
+        "excerpt":"Tableview에서 Swipe로 Row 삭제하기 TableView에서 Row을 움직여 삭제할 수 있습니다. UITableViewDataSource를 채택하고 사용합니다. 예제 코드 // MARK: - TableView 스와이프(swipe) 삭제 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { // 편집 스타일이 삭제인 경우 if editingStyle == .delete { //해당 indexPath에 위치한 데이터를 배열에서 제거 myToDoListArray.remove(at: indexPath.row)...","categories": ["UIKit"],
+        "tags": ["swift","iOS","TableView Swipe Delete"],
+        "url": "/UIKit/TableViewSwipeDelete/",
+        "teaser": null
+      },{
         "title": "[UIKit] Tableview Cell에서 Delegate 사용",
         "excerpt":"TableViewCell과 ViewController와 상호작용 TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다. Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다. Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다. 예제 코드 Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지...","categories": ["UIKit"],
         "tags": ["swift","iOS","Tableview Cell Delegate"],
