@@ -628,4 +628,10 @@ var store = [{
         "tags": ["Algorithm","coding test","명예의 전당"],
         "url": "/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/",
         "teaser": null
+      },{
+        "title": "[UIKit] Tableview Cell에서 Delegate 사용",
+        "excerpt":"TableViewCell과 ViewController와 상호작용 TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다. Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다. Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다. 예제 코드 Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지...","categories": ["UIKit"],
+        "tags": ["swift","iOS","Tableview Cell Delegate"],
+        "url": "/UIKit/UITableViewCellDelegate/",
+        "teaser": null
       }]

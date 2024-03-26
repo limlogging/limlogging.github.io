@@ -1,4 +1,193 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T10:15:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 명예의 전당</title><link href="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 명예의 전당" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T13:59:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Tableview Cell에서 Delegate 사용</title><link href="http://localhost:4000/UIKit/UITableViewCellDelegate/" rel="alternate" type="text/html" title="[UIKit] Tableview Cell에서 Delegate 사용" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableViewCellDelegate</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableViewCellDelegate/"><![CDATA[<h1 id="tableviewcell과-viewcontroller와-상호작용">TableViewCell과 ViewController와 상호작용</h1>
+<ul>
+  <li>TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다.</li>
+  <li>Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다.</li>
+  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다.</li>
+</ul>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate1.mov" type="video/mp4" />
+</video>
+
+<h1 id="예제-코드">예제 코드</h1>
+<ul>
+  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않도록하는 예제입니다.</li>
+</ul>
+
+<h2 id="1-스위치-valuechanged-액션함수-생성">1. 스위치 ValueChanged 액션함수 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-스위치-delegate-프로토콜-정의">2. 스위치 Delegate 프로토콜 정의</h2>
+<ul>
+  <li>스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 Cell class에 정의합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="c1">//스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 정의</span>
+<span class="kd">protocol</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">:</span> <span class="kt">AnyObject</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="c1">// 스위치 값 변경 시 호출할 메서드</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">MyToDoListCell</span><span class="p">:</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h2 id="3-스위치-delegate-선언">3. 스위치 Delegate 선언</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate를 선언합니다.</span>
+<span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">?</span>   <span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">awakeFromNib</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-스위치-valuechanged-액션함수-수정">4. 스위치 ValueChanged 액션함수 수정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// delegate를 통해 스위치 값 변경 이벤트를 처리할 메서드를 호출합니다.</span>
+    <span class="n">delegate</span><span class="p">?</span><span class="o">.</span><span class="nf">switchValueChanged</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">isOn</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="5-viewcontroller에서-스위치-델리게이트-채택">5. ViewController에서 스위치 델리게이트 채택</h2>
+<ul>
+  <li>ViewController를 확장하여 스위치 델리게이트 채택</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+    <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+          <span class="o">&lt;</span><span class="k">#code</span><span class="err">#</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="6-cell의-인덱스를-구하고-스위치-bool-값을-배열에-반영">6. Cell의 인덱스를 구하고 스위치 Bool 값을 배열에 반영</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+  <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
+  <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//해당 셀의 인덱스 가져오기</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="c1">// 스위치 값을 배열에 반영</span>
+    <span class="c1">//ViewController에 선언한 myToDoListArray 배열에 변경된 스위치 값 설정  </span>
+    <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="7-️️️-스위치-값-변경-이벤트-처리를-위한-delegate-설정">7. ⭐️⭐️⭐️ 스위치 값 변경 이벤트 처리를 위한 Delegate 설정</h2>
+<ul>
+  <li>cellForRowAt 함수 리턴 부분 위에 cell.delegate = self를 추가합니다.</li>
+  <li>셀에서 발생한 이벤트를 뷰 컨트롤러에서 처리할 수 있도록 연결합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
+<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="c1">//다른코드 생략 </span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<h2 id="8-실행화면">8. 실행화면</h2>
+<ul>
+  <li>스위치 변경 시 배열의 값도 변경하여 데이터를 추가해도 스위치가 초기화되지 않습니다.</li>
+</ul>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate2.mov" type="video/mp4" />
+</video>
+
+<h1 id="스위치-토글-시-취소선strikethrough-추가">스위치 토글 시 취소선(strikeThrough) 추가</h1>
+<h2 id="1-string-확장-메서드-구현">1. String 확장 메서드 구현</h2>
+<ul>
+  <li><a href="https://limlogging.github.io/UIKit/underlineAndStrikethrough/" target="_blank">참고: [UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</a></li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - String 확장(extension) 메서드에 취소선 구현</span>
+<span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">strikeThrough</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
+        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
+        <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="c1">// 전체 문자열에 취소선 스타일 속성을 추가</span>
+        <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">attributeString</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-cellforrowat-메서드-수정">2. cellForRowAt 메서드 수정</h2>
+<ul>
+  <li>switch 값에 따른 취소선 적용 및 취소선 취소</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+        <span class="c1">// 다른코드 생략 </span>
+
+        <span class="c1">//title 취소선 - switch 값에 따라 취소선 또는 일반 Text</span>
+        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">myToDoIsCompleteSwitch</span><span class="o">.</span><span class="n">isOn</span> <span class="p">{</span>
+            <span class="c1">// 해당 텍스트에 취소선을 적용한 NSAttributedString을 생성</span>
+            <span class="k">let</span> <span class="nv">attributedText</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="o">.</span><span class="nf">strikeThrough</span><span class="p">()</span>
+            <span class="c1">// 취소선이 적용된 NSAttributedString을 텍스트로 설정</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">attributedText</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//일반 Text - 취소선 없애기</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
+        <span class="k">return</span> <span class="n">cell</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-cell-새로고침-추가">3. Cell 새로고침 추가</h2>
+<ul>
+  <li>스위치 변경 후 label에 취소선을 적용시키도록 새로고침 추가</li>
+  <li>myTodoListTableView.reloadRows(at: [indexPath], with: .automatic)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//해당 셀의 인덱스 가져여오기</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>        
+        <span class="c1">// 스위치 값을 배열에 반영</span>
+        <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
+        <span class="c1">// 스위치가 변경될 때마다 테이블 뷰의 해당 셀만 다시 로드, 취소선 때문에</span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">automatic</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="4-실행화면">4. 실행화면</h2>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate3.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>데이터를 주는 곳에서 델리게이트를 만들고 데이터를 받는 곳에서 델리게이터를 채택하고 사용
+    <ul>
+      <li>
+        <ol>
+          <li>Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행</li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 명예의 전당</title><link href="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 명예의 전당" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>“명예의 전당”이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게 점수를 부여합니다. 매일 출연한 가수의 점수가 지금까지 출연 가수들의 점수 중 상위 k번째 이내이면 해당 가수의 점수를 명예의 전당이라는 목록에 올려 기념합니다. 즉 프로그램 시작 이후 초기에 k일까지는 모든 출연 가수의 점수가 명예의 전당에 오르게 됩니다. k일 다음부터는 출연 가수의 점수가 기존의 명예의 전당 목록의 k번째 순위의 가수 점수보다 더 높으면, 출연 가수의 점수가 명예의 전당에 오르게 되고 기존의 k번째 순위의 점수는 명예의 전당에서 내려오게 됩니다.</li>
   <li>이 프로그램에서는 매일 “명예의 전당”의 최하위 점수를 발표합니다. 예를 들어, k = 3이고, 7일 동안 진행된 가수의 점수가 [10, 100, 20, 150, 1, 100, 200]이라면, 명예의 전당에서 발표된 점수는 아래의 그림과 같이 [10, 10, 10, 20, 20, 100, 100]입니다.</li>
@@ -592,7 +781,36 @@
 <ul>
   <li>NSAttributedString을 사용하면 다양한 스타일을 적용하여 텍스트를 꾸미는 데 유용하다.</li>
   <li>NSAttributedString은 한 번 생성되면 수정할 수 없음. 텍스트를 수정하려면 새로운 NSAttributedString을 생성해야함.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="underline" /><category term="Strikethrough" /><summary type="html"><![CDATA[Label에 밑줄(underline), 취소선(Strikethrough) 긋기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 푸드 파이트 대회</title><link href="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 푸드 파이트 대회" /><published>2024-03-22T00:00:00+09:00</published><updated>2024-03-22T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="underline" /><category term="Strikethrough" /><summary type="html"><![CDATA[Label에 밑줄(underline), 취소선(Strikethrough) 긋기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 19일차</title><link href="http://localhost:4000/TIL/til19/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 19일차" /><published>2024-03-22T00:00:00+09:00</published><updated>2024-03-22T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til19</id><content type="html" xml:base="http://localhost:4000/TIL/til19/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-22-til19.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>map, enumerated, reversed, reduce 골고루 사용해서 풀었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" target="_blank">푸드 파이트 대회</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>오늘은 개인 과제 키워드 중 하나인 AlertController에 대해서 공부하고 실습했다.</li>
+  <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다.
+    <ul>
+      <li><a href="https://limlogging.github.io/UIKit/UIAlertController/" target="_blank">얼러트 컨트롤러</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>table View Cell에서 처리한 데이터를 주고 받는 공부가 필요한 것 같다.</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>키워드 하나씩 실습 하기</li>
+  <li>과제 풀기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 19일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 푸드 파이트 대회</title><link href="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 푸드 파이트 대회" /><published>2024-03-22T00:00:00+09:00</published><updated>2024-03-22T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C</id><content type="html" xml:base="http://localhost:4000/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>수웅이는 매달 주어진 음식을 빨리 먹는 푸드 파이트 대회를 개최합니다. 이 대회에서 선수들은 1대 1로 대결하며, 매 대결마다 음식의 종류와 양이 바뀝니다. 대결은 준비된 음식들을 일렬로 배치한 뒤, 한 선수는 제일 왼쪽에 있는 음식부터 오른쪽으로, 다른 선수는 제일 오른쪽에 있는 음식부터 왼쪽으로 순서대로 먹는 방식으로 진행됩니다. 중앙에는 물을 배치하고, 물을 먼저 먹는 선수가 승리하게 됩니다.</li>
   <li>이때, 대회의 공정성을 위해 두 선수가 먹는 음식의 종류와 양이 같아야 하며, 음식을 먹는 순서도 같아야 합니다. 또한, 이번 대회부터는 칼로리가 낮은 음식을 먼저 먹을 수 있게 배치하여 선수들이 음식을 더 잘 먹을 수 있게 하려고 합니다. 이번 대회를 위해 수웅이는 음식을 주문했는데, 대회의 조건을 고려하지 않고 음식을 주문하여 몇 개의 음식은 대회에 사용하지 못하게 되었습니다.</li>
@@ -687,162 +905,7 @@
 <ul>
   <li>map, enumerated, reversed, reduce에 조금 익숙해졌고 첫번째 값을 버릴 수 있는 dropFirst를 알았다.</li>
   <li>다른 사람들은 append를 잘 사용하지 않는 것 같다. 다른 방법에 대해서도 찾아보고 익숙해져야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="푸드 파이트 대회" /><summary type="html"><![CDATA[[프로그래머스/Swift] 푸드 파이트 대회]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 19일차</title><link href="http://localhost:4000/TIL/til19/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 19일차" /><published>2024-03-22T00:00:00+09:00</published><updated>2024-03-22T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til19</id><content type="html" xml:base="http://localhost:4000/TIL/til19/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-22-til19.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>map, enumerated, reversed, reduce 골고루 사용해서 풀었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%ED%91%B8%EB%93%9C%ED%8C%8C%EC%9D%B4%ED%8A%B8%EB%8C%80%ED%9A%8C/" target="_blank">푸드 파이트 대회</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>오늘은 개인 과제 키워드 중 하나인 AlertController에 대해서 공부하고 실습했다.</li>
-  <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다.
-    <ul>
-      <li><a href="https://limlogging.github.io/UIKit/UIAlertController/" target="_blank">얼러트 컨트롤러</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>table View Cell에서 처리한 데이터를 주고 받는 공부가 필요한 것 같다.</li>
-  <li>알고리즘 문제 풀기</li>
-  <li>키워드 하나씩 실습 하기</li>
-  <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 19일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 가장 가까운 같은 글자</title><link href="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 가장 가까운 같은 글자" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B0%80%EC%9E%A5%EA%B0%80%EA%B9%8C%EC%9A%B4%EA%B0%99%EC%9D%80%EA%B8%80%EC%9E%90/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서, 자신과 가장 가까운 곳에 있는 같은 글자가 어디 있는지 알고 싶습니다.
-예를 들어, s=”banana”라고 할 때,  각 글자들을 왼쪽부터 오른쪽으로 읽어 나가면서 다음과 같이 진행할 수 있습니다.
-    <ul>
-      <li>b는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>a는 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>n은 처음 나왔기 때문에 자신의 앞에 같은 글자가 없습니다. 이는 -1로 표현합니다.</li>
-      <li>a는 자신보다 두 칸 앞에 a가 있습니다. 이는 2로 표현합니다.</li>
-      <li>n도 자신보다 두 칸 앞에 n이 있습니다. 이는 2로 표현합니다.</li>
-      <li>a는 자신보다 두 칸, 네 칸 앞에 a가 있습니다. 이 중 가까운 것은 두 칸 앞이고, 이는 2로 표현합니다.</li>
-    </ul>
-  </li>
-  <li>따라서 최종 결과물은 [-1, -1, -1, 2, 2, 2]가 됩니다.</li>
-  <li>
-    <p>문자열 s이 주어질 때, 위와 같이 정의된 연산을 수행하는 함수 solution을 완성해주세요.</p>
-  </li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/142086" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ s의 길이 ≤ 10,000
-    <ul>
-      <li>s은 영어 소문자로만 이루어져 있습니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“banana”</td>
-      <td>[-1, -1, -1, 2, 2, 2]</td>
-    </tr>
-    <tr>
-      <td>“foobar”</td>
-      <td>[-1, -1, 1, -1, -1, -1]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>지문과 같습니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>설명 생략</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">chArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Character</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">numArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">chIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="c1">//초기값 0으로 하면 0번째 문자가 중복되면 계산 못해서 임의로 -100</span>
-    
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span> <span class="k">in</span> <span class="n">s</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//처음에는 무조건 배열 추가</span>
-        <span class="k">if</span> <span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-            <span class="c1">//print("-1")</span>
-            <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">//따로 저장한 배열 확인</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">chArr</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-                <span class="c1">//같은 값 있으면 마지막 index 확인</span>
-                <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="n">value</span> <span class="p">{</span>
-                    <span class="n">chIndex</span> <span class="o">=</span> <span class="n">j</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-            <span class="c1">//없으면 추가.</span>
-            <span class="k">if</span> <span class="n">chIndex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">100</span> <span class="p">{</span>
-                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-                <span class="c1">//print("-1")</span>
-                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="c1">//있으면 전체 수 - 인덱스 위치</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="n">numArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">chArr</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">chIndex</span><span class="p">)</span>
-                <span class="n">chArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>
-                                
-                <span class="n">chIndex</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-    <span class="c1">//print("chArr: \(chArr)")</span>
-    <span class="k">return</span> <span class="n">numArr</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">s</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">word</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:]</span>
-    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">in</span> <span class="kt">Array</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">beforeIndex</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">beforeIndex</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-
-        <span class="n">word</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">result</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="의견">의견</h1>
-<ul>
-  <li>난 문자가 존재하는지 찾기 위해서 반복문을 한번 더 썼는데 딕셔너리로 푼 사람들이 많은 것 같다.</li>
-  <li>반복문 줄이는 연습을 해보자 …</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="가장 가까운 같은 글자" /><summary type="html"><![CDATA[[프로그래머스/Swift] 가장 가까운 같은 글자]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="푸드 파이트 대회" /><summary type="html"><![CDATA[[프로그래머스/Swift] 푸드 파이트 대회]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
 <ul>
   <li>iOS 애플리케이션에서 경고 메시지, 알림 창, 또는 사용자에게 선택 옵션을 제공하는 팝업 창을 표시하는 데 사용되는 클래스입니다.</li>
   <li>UIKit 프레임워크에서 제공되며, 모든 iOS 버전에서 사용할 수 있습니다.</li>
