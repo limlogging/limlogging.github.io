@@ -629,6 +629,12 @@ var store = [{
         "url": "/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/",
         "teaser": null
       },{
+        "title": "[UIKit] NavigationBar에 Edit 버튼 추가하기",
+        "excerpt":"Navigation Bar에 Edit 버튼 추가하기 navigation과 연결된 상태에서 viewDidLoad에 코드를 추가합니다. override func viewDidLoad() { super.viewDidLoad() myTodoListTableView.dataSource = self myTodoListTableView.delegate = self //상단 Navigation bar 왼쪽에 Edit 버튼 추가 self.navigationItem.leftBarButtonItem = self.editButtonItem } 실행 화면 네비게이션 바 왼쪽에 edit 버튼이 생기고 edit 버튼을 누르면 done으로 바뀝니다. edit 버튼을 선택 시...","categories": ["UIKit"],
+        "tags": ["swift","iOS","Navigation","Bar","Edit","Button"],
+        "url": "/UIKit/NavigationBarEditButton/",
+        "teaser": null
+      },{
         "title": "[UIKit] Tableview에서 Swipe로 Row 삭제하기",
         "excerpt":"Tableview에서 Swipe로 Row 삭제하기 TableView에서 Row을 움직여 삭제할 수 있습니다. 예제 코드 // MARK: - TableView 스와이프(swipe) 삭제 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { // 편집 스타일이 삭제인 경우 if editingStyle == .delete { //해당 indexPath에 위치한 데이터를 배열에서 제거 myToDoListArray.remove(at: indexPath.row) // 테이블 뷰에서...","categories": ["UIKit"],
         "tags": ["swift","iOS","TableView Swipe Delete"],

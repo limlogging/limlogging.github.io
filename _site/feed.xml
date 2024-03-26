@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T16:47:00+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Tableview에서 Swipe로 Row 삭제하기</title><link href="http://localhost:4000/UIKit/TableViewSwipeDelete/" rel="alternate" type="text/html" title="[UIKit] Tableview에서 Swipe로 Row 삭제하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/TableViewSwipeDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/TableViewSwipeDelete/"><![CDATA[<h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T18:16:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] Tableview에서 Swipe로 Row 삭제하기</title><link href="http://localhost:4000/UIKit/TableViewSwipeDelete/" rel="alternate" type="text/html" title="[UIKit] Tableview에서 Swipe로 Row 삭제하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/TableViewSwipeDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/TableViewSwipeDelete/"><![CDATA[<h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
 <ul>
   <li>TableView에서 Row을 움직여 삭제할 수 있습니다.</li>
 </ul>
@@ -30,6 +30,7 @@
 <h1 id="버튼-이름-변경">버튼 이름 변경</h1>
 <ul>
   <li>버튼 이름 변경 (Delete -&gt; 삭제)</li>
+  <li>UITableViewDelegate 채택해야 사용 가능</li>
 </ul>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 삭제 글자 변경 Delete -&gt; 삭제</span>
@@ -98,188 +99,7 @@
       </li>
     </ul>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[UIKit] Tableview Cell에서 Delegate 사용</title><link href="http://localhost:4000/UIKit/UITableViewCellDelegate/" rel="alternate" type="text/html" title="[UIKit] Tableview Cell에서 Delegate 사용" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableViewCellDelegate</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableViewCellDelegate/"><![CDATA[<h1 id="tableviewcell과-viewcontroller와-상호작용">TableViewCell과 ViewController와 상호작용</h1>
-<ul>
-  <li>TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다.</li>
-  <li>Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다.</li>
-  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다.</li>
-</ul>
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate1.mov" type="video/mp4" />
-</video>
-
-<h1 id="예제-코드">예제 코드</h1>
-<ul>
-  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않도록하는 예제입니다.</li>
-</ul>
-
-<h2 id="1-스위치-valuechanged-액션함수-생성">1. 스위치 ValueChanged 액션함수 생성</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="2-스위치-delegate-프로토콜-정의">2. 스위치 Delegate 프로토콜 정의</h2>
-<ul>
-  <li>스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 Cell class에 정의합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
-
-<span class="c1">//스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 정의</span>
-<span class="kd">protocol</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">:</span> <span class="kt">AnyObject</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="c1">// 스위치 값 변경 시 호출할 메서드</span>
-<span class="p">}</span>
-
-<span class="kd">class</span> <span class="kt">MyToDoListCell</span><span class="p">:</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
-</code></pre></div></div>
-
-<h2 id="3-스위치-delegate-선언">3. 스위치 Delegate 선언</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate를 선언합니다.</span>
-<span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">?</span>   <span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate</span>
-
-<span class="k">override</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="o">.</span><span class="nf">awakeFromNib</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="4-스위치-valuechanged-액션함수-수정">4. 스위치 ValueChanged 액션함수 수정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// delegate를 통해 스위치 값 변경 이벤트를 처리할 메서드를 호출합니다.</span>
-    <span class="n">delegate</span><span class="p">?</span><span class="o">.</span><span class="nf">switchValueChanged</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">isOn</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="5-viewcontroller에서-스위치-델리게이트-채택">5. ViewController에서 스위치 델리게이트 채택</h2>
-<ul>
-  <li>ViewController를 확장하여 스위치 델리게이트 채택</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
-<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
-    <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
-    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
-          <span class="o">&lt;</span><span class="k">#code</span><span class="err">#</span><span class="o">&gt;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="6-cell의-인덱스를-구하고-스위치-bool-값을-배열에-반영">6. Cell의 인덱스를 구하고 스위치 Bool 값을 배열에 반영</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
-<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
-  <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
-  <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//해당 셀의 인덱스 가져오기</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span>
-    <span class="p">}</span>
-    <span class="c1">// 스위치 값을 배열에 반영</span>
-    <span class="c1">//ViewController에 선언한 myToDoListArray 배열에 변경된 스위치 값 설정  </span>
-    <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="7-️️️-스위치-값-변경-이벤트-처리를-위한-delegate-설정">7. ⭐️⭐️⭐️ 스위치 값 변경 이벤트 처리를 위한 Delegate 설정</h2>
-<ul>
-  <li>cellForRowAt 함수 리턴 부분 위에 cell.delegate = self를 추가합니다.</li>
-  <li>셀에서 발생한 이벤트를 뷰 컨트롤러에서 처리할 수 있도록 연결합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
-<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
-    <span class="c1">//다른코드 생략 </span>
-    <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
-    <span class="k">return</span> <span class="n">cell</span>
-<span class="p">}</span> 
-</code></pre></div></div>
-
-<h2 id="8-실행화면">8. 실행화면</h2>
-<ul>
-  <li>스위치 변경 시 배열의 값도 변경하여 데이터를 추가해도 스위치가 초기화되지 않습니다.</li>
-</ul>
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate2.mov" type="video/mp4" />
-</video>
-
-<h1 id="스위치-토글-시-취소선strikethrough-추가">스위치 토글 시 취소선(strikeThrough) 추가</h1>
-<h2 id="1-string-확장-메서드-구현">1. String 확장 메서드 구현</h2>
-<ul>
-  <li><a href="https://limlogging.github.io/UIKit/underlineAndStrikethrough/" target="_blank">참고: [UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</a></li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - String 확장(extension) 메서드에 취소선 구현</span>
-<span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">strikeThrough</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
-        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
-        <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
-        <span class="c1">// 전체 문자열에 취소선 스타일 속성을 추가</span>
-        <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">attributeString</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="2-cellforrowat-메서드-수정">2. cellForRowAt 메서드 수정</h2>
-<ul>
-  <li>switch 값에 따른 취소선 적용 및 취소선 취소</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
-    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
-        <span class="c1">// 다른코드 생략 </span>
-
-        <span class="c1">//title 취소선 - switch 값에 따라 취소선 또는 일반 Text</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">myToDoIsCompleteSwitch</span><span class="o">.</span><span class="n">isOn</span> <span class="p">{</span>
-            <span class="c1">// 해당 텍스트에 취소선을 적용한 NSAttributedString을 생성</span>
-            <span class="k">let</span> <span class="nv">attributedText</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="o">.</span><span class="nf">strikeThrough</span><span class="p">()</span>
-            <span class="c1">// 취소선이 적용된 NSAttributedString을 텍스트로 설정</span>
-            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">attributedText</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">//일반 Text - 취소선 없애기</span>
-            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="p">)</span>
-        <span class="p">}</span>
-
-        <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
-        <span class="k">return</span> <span class="n">cell</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="3-cell-새로고침-추가">3. Cell 새로고침 추가</h2>
-<ul>
-  <li>스위치 변경 후 label에 취소선을 적용시키도록 새로고침 추가</li>
-  <li>myTodoListTableView.reloadRows(at: [indexPath], with: .automatic)</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
-<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//해당 셀의 인덱스 가져여오기</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span>
-        <span class="p">}</span>        
-        <span class="c1">// 스위치 값을 배열에 반영</span>
-        <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
-        <span class="c1">// 스위치가 변경될 때마다 테이블 뷰의 해당 셀만 다시 로드, 취소선 때문에</span>
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">automatic</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h2 id="4-실행화면">4. 실행화면</h2>
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate3.mov" type="video/mp4" />
-</video>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>데이터를 주는 곳에서 델리게이트를 만들고 데이터를 받는 곳에서 델리게이터를 채택하고 사용
-    <ol>
-      <li>Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행</li>
-      <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
-    </ol>
-  </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 명예의 전당</title><link href="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 명예의 전당" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 명예의 전당</title><link href="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 명예의 전당" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>“명예의 전당”이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게 점수를 부여합니다. 매일 출연한 가수의 점수가 지금까지 출연 가수들의 점수 중 상위 k번째 이내이면 해당 가수의 점수를 명예의 전당이라는 목록에 올려 기념합니다. 즉 프로그램 시작 이후 초기에 k일까지는 모든 출연 가수의 점수가 명예의 전당에 오르게 됩니다. k일 다음부터는 출연 가수의 점수가 기존의 명예의 전당 목록의 k번째 순위의 가수 점수보다 더 높으면, 출연 가수의 점수가 명예의 전당에 오르게 되고 기존의 k번째 순위의 점수는 명예의 전당에서 내려오게 됩니다.</li>
   <li>이 프로그램에서는 매일 “명예의 전당”의 최하위 점수를 발표합니다. 예를 들어, k = 3이고, 7일 동안 진행된 가수의 점수가 [10, 100, 20, 150, 1, 100, 200]이라면, 명예의 전당에서 발표된 점수는 아래의 그림과 같이 [10, 10, 10, 20, 20, 100, 100]입니다.</li>
@@ -482,7 +302,244 @@
 <ul>
   <li>런타임 에러가 발생해서 제한사항을 추가했다. 보통 없어도 통과인데 간혹 제한사항 추가해야하는 문제가 있다.</li>
   <li>대부분 비슷한 풀이인데 짧게 푼 코드를 찾았다. 다른 사람 코드로 또 배우는 중..</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="명예의 전당" /><summary type="html"><![CDATA[[프로그래머스/Swift] 명예의 전당]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="명예의 전당" /><summary type="html"><![CDATA[[프로그래머스/Swift] 명예의 전당]]></summary></entry><entry><title type="html">[UIKit] Tableview Cell에서 Delegate 사용</title><link href="http://localhost:4000/UIKit/UITableViewCellDelegate/" rel="alternate" type="text/html" title="[UIKit] Tableview Cell에서 Delegate 사용" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UITableViewCellDelegate</id><content type="html" xml:base="http://localhost:4000/UIKit/UITableViewCellDelegate/"><![CDATA[<h1 id="tableviewcell과-viewcontroller와-상호작용">TableViewCell과 ViewController와 상호작용</h1>
+<ul>
+  <li>TableViewCell에는 ViewController에서 가져온 데이터를 보여줍니다.</li>
+  <li>Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다.</li>
+  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다.</li>
+</ul>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate1.mov" type="video/mp4" />
+</video>
+
+<h1 id="예제-코드">예제 코드</h1>
+<ul>
+  <li>Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않도록하는 예제입니다.</li>
+</ul>
+
+<h2 id="1-스위치-valuechanged-액션함수-생성">1. 스위치 ValueChanged 액션함수 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-스위치-delegate-프로토콜-정의">2. 스위치 Delegate 프로토콜 정의</h2>
+<ul>
+  <li>스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 Cell class에 정의합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="c1">//스위치 값이 변경될때마다 해당 정보를 View Controller로 전달 할 수 있는 프로토콜을 정의</span>
+<span class="kd">protocol</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">:</span> <span class="kt">AnyObject</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="c1">// 스위치 값 변경 시 호출할 메서드</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="kt">MyToDoListCell</span><span class="p">:</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h2 id="3-스위치-delegate-선언">3. 스위치 Delegate 선언</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate를 선언합니다.</span>
+<span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span><span class="p">?</span>   <span class="c1">// 스위치 값 변경 이벤트를 처리할 delegate</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">awakeFromNib</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">awakeFromNib</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-스위치-valuechanged-액션함수-수정">4. 스위치 ValueChanged 액션함수 수정</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISwitch</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// delegate를 통해 스위치 값 변경 이벤트를 처리할 메서드를 호출합니다.</span>
+    <span class="n">delegate</span><span class="p">?</span><span class="o">.</span><span class="nf">switchValueChanged</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="n">sender</span><span class="o">.</span><span class="n">isOn</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="5-viewcontroller에서-스위치-델리게이트-채택">5. ViewController에서 스위치 델리게이트 채택</h2>
+<ul>
+  <li>ViewController를 확장하여 스위치 델리게이트 채택</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+    <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+          <span class="o">&lt;</span><span class="k">#code</span><span class="err">#</span><span class="o">&gt;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="6-cell의-인덱스를-구하고-스위치-bool-값을-배열에-반영">6. Cell의 인덱스를 구하고 스위치 Bool 값을 배열에 반영</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+  <span class="c1">//필수메서드를 구현하라고 에러가 발생하고 에러를 선택하면 Cell 클래스에서 만들어 놓은 함수가 만들어진다. </span>
+  <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//해당 셀의 인덱스 가져오기</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="c1">// 스위치 값을 배열에 반영</span>
+    <span class="c1">//ViewController에 선언한 myToDoListArray 배열에 변경된 스위치 값 설정  </span>
+    <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="7-️️️-스위치-값-변경-이벤트-처리를-위한-delegate-설정">7. ⭐️⭐️⭐️ 스위치 값 변경 이벤트 처리를 위한 Delegate 설정</h2>
+<ul>
+  <li>cellForRowAt 함수 리턴 부분 위에 cell.delegate = self를 추가합니다.</li>
+  <li>셀에서 발생한 이벤트를 뷰 컨트롤러에서 처리할 수 있도록 연결합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
+<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="c1">//다른코드 생략 </span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<h2 id="8-실행화면">8. 실행화면</h2>
+<ul>
+  <li>스위치 변경 시 배열의 값도 변경하여 데이터를 추가해도 스위치가 초기화되지 않습니다.</li>
+</ul>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate2.mov" type="video/mp4" />
+</video>
+
+<h1 id="스위치-토글-시-취소선strikethrough-추가">스위치 토글 시 취소선(strikeThrough) 추가</h1>
+<h2 id="1-string-확장-메서드-구현">1. String 확장 메서드 구현</h2>
+<ul>
+  <li><a href="https://limlogging.github.io/UIKit/underlineAndStrikethrough/" target="_blank">참고: [UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</a></li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - String 확장(extension) 메서드에 취소선 구현</span>
+<span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">strikeThrough</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
+        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
+        <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="c1">// 전체 문자열에 취소선 스타일 속성을 추가</span>
+        <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">attributeString</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-cellforrowat-메서드-수정">2. cellForRowAt 메서드 수정</h2>
+<ul>
+  <li>switch 값에 따른 취소선 적용 및 취소선 취소</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView Row에서 보여줄 컨텐츠</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+        <span class="c1">// 다른코드 생략 </span>
+
+        <span class="c1">//title 취소선 - switch 값에 따라 취소선 또는 일반 Text</span>
+        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">myToDoIsCompleteSwitch</span><span class="o">.</span><span class="n">isOn</span> <span class="p">{</span>
+            <span class="c1">// 해당 텍스트에 취소선을 적용한 NSAttributedString을 생성</span>
+            <span class="k">let</span> <span class="nv">attributedText</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="o">.</span><span class="nf">strikeThrough</span><span class="p">()</span>
+            <span class="c1">// 취소선이 적용된 NSAttributedString을 텍스트로 설정</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">attributedText</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//일반 Text - 취소선 없애기</span>
+            <span class="n">cell</span><span class="o">.</span><span class="n">myToDoTitleLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="n">cell</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//스위치 값 변경 이벤트 처리를 위한 delegate 설정</span>
+        <span class="k">return</span> <span class="n">cell</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-cell-새로고침-추가">3. Cell 새로고침 추가</h2>
+<ul>
+  <li>스위치 변경 후 label에 취소선을 적용시키도록 새로고침 추가</li>
+  <li>myTodoListTableView.reloadRows(at: [indexPath], with: .automatic)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 스위치 변경 이벤트 처리를 위한 Delegate 채택</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">MyToDoListCellDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">switchValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">MyToDoListCell</span><span class="p">,</span> <span class="nv">isOn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//해당 셀의 인덱스 가져여오기</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">indexPath</span> <span class="o">=</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">indexPath</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cell</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>        
+        <span class="c1">// 스위치 값을 배열에 반영</span>
+        <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span> <span class="o">=</span> <span class="n">isOn</span>
+        <span class="c1">// 스위치가 변경될 때마다 테이블 뷰의 해당 셀만 다시 로드, 취소선 때문에</span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">automatic</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="4-실행화면">4. 실행화면</h2>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate3.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>데이터를 주는 곳에서 델리게이트를 만들고 데이터를 받는 곳에서 델리게이터를 채택하고 사용
+    <ol>
+      <li>Cell클래스의 @IBAction func switchValueChanged(_ sender: UISwitch) 함수 먼저 실행</li>
+      <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
+    </ol>
+  </li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[UIKit] NavigationBar에 Edit 버튼 추가하기</title><link href="http://localhost:4000/UIKit/NavigationBarEditButton/" rel="alternate" type="text/html" title="[UIKit] NavigationBar에 Edit 버튼 추가하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/NavigationBarEditButton</id><content type="html" xml:base="http://localhost:4000/UIKit/NavigationBarEditButton/"><![CDATA[<h1 id="navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</h1>
+<ul>
+  <li>navigation과 연결된 상태에서 viewDidLoad에 코드를 추가합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+        
+        <span class="c1">//상단 Navigation bar 왼쪽에 Edit 버튼 추가</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">editButtonItem</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="실행-화면">실행 화면</h1>
+<ul>
+  <li>네비게이션 바 왼쪽에 edit 버튼이 생기고 edit 버튼을 누르면 done으로 바뀝니다.</li>
+  <li>edit 버튼을 선택 시 아무런 변화가 없습니다.</li>
+</ul>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-NavigationBarEditButton1.mov" type="video/mp4" />
+</video>
+
+<h1 id="delegate-상속-후-setediting-메서드를-추가">Delegate 상속 후 setEditing 메서드를 추가</h1>
+<ul>
+  <li>UITableViewDelegate를 채택하고 setEditing 메서드를 추가합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">setEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">editing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//부모클래스 편집 모드 설정에 관련된 작업을 수행, 없으면 Done 버튼 사라짐 </span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="n">editing</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="n">animated</span><span class="p">)</span> 
+        
+        <span class="c1">//사용자가 편집 모드로 전환할 때 테이블 뷰의 셀을 편집할 수 있도록 허용하거나 허용하지 않도록 설정</span>
+        <span class="c1">//myTodoListTableView를 편집모드로 변경할 수 있도록 설정 </span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="n">editing</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>관련 이벤트가 없으면 ⛔️ 버튼을 클릭하면 아무런 변화가 없습니다.</li>
+  <li><a href="https://limlogging.github.io/UIKit/TableViewSwipeDelete/" target="_blank">삭제기능 바로가기</a></li>
+</ul>
+
+<h1 id="실행-화면-1">실행 화면</h1>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-NavigationBarEditButton2.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>Navigation Bar에 버튼을 추가하고 TableView Delegate를 채택하여 TableView 편집모드 구현가능</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Navigation" /><category term="Bar" /><category term="Edit" /><category term="Button" /><summary type="html"><![CDATA[NavigationBar에 Edit 버튼 추가하고 TableView row삭제하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-25-til20.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -997,119 +1054,4 @@
 <ul>
   <li>map, enumerated, reversed, reduce에 조금 익숙해졌고 첫번째 값을 버릴 수 있는 dropFirst를 알았다.</li>
   <li>다른 사람들은 append를 잘 사용하지 않는 것 같다. 다른 방법에 대해서도 찾아보고 익숙해져야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="푸드 파이트 대회" /><summary type="html"><![CDATA[[프로그래머스/Swift] 푸드 파이트 대회]]></summary></entry><entry><title type="html">[UIKit] 얼러트 컨트롤러(UIAlertController)</title><link href="http://localhost:4000/UIKit/UIAlertController/" rel="alternate" type="text/html" title="[UIKit] 얼러트 컨트롤러(UIAlertController)" /><published>2024-03-21T00:00:00+09:00</published><updated>2024-03-21T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UIAlertController</id><content type="html" xml:base="http://localhost:4000/UIKit/UIAlertController/"><![CDATA[<h1 id="얼러트-컨트롤러uialertcontroller란">얼러트 컨트롤러(UIAlertController)란?</h1>
-<ul>
-  <li>iOS 애플리케이션에서 경고 메시지, 알림 창, 또는 사용자에게 선택 옵션을 제공하는 팝업 창을 표시하는 데 사용되는 클래스입니다.</li>
-  <li>UIKit 프레임워크에서 제공되며, 모든 iOS 버전에서 사용할 수 있습니다.</li>
-</ul>
-
-<h1 id="스타일">스타일</h1>
-<ul>
-  <li>.alert (경고 메시지 / 알림)</li>
-  <li>.actionSheet (사용자 선택 옵션 목록)</li>
-</ul>
-
-<h1 id="예제-코드">예제 코드</h1>
-<h2 id="1-버튼-추가">1. 버튼 추가</h2>
-<ul>
-  <li>버튼을 선택했을 때 Alert 창을 띄우기 위해서 버튼을 추가합니다.</li>
-  <li>“alert 테스트” 버튼을 추가했습니다.
-<img src="/assets/images/categories/uikit/2024-03-21-alertTestButton.png" alt="" /></li>
-</ul>
-
-<h2 id="2-uialertcontroller-생성">2. UIAlertController 생성</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">alertTestButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//제목은 할일 추가로, 메시지는 할일을 추가하세요로 표시</span>
-    <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"할일 추가"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"할일을 추가하세요"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="3-uialertcontroller를-화면에-표시-present">3. UIAlertController를 화면에 표시 (present)</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">alertTestButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"할 일 추가"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"할 일을 추가하세요"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-
-    <span class="c1">//present 메서드를 사용하여 화면에 모달로 표시, 추가하지 않으면 안보임</span>
-    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="4-alert-동작-확인">4. alert 동작 확인</h2>
-<ul>
-  <li>preferredStyle에 따라서 스타일이 달라집니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">preferredStyle: .alert</th>
-      <th style="text-align: center">preferredStyle: .actionSheet</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-21-preferredStyleAlert.png" /></td>
-      <td style="text-align: center"><img src="/assets/images/categories/uikit/2024-03-21-preferredStyleActionSheet.png" /></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="5-alert에-취소-버튼-추가">5. alert에 취소 버튼 추가</h2>
-<ul>
-  <li>alert 창에서 버튼이 없어서 창을 닫을 수가 없습니다.</li>
-  <li>취소 버튼을 추가합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">alertTestButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"할 일 추가"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"할 일을 추가하세요"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-
-  <span class="c1">// "취소" 버튼을 생성합니다. 제목은 "취소"로, 스타일은 .cancel로 설정합니다.        </span>
-  <span class="k">let</span> <span class="nv">cancelButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"취소"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-  <span class="c1">//생성한 "취소" 버튼을 UIAlertController에 추가합니다.</span>
-  <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancelButton</span><span class="p">)</span>
-    
-  <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>취소 버튼이 생기고 취소가 가능해졌습니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-alertCancelButton.png" alt="" /></li>
-</ul>
-
-<h2 id="6-alert에-textfield-추가">6. alert에 TextField 추가</h2>
-<ul>
-  <li>UIAlertController의 addTextField를 사용하여 TextField를 추가합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alertController</span><span class="o">.</span><span class="n">addTextField</span> <span class="p">{</span> <span class="n">textField</span> <span class="k">in</span>
-  <span class="n">textField</span><span class="o">.</span><span class="n">placeholder</span> <span class="o">=</span> <span class="s">"할 일을 입력하세요."</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>텍스트 필드를 확인 할 수 있습니다. 
-<img src="/assets/images/categories/uikit/2024-03-21-alertTextField.png" alt="" /></li>
-</ul>
-
-<h2 id="7-textfield를-처리할-추가-버튼-생성">7. TextField를 처리할 추가 버튼 생성</h2>
-<ul>
-  <li>취소 버튼 추가할때와 방법이 같습니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">addButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"추가"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> 
-<span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">addButton</span><span class="p">)</span>                
-</code></pre></div>    </div>
-  </li>
-  <li>실행해보면 버튼은 추가 됐는데 입력값을 처리할 수 없습니다.</li>
-  <li>입력 값 확인을 위해 코드를 수정합니다.
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">addButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"추가"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
-  <span class="c1">// 사용자가 입력한 값을 확인하고 처리합니다.</span>
-  <span class="k">if</span> <span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="n">alertController</span><span class="o">.</span><span class="n">textFields</span><span class="p">?</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="k">let</span> <span class="nv">text</span> <span class="o">=</span> <span class="n">textField</span><span class="o">.</span><span class="n">text</span> <span class="p">{</span>
-      <span class="nf">print</span><span class="p">(</span><span class="s">"입력된 값: </span><span class="se">\(</span><span class="n">text</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">addButton</span><span class="p">)</span>          
-</code></pre></div>    </div>
-  </li>
-  <li>값 입력 
-<img src="/assets/images/categories/uikit/2024-03-21-alertTextFieldInputValue.png" alt="" /></li>
-  <li>출력 결과 확인
-<img src="/assets/images/categories/uikit/2024-03-21-result.png" alt="" /></li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>UIAlertController를 사용하면 delegate를 사용하지 않고도 사용자의 상호작용을 처리할 수 있다 !!!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIAlertController" /><summary type="html"><![CDATA[UIAlertController - 경고 메시지, 알림 창, 사용자 선택 옵션 팝업 창 제공]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="푸드 파이트 대회" /><summary type="html"><![CDATA[[프로그래머스/Swift] 푸드 파이트 대회]]></summary></entry></feed>

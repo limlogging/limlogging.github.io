@@ -43,6 +43,7 @@ comments: true
 
 # 버튼 이름 변경 
 - 버튼 이름 변경 (Delete -> 삭제) 
+- UITableViewDelegate 채택해야 사용 가능 
 
 ```swift
     // MARK: - 삭제 글자 변경 Delete -> 삭제
