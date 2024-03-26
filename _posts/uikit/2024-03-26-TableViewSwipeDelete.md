@@ -15,7 +15,6 @@ comments: true
 
 # Tableview에서 Swipe로 Row 삭제하기
 - TableView에서 Row을 움직여 삭제할 수 있습니다. 
-- UITableViewDataSource를 채택하고 사용합니다. 
 
 # 예제 코드 
 ```swift
