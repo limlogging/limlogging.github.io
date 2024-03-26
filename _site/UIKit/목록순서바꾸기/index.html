@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택 - limlogging Devlog</title>
-<meta name="description" content="UISegmentedControl - 여러개의 세그먼트로 구성된 컨트롤로 각 세그먼트를 선택하여 원하는 옵션을 선택할 수 있는 UI 요소">
+<!-- begin _includes/seo.html --><title>[UIKit] TableView 목록 순서 바꾸기 - limlogging Devlog</title>
+<meta name="description" content="TableView 목록 순서 바꾸기">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택">
-<meta property="og:url" content="http://localhost:4000/UIKit/UISegmentedControl/">
+<meta property="og:title" content="[UIKit] TableView 목록 순서 바꾸기">
+<meta property="og:url" content="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/">
 
 
-  <meta property="og:description" content="UISegmentedControl - 여러개의 세그먼트로 구성된 컨트롤로 각 세그먼트를 선택하여 원하는 옵션을 선택할 수 있는 UI 요소">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-18T00:00:00+09:00">
+  <meta property="og:description" content="TableView 목록 순서 바꾸기">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-03-26T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/UIKit/UISegmentedControl/">
+
+<link rel="canonical" href="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/">
 
 
 
@@ -400,16 +400,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택">
-    <meta itemprop="description" content="UISegmentedControl - 여러개의 세그먼트로 구성된 컨트롤로 각 세그먼트를 선택하여 원하는 옵션을 선택할 수 있는 UI 요소">
-    <meta itemprop="datePublished" content="2024-03-18T00:00:00+09:00">
+    <meta itemprop="headline" content="[UIKit] TableView 목록 순서 바꾸기">
+    <meta itemprop="description" content="TableView 목록 순서 바꾸기">
+    <meta itemprop="datePublished" content="2024-03-26T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/UIKit/UISegmentedControl/" class="u-url" itemprop="url">[UIKit] UISegmentedControl - 세그먼트를 선택하여 원하는 옵션을 선택
+            <a href="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" class="u-url" itemprop="url">[UIKit] TableView 목록 순서 바꾸기
 </a>
           </h1>
           
@@ -426,7 +426,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -436,8 +436,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UISegmentedControl/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UISegmentedControl/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -448,95 +448,54 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#uisegmentedcontrol">UISegmentedControl</a><ul><li><a href="#특징">특징</a></li><li><a href="#사용">사용</a></li></ul></li><li><a href="#세그먼트segment란">세그먼트(Segment)란?</a></li><li><a href="#uisegmentedcontrol-생성">UISegmentedControl 생성</a></li><li><a href="#uisegmentedcontrol-설정">UISegmentedControl 설정</a><ul><li><a href="#초기-선택된-세그먼트-인덱스-설정">초기 선택된 세그먼트 인덱스 설정</a></li><li><a href="#세그먼트-컨트롤-색상-설정">세그먼트 컨트롤 색상 설정</a></li><li><a href="#선택-표시를-유지할지-여부-설정">선택 표시를 유지할지 여부 설정</a></li><li><a href="#세그먼트-값-변경-이벤트-처리">세그먼트 값 변경 이벤트 처리</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#table-view에-목록-순서-바꾸기">Table View에 목록 순서 바꾸기</a></li><li><a href="#tableview-dalegate-채택-후-moverowat-메서드-구현">TableView Dalegate 채택 후 moveRowAt 메서드 구현</a></li><li><a href="#실행-화면">실행 화면</a></li><li><a href="#마무리">마무리</a></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="uisegmentedcontrol">UISegmentedControl</h1>
+        <h1 id="table-view에-목록-순서-바꾸기">Table View에 목록 순서 바꾸기</h1>
 <ul>
-  <li>iOS 앱에서 여러 개의 상호 배타적인 옵션 중 하나를 선택할 수 있는 컨트롤입니다.</li>
-  <li>사용자는 UISegmentedControl을 탭하여 여러 세그먼트 중 하나를 선택할 수 있습니다. 각 세그먼트는 다른 옵션을 나타내며, 사용자는 이를 탭하여 해당 옵션을 선택합니다.</li>
+  <li>navigation bar에서 Edit 버튼을 선택하고 오른쪽에 줄을 선택하고 드래그하면 순서를 변경할 수 있습니다.</li>
 </ul>
 
-<h2 id="특징">특징</h2>
-<ul>
-  <li>상호 배타적인 선택
-    <ul>
-      <li>여러 옵션 중 하나만 선택할 수 있습니다. 한 번에 한 옵션만 선택됩니다.</li>
-    </ul>
-  </li>
-  <li>시각적 표시
-    <ul>
-      <li>각 세그먼트는 사용자에게 다른 옵션을 시각적으로 표시합니다.</li>
-    </ul>
-  </li>
-  <li>값 변경 이벤트
-    <ul>
-      <li>사용자가 세그먼트를 선택할 때마다 값을 변경하는 이벤트가 발생합니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="사용">사용</h2>
-<ol>
-  <li>여러 가지 옵션 중 하나를 선택해야 하는 경우 (예: 탭 스타일 탐색 메뉴)</li>
-  <li>서로 다른 뷰 또는 데이터를 전환해야 하는 경우 (예: 세그먼트 컨트롤을 사용하여 다른 보기를 전환하는 탭 컨트롤러)</li>
-</ol>
-
-<h1 id="세그먼트segment란">세그먼트(Segment)란?</h1>
-<ul>
-  <li>세그먼트(Segment)란 일정한 단위로 분할된 부분</li>
-</ul>
-
-<h1 id="uisegmentedcontrol-생성">UISegmentedControl 생성</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Option 1"</span><span class="p">,</span> <span class="s">"Option 2"</span><span class="p">,</span> <span class="s">"Option 3"</span><span class="p">]</span>
-<span class="k">let</span> <span class="nv">segmentedControl</span> <span class="o">=</span> <span class="kt">UISegmentedControl</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
-</code></pre></div></div>
 <p><br /></p>
 
-<h1 id="uisegmentedcontrol-설정">UISegmentedControl 설정</h1>
-<h2 id="초기-선택된-세그먼트-인덱스-설정">초기 선택된 세그먼트 인덱스 설정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">segmentedControl</span><span class="o">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">//초기 선택된 세그먼트 인덱스 설정 </span>
-</code></pre></div></div>
+<h1 id="tableview-dalegate-채택-후-moverowat-메서드-구현">TableView Dalegate 채택 후 moveRowAt 메서드 구현</h1>
+<ul>
+  <li>moveRowAt 메서드에서 source / destination Index를 확인 할 수 있습니다.</li>
+</ul>
 
-<h2 id="세그먼트-컨트롤-색상-설정">세그먼트 컨트롤 색상 설정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">segmentedControl</span><span class="o">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">blue</span> 
-</code></pre></div></div>
-
-<h2 id="선택-표시를-유지할지-여부-설정">선택 표시를 유지할지 여부 설정</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">segmentedControl</span><span class="o">.</span><span class="n">isMomentary</span> <span class="o">=</span> <span class="kc">false</span> 
-</code></pre></div></div>
-
-<h2 id="세그먼트-값-변경-이벤트-처리">세그먼트 값 변경 이벤트 처리</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">segmentedControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">segmentValueChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:)),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
-<span class="cm">/*
-첫 번째 매개변수 self는 이벤트를 수신할 대상을 나타냅니다. 일반적으로는 현재의 뷰 컨트롤러를 가리킵니다.
-두 번째 매개변수 action은 이벤트가 발생했을때 호출될 메서드, @objc 어노테이션이 붙어있어야함. 
-- #selector는 Objective-C에서 메서드를 식별하는 문법 
-- @objc는 Swift 코드와 Objective-C와 상호작용하게 해줌
-세 번째 매개변수 for는 이벤트 처리기 선택, valueChange는 버튼이 눌렀을때 호출 
-*/</span>
-<span class="cm">/* .valueChange에 들어갈 수 있는 이벤트 
-.touchDown: 사용자가 스위치를 터치할 때 호출됩니다.
-.touchDownRepeat: 사용자가 스위치를 연속해서 터치할 때 호출됩니다.
-.touchDragInside: 사용자가 스위치를 내부로 드래그할 때 호출됩니다.
-.touchDragOutside: 사용자가 스위치를 외부로 드래그할 때 호출됩니다.
-.touchDragEnter: 사용자가 스위치의 영역으로 드래그할 때 호출됩니다.
-.touchDragExit: 사용자가 스위치의 영역을 벗어날 때 호출됩니다.
-.touchUpInside: 사용자가 스위치를 터치하고 놓을 때 호출됩니다. (가장 흔히 사용됨)
-.touchUpOutside: 사용자가 스위치 외부에서 터치하고 놓을 때 호출됩니다.
-.valueChanged: 스위치의 값이 변경될 때 호출됩니다. (가장 흔히 사용됨)
-.primaryActionTriggered: 주요 작업이 트리거될 때 호출됩니다. (예: 터치를 누를 때)
-.editingDidBegin: 편집이 시작될 때 호출됩니다. (예: 텍스트 필드 편집이 시작될 때)
-.editingChanged: 편집 내용이 변경될 때 호출됩니다. (예: 텍스트 필드의 텍스트가 변경될 때)
-.editingDidEnd: 편집이 종료될 때 호출됩니다. (예: 텍스트 필드 편집이 종료될 때)
-*/</span>
-
-<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">segmentValueChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UISegmentedControl</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"Selected segment index: </span><span class="se">\(</span><span class="n">sender</span><span class="o">.</span><span class="n">selectedSegmentIndex</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 목록 순서 변경</span>
+<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">moveRowAt</span> <span class="nv">sourceIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="n">to</span> <span class="nv">destinationIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//현재 row(출발지)의 cell 데이터 저장</span>
+    <span class="k">let</span> <span class="nv">sourceId</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoid</span>
+    <span class="k">let</span> <span class="nv">sourceTitle</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span>
+    <span class="k">let</span> <span class="nv">sourceIsComplete</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span>
+    
+    <span class="c1">//선택한 row 배열에서 삭제</span>
+    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+    
+    <span class="c1">//이동한 위치에 출발지 cell 데이터를 배열의 목적지 index 위치에 추가</span>
+    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="kt">ToDoList</span><span class="p">(</span><span class="nv">toDoid</span><span class="p">:</span> <span class="n">sourceId</span><span class="p">,</span> <span class="nv">toDoTitle</span><span class="p">:</span> <span class="n">sourceTitle</span><span class="p">,</span> <span class="nv">toDoIsComplete</span><span class="p">:</span> <span class="n">sourceIsComplete</span><span class="p">),</span> <span class="nv">at</span><span class="p">:</span> <span class="n">destinationIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+    
+    <span class="c1">//print("목록 변경 후: \(myToDoListArray)")</span>
+    <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>    <span class="c1">//변경사항 확인을 위해 새로고침</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="실행-화면">실행 화면</h1>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/2024-03-26-목록순서바꾸기.mov" type="video/mp4" />
+</video>
+
+<p><br /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>TableView Dalegate 채택 후 moveRowAt 메서드를 통해 순서이동을 구현할 수 있다.</li>
+</ul>
 
         
       </section>
@@ -555,9 +514,11 @@
     
       <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
     
+      <a href="/tags/#moverowat" class="page__taxonomy-item p-category" rel="tag">moveRowAt</a><span class="sep">, </span>
+    
       <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
     
-      <a href="/tags/#uisegmentedcontrol" class="page__taxonomy-item p-category" rel="tag">UISegmentedControl</a>
+      <a href="/tags/#tableview" class="page__taxonomy-item p-category" rel="tag">TableView</a>
     
     </span>
   </p>
@@ -582,7 +543,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-18T00:00:00+09:00">March 18, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-26T00:00:00+09:00">March 26, 2024</time></p>
 
       </footer>
 
@@ -591,23 +552,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UISegmentedControl+-+%EC%84%B8%EA%B7%B8%EB%A8%BC%ED%8A%B8%EB%A5%BC+%EC%84%A0%ED%83%9D%ED%95%98%EC%97%AC+%EC%9B%90%ED%95%98%EB%8A%94+%EC%98%B5%EC%85%98%EC%9D%84+%EC%84%A0%ED%83%9D%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISegmentedControl%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+TableView+%EB%AA%A9%EB%A1%9D+%EC%88%9C%EC%84%9C+%EB%B0%94%EA%BE%B8%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fuikit%2F%25EB%25AA%25A9%25EB%25A1%259D%25EC%2588%259C%25EC%2584%259C%25EB%25B0%2594%25EA%25BE%25B8%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISegmentedControl%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fuikit%2F%25EB%25AA%25A9%25EB%25A1%259D%25EC%2588%259C%25EC%2584%259C%25EB%25B0%2594%25EA%25BE%25B8%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUISegmentedControl%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fuikit%2F%25EB%25AA%25A9%25EB%25A1%259D%25EC%2588%259C%25EC%2584%259C%25EB%25B0%2594%25EA%25BE%25B8%25EA%25B8%25B0%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/UIKit/UIScrollView/" class="pagination--pager" title="[UIKit] UIScrollView - 화면에서 스크롤 가능한 영역을 제공
+      <a href="/UIKit/UITableViewCellDelegate/" class="pagination--pager" title="[UIKit] Tableview Cell에서 Delegate 사용
 ">이전</a>
     
     
-      <a href="/UIKit/UISlider/" class="pagination--pager" title="[UIKit] UISlider - 값의 범위를 가지고 사용자가 원하는 값을 선택
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -621,46 +581,6 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" rel="permalink">[UIKit] TableView 목록 순서 바꾸기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">TableView 목록 순서 바꾸기
-</p>
-  </article>
-</div>
-
         
           
 
@@ -777,6 +697,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">NavigationBar에 Edit 버튼 추가하고 TableView row삭제하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" rel="permalink">[프로그래머스/Swift] 명예의 전당
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 명예의 전당
 </p>
   </article>
 </div>

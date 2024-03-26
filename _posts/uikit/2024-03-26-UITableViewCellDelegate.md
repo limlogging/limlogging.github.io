@@ -25,6 +25,8 @@ comments: true
 - Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않도록하는 예제입니다. 
 
 ## 1. 스위치 ValueChanged 액션함수 생성 
+- Cell 클래스에 액션 함수 추가 
+
 ```swift
 // MARK: - 스위치 변경 이벤트
 @IBAction func switchValueChanged(_ sender: UISwitch) {

@@ -646,4 +646,10 @@ var store = [{
         "tags": ["swift","iOS","Tableview Cell Delegate"],
         "url": "/UIKit/UITableViewCellDelegate/",
         "teaser": null
+      },{
+        "title": "[UIKit] TableView 목록 순서 바꾸기",
+        "excerpt":"Table View에 목록 순서 바꾸기 navigation bar에서 Edit 버튼을 선택하고 오른쪽에 줄을 선택하고 드래그하면 순서를 변경할 수 있습니다. TableView Dalegate 채택 후 moveRowAt 메서드 구현 moveRowAt 메서드에서 source / destination Index를 확인 할 수 있습니다. // MARK: - 목록 순서 변경 func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath:...","categories": ["UIKit"],
+        "tags": ["swift","iOS","TableView","moveRowAt"],
+        "url": "/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/",
+        "teaser": null
       }]
