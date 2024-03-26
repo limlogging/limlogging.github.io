@@ -629,6 +629,12 @@ var store = [{
         "url": "/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 21일차",
+        "excerpt":"데일리 스크럼 알고리즘 고차함수를 많이 연습해보고 알고리즘 문제 풀어야하는데 따로 공부없이 아침에 문제를 풀다보니 많이 부족한 것 같다. 꼭 시간내서 클로저, 고차함수 다시.. 공부해봐야겠다 풀이 보기 명예의전당 개인 과제 공부 오늘은 속도를 내서 level3 삭제까지 완료하고 순서바꾸기를 추가했다. 검색 하는 도중에 자동완성이 안되는 메서드가 있었는데 TableViewController를 상속받아 파일을 생성하면 기본적으로...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til21/",
+        "teaser": null
+      },{
         "title": "[UIKit] NavigationBar에 Edit 버튼 추가하기",
         "excerpt":"Navigation Bar에 Edit 버튼 추가하기 navigation과 연결된 상태에서 viewDidLoad에 코드를 추가합니다. override func viewDidLoad() { super.viewDidLoad() myTodoListTableView.dataSource = self myTodoListTableView.delegate = self //상단 Navigation bar 왼쪽에 Edit 버튼 추가 self.navigationItem.leftBarButtonItem = self.editButtonItem } 실행 화면 네비게이션 바 왼쪽에 edit 버튼이 생기고 edit 버튼을 누르면 done으로 바뀝니다. edit 버튼을 선택 시...","categories": ["UIKit"],
         "tags": ["swift","iOS","Navigation","Bar","Edit","Button"],
