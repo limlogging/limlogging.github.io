@@ -630,7 +630,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[UIKit] Tableview에서 Swipe로 Row 삭제하기",
-        "excerpt":"Tableview에서 Swipe로 Row 삭제하기 TableView에서 Row을 움직여 삭제할 수 있습니다. UITableViewDataSource를 채택하고 사용합니다. 예제 코드 // MARK: - TableView 스와이프(swipe) 삭제 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { // 편집 스타일이 삭제인 경우 if editingStyle == .delete { //해당 indexPath에 위치한 데이터를 배열에서 제거 myToDoListArray.remove(at: indexPath.row)...","categories": ["UIKit"],
+        "excerpt":"Tableview에서 Swipe로 Row 삭제하기 TableView에서 Row을 움직여 삭제할 수 있습니다. 예제 코드 // MARK: - TableView 스와이프(swipe) 삭제 func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { // 편집 스타일이 삭제인 경우 if editingStyle == .delete { //해당 indexPath에 위치한 데이터를 배열에서 제거 myToDoListArray.remove(at: indexPath.row) // 테이블 뷰에서...","categories": ["UIKit"],
         "tags": ["swift","iOS","TableView Swipe Delete"],
         "url": "/UIKit/TableViewSwipeDelete/",
         "teaser": null

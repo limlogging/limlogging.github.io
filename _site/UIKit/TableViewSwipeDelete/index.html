@@ -426,7 +426,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -448,7 +448,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</a></li><li><a href="#예제-코드">예제 코드</a></li><li><a href="#실행화면">실행화면</a></li><li><a href="#마무리">마무리</a></li></ul>
+              <ul class="toc__menu"><li><a href="#tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</a></li><li><a href="#예제-코드">예제 코드</a></li><li><a href="#실행화면">실행화면</a></li><li><a href="#버튼-이름-변경">버튼 이름 변경</a></li><li><a href="#삭제-전-alert-버튼으로-다시-확인하기">삭제 전 alert 버튼으로 다시 확인하기</a></li><li><a href="#마무리">마무리</a></li></ul>
 
             </nav>
           </aside>
@@ -456,8 +456,9 @@
         <h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
 <ul>
   <li>TableView에서 Row을 움직여 삭제할 수 있습니다.</li>
-  <li>UITableViewDataSource를 채택하고 사용합니다.</li>
 </ul>
+
+<p><br /></p>
 
 <h1 id="예제-코드">예제 코드</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
@@ -472,10 +473,63 @@
     <span class="p">}</span>
 </code></pre></div></div>
 
+<p><br /></p>
+
 <h1 id="실행화면">실행화면</h1>
 <video width="640" height="360" controls="">
     <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
 </video>
+
+<p><br /></p>
+
+<h1 id="버튼-이름-변경">버튼 이름 변경</h1>
+<ul>
+  <li>버튼 이름 변경 (Delete -&gt; 삭제)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 삭제 글자 변경 Delete -&gt; 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">titleForDeleteConfirmationButtonForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"삭제"</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>버튼 이름 변경 확인</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete1.png" alt="alt text" /></p>
+
+<p><br /></p>
+
+<h1 id="삭제-전-alert-버튼으로-다시-확인하기">삭제 전 alert 버튼으로 다시 확인하기</h1>
+<ul>
+  <li>alert 추가 코드</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제 확인"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"삭제하시겠습니까?"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">cancelButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"취소"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">deleteButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+                <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+                <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
+                <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancelButton</span><span class="p">)</span>
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">deleteButton</span><span class="p">)</span>
+            <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">}</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>alert 창 확인</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete2.png" alt="alt text" /></p>
+
+<p><br /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>
