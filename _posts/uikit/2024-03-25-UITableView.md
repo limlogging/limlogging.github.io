@@ -70,7 +70,7 @@ extension ViewController: UITableViewDataSource {
 }
 ```
 
-- 세션은 여러개의 row로 구성된 그룹 (아래 빨간 묶음)
+- 섹션은 여러개의 row로 구성된 그룹 (아래 빨간 묶음)
 ![](/assets/images/categories/uikit/2024-03-25-tableviewSection.png)
 
 ## 4. DataSource 설정 (델리게이트 설정과 동일)

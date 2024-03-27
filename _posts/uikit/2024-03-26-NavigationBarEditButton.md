@@ -66,5 +66,38 @@ comments: true
 
 <br>
 
+# 코드가 아닌 스토리보드에 bar Button Item 추가하여 구현하기 
+## 1. bar Button Item 추가 
+- 라이브러리에서 bar button item을 추가하고 System Item을 Edit으로 변경합니다. 
+
+![](../../assets/images/categories/uikit/2024-03-26-NavigationBarEditButton1.png)
+
+## 2. 액션버튼 생성 
+- 편집모드가 아닐땐 Edit 버튼이 보여야하고 편집모드일때는 Done 버튼이 보여야합니다. 
+- 새로운 버튼 설정을 하지 않으면 button title이 edit로만 보입니다.  
+
+```swift 
+// MARK: - edit 창 선택
+@IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+    //편집 모드와 버튼의 Text는 서로 반대 
+    if myTodoListTableView.isEditing {
+        // 편집 모드 해제
+        myTodoListTableView.setEditing(false, animated: true)
+        // 새로운 UIBarButtonItem 생성하여 Edit 버튼으로 설정
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_:)))
+        navigationItem.leftBarButtonItem = editButton
+    } else {
+        // 편집 모드 활성화
+        myTodoListTableView.setEditing(true, animated: true)
+        
+        // 새로운 UIBarButtonItem 생성하여 Done 버튼으로 설정
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(editButtonTapped(_:)))
+        navigationItem.leftBarButtonItem = doneButton
+    }
+}
+``` 
+
+<br>
+
 # 마무리 
 - Navigation Bar에 버튼을 추가하고 TableView Delegate를 채택하여 TableView 편집모드 구현가능

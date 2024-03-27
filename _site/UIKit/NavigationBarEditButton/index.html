@@ -426,7 +426,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -448,7 +448,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</a></li><li><a href="#실행-화면">실행 화면</a></li><li><a href="#delegate-상속-후-setediting-메서드를-추가">Delegate 상속 후 setEditing 메서드를 추가</a></li><li><a href="#실행-화면-1">실행 화면</a></li><li><a href="#마무리">마무리</a></li></ul>
+              <ul class="toc__menu"><li><a href="#navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</a></li><li><a href="#실행-화면">실행 화면</a></li><li><a href="#delegate-상속-후-setediting-메서드를-추가">Delegate 상속 후 setEditing 메서드를 추가</a></li><li><a href="#실행-화면-1">실행 화면</a></li><li><a href="#코드가-아닌-스토리보드에-bar-button-item-추가하여-구현하기">코드가 아닌 스토리보드에 bar Button Item 추가하여 구현하기</a><ul><li><a href="#1-bar-button-item-추가">1. bar Button Item 추가</a></li><li><a href="#2-액션버튼-생성">2. 액션버튼 생성</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
 
             </nav>
           </aside>
@@ -509,6 +509,42 @@
 <video width="640" height="360" controls="">
     <source src="../../assets/video/2024-03-26-NavigationBarEditButton2.mov" type="video/mp4" />
 </video>
+
+<p><br /></p>
+
+<h1 id="코드가-아닌-스토리보드에-bar-button-item-추가하여-구현하기">코드가 아닌 스토리보드에 bar Button Item 추가하여 구현하기</h1>
+<h2 id="1-bar-button-item-추가">1. bar Button Item 추가</h2>
+<ul>
+  <li>라이브러리에서 bar button item을 추가하고 System Item을 Edit으로 변경합니다.</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-03-26-NavigationBarEditButton1.png" alt="" /></p>
+
+<h2 id="2-액션버튼-생성">2. 액션버튼 생성</h2>
+<ul>
+  <li>편집모드가 아닐땐 Edit 버튼이 보여야하고 편집모드일때는 Done 버튼이 보여야합니다.</li>
+  <li>새로운 버튼 설정을 하지 않으면 button title이 edit로만 보입니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - edit 창 선택</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">editButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//편집 모드와 버튼의 Text는 서로 반대 </span>
+    <span class="k">if</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">isEditing</span> <span class="p">{</span>
+        <span class="c1">// 편집 모드 해제</span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="c1">// 새로운 UIBarButtonItem 생성하여 Edit 버튼으로 설정</span>
+        <span class="k">let</span> <span class="nv">editButton</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">barButtonSystemItem</span><span class="p">:</span> <span class="o">.</span><span class="n">edit</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">editButtonTapped</span><span class="p">(</span><span class="nv">_</span><span class="p">:)))</span>
+        <span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="n">editButton</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 편집 모드 활성화</span>
+        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        
+        <span class="c1">// 새로운 UIBarButtonItem 생성하여 Done 버튼으로 설정</span>
+        <span class="k">let</span> <span class="nv">doneButton</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">barButtonSystemItem</span><span class="p">:</span> <span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">editButtonTapped</span><span class="p">(</span><span class="nv">_</span><span class="p">:)))</span>
+        <span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="n">doneButton</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p><br /></p>
 
