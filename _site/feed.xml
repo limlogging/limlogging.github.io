@@ -1,46 +1,174 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-26T20:26:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] TableView 목록 순서 바꾸기</title><link href="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" rel="alternate" type="text/html" title="[UIKit] TableView 목록 순서 바꾸기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/"><![CDATA[<h1 id="table-view에-목록-순서-바꾸기">Table View에 목록 순서 바꾸기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-27T11:00:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 2016년</title><link href="http://localhost:4000/algorithm/2016%EB%85%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 2016년" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/2016%EB%85%84</id><content type="html" xml:base="http://localhost:4000/algorithm/2016%EB%85%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>navigation bar에서 Edit 버튼을 선택하고 오른쪽에 줄을 선택하고 드래그하면 순서를 변경할 수 있습니다.</li>
+  <li>
+    <p>2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수, solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT 입니다. 예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 “TUE”를 반환하세요.</p>
+  </li>
+  <li>
+    <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12901" target="_blank">문제 풀기</a></p>
+  </li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>2016년은 윤년입니다.</li>
+  <li>2016년 a월 b일은 실제로 있는 날입니다. (13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>a</th>
+      <th>b</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>24</td>
+      <td>TUE</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">weekdays</span> <span class="o">=</span> <span class="p">[</span><span class="s">"SUN"</span><span class="p">,</span> <span class="s">"MON"</span><span class="p">,</span> <span class="s">"TUE"</span><span class="p">,</span> <span class="s">"WED"</span><span class="p">,</span> <span class="s">"THU"</span> <span class="p">,</span> <span class="s">"FRI"</span><span class="p">,</span> <span class="s">"SAT"</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">month</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%02d"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>   <span class="c1">//한자리인 경우 앞에 0이 붙도록 </span>
+    <span class="k">let</span> <span class="nv">day</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%02d"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>     <span class="c1">//한자리인 경우 앞에 0이 붙도록 </span>
+    
+    <span class="c1">//문자열을 날짜로 변환하기 위해 사용 </span>
+    <span class="k">let</span> <span class="nv">dateFormatter</span> <span class="o">=</span> <span class="kt">DateFormatter</span><span class="p">()</span>
+    <span class="n">dateFormatter</span><span class="o">.</span><span class="n">dateFormat</span> <span class="o">=</span> <span class="s">"yyyyMMdd"</span>
+    
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="n">dateFormatter</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"2016"</span> <span class="o">+</span> <span class="n">month</span> <span class="o">+</span> <span class="n">day</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="s">""</span> <span class="p">}</span>
+    
+    <span class="k">let</span> <span class="nv">calendar</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span>     <span class="c1">//현재 달력 가져오기 </span>
+    <span class="k">let</span> <span class="nv">weekday</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="nf">component</span><span class="p">(</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span>  <span class="c1">//요일 추출하기 </span>
+        
+    <span class="k">return</span> <span class="n">weekdays</span><span class="p">[</span><span class="n">weekday</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">a</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">b</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">w</span> <span class="o">=</span> <span class="p">[</span><span class="s">"THU"</span><span class="p">,</span> <span class="s">"FRI"</span><span class="p">,</span> <span class="s">"SAT"</span><span class="p">,</span> <span class="s">"SUN"</span><span class="p">,</span> <span class="s">"MON"</span><span class="p">,</span> <span class="s">"TUE"</span><span class="p">,</span> <span class="s">"WED"</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">monthDay</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">totalDay</span> <span class="o">=</span> <span class="n">monthDay</span><span class="p">[</span><span class="mi">0</span><span class="o">..&lt;</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+
+    <span class="k">return</span> <span class="n">w</span><span class="p">[</span><span class="n">totalDay</span> <span class="o">%</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="의견">의견</h1>
+<ul>
+  <li>이번에는 날짜 관련된 기능을 알아야 할 것 같아 바로 검색을 하고 풀었다.</li>
+  <li>좋아요 많은 다른 사람 풀이를 봤지만 2016년 기준이라 DateFormatter, Calendar를 쓰는게 년도 입력으로 확장하기에 더 맞는 방법인 것 같다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="2016년" /><summary type="html"><![CDATA[[프로그래머스/Swift] 2016년]]></summary></entry><entry><title type="html">[UIKit] Tableview에서 Swipe로 Row 삭제하기</title><link href="http://localhost:4000/UIKit/TableViewSwipeDelete/" rel="alternate" type="text/html" title="[UIKit] Tableview에서 Swipe로 Row 삭제하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/TableViewSwipeDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/TableViewSwipeDelete/"><![CDATA[<h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
+<ul>
+  <li>TableView에서 Row을 움직여 삭제할 수 있습니다.</li>
 </ul>
 
 <p><br /></p>
 
-<h1 id="tableview-dalegate-채택-후-moverowat-메서드-구현">TableView Dalegate 채택 후 moveRowAt 메서드 구현</h1>
-<ul>
-  <li>moveRowAt 메서드에서 source / destination Index를 확인 할 수 있습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 목록 순서 변경</span>
-<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">moveRowAt</span> <span class="nv">sourceIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="n">to</span> <span class="nv">destinationIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//현재 row(출발지)의 cell 데이터 저장</span>
-    <span class="k">let</span> <span class="nv">sourceId</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoid</span>
-    <span class="k">let</span> <span class="nv">sourceTitle</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span>
-    <span class="k">let</span> <span class="nv">sourceIsComplete</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span>
-    
-    <span class="c1">//선택한 row 배열에서 삭제</span>
-    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
-    
-    <span class="c1">//이동한 위치에 출발지 cell 데이터를 배열의 목적지 index 위치에 추가</span>
-    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="kt">ToDoList</span><span class="p">(</span><span class="nv">toDoid</span><span class="p">:</span> <span class="n">sourceId</span><span class="p">,</span> <span class="nv">toDoTitle</span><span class="p">:</span> <span class="n">sourceTitle</span><span class="p">,</span> <span class="nv">toDoIsComplete</span><span class="p">:</span> <span class="n">sourceIsComplete</span><span class="p">),</span> <span class="nv">at</span><span class="p">:</span> <span class="n">destinationIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
-    
-    <span class="c1">//print("목록 변경 후: \(myToDoListArray)")</span>
-    <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>    <span class="c1">//변경사항 확인을 위해 새로고침</span>
-<span class="p">}</span>
+<h1 id="예제-코드">예제 코드</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 편집 스타일이 삭제인 경우 </span>
+        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
+            <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
+            <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+            <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
+            <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+        <span class="p">}</span> 
+    <span class="p">}</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h1 id="실행-화면">실행 화면</h1>
+<h1 id="실행화면">실행화면</h1>
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-목록순서바꾸기.mov" type="video/mp4" />
+    <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
 </video>
+
+<p><br /></p>
+
+<h1 id="버튼-이름-변경">버튼 이름 변경</h1>
+<ul>
+  <li>버튼 이름 변경 (Delete -&gt; 삭제)</li>
+  <li>UITableViewDelegate 채택해야 사용 가능</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 삭제 글자 변경 Delete -&gt; 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">titleForDeleteConfirmationButtonForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"삭제"</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>버튼 이름 변경 확인</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete1.png" alt="alt text" /></p>
+
+<p><br /></p>
+
+<h1 id="삭제-전-alert-버튼으로-다시-확인하기">삭제 전 alert 버튼으로 다시 확인하기</h1>
+<ul>
+  <li>alert 추가 코드</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제 확인"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"삭제하시겠습니까?"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">cancelButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"취소"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">deleteButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+                <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+                <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
+                <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancelButton</span><span class="p">)</span>
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">deleteButton</span><span class="p">)</span>
+            <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">}</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>alert 창 확인</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete2.png" alt="alt text" /></p>
 
 <p><br /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>
-  <li>TableView Dalegate 채택 후 moveRowAt 메서드를 통해 순서이동을 구현할 수 있다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView" /><category term="moveRowAt" /><summary type="html"><![CDATA[TableView 목록 순서 바꾸기]]></summary></entry><entry><title type="html">[UIKit] NavigationBar에 Edit 버튼 추가하기</title><link href="http://localhost:4000/UIKit/NavigationBarEditButton/" rel="alternate" type="text/html" title="[UIKit] NavigationBar에 Edit 버튼 추가하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/NavigationBarEditButton</id><content type="html" xml:base="http://localhost:4000/UIKit/NavigationBarEditButton/"><![CDATA[<h1 id="navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</h1>
+  <li>TableView의 편집 버튼을 눌러 삭제를 시도할 수 있지만 Swipe로 삭제 가능</li>
+  <li>삭제를 되물어보는 기능이 없어 따로 만들어야함</li>
+  <li>해당 메서드가 XCode에서 자동검색이 되지 않는 것 같다.
+    <ul>
+      <li>⭐️⭐️⭐️더 찾아보니 내 클래스 파일은 UIViewController를 상속받는 클래스인데 <font color="red">UITableViewController</font>를 상속받는 클래스 파일을 만들면 주석처리된 메서드가 그냥 보인다!!!!!⭐️⭐️⭐️
+        <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/*
+  // Override to support editing the table view.
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+  if editingStyle == .delete {
+      // Delete the row from the data source
+      tableView.deleteRows(at: [indexPath], with: .fade)
+  } else if editingStyle == .insert {
+      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+  }    
+  }
+  */</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[UIKit] NavigationBar에 Edit 버튼 추가하기</title><link href="http://localhost:4000/UIKit/NavigationBarEditButton/" rel="alternate" type="text/html" title="[UIKit] NavigationBar에 Edit 버튼 추가하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/NavigationBarEditButton</id><content type="html" xml:base="http://localhost:4000/UIKit/NavigationBarEditButton/"><![CDATA[<h1 id="navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</h1>
 <ul>
   <li>navigation과 연결된 상태에서 viewDidLoad에 코드를 추가합니다.</li>
 </ul>
@@ -522,108 +650,49 @@
       <li>View클래스에서 델리게이트 채택 후 switchValueChanged 함수에서 스위치 변경 이벤트 처리</li>
     </ol>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[UIKit] Tableview에서 Swipe로 Row 삭제하기</title><link href="http://localhost:4000/UIKit/TableViewSwipeDelete/" rel="alternate" type="text/html" title="[UIKit] Tableview에서 Swipe로 Row 삭제하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/TableViewSwipeDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/TableViewSwipeDelete/"><![CDATA[<h1 id="tableview에서-swipe로-row-삭제하기">Tableview에서 Swipe로 Row 삭제하기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview Cell Delegate" /><summary type="html"><![CDATA[Cell Class와 View Class와 상호작용]]></summary></entry><entry><title type="html">[UIKit] TableView 목록 순서 바꾸기</title><link href="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" rel="alternate" type="text/html" title="[UIKit] TableView 목록 순서 바꾸기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/"><![CDATA[<h1 id="table-view에-목록-순서-바꾸기">Table View에 목록 순서 바꾸기</h1>
 <ul>
-  <li>TableView에서 Row을 움직여 삭제할 수 있습니다.</li>
+  <li>navigation bar에서 Edit 버튼을 선택하고 오른쪽에 줄을 선택하고 드래그하면 순서를 변경할 수 있습니다.</li>
 </ul>
 
 <p><br /></p>
 
-<h1 id="예제-코드">예제 코드</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
-    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// 편집 스타일이 삭제인 경우 </span>
-        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
-            <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
-            <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
-            <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
-            <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
-        <span class="p">}</span> 
-    <span class="p">}</span>
+<h1 id="tableview-dalegate-채택-후-moverowat-메서드-구현">TableView Dalegate 채택 후 moveRowAt 메서드 구현</h1>
+<ul>
+  <li>moveRowAt 메서드에서 source / destination Index를 확인 할 수 있습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 목록 순서 변경</span>
+<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">moveRowAt</span> <span class="nv">sourceIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="n">to</span> <span class="nv">destinationIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//현재 row(출발지)의 cell 데이터 저장</span>
+    <span class="k">let</span> <span class="nv">sourceId</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoid</span>
+    <span class="k">let</span> <span class="nv">sourceTitle</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoTitle</span>
+    <span class="k">let</span> <span class="nv">sourceIsComplete</span> <span class="o">=</span> <span class="n">myToDoListArray</span><span class="p">[</span><span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">toDoIsComplete</span>
+    
+    <span class="c1">//선택한 row 배열에서 삭제</span>
+    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">sourceIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+    
+    <span class="c1">//이동한 위치에 출발지 cell 데이터를 배열의 목적지 index 위치에 추가</span>
+    <span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="kt">ToDoList</span><span class="p">(</span><span class="nv">toDoid</span><span class="p">:</span> <span class="n">sourceId</span><span class="p">,</span> <span class="nv">toDoTitle</span><span class="p">:</span> <span class="n">sourceTitle</span><span class="p">,</span> <span class="nv">toDoIsComplete</span><span class="p">:</span> <span class="n">sourceIsComplete</span><span class="p">),</span> <span class="nv">at</span><span class="p">:</span> <span class="n">destinationIndexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+    
+    <span class="c1">//print("목록 변경 후: \(myToDoListArray)")</span>
+    <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>    <span class="c1">//변경사항 확인을 위해 새로고침</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h1 id="실행화면">실행화면</h1>
+<h1 id="실행-화면">실행 화면</h1>
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
+    <source src="../../assets/video/2024-03-26-목록순서바꾸기.mov" type="video/mp4" />
 </video>
-
-<p><br /></p>
-
-<h1 id="버튼-이름-변경">버튼 이름 변경</h1>
-<ul>
-  <li>버튼 이름 변경 (Delete -&gt; 삭제)</li>
-  <li>UITableViewDelegate 채택해야 사용 가능</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 삭제 글자 변경 Delete -&gt; 삭제</span>
-    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">titleForDeleteConfirmationButtonForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">"삭제"</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>버튼 이름 변경 확인</li>
-</ul>
-
-<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete1.png" alt="alt text" /></p>
-
-<p><br /></p>
-
-<h1 id="삭제-전-alert-버튼으로-다시-확인하기">삭제 전 alert 버튼으로 다시 확인하기</h1>
-<ul>
-  <li>alert 추가 코드</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - TableView 스와이프(swipe) 삭제</span>
-    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
-            <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제 확인"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"삭제하시겠습니까?"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-            <span class="k">let</span> <span class="nv">cancelButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"취소"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
-            <span class="k">let</span> <span class="nv">deleteButton</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"삭제"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">)</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
-                <span class="c1">//해당 indexPath에 위치한 데이터를 배열에서 제거</span>
-                <span class="k">self</span><span class="o">.</span><span class="n">myToDoListArray</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
-                <span class="c1">// 테이블 뷰에서 해당 행을 애니메이션과 함께 삭제</span>
-                <span class="n">tableView</span><span class="o">.</span><span class="nf">deleteRows</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="p">[</span><span class="n">indexPath</span><span class="p">],</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
-            <span class="p">}</span>
-            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancelButton</span><span class="p">)</span>
-            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">deleteButton</span><span class="p">)</span>
-            <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-        <span class="p">}</span> 
-    <span class="p">}</span>
-</code></pre></div></div>
-<ul>
-  <li>alert 창 확인</li>
-</ul>
-
-<p><img src="../../assets/images/categories/uikit/2024-03-26-TableViewSwipeDelete2.png" alt="alt text" /></p>
 
 <p><br /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>
-  <li>TableView의 편집 버튼을 눌러 삭제를 시도할 수 있지만 Swipe로 삭제 가능</li>
-  <li>삭제를 되물어보는 기능이 없어 따로 만들어야함</li>
-  <li>해당 메서드가 XCode에서 자동검색이 되지 않는 것 같다.
-    <ul>
-      <li>⭐️⭐️⭐️더 찾아보니 내 클래스 파일은 UIViewController를 상속받는 클래스인데 <font color="red">UITableViewController</font>를 상속받는 클래스 파일을 만들면 주석처리된 메서드가 그냥 보인다!!!!!⭐️⭐️⭐️
-        <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/*
-  // Override to support editing the table view.
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-  if editingStyle == .delete {
-      // Delete the row from the data source
-      tableView.deleteRows(at: [indexPath], with: .fade)
-  } else if editingStyle == .insert {
-      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-  }    
-  }
-  */</span>
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+  <li>TableView Dalegate 채택 후 moveRowAt 메서드를 통해 순서이동을 구현할 수 있다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView" /><category term="moveRowAt" /><summary type="html"><![CDATA[TableView 목록 순서 바꾸기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 20일차</title><link href="http://localhost:4000/TIL/til20/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 20일차" /><published>2024-03-25T00:00:00+09:00</published><updated>2024-03-25T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til20</id><content type="html" xml:base="http://localhost:4000/TIL/til20/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-25-til20.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -948,70 +1017,4 @@
 <h1 id="의견">의견</h1>
 <ul>
   <li>벽이 느껴지는 다른 사람의 풀이에 감탄했다…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라 문제" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라 문제]]></summary></entry><entry><title type="html">[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기</title><link href="http://localhost:4000/UIKit/underlineAndStrikethrough/" rel="alternate" type="text/html" title="[UIKit] Label 밑줄(underline) 및 가운데줄/취소선(Strikethrough) 긋기" /><published>2024-03-23T00:00:00+09:00</published><updated>2024-03-23T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/StrikethroughAndUnderline</id><content type="html" xml:base="http://localhost:4000/UIKit/underlineAndStrikethrough/"><![CDATA[<h1 id="nsattributedstring">NSAttributedString</h1>
-<ul>
-  <li>텍스트에 대한 서식 및 스타일을 적용하는 데 사용되는 클래스입니다.</li>
-  <li>NSAttributedString을 사용하면 단순한 문자열을 포맷하고, 텍스트에 다양한 스타일, 폰트, 색상, 그리기 속성 등을 적용할 수 있습니다.</li>
-  <li>UILabel, UITextView 및 UITextField와 같은 텍스트 표시 및 입력 컨트롤에서 사용할 수 있습니다.</li>
-</ul>
-
-<h1 id="예제-코드">예제 코드</h1>
-<ul>
-  <li>Label을 추가하고 버튼을 선택했을 때 Label에 밑줄 및 취소선이 생기는 예제입니다.</li>
-</ul>
-
-<h2 id="1-label-및-버튼-추가">1. Label 및 버튼 추가</h2>
-<p><img src="/assets/images/categories/uikit/2024-03-23-StrikethroughAndUnderlineMain.png" alt="" /></p>
-
-<h2 id="2-string-확장extension-메서드-구현">2. String 확장(extension) 메서드 구현</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="c1">// MARK: - 밑줄</span>
-    <span class="kd">func</span> <span class="nf">underScore</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">underScore</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>        
-        <span class="c1">// 전체 문자열에 밑줄 스타일 속성을 추가</span>
-        <span class="n">underScore</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="o">.</span><span class="n">underlineStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">underScore</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">underScore</span>
-    <span class="p">}</span>
-    <span class="c1">// MARK: - 가운데 밑줄</span>
-    <span class="kd">func</span> <span class="nf">strikeThrough</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">attributeString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
-
-        <span class="c1">// 전체 문자열에 가운데 밑줄 스타일 속성을 추가</span>
-        <span class="c1">// NSAttributedString.Key를 사용하여 서식과 속성을 적용할 수 있음(NSAttributedString.Key.strikethroughStyle을 .strikethroughStyle로 사용 가능)</span>
-        <span class="n">attributeString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="kt">NSAttributedString</span><span class="o">.</span><span class="kt">Key</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">attributeString</span><span class="o">.</span><span class="n">length</span><span class="p">))</span>        
-        <span class="k">return</span> <span class="n">attributeString</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="3-밑줄underline-버튼-이벤트">3. 밑줄(underline) 버튼 이벤트</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">underLineButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 레이블의 텍스트에 밑줄을 추가하고 적용</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">myLabel</span><span class="o">.</span><span class="n">text</span><span class="p">?</span><span class="o">.</span><span class="nf">underScore</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="4-취소선strikethough-버튼-이벤트">4. 취소선(strikethough) 버튼 이벤트</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">centerLineButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// 레이블의 텍스트에 가운데 밑줄을 추가하고 적용</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">myLabel</span><span class="o">.</span><span class="n">text</span><span class="p">?</span><span class="o">.</span><span class="nf">strikeThrough</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="5-실행-확인">5. 실행 확인</h2>
-<ul>
-  <li>
-    <p>밑줄(underline)
-<img src="/assets/images/categories/uikit/2024-03-23-Underline.png" alt="" /></p>
-  </li>
-  <li>
-    <p>취소선(strikethough)
-<img src="/assets/images/categories/uikit/2024-03-23-Strikethrough.png" alt="" /></p>
-  </li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>NSAttributedString을 사용하면 다양한 스타일을 적용하여 텍스트를 꾸미는 데 유용하다.</li>
-  <li>NSAttributedString은 한 번 생성되면 수정할 수 없음. 텍스트를 수정하려면 새로운 NSAttributedString을 생성해야함.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="underline" /><category term="Strikethrough" /><summary type="html"><![CDATA[Label에 밑줄(underline), 취소선(Strikethrough) 긋기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="콜라 문제" /><summary type="html"><![CDATA[[프로그래머스/Swift] 콜라 문제]]></summary></entry></feed>
