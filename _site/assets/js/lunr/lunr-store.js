@@ -664,4 +664,10 @@ var store = [{
         "tags": ["Algorithm","coding test","2016년"],
         "url": "/algorithm/2016%EB%85%84/",
         "teaser": null
+      },{
+        "title": "[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현",
+        "excerpt":"Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기 Cell을 오른쪽 Swipe하여 수정, 삭제 버튼을 추가했습니다. 실행화면 예제 코드 UITableViewDelegate 채택 후 trailingSwipeActionsConfigurationForRowAt 메서드를 구현합니다. 특정 indexPath에 해당하는 테이블 뷰 셀의 오른쪽 스와이프 액션을 구성할 때 호출됩니다. // 오른쪽으로 스와이프할 때의 액션을 구성하는 메서드 func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)...","categories": ["UIKit"],
+        "tags": ["swift","iOS","Tableview","Cell","Swipe","edit","delete"],
+        "url": "/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/",
+        "teaser": null
       }]
