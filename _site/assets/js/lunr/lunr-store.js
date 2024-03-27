@@ -665,6 +665,12 @@ var store = [{
         "url": "/algorithm/2016%EB%85%84/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 22일차",
+        "excerpt":"데일리 스크럼 알고리즘 오늘은 특정 날짜의 요일을 맞추는 문제였는데 Swift에서 제공하는 함수로 처리할 수 있을 것 같았다. Swift에서의 Date처리 방법을 확인하고 풀었다. Date, Calendar 관련은 따로 정리해보고 포스팅 해봐야겠다. 풀이 보기 2016년 개인 과제 공부 NavigationBar에 Edit 버튼을 코드로 추가했었는데 스토리보드에서 Button을 추가하는 걸로 수정했다. Edit 버튼을 선택하면 Done으로 바뀌고...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til22/",
+        "teaser": null
+      },{
         "title": "[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현",
         "excerpt":"Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기 Cell을 오른쪽 Swipe하여 수정, 삭제 버튼을 추가했습니다. 실행화면 예제 코드 UITableViewDelegate 채택 후 trailingSwipeActionsConfigurationForRowAt 메서드를 구현합니다. 특정 indexPath에 해당하는 테이블 뷰 셀의 오른쪽 스와이프 액션을 구성할 때 호출됩니다. // 오른쪽으로 스와이프할 때의 액션을 구성하는 메서드 func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)...","categories": ["UIKit"],
         "tags": ["swift","iOS","Tableview","Cell","Swipe","edit","delete"],
