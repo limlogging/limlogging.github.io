@@ -683,6 +683,12 @@ var store = [{
         "url": "/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 23일차",
+        "excerpt":"데일리 스크럼 알고리즘 문제를 보고 어떻게 풀어야겠다 바로 생각이 들었는데 매일 매일 한문제 풀었던게 효과가 있는 것 같다. 풀이 보기 카드뭉치 개인 과제 공부 화면을 이동해서 데이터를 수정하고 화면을 종료 후 데이터가 수정됐는지 확인하는 기능을 추가했다. 화면 이동을 통해서 델리게이트 사용 연습이 되는 것 같다. TableView Row 선택 후 화면...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til23/",
+        "teaser": null
+      },{
         "title": "[UIKit] TableView Row 선택 후 화면 이동하기",
         "excerpt":"Row 선택 후 화면 이동하기 ViewController를 만들고 TableView Row를 선택하면 Cell의 정보를 확인하는 방법입니다. 1. 실행화면 2. View Controller 생성 및 세그웨이(Segue) 선택 세그웨이 연결 후 row를 선택하면 View Controller가 연결됩니다. Cell의 데이터를 View Controller로 전달해주기 위해 설정 및 코드를 추가해야합니다. 3. 세그웨이 식별자 설정 세그웨이 이름을 ToDoDetailSegue로 지정하였습니다. 4....","categories": ["UIKit"],
         "tags": ["swift","iOS","Tableview","Cell","Row"],

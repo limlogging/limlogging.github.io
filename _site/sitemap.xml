@@ -457,6 +457,10 @@
 <lastmod>2024-03-28T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/TIL/til23/</loc>
+<lastmod>2024-03-28T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/</loc>
 <lastmod>2024-03-28T00:00:00+09:00</lastmod>
 </url>
@@ -558,5 +562,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page23/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page24/</loc>
 </url>
 </urlset>
