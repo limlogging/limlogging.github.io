@@ -676,10 +676,4 @@ var store = [{
         "tags": ["swift","iOS","Tableview","Cell","Swipe","edit","delete"],
         "url": "/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/",
         "teaser": null
-      },{
-        "title": "[프로그래머스/Swift] 카드뭉치",
-        "excerpt":"문제 설명 코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다. 코니는 다음과 같은 규칙으로 카드에 적힌 단어들을 사용해 원하는 순서의 단어 배열을 만들 수 있는지 알고 싶습니다. 원하는 카드 뭉치에서 카드를 순서대로 한 장씩 사용합니다. 한 번 사용한 카드는 다시 사용할 수 없습니다. 카드를 사용하지 않고 다음 카드로...","categories": ["Algorithm"],
-        "tags": ["Algorithm","coding test","카드뭉치"],
-        "url": "/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/",
-        "teaser": null
       }]
