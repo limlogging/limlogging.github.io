@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-28T23:02:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-29T08:22:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
 <p><img src="/assets/images/categories/til/2024-03-28-til23.png" alt="" /></p>
 
 <h3 id="알고리즘">알고리즘</h3>
@@ -38,7 +38,7 @@
 <h2 id="1-실행화면">1. 실행화면</h2>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-28-로우선택후화면이동.mov" type="video/mp4" />
+    <source src="../../assets/video/2024-03-28-로우선택후화면이동.mov" type="video/mp4" />
 </video>
 
 <p><br /></p>
@@ -127,7 +127,7 @@
 <h2 id="1-실행-화면">1. 실행 화면</h2>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-28-타이틀디테일수정.mov" type="video/mp4" />
+    <source src="../../assets/video/2024-03-28-타이틀디테일수정.mov" type="video/mp4" />
 </video>
 
 <h2 id="2-델리게이트-채택">2. 델리게이트 채택</h2>
@@ -319,7 +319,7 @@
 
 <h1 id="마무리">마무리</h1>
 <ul>
-  <li>데이터를 주고 받을 때 델리게이트를 사용해서 주고 받는 연습이 된다.</li>
+  <li>데이터를 주고 받을 때 델리게이트를 사용해서 주고 받는 연습이 됩니다.</li>
 </ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview" /><category term="Cell" /><category term="Row" /><summary type="html"><![CDATA[Table View Row 선택 후 화면 이동하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 카드뭉치</title><link href="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 카드뭉치" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다. 코니는 다음과 같은 규칙으로 카드에 적힌 단어들을 사용해 원하는 순서의 단어 배열을 만들 수 있는지 알고 싶습니다.
