@@ -1,36 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-29T08:22:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-28-til23.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-29T15:54:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>문제를 보고 어떻게 풀어야겠다 바로 생각이 들었는데 매일 매일 한문제 풀었던게 효과가 있는 것 같다.</li>
-  <li>풀이 보기
+  <li>과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며, k점이 최상품의 사과이고 1점이 최하품의 사과입니다. 사과 한 상자의 가격은 다음과 같이 결정됩니다.
     <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" target="_blank">카드뭉치</a></li>
+      <li>한 상자에 사과를 m개씩 담아 포장합니다.</li>
+      <li>상자에 담긴 사과 중 가장 낮은 점수가 p (1 ≤ p ≤ k)점인 경우, 사과 한 상자의 가격은 p * m 입니다.</li>
     </ul>
   </li>
+  <li>과일 장수가 가능한 많은 사과를 팔았을 때, 얻을 수 있는 최대 이익을 계산하고자 합니다.(사과는 상자 단위로만 판매하며, 남는 사과는 버립니다)</li>
+  <li>예를 들어, k = 3, m = 4, 사과 7개의 점수가 [1, 2, 3, 1, 2, 3, 1]이라면, 다음과 같이 [2, 3, 2, 3]으로 구성된 사과 상자 1개를 만들어 판매하여 최대 이익을 얻을 수 있습니다.
+    <ul>
+      <li>(최저 사과 점수) x (한 상자에 담긴 사과 개수) x (상자의 개수) = 2 x 4 x 1 = 8</li>
+    </ul>
+  </li>
+  <li>사과의 최대 점수 k, 한 상자에 들어가는 사과의 수 m, 사과들의 점수 score가 주어졌을 때, 과일 장수가 얻을 수 있는 최대 이익을 return하는 solution 함수를 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/135808" target="_blank">문제 풀기</a></li>
 </ul>
 
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<h1 id="제한사항">제한사항</h1>
 <ul>
-  <li>화면을 이동해서 데이터를 수정하고 화면을 종료 후 데이터가 수정됐는지 확인하는 기능을 추가했다.</li>
-  <li>화면 이동을 통해서 델리게이트 사용 연습이 되는 것 같다.</li>
-  <li><a href="https://limlogging.github.io/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">TableView Row 선택 후 화면 이동하기</a></li>
+  <li>3 ≤ k ≤ 9</li>
+  <li>3 ≤ m ≤ 10</li>
+  <li>7 ≤ score의 길이 ≤ 1,000,000
+    <ul>
+      <li>1 ≤ score[i] ≤ k</li>
+    </ul>
+  </li>
+  <li>이익이 발생하지 않는 경우에는 0을 return 해주세요.</li>
 </ul>
 
-<h3 id="챌린지반">챌린지반</h3>
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>k</th>
+      <th>m</th>
+      <th>score</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>4</td>
+      <td>[1, 2, 3, 1, 2, 3, 1]</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>[4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2]</td>
+      <td>33</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
 <ul>
-  <li>다음주까지 깃허브 앱 메인 화면을 만들어 보는 과제를 받았다.</li>
-  <li>api를 사용하여 저장소 수를 받아와야하고 코드를 통해 오토레이아웃을 사용해야한다.</li>
-  <li>조금 빡센것 같은데 개인 과제 복습하면서 챌린지반 과제도 도전해야겠다!!!</li>
+  <li>문제의 예시와 같습니다.</li>
 </ul>
 
-<h3 id="내일-목표">내일 목표</h3>
+<h3 id="입출력-예-2">입출력 예 #2</h3>
 <ul>
-  <li>개인과제 코드 정리 및 제출</li>
-  <li>알고리즘 문제 풀기</li>
-  <li>챌린지반 과제 분석</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 23일차 이야기]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
+  <li>다음과 같이 사과 상자를 포장하여 모두 팔면 최대 이익을 낼 수 있습니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>사과</th>
+      <th>상자</th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1, 1, 2]</td>
+      <td>1 x 3 = 3</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[2, 2, 2]</td>
+      <td>2 x 3 = 6</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[4, 4, 4]</td>
+      <td>4 x 3 = 12</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[4, 4, 4]</td>
+      <td>4 x 3 = 12</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>따라서 (1 x 3 x 1) + (2 x 3 x 1) + (4 x 3 x 2) = 33을 return합니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">k</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">score</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">score</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+    
+    <span class="k">var</span> <span class="nv">scoreArr</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+<span class="c1">//    while scoreArr.count &gt;= m {</span>
+<span class="c1">//        sum += scoreArr.prefix(m).last! * m</span>
+<span class="c1">//        </span>
+<span class="c1">//        let range = 0..&lt;m</span>
+<span class="c1">//        scoreArr.removeSubrange(range)</span>
+<span class="c1">//    }</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">scoreArr</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="c1">//print("index: \(index), \(value * m)")</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">m</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">sum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">k</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">score</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">score</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">m</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="nv">$1</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>처음에는 정렬 후 m개의 배열을 뽑아서 가장 낮은 값을 구하고 계산을 했다.</li>
+  <li>while true 문을 써서 그런가 시간 초과로 통과하지 못했다. (아래 11 ~ 15번에서 시간초과 발생)</li>
+  <li>for문을 사용하고 정렬했으니 m개씩 잘라서 마지막 값이 가장 작은 값이기 때문에 그 값으로 계산하고 해결했다.</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> 테스트 9 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>143.66ms, 19. 8MB<span class="o">)</span>  
+<span class="gp"> 테스트 10 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>200.39ms, 18. 9MB<span class="o">)</span> 
+<span class="gp"> 테스트 11 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2919.63ms, 60.7MB<span class="o">)</span>
+<span class="gp"> 테스트 12 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2764.20ms, 60.8MB<span class="o">)</span>
+<span class="gp"> 테스트 13 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2656.91ms, 60. 6MB<span class="o">)</span>
+<span class="gp"> 테스트 14 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2809.80ms, 60.6MB<span class="o">)</span> 
+<span class="gp"> 테스트 15 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>3070.25ms, 60.9MB<span class="o">)</span>
+<span class="gp"> 테스트 16 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>0.12ms, 16.3MB<span class="o">)</span>
+</code></pre></div></div>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>stride를 사용하여 푸는 방법도 있다는걸 알았다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
 <ul>
   <li>ViewController를 만들고 TableView Row를 선택하면 Cell의 정보를 확인하는 방법입니다.</li>
 </ul>
@@ -437,7 +566,39 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>이번에는 다른 사람 풀이도 비슷</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="카드뭉치" /><summary type="html"><![CDATA[[프로그래머스/Swift] 카드뭉치]]></summary></entry><entry><title type="html">[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</title><link href="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" rel="alternate" type="text/html" title="[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/"><![CDATA[<h1 id="cell을-오른쪽-swipe하여-수정--삭제-기능-화면보기">Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="카드뭉치" /><summary type="html"><![CDATA[[프로그래머스/Swift] 카드뭉치]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-28-til23.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>문제를 보고 어떻게 풀어야겠다 바로 생각이 들었는데 매일 매일 한문제 풀었던게 효과가 있는 것 같다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" target="_blank">카드뭉치</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>화면을 이동해서 데이터를 수정하고 화면을 종료 후 데이터가 수정됐는지 확인하는 기능을 추가했다.</li>
+  <li>화면 이동을 통해서 델리게이트 사용 연습이 되는 것 같다.</li>
+  <li><a href="https://limlogging.github.io/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">TableView Row 선택 후 화면 이동하기</a></li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>다음주까지 깃허브 앱 메인 화면을 만들어 보는 과제를 받았다.</li>
+  <li>api를 사용하여 저장소 수를 받아와야하고 코드를 통해 오토레이아웃을 사용해야한다.</li>
+  <li>조금 빡센것 같은데 개인 과제 복습하면서 챌린지반 과제도 도전해야겠다!!!</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>개인과제 코드 정리 및 제출</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>챌린지반 과제 분석</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 23일차 이야기]]></summary></entry><entry><title type="html">[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</title><link href="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" rel="alternate" type="text/html" title="[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/"><![CDATA[<h1 id="cell을-오른쪽-swipe하여-수정--삭제-기능-화면보기">Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기</h1>
 <ul>
   <li>Cell을 오른쪽 Swipe하여 수정, 삭제 버튼을 추가했습니다.</li>
 </ul>
@@ -849,36 +1010,4 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>Navigation Bar에 버튼을 추가하고 TableView Delegate를 채택하여 TableView 편집모드 구현가능</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Navigation" /><category term="Bar" /><category term="Edit" /><category term="Button" /><summary type="html"><![CDATA[NavigationBar에 Edit 버튼 추가하고 TableView row삭제하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 21일차</title><link href="http://localhost:4000/TIL/til21/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 21일차" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til21</id><content type="html" xml:base="http://localhost:4000/TIL/til21/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-26-til21.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>고차함수를 많이 연습해보고 알고리즘 문제 풀어야하는데 따로 공부없이 아침에 문제를 풀다보니 많이 부족한 것 같다. 꼭 시간내서 클로저, 고차함수 다시.. 공부해봐야겠다</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EB%AA%85%EC%98%88%EC%9D%98%EC%A0%84%EB%8B%B9/" target="_blank">명예의전당</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>오늘은 속도를 내서 level3 삭제까지 완료하고 순서바꾸기를 추가했다.</li>
-  <li>검색 하는 도중에 자동완성이 안되는 메서드가 있었는데 TableViewController를 상속받아 파일을 생성하면 기본적으로 주석처리된 메서드가 있다는걸 알았다.</li>
-  <li>Delegate에서 제공하는 함수를 많이 알면 다양하게 적용을 시도해 볼 수 있을 것 같다!
-    <ul>
-      <li><a href="https://limlogging.github.io/UIKit/UITableViewCellDelegate/" target="_blank">Tableview Cell에서 Delegate 사용</a></li>
-      <li><a href="https://limlogging.github.io/UIKit/TableViewSwipeDelete/" target="_blank">Tableview에서 Swipe로 Row 삭제하기</a></li>
-      <li><a href="https://limlogging.github.io/UIKit/NavigationBarEditButton/" target="_blank">NavigationBar에 Edit 버튼 추가하기</a></li>
-      <li><a href="https://limlogging.github.io/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" target="_blank">TableView 목록 순서 바꾸기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>다른 분들이 UI를 스위치에서 체크박스로 바꾸고 폰트도 변경하고 조금 꾸며도 꾸민 티가 확 나는 것 같다. 내일은 꾸미기에도 조금 도전해보는걸로…</li>
-  <li>알고리즘 문제 풀기 (문제 풀고 고차함수 연습 꼭 10분이라도..)</li>
-  <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 21일차 이야기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Navigation" /><category term="Bar" /><category term="Edit" /><category term="Button" /><summary type="html"><![CDATA[NavigationBar에 Edit 버튼 추가하고 TableView row삭제하기]]></summary></entry></feed>

@@ -694,4 +694,10 @@ var store = [{
         "tags": ["swift","iOS","Tableview","Cell","Row"],
         "url": "/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 과일 장수",
+        "excerpt":"문제 설명 과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며, k점이 최상품의 사과이고 1점이 최하품의 사과입니다. 사과 한 상자의 가격은 다음과 같이 결정됩니다. 한 상자에 사과를 m개씩 담아 포장합니다. 상자에 담긴 사과 중 가장 낮은 점수가 p (1 ≤ p ≤ k)점인 경우, 사과 한...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","과일 장수"],
+        "url": "/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/",
+        "teaser": null
       }]
