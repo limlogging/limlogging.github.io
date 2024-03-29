@@ -35,7 +35,7 @@ comments: true
 - edit 버튼을 선택 시 아무런 변화가 없습니다.  
 
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-NavigationBarEditButton1.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-NavigationBarEditButton1.mov" type="video/mp4">
 </video>
 
 <br>
@@ -61,7 +61,7 @@ comments: true
 
 # 실행 화면
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-NavigationBarEditButton2.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-NavigationBarEditButton2.mov" type="video/mp4">
 </video>
 
 <br>

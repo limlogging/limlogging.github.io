@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-29T15:54:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-03-29T20:08:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며, k점이 최상품의 사과이고 1점이 최하품의 사과입니다. 사과 한 상자의 가격은 다음과 같이 결정됩니다.
     <ul>
@@ -156,10 +156,200 @@
 <span class="gp"> 테스트 16 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>0.12ms, 16.3MB<span class="o">)</span>
 </code></pre></div></div>
 
+<p><br /></p>
+
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>stride를 사용하여 푸는 방법도 있다는걸 알았다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트</title><link href="http://localhost:4000/sparta/ToDoList/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/ToDoList</id><content type="html" xml:base="http://localhost:4000/sparta/ToDoList/"><![CDATA[<h1 id="todolist-만들기">ToDoList 만들기</h1>
+<ul>
+  <li>앱 개발 입문 과제로 ToDoList 만들기를 구현하였습니다.</li>
+</ul>
+
+<h1 id="실행-화면">실행 화면</h1>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/sparta/2024-03-29-ToDoListProject.mov" type="video/mp4" />
+</video>
+
+<h1 id="구현-기능">구현 기능</h1>
+<ol>
+  <li>ToDoList 출력</li>
+  <li>Alert 버튼으로 할 일 입력</li>
+  <li>네비게이션 바버튼을 통한 수정, 삭제, 순서 변경</li>
+  <li>TableView Row선택 시 화면 이동 및 상세 내용보기, 수정내용 자동 저장</li>
+  <li>총 할일 수, 총 완료 수 확인</li>
+</ol>
+
+<h1 id="프로젝트간-공부한-내용">프로젝트간 공부한 내용</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/UIKit/Delegate/" target="_blank">델리게이트(Delegate) 패턴</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/UIAlertController/" target="_blank">얼러트 컨트롤러(UIAlertController)</a></li>
+  <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">코드로 화면 이동</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/underlineAndStrikethrough/" target="_blank">Label 밑줄, 취소선 적용</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/UITableView/" target="_blank">UITableView - 데이터 목록 표시</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/NavigationBarEditButton/" target="_blank">NavigationBar에 Edit 버튼 추가하기</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/TableViewSwipeDelete/" target="_blank">Tableview에서 Swipe로 Row 삭제하기</a></li>
+  <li><a href="https://limlogging.github.io/UIKit/UITableViewCellDelegate/" target="_blank">Tableview Cell에서 Delegate 사용</a></li>
+  <li><a href="https://limlogging.github.io/uikit/%EB%AA%A9%EB%A1%9D%EC%88%9C%EC%84%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" target="_blank">TableView 목록 순서 바꾸기</a></li>
+  <li><a href="https://limlogging.github.io/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" target="_blank">Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</a></li>
+  <li><a href="https://limlogging.github.io/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">TableView Row 선택 후 화면 이동하기</a></li>
+</ul>
+
+<h1 id="회고">회고</h1>
+<ul>
+  <li>스토리보드를 통해 UI는 어찌어찌 구현하였으나 그 이후 데이터를 TableView에 보여주기, View Controller 간 발생한 이벤트 처리 등 기능은 간단하지만, 그 기능을 위해 알아야하는 델리게이트 패턴, 얼러트컨트롤러, 프로토콜 채택 등 많은 것을 공부할 수 있었다.</li>
+  <li>첫 주는 강의 및 개인 과제를 위한 핵심 키워드 공부, 둘째 주는 실제 프로젝트 생성 및 기능 추가하기. 간단하지만 스스로 만든 첫 프로젝트를 마무리하면서 완성했다는 성취감을 얻을 수 있었다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="ToDoList" /><summary type="html"><![CDATA[iOS 앱 개발 입문 - ToDoList 만들기 프로젝트]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-28-til23.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>문제를 보고 어떻게 풀어야겠다 바로 생각이 들었는데 매일 매일 한문제 풀었던게 효과가 있는 것 같다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" target="_blank">카드뭉치</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>화면을 이동해서 데이터를 수정하고 화면을 종료 후 데이터가 수정됐는지 확인하는 기능을 추가했다.</li>
+  <li>화면 이동을 통해서 델리게이트 사용 연습이 되는 것 같다.</li>
+  <li><a href="https://limlogging.github.io/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">TableView Row 선택 후 화면 이동하기</a></li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>다음주까지 깃허브 앱 메인 화면을 만들어 보는 과제를 받았다.</li>
+  <li>api를 사용하여 저장소 수를 받아와야하고 코드를 통해 오토레이아웃을 사용해야한다.</li>
+  <li>조금 빡센것 같은데 개인 과제 복습하면서 챌린지반 과제도 도전해야겠다!!!</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>개인과제 코드 정리 및 제출</li>
+  <li>알고리즘 문제 풀기</li>
+  <li>챌린지반 과제 분석</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 23일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 카드뭉치</title><link href="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 카드뭉치" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다. 코니는 다음과 같은 규칙으로 카드에 적힌 단어들을 사용해 원하는 순서의 단어 배열을 만들 수 있는지 알고 싶습니다.
+    <ul>
+      <li>원하는 카드 뭉치에서 카드를 순서대로 한 장씩 사용합니다.</li>
+      <li>한 번 사용한 카드는 다시 사용할 수 없습니다.</li>
+      <li>카드를 사용하지 않고 다음 카드로 넘어갈 수 없습니다.</li>
+      <li>기존에 주어진 카드 뭉치의 단어 순서는 바꿀 수 없습니다.</li>
+    </ul>
+  </li>
+  <li>예를 들어 첫 번째 카드 뭉치에 순서대로 [“i”, “drink”, “water”], 두 번째 카드 뭉치에 순서대로 [“want”, “to”]가 적혀있을 때 [“i”, “want”, “to”, “drink”, “water”] 순서의 단어 배열을 만들려고 한다면 첫 번째 카드 뭉치에서 “i”를 사용한 후 두 번째 카드 뭉치에서 “want”와 “to”를 사용하고 첫 번째 카드뭉치에 “drink”와 “water”를 차례대로 사용하면 원하는 순서의 단어 배열을 만들 수 있습니다.</li>
+  <li>
+    <p>문자열로 이루어진 배열 cards1, cards2와 원하는 단어 배열 goal이 매개변수로 주어질 때, cards1과 cards2에 적힌 단어들로 goal를 만들 있다면 “Yes”를, 만들 수 없다면 “No”를 return하는 solution 함수를 완성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/159994" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ cards1의 길이, cards2의 길이 ≤ 10
+    <ul>
+      <li>1 ≤ cards1[i]의 길이, cards2[i]의 길이 ≤ 10</li>
+      <li>cards1과 cards2에는 서로 다른 단어만 존재합니다.</li>
+    </ul>
+  </li>
+  <li>2 ≤ goal의 길이 ≤ cards1의 길이 + cards2의 길이
+    <ul>
+      <li>1 ≤ goal[i]의 길이 ≤ 10</li>
+      <li>goal의 원소는 cards1과 cards2의 원소들로만 이루어져 있습니다.</li>
+    </ul>
+  </li>
+  <li>cards1, cards2, goal의 문자열들은 모두 알파벳 소문자로만 이루어져 있습니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>cards1</th>
+      <th>cards2</th>
+      <th>goal</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[“i”, “drink”, “water”]</td>
+      <td>[“want”, “to”]</td>
+      <td>[“i”, “want”, “to”, “drink”, “water”]</td>
+      <td>“Yes”</td>
+    </tr>
+    <tr>
+      <td>[“i”, “water”, “drink”]</td>
+      <td>[“want”, “to”]</td>
+      <td>[“i”, “want”, “to”, “drink”, “water”]</td>
+      <td>“No”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">cards1</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">cards2</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">goal</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">cd1</span> <span class="o">=</span> <span class="n">cards1</span>
+    <span class="k">var</span> <span class="nv">cd2</span> <span class="o">=</span> <span class="n">cards2</span>
+    <span class="k">var</span> <span class="nv">removeCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">goal</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">cd1</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">cd1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">cd1</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">removeCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">cd2</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">cd2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">cd2</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">removeCnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="n">goal</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="n">removeCnt</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"Yes"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"No"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">cards1</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">cards2</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">goal</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">reverseCards1</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">cards1</span><span class="o">.</span><span class="nf">reversed</span><span class="p">())</span>
+    <span class="k">var</span> <span class="nv">reverseCards2</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">cards2</span><span class="o">.</span><span class="nf">reversed</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">g</span> <span class="k">in</span> <span class="n">goal</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">reverseCards1</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">reverseCards1</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="n">g</span> <span class="p">{</span>
+            <span class="n">reverseCards1</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+            <span class="k">continue</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">reverseCards2</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">reverseCards2</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="n">g</span> <span class="p">{</span>
+            <span class="n">reverseCards2</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+            <span class="k">continue</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="s">"No"</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="s">"Yes"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>goal을 하나씩 불러와서 card의 첫번째 값과 같으면 remove 시키고 삭제 횟수를 증가, 삭제 횟수가 goal 수가 일치하면 Yes, 아니면 No !</li>
+</ul>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>이번에는 다른 사람 풀이도 비슷</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="카드뭉치" /><summary type="html"><![CDATA[[프로그래머스/Swift] 카드뭉치]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
 <ul>
   <li>ViewController를 만들고 TableView Row를 선택하면 Cell의 정보를 확인하는 방법입니다.</li>
 </ul>
@@ -167,7 +357,7 @@
 <h2 id="1-실행화면">1. 실행화면</h2>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-28-로우선택후화면이동.mov" type="video/mp4" />
+    <source src="../../assets/video/categories/uikit/2024-03-28-로우선택후화면이동.mov" type="video/mp4" />
 </video>
 
 <p><br /></p>
@@ -256,7 +446,7 @@
 <h2 id="1-실행-화면">1. 실행 화면</h2>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-28-타이틀디테일수정.mov" type="video/mp4" />
+    <source src="../../assets/video/categories/uikit/2024-03-28-타이틀디테일수정.mov" type="video/mp4" />
 </video>
 
 <h2 id="2-델리게이트-채택">2. 델리게이트 채택</h2>
@@ -449,156 +639,7 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>데이터를 주고 받을 때 델리게이트를 사용해서 주고 받는 연습이 됩니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview" /><category term="Cell" /><category term="Row" /><summary type="html"><![CDATA[Table View Row 선택 후 화면 이동하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 카드뭉치</title><link href="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 카드뭉치" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>코니는 영어 단어가 적힌 카드 뭉치 두 개를 선물로 받았습니다. 코니는 다음과 같은 규칙으로 카드에 적힌 단어들을 사용해 원하는 순서의 단어 배열을 만들 수 있는지 알고 싶습니다.
-    <ul>
-      <li>원하는 카드 뭉치에서 카드를 순서대로 한 장씩 사용합니다.</li>
-      <li>한 번 사용한 카드는 다시 사용할 수 없습니다.</li>
-      <li>카드를 사용하지 않고 다음 카드로 넘어갈 수 없습니다.</li>
-      <li>기존에 주어진 카드 뭉치의 단어 순서는 바꿀 수 없습니다.</li>
-    </ul>
-  </li>
-  <li>예를 들어 첫 번째 카드 뭉치에 순서대로 [“i”, “drink”, “water”], 두 번째 카드 뭉치에 순서대로 [“want”, “to”]가 적혀있을 때 [“i”, “want”, “to”, “drink”, “water”] 순서의 단어 배열을 만들려고 한다면 첫 번째 카드 뭉치에서 “i”를 사용한 후 두 번째 카드 뭉치에서 “want”와 “to”를 사용하고 첫 번째 카드뭉치에 “drink”와 “water”를 차례대로 사용하면 원하는 순서의 단어 배열을 만들 수 있습니다.</li>
-  <li>
-    <p>문자열로 이루어진 배열 cards1, cards2와 원하는 단어 배열 goal이 매개변수로 주어질 때, cards1과 cards2에 적힌 단어들로 goal를 만들 있다면 “Yes”를, 만들 수 없다면 “No”를 return하는 solution 함수를 완성해주세요.</p>
-  </li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/159994" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ cards1의 길이, cards2의 길이 ≤ 10
-    <ul>
-      <li>1 ≤ cards1[i]의 길이, cards2[i]의 길이 ≤ 10</li>
-      <li>cards1과 cards2에는 서로 다른 단어만 존재합니다.</li>
-    </ul>
-  </li>
-  <li>2 ≤ goal의 길이 ≤ cards1의 길이 + cards2의 길이
-    <ul>
-      <li>1 ≤ goal[i]의 길이 ≤ 10</li>
-      <li>goal의 원소는 cards1과 cards2의 원소들로만 이루어져 있습니다.</li>
-    </ul>
-  </li>
-  <li>cards1, cards2, goal의 문자열들은 모두 알파벳 소문자로만 이루어져 있습니다.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>cards1</th>
-      <th>cards2</th>
-      <th>goal</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[“i”, “drink”, “water”]</td>
-      <td>[“want”, “to”]</td>
-      <td>[“i”, “want”, “to”, “drink”, “water”]</td>
-      <td>“Yes”</td>
-    </tr>
-    <tr>
-      <td>[“i”, “water”, “drink”]</td>
-      <td>[“want”, “to”]</td>
-      <td>[“i”, “want”, “to”, “drink”, “water”]</td>
-      <td>“No”</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">cards1</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">cards2</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">goal</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">cd1</span> <span class="o">=</span> <span class="n">cards1</span>
-    <span class="k">var</span> <span class="nv">cd2</span> <span class="o">=</span> <span class="n">cards2</span>
-    <span class="k">var</span> <span class="nv">removeCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">goal</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">cd1</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">cd1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">cd1</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="n">removeCnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">cd2</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">cd2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">cd2</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="n">removeCnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">if</span> <span class="n">goal</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="n">removeCnt</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">"Yes"</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="s">"No"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">cards1</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">cards2</span><span class="p">:[</span><span class="kt">String</span><span class="p">],</span> <span class="n">_</span> <span class="nv">goal</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">reverseCards1</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">cards1</span><span class="o">.</span><span class="nf">reversed</span><span class="p">())</span>
-    <span class="k">var</span> <span class="nv">reverseCards2</span> <span class="o">=</span> <span class="kt">Array</span><span class="p">(</span><span class="n">cards2</span><span class="o">.</span><span class="nf">reversed</span><span class="p">())</span>
-
-    <span class="k">for</span> <span class="n">g</span> <span class="k">in</span> <span class="n">goal</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="o">!</span><span class="n">reverseCards1</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">reverseCards1</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="n">g</span> <span class="p">{</span>
-            <span class="n">reverseCards1</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
-            <span class="k">continue</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="o">!</span><span class="n">reverseCards2</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">&amp;&amp;</span> <span class="n">reverseCards2</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="n">g</span> <span class="p">{</span>
-            <span class="n">reverseCards2</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
-            <span class="k">continue</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="s">"No"</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="s">"Yes"</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이방법">나의 풀이방법</h1>
-<ul>
-  <li>goal을 하나씩 불러와서 card의 첫번째 값과 같으면 remove 시키고 삭제 횟수를 증가, 삭제 횟수가 goal 수가 일치하면 Yes, 아니면 No !</li>
-</ul>
-
-<h1 id="다른사람-풀이">다른사람 풀이</h1>
-<ul>
-  <li>이번에는 다른 사람 풀이도 비슷</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="카드뭉치" /><summary type="html"><![CDATA[[프로그래머스/Swift] 카드뭉치]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 23일차</title><link href="http://localhost:4000/TIL/til23/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 23일차" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til23</id><content type="html" xml:base="http://localhost:4000/TIL/til23/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-28-til23.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>문제를 보고 어떻게 풀어야겠다 바로 생각이 들었는데 매일 매일 한문제 풀었던게 효과가 있는 것 같다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" target="_blank">카드뭉치</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>화면을 이동해서 데이터를 수정하고 화면을 종료 후 데이터가 수정됐는지 확인하는 기능을 추가했다.</li>
-  <li>화면 이동을 통해서 델리게이트 사용 연습이 되는 것 같다.</li>
-  <li><a href="https://limlogging.github.io/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" target="_blank">TableView Row 선택 후 화면 이동하기</a></li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li>다음주까지 깃허브 앱 메인 화면을 만들어 보는 과제를 받았다.</li>
-  <li>api를 사용하여 저장소 수를 받아와야하고 코드를 통해 오토레이아웃을 사용해야한다.</li>
-  <li>조금 빡센것 같은데 개인 과제 복습하면서 챌린지반 과제도 도전해야겠다!!!</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>개인과제 코드 정리 및 제출</li>
-  <li>알고리즘 문제 풀기</li>
-  <li>챌린지반 과제 분석</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 23일차 이야기]]></summary></entry><entry><title type="html">[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</title><link href="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" rel="alternate" type="text/html" title="[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/"><![CDATA[<h1 id="cell을-오른쪽-swipe하여-수정--삭제-기능-화면보기">Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Tableview" /><category term="Cell" /><category term="Row" /><summary type="html"><![CDATA[Table View Row 선택 후 화면 이동하기]]></summary></entry><entry><title type="html">[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</title><link href="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" rel="alternate" type="text/html" title="[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/"><![CDATA[<h1 id="cell을-오른쪽-swipe하여-수정--삭제-기능-화면보기">Cell을 오른쪽 Swipe하여 수정 / 삭제 기능 화면보기</h1>
 <ul>
   <li>Cell을 오른쪽 Swipe하여 수정, 삭제 버튼을 추가했습니다.</li>
 </ul>
@@ -606,7 +647,7 @@
 <h2 id="실행화면">실행화면</h2>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-27-trailingSwipeActionsConfigurationForRowAt.mov" type="video/mp4" />
+    <source src="../../assets/video/categories/uikit/2024-03-27-trailingSwipeActionsConfigurationForRowAt.mov" type="video/mp4" />
 </video>
 
 <p><br /></p>
@@ -803,7 +844,7 @@
 
 <h1 id="실행-화면">실행 화면</h1>
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-목록순서바꾸기.mov" type="video/mp4" />
+    <source src="../../assets/video/categories/uikit/2024-03-26-목록순서바꾸기.mov" type="video/mp4" />
 </video>
 
 <p><br /></p>
@@ -835,7 +876,7 @@
 
 <h1 id="실행화면">실행화면</h1>
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
+    <source src="../../assets/video/categories/uikit/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4" />
 </video>
 
 <p><br /></p>
@@ -912,102 +953,4 @@
       </li>
     </ul>
   </li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry><entry><title type="html">[UIKit] NavigationBar에 Edit 버튼 추가하기</title><link href="http://localhost:4000/UIKit/NavigationBarEditButton/" rel="alternate" type="text/html" title="[UIKit] NavigationBar에 Edit 버튼 추가하기" /><published>2024-03-26T00:00:00+09:00</published><updated>2024-03-26T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/NavigationBarEditButton</id><content type="html" xml:base="http://localhost:4000/UIKit/NavigationBarEditButton/"><![CDATA[<h1 id="navigation-bar에-edit-버튼-추가하기">Navigation Bar에 Edit 버튼 추가하기</h1>
-<ul>
-  <li>navigation과 연결된 상태에서 viewDidLoad에 코드를 추가합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-        
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
-        
-        <span class="c1">//상단 Navigation bar 왼쪽에 Edit 버튼 추가</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">editButtonItem</span> 
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="실행-화면">실행 화면</h1>
-<ul>
-  <li>네비게이션 바 왼쪽에 edit 버튼이 생기고 edit 버튼을 누르면 done으로 바뀝니다.</li>
-  <li>edit 버튼을 선택 시 아무런 변화가 없습니다.</li>
-</ul>
-
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-NavigationBarEditButton1.mov" type="video/mp4" />
-</video>
-
-<p><br /></p>
-
-<h1 id="delegate-상속-후-setediting-메서드를-추가">Delegate 상속 후 setEditing 메서드를 추가</h1>
-<ul>
-  <li>UITableViewDelegate를 채택하고 setEditing 메서드를 추가합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">override</span> <span class="kd">func</span> <span class="nf">setEditing</span><span class="p">(</span><span class="n">_</span> <span class="nv">editing</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//부모클래스 편집 모드 설정에 관련된 작업을 수행, 없으면 Done 버튼 사라짐 </span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="n">editing</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="n">animated</span><span class="p">)</span> 
-        
-        <span class="c1">//사용자가 편집 모드로 전환할 때 테이블 뷰의 셀을 편집할 수 있도록 허용하거나 허용하지 않도록 설정</span>
-        <span class="c1">//myTodoListTableView를 편집모드로 변경할 수 있도록 설정 </span>
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="n">editing</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> 
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>관련 이벤트가 없으면 ⛔️ 버튼을 클릭하면 아무런 변화가 없습니다.</li>
-  <li><a href="https://limlogging.github.io/UIKit/TableViewSwipeDelete/" target="_blank">삭제기능 바로가기</a></li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="실행-화면-1">실행 화면</h1>
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/2024-03-26-NavigationBarEditButton2.mov" type="video/mp4" />
-</video>
-
-<p><br /></p>
-
-<h1 id="코드가-아닌-스토리보드에-bar-button-item-추가하여-구현하기">코드가 아닌 스토리보드에 bar Button Item 추가하여 구현하기</h1>
-<h2 id="1-bar-button-item-추가">1. bar Button Item 추가</h2>
-<ul>
-  <li>라이브러리에서 bar button item을 추가하고 System Item을 Edit으로 변경합니다.</li>
-</ul>
-
-<p><img src="../../assets/images/categories/uikit/2024-03-26-NavigationBarEditButton1.png" alt="" /></p>
-
-<h2 id="2-액션버튼-생성">2. 액션버튼 생성</h2>
-<ul>
-  <li>편집모드가 아닐땐 Edit 버튼이 보여야하고 편집모드일때는 Done 버튼이 보여야합니다.</li>
-  <li>새로운 버튼 설정을 하지 않으면 button title이 edit로만 보입니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - edit 창 선택</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">editButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//편집 모드와 버튼의 Text는 서로 반대 </span>
-    <span class="k">if</span> <span class="n">myTodoListTableView</span><span class="o">.</span><span class="n">isEditing</span> <span class="p">{</span>
-        <span class="c1">// 편집 모드 해제</span>
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="c1">// 새로운 UIBarButtonItem 생성하여 Edit 버튼으로 설정</span>
-        <span class="k">let</span> <span class="nv">editButton</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">barButtonSystemItem</span><span class="p">:</span> <span class="o">.</span><span class="n">edit</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">editButtonTapped</span><span class="p">(</span><span class="nv">_</span><span class="p">:)))</span>
-        <span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="n">editButton</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// 편집 모드 활성화</span>
-        <span class="n">myTodoListTableView</span><span class="o">.</span><span class="nf">setEditing</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
-        
-        <span class="c1">// 새로운 UIBarButtonItem 생성하여 Done 버튼으로 설정</span>
-        <span class="k">let</span> <span class="nv">doneButton</span> <span class="o">=</span> <span class="kt">UIBarButtonItem</span><span class="p">(</span><span class="nv">barButtonSystemItem</span><span class="p">:</span> <span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="nf">editButtonTapped</span><span class="p">(</span><span class="nv">_</span><span class="p">:)))</span>
-        <span class="n">navigationItem</span><span class="o">.</span><span class="n">leftBarButtonItem</span> <span class="o">=</span> <span class="n">doneButton</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>Navigation Bar에 버튼을 추가하고 TableView Delegate를 채택하여 TableView 편집모드 구현가능</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="Navigation" /><category term="Bar" /><category term="Edit" /><category term="Button" /><summary type="html"><![CDATA[NavigationBar에 Edit 버튼 추가하고 TableView row삭제하기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="TableView Swipe Delete" /><summary type="html"><![CDATA[Tableview에서 Swipe로 Row 삭제하기]]></summary></entry></feed>

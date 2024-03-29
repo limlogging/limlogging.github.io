@@ -18,7 +18,7 @@ comments: true
 - Cell에서 스위치의 데이터를 변경하고 새로운 데이터를 추가하면 switch 정보가 초기화가 됩니다. 
 - Cell에서 스위치를 변경할때 ViewController의 배열의 값도 변경하면 새로운 값이 추가되어도 스위치의 Value가 바뀌지 않을 것 입니다.
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate1.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-UITableViewCellDelegate1.mov" type="video/mp4">
 </video>
 
 # 예제 코드 
@@ -112,7 +112,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ## 8. 실행화면
 - 스위치 변경 시 배열의 값도 변경하여 데이터를 추가해도 스위치가 초기화되지 않습니다. 
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate2.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-UITableViewCellDelegate2.mov" type="video/mp4">
 </video>
 
 # 스위치 토글 시 취소선(strikeThrough) 추가
@@ -177,7 +177,7 @@ extension ViewController: MyToDoListCellDelegate {
 ```
 ## 4. 실행화면 
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-UITableViewCellDelegate3.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-UITableViewCellDelegate3.mov" type="video/mp4">
 </video>
 
 # 마무리 

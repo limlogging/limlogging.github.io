@@ -700,4 +700,10 @@ var store = [{
         "tags": ["Algorithm","coding test","과일 장수"],
         "url": "/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/",
         "teaser": null
+      },{
+        "title": "[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트",
+        "excerpt":"ToDoList 만들기 앱 개발 입문 과제로 ToDoList 만들기를 구현하였습니다. 실행 화면 구현 기능 ToDoList 출력 Alert 버튼으로 할 일 입력 네비게이션 바버튼을 통한 수정, 삭제, 순서 변경 TableView Row선택 시 화면 이동 및 상세 내용보기, 수정내용 자동 저장 총 할일 수, 총 완료 수 확인 프로젝트간 공부한 내용 델리게이트(Delegate) 패턴...","categories": ["sparta"],
+        "tags": ["ToDoList"],
+        "url": "/sparta/ToDoList/",
+        "teaser": null
       }]

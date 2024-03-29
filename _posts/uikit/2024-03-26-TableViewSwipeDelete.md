@@ -36,7 +36,7 @@ comments: true
 
 # 실행화면 
 <video width="640" height="360" controls>
-    <source src="../../assets/video/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4">
+    <source src="../../assets/video/categories/uikit/2024-03-26-TableViewSwipeDelete.mov" type="video/mp4">
 </video>
 
 <br>
