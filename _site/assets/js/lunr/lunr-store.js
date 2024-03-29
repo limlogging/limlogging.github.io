@@ -706,4 +706,10 @@ var store = [{
         "tags": ["ToDoList"],
         "url": "/sparta/ToDoList/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 24일차",
+        "excerpt":"데일리 스크럼 알고리즘 5문제가 시간 초과로 통화하지 못해서 다른 방법을 고민하다가 for문으로 해결했다. 풀이 보기 과일장수 개인 과제 공부 개인 과제 제출날 오후는 살짝 널널한 ? 느낌. 오전에 팀원분 과제 잠시 도와드리고 오후에는 개인과제 해설 영상을 봤다. 그리고 프로젝트 회고 작성 ToDoList 만들기 프로젝트 챌린지반 구현해야하는 내용을 PDF로 주셔서 내용만...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til24/",
+        "teaser": null
       }]
