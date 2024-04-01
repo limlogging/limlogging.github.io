@@ -718,4 +718,10 @@ var store = [{
         "tags": ["Algorithm","coding test","모의고사"],
         "url": "/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/",
         "teaser": null
+      },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 25일차",
+        "excerpt":"데일리 스크럼 알고리즘 문제는 생각보다 간단한 것 같은데 3개의 값을 비교하고 집계하고 순위를 정하는게 생각보다 고민스러웠다. 조금 더 쉬운 방법, swift가 제공하는 기본 함수를 사용할 수 없을까 생각했는데 찾지 못하고 처음 생각한대로 풀었다. 풀이 보기 모의고사 팀 프로젝트 오늘은 팀 프로젝트 발제 후 팀프로젝트를 진행했다. 키오스크를 만들어 보는 과제인데 주제를...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til25/",
+        "teaser": null
       }]

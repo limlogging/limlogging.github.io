@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-01T22:44:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 모의고사</title><link href="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 모의고사" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-01T23:08:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 모의고사</title><link href="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 모의고사" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
     <ul>
@@ -155,7 +155,43 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>어떻게하면 저렇게 생각할 수 있을까? 좋아요가 50개 이상…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="모의고사" /><summary type="html"><![CDATA[[프로그래머스/Swift] 모의고사]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트</title><link href="http://localhost:4000/sparta/ToDoList/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/ToDoList</id><content type="html" xml:base="http://localhost:4000/sparta/ToDoList/"><![CDATA[<h1 id="todolist-만들기">ToDoList 만들기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="모의고사" /><summary type="html"><![CDATA[[프로그래머스/Swift] 모의고사]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 25일차</title><link href="http://localhost:4000/TIL/til25/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 25일차" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til25</id><content type="html" xml:base="http://localhost:4000/TIL/til25/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-04-01-til25.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>문제는 생각보다 간단한 것 같은데 3개의 값을 비교하고 집계하고 순위를 정하는게 생각보다 고민스러웠다. 조금 더 쉬운 방법, swift가 제공하는 기본 함수를 사용할 수 없을까 생각했는데 찾지 못하고 처음 생각한대로 풀었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/" target="_blank">모의고사</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="팀-프로젝트">팀 프로젝트</h3>
+<ul>
+  <li>오늘은 팀 프로젝트 발제 후 팀프로젝트를 진행했다.</li>
+  <li>키오스크를 만들어 보는 과제인데 주제를 정하고 구현해야하는 기능과 목표를 확인했다.</li>
+  <li>필요한 키워드를 골라서 각자 해보고 싶었던 주제를 골라 역할 분담을 했다.</li>
+  <li>나는 프로젝트에 필요한 이미지파일을 모으고 기본 프로젝트를 Git에 올렸다.</li>
+  <li>깃허브 풀리퀘스트가 안돼서 엄청 시간 뺐겼는데 내일 차근차근 다시 해본다. !</li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>주말에 생각보다 수월하게 과제를 했다.</li>
+  <li>테이블뷰 페이징처리만 못하고 기본적인 내용을 오로지 코드로만! 코드로만 작성하고 해냈다.</li>
+  <li>깃허브 프로필 부분만 코드로 구현하는 내용이었지만 일부분만 스토리보드로 구현하는게 오토레이아웃 잡기가 힘들 것 같아 코드로만 진행했는데 나쁘지 않았다.</li>
+  <li>코코아팟 설치, Alamofire, SDWebImage 라이브러리를 사용했다.</li>
+  <li>현재 진행 상황 
+<img src="/assets/images/categories/til/2024-04-01-til25-2.png" alt="" /></li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>깃허브 공부 및 챌린지반 과제 페이징 처리 구현하기</li>
+  <li>챌린지반 과제 블로그 포스팅하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 25일차 이야기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트</title><link href="http://localhost:4000/sparta/ToDoList/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/ToDoList</id><content type="html" xml:base="http://localhost:4000/sparta/ToDoList/"><![CDATA[<h1 id="todolist-만들기">ToDoList 만들기</h1>
 <ul>
   <li>앱 개발 입문 과제로 ToDoList 만들기를 구현하였습니다.</li>
 </ul>
@@ -194,35 +230,7 @@
 <ul>
   <li>스토리보드를 통해 UI는 어찌어찌 구현하였으나 그 이후 데이터를 TableView에 보여주기, View Controller 간 발생한 이벤트 처리 등 기능은 간단하지만, 그 기능을 위해 알아야하는 델리게이트 패턴, 얼러트컨트롤러, 프로토콜 채택 등 많은 것을 공부할 수 있었다.</li>
   <li>첫 주는 강의 및 개인 과제를 위한 핵심 키워드 공부, 둘째 주는 실제 프로젝트 생성 및 기능 추가하기. 간단하지만 스스로 만든 첫 프로젝트를 마무리하면서 완성했다는 성취감을 얻을 수 있었다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="ToDoList" /><summary type="html"><![CDATA[iOS 앱 개발 입문 - ToDoList 만들기 프로젝트]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 24일차</title><link href="http://localhost:4000/TIL/til24/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 24일차" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til24</id><content type="html" xml:base="http://localhost:4000/TIL/til24/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-29-til24.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>5문제가 시간 초과로 통화하지 못해서 다른 방법을 고민하다가 for문으로 해결했다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" target="_blank">과일장수</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>개인 과제 제출날 오후는 살짝 널널한 ? 느낌. 오전에 팀원분 과제 잠시 도와드리고 오후에는 개인과제 해설 영상을 봤다. 그리고 프로젝트 회고 작성</li>
-  <li><a href="https://limlogging.github.io/sparta/ToDoList/" target="_blank">ToDoList 만들기 프로젝트</a></li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li>구현해야하는 내용을 PDF로 주셔서 내용만 확인하고 아직 시작도 못했다.</li>
-  <li>다음주에 팀과제, 개인과제 따로 있어 주말에 시간날때 조금이라도 시작해야겠다.</li>
-</ul>
-
-<h3 id="주말-목표">주말 목표</h3>
-<ul>
-  <li>챌린지반 과제 시작하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 24일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="ToDoList" /><summary type="html"><![CDATA[iOS 앱 개발 입문 - ToDoList 만들기 프로젝트]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며, k점이 최상품의 사과이고 1점이 최하품의 사과입니다. 사과 한 상자의 가격은 다음과 같이 결정됩니다.
     <ul>
@@ -385,7 +393,35 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>stride를 사용하여 푸는 방법도 있다는걸 알았다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 24일차</title><link href="http://localhost:4000/TIL/til24/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 24일차" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til24</id><content type="html" xml:base="http://localhost:4000/TIL/til24/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
+<p><img src="/assets/images/categories/til/2024-03-29-til24.png" alt="" /></p>
+
+<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>5문제가 시간 초과로 통화하지 못해서 다른 방법을 고민하다가 for문으로 해결했다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" target="_blank">과일장수</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="개인-과제-공부">개인 과제 공부</h3>
+<ul>
+  <li>개인 과제 제출날 오후는 살짝 널널한 ? 느낌. 오전에 팀원분 과제 잠시 도와드리고 오후에는 개인과제 해설 영상을 봤다. 그리고 프로젝트 회고 작성</li>
+  <li><a href="https://limlogging.github.io/sparta/ToDoList/" target="_blank">ToDoList 만들기 프로젝트</a></li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>구현해야하는 내용을 PDF로 주셔서 내용만 확인하고 아직 시작도 못했다.</li>
+  <li>다음주에 팀과제, 개인과제 따로 있어 주말에 시간날때 조금이라도 시작해야겠다.</li>
+</ul>
+
+<h3 id="주말-목표">주말 목표</h3>
+<ul>
+  <li>챌린지반 과제 시작하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 24일차 이야기]]></summary></entry><entry><title type="html">[UIKit] TableView Row 선택 후 화면 이동하기</title><link href="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/" rel="alternate" type="text/html" title="[UIKit] TableView Row 선택 후 화면 이동하기" /><published>2024-03-28T00:00:00+09:00</published><updated>2024-03-28T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99</id><content type="html" xml:base="http://localhost:4000/uikit/%EB%A1%9C%EC%9A%B0%EC%84%A0%ED%83%9D%ED%9B%84%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%99/"><![CDATA[<h1 id="row-선택-후-화면-이동하기">Row 선택 후 화면 이동하기</h1>
 <ul>
   <li>ViewController를 만들고 TableView Row를 선택하면 Cell의 정보를 확인하는 방법입니다.</li>
 </ul>
@@ -969,30 +1005,4 @@
 <ul>
   <li>이번에는 날짜 관련된 기능을 알아야 할 것 같아 바로 검색을 하고 풀었다.</li>
   <li>좋아요 많은 다른 사람 풀이를 봤지만 2016년 기준이라 DateFormatter, Calendar를 쓰는게 년도 입력으로 확장하기에 더 맞는 방법인 것 같다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="2016년" /><summary type="html"><![CDATA[[프로그래머스/Swift] 2016년]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 22일차</title><link href="http://localhost:4000/TIL/til22/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 22일차" /><published>2024-03-27T00:00:00+09:00</published><updated>2024-03-27T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til22</id><content type="html" xml:base="http://localhost:4000/TIL/til22/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-27-til22.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>오늘은 특정 날짜의 요일을 맞추는 문제였는데 Swift에서 제공하는 함수로 처리할 수 있을 것 같았다. Swift에서의 Date처리 방법을 확인하고 풀었다.</li>
-  <li>Date, Calendar 관련은 따로 정리해보고 포스팅 해봐야겠다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/2016%EB%85%84/" target="_blank">2016년</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>NavigationBar에 Edit 버튼을 코드로 추가했었는데 스토리보드에서 Button을 추가하는 걸로 수정했다. Edit 버튼을 선택하면 Done으로 바뀌고 Done을 선택하면 Edit로 바뀌는데 Text 변경이 되지 않아 한참 걸렸다. 버튼을 선택할때 마다 bar button item 설정을 변경하는 것으로 해결했다.</li>
-  <li>Swipe 삭제도 수정버튼을 추가하려면 다른 메서드를 사용해야해서 다시한다고 시간이 걸렸다. 어떤 메서드를 써야하나 찾는게 시간이 걸린다.</li>
-  <li><a href="https://limlogging.github.io/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" target="_blank">Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현</a></li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>꾸미기 도전에는 실패했는데 우선 기능 추가와 완성에 조금 더 집중하는걸로</li>
-  <li>알고리즘 문제 풀기 (문제 풀고 고차함수 연습 꼭 10분이라도..)</li>
-  <li>과제 풀기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 22일차 이야기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="2016년" /><summary type="html"><![CDATA[[프로그래머스/Swift] 2016년]]></summary></entry></feed>
