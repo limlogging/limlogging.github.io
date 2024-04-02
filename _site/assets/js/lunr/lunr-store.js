@@ -724,4 +724,28 @@ var store = [{
         "tags": ["TIL"],
         "url": "/TIL/til25/",
         "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 소수 만들기",
+        "excerpt":"문제 설명 주어진 숫자 중 3개의 수를 더했을 때 소수가 되는 경우의 개수를 구하려고 합니다. 숫자들이 들어있는 배열 nums가 매개변수로 주어질 때, nums에 있는 숫자들 중 서로 다른 3개를 골라 더했을 때 소수가 되는 경우의 개수를 return 하도록 solution 함수를 완성해주세요. 문제 풀기 제한사항 nums에 들어있는 숫자의 개수는 3개 이상...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","소수 만들기"],
+        "url": "/algorithm/%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "[UIKit] SDWebImage 설치하기",
+        "excerpt":"SDWebImage란 ? SDWebImage는 Objective-C로 작성된 이미지 로딩 및 캐싱 라이브러리입니다. iOS 및 macOS에서 많이 사용되며, Swift에서도 사용할 수 있습니다. SDWebImage는 비동기 이미지 다운로드, 캐싱 및 관리를 처리하고, 메모리 사용량을 최적화하여 원활한 사용자 경험을 제공합니다. 또한 SDWebImage는 GIF 지원, 프로그레시브 다운로드, 이미지 처리 등의 기능을 제공합니다. SDWebImage는 iOS 개발 커뮤니티에서 오랫동안...","categories": ["UIKit"],
+        "tags": ["swift","iOS","SDWebImage"],
+        "url": "/UIKit/SDWebImage/",
+        "teaser": null
+      },{
+        "title": "[UIKit] 알라모파이어(alamofire) 설치하기",
+        "excerpt":"알라모파이어(alamofire)란 ? Alamofire는 iOS, macOS를 위한 Swift 기반 HTTP 네트워킹 라이브러리입니다. 애플에서 자체적으로 네트워크 통신을 위해 제공하는 URLSession API가 있는데, 이를 보완한 것이 Alamofire 입니다. Alamofire에서는 다양한 기능을 제공하고 있는데, 자세한 내용은 Alamofire github 홈페이지에서 확인가능합니다. 사용방법 1. 프로젝트 폴더로 이동해서 터미널 오픈 프로젝트 폴더로 이동해서 폴더를 우클릭하고 터미널을 오픈합니다. 2....","categories": ["UIKit"],
+        "tags": ["swift","iOS","alamofire"],
+        "url": "/UIKit/alamofire/",
+        "teaser": null
+      },{
+        "title": "[UIKit] 코코아팟(cocoapods) 설치하기",
+        "excerpt":"코코아팟(cocoapods)이란 ? Objective-C 및 Swift Cocoa 프로젝트의 종속성 관리자 즉, CocoaPods은 Objective-C 또는 Swift에서 라이브러리를 사용할 수 있게 도와주는 모듈이다. 설치하기 1. 홈브루 버전 확인 및 업데이트 터미널에서 홈브루 버전확인 및 업데이트를 합니다. imhs@imhsui-MacBookPro ~ % brew --version Homebrew 4.2.11 imhs@imhsui-MacBookPro ~ % brew update imhs@imhsui-MacBookPro ~ % brew --version Homebrew...","categories": ["UIKit"],
+        "tags": ["swift","iOS","cocoapods"],
+        "url": "/UIKit/cocoapods/",
+        "teaser": null
       }]
