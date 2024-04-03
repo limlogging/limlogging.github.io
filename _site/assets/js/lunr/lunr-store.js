@@ -731,7 +731,7 @@ var store = [{
         "url": "/algorithm/%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0/",
         "teaser": null
       },{
-        "title": "[TIL] 내배캠 iOS앱 개발 공부 26일차 - 2024.04.03",
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 26일차 - 2024.04.02",
         "excerpt":"알고리즘 3자리 수 덧셈 조합을 먼저 구하고 합이 홀수인 수만 소수 판별 체크 풀이 보기 소수만들기 팀 프로젝트 Git에 올라온 자료를 하나로 합치는 일이 보통 일이 아니다. 수정하지도 않았는데 git status에서 DS_Store, UserInterfaceState 파일때문에 문제가 발생하여 .gitignore에 브랜치 마다 추가하고 팀원들 브랜치를 각각 받아 수동으로 합쳤다. 각자 소스코드 작성하는 스타일이...","categories": ["TIL"],
         "tags": ["TIL"],
         "url": "/TIL/til26/",
@@ -753,5 +753,11 @@ var store = [{
         "excerpt":"코코아팟(cocoapods)이란 ? Objective-C 및 Swift Cocoa 프로젝트의 종속성 관리자 즉, CocoaPods은 Objective-C 또는 Swift에서 라이브러리를 사용할 수 있게 도와주는 모듈이다. 설치하기 1. 홈브루 버전 확인 및 업데이트 터미널에서 홈브루 버전확인 및 업데이트를 합니다. imhs@imhsui-MacBookPro ~ % brew --version Homebrew 4.2.11 imhs@imhsui-MacBookPro ~ % brew update imhs@imhsui-MacBookPro ~ % brew --version Homebrew...","categories": ["UIKit"],
         "tags": ["swift","iOS","cocoapods"],
         "url": "/UIKit/cocoapods/",
+        "teaser": null
+      },{
+        "title": "[프로그래머스/Swift] 덧칠하기",
+        "excerpt":"문제 설명 어느 학교에 페인트가 칠해진 길이가 n미터인 벽이 있습니다. 벽에 동아리 · 학회 홍보나 회사 채용 공고 포스터 등을 게시하기 위해 테이프로 붙였다가 철거할 때 떼는 일이 많고 그 과정에서 페인트가 벗겨지곤 합니다. 페인트가 벗겨진 벽이 보기 흉해져 학교는 벽에 페인트를 덧칠하기로 했습니다. 넓은 벽 전체에 페인트를 새로 칠하는...","categories": ["Algorithm"],
+        "tags": ["Algorithm","coding test","덧칠하기"],
+        "url": "/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/",
         "teaser": null
       }]
