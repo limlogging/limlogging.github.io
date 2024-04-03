@@ -731,6 +731,12 @@ var store = [{
         "url": "/algorithm/%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 26일차 - 2024.04.03",
+        "excerpt":"알고리즘 3자리 수 덧셈 조합을 먼저 구하고 합이 홀수인 수만 소수 판별 체크 풀이 보기 소수만들기 팀 프로젝트 Git에 올라온 자료를 하나로 합치는 일이 보통 일이 아니다. 수정하지도 않았는데 git status에서 DS_Store, UserInterfaceState 파일때문에 문제가 발생하여 .gitignore에 브랜치 마다 추가하고 팀원들 브랜치를 각각 받아 수동으로 합쳤다. 각자 소스코드 작성하는 스타일이...","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til26/",
+        "teaser": null
+      },{
         "title": "[UIKit] SDWebImage 설치하기",
         "excerpt":"SDWebImage란 ? SDWebImage는 Objective-C로 작성된 이미지 로딩 및 캐싱 라이브러리입니다. iOS 및 macOS에서 많이 사용되며, Swift에서도 사용할 수 있습니다. SDWebImage는 비동기 이미지 다운로드, 캐싱 및 관리를 처리하고, 메모리 사용량을 최적화하여 원활한 사용자 경험을 제공합니다. 또한 SDWebImage는 GIF 지원, 프로그레시브 다운로드, 이미지 처리 등의 기능을 제공합니다. SDWebImage는 iOS 개발 커뮤니티에서 오랫동안...","categories": ["UIKit"],
         "tags": ["swift","iOS","SDWebImage"],

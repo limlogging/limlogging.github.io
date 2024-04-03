@@ -489,6 +489,10 @@
 <lastmod>2024-04-02T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/TIL/til26/</loc>
+<lastmod>2024-04-02T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/UIKit/SDWebImage/</loc>
 <lastmod>2024-04-02T00:00:00+09:00</lastmod>
 </url>
@@ -604,5 +608,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page25/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page26/</loc>
 </url>
 </urlset>

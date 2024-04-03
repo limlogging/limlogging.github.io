@@ -64,7 +64,7 @@ imhs@imhsui-MacBookPro MyGithub % pod init
 
 <br>
 
-# 설치 후 에러 발생 시 (snadbox 에러)
+# 설치 후 에러 발생 시 (sandbox 에러)
 
 ![](/assets/images/categories/uikit/2024-04-02-alamofire5.png)
 
