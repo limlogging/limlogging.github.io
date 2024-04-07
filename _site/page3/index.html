@@ -140,6 +140,11 @@
               <a href="/categories/">Categories</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -328,7 +333,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(6)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -349,7 +354,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/TIL/">Today I Learned(21)</a></li>
+            <li><a href="/categories/TIL/">Today I Learned(22)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -407,6 +412,86 @@
 
 
 <div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til24/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 24일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 24일차 이야기
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/ToDoList/" rel="permalink">[내배캠] iOS 앱 개발 입문 - ToDoList 만들기 프로젝트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 입문 - ToDoList 만들기 프로젝트
+</p>
+  </article>
+</div>
+
   
     
 
@@ -528,86 +613,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98/" rel="permalink">[프로그래머스/Swift] 카드뭉치
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 카드뭉치
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/uikit/%EC%85%80%EC%98%A4%EB%A5%B8%EC%AA%BD%EC%8A%A4%EC%99%80%EC%9D%B4%ED%94%84%EC%95%A1%EC%85%98/" rel="permalink">[UIKit] Cell의 오른쪽 Swipe 액션으로 수정/삭제 버튼 구현
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Cell 오른쪽 Swipe로 수정,삭제 구현
-</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -683,6 +688,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -729,6 +745,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

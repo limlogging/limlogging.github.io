@@ -140,6 +140,11 @@
               <a href="/categories/">Categories</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -328,7 +333,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(6)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -349,7 +354,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/TIL/">Today I Learned(21)</a></li>
+            <li><a href="/categories/TIL/">Today I Learned(22)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -407,6 +412,86 @@
 
 
 <div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%95%BD%EC%88%98%EC%9D%98%EA%B0%9C%EC%88%98%EC%99%80%EB%8D%A7%EC%85%88/" rel="permalink">[프로그래머스/Swift] 약수의 개수와 덧셈
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 약수의 개수와 덧셈
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 숫자 비교하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 숫자 비교하기
+</p>
+  </article>
+</div>
+
   
     
 
@@ -528,86 +613,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%8F%89%EA%B7%A0%EA%B0%92/" rel="permalink">[프로그래머스/Swift] 배열의 평균값
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 배열의 평균값
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%EC%A0%95%EC%88%98%EB%A1%9C%EB%B0%94%EA%BE%B8%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 문자열을 정수로 바꾸기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 문자열을 정수로 바꾸기
-</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -694,6 +699,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -740,6 +756,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

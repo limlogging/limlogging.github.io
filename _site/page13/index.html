@@ -140,6 +140,11 @@
               <a href="/categories/">Categories</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -328,7 +333,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(6)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -349,7 +354,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/TIL/">Today I Learned(21)</a></li>
+            <li><a href="/categories/TIL/">Today I Learned(22)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -407,6 +412,86 @@
 
 
 <div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til13/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 13일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 13일차 이야기
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%88%AB%EC%9E%90%EB%AC%B8%EC%9E%90%EC%97%B4%EA%B3%BC%EC%98%81%EB%8B%A8%EC%96%B4/" rel="permalink">[프로그래머스/Swift] 숫자 문자열과 영단어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 숫자 문자열과 영단어
+</p>
+  </article>
+</div>
+
   
     
 
@@ -528,86 +613,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/TIL/til11/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 11일차
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 11일차 이야기
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/swift/%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" rel="permalink">[Swift] 고차함수
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">다른 함수를 인자로 받거나, 함수의 결과로 함수를 반환하는 함수인 고차함수
-</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -694,6 +699,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -740,6 +756,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

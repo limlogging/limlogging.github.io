@@ -140,6 +140,11 @@
               <a href="/categories/">Categories</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -328,7 +333,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/GitHubBlog/">GitHub Blog(5)</a></li>
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(6)</a></li>
             <!-- Posting Count 추가 끝 -->
           
         </ul>
@@ -349,7 +354,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/TIL/">Today I Learned(21)</a></li>
+            <li><a href="/categories/TIL/">Today I Learned(22)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -407,6 +412,86 @@
 
 
 <div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EB%B3%84%EC%B0%8D%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 직사각형 별찍기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 직사각형 별찍기
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%A0%9C%EC%9D%BC%EC%9E%91%EC%9D%80%EC%88%98%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 제일 작은 수 제거하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 제일 작은 수 제거하기
+</p>
+  </article>
+</div>
+
   
     
 
@@ -528,86 +613,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%9E%90%EB%A6%BF%EC%88%98-%EB%8D%94%ED%95%98%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 자릿수 더하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 자릿수 더하기
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/algorithm/%EC%9D%B4%EC%83%81%ED%95%9C%EB%AC%B8%EC%9E%90%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">[프로그래머스/Swift] 이상한 문자 만들기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 이상한 문자 만들기
-</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -694,6 +699,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -740,6 +756,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

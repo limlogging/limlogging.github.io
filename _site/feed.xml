@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-03T22:30:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 덧칠하기</title><link href="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 덧칠하기" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-07T19:55:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
+
+<h1 id="1-_configyml-파일-수정하기">1. _config.yml 파일 수정하기</h1>
+<ul>
+  <li>_config.yml 파일에서 설정을 변경하면 바로 추가할 수 있습니다.</li>
+  <li>search 관련 설정을 true로 변경합니다.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">search                   </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
+<span class="na">search_full_content      </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
+<span class="na">search_provider          </span><span class="pi">:</span> <span class="s">lunr</span> <span class="c1"># lunr (default), algolia, google</span>
+<span class="na">lunr</span><span class="pi">:</span>
+  <span class="na">search_within_pages    </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="2-확인">2. 확인</h1>
+<p>검색기능이 추가되고 검색할 수 있습니다. 
+<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 덧칠하기</title><link href="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 덧칠하기" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>어느 학교에 페인트가 칠해진 길이가 n미터인 벽이 있습니다. 벽에 동아리 · 학회 홍보나 회사 채용 공고 포스터 등을 게시하기 위해 테이프로 붙였다가 철거할 때 떼는 일이 많고 그 과정에서 페인트가 벗겨지곤 합니다. 페인트가 벗겨진 벽이 보기 흉해져 학교는 벽에 페인트를 덧칠하기로 했습니다.</li>
   <li>넓은 벽 전체에 페인트를 새로 칠하는 대신, 구역을 나누어 일부만 페인트를 새로 칠 함으로써 예산을 아끼려 합니다. 이를 위해 벽을 1미터 길이의 구역 n개로 나누고, 각 구역에 왼쪽부터 순서대로 1번부터 n번까지 번호를 붙였습니다. 그리고 페인트를 다시 칠해야 할 구역들을 정했습니다.</li>
@@ -136,8 +155,34 @@
 
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
-  <li>시작 위치를 지정하고 최대로 선택할 수 있는 구간의 개수를 계산.. 간단하게 풀 수 있는 문제였구나 ..</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="덧칠하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 덧칠하기]]></summary></entry><entry><title type="html">[UIKit] 코코아팟(cocoapods) 설치하기</title><link href="http://localhost:4000/UIKit/cocoapods/" rel="alternate" type="text/html" title="[UIKit] 코코아팟(cocoapods) 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/cocoaPods</id><content type="html" xml:base="http://localhost:4000/UIKit/cocoapods/"><![CDATA[<h1 id="코코아팟cocoapods이란-">코코아팟(cocoapods)이란 ?</h1>
+  <li>시작 위치를 지정하고 최대로 선택할 수 있는 구간의 개수를 계산.. 간단하게 풀 수 있는 문제였구나 …</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="덧칠하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 덧칠하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03</title><link href="http://localhost:4000/TIL/til27/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til27</id><content type="html" xml:base="http://localhost:4000/TIL/til27/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>한번 롤러질을하면 X M가 칠해지는 롤러로 특정 섹션을 칠하는데 필요한 롤러질 횟수구하기</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" target="_blank">덧칠하기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="팀-프로젝트">팀 프로젝트</h3>
+<ul>
+  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
+  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
+  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>오늘 챌린지반 과제는 하지 않았다. - 페이징처리만 남음</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>팀 과제 진행</li>
+  <li>코드로 탭바 추가하기, 상세페이지 추가 등 ! ! !</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry><entry><title type="html">[UIKit] 코코아팟(cocoapods) 설치하기</title><link href="http://localhost:4000/UIKit/cocoapods/" rel="alternate" type="text/html" title="[UIKit] 코코아팟(cocoapods) 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/cocoaPods</id><content type="html" xml:base="http://localhost:4000/UIKit/cocoapods/"><![CDATA[<h1 id="코코아팟cocoapods이란-">코코아팟(cocoapods)이란 ?</h1>
 <ul>
   <li>Objective-C 및 Swift Cocoa 프로젝트의 종속성 관리자</li>
   <li>즉, CocoaPods은 Objective-C 또는 Swift에서 <code class="language-plaintext highlighter-rouge">라이브러리를 사용할 수 있게 도와주는 모듈</code>이다.</li>
@@ -668,195 +713,4 @@ Homebrew 4.2.15
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>어떻게하면 저렇게 생각할 수 있을까? 좋아요가 50개 이상…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="모의고사" /><summary type="html"><![CDATA[[프로그래머스/Swift] 모의고사]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 24일차</title><link href="http://localhost:4000/TIL/til24/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 24일차" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til24</id><content type="html" xml:base="http://localhost:4000/TIL/til24/"><![CDATA[<h3 id="데일리-스크럼">데일리 스크럼</h3>
-<p><img src="/assets/images/categories/til/2024-03-29-til24.png" alt="" /></p>
-
-<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>5문제가 시간 초과로 통화하지 못해서 다른 방법을 고민하다가 for문으로 해결했다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" target="_blank">과일장수</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="개인-과제-공부">개인 과제 공부</h3>
-<ul>
-  <li>개인 과제 제출날 오후는 살짝 널널한 ? 느낌. 오전에 팀원분 과제 잠시 도와드리고 오후에는 개인과제 해설 영상을 봤다. 그리고 프로젝트 회고 작성</li>
-  <li><a href="https://limlogging.github.io/sparta/ToDoList/" target="_blank">ToDoList 만들기 프로젝트</a></li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li>구현해야하는 내용을 PDF로 주셔서 내용만 확인하고 아직 시작도 못했다.</li>
-  <li>다음주에 팀과제, 개인과제 따로 있어 주말에 시간날때 조금이라도 시작해야겠다.</li>
-</ul>
-
-<h3 id="주말-목표">주말 목표</h3>
-<ul>
-  <li>챌린지반 과제 시작하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 24일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 과일 장수</title><link href="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 과일 장수" /><published>2024-03-29T00:00:00+09:00</published><updated>2024-03-29T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B3%BC%EC%9D%BC%EC%9E%A5%EC%88%98/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>과일 장수가 사과 상자를 포장하고 있습니다. 사과는 상태에 따라 1점부터 k점까지의 점수로 분류하며, k점이 최상품의 사과이고 1점이 최하품의 사과입니다. 사과 한 상자의 가격은 다음과 같이 결정됩니다.
-    <ul>
-      <li>한 상자에 사과를 m개씩 담아 포장합니다.</li>
-      <li>상자에 담긴 사과 중 가장 낮은 점수가 p (1 ≤ p ≤ k)점인 경우, 사과 한 상자의 가격은 p * m 입니다.</li>
-    </ul>
-  </li>
-  <li>과일 장수가 가능한 많은 사과를 팔았을 때, 얻을 수 있는 최대 이익을 계산하고자 합니다.(사과는 상자 단위로만 판매하며, 남는 사과는 버립니다)</li>
-  <li>예를 들어, k = 3, m = 4, 사과 7개의 점수가 [1, 2, 3, 1, 2, 3, 1]이라면, 다음과 같이 [2, 3, 2, 3]으로 구성된 사과 상자 1개를 만들어 판매하여 최대 이익을 얻을 수 있습니다.
-    <ul>
-      <li>(최저 사과 점수) x (한 상자에 담긴 사과 개수) x (상자의 개수) = 2 x 4 x 1 = 8</li>
-    </ul>
-  </li>
-  <li>사과의 최대 점수 k, 한 상자에 들어가는 사과의 수 m, 사과들의 점수 score가 주어졌을 때, 과일 장수가 얻을 수 있는 최대 이익을 return하는 solution 함수를 완성해주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/135808" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>3 ≤ k ≤ 9</li>
-  <li>3 ≤ m ≤ 10</li>
-  <li>7 ≤ score의 길이 ≤ 1,000,000
-    <ul>
-      <li>1 ≤ score[i] ≤ k</li>
-    </ul>
-  </li>
-  <li>이익이 발생하지 않는 경우에는 0을 return 해주세요.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>k</th>
-      <th>m</th>
-      <th>score</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>3</td>
-      <td>4</td>
-      <td>[1, 2, 3, 1, 2, 3, 1]</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>[4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2]</td>
-      <td>33</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>문제의 예시와 같습니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>다음과 같이 사과 상자를 포장하여 모두 팔면 최대 이익을 낼 수 있습니다.</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th>사과</th>
-      <th>상자</th>
-      <th>가격</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[1, 1, 2]</td>
-      <td>1 x 3 = 3</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>[2, 2, 2]</td>
-      <td>2 x 3 = 6</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>[4, 4, 4]</td>
-      <td>4 x 3 = 12</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>[4, 4, 4]</td>
-      <td>4 x 3 = 12</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-  <li>따라서 (1 x 3 x 1) + (2 x 3 x 1) + (4 x 3 x 2) = 33을 return합니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">k</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">score</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">k</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">7</span> <span class="o">&amp;&amp;</span> <span class="n">score</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="mi">1000000</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
-    
-    <span class="k">var</span> <span class="nv">scoreArr</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span>
-    <span class="k">var</span> <span class="nv">sum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-<span class="c1">//    while scoreArr.count &gt;= m {</span>
-<span class="c1">//        sum += scoreArr.prefix(m).last! * m</span>
-<span class="c1">//        </span>
-<span class="c1">//        let range = 0..&lt;m</span>
-<span class="c1">//        scoreArr.removeSubrange(range)</span>
-<span class="c1">//    }</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">scoreArr</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-            <span class="c1">//print("index: \(index), \(value * m)")</span>
-            <span class="n">sum</span> <span class="o">+=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">m</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">sum</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">k</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">score</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">s</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">score</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">m</span><span class="p">)</span>
-        <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="nv">$1</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이방법">나의 풀이방법</h1>
-<ul>
-  <li>처음에는 정렬 후 m개의 배열을 뽑아서 가장 낮은 값을 구하고 계산을 했다.</li>
-  <li>while true 문을 써서 그런가 시간 초과로 통과하지 못했다. (아래 11 ~ 15번에서 시간초과 발생)</li>
-  <li>for문을 사용하고 정렬했으니 m개씩 잘라서 마지막 값이 가장 작은 값이기 때문에 그 값으로 계산하고 해결했다.</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> 테스트 9 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>143.66ms, 19. 8MB<span class="o">)</span>  
-<span class="gp"> 테스트 10 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>200.39ms, 18. 9MB<span class="o">)</span> 
-<span class="gp"> 테스트 11 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2919.63ms, 60.7MB<span class="o">)</span>
-<span class="gp"> 테스트 12 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2764.20ms, 60.8MB<span class="o">)</span>
-<span class="gp"> 테스트 13 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2656.91ms, 60. 6MB<span class="o">)</span>
-<span class="gp"> 테스트 14 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>2809.80ms, 60.6MB<span class="o">)</span> 
-<span class="gp"> 테스트 15 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>3070.25ms, 60.9MB<span class="o">)</span>
-<span class="gp"> 테스트 16 &gt;</span><span class="w"> </span>통과 <span class="o">(</span>0.12ms, 16.3MB<span class="o">)</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="다른사람-풀이">다른사람 풀이</h1>
-<ul>
-  <li>stride를 사용하여 푸는 방법도 있다는걸 알았다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="과일 장수" /><summary type="html"><![CDATA[[프로그래머스/Swift] 과일 장수]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="모의고사" /><summary type="html"><![CDATA[[프로그래머스/Swift] 모의고사]]></summary></entry></feed>

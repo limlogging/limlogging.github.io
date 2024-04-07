@@ -136,6 +136,11 @@
               <a href="/categories/">Categories</a>
             </li></ul>
         
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
@@ -873,6 +878,12 @@
       
     
       
+        <li>
+          <a href="#til">
+            <strong>TIL</strong> <span class="taxonomy__count">22</span>
+          </a>
+        </li>
+      
     
       
     
@@ -888,12 +899,6 @@
     
       
     
-      
-        <li>
-          <a href="#til">
-            <strong>TIL</strong> <span class="taxonomy__count">21</span>
-          </a>
-        </li>
       
     
       
@@ -1137,6 +1142,12 @@
   
     
       
+        <li>
+          <a href="#githubblog">
+            <strong>GitHubBlog</strong> <span class="taxonomy__count">6</span>
+          </a>
+        </li>
+      
     
       
     
@@ -1152,12 +1163,6 @@
     
   
     
-      
-        <li>
-          <a href="#githubblog">
-            <strong>GitHubBlog</strong> <span class="taxonomy__count">5</span>
-          </a>
-        </li>
       
     
       
@@ -5307,25 +5312,49 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
       <section id="til" class="taxonomy__section">
         <h2 class="archive__subtitle">TIL</h2>
         <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til27/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03
+</p>
+  </article>
+</div>
+
           
             
 
@@ -6381,6 +6410,22 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
       <section id="swift" class="taxonomy__section">
         <h2 class="archive__subtitle">swift</h2>
         <div class="entries-list">
@@ -6735,25 +6780,49 @@
 
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
-    
       <section id="githubblog" class="taxonomy__section">
         <h2 class="archive__subtitle">GitHubBlog</h2>
         <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/GitHubBlog/search/" rel="permalink">[minimal-mistakes]블로그 내 검색기능 추가하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.
+</p>
+  </article>
+</div>
+
           
             
 
@@ -6958,6 +7027,22 @@
         </div>
         <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
       </section>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+  
     
   
     
@@ -7339,6 +7424,17 @@
     </div>
 
     
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
 
     <div id="footer" class="page__footer">
       <footer>
@@ -7385,6 +7481,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
