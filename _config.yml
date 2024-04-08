@@ -290,6 +290,8 @@ defaults:
       comments: # true
       share: true
       related: true
+      toc_ads: true     #사이드 광고 추가 
+      toc_sticky: true  #사이드 광고 추가 
 # 사이드바 탐색 기본값 추가 
       sidebar:
         nav: "categories"
