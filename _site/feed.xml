@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-07T21:26:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-08T11:27:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAnalytics/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAnalytics</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAnalytics/"><![CDATA[<h1 id="1-google-analytics-등록하기">1. Google Analytics 등록하기</h1>
+<ul>
+  <li><a href="https://analytics.google.com/" target="_blank">Google Analytics</a>에 접속해서 측정시작합니다. 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics1.png" alt="Google Analytics 시작" /></li>
+  <li>계정 이름 설정 (자유롭게 작명하면 됩니다.)
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics2.png" alt="계정 이름 설정" /></li>
+  <li>블로그 주소 및 시간대를 선택합니다. 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics3.png" alt="블로그 주소 설정" /></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="2-트랙킹-id-확인하기">2. 트랙킹 ID 확인하기</h1>
+<ul>
+  <li>관리 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics4.png" alt="Analytics 관리" /></li>
+  <li>데이터 스트림 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics5.png" alt="데이터 스트림" /></li>
+  <li>블로그 선택 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics6.png" alt="블로그 선택" /></li>
+  <li>측정 ID 확인 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics7.png" alt="측정 ID 확인" /></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="3-_configyml-수정하기">3. _config.yml 수정하기</h1>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analytics</span>
+<span class="na">analytics</span><span class="pi">:</span>
+  <span class="na">provider               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span> <span class="c1"># false (default), "google", "google-universal", "google-gtag", "custom"</span>
+  <span class="na">google</span><span class="pi">:</span>
+    <span class="na">tracking_id          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">G-B9ZRRL1X26"</span>
+    <span class="na">anonymize_ip         </span><span class="pi">:</span> <span class="c1"># true, false (default)</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="4-확인하기">4. 확인하기</h1>
+<ul>
+  <li>홈에서 확인 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Analytics" /><summary type="html"><![CDATA[[minimal-mistakes]google Analytics 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
 
 <h1 id="1-_configyml-파일-수정하기">1. _config.yml 파일 수정하기</h1>
 <ul>
@@ -17,7 +58,33 @@
 
 <h1 id="2-확인">2. 확인</h1>
 <p>검색기능이 추가되고 검색할 수 있습니다. 
-<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 덧칠하기</title><link href="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 덧칠하기" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03</title><link href="http://localhost:4000/TIL/til27/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til27</id><content type="html" xml:base="http://localhost:4000/TIL/til27/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>한번 롤러질을하면 X M가 칠해지는 롤러로 특정 섹션을 칠하는데 필요한 롤러질 횟수구하기</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" target="_blank">덧칠하기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="팀-프로젝트">팀 프로젝트</h3>
+<ul>
+  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
+  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
+  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
+</ul>
+
+<h3 id="챌린지반">챌린지반</h3>
+<ul>
+  <li>오늘 챌린지반 과제는 하지 않았다. - 페이징처리만 남음</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>팀 과제 진행</li>
+  <li>코드로 탭바 추가하기, 상세페이지 추가 등 ! ! !</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 덧칠하기</title><link href="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 덧칠하기" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>어느 학교에 페인트가 칠해진 길이가 n미터인 벽이 있습니다. 벽에 동아리 · 학회 홍보나 회사 채용 공고 포스터 등을 게시하기 위해 테이프로 붙였다가 철거할 때 떼는 일이 많고 그 과정에서 페인트가 벗겨지곤 합니다. 페인트가 벗겨진 벽이 보기 흉해져 학교는 벽에 페인트를 덧칠하기로 했습니다.</li>
   <li>넓은 벽 전체에 페인트를 새로 칠하는 대신, 구역을 나누어 일부만 페인트를 새로 칠 함으로써 예산을 아끼려 합니다. 이를 위해 벽을 1미터 길이의 구역 n개로 나누고, 각 구역에 왼쪽부터 순서대로 1번부터 n번까지 번호를 붙였습니다. 그리고 페인트를 다시 칠해야 할 구역들을 정했습니다.</li>
@@ -156,33 +223,7 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>시작 위치를 지정하고 최대로 선택할 수 있는 구간의 개수를 계산.. 간단하게 풀 수 있는 문제였구나 …</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="덧칠하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 덧칠하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03</title><link href="http://localhost:4000/TIL/til27/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til27</id><content type="html" xml:base="http://localhost:4000/TIL/til27/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>한번 롤러질을하면 X M가 칠해지는 롤러로 특정 섹션을 칠하는데 필요한 롤러질 횟수구하기</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" target="_blank">덧칠하기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="팀-프로젝트">팀 프로젝트</h3>
-<ul>
-  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
-  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
-  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li>오늘 챌린지반 과제는 하지 않았다. - 페이징처리만 남음</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>팀 과제 진행</li>
-  <li>코드로 탭바 추가하기, 상세페이지 추가 등 ! ! !</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry><entry><title type="html">[UIKit] 코코아팟(cocoapods) 설치하기</title><link href="http://localhost:4000/UIKit/cocoapods/" rel="alternate" type="text/html" title="[UIKit] 코코아팟(cocoapods) 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/cocoaPods</id><content type="html" xml:base="http://localhost:4000/UIKit/cocoapods/"><![CDATA[<h1 id="코코아팟cocoapods이란-">코코아팟(cocoapods)이란 ?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="덧칠하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 덧칠하기]]></summary></entry><entry><title type="html">[UIKit] 코코아팟(cocoapods) 설치하기</title><link href="http://localhost:4000/UIKit/cocoapods/" rel="alternate" type="text/html" title="[UIKit] 코코아팟(cocoapods) 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/cocoaPods</id><content type="html" xml:base="http://localhost:4000/UIKit/cocoapods/"><![CDATA[<h1 id="코코아팟cocoapods이란-">코코아팟(cocoapods)이란 ?</h1>
 <ul>
   <li>Objective-C 및 Swift Cocoa 프로젝트의 종속성 관리자</li>
   <li>즉, CocoaPods은 Objective-C 또는 Swift에서 <code class="language-plaintext highlighter-rouge">라이브러리를 사용할 수 있게 도와주는 모듈</code>이다.</li>
@@ -556,161 +597,4 @@ Homebrew 4.2.15
 <ul>
   <li>깃허브 공부 및 챌린지반 과제 페이징 처리 구현하기</li>
   <li>챌린지반 과제 블로그 포스팅하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 25일차 이야기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 모의고사</title><link href="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 모의고사" /><published>2024-04-01T00:00:00+09:00</published><updated>2024-04-01T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%AA%A8%EC%9D%98%EA%B3%A0%EC%82%AC/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
-    <ul>
-      <li>1번 수포자가 찍는 방식: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, …</li>
-      <li>2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, …</li>
-      <li>3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, …</li>
-    </ul>
-  </li>
-  <li>
-    <p>1번 문제부터 마지막 문제까지의 정답이 순서대로 들은 배열 answers가 주어졌을 때, 가장 많은 문제를 맞힌 사람이 누구인지 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
-  </li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/42840" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>시험은 최대 10,000 문제로 구성되어있습니다.</li>
-  <li>문제의 정답은 1, 2, 3, 4, 5중 하나입니다.</li>
-  <li>가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>answers</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[1,2,3,4,5]</td>
-      <td>[1]</td>
-    </tr>
-    <tr>
-      <td>[1,3,2,4,2]</td>
-      <td>[1,2,3]</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>수포자 1은 모든 문제를 맞혔습니다.</li>
-  <li>수포자 2는 모든 문제를 틀렸습니다.</li>
-  <li>수포자 3은 모든 문제를 틀렸습니다.
-따라서 가장 문제를 많이 맞힌 사람은 수포자 1입니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>모든 사람이 2문제씩을 맞췄습니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">answers</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">one</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-    <span class="k">let</span> <span class="nv">two</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-    <span class="k">let</span> <span class="nv">three</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-    
-    <span class="k">var</span> <span class="nv">oneIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">twoIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">threeIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">var</span> <span class="nv">oneCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">twoCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">threeCnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">answers</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">one</span><span class="p">[</span><span class="n">oneIndex</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">oneCnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">two</span><span class="p">[</span><span class="n">twoIndex</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">twoCnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">three</span><span class="p">[</span><span class="n">threeIndex</span><span class="p">]</span> <span class="p">{</span>
-            <span class="n">threeCnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        
-        <span class="k">if</span> <span class="n">one</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">oneIndex</span> <span class="p">{</span>
-            <span class="n">oneIndex</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">oneIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">two</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">twoIndex</span> <span class="p">{</span>
-            <span class="n">twoIndex</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">twoIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">three</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">threeIndex</span> <span class="p">{</span>
-            <span class="n">threeIndex</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">threeIndex</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="c1">//print("1번수포자: \(oneCnt), 2번수포자: \(twoCnt), 3번수포자: \(threeCnt)")</span>
-    <span class="k">var</span> <span class="nv">tempArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">tempArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">oneCnt</span><span class="p">)</span>
-    <span class="n">tempArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">twoCnt</span><span class="p">)</span>
-    <span class="n">tempArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">threeCnt</span><span class="p">)</span>
-    
-    <span class="c1">//print("max: \(tempArr.max())")</span>
-    
-    <span class="k">var</span> <span class="nv">resultArr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">if</span> <span class="k">let</span> <span class="nv">max</span> <span class="o">=</span> <span class="n">tempArr</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">max</span> <span class="o">==</span> <span class="n">oneCnt</span> <span class="p">{</span>
-            <span class="n">resultArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">max</span> <span class="o">==</span> <span class="n">twoCnt</span> <span class="p">{</span>
-            <span class="n">resultArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="n">max</span> <span class="o">==</span> <span class="n">threeCnt</span> <span class="p">{</span>
-            <span class="n">resultArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">resultArr</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">answers</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">answer</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="nv">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="c1">// index % 5</span>
-        <span class="nv">b</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="c1">// index % 8</span>
-        <span class="nv">c</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="c1">// index % 10</span>
-    <span class="p">)</span>
-    <span class="k">var</span> <span class="nv">point</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">in</span> <span class="n">answers</span><span class="o">.</span><span class="nf">enumerated</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">answer</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">]</span> <span class="p">{</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">answer</span><span class="o">.</span><span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">8</span><span class="p">]</span> <span class="p">{</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
-        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">answer</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="p">{</span> <span class="n">point</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">!</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">point</span><span class="o">.</span><span class="n">sorted</span><span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">key</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="o">.</span><span class="n">key</span> <span class="p">}</span><span class="o">.</span><span class="n">filter</span><span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">point</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">key</span> <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이방법">나의 풀이방법</h1>
-<ul>
-  <li>패턴이 반복되니까 answer에서 패턴을 하나씩 비교하면서 정답을 count하고 정답 수를 배열에 담은 뒤 가장 큰 값을 구했다.</li>
-  <li>가장 큰 값과 정답 수가 맞는 사람을 차례로 배열에 추가했다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="다른사람-풀이">다른사람 풀이</h1>
-<ul>
-  <li>어떻게하면 저렇게 생각할 수 있을까? 좋아요가 50개 이상…</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="모의고사" /><summary type="html"><![CDATA[[프로그래머스/Swift] 모의고사]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 25일차 이야기]]></summary></entry></feed>

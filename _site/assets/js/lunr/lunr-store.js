@@ -773,6 +773,12 @@ var store = [{
         "url": "/GitHubBlog/search/",
         "teaser": null
       },{
+        "title": "[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기 ",
+        "excerpt":"1. Google Analytics 등록하기     Google Analytics에 접속해서 측정시작합니다.     계정 이름 설정 (자유롭게 작명하면 됩니다.)    블로그 주소 및 시간대를 선택합니다.         2. 트랙킹 ID 확인하기     관리     데이터 스트림     블로그 선택     측정 ID 확인         3. _config.yml 수정하기  # Analytics analytics:   provider               : \"google-gtag\" # false (default), \"google\", \"google-universal\", \"google-gtag\", \"custom\"   google:     tracking_id          : \"G-B9ZRRL1X26\"     anonymize_ip         : # true, false (default)       4. 확인하기     홈에서 확인    ","categories": ["GitHubBlog"],
+        "tags": ["GitHub","blog","GitHub blog","Analytics"],
+        "url": "/GitHubBlog/googleAnalytics/",
+        "teaser": null
+      },{
     "title": "Hi, guys!!! 👋🏻👋🏻",
     "excerpt":"About     🧑🏻‍💻 iOS Developer   🌱 Swift   🌿 currently learning Storyboard, SwiftUI   ⚡ github blog: https://limlogging.github.io/  ","url": "http://localhost:4000/about/"
   },{
