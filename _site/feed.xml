@@ -1,4 +1,226 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-08T23:13:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[minimal-mistakes]블로그 광고(google AdSense) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAdSense/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 광고(google AdSense) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAdSense</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAdSense/"><![CDATA[<h1 id="1-google-adsense-시작하기">1. Google AdSense 시작하기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T09:29:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
+  <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
+  <li>예를 들어, 15번으로 지정된 기사단원은 15의 약수가 1, 3, 5, 15로 4개 이므로, 공격력이 4인 무기를 구매합니다. 만약, 이웃나라와의 협약으로 정해진 공격력의 제한수치가 3이고 제한수치를 초과한 기사가 사용할 무기의 공격력이 2라면, 15번으로 지정된 기사단원은 무기점에서 공격력이 2인 무기를 구매합니다. 무기를 만들 때, 무기의 공격력 1당 1kg의 철이 필요합니다. 그래서 무기점에서 무기를 모두 만들기 위해 필요한 철의 무게를 미리 계산하려 합니다.</li>
+  <li>기사단원의 수를 나타내는 정수 number와 이웃나라와 협약으로 정해진 공격력의 제한수치를 나타내는 정수 limit와 제한수치를 초과한 기사가 사용할 무기의 공격력을 나타내는 정수 power가 주어졌을 때, 무기점의 주인이 무기를 모두 만들기 위해 필요한 철의 무게를 return 하는 solution 함수를 완성하시오.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/136798" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ number ≤ 100,000</li>
+  <li>2 ≤ limit ≤ 100</li>
+  <li>1 ≤ power ≤ limit</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>number</th>
+      <th>limit</th>
+      <th>power</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>3</td>
+      <td>2</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>3</td>
+      <td>2</td>
+      <td>21</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>1부터 5까지의 약수의 개수는 순서대로 [1, 2, 2, 3, 2]개입니다. 모두 공격력 제한 수치인 3을 넘지 않기 때문에 필요한 철의 무게는 해당 수들의 합인 10이 됩니다. 따라서 10을 return 합니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>1부터 10까지의 약수의 개수는 순서대로 [1, 2, 2, 3, 2, 4, 2, 4, 3, 4]개입니다. 공격력의 제한수치가 3이기 때문에, 6, 8, 10번 기사는 공격력이 2인 무기를 구매합니다. 따라서 해당 수들의 합인 21을 return 합니다.</li>
+</ul>
+
+<h1 id="나의-풀이-1번-방법---667점">나의 풀이 1번 방법 - 66.7점</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">i</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">cnt</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이-2번-방법---556">나의 풀이 2번 방법 - 55.6</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+
+    <span class="nf">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">i</span> <span class="nf">in</span>
+        <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">j</span> <span class="k">in</span>
+            <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span>
+        <span class="nv">$0</span> <span class="o">&gt;</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">power</span> <span class="p">:</span> <span class="nv">$0</span>
+    <span class="p">})</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이-3번-방법---556">나의 풀이 3번 방법 - 55.6</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">((</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">i</span> <span class="o">%</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">i</span> <span class="o">%</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="nv">count</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이-4번-방법---556">나의 풀이 4번 방법 - 55.6</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+
+    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">j</span> <span class="k">in</span>
+            <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">cnt</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    
+    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span><span class="p">{</span>
+        <span class="c1">//약수의 개수를 셈</span>
+        <span class="k">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1">//16일경우 -&gt; 4까지만 구해도됨</span>
+        <span class="c1">//약수 1로 16을 유추할수있음</span>
+        <span class="c1">//2로 8을 유추할 수 있음</span>
+        <span class="c1">//4 * 4 = 16이므로 이땐 +1</span>
+        <span class="c1">//이외엔 약수 하나로 두 수를 구할 수 있으니 +2</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="kt">Int</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="n">number</span><span class="p">))){</span>
+            <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">number</span><span class="p">{</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">2</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//limit을 넘는다면 power를, limit을 넘지 않는다면 그대로</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">power</span> <span class="p">:</span> <span class="n">count</span>
+        <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+        
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">){</span><span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>채점 시 11번 ~ 16번 그 근처에 시간초과로 계속 실패했다.</li>
+  <li>약수구하는 다른방법을 찾으면 시간을 줄일 수 있을 것 같은데 찾지 못했고 어려웠다 ㅠ</li>
+  <li>결국 구글 검색으로 해결 …..</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>전체적인 방법은 비슷한데 결국 약수구하는 방법에서 차이가 많이 났다. 통과 못한적은 처음인데 다시 공부해봐야겠다 😭</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
+<ul>
+  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
+</ul>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
+
+<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
+
+<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
+<ul>
+  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
+  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
+</ul>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
+
+<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
+<ul>
+  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
+Allow: /
+Sitemap: http://localhost:4000/sitemap.xml
+</code></pre></div></div>
+
+<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
+
+<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
+
+<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
+
+<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
+<ul>
+  <li>google_site_verification 레코드를 붙여넣습니다.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
+<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
+<span class="na">bing_site_verification   </span><span class="pi">:</span>
+<span class="na">naver_site_verification  </span><span class="pi">:</span>
+<span class="na">yandex_site_verification </span><span class="pi">:</span>
+<span class="na">baidu_site_verification  </span><span class="pi">:</span>
+</code></pre></div></div>
+
+<h1 id="9-완료">9. 완료</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 광고(google AdSense) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAdSense/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 광고(google AdSense) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAdSense</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAdSense/"><![CDATA[<h1 id="1-google-adsense-시작하기">1. Google AdSense 시작하기</h1>
 <p><img src="../../assets/images/categories/githubblog/2024-04-08-GoogleAdSense1.png" alt="Google AdSense 시작하기" /></p>
 
 <h1 id="2-애드센스에-사이트-연결하기">2. 애드센스에 사이트 연결하기</h1>
@@ -140,7 +362,22 @@
 <p><img src="../../assets/images/categories/githubblog/2024-04-08-GoogleAdSense15.png" alt="" /></p>
 
 <h1 id="10-우측-광고-확인">10. 우측 광고 확인</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-GoogleAdSense16.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="AdSense" /><summary type="html"><![CDATA[[minimal-mistakes]블로그 google AdSense 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAnalytics/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAnalytics</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAnalytics/"><![CDATA[<h1 id="1-google-analytics-등록하기">1. Google Analytics 등록하기</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-GoogleAdSense16.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="AdSense" /><summary type="html"><![CDATA[[minimal-mistakes]블로그 google AdSense 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)</title><link href="http://localhost:4000/GitHubBlog/bundleexecjekyllserve/" rel="alternate" type="text/html" title="[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/bundleexecjekylleserve</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/bundleexecjekyllserve/"><![CDATA[<h1 id="1-터미널에서-명령어-입력">1. 터미널에서 명령어 입력</h1>
+<ul>
+  <li>bundle exec jekyll serve</li>
+</ul>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro limlogging.github.io % bundle exec jekyll serve   
+</span></code></pre></div></div>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve1.png" alt="" /></p>
+
+<h1 id="2-실행-확인">2. 실행 확인</h1>
+<ul>
+  <li>인터넷 주소창에 <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/ 접속</a></li>
+</ul>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAnalytics/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAnalytics</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAnalytics/"><![CDATA[<h1 id="1-google-analytics-등록하기">1. Google Analytics 등록하기</h1>
 <ul>
   <li><a href="https://analytics.google.com/" target="_blank">Google Analytics</a>에 접속해서 측정시작합니다. 
 <img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics1.png" alt="Google Analytics 시작" /></li>
@@ -181,74 +418,7 @@
 <ul>
   <li>홈에서 확인 
 <img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Analytics" /><summary type="html"><![CDATA[[minimal-mistakes]google Analytics 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)</title><link href="http://localhost:4000/GitHubBlog/bundleexecjekyllserve/" rel="alternate" type="text/html" title="[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/bundleexecjekylleserve</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/bundleexecjekyllserve/"><![CDATA[<h1 id="1-터미널에서-명령어-입력">1. 터미널에서 명령어 입력</h1>
-<ul>
-  <li>bundle exec jekyll serve</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro limlogging.github.io % bundle exec jekyll serve   
-</span></code></pre></div></div>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve1.png" alt="" /></p>
-
-<h1 id="2-실행-확인">2. 실행 확인</h1>
-<ul>
-  <li>인터넷 주소창에 <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/ 접속</a></li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
-<ul>
-  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
-
-<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
-
-<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
-  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
-
-<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
-Allow: /
-Sitemap: http://localhost:4000/sitemap.xml
-</code></pre></div></div>
-
-<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
-
-<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
-
-<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
-
-<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
-<ul>
-  <li>google_site_verification 레코드를 붙여넣습니다.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
-<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
-<span class="na">bing_site_verification   </span><span class="pi">:</span>
-<span class="na">naver_site_verification  </span><span class="pi">:</span>
-<span class="na">yandex_site_verification </span><span class="pi">:</span>
-<span class="na">baidu_site_verification  </span><span class="pi">:</span>
-</code></pre></div></div>
-
-<h1 id="9-완료">9. 완료</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Analytics" /><summary type="html"><![CDATA[[minimal-mistakes]google Analytics 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
 
 <h1 id="1-_configyml-파일-수정하기">1. _config.yml 파일 수정하기</h1>
 <ul>
@@ -522,33 +692,4 @@ Homebrew 4.2.15
 
 <p><br /></p>
 
-<h2 id="7project-재시작---xcworkspace-파일을-열어야합니다">7.project 재시작 - .xcworkspace 파일을 열어야합니다.</h2>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="SDWebImage" /><summary type="html"><![CDATA[SDWebImage 설치]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 26일차 - 2024.04.02</title><link href="http://localhost:4000/TIL/til26/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 26일차 - 2024.04.02" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til26</id><content type="html" xml:base="http://localhost:4000/TIL/til26/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>3자리 수 덧셈 조합을 먼저 구하고 합이 홀수인 수만 소수 판별 체크</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EC%86%8C%EC%88%98%EB%A7%8C%EB%93%A4%EA%B8%B0/" target="_blank">소수만들기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="팀-프로젝트">팀 프로젝트</h3>
-<ul>
-  <li>Git에 올라온 자료를 하나로 합치는 일이 보통 일이 아니다.</li>
-  <li>수정하지도 않았는데 git status에서 DS_Store, UserInterfaceState 파일때문에 문제가 발생하여 .gitignore에 브랜치 마다 추가하고 팀원들 브랜치를 각각 받아 수동으로 합쳤다. 각자 소스코드 작성하는 스타일이 달라 코드 컨벤션이 필요하구나 깨달았다.</li>
-  <li>젭에서 새벽 2시까지 토론하고 계신 옆조를 찾아갔는데 같은 문제로 새로 시작하고 계셨다..</li>
-  <li>오늘은 하나도 진행 못하고 날린 느낌</li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li><a href="https://limlogging.github.io/UIKit/cocoapods/" target="_blank">코코아팟 설치하기</a></li>
-  <li><a href="https://limlogging.github.io/UIKit/alamofire/" target="_blank">알라모파이어(alamofire) 설치하기</a></li>
-  <li><a href="https://limlogging.github.io/UIKit/SDWebImage/" target="_blank">SDWebImage 설치하기</a></li>
-  <li>주말에 했던 내용 하나씩 포스팅</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>팀 과제 진행</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 26일차 이야기 - 2024.04.02]]></summary></entry></feed>
+<h2 id="7project-재시작---xcworkspace-파일을-열어야합니다">7.project 재시작 - .xcworkspace 파일을 열어야합니다.</h2>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="SDWebImage" /><summary type="html"><![CDATA[SDWebImage 설치]]></summary></entry></feed>

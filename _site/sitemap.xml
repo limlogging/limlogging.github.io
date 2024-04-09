@@ -4,6 +4,19 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/</loc>
+        
+        <lastmod>2024-04-09T00:00:00+09:00</lastmod>
+        
+        
+        <changefreq>weekly</changefreq>
+        
+        
+        <priority>0.5</priority>
+        
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/GitHubBlog/googleSearchConsole/</loc>
         
         <lastmod>2024-04-08T00:00:00+09:00</lastmod>
