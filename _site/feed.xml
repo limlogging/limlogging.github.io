@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T15:34:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T20:37:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+<p>온보딩 프로젝트 발표가 끝났습니다. <br />
+팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
+
+<h2 id="keep">Keep</h2>
+<ul>
+  <li>팀원들 간의 소통에 어려움 없이, 커뮤니케이션이 진행되었다.</li>
+  <li>각자 자신이 하고 싶은 파트를 맡아서 진행하여 더욱 책임감을 가지고 각자의 파트를 완수하였다.</li>
+  <li>개인이 바라는 기능에 대한 강한 의견 제안보다, 팀 전체 프로젝트 목표를 달성하는 방향을 추구하며 트러블 없이 프로젝트를 완수하였다.</li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+<ul>
+  <li>다양한 문제 해결 방법에 대한 인지
+    <ul>
+      <li>문제점 : 같은 결과를 내기위해 여러가지 구현 방법이 있을 텐데, 다른 방법을 찾아내기 위한 키워드를 알아내기 어려웠다.</li>
+      <li>해결방안 : 결국에는 공부를 통해서 다양한 키워드를 알 수 있도록 해야 함을 느꼈다.</li>
+    </ul>
+  </li>
+  <li>Git 협업
+    <ul>
+      <li>문제점 : 깃허브를 통한 협업 시 코드컨벤션을 자세하게 작성하지 않아 충돌되는 문제가 발생했다.</li>
+      <li>해결방안 : 기획 단계에서 구체적인 코드컨벤션을 작성하고 프로젝트를 시작해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="try">Try</h2>
+<ul>
+  <li>프로젝트를 진행하며, 나름 디테일하게 생각하고 많은 부분을 앱에 담으려고 노력하고 생각했음에도 불구하고, 다른 팀들의 발표를 보니, 버튼의 색상을 설정하거나, 제품군 안에 한 단계 더 세분화 된 seg를 넣거나, 제품의 색상을 선택하게 하는 등의 놓친 부분이 꽤 많았음을 깨달았다. 다음 프로젝트를 할 때는 좀 더 세세하게 챙겨야겠다는 생각을 했다.</li>
+  <li>충분히 유져 입장에서 생각을 했다고 하였지만, 결과론적으로 다른 조의 프로젝트와 비교했을 때, 조금은 내실이 부족했다 라는 생각이 든다. 화면 구성이나 기능적인 측면에서 좀 더 유져의 입장에서 생각을 해야겠다 라고 반성을 하게 된다.</li>
+  <li>기획 단계에서 지금보다 더 상세한 UI 구성이 필요하고, 가능하다면 협업툴(피그마)을 사용한 협업을 경험해보면 좋을 것 같다.</li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
+이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
 <ol>
   <li>프로젝트 주제: 팀 소개 앱 만들기</li>
   <li>프로젝트 기간: 4/1(월) ~ 4/7(일)</li>
@@ -142,43 +178,7 @@
 
 <video width="640" height="360" controls="">
     <source src="../../assets/video/categories/sparta/2024-04-09-firstTeamProject.mp4" type="video/mp4" />
-</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
-<p>온보딩 프로젝트 발표가 끝났습니다. <br />
-팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
-
-<h2 id="keep">Keep</h2>
-<ul>
-  <li>팀원들 간의 소통에 어려움 없이, 커뮤니케이션이 진행되었다.</li>
-  <li>각자 자신이 하고 싶은 파트를 맡아서 진행하여 더욱 책임감을 가지고 각자의 파트를 완수하였다.</li>
-  <li>개인이 바라는 기능에 대한 강한 의견 제안보다, 팀 전체 프로젝트 목표를 달성하는 방향을 추구하며 트러블 없이 프로젝트를 완수하였다.</li>
-</ul>
-
-<h2 id="problem">Problem</h2>
-<ul>
-  <li>다양한 문제 해결 방법에 대한 인지
-    <ul>
-      <li>문제점 : 같은 결과를 내기위해 여러가지 구현 방법이 있을 텐데, 다른 방법을 찾아내기 위한 키워드를 알아내기 어려웠다.</li>
-      <li>해결방안 : 결국에는 공부를 통해서 다양한 키워드를 알 수 있도록 해야 함을 느꼈다.</li>
-    </ul>
-  </li>
-  <li>Git 협업
-    <ul>
-      <li>문제점 : 깃허브를 통한 협업 시 코드컨벤션을 자세하게 작성하지 않아 충돌되는 문제가 발생했다.</li>
-      <li>해결방안 : 기획 단계에서 구체적인 코드컨벤션을 작성하고 프로젝트를 시작해야 한다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="try">Try</h2>
-<ul>
-  <li>프로젝트를 진행하며, 나름 디테일하게 생각하고 많은 부분을 앱에 담으려고 노력하고 생각했음에도 불구하고, 다른 팀들의 발표를 보니, 버튼의 색상을 설정하거나, 제품군 안에 한 단계 더 세분화 된 seg를 넣거나, 제품의 색상을 선택하게 하는 등의 놓친 부분이 꽤 많았음을 깨달았다. 다음 프로젝트를 할 때는 좀 더 세세하게 챙겨야겠다는 생각을 했다.</li>
-  <li>충분히 유져 입장에서 생각을 했다고 하였지만, 결과론적으로 다른 조의 프로젝트와 비교했을 때, 조금은 내실이 부족했다 라는 생각이 든다. 화면 구성이나 기능적인 측면에서 좀 더 유져의 입장에서 생각을 해야겠다 라고 반성을 하게 된다.</li>
-  <li>기획 단계에서 지금보다 더 상세한 UI 구성이 필요하고, 가능하다면 협업툴(피그마)을 사용한 협업을 경험해보면 좋을 것 같다.</li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
-이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
   <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
@@ -348,59 +348,87 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>전체적인 방법은 비슷한데 결국 약수구하는 방법에서 차이가 많이 났다. 통과 못한적은 처음인데 다시 공부해봐야겠다 😭</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
 <ul>
-  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
+  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
+  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
+    </ul>
+  </li>
 </ul>
 
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
-
-<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
-
-<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
+<h3 id="앱개발-심화">앱개발 심화</h3>
 <ul>
-  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
-  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
+  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
+  <li>새로운 팀에 적응하는 시간이 필요!</li>
 </ul>
 
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
-
-<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
+<h3 id="내일-목표">내일 목표</h3>
 <ul>
-  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
+  <li>챌린지 과제 마저하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08</title><link href="http://localhost:4000/TIL/til30/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til30</id><content type="html" xml:base="http://localhost:4000/TIL/til30/"><![CDATA[<h1 id="팀-프로젝트">팀 프로젝트</h1>
+<p><img src="../../assets/images/categories/til/2024-04-08-til30-1.png" alt="" /></p>
+
+<h2 id="우리팀-발표">우리팀 발표</h2>
+<p><img src="../../assets/images/categories/til/2024-04-08-til30-3.png" alt="" /></p>
+
+<h2 id="발표-무작위-캡처">발표 무작위 캡처</h2>
+<p><img src="../../assets/images/categories/til/2024-04-08-til30-2.png" alt="" /></p>
+
+<ul>
+  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
+  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
+  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
-Allow: /
-Sitemap: http://localhost:4000/sitemap.xml
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>새로운 팀에 적응하기</li>
+  <li>챌린지반 과제</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 30일차 이야기 - 2024.04.08]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAnalytics/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAnalytics</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAnalytics/"><![CDATA[<h1 id="1-google-analytics-등록하기">1. Google Analytics 등록하기</h1>
+<ul>
+  <li><a href="https://analytics.google.com/" target="_blank">Google Analytics</a>에 접속해서 측정시작합니다. 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics1.png" alt="Google Analytics 시작" /></li>
+  <li>계정 이름 설정 (자유롭게 작명하면 됩니다.)
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics2.png" alt="계정 이름 설정" /></li>
+  <li>블로그 주소 및 시간대를 선택합니다. 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics3.png" alt="블로그 주소 설정" /></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="2-트랙킹-id-확인하기">2. 트랙킹 ID 확인하기</h1>
+<ul>
+  <li>관리 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics4.png" alt="Analytics 관리" /></li>
+  <li>데이터 스트림 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics5.png" alt="데이터 스트림" /></li>
+  <li>블로그 선택 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics6.png" alt="블로그 선택" /></li>
+  <li>측정 ID 확인 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics7.png" alt="측정 ID 확인" /></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="3-_configyml-수정하기">3. _config.yml 수정하기</h1>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analytics</span>
+<span class="na">analytics</span><span class="pi">:</span>
+  <span class="na">provider               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span> <span class="c1"># false (default), "google", "google-universal", "google-gtag", "custom"</span>
+  <span class="na">google</span><span class="pi">:</span>
+    <span class="na">tracking_id          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">G-B9ZRRL1X26"</span>
+    <span class="na">anonymize_ip         </span><span class="pi">:</span> <span class="c1"># true, false (default)</span>
 </code></pre></div></div>
 
-<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
+<p><br /></p>
 
-<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
-
-<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
-
-<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
+<h1 id="4-확인하기">4. 확인하기</h1>
 <ul>
-  <li>google_site_verification 레코드를 붙여넣습니다.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
-<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
-<span class="na">bing_site_verification   </span><span class="pi">:</span>
-<span class="na">naver_site_verification  </span><span class="pi">:</span>
-<span class="na">yandex_site_verification </span><span class="pi">:</span>
-<span class="na">baidu_site_verification  </span><span class="pi">:</span>
-</code></pre></div></div>
-
-<h1 id="9-완료">9. 완료</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 광고(google AdSense) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAdSense/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 광고(google AdSense) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAdSense</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAdSense/"><![CDATA[<h1 id="1-google-adsense-시작하기">1. Google AdSense 시작하기</h1>
+  <li>홈에서 확인 
+<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Analytics" /><summary type="html"><![CDATA[[minimal-mistakes]google Analytics 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 광고(google AdSense) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAdSense/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 광고(google AdSense) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAdSense</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAdSense/"><![CDATA[<h1 id="1-google-adsense-시작하기">1. Google AdSense 시작하기</h1>
 <p><img src="../../assets/images/categories/githubblog/2024-04-08-GoogleAdSense1.png" alt="Google AdSense 시작하기" /></p>
 
 <h1 id="2-애드센스에-사이트-연결하기">2. 애드센스에 사이트 연결하기</h1>
@@ -557,48 +585,59 @@ Sitemap: http://localhost:4000/sitemap.xml
   <li>인터넷 주소창에 <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/ 접속</a></li>
 </ul>
 
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기</title><link href="http://localhost:4000/GitHubBlog/googleAnalytics/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 방문자 통계(google Analytics) 추가하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleAnalytics</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleAnalytics/"><![CDATA[<h1 id="1-google-analytics-등록하기">1. Google Analytics 등록하기</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
 <ul>
-  <li><a href="https://analytics.google.com/" target="_blank">Google Analytics</a>에 접속해서 측정시작합니다. 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics1.png" alt="Google Analytics 시작" /></li>
-  <li>계정 이름 설정 (자유롭게 작명하면 됩니다.)
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics2.png" alt="계정 이름 설정" /></li>
-  <li>블로그 주소 및 시간대를 선택합니다. 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics3.png" alt="블로그 주소 설정" /></li>
+  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
 </ul>
 
-<p><br /></p>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
 
-<h1 id="2-트랙킹-id-확인하기">2. 트랙킹 ID 확인하기</h1>
+<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
+
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
+
+<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
 <ul>
-  <li>관리 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics4.png" alt="Analytics 관리" /></li>
-  <li>데이터 스트림 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics5.png" alt="데이터 스트림" /></li>
-  <li>블로그 선택 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics6.png" alt="블로그 선택" /></li>
-  <li>측정 ID 확인 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics7.png" alt="측정 ID 확인" /></li>
+  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
+  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
 </ul>
 
-<p><br /></p>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
 
-<h1 id="3-_configyml-수정하기">3. _config.yml 수정하기</h1>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analytics</span>
-<span class="na">analytics</span><span class="pi">:</span>
-  <span class="na">provider               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span> <span class="c1"># false (default), "google", "google-universal", "google-gtag", "custom"</span>
-  <span class="na">google</span><span class="pi">:</span>
-    <span class="na">tracking_id          </span><span class="pi">:</span> <span class="s2">"</span><span class="s">G-B9ZRRL1X26"</span>
-    <span class="na">anonymize_ip         </span><span class="pi">:</span> <span class="c1"># true, false (default)</span>
+<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
+<ul>
+  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
+Allow: /
+Sitemap: http://localhost:4000/sitemap.xml
 </code></pre></div></div>
 
-<p><br /></p>
+<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
 
-<h1 id="4-확인하기">4. 확인하기</h1>
+<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
+
+<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
+
+<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
 <ul>
-  <li>홈에서 확인 
-<img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Analytics" /><summary type="html"><![CDATA[[minimal-mistakes]google Analytics 추가하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
+  <li>google_site_verification 레코드를 붙여넣습니다.</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
+<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
+<span class="na">bing_site_verification   </span><span class="pi">:</span>
+<span class="na">naver_site_verification  </span><span class="pi">:</span>
+<span class="na">yandex_site_verification </span><span class="pi">:</span>
+<span class="na">baidu_site_verification  </span><span class="pi">:</span>
+</code></pre></div></div>
+
+<h1 id="9-완료">9. 완료</h1>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
 
 <h1 id="1-_configyml-파일-수정하기">1. _config.yml 파일 수정하기</h1>
 <ul>
@@ -617,169 +656,4 @@ Sitemap: http://localhost:4000/sitemap.xml
 
 <h1 id="2-확인">2. 확인</h1>
 <p>검색기능이 추가되고 검색할 수 있습니다. 
-<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 덧칠하기</title><link href="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 덧칠하기" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>어느 학교에 페인트가 칠해진 길이가 n미터인 벽이 있습니다. 벽에 동아리 · 학회 홍보나 회사 채용 공고 포스터 등을 게시하기 위해 테이프로 붙였다가 철거할 때 떼는 일이 많고 그 과정에서 페인트가 벗겨지곤 합니다. 페인트가 벗겨진 벽이 보기 흉해져 학교는 벽에 페인트를 덧칠하기로 했습니다.</li>
-  <li>넓은 벽 전체에 페인트를 새로 칠하는 대신, 구역을 나누어 일부만 페인트를 새로 칠 함으로써 예산을 아끼려 합니다. 이를 위해 벽을 1미터 길이의 구역 n개로 나누고, 각 구역에 왼쪽부터 순서대로 1번부터 n번까지 번호를 붙였습니다. 그리고 페인트를 다시 칠해야 할 구역들을 정했습니다.</li>
-  <li>벽에 페인트를 칠하는 롤러의 길이는 m미터이고, 롤러로 벽에 페인트를 한 번 칠하는 규칙은 다음과 같습니다.
-    <ul>
-      <li>롤러가 벽에서 벗어나면 안 됩니다.</li>
-      <li>구역의 일부분만 포함되도록 칠하면 안 됩니다.</li>
-    </ul>
-  </li>
-  <li>즉, 롤러의 좌우측 끝을 구역의 경계선 혹은 벽의 좌우측 끝부분에 맞춘 후 롤러를 위아래로 움직이면서 벽을 칠합니다. 현재 페인트를 칠하는 구역들을 완전히 칠한 후 벽에서 롤러를 떼며, 이를 벽을 한 번 칠했다고 정의합니다.</li>
-  <li>한 구역에 페인트를 여러 번 칠해도 되고 다시 칠해야 할 구역이 아닌 곳에 페인트를 칠해도 되지만 다시 칠하기로 정한 구역은 적어도 한 번 페인트칠을 해야 합니다. 예산을 아끼기 위해 다시 칠할 구역을 정했듯 마찬가지로 롤러로 페인트칠을 하는 횟수를 최소화하려고 합니다.</li>
-  <li>정수 n, m과 다시 페인트를 칠하기로 정한 구역들의 번호가 담긴 정수 배열 section이 매개변수로 주어질 때 롤러로 페인트칠해야 하는 최소 횟수를 return 하는 solution 함수를 작성해 주세요.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/161989" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ m ≤ n ≤ 100,000</li>
-  <li>1 ≤ section의 길이 ≤ n
-    <ul>
-      <li>1 ≤ section의 원소 ≤ n</li>
-      <li>section의 원소는 페인트를 다시 칠해야 하는 구역의 번호입니다.</li>
-      <li>section에서 같은 원소가 두 번 이상 나타나지 않습니다.</li>
-      <li>section의 원소는 오름차순으로 정렬되어 있습니다.</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>n</th>
-      <th>m</th>
-      <th>section</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>8</td>
-      <td>4</td>
-      <td>[2, 3, 6]</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>4</td>
-      <td>[1, 3]</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>1</td>
-      <td>[1, 2, 3, 4]</td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>예제 1번은 2, 3, 6번 영역에 페인트를 다시 칠해야 합니다. 롤러의 길이가 4미터이므로 한 번의 페인트칠에 연속된 4개의 구역을 칠할 수 있습니다. 처음에 3, 4, 5, 6번 영역에 페인트칠을 하면 칠해야 할 곳으로 2번 구역만 남고 1, 2, 3, 4번 구역에 페인트칠을 하면 2번 만에 다시 칠해야 할 곳에 모두 페인트칠을 할 수 있습니다.</li>
-  <li>2번보다 적은 횟수로 2, 3, 6번 영역에 페인트를 덧칠하는 방법은 없습니다. 따라서 최소 횟수인 2를 return 합니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>예제 2번은 1, 3번 영역에 페인트를 다시 칠해야 합니다. 롤러의 길이가 4미터이므로 한 번의 페인트칠에 연속된 4개의 구역을 칠할 수 있고 1, 2, 3, 4번 영역에 페인트칠을 하면 한 번에 1, 3번 영역을 모두 칠할 수 있습니다.</li>
-  <li>따라서 최소 횟수인 1을 return 합니다.</li>
-</ul>
-
-<h3 id="입출력-예-3">입출력 예 #3</h3>
-<ul>
-  <li>예제 3번은 모든 구역에 페인트칠을 해야 합니다. 롤러의 길이가 1미터이므로 한 번에 한 구역밖에 칠할 수 없습니다. 구역이 4개이므로 각 구역을 한 번씩만 칠하는 4번이 최소 횟수가 됩니다.</li>
-  <li>따라서 4를 return 합니다.</li>
-</ul>
-
-<h1 id="나의-풀이">나의 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">section</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">section</span> <span class="o">=</span> <span class="n">section</span>
-    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">var</span> <span class="nv">firstNum</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="mi">100000</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">100000</span> <span class="o">&amp;&amp;</span> <span class="n">section</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">section</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span><span class="o">/</span><span class="n">m</span> <span class="p">{</span>
-            <span class="c1">//시작 섹션 확인</span>
-            <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-                <span class="n">firstNum</span> <span class="o">=</span> <span class="n">section</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                
-                <span class="c1">//롤러에 포함된 섹션 확인해서 지우기</span>
-                <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">firstNum</span><span class="o">..&lt;</span><span class="n">firstNum</span> <span class="o">+</span> <span class="n">m</span> <span class="p">{</span>
-                    <span class="k">if</span> <span class="n">section</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">section</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">{</span>
-                        <span class="n">section</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">cnt</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">m</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">section</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">now</span> <span class="o">=</span> <span class="n">section</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">var</span> <span class="nv">counter</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">s</span> <span class="k">in</span> <span class="n">section</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="n">now</span> <span class="p">{</span>
-            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">now</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">m</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">counter</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이방법">나의 풀이방법</h1>
-<ul>
-  <li>시작 섹션에서 롤러 길이만큼 더하기</li>
-  <li>처음 구한 길이보다 작은 값들은 삭제</li>
-  <li>다시 시작 세션구하고 반복</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="다른사람-풀이">다른사람 풀이</h1>
-<ul>
-  <li>시작 위치를 지정하고 최대로 선택할 수 있는 구간의 개수를 계산.. 간단하게 풀 수 있는 문제였구나 …</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="덧칠하기" /><summary type="html"><![CDATA[[프로그래머스/Swift] 덧칠하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03</title><link href="http://localhost:4000/TIL/til27/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 27일차 - 2024.04.03" /><published>2024-04-03T00:00:00+09:00</published><updated>2024-04-03T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til27</id><content type="html" xml:base="http://localhost:4000/TIL/til27/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>한번 롤러질을하면 X M가 칠해지는 롤러로 특정 섹션을 칠하는데 필요한 롤러질 횟수구하기</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EB%8D%A7%EC%B9%A0%ED%95%98%EA%B8%B0/" target="_blank">덧칠하기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="팀-프로젝트">팀 프로젝트</h3>
-<ul>
-  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
-  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
-  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
-</ul>
-
-<h3 id="챌린지반">챌린지반</h3>
-<ul>
-  <li>오늘 챌린지반 과제는 하지 않았다. - 페이징처리만 남음</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>팀 과제 진행</li>
-  <li>코드로 탭바 추가하기, 상세페이지 추가 등 ! ! !</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry></feed>
+<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry></feed>
