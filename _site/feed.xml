@@ -1,4 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T09:29:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T15:34:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
+<ol>
+  <li>프로젝트 주제: 팀 소개 앱 만들기</li>
+  <li>프로젝트 기간: 4/1(월) ~ 4/7(일)</li>
+  <li>인원: 4명 (팀장: 임형섭 / 팀원: 김시종, 금세미, 송동익)</li>
+  <li>프로젝트 명: Fine Apple Store</li>
+  <li>프로젝트 소개: 키오스크하면 생각나는 음료가 아닌 본 과정이 iOS 앱 개발 과정인 만큼, 애플 제품을 소개 및 판매하는 앱을 구현하기로 결정.</li>
+  <li>개발환경
+    <ul>
+      <li>OS : macOS Sonoma 14.3.1</li>
+      <li>IDE : Xcode 15.3</li>
+      <li>Language : Swift</li>
+      <li>협업 Tool : Git (https://github.com/-limlogging/Kiosk3Jo)</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="팀원-구성-및-역할">팀원 구성 및 역할</h1>
+<h2 id="임형섭">임형섭</h2>
+<ol>
+  <li>Github에서 팀원 코드 merge 최종 작업</li>
+  <li>제품 기초 이미지 파일 준비</li>
+  <li>스토리보드에서, TabBar, Navigation 기능 추가 (홈, 상품, 마이페이지)</li>
+  <li>스토리보드 버튼을 코드로 변경</li>
+  <li>마이페이지 구현 (코드를 통한 UI 구성, TableView, 오토레이아웃 사용)</li>
+  <li>제품 상세 페이지 구현 (코드를 통한 UI 구성, ScrollView, PageControl를 사용한 슬라이드 이미지 구현)</li>
+</ol>
+
+<h2 id="금세미">금세미</h2>
+<ol>
+  <li>UIButton, UIAlertController 기능 구현
+    <ul>
+      <li>문의, 취소, 주문 버튼 클릭 시, UIAlertController를 통해 주문 및 취소 기능 구현, 전체 취소 및 주문 완료 시 UITableView 초기화</li>
+    </ul>
+  </li>
+  <li>제품 이미지 영문명 변경</li>
+  <li>제품 이미지 확장자 변경(jpeg → png)</li>
+  <li>컬렉션 뷰와 이미지 연결하여 제품 정보(상품명, 가격) 불러오기</li>
+  <li>launch screen 디자인</li>
+</ol>
+
+<h2 id="김시종">김시종</h2>
+<ol>
+  <li>데이터 모델링(Model → image, title, price)</li>
+  <li>CollectionView, SegmentedControl 기능 구현
+    <ul>
+      <li>제품군별로 SegmentedControl로 분류</li>
+      <li>Seg마다 각각의 선택된 제품군 화면출력</li>
+    </ul>
+  </li>
+  <li>탭바 홈 화면 구현</li>
+  <li>탭바 고객센터 화면 구현</li>
+  <li>이미지 및 레이아웃 상세 디자인 수정</li>
+</ol>
+
+<h2 id="송동익">송동익</h2>
+<ol>
+  <li>프로젝트 초기 UI틀 구성</li>
+  <li>UITableView 기능 구현</li>
+  <li>장바구니 기능 구현</li>
+  <li>장바구니 화면을 보여줄 Modal 기능 구현</li>
+  <li>물품의 갯수를 Notification Badge 형식으로 구현</li>
+  <li>Search Bar 기능 구현</li>
+  <li>새로 출시된 제품 표기 기능 구현</li>
+  <li>매장의 위치를 보여줄 지도 기능 구현</li>
+  <li>App Icon 구현</li>
+  <li>팀원 업무 보조</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="어려웠던-점--해결-방법">어려웠던 점 &amp; 해결 방법</h1>
+
+<h2 id="임형섭-1">임형섭</h2>
+<ul>
+  <li>github를 통해 충돌된 코드를 머지하는 방식이 어려웠으나 프로젝트를 통해 머지방식이 조금 익숙해 졌습니다.</li>
+  <li>TabBar를 통해 View 이동 시 배열 데이터를 주고 받기 어려워 팀원들의 도움을 받아 해결할 수 있었습니다.</li>
+  <li>pageControl을 통해서 ScrollView내 imageview를 이동하기 어려웠지만 ScrollView width 지정과 오토레이아웃에 문제가 있는걸 확인하고 해결할 수 있었습니다.</li>
+</ul>
+
+<h2 id="금세미-1">금세미</h2>
+<ul>
+  <li>git 사용법이 익숙하지 않아 팀에 피해를 끼치지 않고 프로젝트 파일을 pull, push, merge 하는 것이 좀 부담스러웠으나 여러번 반복하며 익혔다.</li>
+</ul>
+
+<h2 id="김시종-1">김시종</h2>
+<ul>
+  <li>홈화면 구성할 때 컬렉션 뷰위에 헤더를 구현하고 싶었으나, 가로로 구성된 컬렉션 뷰의 헤더가 위로 구성되는게 아닌 왼쪽으로 오는 것에 대해 위로 올리는 과정이 어려웠던 것 같습니다. 일반적인 방법으로 가로 구성의 컬렉션 뷰 헤더를 위로 구성하는 것이 어렵다는 것을 깨닫고 <strong>Compositional Layout 을 사용하게 되었습니다. 아직 이해하기 어려운 개념이지만 헤더를 위에 구성하는 것 까진 성공하게 되었습니다. 추후 컴포지셔널 레이아웃 관련해서 더 공부해야할 것 같습니다.</strong></li>
+</ul>
+
+<h2 id="송동익-1">송동익</h2>
+<ul>
+  <li>데이터 전달방식이다. 내가 알고있던 방법으로 VC간 데이터를 전달했지만, 탭바를 사용하면서 이럴땐 어떻게 전달해야하지? 라는 생각을했고, 내가 아는 모든 지식을 사용해도 전달이 안되었는데, 튜터님께 여쭤보고 바로 해답을 찾았고, 그 문제를 해결하는데는 단 5분도 걸리지않았다. 항상 내 수준에 만족을 하고 있지는 않아 만족을 하기위해 노력을 하고있는데, 그 노력 이상으로 더 열심히 공부해야겠다라는 생각이 든다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="프로젝트-소감">프로젝트 소감</h1>
+<h2 id="임형섭-2">임형섭</h2>
+<ul>
+  <li>github를 통해서 협업을 경험해보고 공부했던 내용을 다시 적용하면서 복습할 수 있었습니다. 특히 다른 사람 코드 작성 방식을 통해 다양한 구현 방법을 확인 해 볼 수 있어 소중한 경험이 되었습니다.</li>
+</ul>
+
+<h2 id="금세미-2">금세미</h2>
+<ul>
+  <li>완성한 앱을 보니 우리가 이 정도 수준의 앱을 만들었다는 것이 믿을 수 없을 정도로 만족스럽고 뿌듯했다.</li>
+</ul>
+
+<h2 id="김시종-2">김시종</h2>
+<ul>
+  <li>처음 프로젝트를 진행하면서 내가 해야할 일이 생기면서 피해끼치지 않고 좋은 프로젝트를 진행하고 싶어 혼자 할때 보다 더 노력을 하게 된 것 같았습니다. 진행될 수록 각자 맡은 내용이 합쳐지고 하나의 결과물이 생기는 과정이 너무 재밌었고 뿌듯했던 과정이었습니다.</li>
+</ul>
+
+<h2 id="송동익-2">송동익</h2>
+<ul>
+  <li>온보딩 주차에 프로젝트를 진행하지 않아서 이번프로젝트가 첫프로젝트였지만, 맡은 임무를 최대한 열심히 하고자 노력을 했다. 하루하루 지나며 아무것도 없던 상태에서 틀이 갖춰지고 하나씩 기능이 갖춰 질때마다, 미천하지만 팀에 기여를 하고있다는 생각에 뿌듯함을 느꼈다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="wireframe">Wireframe</h1>
+<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProjectWireframe.jpeg" alt="Wireframe" /></p>
+
+<p><br /></p>
+
+<h1 id="최종-결과물">최종 결과물</h1>
+<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject1.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject2.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject3.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject4.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject5.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject6.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject7.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject8.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject9.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject10.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject11.png" width="200" /></p>
+
+<h1 id="시연-영상">시연 영상</h1>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/sparta/2024-04-09-firstTeamProject.mp4" type="video/mp4" />
+</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+<p>온보딩 프로젝트 발표가 끝났습니다. <br />
+팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
+
+<h2 id="keep">Keep</h2>
+<ul>
+  <li>팀원들 간의 소통에 어려움 없이, 커뮤니케이션이 진행되었다.</li>
+  <li>각자 자신이 하고 싶은 파트를 맡아서 진행하여 더욱 책임감을 가지고 각자의 파트를 완수하였다.</li>
+  <li>개인이 바라는 기능에 대한 강한 의견 제안보다, 팀 전체 프로젝트 목표를 달성하는 방향을 추구하며 트러블 없이 프로젝트를 완수하였다.</li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+<ul>
+  <li>다양한 문제 해결 방법에 대한 인지
+    <ul>
+      <li>문제점 : 같은 결과를 내기위해 여러가지 구현 방법이 있을 텐데, 다른 방법을 찾아내기 위한 키워드를 알아내기 어려웠다.</li>
+      <li>해결방안 : 결국에는 공부를 통해서 다양한 키워드를 알 수 있도록 해야 함을 느꼈다.</li>
+    </ul>
+  </li>
+  <li>Git 협업
+    <ul>
+      <li>문제점 : 깃허브를 통한 협업 시 코드컨벤션을 자세하게 작성하지 않아 충돌되는 문제가 발생했다.</li>
+      <li>해결방안 : 기획 단계에서 구체적인 코드컨벤션을 작성하고 프로젝트를 시작해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="try">Try</h2>
+<ul>
+  <li>프로젝트를 진행하며, 나름 디테일하게 생각하고 많은 부분을 앱에 담으려고 노력하고 생각했음에도 불구하고, 다른 팀들의 발표를 보니, 버튼의 색상을 설정하거나, 제품군 안에 한 단계 더 세분화 된 seg를 넣거나, 제품의 색상을 선택하게 하는 등의 놓친 부분이 꽤 많았음을 깨달았다. 다음 프로젝트를 할 때는 좀 더 세세하게 챙겨야겠다는 생각을 했다.</li>
+  <li>충분히 유져 입장에서 생각을 했다고 하였지만, 결과론적으로 다른 조의 프로젝트와 비교했을 때, 조금은 내실이 부족했다 라는 생각이 든다. 화면 구성이나 기능적인 측면에서 좀 더 유져의 입장에서 생각을 해야겠다 라고 반성을 하게 된다.</li>
+  <li>기획 단계에서 지금보다 더 상세한 UI 구성이 필요하고, 가능하다면 협업툴(피그마)을 사용한 협업을 경험해보면 좋을 것 같다.</li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
+이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
   <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
@@ -73,7 +253,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h1 id="나의-풀이-2번-방법---556">나의 풀이 2번 방법 - 55.6</h1>
+<h1 id="나의-풀이-2번-방법---556점">나의 풀이 2번 방법 - 55.6점</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
 <span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
@@ -89,7 +269,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h1 id="나의-풀이-3번-방법---556">나의 풀이 3번 방법 - 55.6</h1>
+<h1 id="나의-풀이-3번-방법---556점">나의 풀이 3번 방법 - 55.6점</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
 <span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
@@ -103,7 +283,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h1 id="나의-풀이-4번-방법---556">나의 풀이 4번 방법 - 55.6</h1>
+<h1 id="나의-풀이-4번-방법---556점">나의 풀이 4번 방법 - 55.6점</h1>
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
 
 <span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
@@ -602,94 +782,4 @@ Sitemap: http://localhost:4000/sitemap.xml
 <ul>
   <li>팀 과제 진행</li>
   <li>코드로 탭바 추가하기, 상세페이지 추가 등 ! ! !</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry><entry><title type="html">[UIKit] 코코아팟(cocoapods) 설치하기</title><link href="http://localhost:4000/UIKit/cocoapods/" rel="alternate" type="text/html" title="[UIKit] 코코아팟(cocoapods) 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/cocoaPods</id><content type="html" xml:base="http://localhost:4000/UIKit/cocoapods/"><![CDATA[<h1 id="코코아팟cocoapods이란-">코코아팟(cocoapods)이란 ?</h1>
-<ul>
-  <li>Objective-C 및 Swift Cocoa 프로젝트의 종속성 관리자</li>
-  <li>즉, CocoaPods은 Objective-C 또는 Swift에서 <code class="language-plaintext highlighter-rouge">라이브러리를 사용할 수 있게 도와주는 모듈</code>이다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="설치하기">설치하기</h1>
-<h2 id="1-홈브루-버전-확인-및-업데이트">1. 홈브루 버전 확인 및 업데이트</h2>
-<ul>
-  <li>터미널에서 홈브루 버전확인 및 업데이트를 합니다.</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % brew --version 
-Homebrew 4.2.11
-imhs@imhsui-MacBookPro ~ % brew update
-imhs@imhsui-MacBookPro ~ % brew --version
-Homebrew 4.2.15
-</span></code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="2-코코아팟-설치">2. 코코아팟 설치</h2>
-<ul>
-  <li><a href="https://cocoapods.org/" target="_blank">코코아팟 홈페이지 바로가기</a></li>
-  <li>코코아팟 홈페이지에서 설치 명령어를 확인할 수 있습니다.</li>
-  <li>sudo gem install cocoapods</li>
-</ul>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % sudo gem install cocoapods
-</span></code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="버전확인">버전확인</h1>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro ~ % pod --version
-1.15.2
-</span></code></pre></div></div>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="cocoapods" /><summary type="html"><![CDATA[홈브루로 코코아팟(cocoapods) 설치]]></summary></entry><entry><title type="html">[UIKit] SDWebImage 설치하기</title><link href="http://localhost:4000/UIKit/SDWebImage/" rel="alternate" type="text/html" title="[UIKit] SDWebImage 설치하기" /><published>2024-04-02T00:00:00+09:00</published><updated>2024-04-02T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/SDWebImage</id><content type="html" xml:base="http://localhost:4000/UIKit/SDWebImage/"><![CDATA[<h1 id="sdwebimage란-">SDWebImage란 ?</h1>
-<ul>
-  <li>SDWebImage는 Objective-C로 작성된 이미지 로딩 및 캐싱 라이브러리입니다. iOS 및 macOS에서 많이 사용되며, Swift에서도 사용할 수 있습니다.</li>
-  <li>SDWebImage는 비동기 이미지 다운로드, 캐싱 및 관리를 처리하고, 메모리 사용량을 최적화하여 원활한 사용자 경험을 제공합니다.</li>
-  <li>또한 SDWebImage는 GIF 지원, 프로그레시브 다운로드, 이미지 처리 등의 기능을 제공합니다.</li>
-  <li>SDWebImage는 iOS 개발 커뮤니티에서 오랫동안 사용되어 온 라이브러리 중 하나입니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="사용방법">사용방법</h1>
-<h2 id="1-프로젝트-폴더로-이동해서-터미널-오픈">1. 프로젝트 폴더로 이동해서 터미널 오픈</h2>
-<ul>
-  <li>프로젝트 폴더로 이동해서 폴더를 우클릭하고 터미널을 오픈합니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="2-명령어를-입력합니다">2. 명령어를 입력합니다.</h2>
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">imhs@imhsui-MacBookPro MyGithub % pod init
-</span></code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="3-프로젝트-폴더안에-podfile-확인">3. 프로젝트 폴더안에 Podfile 확인</h2>
-<ul>
-  <li>프로젝트 폴더 안에 Podfile이 생깁니다.</li>
-</ul>
-
-<p><img src="/assets/images/categories/uikit/2024-04-02-SDWebImage1.png" alt="" /></p>
-
-<p><br /></p>
-
-<h2 id="4-podfile-더블클릭">4. Podfile 더블클릭</h2>
-<p><img src="/assets/images/categories/uikit/2024-04-02-SDWebImage2.png" alt="" /></p>
-
-<p><br /></p>
-
-<h2 id="5-podfile-내-sdwebimage-추가">5. Podfile 내 SDWebImage 추가</h2>
-<ul>
-  <li>pod ‘SDWebImage’</li>
-</ul>
-
-<p><img src="/assets/images/categories/uikit/2024-04-02-SDWebImage3.png" alt="" /></p>
-
-<p><br /></p>
-
-<h2 id="6-sdwebimage-설치---pod-install">6. SDWebImage 설치 - pod install</h2>
-<p><img src="/assets/images/categories/uikit/2024-04-02-SDWebImage4.png" alt="" /></p>
-
-<p><br /></p>
-
-<h2 id="7project-재시작---xcworkspace-파일을-열어야합니다">7.project 재시작 - .xcworkspace 파일을 열어야합니다.</h2>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="SDWebImage" /><summary type="html"><![CDATA[SDWebImage 설치]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 27일차 이야기 - 2024.04.03]]></summary></entry></feed>
