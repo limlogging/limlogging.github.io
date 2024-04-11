@@ -32,7 +32,24 @@ comments: true      #댓글
 
 <br>
 
-# 3. _config.yml 수정하기 
+# 3. custom.html 수정하기 
+- _includes - head - custom.html에 코드를 추가합니다. 
+
+```html
+<!-- 구글 애널리틱스 추가 Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B9ZRRL1X26');
+</script>
+```
+
+<br>
+
+# 4. _config.yml 수정하기 
 ```yml
 # Analytics
 analytics:
@@ -44,6 +61,6 @@ analytics:
 
 <br>
 
-# 4. 확인하기 
+# 5. 확인하기 
 - 홈에서 확인 
 ![홈에서 확인](../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png)
