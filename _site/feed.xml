@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-11T23:11:27+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] performSegue 코드로 화면 이동 (스토리보드에서 view와 view를 세그웨이로 연결, 식별자사용)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993/" rel="alternate" type="text/html" title="[UIKit] performSegue 코드로 화면 이동 (스토리보드에서 view와 view를 세그웨이로 연결, 식별자사용)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993/"><![CDATA[<h1 id="view와-view를-세그웨이로-연결하고-코드로-화면-이동">View와 View를 세그웨이로 연결하고 코드로 화면 이동</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-11T23:49:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] performSegue 코드로 화면 이동 (스토리보드에서 view와 view를 세그웨이로 연결, 식별자사용)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993/" rel="alternate" type="text/html" title="[UIKit] performSegue 코드로 화면 이동 (스토리보드에서 view와 view를 세그웨이로 연결, 식별자사용)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993/"><![CDATA[<h1 id="view와-view를-세그웨이로-연결하고-코드로-화면-이동">View와 View를 세그웨이로 연결하고 코드로 화면 이동</h1>
 <ul>
   <li>세그웨이 식별자를 사용해서 화면이동</li>
 </ul>
@@ -52,57 +52,7 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>view - view를 세그웨이로 연결하고 식별자 ID를 통해 세그웨이를 실행</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에서 view와 view를 세그웨이로 연결하고 코드로 실행]]></summary></entry><entry><title type="html">[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" rel="alternate" type="text/html" title="[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/"><![CDATA[<h1 id="세그웨이-없이-코드로-화면-이동">세그웨이 없이 코드로 화면 이동</h1>
-<ul>
-  <li>코드로 스토리보드 객체를 생성해서 화면을 이동하는 방법입니다.</li>
-</ul>
-
-<h1 id="1-view-controller에-버튼-추가-및-액션함수-생성">1. View Controller에 버튼 추가 및 액션함수 생성</h1>
-<ul>
-  <li>버튼 추가</li>
-</ul>
-
-<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-1.png" width="200" /></p>
-
-<ul>
-  <li>버튼 액션함수 생성</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="2-viewcontroller-파일-생성">2. ViewController 파일 생성</h1>
-<ul>
-  <li>UIViewController를 상속받는 NextViewController 생성 
-<img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-2.png" alt="" /></li>
-</ul>
-
-<h1 id="3-스토리보드에-view-controller-추가-및-class파일-등록-스토리보드-id-등록">3. 스토리보드에 View Controller 추가 및 class파일 등록, 스토리보드 ID 등록</h1>
-<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-3.png" alt="" /></p>
-
-<h1 id="4-버튼-액션-함수-수정">4. 버튼 액션 함수 수정</h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//현재 스토리보드에서 "NextVC"라는 식별자로 뷰 컨트롤러를 인스턴스화를 시도</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"NextVC"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">NextViewController</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="c1">//인스턴스화가 성공하면 새로 생성된 뷰 컨트롤러를 모달로 표시</span>
-    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="5-실행-화면">5. 실행 화면</h1>
-
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/categories/uikit/2024-04-11-NextVC2.mov" type="video/mp4" />
-</video>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 로또의 최고 순위와 최저 순위" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="performSegue" /><summary type="html"><![CDATA[스토리보드에서 view와 view를 세그웨이로 연결하고 코드로 실행]]></summary></entry><entry><title type="html">[프로그래머스/Swift] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 로또의 최고 순위와 최저 순위" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>로또 6/45(이하 ‘로또’로 표기)는 1부터 45까지의 숫자 중 6개를 찍어서 맞히는 대표적인 복권입니다. 아래는 로또의 순위를 정하는 방식입니다.</li>
 </ul>
@@ -354,28 +304,142 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>zero 카운트 구하는게 변수도 비슷하고 구하는 방법도 똑같았다. 다만 일치하는 수를 구하고 결과를 리턴하는 부분에 차이가 있는데 신기했다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="로또의 최고 순위와 최저 순위" /><summary type="html"><![CDATA[[프로그래머스/Swift] 로또의 최고 순위와 최저 순위]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="로또의 최고 순위와 최저 순위" /><summary type="html"><![CDATA[[프로그래머스/Swift] 로또의 최고 순위와 최저 순위]]></summary></entry><entry><title type="html">[UIKit] prepare 코드로 화면 이동 (스토리보드에서 버튼과 view를 세그웨이로 연결, 추가 정보 전달)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%994/" rel="alternate" type="text/html" title="[UIKit] prepare 코드로 화면 이동 (스토리보드에서 버튼과 view를 세그웨이로 연결, 추가 정보 전달)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%994</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%994/"><![CDATA[<h1 id="스토리보드-버튼과-view를-세그웨이로-연결하고-코드로-화면-이동">스토리보드 버튼과 View를 세그웨이로 연결하고 코드로 화면 이동</h1>
 <ul>
-  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
-  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
-    </ul>
-  </li>
+  <li>세그웨이를 통해 연결됐지만 추가적인 정보를 전달 가능</li>
 </ul>
 
-<h3 id="앱개발-심화">앱개발 심화</h3>
+<h1 id="1-view-controller에-버튼-추가-및-액션함수-생성">1. View Controller에 버튼 추가 및 액션함수 생성</h1>
 <ul>
-  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
-  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
-  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
+  <li>버튼을 추가하고 액션함수는 생성하지 않습니다.</li>
 </ul>
 
-<h3 id="내일-목표">내일 목표</h3>
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC4-1.png" width="200" /></p>
+
+<h1 id="2-view-controller-생성-하고-버튼과-연결">2. View Controller 생성 하고 버튼과 연결</h1>
 <ul>
-  <li>챌린지 과제 마저하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+  <li>뷰 컨트롤러에서 버튼을 마우스 우클릭으로 드래그 후 옆에 새로 만든 뷰컨트롤러로 드래그하고 마우스를 떼면 Action Segue 창이 뜹니다.</li>
+  <li>Show를 선택합니다.</li>
+  <li>버튼을 누르면 View Controller로 바로 이동합니다.</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC4-2.png" alt="" /></p>
+
+<h1 id="3-세그웨이-식별자id를-추가">3. 세그웨이 식별자ID를 추가</h1>
+<ul>
+  <li>세그웨이는 화면 이동을 담당하는 객체입니다.</li>
+  <li>세그웨이를 선택하고 식별자ID를 추가합니다. 
+<img src="../../assets/images/categories/uikit/2024-04-11-NextVC4-3.png" alt="" /></li>
+</ul>
+
+<h1 id="4-이동하는-뷰컨트롤러에-label-추가">4. 이동하는 뷰컨트롤러에 Label 추가</h1>
+<ul>
+  <li>버튼으로 화면이동 시 Label의 text값을 변경하기 위함입니다. 
+<img src="../../assets/images/categories/uikit/2024-04-11-NextVC4-4.png" alt="" /></li>
+</ul>
+
+<h1 id="5-next-view-controller-수정">5. Next View Controller 수정</h1>
+<ul>
+  <li>Label을 변경하기 위한 코드 수정</li>
+  <li>전체코드</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">NextViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">textLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">tempLabel</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+        <span class="n">textLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">tempLabel</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="6-view-controller-prepare-함수-추가">6. View Controller prepare 함수 추가</h1>
+<ul>
+  <li>버튼으로 다음화면으로 이동하면서 Label의 값을 변경하기 위해 prepare 함수를 추가하고 코드를 작성합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="k">for</span> <span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">segue</span><span class="o">.</span><span class="n">identifier</span> <span class="o">==</span> <span class="s">"NextVCSegue"</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"prepare 함수 실행"</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">segue</span><span class="o">.</span><span class="n">destination</span> <span class="k">as?</span> <span class="kt">NextViewController</span>
+            <span class="n">nextVC</span><span class="p">?</span><span class="o">.</span><span class="n">tempLabel</span> <span class="o">=</span> <span class="s">"안녕하세요~~"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="7-실행-화면">7. 실행 화면</h1>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/uikit/2024-04-11-NextVC4.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>세그웨이를 통해 버튼과 뷰가 자동으로 연결되었으나 데이터 전달등 추가적인 작업을 위해 prepare 함수 추가</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="prepare" /><summary type="html"><![CDATA[스토리보드에서 버튼과 view를 세그웨이로 연결하고 코드로 추가 정보 전달]]></summary></entry><entry><title type="html">[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" rel="alternate" type="text/html" title="[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/"><![CDATA[<h1 id="세그웨이-없이-코드로-화면-이동">세그웨이 없이 코드로 화면 이동</h1>
+<ul>
+  <li>코드로 스토리보드 객체를 생성해서 화면을 이동하는 방법입니다.</li>
+</ul>
+
+<h1 id="1-view-controller에-버튼-추가-및-액션함수-생성">1. View Controller에 버튼 추가 및 액션함수 생성</h1>
+<ul>
+  <li>버튼 추가</li>
+</ul>
+
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-1.png" width="200" /></p>
+
+<ul>
+  <li>버튼 액션함수 생성</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="2-viewcontroller-파일-생성">2. ViewController 파일 생성</h1>
+<ul>
+  <li>UIViewController를 상속받는 NextViewController 생성 
+<img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-2.png" alt="" /></li>
+</ul>
+
+<h1 id="3-스토리보드에-view-controller-추가-및-class파일-등록-스토리보드-id-등록">3. 스토리보드에 View Controller 추가 및 class파일 등록, 스토리보드 ID 등록</h1>
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-3.png" alt="" /></p>
+
+<h1 id="4-버튼-액션-함수-수정">4. 버튼 액션 함수 수정</h1>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//현재 스토리보드에서 "NextVC"라는 식별자로 뷰 컨트롤러를 인스턴스화를 시도</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"NextVC"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">NextViewController</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="c1">//인스턴스화가 성공하면 새로 생성된 뷰 컨트롤러를 모달로 표시</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-실행-화면">5. 실행 화면</h1>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/uikit/2024-04-11-NextVC2.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="instantiateViewController" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
 <p>온보딩 프로젝트 발표가 끝났습니다. <br />
 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
 
@@ -411,7 +475,28 @@
 
 <h1 id="마무리">마무리</h1>
 <p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
-이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
+  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="앱개발-심화">앱개발 심화</h3>
+<ul>
+  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
+  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
+  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>챌린지 과제 마저하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
   <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
@@ -882,56 +967,4 @@
   <li>인터넷 주소창에 <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/ 접속</a></li>
 </ul>
 
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
-<ul>
-  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
-
-<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
-
-<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
-  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
-
-<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
-Allow: /
-Sitemap: http://localhost:4000/sitemap.xml
-</code></pre></div></div>
-
-<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
-
-<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
-
-<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
-
-<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
-<ul>
-  <li>google_site_verification 레코드를 붙여넣습니다.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
-<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
-<span class="na">bing_site_verification   </span><span class="pi">:</span>
-<span class="na">naver_site_verification  </span><span class="pi">:</span>
-<span class="na">yandex_site_verification </span><span class="pi">:</span>
-<span class="na">baidu_site_verification  </span><span class="pi">:</span>
-</code></pre></div></div>
-
-<h1 id="9-완료">9. 완료</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry></feed>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry></feed>
