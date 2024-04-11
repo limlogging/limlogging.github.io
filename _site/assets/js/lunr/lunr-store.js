@@ -833,6 +833,12 @@ var store = [{
         "url": "/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 32일차 - 2024.04.11",
+        "excerpt":"알고리즘     쉽게 풀었던 오늘의 알고리즘 문제   풀이 보기            로또의 최고 순위와 최저 순위           챌린지반 과제     결국 마지막 페이징 처리는 못했지만 제출했다.   내일 우선 포스팅 예정   화면이동     스토리보드로 화면 연결은 쉽지만 이후 코드로 연결하기, 자동연결이지만 데이터 전달하기등 화면이동의 다양한 방법에 대해서 공부했다.   코드로 화면 이동1 - present   코드로 화면 이동2 - instantiateViewController   코드로 화면 이동3 - performSegue   코드로 화면 이동4 - prepare   내일 목표     팀 프로젝트, 선거 휴무를 지나면서 공부한 내용을 많이 정리하지 못했다 ㅠ 다시 조금씩… 작성해야겠다.   개인 과제 시작하기 , 챌린지 과제 마저 수정  ","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til32/",
+        "teaser": null
+      },{
         "title": "[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)",
         "excerpt":"세그웨이 없이 코드로 화면 이동     코드로 스토리보드 객체를 생성해서 화면을 이동하는 방법입니다.   1. View Controller에 버튼 추가 및 액션함수 생성     버튼 추가         버튼 액션함수 생성   // MARK: - 다음 화면으로 이동하는 버튼 @IBAction func nextButtonTapped(_ sender: UIButton) { }   2. ViewController 파일 생성     UIViewController를 상속받는 NextViewController 생성     3. 스토리보드에 View Controller 추가 및 class파일 등록, 스토리보드 ID 등록     4. 버튼 액션 함수 수정   // MARK: - 다음 화면으로 이동하는 버튼 @IBAction func nextButtonTapped(_ sender: UIButton) {     //현재 스토리보드에서 \"NextVC\"라는 식별자로 뷰 컨트롤러를 인스턴스화를 시도     guard let nextVC = storyboard?.instantiateViewController(identifier: \"NextVC\") as? NextViewController else { return }     //인스턴스화가 성공하면 새로 생성된 뷰 컨트롤러를 모달로 표시     self.present(nextVC, animated: true, completion: nil) }   5. 실행 화면           마무리     세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기  ","categories": ["UIKit"],
         "tags": ["swift","iOS","instantiateViewController"],
