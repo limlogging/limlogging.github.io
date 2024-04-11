@@ -1,40 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-09T20:37:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
-<p>온보딩 프로젝트 발표가 끝났습니다. <br />
-팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
-
-<h2 id="keep">Keep</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-11T12:29:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 로또의 최고 순위와 최저 순위" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
-  <li>팀원들 간의 소통에 어려움 없이, 커뮤니케이션이 진행되었다.</li>
-  <li>각자 자신이 하고 싶은 파트를 맡아서 진행하여 더욱 책임감을 가지고 각자의 파트를 완수하였다.</li>
-  <li>개인이 바라는 기능에 대한 강한 의견 제안보다, 팀 전체 프로젝트 목표를 달성하는 방향을 추구하며 트러블 없이 프로젝트를 완수하였다.</li>
+  <li>로또 6/45(이하 ‘로또’로 표기)는 1부터 45까지의 숫자 중 6개를 찍어서 맞히는 대표적인 복권입니다. 아래는 로또의 순위를 정하는 방식입니다.</li>
 </ul>
 
-<h2 id="problem">Problem</h2>
+<table>
+  <thead>
+    <tr>
+      <th>순위</th>
+      <th>당첨 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>6개 번호가 모두 일치</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5개 번호가 일치</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>4개 번호가 일치</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3개 번호가 일치</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>2개 번호가 일치</td>
+    </tr>
+    <tr>
+      <td>6(낙첨)</td>
+      <td>그 외</td>
+    </tr>
+  </tbody>
+</table>
+
 <ul>
-  <li>다양한 문제 해결 방법에 대한 인지
+  <li>로또를 구매한 민우는 당첨 번호 발표일을 학수고대하고 있었습니다. 하지만, 민우의 동생이 로또에 낙서를 하여, 일부 번호를 알아볼 수 없게 되었습니다. 당첨 번호 발표 후, 민우는 자신이 구매했던 로또로 당첨이 가능했던 최고 순위와 최저 순위를 알아보고 싶어 졌습니다.</li>
+  <li>알아볼 수 없는 번호를 0으로 표기하기로 하고, 민우가 구매한 로또 번호 6개가 44, 1, 0, 0, 31 25라고 가정해보겠습니다. 당첨 번호 6개가 31, 10, 45, 1, 6, 19라면, 당첨 가능한 최고 순위와 최저 순위의 한 예는 아래와 같습니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">당첨 번호</th>
+      <th style="text-align: center">31</th>
+      <th style="text-align: center">10</th>
+      <th style="text-align: center">45</th>
+      <th style="text-align: center">1</th>
+      <th style="text-align: center">6</th>
+      <th style="text-align: center">19</th>
+      <th style="text-align: center">결과</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">최고 순위 번호</td>
+      <td style="text-align: center">31</td>
+      <td style="text-align: center">0→10</td>
+      <td style="text-align: center">44</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0→6</td>
+      <td style="text-align: center">25</td>
+      <td style="text-align: center">4개 번호 일치, 3등</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">최저 순위 번호</td>
+      <td style="text-align: center">31</td>
+      <td style="text-align: center">0→11</td>
+      <td style="text-align: center">44</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0→7</td>
+      <td style="text-align: center">25</td>
+      <td style="text-align: center">2개 번호 일치, 5등</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>순서와 상관없이, 구매한 로또에 당첨 번호와 일치하는 번호가 있으면 맞힌 걸로 인정됩니다.</li>
+  <li>알아볼 수 없는 두 개의 번호를 각각 10, 6이라고 가정하면 3등에 당첨될 수 있습니다.
     <ul>
-      <li>문제점 : 같은 결과를 내기위해 여러가지 구현 방법이 있을 텐데, 다른 방법을 찾아내기 위한 키워드를 알아내기 어려웠다.</li>
-      <li>해결방안 : 결국에는 공부를 통해서 다양한 키워드를 알 수 있도록 해야 함을 느꼈다.</li>
+      <li>3등을 만드는 다른 방법들도 존재합니다. 하지만, 2등 이상으로 만드는 것은 불가능합니다.</li>
     </ul>
   </li>
-  <li>Git 협업
+  <li>알아볼 수 없는 두 개의 번호를 각각 11, 7이라고 가정하면 5등에 당첨될 수 있습니다.
     <ul>
-      <li>문제점 : 깃허브를 통한 협업 시 코드컨벤션을 자세하게 작성하지 않아 충돌되는 문제가 발생했다.</li>
-      <li>해결방안 : 기획 단계에서 구체적인 코드컨벤션을 작성하고 프로젝트를 시작해야 한다.</li>
+      <li>5등을 만드는 다른 방법들도 존재합니다. 하지만, 6등(낙첨)으로 만드는 것은 불가능합니다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>민우가 구매한 로또 번호를 담은 배열 lottos, 당첨 번호를 담은 배열 win_nums가 매개변수로 주어집니다. 이때, 당첨 가능한 최고 순위와 최저 순위를 차례대로 배열에 담아서 return 하도록 solution 함수를 완성해주세요.</p>
+  </li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484#fnref1" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>lottos는 길이 6인 정수 배열입니다.</li>
+  <li>lottos의 모든 원소는 0 이상 45 이하인 정수입니다.
+    <ul>
+      <li>0은 알아볼 수 없는 숫자를 의미합니다.</li>
+      <li>0을 제외한 다른 숫자들은 lottos에 2개 이상 담겨있지 않습니다.</li>
+      <li>lottos의 원소들은 정렬되어 있지 않을 수도 있습니다.</li>
+    </ul>
+  </li>
+  <li>win_nums은 길이 6인 정수 배열입니다.</li>
+  <li>win_nums의 모든 원소는 1 이상 45 이하인 정수입니다.
+    <ul>
+      <li>win_nums에는 같은 숫자가 2개 이상 담겨있지 않습니다.</li>
+      <li>win_nums의 원소들은 정렬되어 있지 않을 수도 있습니다.</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="try">Try</h2>
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>lottos</th>
+      <th>win_nums</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[44, 1, 0, 0, 31, 25]</td>
+      <td>[31, 10, 45, 1, 6, 19]</td>
+      <td>[3, 5]</td>
+    </tr>
+    <tr>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>[38, 19, 20, 40, 15, 25]</td>
+      <td>[1, 6]</td>
+    </tr>
+    <tr>
+      <td>[45, 4, 35, 20, 3, 9]</td>
+      <td>[20, 9, 3, 45, 4, 35]</td>
+      <td>[1, 1]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
 <ul>
-  <li>프로젝트를 진행하며, 나름 디테일하게 생각하고 많은 부분을 앱에 담으려고 노력하고 생각했음에도 불구하고, 다른 팀들의 발표를 보니, 버튼의 색상을 설정하거나, 제품군 안에 한 단계 더 세분화 된 seg를 넣거나, 제품의 색상을 선택하게 하는 등의 놓친 부분이 꽤 많았음을 깨달았다. 다음 프로젝트를 할 때는 좀 더 세세하게 챙겨야겠다는 생각을 했다.</li>
-  <li>충분히 유져 입장에서 생각을 했다고 하였지만, 결과론적으로 다른 조의 프로젝트와 비교했을 때, 조금은 내실이 부족했다 라는 생각이 든다. 화면 구성이나 기능적인 측면에서 좀 더 유져의 입장에서 생각을 해야겠다 라고 반성을 하게 된다.</li>
-  <li>기획 단계에서 지금보다 더 상세한 UI 구성이 필요하고, 가능하다면 협업툴(피그마)을 사용한 협업을 경험해보면 좋을 것 같다.</li>
+  <li>문제 예시와 같습니다.</li>
 </ul>
 
-<h1 id="마무리">마무리</h1>
-<p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
-이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>알아볼 수 없는 번호들이 아래와 같았다면, 1등과 6등에 당첨될 수 있습니다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>당첨 번호</th>
+      <th>38</th>
+      <th>19</th>
+      <th>20</th>
+      <th>40</th>
+      <th>15</th>
+      <th>25</th>
+      <th>결과</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>최고 순위 번호</td>
+      <td>0→38</td>
+      <td>0→19</td>
+      <td>0→20</td>
+      <td>0→40</td>
+      <td>0→15</td>
+      <td>0→25</td>
+      <td>6개 번호 일치, 1등</td>
+    </tr>
+    <tr>
+      <td>최저 순위 번호</td>
+      <td>0→21</td>
+      <td>0→22</td>
+      <td>0→23</td>
+      <td>0→24</td>
+      <td>0→26</td>
+      <td>0→27</td>
+      <td>0개 번호 일치, 6등</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="입출력-예-3">입출력 예 #3</h3>
+<ul>
+  <li>
+    <p>민우가 구매한 로또의 번호와 당첨 번호가 모두 일치하므로, 최고 순위와 최저 순위는 모두 1등입니다.</p>
+  </li>
+  <li>
+    <p>실제로 사용되는 로또 순위의 결정 방식과는 약간 다르지만, 이 문제에서는 지문에 명시된 대로 로또 순위를 결정하도록 합니다.</p>
+  </li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">lottos</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">win_nums</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">min</span><span class="p">:</span> <span class="kt">Int</span>  <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">zeroCnt</span> <span class="o">=</span> <span class="n">lottos</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+        
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">win_nums</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">lottos</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span> <span class="p">{</span>
+                <span class="n">min</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">result</span><span class="p">[</span><span class="n">min</span> <span class="o">+</span> <span class="n">zeroCnt</span><span class="p">],</span> <span class="n">result</span><span class="p">[</span><span class="n">min</span><span class="p">]]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">lottos</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">win_nums</span><span class="p">:[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">zeroCount</span> <span class="o">=</span> <span class="n">lottos</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">let</span> <span class="nv">winCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">win_nums</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">lottos</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+
+
+    <span class="k">return</span> <span class="p">[</span><span class="nf">min</span><span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="n">winCount</span><span class="o">-</span><span class="n">zeroCount</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="nf">min</span><span class="p">(</span><span class="mi">7</span><span class="o">-</span><span class="n">winCount</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>일치하는 개수를 Index로 가지는 결과를 리턴하기 위한 배열 생성</li>
+  <li>0의 개수 구하기</li>
+  <li>일치하는 개수 구하기</li>
+  <li>일치하는 수를 확인하고 순위 리턴</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>zero 카운트 구하는게 변수도 비슷하고 구하는 방법도 똑같았다. 다만 일치하는 수를 구하고 결과를 리턴하는 부분에 차이가 있는데 신기했다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="로또의 최고 순위와 최저 순위" /><summary type="html"><![CDATA[[프로그래머스/Swift] 로또의 최고 순위와 최저 순위]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
 <ol>
   <li>프로젝트 주제: 팀 소개 앱 만들기</li>
   <li>프로젝트 기간: 4/1(월) ~ 4/7(일)</li>
@@ -362,14 +578,62 @@
 <h3 id="앱개발-심화">앱개발 심화</h3>
 <ul>
   <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
-  <li>새로운 팀에 적응하는 시간이 필요!</li>
+  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
+  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
 </ul>
 
 <h3 id="내일-목표">내일 목표</h3>
 <ul>
   <li>챌린지 과제 마저하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08</title><link href="http://localhost:4000/TIL/til30/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til30</id><content type="html" xml:base="http://localhost:4000/TIL/til30/"><![CDATA[<h1 id="팀-프로젝트">팀 프로젝트</h1>
-<p><img src="../../assets/images/categories/til/2024-04-08-til30-1.png" alt="" /></p>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+<p>온보딩 프로젝트 발표가 끝났습니다. <br />
+팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
+
+<h2 id="keep">Keep</h2>
+<ul>
+  <li>팀원들 간의 소통에 어려움 없이, 커뮤니케이션이 진행되었다.</li>
+  <li>각자 자신이 하고 싶은 파트를 맡아서 진행하여 더욱 책임감을 가지고 각자의 파트를 완수하였다.</li>
+  <li>개인이 바라는 기능에 대한 강한 의견 제안보다, 팀 전체 프로젝트 목표를 달성하는 방향을 추구하며 트러블 없이 프로젝트를 완수하였다.</li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+<ul>
+  <li>다양한 문제 해결 방법에 대한 인지
+    <ul>
+      <li>문제점 : 같은 결과를 내기위해 여러가지 구현 방법이 있을 텐데, 다른 방법을 찾아내기 위한 키워드를 알아내기 어려웠다.</li>
+      <li>해결방안 : 결국에는 공부를 통해서 다양한 키워드를 알 수 있도록 해야 함을 느꼈다.</li>
+    </ul>
+  </li>
+  <li>Git 협업
+    <ul>
+      <li>문제점 : 깃허브를 통한 협업 시 코드컨벤션을 자세하게 작성하지 않아 충돌되는 문제가 발생했다.</li>
+      <li>해결방안 : 기획 단계에서 구체적인 코드컨벤션을 작성하고 프로젝트를 시작해야 한다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="try">Try</h2>
+<ul>
+  <li>프로젝트를 진행하며, 나름 디테일하게 생각하고 많은 부분을 앱에 담으려고 노력하고 생각했음에도 불구하고, 다른 팀들의 발표를 보니, 버튼의 색상을 설정하거나, 제품군 안에 한 단계 더 세분화 된 seg를 넣거나, 제품의 색상을 선택하게 하는 등의 놓친 부분이 꽤 많았음을 깨달았다. 다음 프로젝트를 할 때는 좀 더 세세하게 챙겨야겠다는 생각을 했다.</li>
+  <li>충분히 유져 입장에서 생각을 했다고 하였지만, 결과론적으로 다른 조의 프로젝트와 비교했을 때, 조금은 내실이 부족했다 라는 생각이 든다. 화면 구성이나 기능적인 측면에서 좀 더 유져의 입장에서 생각을 해야겠다 라고 반성을 하게 된다.</li>
+  <li>기획 단계에서 지금보다 더 상세한 UI 구성이 필요하고, 가능하다면 협업툴(피그마)을 사용한 협업을 경험해보면 좋을 것 같다.</li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
+이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08</title><link href="http://localhost:4000/TIL/til30/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til30</id><content type="html" xml:base="http://localhost:4000/TIL/til30/"><![CDATA[<h1 id="팀프로젝트">팀프로젝트</h1>
+<ul>
+  <li>팀프로젝트가 바빠서 28, 29일차는 생략!</li>
+  <li>이번 팀 프로젝트의 개인적인 목표는 기존에 배웠던 내용을 학습하고 깃허브와 익숙해지기였다.</li>
+  <li>깃허브 머지 역할을 담당하면서 충돌, 브랜치 다시 만들기, 코드로 직접 옮겨쓰기 .. 많은 우여곡절이 있었다. 깃허브를 제대로 마스터하지는 못했지만 기본적인 사용방법을 알아낸 것 같아 만족스러웠다.</li>
+  <li>기존에 배웠던 내용 + 코드로 UI 작성하기 + 스크롤뷰에서 페이지컨트롤러를 사용하여 이미지 출력하기를 만들어볼 수 있었다.</li>
+</ul>
+
+<h2 id="야근하는-다른-팀들과-함께-">야근?하는 다른 팀들과 함께… 🧑🏻‍💻</h2>
+<ul>
+  <li>우리조에 난입한 친구들 ! 
+<img src="../../assets/images/categories/til/2024-04-08-til30-1.png" alt="" /></li>
+</ul>
 
 <h2 id="우리팀-발표">우리팀 발표</h2>
 <p><img src="../../assets/images/categories/til/2024-04-08-til30-3.png" alt="" /></p>
@@ -377,10 +641,14 @@
 <h2 id="발표-무작위-캡처">발표 무작위 캡처</h2>
 <p><img src="../../assets/images/categories/til/2024-04-08-til30-2.png" alt="" /></p>
 
+<h1 id="팀-프로젝트">팀 프로젝트</h1>
 <ul>
-  <li>처음에 충돌 났던 소스코드를 하나로 머지하고 나서부터는 이제 협업이 되는 것 같다.</li>
-  <li>수정 전 새로 받아오고 수정하고 dev 브랜치에 머지하면 공유하고 새로 받아오고를 반복하며 조금 익숙해졌다.</li>
-  <li>처음에는 스토리보드가 간편하고 좋다고 생각했으나 팀원들과 협업해보니 확실히 코드로 작업해야 더 간편한 것 같다.</li>
+  <li><a href="https://limlogging.github.io/sparta/firstTeamProject/" target="_blank">팀프로젝트</a></li>
+</ul>
+
+<h1 id="팀-프로젝트-회고">팀 프로젝트 회고</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/sparta/firstTeamProjectKPT/" target="_blank">팀프로젝트 회고</a></li>
 </ul>
 
 <h3 id="내일-목표">내일 목표</h3>
@@ -637,23 +905,4 @@ Sitemap: http://localhost:4000/sitemap.xml
 </code></pre></div></div>
 
 <h1 id="9-완료">9. 완료</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그 내 검색기능 추가하기</title><link href="http://localhost:4000/GitHubBlog/search/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그 내 검색기능 추가하기" /><published>2024-04-07T00:00:00+09:00</published><updated>2024-04-07T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/blogSearch</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/search/"><![CDATA[<p>블로그에 검색 기능 추가하기입니다.</p>
-
-<h1 id="1-_configyml-파일-수정하기">1. _config.yml 파일 수정하기</h1>
-<ul>
-  <li>_config.yml 파일에서 설정을 변경하면 바로 추가할 수 있습니다.</li>
-  <li>search 관련 설정을 true로 변경합니다.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">search                   </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
-<span class="na">search_full_content      </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
-<span class="na">search_provider          </span><span class="pi">:</span> <span class="s">lunr</span> <span class="c1"># lunr (default), algolia, google</span>
-<span class="na">lunr</span><span class="pi">:</span>
-  <span class="na">search_within_pages    </span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># true, false (default)</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="2-확인">2. 확인</h1>
-<p>검색기능이 추가되고 검색할 수 있습니다. 
-<img src="../../assets/images/categories/githubblog/2024-04-07-blogSearch.png" alt="추가된 검색 기능 확인" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="검색" /><summary type="html"><![CDATA[[minimal-mistakes] 블로그 내 검색기능 추가하기입니다.]]></summary></entry></feed>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry></feed>
