@@ -300,7 +300,7 @@
             <!-- Posting Count 추가 시작 -->
             
             
-            <li><a href="/categories/UIKit/">UIKit(27)</a></li>
+            <li><a href="/categories/UIKit/">UIKit(28)</a></li>
             <!-- Posting Count 추가 끝 -->
           
             <!-- 기존 로직 주석  
@@ -457,7 +457,7 @@
             <nav class="toc">
               
                 <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
-                <ul class="toc__menu"><li><a href="#1-google-analytics-등록하기">1. Google Analytics 등록하기</a></li><li><a href="#2-트랙킹-id-확인하기">2. 트랙킹 ID 확인하기</a></li><li><a href="#3-_configyml-수정하기">3. _config.yml 수정하기</a></li><li><a href="#4-확인하기">4. 확인하기</a></li></ul>
+                <ul class="toc__menu"><li><a href="#1-google-analytics-등록하기">1. Google Analytics 등록하기</a></li><li><a href="#2-트랙킹-id-확인하기">2. 트랙킹 ID 확인하기</a></li><li><a href="#3-customhtml-수정하기">3. custom.html 수정하기</a></li><li><a href="#4-_configyml-수정하기">4. _config.yml 수정하기</a></li><li><a href="#5-확인하기">5. 확인하기</a></li></ul>
 
               
             </nav>
@@ -507,7 +507,25 @@
 
 <p><br /></p>
 
-<h1 id="3-_configyml-수정하기">3. _config.yml 수정하기</h1>
+<h1 id="3-customhtml-수정하기">3. custom.html 수정하기</h1>
+<ul>
+  <li>_includes - head - custom.html에 코드를 추가합니다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 구글 애널리틱스 추가 Google tag (gtag.js) --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="kd">function</span> <span class="nf">gtag</span><span class="p">(){</span><span class="nx">dataLayer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);}</span>
+  <span class="nf">gtag</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">());</span>
+
+  <span class="nf">gtag</span><span class="p">(</span><span class="dl">'</span><span class="s1">config</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">G-B9ZRRL1X26</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="4-_configyml-수정하기">4. _config.yml 수정하기</h1>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analytics</span>
 <span class="na">analytics</span><span class="pi">:</span>
   <span class="na">provider               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span> <span class="c1"># false (default), "google", "google-universal", "google-gtag", "custom"</span>
@@ -518,7 +536,7 @@
 
 <p><br /></p>
 
-<h1 id="4-확인하기">4. 확인하기</h1>
+<h1 id="5-확인하기">5. 확인하기</h1>
 <ul>
   <li>홈에서 확인 
 <img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
@@ -609,6 +627,46 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" rel="permalink">[UIKit] 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동
+</p>
+  </article>
+</div>
+
         
           
 
@@ -725,46 +783,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/sparta/firstTeamProject/" rel="permalink">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.
 </p>
   </article>
 </div>

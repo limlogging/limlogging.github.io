@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-11T12:29:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 로또의 최고 순위와 최저 순위" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-11T22:33:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 로또의 최고 순위와 최저 순위" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84</id><content type="html" xml:base="http://localhost:4000/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>로또 6/45(이하 ‘로또’로 표기)는 1부터 45까지의 숫자 중 6개를 찍어서 맞히는 대표적인 복권입니다. 아래는 로또의 순위를 정하는 방식입니다.</li>
 </ul>
@@ -250,151 +250,57 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>zero 카운트 구하는게 변수도 비슷하고 구하는 방법도 똑같았다. 다만 일치하는 수를 구하고 결과를 리턴하는 부분에 차이가 있는데 신기했다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="로또의 최고 순위와 최저 순위" /><summary type="html"><![CDATA[[프로그래머스/Swift] 로또의 최고 순위와 최저 순위]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
-<ol>
-  <li>프로젝트 주제: 팀 소개 앱 만들기</li>
-  <li>프로젝트 기간: 4/1(월) ~ 4/7(일)</li>
-  <li>인원: 4명 (팀장: 임형섭 / 팀원: 김시종, 금세미, 송동익)</li>
-  <li>프로젝트 명: Fine Apple Store</li>
-  <li>프로젝트 소개: 키오스크하면 생각나는 음료가 아닌 본 과정이 iOS 앱 개발 과정인 만큼, 애플 제품을 소개 및 판매하는 앱을 구현하기로 결정.</li>
-  <li>개발환경
-    <ul>
-      <li>OS : macOS Sonoma 14.3.1</li>
-      <li>IDE : Xcode 15.3</li>
-      <li>Language : Swift</li>
-      <li>협업 Tool : Git (https://github.com/-limlogging/Kiosk3Jo)</li>
-    </ul>
-  </li>
-</ol>
-
-<p><br /></p>
-
-<h1 id="팀원-구성-및-역할">팀원 구성 및 역할</h1>
-<h2 id="임형섭">임형섭</h2>
-<ol>
-  <li>Github에서 팀원 코드 merge 최종 작업</li>
-  <li>제품 기초 이미지 파일 준비</li>
-  <li>스토리보드에서, TabBar, Navigation 기능 추가 (홈, 상품, 마이페이지)</li>
-  <li>스토리보드 버튼을 코드로 변경</li>
-  <li>마이페이지 구현 (코드를 통한 UI 구성, TableView, 오토레이아웃 사용)</li>
-  <li>제품 상세 페이지 구현 (코드를 통한 UI 구성, ScrollView, PageControl를 사용한 슬라이드 이미지 구현)</li>
-</ol>
-
-<h2 id="금세미">금세미</h2>
-<ol>
-  <li>UIButton, UIAlertController 기능 구현
-    <ul>
-      <li>문의, 취소, 주문 버튼 클릭 시, UIAlertController를 통해 주문 및 취소 기능 구현, 전체 취소 및 주문 완료 시 UITableView 초기화</li>
-    </ul>
-  </li>
-  <li>제품 이미지 영문명 변경</li>
-  <li>제품 이미지 확장자 변경(jpeg → png)</li>
-  <li>컬렉션 뷰와 이미지 연결하여 제품 정보(상품명, 가격) 불러오기</li>
-  <li>launch screen 디자인</li>
-</ol>
-
-<h2 id="김시종">김시종</h2>
-<ol>
-  <li>데이터 모델링(Model → image, title, price)</li>
-  <li>CollectionView, SegmentedControl 기능 구현
-    <ul>
-      <li>제품군별로 SegmentedControl로 분류</li>
-      <li>Seg마다 각각의 선택된 제품군 화면출력</li>
-    </ul>
-  </li>
-  <li>탭바 홈 화면 구현</li>
-  <li>탭바 고객센터 화면 구현</li>
-  <li>이미지 및 레이아웃 상세 디자인 수정</li>
-</ol>
-
-<h2 id="송동익">송동익</h2>
-<ol>
-  <li>프로젝트 초기 UI틀 구성</li>
-  <li>UITableView 기능 구현</li>
-  <li>장바구니 기능 구현</li>
-  <li>장바구니 화면을 보여줄 Modal 기능 구현</li>
-  <li>물품의 갯수를 Notification Badge 형식으로 구현</li>
-  <li>Search Bar 기능 구현</li>
-  <li>새로 출시된 제품 표기 기능 구현</li>
-  <li>매장의 위치를 보여줄 지도 기능 구현</li>
-  <li>App Icon 구현</li>
-  <li>팀원 업무 보조</li>
-</ol>
-
-<p><br /></p>
-
-<h1 id="어려웠던-점--해결-방법">어려웠던 점 &amp; 해결 방법</h1>
-
-<h2 id="임형섭-1">임형섭</h2>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="로또의 최고 순위와 최저 순위" /><summary type="html"><![CDATA[[프로그래머스/Swift] 로또의 최고 순위와 최저 순위]]></summary></entry><entry><title type="html">[UIKit] 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" rel="alternate" type="text/html" title="[UIKit] 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/"><![CDATA[<h1 id="세그웨이-없이-코드로-화면-이동">세그웨이 없이 코드로 화면 이동</h1>
 <ul>
-  <li>github를 통해 충돌된 코드를 머지하는 방식이 어려웠으나 프로젝트를 통해 머지방식이 조금 익숙해 졌습니다.</li>
-  <li>TabBar를 통해 View 이동 시 배열 데이터를 주고 받기 어려워 팀원들의 도움을 받아 해결할 수 있었습니다.</li>
-  <li>pageControl을 통해서 ScrollView내 imageview를 이동하기 어려웠지만 ScrollView width 지정과 오토레이아웃에 문제가 있는걸 확인하고 해결할 수 있었습니다.</li>
+  <li>코드로 스토리보드 객체를 생성해서 화면을 이동하는 방법입니다.</li>
 </ul>
 
-<h2 id="금세미-1">금세미</h2>
+<h1 id="1-view-controller에-버튼-추가-및-액션함수-생성">1. View Controller에 버튼 추가 및 액션함수 생성</h1>
 <ul>
-  <li>git 사용법이 익숙하지 않아 팀에 피해를 끼치지 않고 프로젝트 파일을 pull, push, merge 하는 것이 좀 부담스러웠으나 여러번 반복하며 익혔다.</li>
+  <li>버튼 추가</li>
 </ul>
 
-<h2 id="김시종-1">김시종</h2>
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-1.png" width="200" /></p>
+
 <ul>
-  <li>홈화면 구성할 때 컬렉션 뷰위에 헤더를 구현하고 싶었으나, 가로로 구성된 컬렉션 뷰의 헤더가 위로 구성되는게 아닌 왼쪽으로 오는 것에 대해 위로 올리는 과정이 어려웠던 것 같습니다. 일반적인 방법으로 가로 구성의 컬렉션 뷰 헤더를 위로 구성하는 것이 어렵다는 것을 깨닫고 <strong>Compositional Layout 을 사용하게 되었습니다. 아직 이해하기 어려운 개념이지만 헤더를 위에 구성하는 것 까진 성공하게 되었습니다. 추후 컴포지셔널 레이아웃 관련해서 더 공부해야할 것 같습니다.</strong></li>
+  <li>버튼 액션함수 생성</li>
 </ul>
 
-<h2 id="송동익-1">송동익</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="2-viewcontroller-파일-생성">2. ViewController 파일 생성</h1>
 <ul>
-  <li>데이터 전달방식이다. 내가 알고있던 방법으로 VC간 데이터를 전달했지만, 탭바를 사용하면서 이럴땐 어떻게 전달해야하지? 라는 생각을했고, 내가 아는 모든 지식을 사용해도 전달이 안되었는데, 튜터님께 여쭤보고 바로 해답을 찾았고, 그 문제를 해결하는데는 단 5분도 걸리지않았다. 항상 내 수준에 만족을 하고 있지는 않아 만족을 하기위해 노력을 하고있는데, 그 노력 이상으로 더 열심히 공부해야겠다라는 생각이 든다.</li>
+  <li>UIViewController를 상속받는 NextViewController 생성 
+<img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-2.png" alt="" /></li>
 </ul>
 
-<p><br /></p>
+<h1 id="3-스토리보드에-view-controller-추가-및-class파일-등록-스토리보드-id-등록">3. 스토리보드에 View Controller 추가 및 class파일 등록, 스토리보드 ID 등록</h1>
+<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-3.png" alt="" /></p>
 
-<h1 id="프로젝트-소감">프로젝트 소감</h1>
-<h2 id="임형섭-2">임형섭</h2>
-<ul>
-  <li>github를 통해서 협업을 경험해보고 공부했던 내용을 다시 적용하면서 복습할 수 있었습니다. 특히 다른 사람 코드 작성 방식을 통해 다양한 구현 방법을 확인 해 볼 수 있어 소중한 경험이 되었습니다.</li>
-</ul>
+<h1 id="4-버튼-액션-함수-수정">4. 버튼 액션 함수 수정</h1>
 
-<h2 id="금세미-2">금세미</h2>
-<ul>
-  <li>완성한 앱을 보니 우리가 이 정도 수준의 앱을 만들었다는 것이 믿을 수 없을 정도로 만족스럽고 뿌듯했다.</li>
-</ul>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
+<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//현재 스토리보드에서 "NextVC"라는 식별자로 뷰 컨트롤러를 인스턴스화를 시도</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"NextVC"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">NextViewController</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="c1">//인스턴스화가 성공하면 새로 생성된 뷰 컨트롤러를 모달로 표시</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<h2 id="김시종-2">김시종</h2>
-<ul>
-  <li>처음 프로젝트를 진행하면서 내가 해야할 일이 생기면서 피해끼치지 않고 좋은 프로젝트를 진행하고 싶어 혼자 할때 보다 더 노력을 하게 된 것 같았습니다. 진행될 수록 각자 맡은 내용이 합쳐지고 하나의 결과물이 생기는 과정이 너무 재밌었고 뿌듯했던 과정이었습니다.</li>
-</ul>
-
-<h2 id="송동익-2">송동익</h2>
-<ul>
-  <li>온보딩 주차에 프로젝트를 진행하지 않아서 이번프로젝트가 첫프로젝트였지만, 맡은 임무를 최대한 열심히 하고자 노력을 했다. 하루하루 지나며 아무것도 없던 상태에서 틀이 갖춰지고 하나씩 기능이 갖춰 질때마다, 미천하지만 팀에 기여를 하고있다는 생각에 뿌듯함을 느꼈다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="wireframe">Wireframe</h1>
-<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProjectWireframe.jpeg" alt="Wireframe" /></p>
-
-<p><br /></p>
-
-<h1 id="최종-결과물">최종 결과물</h1>
-<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject1.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject2.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject3.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject4.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject5.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject6.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject7.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject8.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject9.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject10.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject11.png" width="200" /></p>
-
-<h1 id="시연-영상">시연 영상</h1>
+<h1 id="5-실행-화면">5. 실행 화면</h1>
 
 <video width="640" height="360" controls="">
-    <source src="../../assets/video/categories/sparta/2024-04-09-firstTeamProject.mp4" type="video/mp4" />
-</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+    <source src="../../assets/video/categories/uikit/2024-04-11-NextVC2.mov" type="video/mp4" />
+</video>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="present" /><category term="dismiss" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
   <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
@@ -564,28 +470,7 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>전체적인 방법은 비슷한데 결국 약수구하는 방법에서 차이가 많이 났다. 통과 못한적은 처음인데 다시 공부해봐야겠다 😭</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
-  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="앱개발-심화">앱개발 심화</h3>
-<ul>
-  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
-  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
-  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>챌린지 과제 마저하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/firstTeamProjectKPT/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProjectKPT</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProjectKPT/"><![CDATA[<h1 id="온보딩-프로젝트-kpt-회고">온보딩 프로젝트 KPT 회고</h1>
 <p>온보딩 프로젝트 발표가 끝났습니다. <br />
 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
 
@@ -621,7 +506,172 @@
 
 <h1 id="마무리">마무리</h1>
 <p>온보딩 프로젝트보다 많은 소통으로 좋은 결과물이 나온것 같아 만족스럽고 여전히 부족한 점이 많지만 조금 성장하고 있다는 생각을 했습니다.<br />
-이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08</title><link href="http://localhost:4000/TIL/til30/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til30</id><content type="html" xml:base="http://localhost:4000/TIL/til30/"><![CDATA[<h1 id="팀프로젝트">팀프로젝트</h1>
+이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱</title><link href="http://localhost:4000/sparta/firstTeamProject/" rel="alternate" type="text/html" title="[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/sparta/firstTeamProject</id><content type="html" xml:base="http://localhost:4000/sparta/firstTeamProject/"><![CDATA[<h1 id="프로젝트">프로젝트</h1>
+<ol>
+  <li>프로젝트 주제: 팀 소개 앱 만들기</li>
+  <li>프로젝트 기간: 4/1(월) ~ 4/7(일)</li>
+  <li>인원: 4명 (팀장: 임형섭 / 팀원: 김시종, 금세미, 송동익)</li>
+  <li>프로젝트 명: Fine Apple Store</li>
+  <li>프로젝트 소개: 키오스크하면 생각나는 음료가 아닌 본 과정이 iOS 앱 개발 과정인 만큼, 애플 제품을 소개 및 판매하는 앱을 구현하기로 결정.</li>
+  <li>개발환경
+    <ul>
+      <li>OS : macOS Sonoma 14.3.1</li>
+      <li>IDE : Xcode 15.3</li>
+      <li>Language : Swift</li>
+      <li>협업 Tool : Git (https://github.com/-limlogging/Kiosk3Jo)</li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="팀원-구성-및-역할">팀원 구성 및 역할</h1>
+<h2 id="임형섭">임형섭</h2>
+<ol>
+  <li>Github에서 팀원 코드 merge 최종 작업</li>
+  <li>제품 기초 이미지 파일 준비</li>
+  <li>스토리보드에서, TabBar, Navigation 기능 추가 (홈, 상품, 마이페이지)</li>
+  <li>스토리보드 버튼을 코드로 변경</li>
+  <li>마이페이지 구현 (코드를 통한 UI 구성, TableView, 오토레이아웃 사용)</li>
+  <li>제품 상세 페이지 구현 (코드를 통한 UI 구성, ScrollView, PageControl를 사용한 슬라이드 이미지 구현)</li>
+</ol>
+
+<h2 id="금세미">금세미</h2>
+<ol>
+  <li>UIButton, UIAlertController 기능 구현
+    <ul>
+      <li>문의, 취소, 주문 버튼 클릭 시, UIAlertController를 통해 주문 및 취소 기능 구현, 전체 취소 및 주문 완료 시 UITableView 초기화</li>
+    </ul>
+  </li>
+  <li>제품 이미지 영문명 변경</li>
+  <li>제품 이미지 확장자 변경(jpeg → png)</li>
+  <li>컬렉션 뷰와 이미지 연결하여 제품 정보(상품명, 가격) 불러오기</li>
+  <li>launch screen 디자인</li>
+</ol>
+
+<h2 id="김시종">김시종</h2>
+<ol>
+  <li>데이터 모델링(Model → image, title, price)</li>
+  <li>CollectionView, SegmentedControl 기능 구현
+    <ul>
+      <li>제품군별로 SegmentedControl로 분류</li>
+      <li>Seg마다 각각의 선택된 제품군 화면출력</li>
+    </ul>
+  </li>
+  <li>탭바 홈 화면 구현</li>
+  <li>탭바 고객센터 화면 구현</li>
+  <li>이미지 및 레이아웃 상세 디자인 수정</li>
+</ol>
+
+<h2 id="송동익">송동익</h2>
+<ol>
+  <li>프로젝트 초기 UI틀 구성</li>
+  <li>UITableView 기능 구현</li>
+  <li>장바구니 기능 구현</li>
+  <li>장바구니 화면을 보여줄 Modal 기능 구현</li>
+  <li>물품의 갯수를 Notification Badge 형식으로 구현</li>
+  <li>Search Bar 기능 구현</li>
+  <li>새로 출시된 제품 표기 기능 구현</li>
+  <li>매장의 위치를 보여줄 지도 기능 구현</li>
+  <li>App Icon 구현</li>
+  <li>팀원 업무 보조</li>
+</ol>
+
+<p><br /></p>
+
+<h1 id="어려웠던-점--해결-방법">어려웠던 점 &amp; 해결 방법</h1>
+
+<h2 id="임형섭-1">임형섭</h2>
+<ul>
+  <li>github를 통해 충돌된 코드를 머지하는 방식이 어려웠으나 프로젝트를 통해 머지방식이 조금 익숙해 졌습니다.</li>
+  <li>TabBar를 통해 View 이동 시 배열 데이터를 주고 받기 어려워 팀원들의 도움을 받아 해결할 수 있었습니다.</li>
+  <li>pageControl을 통해서 ScrollView내 imageview를 이동하기 어려웠지만 ScrollView width 지정과 오토레이아웃에 문제가 있는걸 확인하고 해결할 수 있었습니다.</li>
+</ul>
+
+<h2 id="금세미-1">금세미</h2>
+<ul>
+  <li>git 사용법이 익숙하지 않아 팀에 피해를 끼치지 않고 프로젝트 파일을 pull, push, merge 하는 것이 좀 부담스러웠으나 여러번 반복하며 익혔다.</li>
+</ul>
+
+<h2 id="김시종-1">김시종</h2>
+<ul>
+  <li>홈화면 구성할 때 컬렉션 뷰위에 헤더를 구현하고 싶었으나, 가로로 구성된 컬렉션 뷰의 헤더가 위로 구성되는게 아닌 왼쪽으로 오는 것에 대해 위로 올리는 과정이 어려웠던 것 같습니다. 일반적인 방법으로 가로 구성의 컬렉션 뷰 헤더를 위로 구성하는 것이 어렵다는 것을 깨닫고 <strong>Compositional Layout 을 사용하게 되었습니다. 아직 이해하기 어려운 개념이지만 헤더를 위에 구성하는 것 까진 성공하게 되었습니다. 추후 컴포지셔널 레이아웃 관련해서 더 공부해야할 것 같습니다.</strong></li>
+</ul>
+
+<h2 id="송동익-1">송동익</h2>
+<ul>
+  <li>데이터 전달방식이다. 내가 알고있던 방법으로 VC간 데이터를 전달했지만, 탭바를 사용하면서 이럴땐 어떻게 전달해야하지? 라는 생각을했고, 내가 아는 모든 지식을 사용해도 전달이 안되었는데, 튜터님께 여쭤보고 바로 해답을 찾았고, 그 문제를 해결하는데는 단 5분도 걸리지않았다. 항상 내 수준에 만족을 하고 있지는 않아 만족을 하기위해 노력을 하고있는데, 그 노력 이상으로 더 열심히 공부해야겠다라는 생각이 든다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="프로젝트-소감">프로젝트 소감</h1>
+<h2 id="임형섭-2">임형섭</h2>
+<ul>
+  <li>github를 통해서 협업을 경험해보고 공부했던 내용을 다시 적용하면서 복습할 수 있었습니다. 특히 다른 사람 코드 작성 방식을 통해 다양한 구현 방법을 확인 해 볼 수 있어 소중한 경험이 되었습니다.</li>
+</ul>
+
+<h2 id="금세미-2">금세미</h2>
+<ul>
+  <li>완성한 앱을 보니 우리가 이 정도 수준의 앱을 만들었다는 것이 믿을 수 없을 정도로 만족스럽고 뿌듯했다.</li>
+</ul>
+
+<h2 id="김시종-2">김시종</h2>
+<ul>
+  <li>처음 프로젝트를 진행하면서 내가 해야할 일이 생기면서 피해끼치지 않고 좋은 프로젝트를 진행하고 싶어 혼자 할때 보다 더 노력을 하게 된 것 같았습니다. 진행될 수록 각자 맡은 내용이 합쳐지고 하나의 결과물이 생기는 과정이 너무 재밌었고 뿌듯했던 과정이었습니다.</li>
+</ul>
+
+<h2 id="송동익-2">송동익</h2>
+<ul>
+  <li>온보딩 주차에 프로젝트를 진행하지 않아서 이번프로젝트가 첫프로젝트였지만, 맡은 임무를 최대한 열심히 하고자 노력을 했다. 하루하루 지나며 아무것도 없던 상태에서 틀이 갖춰지고 하나씩 기능이 갖춰 질때마다, 미천하지만 팀에 기여를 하고있다는 생각에 뿌듯함을 느꼈다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="wireframe">Wireframe</h1>
+<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProjectWireframe.jpeg" alt="Wireframe" /></p>
+
+<p><br /></p>
+
+<h1 id="최종-결과물">최종 결과물</h1>
+<p><img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject1.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject2.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject3.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject4.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject5.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject6.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject7.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject8.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject9.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject10.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-09-firstTeamProject11.png" width="200" /></p>
+
+<h1 id="시연-영상">시연 영상</h1>
+
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/sparta/2024-04-09-firstTeamProject.mp4" type="video/mp4" />
+</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
+  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="앱개발-심화">앱개발 심화</h3>
+<ul>
+  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
+  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
+  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>챌린지 과제 마저하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08</title><link href="http://localhost:4000/TIL/til30/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 30일차 - 2024.04.08" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til30</id><content type="html" xml:base="http://localhost:4000/TIL/til30/"><![CDATA[<h1 id="팀프로젝트">팀프로젝트</h1>
 <ul>
   <li>팀프로젝트가 바빠서 28, 29일차는 생략!</li>
   <li>이번 팀 프로젝트의 개인적인 목표는 기존에 배웠던 내용을 학습하고 깃허브와 익숙해지기였다.</li>
@@ -681,7 +731,25 @@
 
 <p><br /></p>
 
-<h1 id="3-_configyml-수정하기">3. _config.yml 수정하기</h1>
+<h1 id="3-customhtml-수정하기">3. custom.html 수정하기</h1>
+<ul>
+  <li>_includes - head - custom.html에 코드를 추가합니다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 구글 애널리틱스 추가 Google tag (gtag.js) --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="kd">function</span> <span class="nf">gtag</span><span class="p">(){</span><span class="nx">dataLayer</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);}</span>
+  <span class="nf">gtag</span><span class="p">(</span><span class="dl">'</span><span class="s1">js</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">());</span>
+
+  <span class="nf">gtag</span><span class="p">(</span><span class="dl">'</span><span class="s1">config</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">G-B9ZRRL1X26</span><span class="dl">'</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="4-_configyml-수정하기">4. _config.yml 수정하기</h1>
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analytics</span>
 <span class="na">analytics</span><span class="pi">:</span>
   <span class="na">provider               </span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span> <span class="c1"># false (default), "google", "google-universal", "google-gtag", "custom"</span>
@@ -692,7 +760,7 @@
 
 <p><br /></p>
 
-<h1 id="4-확인하기">4. 확인하기</h1>
+<h1 id="5-확인하기">5. 확인하기</h1>
 <ul>
   <li>홈에서 확인 
 <img src="../../assets/images/categories/githubblog/2024-04-08-googleAnalytics8.png" alt="홈에서 확인" /></li>
@@ -853,56 +921,4 @@
   <li>인터넷 주소창에 <a href="http://127.0.0.1:4000/" target="_blank">http://127.0.0.1:4000/ 접속</a></li>
 </ul>
 
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry><entry><title type="html">[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기</title><link href="http://localhost:4000/GitHubBlog/googleSearchConsole/" rel="alternate" type="text/html" title="[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기" /><published>2024-04-08T00:00:00+09:00</published><updated>2024-04-08T00:00:00+09:00</updated><id>http://localhost:4000/GitHubBlog/googleSearchConsole</id><content type="html" xml:base="http://localhost:4000/GitHubBlog/googleSearchConsole/"><![CDATA[<h1 id="1-google-search-console-접속">1. Google Search Console 접속</h1>
-<ul>
-  <li><a href="https://search.google.com/search-console/welcome?utm_source=about-page" target="_blank">Google Search Console 접속하기</a></li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole1.png" alt="" /></p>
-
-<h1 id="2-google-search-console-시작">2. Google Search Console 시작</h1>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole2.png" alt="" /></p>
-
-<h1 id="3-sitemapxml-추가하기">3. sitemap.xml 추가하기</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 sitemap.xml 파일을 추가 후 코드를 작성합니다.</li>
-  <li>%안에 내용때문에 코드가 길어지고 달라져서 캡처로 대체합니다 ㅠ ㅠ</li>
-</ul>
-
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole7.png" alt="" /></p>
-
-<h1 id="4-robotstxt-파일-생성">4. robots.txt 파일 생성</h1>
-<ul>
-  <li>_config.yml 파일과 같은 경로에 robots.txt 파일을 추가 후 내용 작성합니다.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User-agent: *
-Allow: /
-Sitemap: http://localhost:4000/sitemap.xml
-</code></pre></div></div>
-
-<h1 id="5-새-사이트맵-추가">5. 새 사이트맵 추가</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole3.png" alt="" /></p>
-
-<h1 id="6-도메인으로-계속하기">6. 도메인으로 계속하기</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole4.png" alt="" /></p>
-
-<h1 id="7-txt-레코드-복사">7. txt 레코드 복사</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole5.png" alt="" /></p>
-
-<h1 id="8-_configyml-파일-수정">8. _config.yml 파일 수정</h1>
-<ul>
-  <li>google_site_verification 레코드를 붙여넣습니다.</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SEO Related</span>
-<span class="na">google_site_verification </span><span class="pi">:</span> <span class="s2">"</span><span class="s">B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug"</span>
-<span class="na">bing_site_verification   </span><span class="pi">:</span>
-<span class="na">naver_site_verification  </span><span class="pi">:</span>
-<span class="na">yandex_site_verification </span><span class="pi">:</span>
-<span class="na">baidu_site_verification  </span><span class="pi">:</span>
-</code></pre></div></div>
-
-<h1 id="9-완료">9. 완료</h1>
-<p><img src="../../assets/images/categories/githubblog/2024-04-08-googleSearchConsole6.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="Search Console" /><summary type="html"><![CDATA[[minimal-mistakes]블로그에서 검색 노출(Search Console) 사용하기]]></summary></entry></feed>
+<p><img src="../../assets/images/categories/githubblog/2024-04-08-bundleexecjekyllserve2.png" alt="" /></p>]]></content><author><name>HyeongSub Lim</name></author><category term="GitHubBlog" /><category term="GitHub" /><category term="blog" /><category term="GitHub blog" /><category term="bundle exec jekyll serve" /><summary type="html"><![CDATA[[minimal-mistakes]로컬에서 블로그 실행시키기(bundle exec jekyll serve)]]></summary></entry></feed>
