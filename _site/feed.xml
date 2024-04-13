@@ -1,4 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-12T20:55:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] 챌린지반 과제 1차 제출 - GitHub App 만들기</title><link href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" rel="alternate" type="text/html" title="[내배캠] 챌린지반 과제 1차 제출 - GitHub App 만들기" /><published>2024-04-12T00:00:00+09:00</published><updated>2024-04-12T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1</id><content type="html" xml:base="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/"><![CDATA[<h1 id="챌린지반-과제-목표">챌린지반 과제 목표</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-13T12:10:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] 옹알이(2)</title><link href="http://localhost:4000/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)/" rel="alternate" type="text/html" title="[프로그래머스/Swift] 옹알이(2)" /><published>2024-04-13T00:00:00+09:00</published><updated>2024-04-13T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>
+    <p>머쓱이는 태어난 지 11개월 된 조카를 돌보고 있습니다. 조카는 아직 “aya”, “ye”, “woo”, “ma” 네 가지 발음과 네 가지 발음을 조합해서 만들 수 있는 발음밖에 하지 못하고 연속해서 같은 발음을 하는 것을 어려워합니다. 문자열 배열 babbling이 매개변수로 주어질 때, 머쓱이의 조카가 발음할 수 있는 단어의 개수를 return하도록 solution 함수를 완성해주세요.</p>
+  </li>
+  <li>
+    <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/133499" target="_blank">문제 풀기</a></p>
+  </li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>1 ≤ babbling의 길이 ≤ 100</li>
+  <li>1 ≤ babbling[i]의 길이 ≤ 30</li>
+  <li>문자열은 알파벳 소문자로만 이루어져 있습니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">babbling</th>
+      <th style="text-align: center">result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">[“aya”, “yee”, “u”, “maa”]</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[“ayaye”, “uuu”, “yeye”, “yemawoo”, “ayaayaa”]</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>[“aya”, “yee”, “u”, “maa”]에서 발음할 수 있는 것은 “aya”뿐입니다. 따라서 1을 return합니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>[“ayaye”, “uuu”, “yeye”, “yemawoo”, “ayaayaa”]에서 발음할 수 있는 것은 “aya” + “ye” = “ayaye”, “ye” + “ma” + “woo” = “yemawoo”로 2개입니다. “yeye”는 같은 발음이 연속되므로 발음할 수 없습니다. 따라서 2를 return합니다.</li>
+</ul>
+
+<h1 id="유의사항">유의사항</h1>
+<ul>
+  <li>네 가지를 붙여 만들 수 있는 발음 이외에는 어떤 발음도 할 수 없는 것으로 규정합니다. 예를 들어 “woowo”는 “woo”는 발음할 수 있지만 “wo”를 발음할 수 없기 때문에 할 수 없는 발음입니다.</li>
+</ul>
+
+<h1 id="나의-풀이">나의 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">babbling</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">mussuk</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"aya"</span><span class="p">,</span> <span class="s">"ye"</span><span class="p">,</span> <span class="s">"woo"</span><span class="p">,</span> <span class="s">"ma"</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">overlapFlag</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">word</span> <span class="k">in</span> <span class="n">babbling</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">babyWord</span> <span class="k">in</span> <span class="n">mussuk</span> <span class="p">{</span>
+            <span class="c1">//중복 확인</span>
+            <span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">babyWord</span> <span class="o">+</span> <span class="n">babyWord</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">overlapFlag</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="n">overlapFlag</span> <span class="p">{</span>
+            <span class="n">overlapFlag</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//중복이 아니면 단어체크</span>
+            <span class="c1">//print("체크할 단어: \(word)")</span>
+            <span class="k">var</span> <span class="nv">tempWord</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">word</span>
+            <span class="k">for</span> <span class="n">babyWord</span> <span class="k">in</span> <span class="n">mussuk</span> <span class="p">{</span>
+                <span class="n">tempWord</span> <span class="o">=</span> <span class="n">tempWord</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">babyWord</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"."</span><span class="p">)</span>
+            <span class="p">}</span>
+            
+            <span class="c1">//.으로만 된 단어는 발음 가능</span>
+            <span class="k">if</span> <span class="n">tempWord</span><span class="o">.</span><span class="nf">allSatisfy</span><span class="p">({</span> <span class="nv">$0</span> <span class="o">==</span> <span class="s">"."</span> <span class="p">})</span> <span class="p">{</span>
+                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">cnt</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">babbling</span><span class="p">:[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="k">in</span> <span class="n">babbling</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">str</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"aya"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"1"</span><span class="p">)</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"ye"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"2"</span><span class="p">)</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"woo"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"3"</span><span class="p">)</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="nf">replacingOccurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"ma"</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="s">"4"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kt">Int</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">str</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"11"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">str</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"22"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">str</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"33"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">str</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="s">"44"</span><span class="p">){</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
+    <span class="k">return</span> <span class="n">count</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>중복해서 나오는 단어를 찾아서 발음할 수 있는 단어에서 제외시키기</li>
+  <li>발음 가능한 단어를 .으로 바꿔버리기</li>
+  <li>문자열을 이루는 문자가 .으로만 이루어진 경우 발음 가능 카운트</li>
+  <li>contains, replacingOccurrences, allSatisfy 컬렉션에 대해 작동하는 메서드를 잘 사용한것 같아 개인적으로는 만족스러웠다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>다른 풀이도 replacingOccurrences을 사용해서 많이 푼 것 같다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="swift" /><category term="coding test" /><category term="프로그래머스" /><category term="알고리즘" /><category term="옹알이" /><summary type="html"><![CDATA[[프로그래머스/Swift] 옹알이(2)]]></summary></entry><entry><title type="html">[내배캠] 챌린지반 과제 1차 제출 - GitHub App 만들기</title><link href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" rel="alternate" type="text/html" title="[내배캠] 챌린지반 과제 1차 제출 - GitHub App 만들기" /><published>2024-04-12T00:00:00+09:00</published><updated>2024-04-12T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1</id><content type="html" xml:base="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/"><![CDATA[<h1 id="챌린지반-과제-목표">챌린지반 과제 목표</h1>
 <ul>
   <li>본인의 깃허브 프로필 페이지를 만들어주세요.</li>
   <li>화면 상단에는 프로필 상세 정보가 출력되고 아래는 Repository 목록이 출력되는 앱을 만들어주세요.</li>
@@ -837,174 +960,4 @@
 
 <video width="640" height="360" controls="">
     <source src="../../assets/video/categories/sparta/2024-04-09-firstTeamProject.mp4" type="video/mp4" />
-</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry><entry><title type="html">[프로그래머스/Swift] ⭐️기사단원의 무기⭐️</title><link href="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️기사단원의 무기⭐️" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
-<ul>
-  <li>숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.</li>
-  <li>각 기사는 자신의 기사 번호의 약수 개수에 해당하는 공격력을 가진 무기를 구매하려 합니다. 단, 이웃나라와의 협약에 의해 공격력의 제한수치를 정하고, 제한수치보다 큰 공격력을 가진 무기를 구매해야 하는 기사는 협약기관에서 정한 공격력을 가지는 무기를 구매해야 합니다.</li>
-  <li>예를 들어, 15번으로 지정된 기사단원은 15의 약수가 1, 3, 5, 15로 4개 이므로, 공격력이 4인 무기를 구매합니다. 만약, 이웃나라와의 협약으로 정해진 공격력의 제한수치가 3이고 제한수치를 초과한 기사가 사용할 무기의 공격력이 2라면, 15번으로 지정된 기사단원은 무기점에서 공격력이 2인 무기를 구매합니다. 무기를 만들 때, 무기의 공격력 1당 1kg의 철이 필요합니다. 그래서 무기점에서 무기를 모두 만들기 위해 필요한 철의 무게를 미리 계산하려 합니다.</li>
-  <li>기사단원의 수를 나타내는 정수 number와 이웃나라와 협약으로 정해진 공격력의 제한수치를 나타내는 정수 limit와 제한수치를 초과한 기사가 사용할 무기의 공격력을 나타내는 정수 power가 주어졌을 때, 무기점의 주인이 무기를 모두 만들기 위해 필요한 철의 무게를 return 하는 solution 함수를 완성하시오.</li>
-  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/136798" target="_blank">문제 풀기</a></li>
-</ul>
-
-<h1 id="제한사항">제한사항</h1>
-<ul>
-  <li>1 ≤ number ≤ 100,000</li>
-  <li>2 ≤ limit ≤ 100</li>
-  <li>1 ≤ power ≤ limit</li>
-</ul>
-
-<h1 id="입출력-예">입출력 예</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>number</th>
-      <th>limit</th>
-      <th>power</th>
-      <th>result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>5</td>
-      <td>3</td>
-      <td>2</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>3</td>
-      <td>2</td>
-      <td>21</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<h3 id="입출력-예-1">입출력 예 #1</h3>
-<ul>
-  <li>1부터 5까지의 약수의 개수는 순서대로 [1, 2, 2, 3, 2]개입니다. 모두 공격력 제한 수치인 3을 넘지 않기 때문에 필요한 철의 무게는 해당 수들의 합인 10이 됩니다. 따라서 10을 return 합니다.</li>
-</ul>
-
-<h3 id="입출력-예-2">입출력 예 #2</h3>
-<ul>
-  <li>1부터 10까지의 약수의 개수는 순서대로 [1, 2, 2, 3, 2, 4, 2, 4, 3, 4]개입니다. 공격력의 제한수치가 3이기 때문에, 6, 8, 10번 기사는 공격력이 2인 무기를 구매합니다. 따라서 해당 수들의 합인 21을 return 합니다.</li>
-</ul>
-
-<h1 id="나의-풀이-1번-방법---667점">나의 풀이 1번 방법 - 66.7점</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
-
-    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">i</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-                <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">cnt</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
-        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이-2번-방법---556점">나의 풀이 2번 방법 - 55.6점</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
-
-    <span class="nf">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">number</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">i</span> <span class="nf">in</span>
-        <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">j</span> <span class="k">in</span>
-            <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span>
-        <span class="p">}</span><span class="o">.</span><span class="n">count</span>
-    <span class="p">}</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span>
-        <span class="nv">$0</span> <span class="o">&gt;</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">power</span> <span class="p">:</span> <span class="nv">$0</span>
-    <span class="p">})</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이-3번-방법---556점">나의 풀이 3번 방법 - 55.6점</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
-
-    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">((</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">i</span> <span class="o">%</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">i</span> <span class="o">%</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">}</span><span class="o">.</span><span class="nv">count</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이-4번-방법---556점">나의 풀이 4번 방법 - 55.6점</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    <span class="nf">guard</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">power</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">power</span> <span class="o">&lt;=</span> <span class="n">limit</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
-
-    <span class="k">var</span> <span class="nv">arr</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">var</span> <span class="nv">cnt</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span> <span class="p">{</span>
-        <span class="n">cnt</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">j</span> <span class="k">in</span>
-            <span class="n">i</span> <span class="o">%</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span>
-        <span class="p">}</span><span class="o">.</span><span class="n">count</span>
-        <span class="n">arr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">cnt</span> <span class="p">:</span> <span class="n">power</span><span class="p">)</span>
-        <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="nv">number</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">limit</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">power</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
-    
-    <span class="k">var</span> <span class="nv">result</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
-    
-    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">number</span><span class="p">{</span>
-        <span class="c1">//약수의 개수를 셈</span>
-        <span class="k">var</span> <span class="nv">count</span> <span class="o">=</span> <span class="mi">0</span>
-        
-        <span class="c1">//16일경우 -&gt; 4까지만 구해도됨</span>
-        <span class="c1">//약수 1로 16을 유추할수있음</span>
-        <span class="c1">//2로 8을 유추할 수 있음</span>
-        <span class="c1">//4 * 4 = 16이므로 이땐 +1</span>
-        <span class="c1">//이외엔 약수 하나로 두 수를 구할 수 있으니 +2</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="kt">Int</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="kt">Double</span><span class="p">(</span><span class="n">number</span><span class="p">))){</span>
-            <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">{</span>
-                <span class="k">if</span><span class="p">(</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">number</span><span class="p">{</span>
-                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">2</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="c1">//limit을 넘는다면 power를, limit을 넘지 않는다면 그대로</span>
-        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">limit</span> <span class="p">?</span> <span class="nv">power</span> <span class="p">:</span> <span class="n">count</span>
-        <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-        
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">){</span><span class="nv">$0</span> <span class="o">+</span> <span class="nv">$1</span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="나의-풀이방법">나의 풀이방법</h1>
-<ul>
-  <li>채점 시 11번 ~ 16번 그 근처에 시간초과로 계속 실패했다.</li>
-  <li>약수구하는 다른방법을 찾으면 시간을 줄일 수 있을 것 같은데 찾지 못했고 어려웠다 ㅠ</li>
-  <li>결국 구글 검색으로 해결 …..</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="다른사람-풀이">다른사람 풀이</h1>
-<ul>
-  <li>전체적인 방법은 비슷한데 결국 약수구하는 방법에서 차이가 많이 났다. 통과 못한적은 처음인데 다시 공부해봐야겠다 😭</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="coding test" /><category term="기사단원의 무기" /><summary type="html"><![CDATA[[프로그래머스/Swift] ⭐️기사단원의 무기⭐️]]></summary></entry></feed>
+</video>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="mini Project" /><summary type="html"><![CDATA[일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다.]]></summary></entry></feed>
