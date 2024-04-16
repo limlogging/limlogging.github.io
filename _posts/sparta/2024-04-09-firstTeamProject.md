@@ -1,5 +1,5 @@
 ---
-title: "[내배캠] 앱개발 입문 팀 프로젝트 만들기 - Kiosk 앱"
+title: "[내배캠] iOS 앱 개발 입문 팀 프로젝트 만들기 - Kiosk 앱"
 excerpt: "일주일 동안 Kiosk 앱 만들기 프로젝트 진행하였습니다."
 categories: sparta
 tags: [mini Project]

@@ -1,8 +1,8 @@
 ---
-title: "[내배캠] 3주차 개인과제 - 야구게임"
-excerpt: "3주차 개인과제 - 야구게임"
+title: "[내배캠] Swift 프로그래밍 심화 개인과제 - 야구게임"
+excerpt: "프로그래밍 심화 개인과제 - 야구게임"
 categories: sparta
-tags: [야구게임]
+tags: [sparta, swift, 야구게임]
 
 toc: true           #On this page 보이기 
 toc_sticky: true    #on this page 스크롤에 따라 움직이도록 

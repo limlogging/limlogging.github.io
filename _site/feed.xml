@@ -1,4 +1,332 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-13T14:54:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] URLSession이란?</title><link href="http://localhost:4000/UIKit/URLSession/" rel="alternate" type="text/html" title="[UIKit] URLSession이란?" /><published>2024-04-13T00:00:00+09:00</published><updated>2024-04-13T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/URLSession</id><content type="html" xml:base="http://localhost:4000/UIKit/URLSession/"><![CDATA[<h1 id="urlsession이란">URLSession이란?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-16T20:24:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1</title><link href="http://localhost:4000/sparta/wishList1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList1</id><content type="html" xml:base="http://localhost:4000/sparta/wishList1/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+<ul>
+  <li>네트워크 통신과 내부 저장소를 사용하여 WishList 앱 만들기입니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="과제-요구사항">과제 요구사항</h1>
+<ul>
+  <li>필수과제
+    <ul>
+      <li>Lv1. 데이터 모델링하기</li>
+      <li>Lv2. 위시 리스트 메인 페이지 구현</li>
+      <li>Lv3. “위시 리스트 보기” 페이지 구현</li>
+    </ul>
+  </li>
+  <li>선택과제
+    <ul>
+      <li>Lv4. TableView에서 스와이프하여 삭제기능 구현</li>
+      <li>Lv5. UIRefreshControl을 사용한 새로고침 구현</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="스토리보드를-사용해서-시작">스토리보드를 사용해서 시작</h1>
+<ul>
+  <li>코드베이스로 시작했다가 버튼 위치 조절하고 이것 저것 하다보니 개발 속도가 더뎌 스토리보드로 바꿔서 새로 시작했습니다. ㅠ</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="기능-구현">기능 구현</h1>
+<h2 id="1-스토리보드에-ui-구성하기">1. 스토리보드에 UI 구성하기</h2>
+<ul>
+  <li>확실히 코드로 하나씩 하는것보다 빠릅니다. ㅠ ㅠ</li>
+</ul>
+
+<p><img src="../../assets/images/categories/sparta/2024-04-16-wishList1.png" alt="스토리보드" /></p>
+
+<h2 id="2-data-가져오기">2. Data 가져오기</h2>
+<ul>
+  <li>dummyjson 사이트에서 랜덤하게 데이터를 받아옵니다.</li>
+  <li>원래 주석처리된 부분처럼 사용했는데 경고 메시지가 많이 발생해서 튜터님 가이드에 따라 속성감시자로 수정했습니다.</li>
+</ul>
+
+<h3 id="getdata">getData()</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">productID</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://dummyjson.com/products/</span><span class="se">\(</span><span class="n">productID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"url: </span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="c1">//URLSessionDataTask를 사용하여 비동기적으로 데이터 요청</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
+                <span class="k">do</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">ProductsManager</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+            
+                    <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>   <span class="c1">//데이터 설정 </span>
+
+<span class="c1">//                        DispatchQueue.main.async {</span>
+<span class="c1">//                            self.productPriceLabel.text = String(product.price)</span>
+<span class="c1">//                            self.productTitleLabel.text = product.title</span>
+<span class="c1">//                            self.productDescriptionLabel.text = product.description</span>
+<span class="c1">//                            </span>
+<span class="c1">//                        }</span>
+<span class="c1">//                        DispatchQueue.main.async {</span>
+<span class="c1">//                            //이미지 URL 가져오기</span>
+<span class="c1">//                            if let productUrlString = product.thumbnail as? String,</span>
+<span class="c1">//                               let productImageUrl = URL(string: productUrlString) {</span>
+<span class="c1">//                                // 이미지 데이터를 다운로드하여 이미지 뷰에 표시</span>
+<span class="c1">//                                if let imageData = try? Data(contentsOf: productImageUrl) {</span>
+<span class="c1">//                                    //DispatchQueue.main.async {</span>
+<span class="c1">//                                    self.productImageView.image = UIImage(data: imageData)</span>
+<span class="c1">//                                    //}</span>
+<span class="c1">//                                }</span>
+<span class="c1">//                            }</span>
+<span class="c1">//                        }</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Decode Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="속성감시자-설정">속성감시자 설정</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">currentProduct</span><span class="p">:</span> <span class="kt">ProductsManager</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">didSet</span> <span class="p">{</span>
+        <span class="c1">//currentProduct가 nil이 아닌지 확인하고 종료하기 </span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">currentProduct</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">//메인 스레드에서 UI 업데이트를 수행</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kc">nil</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">title</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productDescriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">description</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">currentProduct</span><span class="o">.</span><span class="n">price</span><span class="se">)</span><span class="s">$"</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// 백그라운드 스레드에서 제품의 섬네일 이미지를 비동기적으로 가져오기 </span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+            <span class="c1">// 제품의 섬네일 이미지 데이터를 가져와 UIImage로 변환</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">),</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 가져온 이미지를 메인 스레드에서 productImageView에 설정하여 이미지 출력 </span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-coredata-저장하기">3. CoreData 저장하기</h2>
+<ul>
+  <li>coredata 설정이 데이터베이스 테이블을 만들고 컬럼을 추가하는 것과 비슷한 것 같다.</li>
+</ul>
+
+<h3 id="entities-추가-및-attributes-추가">Entities 추가 및 Attributes 추가</h3>
+<p><img src="../../assets/images/categories/sparta/2024-04-16-wishList2.png" alt="Entities 추가 및 Attributes 추가" /></p>
+
+<h3 id="appdelegateswift-파일-수정">AppDelegate.swift 파일 수정</h3>
+<ul>
+  <li>처음 프로젝트 만들때 코어데이터를 추가하고 만들면 자동으로 코드가 추가됩니다.</li>
+  <li>import CoreData, persistentContainer 메서드, saveContext 메서드를 추가합니다.</li>
+  <li>core Data를 나중에 추가하는 경우 파일 추가에서 Data Model로 생성하면 됩니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">CoreData</span> <span class="c1">//필수 </span>
+
+<span class="kd">@main</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span> <span class="p">{</span>
+    <span class="c1">//중간코드 생략 </span>
+
+    <span class="c1">// MARK: - Core Data stack</span>
+    <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">persistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">container</span> <span class="o">=</span> <span class="kt">NSPersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyWishList"</span><span class="p">)</span>   <span class="c1">//core data 이름 </span>
+        <span class="n">container</span><span class="o">.</span><span class="nf">loadPersistentStores</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">storeDescription</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">?</span> <span class="p">{</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+        <span class="k">return</span> <span class="n">container</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - Core Data Saving support</span>
+    <span class="kd">func</span> <span class="nf">saveContext</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">persistentContainer</span><span class="o">.</span><span class="n">viewContext</span>
+        <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">hasChanges</span> <span class="p">{</span>
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">try</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">nserror</span> <span class="o">=</span> <span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span>
+                <span class="nf">fatalError</span><span class="p">(</span><span class="s">"Unresolved error </span><span class="se">\(</span><span class="n">nserror</span><span class="se">)</span><span class="s">, </span><span class="se">\(</span><span class="n">nserror</span><span class="o">.</span><span class="n">userInfo</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="viewcontroller-수정">viewController 수정</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">CoreData</span> <span class="c1">//필수 </span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">//UIApplication의 shared 인스턴스를 통해 AppDelegate에 접근하고 persistentContainer 속성 반환</span>
+    <span class="k">var</span> <span class="nv">persistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span><span class="p">?</span> <span class="p">{</span>
+        <span class="p">(</span><span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as?</span> <span class="kt">AppDelegate</span><span class="p">)?</span><span class="o">.</span><span class="n">persistentContainer</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="위시리스트-담기-버튼-수정">위시리스트 담기 버튼 수정</h3>
+<ul>
+  <li>alert를 사용하여 입력 확인, 중복 데이터인 경우 알림창을 띄우도록 하였습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 위시 리스트 담기 버튼 선택</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">addToWishListButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">// 위시리스트 담기 전 중복 확인</span>
+        <span class="k">if</span> <span class="nf">checkId</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">id</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"중복 확인"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"이미 위시 리스트에 포함되어 있습니다."</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">cancel</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="k">return</span> <span class="p">})</span>
+            
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">cancel</span><span class="p">)</span>
+            <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//코어데이터에 저장</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="p">?</span><span class="o">.</span><span class="n">viewContext</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="k">let</span> <span class="nv">myWishList</span> <span class="o">=</span> <span class="kt">MyWishList</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="n">context</span><span class="p">)</span>
+            
+            <span class="n">myWishList</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="n">myWishList</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">title</span>
+            <span class="n">myWishList</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+            <span class="c1">//저장</span>
+            <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+            
+            <span class="k">let</span> <span class="nv">alertController</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"위시 리스트 담기"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="s">"해당 상품을 위시 리스트에 담았습니다."</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">let</span> <span class="nv">addToWishList</span> <span class="o">=</span> <span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"확인"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="k">return</span> <span class="p">})</span>
+            
+            <span class="n">alertController</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="n">addToWishList</span><span class="p">)</span>
+            <span class="nf">present</span><span class="p">(</span><span class="n">alertController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="중복-id-체크">중복 ID 체크</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c1">// MARK: - 중복 ID 체크</span>
+    <span class="kd">func</span> <span class="nf">checkId</span><span class="p">(</span><span class="n">_</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="c1">//true 중복, false 중복아님</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="p">?</span><span class="o">.</span><span class="n">viewContext</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span> <span class="p">}</span>
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">MyWishList</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">myWishList</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span> <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="n">myWishList</span><span class="o">.</span><span class="nf">filter</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">id</span><span class="p">})</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="c1">//중복</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//중복 아님</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-다른-상품-보기">4. 다른 상품 보기</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 다른 상품 보기 버튼 선택</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">otherProductButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="5-위시리스트보기">5. 위시리스트보기</h2>
+<ul>
+  <li>viewController와 별개로 WishListViewController파일을 추가하였습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">CoreData</span>
+
+<span class="kd">class</span> <span class="kt">WishListViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 코어데이터를 사용하기 위한 설정</span>
+    <span class="k">var</span> <span class="nv">persistentContainer</span><span class="p">:</span> <span class="kt">NSPersistentContainer</span><span class="p">?</span> <span class="p">{</span>
+        <span class="p">(</span><span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="n">delegate</span> <span class="k">as?</span> <span class="kt">AppDelegate</span><span class="p">)?</span><span class="o">.</span><span class="n">persistentContainer</span>
+    <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">productList</span><span class="p">:</span> <span class="p">[</span><span class="kt">MyWishList</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1">//코어데이터를 가져와 배열에 담기 </span>
+    
+    <span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">wishListTableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="o">!</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">wishListTableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span> <span class="c1">//데이터소스 설정 </span>
+                
+        <span class="nf">getCoreData</span><span class="p">()</span>   <span class="c1">//데이터가져오기 </span>
+    <span class="p">}</span>
+    <span class="c1">//나머지 코드 생략 </span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="코어데이터-가져오기">코어데이터 가져오기</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - CoreData에서 데이터 가져오기</span>
+    <span class="kd">func</span> <span class="nf">getCoreData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="p">?</span><span class="o">.</span><span class="n">viewContext</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">MyWishList</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
+    
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">products</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productList</span> <span class="o">=</span> <span class="n">products</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="tableview-data-source-추가">tableView Data Source 추가</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">WishListViewController</span><span class="p">:</span> <span class="kt">UITableViewDataSource</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">productList</span><span class="o">.</span><span class="n">count</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"WishListTableViewCell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">WishListTableViewCell</span>
+                
+        <span class="k">let</span> <span class="nv">id</span> <span class="o">=</span> <span class="s">"["</span> <span class="o">+</span> <span class="p">(</span><span class="n">productList</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">id</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span> <span class="o">+</span> <span class="s">"]"</span>
+        <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">productList</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">title</span>
+        <span class="k">let</span> <span class="nv">price</span> <span class="o">=</span> <span class="n">productList</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">price</span>
+        
+        <span class="n">cell</span><span class="p">?</span><span class="o">.</span><span class="n">productIdLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">id</span>
+        <span class="n">cell</span><span class="p">?</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="n">cell</span><span class="p">?</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">price</span>
+        
+        <span class="k">return</span> <span class="n">cell</span> <span class="p">??</span> <span class="kt">UITableViewCell</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="실행화면">실행화면</h1>
+<ul>
+  <li>메인화면, 다른상품보기, 위시리스트 확인 화면입니다.</li>
+</ul>
+
+<p><img src="../../assets/images/categories/sparta/2024-04-16-wishList3.png" art="메인" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-16-wishList4.png" art="다른상품보기" width="200" />
+<img src="../../assets/images/categories/sparta/2024-04-16-wishList5.png" art="위시리스트확인" width="200" /></p>
+
+<p><br /></p>
+
+<h1 id="실행영상">실행영상</h1>
+<video width="640" height="360" controls="">
+    <source src="../../assets/video/categories/sparta/2024-04-16-wishList1.mov" type="video/mp4" />
+</video>
+
+<p><br /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>가격에 , 추가해야하는데 빼먹어버렸다. 내일 다시 추가할 예정</li>
+  <li>필수 과제까지는 완료했는데 선택과제도 내일 다시 구현 에정</li>
+  <li>⭐️⭐️ 데이터가져오기 및 코어데이터 사용은 강의 예제와 동일해서 많이 사용해보고 익숙해져야겠다. ⭐️⭐️</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1]]></summary></entry><entry><title type="html">[UIKit] URLSession이란?</title><link href="http://localhost:4000/UIKit/URLSession/" rel="alternate" type="text/html" title="[UIKit] URLSession이란?" /><published>2024-04-13T00:00:00+09:00</published><updated>2024-04-13T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/URLSession</id><content type="html" xml:base="http://localhost:4000/UIKit/URLSession/"><![CDATA[<h1 id="urlsession이란">URLSession이란?</h1>
 <ul>
   <li>Swift에서 URLSession은 네트워크 작업을 수행하기 위한 핵심 클래스입니다. 이 클래스를 사용하여 HTTP 및 HTTPS를 통한 데이터를 전송하고, 데이터를 다운로드하거나 업로드하며, 기타 네트워크 관련 작업을 처리할 수 있습니다.</li>
 </ul>
@@ -953,25 +1281,4 @@ profileImage: https://avatars.githubusercontent.com/u/156410026?v=4
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>view - view를 세그웨이로 연결하고 식별자 ID를 통해 세그웨이를 실행</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="performSegue" /><summary type="html"><![CDATA[스토리보드에서 view와 view를 세그웨이로 연결하고 코드로 실행]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09</title><link href="http://localhost:4000/TIL/til31/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 31일차 - 2024.04.09" /><published>2024-04-09T00:00:00+09:00</published><updated>2024-04-09T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til31</id><content type="html" xml:base="http://localhost:4000/TIL/til31/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>오늘의 알고리즘은 도저히 시간초과문제로 풀지 못했다.</li>
-  <li>구글의 도움을 받아서 문제를 풀 수 있었다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EA%B8%B0%EC%82%AC%EB%8B%A8%EC%9B%90%EC%9D%98%EB%AC%B4%EA%B8%B0/" target="_blank">기사단원의무기</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="앱개발-심화">앱개발 심화</h3>
-<ul>
-  <li>오늘 앱개발 심화반 새로운 팀 편성이 있었다.</li>
-  <li>새로운 팀에 적응하는 시간이 필요! ! !</li>
-  <li>프로젝트하는 동안 블로그를 많이 못써서</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>챌린지 과제 마저하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 31일차 이야기 - 2024.04.09]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="performSegue" /><summary type="html"><![CDATA[스토리보드에서 view와 view를 세그웨이로 연결하고 코드로 실행]]></summary></entry></feed>

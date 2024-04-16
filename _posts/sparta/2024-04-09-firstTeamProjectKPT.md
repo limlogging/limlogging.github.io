@@ -1,6 +1,6 @@
 ---
-title: "[내배캠] 앱개발 입문 팀 프로젝트 만들기 / KPT 회고 "
-excerpt: "앱개발 입문 팀 프로젝트 이후 KPT 회고 작성하기"
+title: "[내배캠] iOS 앱 개발 입문 팀 프로젝트 만들기 / KPT 회고 "
+excerpt: "iOS 앱 개발 입문 팀 프로젝트 이후 KPT 회고 작성하기"
 categories: sparta
 tags: [KPT 회고]
 
