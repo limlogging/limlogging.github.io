@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-17T20:30:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] UICollectionView 예제 코드</title><link href="http://localhost:4000/UIKit/UICollectionView/" rel="alternate" type="text/html" title="[UIKit] UICollectionView 예제 코드" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UICollectionViewDataSource</id><content type="html" xml:base="http://localhost:4000/UIKit/UICollectionView/"><![CDATA[<h1 id="uicollectionview이란">UICollectionView이란?</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-17T21:51:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17</title><link href="http://localhost:4000/TIL/til36/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til36</id><content type="html" xml:base="http://localhost:4000/TIL/til36/"><![CDATA[<ul>
+  <li>민방위 사이버 훈련듣는다고 집중을 많이 못했다. 다음 영상보기를 계속 눌러줘야하기 때문…</li>
+</ul>
+
+<h3 id="개인-과제">개인 과제</h3>
+<ul>
+  <li>저번 팀 프로젝트간 컬렉션 뷰를 사용했지만 내가 직접 구현한 것은 아니라서 컬렉션 뷰 관련해서 공부했다.</li>
+  <li><a href="https://limlogging.github.io/UIKit/UICollectionView/" target="_blank">UICollectionView 예제코드</a></li>
+  <li>선택 과제는 우선 미뤄두고 필수과제에 대해서 다시 공부했다. 특히 동기, 비동기 정리해보고 포스팅 해봐야겠다.</li>
+  <li>갈수록 공부해야할 양이 많아지면서 초반만큼의 속도가 나지 않고 해야할 일들이 쌓이는 것 같다. 잘하는 사람을 보고 조급함도 생기는데 차근차근 공부해야겠다.</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>개인 과제 수정 및 챌린지반 과제 수정하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17]]></summary></entry><entry><title type="html">[UIKit] UICollectionView 예제 코드</title><link href="http://localhost:4000/UIKit/UICollectionView/" rel="alternate" type="text/html" title="[UIKit] UICollectionView 예제 코드" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UICollectionViewDataSource</id><content type="html" xml:base="http://localhost:4000/UIKit/UICollectionView/"><![CDATA[<h1 id="uicollectionview란">UICollectionView란?</h1>
 <ul>
   <li>UIKit에서 UICollectionView은 iOS 앱에서 사용자 인터페이스를 구성하는 데 사용되는 클래스입니다.</li>
   <li>이 클래스는 다양한 형식의 데이터 항목을 그리드나 리스트와 같은 다양한 레이아웃으로 표시할 수 있습니다.</li>
@@ -207,7 +222,34 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>collectionView는 tableview와 비슷하지만 UICollectionViewFlowLayout을 사용하여 레이아웃을 변경할 수 있습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UICollectionView" /><summary type="html"><![CDATA[UICollectionView 예제 코드]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1</title><link href="http://localhost:4000/sparta/wishList1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList1</id><content type="html" xml:base="http://localhost:4000/sparta/wishList1/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UICollectionView" /><category term="UICollectionViewDataSource" /><category term="UICollectionViewFlowLayout" /><summary type="html"><![CDATA[UICollectionView 예제 코드]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16</title><link href="http://localhost:4000/TIL/til35/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til35</id><content type="html" xml:base="http://localhost:4000/TIL/til35/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
+<ul>
+  <li>토요일에 contains, replaceingOccurrences, allSatisfy를 사용해서 옹알이 문제를 풀었다.</li>
+  <li>월요일에 풀었던 문제가 11~16시간초과 문제로 통과하지 못했는데 어제 못풀던 문제를 오늘 풀어야하지만 과제가 급해서 과제를 진행했다.</li>
+  <li>풀이 보기
+    <ul>
+      <li><a href="https://limlogging.github.io/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)/" target="_blank">옹알이(2)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="챌린지반-과제">챌린지반 과제</h3>
+<ul>
+  <li>피드백은 받았는데 개인 과제 시작도 못해서 개인과제를 시작했다.</li>
+</ul>
+
+<h3 id="개인과제---위시리스트-앱-만들기">개인과제 - 위시리스트 앱 만들기</h3>
+<ul>
+  <li><a href="https://limlogging.github.io/UIKit/URLSession/" target="_blank">URLSession이란?</a></li>
+  <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트앱만들기 1</a></li>
+  <li>레벨3단계까지 구현 완료, URLSession을 사용한 데이터 가져오기와 코어데이터 사용하기는 기본적인 프로세스를 익히고 외우는 수 밖에 없을 것같다.</li>
+</ul>
+
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>개인과제 4,5 단계 진행 및 챌린지 과제 마저 수정하기</li>
+  <li>시간 남으면 알고리즘, 깃 공부</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 35일차 이야기 - 2024.04.16]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1</title><link href="http://localhost:4000/sparta/wishList1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList1</id><content type="html" xml:base="http://localhost:4000/sparta/wishList1/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
 <ul>
   <li>네트워크 통신과 내부 저장소를 사용하여 WishList 앱 만들기입니다.</li>
 </ul>
@@ -535,34 +577,7 @@
   <li>가격에 , 추가해야하는데 빼먹어버렸다. 내일 다시 추가할 예정</li>
   <li>필수 과제까지는 완료했는데 선택과제도 내일 다시 구현 에정</li>
   <li>⭐️⭐️ 데이터가져오기 및 코어데이터 사용은 강의 예제와 동일해서 많이 사용해보고 익숙해져야겠다. ⭐️⭐️</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16</title><link href="http://localhost:4000/TIL/til35/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til35</id><content type="html" xml:base="http://localhost:4000/TIL/til35/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>토요일에 contains, replaceingOccurrences, allSatisfy를 사용해서 옹알이 문제를 풀었다.</li>
-  <li>월요일에 풀었던 문제가 11~16시간초과 문제로 통과하지 못했는데 어제 못풀던 문제를 오늘 풀어야하지만 과제가 급해서 과제를 진행했다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)/" target="_blank">옹알이(2)</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="챌린지반-과제">챌린지반 과제</h3>
-<ul>
-  <li>피드백은 받았는데 개인 과제 시작도 못해서 개인과제를 시작했다.</li>
-</ul>
-
-<h3 id="개인과제---위시리스트-앱-만들기">개인과제 - 위시리스트 앱 만들기</h3>
-<ul>
-  <li><a href="https://limlogging.github.io/UIKit/URLSession/" target="_blank">URLSession이란?</a></li>
-  <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트앱만들기 1</a></li>
-  <li>레벨3단계까지 구현 완료, URLSession을 사용한 데이터 가져오기와 코어데이터 사용하기는 기본적인 프로세스를 익히고 외우는 수 밖에 없을 것같다.</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>개인과제 4,5 단계 진행 및 챌린지 과제 마저 수정하기</li>
-  <li>시간 남으면 알고리즘, 깃 공부</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 35일차 이야기 - 2024.04.16]]></summary></entry><entry><title type="html">[UIKit] URLSession이란?</title><link href="http://localhost:4000/UIKit/URLSession/" rel="alternate" type="text/html" title="[UIKit] URLSession이란?" /><published>2024-04-13T00:00:00+09:00</published><updated>2024-04-13T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/URLSession</id><content type="html" xml:base="http://localhost:4000/UIKit/URLSession/"><![CDATA[<h1 id="urlsession이란">URLSession이란?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1]]></summary></entry><entry><title type="html">[UIKit] URLSession이란?</title><link href="http://localhost:4000/UIKit/URLSession/" rel="alternate" type="text/html" title="[UIKit] URLSession이란?" /><published>2024-04-13T00:00:00+09:00</published><updated>2024-04-13T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/URLSession</id><content type="html" xml:base="http://localhost:4000/UIKit/URLSession/"><![CDATA[<h1 id="urlsession이란">URLSession이란?</h1>
 <ul>
   <li>Swift에서 URLSession은 네트워크 작업을 수행하기 위한 핵심 클래스입니다. 이 클래스를 사용하여 HTTP 및 HTTPS를 통한 데이터를 전송하고, 데이터를 다운로드하거나 업로드하며, 기타 네트워크 관련 작업을 처리할 수 있습니다.</li>
 </ul>
@@ -1182,33 +1197,4 @@ profileImage: https://avatars.githubusercontent.com/u/156410026?v=4
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="instantiateViewController" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 32일차 - 2024.04.11</title><link href="http://localhost:4000/TIL/til32/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 32일차 - 2024.04.11" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til32</id><content type="html" xml:base="http://localhost:4000/TIL/til32/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>쉽게 풀었던 오늘의 알고리즘 문제</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EB%A1%9C%EB%98%90%EC%9D%98%EC%B5%9C%EA%B3%A0%EC%88%9C%EC%9C%84%EC%99%80%EC%B5%9C%EC%A0%80%EC%88%9C%EC%9C%84/" target="_blank">로또의 최고 순위와 최저 순위</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="챌린지반-과제">챌린지반 과제</h3>
-<ul>
-  <li>결국 마지막 페이징 처리는 못했지만 제출했다.</li>
-  <li>내일 우선 포스팅 예정</li>
-</ul>
-
-<h3 id="화면이동">화면이동</h3>
-<ul>
-  <li>스토리보드로 화면 연결은 쉽지만 이후 코드로 연결하기, 자동연결이지만 데이터 전달하기등 화면이동의 다양한 방법에 대해서 공부했다.</li>
-  <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%991/" target="_blank">코드로 화면 이동1 - present</a></li>
-  <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" target="_blank">코드로 화면 이동2 - instantiateViewController</a></li>
-  <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%993/" target="_blank">코드로 화면 이동3 - performSegue</a></li>
-  <li><a href="https://limlogging.github.io/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%994/" target="_blank">코드로 화면 이동4 - prepare</a></li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>팀 프로젝트, 선거 휴무를 지나면서 공부한 내용을 많이 정리하지 못했다 ㅠ 다시 조금씩… 작성해야겠다.</li>
-  <li>개인 과제 시작하기 , 챌린지 과제 마저 수정</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 32일차 이야기 - 2024.04.11]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="instantiateViewController" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry></feed>

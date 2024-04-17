@@ -5,14 +5,14 @@ excerpt: "UICollectionView 예제 코드"
 categories:
   - UIKit
 tags:
-  - [swift, iOS, UICollectionView]
+  - [swift, iOS, UICollectionView, UICollectionViewDataSource, UICollectionViewFlowLayout]
 
 permalink: /UIKit/UICollectionView/ 
 toc: true         
 toc_sticky: true   
 comments: true      
 ---
-# UICollectionView이란? 
+# UICollectionView란? 
 - UIKit에서 UICollectionView은 iOS 앱에서 사용자 인터페이스를 구성하는 데 사용되는 클래스입니다. 
 - 이 클래스는 다양한 형식의 데이터 항목을 그리드나 리스트와 같은 다양한 레이아웃으로 표시할 수 있습니다. 
 - UICollectionView은 UITableView와 유사하지만 좀 더 유연하며 복잡한 레이아웃 및 사용자 지정 표현을 구현할 수 있습니다.

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[UIKit] UITextField - 사용자에게 텍스트 입력 받기 - limlogging Devlog</title>
-<meta name="description" content="UITextField - 사용자로부터 텍스트를 입력받는 데 사용">
+<!-- begin _includes/seo.html --><title>[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17 - limlogging Devlog</title>
+<meta name="description" content="내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17">
 
 
   <meta name="author" content="HyeongSub Lim">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="limlogging Devlog">
-<meta property="og:title" content="[UIKit] UITextField - 사용자에게 텍스트 입력 받기">
-<meta property="og:url" content="http://localhost:4000/UIKit/UITextField/">
+<meta property="og:title" content="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17">
+<meta property="og:url" content="http://localhost:4000/TIL/til36/">
 
 
-  <meta property="og:description" content="UITextField - 사용자로부터 텍스트를 입력받는 데 사용">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-03-18T00:00:00+09:00">
+  <meta property="og:description" content="내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-04-17T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/UIKit/UITextField/">
+
+<link rel="canonical" href="http://localhost:4000/TIL/til36/">
 
 
 
@@ -407,16 +407,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[UIKit] UITextField - 사용자에게 텍스트 입력 받기">
-    <meta itemprop="description" content="UITextField - 사용자로부터 텍스트를 입력받는 데 사용">
-    <meta itemprop="datePublished" content="2024-03-18T00:00:00+09:00">
+    <meta itemprop="headline" content="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17">
+    <meta itemprop="description" content="내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17">
+    <meta itemprop="datePublished" content="2024-04-17T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/UIKit/UITextField/" class="u-url" itemprop="url">[UIKit] UITextField - 사용자에게 텍스트 입력 받기
+            <a href="http://localhost:4000/TIL/til36/" class="u-url" itemprop="url">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17
 </a>
           </h1>
           
@@ -433,7 +433,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -443,8 +443,8 @@
           
           <!-- 포스팅 조회수 추가 -->
           <div style="text-align: right;">
-            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/UITextField/"target="_blank">
-              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/UITextField/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            <a href="https://hits.seeyoufarm.com/localhost:4000/TIL/til36/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/TIL/til36/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
             </a>
           </div>
         </header>
@@ -457,7 +457,7 @@
             <nav class="toc">
               
                 <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
-                <ul class="toc__menu"><li><a href="#uitextfield">UITextField</a></li><li><a href="#uitextfield-생성">UITextField 생성</a></li><li><a href="#uitextfield-설정">UITextField 설정</a><ul><li><a href="#입력-유도-메시지">입력 유도 메시지</a></li><li><a href="#uitextfield-모양">UITextField 모양</a></li><li><a href="#입력용-키보드-설정">입력용 키보드 설정</a></li><li><a href="#보안-입력비밀번호-등">보안 입력(비밀번호 등)</a></li><li><a href="#리턴엔터-키의-종류">리턴(엔터) 키의 종류</a></li></ul></li></ul>
+                <ul class="toc__menu"><li><a href="#개인-과제">개인 과제</a></li><li><a href="#내일-목표">내일 목표</a></li></ul>
 
               
             </nav>
@@ -481,75 +481,22 @@
             <!-- 광고 추가 끝 -->
           </aside>
         
-        <h1 id="uitextfield">UITextField</h1>
-<ul>
-  <li>UITextField는 UIKit 프레임워크에서 제공하는 클래스 중 하나로, 사용자로부터 텍스트를 입력받는 데 사용</li>
-  <li>텍스트 필드, 검색 상자 또는 비밀번호 필드 등을 생성할 때 사용</li>
+        <ul>
+  <li>민방위 사이버 훈련듣는다고 집중을 많이 못했다. 다음 영상보기를 계속 눌러줘야하기 때문…</li>
 </ul>
 
-<h1 id="uitextfield-생성">UITextField 생성</h1>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">textField</span> <span class="o">=</span> <span class="kt">UITextField</span><span class="p">()</span> 
-</code></pre></div></div>
-<p><br /></p>
-
-<h1 id="uitextfield-설정">UITextField 설정</h1>
-<h2 id="입력-유도-메시지">입력 유도 메시지</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">textField</span><span class="o">.</span><span class="n">placeholder</span> <span class="o">=</span> <span class="s">"텍스트를 입력하세요."</span>
-</code></pre></div></div>
-
-<h2 id="uitextfield-모양">UITextField 모양</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//둥근 테두리 </span>
-<span class="n">textField</span><span class="o">.</span><span class="n">borderStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">roundedRect</span>
-</code></pre></div></div>
-
-<h2 id="입력용-키보드-설정">입력용 키보드 설정</h2>
+<h3 id="개인-과제">개인 과제</h3>
 <ul>
-  <li>사용자가 해당 입력 필드에 입력할 때 사용할 키보드의 종류를 지정</li>
+  <li>저번 팀 프로젝트간 컬렉션 뷰를 사용했지만 내가 직접 구현한 것은 아니라서 컬렉션 뷰 관련해서 공부했다.</li>
+  <li><a href="https://limlogging.github.io/UIKit/UICollectionView/" target="_blank">UICollectionView 예제코드</a></li>
+  <li>선택 과제는 우선 미뤄두고 필수과제에 대해서 다시 공부했다. 특히 동기, 비동기 정리해보고 포스팅 해봐야겠다.</li>
+  <li>갈수록 공부해야할 양이 많아지면서 초반만큼의 속도가 나지 않고 해야할 일들이 쌓이는 것 같다. 잘하는 사람을 보고 조급함도 생기는데 차근차근 공부해야겠다.</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//일반 텍스트 입력용 키보드</span>
-<span class="n">textField</span><span class="o">.</span><span class="n">keyboardType</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span>
-<span class="c1">//이메일 주소 입력 </span>
-<span class="n">textField</span><span class="o">.</span><span class="n">keyboardType</span> <span class="o">=</span> <span class="o">.</span><span class="n">emailAddress</span>
-<span class="c1">//숫자만 입력 </span>
-<span class="n">textField</span><span class="o">.</span><span class="n">keyboardType</span> <span class="o">=</span> <span class="o">.</span><span class="n">numberPad</span>
-
-<span class="cm">/* 입력용 키보드 종류 
-Default: 일반적인 키보드로, 텍스트 및 숫자를 입력할 수 있습니다.
-ASCIICapable: ASCII 문자만 입력할 수 있는 키보드입니다.
-Numbers and Punctuation: 숫자와 일부 구두점 기호를 입력할 수 있는 키보드입니다.
-URL: URL 입력에 특화된 키보드로, .com 버튼이나 / 버튼이 추가되어 있습니다.
-NumberPad: 숫자만 입력할 수 있는 패드 형태의 키보드입니다.
-PhonePad: 전화번호를 입력할 때 사용하는 패드 형태의 키보드입니다.
-DecimalPad: 십진수를 입력할 수 있는 숫자 패드입니다. 소수점을 사용할 수 있습니다.
-EmailAddress: 이메일 주소를 입력하는데 특화된 키보드입니다.
-Twitter: 트위터 관련 기호와 사용할 수 있는 키보드입니다.
-WebSearch: 웹 검색에 사용할 수 있는 키보드입니다.
-*/</span>
-</code></pre></div></div>
-
-<h2 id="보안-입력비밀번호-등">보안 입력(비밀번호 등)</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//일반 텍스트 입력용 키보드</span>
-<span class="n">textField</span><span class="o">.</span><span class="n">isSecureTextEntry</span> <span class="o">=</span> <span class="kc">false</span>
-</code></pre></div></div>
-
-<h2 id="리턴엔터-키의-종류">리턴(엔터) 키의 종류</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//일반 텍스트 입력용 키보드</span>
-<span class="n">textField</span><span class="o">.</span><span class="n">returnKeyType</span> <span class="o">=</span> <span class="o">.</span><span class="n">done</span>
-
-<span class="cm">/* ReturnKeyType의 종류
-default: 기본 동작으로, 텍스트 필드의 입력을 완료합니다.
-go: "이동"이라는 동작을 수행합니다. 주로 키보드의 Return 키가 "이동" 동작을 수행하는데 사용됩니다. 예를 들어, 로그인 화면에서 사용자가 아이디와 비밀번호를 입력한 후 Return 키를 누르면 비밀번호 입력 필드로 이동할 때 사용됩니다.
-google: "Google" 동작을 수행합니다. 일반적으로 웹 검색 화면에서 사용됩니다.
-join: "가입" 동작을 수행합니다. 주로 가입 양식에서 사용됩니다.
-next: "다음" 동작을 수행합니다. 주로 다음 입력 필드로 포커스를 이동할 때 사용됩니다.
-route: "경로" 동작을 수행합니다. 예를 들어, 지도 앱에서 사용될 수 있습니다.
-search: "검색" 동작을 수행합니다. 주로 검색 창에서 사용됩니다.
-send: "전송" 동작을 수행합니다. 주로 메시지를 전송하는 화면에서 사용됩니다.
-done: "완료" 동작을 수행합니다. 편집 모드를 종료하거나 텍스트 입력을 완료하는 데 사용됩니다.
-emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸거나 전화 앱을 실행하는 데 사용됩니다.
-*/</span>
-</code></pre></div></div>
+<h3 id="내일-목표">내일 목표</h3>
+<ul>
+  <li>개인 과제 수정 및 챌린지반 과제 수정하기</li>
+</ul>
 
         
       </section>
@@ -566,11 +513,7 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
-    
-      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a><span class="sep">, </span>
-    
-      <a href="/tags/#uitextfield" class="page__taxonomy-item p-category" rel="tag">UITextField</a>
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -587,7 +530,7 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+      <a href="/categories/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a>
     
     </span>
   </p>
@@ -595,7 +538,7 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-03-18T00:00:00+09:00">March 18, 2024</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-04-17T00:00:00+09:00">April 17, 2024</time></p>
 
       </footer>
 
@@ -604,22 +547,22 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+UITextField+-+%EC%82%AC%EC%9A%A9%EC%9E%90%EC%97%90%EA%B2%8C+%ED%85%8D%EC%8A%A4%ED%8A%B8+%EC%9E%85%EB%A0%A5+%EB%B0%9B%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITextField%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5BTIL%5D+%EB%82%B4%EB%B0%B0%EC%BA%A0+iOS%EC%95%B1+%EA%B0%9C%EB%B0%9C+%EA%B3%B5%EB%B6%80+36%EC%9D%BC%EC%B0%A8+-+2024.04.17%20http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil36%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITextField%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil36%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FUITextField%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FTIL%2Ftil36%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/UIKit/UISwitch/" class="pagination--pager" title="[UIKit] UISwitch - on/off 상태를 표시하고 제어
+      <a href="/TIL/til35/" class="pagination--pager" title="[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16
 ">이전</a>
     
     
-      <a href="/UIKit/UIView/" class="pagination--pager" title="[UIKit] UIView - 가장 기본적인 뷰
+      <a href="/UIKit/UICollectionView/" class="pagination--pager" title="[UIKit] UICollectionView 예제 코드
 ">다음</a>
     
   </nav>
@@ -670,46 +613,6 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
 
 
     <p class="archive__item-excerpt" itemprop="description">UICollectionView 예제 코드
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/TIL/til36/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17
 </p>
   </article>
 </div>
@@ -782,7 +685,7 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          4 분 소요
         
       </span>
     
@@ -790,6 +693,46 @@ emergencyCall: "긴급 전화" 동작을 수행합니다. 긴급 전화를 걸�
 
 
     <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 1
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UIKit/URLSession/" rel="permalink">[UIKit] URLSession이란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">URLSession과 예제코드
 </p>
   </article>
 </div>
