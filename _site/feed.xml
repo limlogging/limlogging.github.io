@@ -1,4 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-17T21:51:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17</title><link href="http://localhost:4000/TIL/til36/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til36</id><content type="html" xml:base="http://localhost:4000/TIL/til36/"><![CDATA[<ul>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-19T11:41:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2</title><link href="http://localhost:4000/sparta/wishList2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2" /><published>2024-04-19T00:00:00+09:00</published><updated>2024-04-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList2</id><content type="html" xml:base="http://localhost:4000/sparta/wishList2/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+<ul>
+  <li>지난 포스팅
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">WishList 앱 만들기 - 1</a></li>
+    </ul>
+  </li>
+  <li>지난번 4,5번 선택 구현 과제가 있지만 네트워크 관련 복습이 더 중요하다고 생각하여 복습하면서 네트워크 작업 로직을 수정하였습니다. 
+<br /></li>
+</ul>
+
+<h1 id="네트워크-작업-수정">네트워크 작업 수정</h1>
+<h2 id="1-data-가져오기">1. Data 가져오기</h2>
+<ul>
+  <li>속성감시자를 제거하고 getData 부분을 수정하였습니다.</li>
+</ul>
+
+<h3 id="속성감시자-설정-삭제">속성감시자 설정 삭제</h3>
+<ul>
+  <li>지난번에 추가했던 아래 코드는 모두 삭제했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">currentProduct</span><span class="p">:</span> <span class="kt">ProductsManager</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="k">didSet</span> <span class="p">{</span>
+        <span class="c1">//currentProduct가 nil이 아닌지 확인하고 종료하기 </span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">currentProduct</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">//메인 스레드에서 UI 업데이트를 수행</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kc">nil</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">title</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productDescriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">description</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">currentProduct</span><span class="o">.</span><span class="n">price</span><span class="se">)</span><span class="s">$"</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// 백그라운드 스레드에서 제품의 섬네일 이미지를 비동기적으로 가져오기 </span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+            <span class="c1">// 제품의 섬네일 이미지 데이터를 가져와 UIImage로 변환</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">),</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">// 가져온 이미지를 메인 스레드에서 productImageView에 설정하여 이미지 출력 </span>
+                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="getdata-수정">getData() 수정</h3>
+<h4 id="수정-전">수정 전</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">productID</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://dummyjson.com/products/</span><span class="se">\(</span><span class="n">productID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"url: </span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="c1">//URLSessionDataTask를 사용하여 비동기적으로 데이터 요청</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
+                <span class="k">do</span> <span class="p">{</span>
+                    <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">ProductsManager</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>   <span class="c1">//데이터 설정 </span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Decode Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="수정-후">수정 후</h4>
+<ul>
+  <li>화면을 다시그리는 작업을 할때 디스패치 큐에 전달해야하는 것을 공부하여 코드를 수정하였습니다.</li>
+  <li>didSet이 아닌 콜백 함수를 사용하면 데이터를 저장할 수 있어 콜백함수를 사용했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//비동기적으로 실행되는 urlsession이 끝나면 데이터를 저장하기 위한 콜백함수 사용</span>
+    <span class="kd">func</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Product</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">productID</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">100</span><span class="p">)</span>
+        
+        <span class="c1">//1. url 구조체 만들어주기</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://dummyjson.com/products/</span><span class="se">\(</span><span class="n">productID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"URL 주소를 불러오는데 실패했습니다."</span><span class="p">)</span>
+            <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"url: </span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        
+        <span class="c1">//2. session 만들기</span>
+        <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span>
+        
+        <span class="c1">//3. 비동기적으로 데이터 요청 테스크 생성</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Product</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="k">let</span> <span class="nv">thumbnailURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">),</span>
+                   <span class="k">let</span> <span class="nv">imageData</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">thumbnailURL</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">//화면을 다시그릴때는 메인큐에서 작업 </span>
+                    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                        <span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
+                        <span class="k">self</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">title</span>
+                        <span class="k">self</span><span class="o">.</span><span class="n">productDescriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">description</span>
+                        <span class="k">self</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">imageData</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Decode Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//4. 작업 시작</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="2-getdata-사용하기">2. getData 사용하기</h2>
+<ul>
+  <li>콜백함수를 통하여 currentProduct에 데이터를 저장하고 위시리스트 담기 버튼을 선택하면 currentProduct에 저장된 데이터로 코어데이터에 저장을 합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">var</span> <span class="nv">currentProduct</span><span class="p">:</span> <span class="kt">Product</span><span class="p">?</span>    <span class="c1">//현재 상품이 저장되는 변수</span>
+
+    <span class="c1">// MARK: - 위시리스트 보기</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+        <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 다른 상품 보기 버튼 선택</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">otherProductButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 위시 리스트 담기 버튼 선택</span>
+    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">addToWishListButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="c1">//나머지 코드 생략 </span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>선택 과제를 찾아서 하려고 했으나 기존에 데이터 가져오는 방식에 대해서 공부가 필요할 것 같아 기존 로직을 수정하였습니다.</li>
+  <li>이번 과제를 통해서 URLSession, 동기, 비동기, 직렬, 동시성, GCD, 메인 큐, 글로벌 큐 등 다양한 키워드를 공부해볼 수 있었습니다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17</title><link href="http://localhost:4000/TIL/til36/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til36</id><content type="html" xml:base="http://localhost:4000/TIL/til36/"><![CDATA[<ul>
   <li>민방위 사이버 훈련듣는다고 집중을 많이 못했다. 다음 영상보기를 계속 눌러줘야하기 때문…</li>
 </ul>
 
@@ -1147,54 +1314,4 @@ profileImage: https://avatars.githubusercontent.com/u/156410026?v=4
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>세그웨이를 통해 버튼과 뷰가 자동으로 연결되었으나 데이터 전달등 추가적인 작업을 위해 prepare 함수 추가</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="prepare" /><summary type="html"><![CDATA[스토리보드에서 버튼과 view를 세그웨이로 연결하고 코드로 추가 정보 전달]]></summary></entry><entry><title type="html">[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)</title><link href="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/" rel="alternate" type="text/html" title="[UIKit] instantiateViewController 코드로 화면 이동 (다음 화면이 스토리보드에 있지만 세그웨이 연결이 아닌 경우)" /><published>2024-04-11T00:00:00+09:00</published><updated>2024-04-11T00:00:00+09:00</updated><id>http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992</id><content type="html" xml:base="http://localhost:4000/uikit/%EC%BD%94%EB%93%9C%EB%A1%9C%ED%99%94%EB%A9%B4%EC%9D%B4%EB%8F%992/"><![CDATA[<h1 id="세그웨이-없이-코드로-화면-이동">세그웨이 없이 코드로 화면 이동</h1>
-<ul>
-  <li>코드로 스토리보드 객체를 생성해서 화면을 이동하는 방법입니다.</li>
-</ul>
-
-<h1 id="1-view-controller에-버튼-추가-및-액션함수-생성">1. View Controller에 버튼 추가 및 액션함수 생성</h1>
-<ul>
-  <li>버튼 추가</li>
-</ul>
-
-<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-1.png" width="200" /></p>
-
-<ul>
-  <li>버튼 액션함수 생성</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="2-viewcontroller-파일-생성">2. ViewController 파일 생성</h1>
-<ul>
-  <li>UIViewController를 상속받는 NextViewController 생성 
-<img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-2.png" alt="" /></li>
-</ul>
-
-<h1 id="3-스토리보드에-view-controller-추가-및-class파일-등록-스토리보드-id-등록">3. 스토리보드에 View Controller 추가 및 class파일 등록, 스토리보드 ID 등록</h1>
-<p><img src="../../assets/images/categories/uikit/2024-04-11-NextVC2-3.png" alt="" /></p>
-
-<h1 id="4-버튼-액션-함수-수정">4. 버튼 액션 함수 수정</h1>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 다음 화면으로 이동하는 버튼</span>
-<span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">nextButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//현재 스토리보드에서 "NextVC"라는 식별자로 뷰 컨트롤러를 인스턴스화를 시도</span>
-    <span class="k">guard</span> <span class="k">let</span> <span class="nv">nextVC</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">?</span><span class="o">.</span><span class="nf">instantiateViewController</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"NextVC"</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">NextViewController</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="c1">//인스턴스화가 성공하면 새로 생성된 뷰 컨트롤러를 모달로 표시</span>
-    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">nextVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="5-실행-화면">5. 실행 화면</h1>
-
-<video width="640" height="360" controls="">
-    <source src="../../assets/video/categories/uikit/2024-04-11-NextVC2.mov" type="video/mp4" />
-</video>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>세그웨이 없이 ViewController에 스토리보드ID를 지정하고 연결하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="instantiateViewController" /><summary type="html"><![CDATA[스토리보드에 있지만 세그웨이 연결이 되어 있지 않을때 화면 이동]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="prepare" /><summary type="html"><![CDATA[스토리보드에서 버튼과 view를 세그웨이로 연결하고 코드로 추가 정보 전달]]></summary></entry></feed>
