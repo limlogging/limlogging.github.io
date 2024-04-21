@@ -1,0 +1,1251 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기 - limlogging Devlog</title>
+<meta name="description" content="챌린지반 과제 2차 제출 - GitHub App 만들기">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기">
+<meta property="og:url" content="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/">
+
+
+  <meta property="og:description" content="챌린지반 과제 2차 제출 - GitHub App 만들기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-04-21T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+
+<!-- 구글 애널리틱스 추가 Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B9ZRRL1X26');
+</script>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>🧑🏻‍💻 개발 블로그입니다. 😎</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(32)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(2)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(10)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(28)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(62)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(11)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기">
+    <meta itemprop="description" content="챌린지반 과제 2차 제출 - GitHub App 만들기">
+    <meta itemprop="datePublished" content="2024-04-21T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" class="u-url" itemprop="url">[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        <!-- 사이드 광고 추가 -->
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              
+                <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
+                <ul class="toc__menu"><li><a href="#깃허브-앱-만들기-개선해보기">깃허브 앱 만들기 개선해보기</a></li><li><a href="#1차-제출-보기">1차 제출 보기</a></li><li><a href="#튜터님-피드백">튜터님 피드백</a><ul><li><a href="#1-model에-있는-struct-2개에-decodable을-적용해주세요">1. Model에 있는 struct 2개에 Decodable을 적용해주세요.</a><ul><li><a href="#수정-전">수정 전</a><ul><li><a href="#githubprofile">GithubProfile</a></li><li><a href="#githubrepositories">GithubRepositories</a></li></ul></li><li><a href="#수정-후">수정 후</a><ul><li><a href="#githubprofile-1">GithubProfile</a></li><li><a href="#githubrepositories-1">GithubRepositories</a></li></ul></li></ul></li><li><a href="#2-3번-api에서-받아온-데이터를-decoding-하여-객체로-만들어주세요--responsedata-사용">2, 3번 API에서 받아온 데이터를 Decoding 하여 객체로 만들어주세요. / responseData 사용</a><ul><li><a href="#수정-전-1">수정 전</a><ul><li><a href="#깃허브에서-프로필-정보-가져오기">깃허브에서 프로필 정보 가져오기</a></li><li><a href="#깃허브에서-리포지토리-정보-가져오기">깃허브에서 리포지토리 정보 가져오기</a></li></ul></li><li><a href="#수정-후-1">수정 후</a><ul><li><a href="#네트워크-작업을-전담할-파일-생성">네트워크 작업을 전담할 파일 생성</a></li><li><a href="#깃허브에서-프로필-및-리포지토리-정보-가져오기">깃허브에서 프로필 및 리포지토리 정보 가져오기</a></li></ul></li></ul></li><li><a href="#4-pull-to-refresh는-모든-데이터를-다시-받아와서-테이블뷰를-그려주세요">4. Pull to refresh는 모든 데이터를 다시 받아와서 테이블뷰를 그려주세요.</a><ul><li><a href="#수정-전-2">수정 전</a></li><li><a href="#수정-후-2">수정 후</a></li></ul></li><li><a href="#5-페이징처리를-해주세요">5. 페이징처리를 해주세요.</a><ul><li><a href="#tableviewdelegate에-willdisplay-함수-추가">TableViewDelegate에 willDisplay 함수 추가</a></li><li><a href="#leadmore-함수-추가">leadMore 함수 추가</a></li></ul></li><li><a href="#6-as-tableviewcell-대신-옵셔널-바인딩을-사용해주세요">6. as! TableViewCell 대신 옵셔널 바인딩을 사용해주세요.</a><ul><li><a href="#수정-전-3">수정 전</a></li><li><a href="#수정-후-3">수정 후</a></li></ul></li></ul></li><li><a href="#실행화면">실행화면</a></li><li><a href="#마무리">마무리</a></li></ul>
+
+              
+            </nav>
+            <!-- 사이드 광고 추가 -->
+            <nav class="toc-custom">
+              
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+     crossorigin="anonymous"></script>
+<!-- 수직형 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8663638822726862"
+     data-ad-slot="8971782438"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              
+            </nav>
+            <!-- 광고 추가 끝 -->
+          </aside>
+        
+        <h1 id="깃허브-앱-만들기-개선해보기">깃허브 앱 만들기 개선해보기</h1>
+<ul>
+  <li>이번 주차에 네트워크 작업과 관련해서 배웠습니다. 나중에 보니 구글 검색으로 알라모파이어로 어거지로 불러와서 구현은 됐는데 구조체에 Struct를 사용하지 않고 옛날 방식으로 데이터를 불러왔다는 것을 알았습니다.</li>
+  <li>배운 내용을 바탕으로 다시 개선해 보았습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="1차-제출-보기">1차 제출 보기</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">1차 제출 바로가기</a></li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="튜터님-피드백">튜터님 피드백</h1>
+<ol>
+  <li>Model에 있는 struct 2개에 Decodable을 적용해주세요.</li>
+  <li>API에서 받아온 데이터를 Decoding 하여 객체로 만들어주세요.</li>
+  <li>(responseJSON 대신 responseData 같은거를 사용하시면 됩니다)</li>
+  <li>Pull to refresh는 모든 데이터를 다시 받아와서 테이블뷰를 그려주세요.</li>
+  <li>페이징처리를 해주세요.</li>
+  <li>as! TableViewCell 대신 옵셔널 바인딩을 사용해주세요.</li>
+</ol>
+
+<h2 id="1-model에-있는-struct-2개에-decodable을-적용해주세요">1. Model에 있는 struct 2개에 Decodable을 적용해주세요.</h2>
+<h3 id="수정-전">수정 전</h3>
+<h4 id="githubprofile">GithubProfile</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// GitHub 프로필 정보를 저장할 구조체</span>
+<span class="kd">struct</span> <span class="kt">GithubProfile</span> <span class="p">{</span>
+    <span class="c1">//var myImage: UIImage?</span>
+    <span class="k">var</span> <span class="nv">myImage</span><span class="p">:</span> <span class="kt">URL</span>        <span class="c1">//프로필 사진</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>        <span class="c1">//이름</span>
+    <span class="k">var</span> <span class="nv">login</span><span class="p">:</span> <span class="kt">String</span>       <span class="c1">//깃허브 ID</span>
+    <span class="k">var</span> <span class="nv">followers</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로워</span>
+    <span class="k">var</span> <span class="nv">following</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로잉</span>
+    <span class="k">var</span> <span class="nv">repoCnt</span><span class="p">:</span> <span class="kt">Int</span>        <span class="c1">//리포지토리 개수 </span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="githubrepositories">GithubRepositories</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// 리포지토리 정보를 저장할 구조체</span>
+<span class="kd">struct</span> <span class="kt">GithubRepositories</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>            <span class="c1">//리포지토리 이름</span>
+    <span class="k">var</span> <span class="nv">htmlUrl</span><span class="p">:</span> <span class="kt">String</span>         <span class="c1">//리포지토리 주소</span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>     <span class="c1">//리포지토리 설명</span>
+    <span class="k">var</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">String</span>        <span class="c1">//언어 </span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="수정-후">수정 후</h3>
+<ul>
+  <li>Decodable을 추가하였습니다.</li>
+</ul>
+
+<h4 id="githubprofile-1">GithubProfile</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// GitHub 프로필 정보를 저장할 구조체</span>
+<span class="kd">struct</span> <span class="kt">GithubProfile</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">login</span><span class="p">:</span> <span class="kt">String</span>       <span class="c1">//깃허브 ID</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>           <span class="c1">//이름</span>
+    <span class="k">var</span> <span class="nv">bio</span><span class="p">:</span> <span class="kt">String</span>         <span class="c1">//bio</span>
+    <span class="k">var</span> <span class="nv">avatarUrl</span><span class="p">:</span> <span class="kt">URL</span>      <span class="c1">//프로필 사진</span>
+    <span class="k">var</span> <span class="nv">followers</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로워</span>
+    <span class="k">var</span> <span class="nv">following</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로잉</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">login</span>
+        <span class="k">case</span> <span class="n">name</span>
+        <span class="k">case</span> <span class="n">bio</span>
+        <span class="k">case</span> <span class="n">followers</span>
+        <span class="k">case</span> <span class="n">following</span>
+        <span class="k">case</span> <span class="n">avatarUrl</span> <span class="o">=</span> <span class="s">"avatar_url"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="githubrepositories-1">GithubRepositories</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="c1">// 리포지토리 정보를 저장할 구조체</span>
+<span class="kd">struct</span> <span class="kt">GithubRepositories</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>             <span class="c1">//리포지토리 이름</span>
+    <span class="k">var</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>        <span class="c1">//언어</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="2-3번-api에서-받아온-데이터를-decoding-하여-객체로-만들어주세요--responsedata-사용">2, 3번 API에서 받아온 데이터를 Decoding 하여 객체로 만들어주세요. / responseData 사용</h2>
+<h3 id="수정-전-1">수정 전</h3>
+<h4 id="깃허브에서-프로필-정보-가져오기">깃허브에서 프로필 정보 가져오기</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브에서 프로필 정보 가져오기</span>
+<span class="kd">func</span> <span class="nf">getGithubProfile</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">profileUrl</span><span class="p">)</span><span class="o">.</span><span class="n">responseJSON</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+        <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
+        <span class="k">case</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">json</span> <span class="o">=</span> <span class="n">value</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
+                <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">login</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"login"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">followers</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"followers"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">following</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"following"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">repoCnt</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"public_repos"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">avatarURLString</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"avatar_url"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">avatarURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">avatarURLString</span><span class="p">)</span> <span class="p">{</span>
+                
+                <span class="k">let</span> <span class="nv">profile</span> <span class="o">=</span> <span class="kt">GithubProfile</span><span class="p">(</span><span class="nv">myImage</span><span class="p">:</span> <span class="n">avatarURL</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">login</span><span class="p">:</span> <span class="n">login</span><span class="p">,</span> <span class="nv">followers</span><span class="p">:</span> <span class="n">followers</span><span class="p">,</span> <span class="nv">following</span><span class="p">:</span> <span class="n">following</span><span class="p">,</span> <span class="nv">repoCnt</span><span class="p">:</span> <span class="n">repoCnt</span><span class="p">)</span>
+                
+                <span class="k">self</span><span class="o">.</span><span class="nf">showProfileInfo</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>                    
+            <span class="p">}</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 구조체에서 데이터를 가져와 label 및 imageView에 보여주는 함수</span>
+<span class="kd">func</span> <span class="nf">showProfileInfo</span><span class="p">(</span><span class="n">_</span> <span class="nv">profile</span><span class="p">:</span> <span class="kt">GithubProfile</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//SDWebImage를 사용하여 프로필 이미지 다운로드 및 출력</span>
+    <span class="n">profileImageView</span><span class="o">.</span><span class="nf">sd_setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">profile</span><span class="o">.</span><span class="n">myImage</span><span class="p">,</span> <span class="nv">placeholderImage</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">completed</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    
+    <span class="n">profileName</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span>     <span class="c1">// 이름 출력</span>
+    <span class="n">profileLogin</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">login</span>   <span class="c1">// 로그인 출력</span>
+    <span class="n">profileFollowers</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Followers: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">followers</span><span class="p">)</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//followers</span>
+    <span class="n">profileFollowing</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Following: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">following</span><span class="p">)</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//following</span>
+    
+    <span class="k">self</span><span class="o">.</span><span class="n">repoCnt</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">repoCnt</span>
+    <span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>  <span class="c1">//최초 실행하면 numberOfRowsInSection를 먼저 실행하고 깃허브 데이터를 받아와서 row 수가 0임, row수를 깃허브 repo수 만큼 보이도록 새로고침 추가</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h4 id="깃허브에서-리포지토리-정보-가져오기">깃허브에서 리포지토리 정보 가져오기</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브에서 리포지토리 정보 가져오기</span>
+<span class="kd">func</span> <span class="nf">getGithubRepositories</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">repositoriesUrl</span><span class="p">)</span><span class="o">.</span><span class="n">responseJSON</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+        <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
+        <span class="k">case</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">repositories</span> <span class="o">=</span> <span class="n">value</span> <span class="k">as?</span> <span class="p">[[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]]</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="n">repo</span> <span class="k">in</span> <span class="n">repositories</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
+                        <span class="k">let</span> <span class="nv">htmlUrl</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"html_url"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">{</span>
+                            <span class="c1">//description, language는 없거나 Null 값이 있어서 닐 코얼레싱 추가</span>
+                            <span class="k">let</span> <span class="nv">description</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"description"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">??</span> <span class="s">""</span>
+                            <span class="k">let</span> <span class="nv">language</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"language"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">??</span> <span class="s">""</span>
+                            
+                            <span class="c1">//배열에 저장</span>
+                            <span class="k">self</span><span class="o">.</span><span class="n">repoArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">GithubRepositories</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">htmlUrl</span><span class="p">:</span> <span class="n">htmlUrl</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="n">language</span><span class="p">))</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"에러: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="수정-후-1">수정 후</h3>
+<h4 id="네트워크-작업을-전담할-파일-생성">네트워크 작업을 전담할 파일 생성</h4>
+<ul>
+  <li>NetworkManager.swift 생성</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">Alamofire</span>
+
+<span class="kd">final</span> <span class="kd">class</span> <span class="kt">NetworkManager</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="s">"https://api.github.com/users/"</span>
+    
+    <span class="c1">// MARK: - URLSession으로 깃허브 프로필 가져오기</span>
+    <span class="kd">func</span> <span class="nf">fetchUserProfile</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">GithubProfile</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//1. url 구조체 생성</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">url</span><span class="se">)\(</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="kt">NSError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"url 변환에 실패했어요."</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="mi">401</span><span class="p">)))</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+        
+        <span class="c1">//2. request 설정</span>
+        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">httpMethod</span> <span class="o">=</span> <span class="s">"GET"</span>
+        
+        <span class="c1">//3. 작업 만들기</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="kt">NSError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"Data가 없습니다."</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="mi">402</span><span class="p">)))</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">profile</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">GithubProfile</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+                <span class="c1">//콜백함수로 데이터 전달</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">profile</span><span class="p">))</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//4. 작업시작</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 알라모파이어로 리포지토리 정보 가져오기</span>
+    <span class="kd">func</span> <span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">GithubRepositories</span><span class="p">],</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">url</span><span class="se">)\(</span><span class="n">userName</span><span class="se">)</span><span class="s">/repos?page=</span><span class="se">\(</span><span class="n">page</span><span class="se">)</span><span class="s">"</span>
+        
+        <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="nf">responseDecodable</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="p">[</span><span class="kt">GithubRepositories</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
+            <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">repositories</span><span class="p">))</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h4 id="깃허브에서-프로필-및-리포지토리-정보-가져오기">깃허브에서 프로필 및 리포지토리 정보 가져오기</h4>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브 프로필 가져오기, 강한 순환 참조를 피하기 위해서 [weak self] 사용</span>
+<span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserProfile</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">githubProfile</span><span class="p">):</span>
+        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="n">githubProfile</span>
+        
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileName</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">name</span>                             <span class="c1">//이름</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileLogin</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">login</span>                           <span class="c1">//ID</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileBio</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">bio</span>                               <span class="c1">//BIO</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileFollowers</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"followers: </span><span class="se">\(</span><span class="n">githubProfile</span><span class="o">.</span><span class="n">followers</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//follwers</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileFollowing</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"following: </span><span class="se">\(</span><span class="n">githubProfile</span><span class="o">.</span><span class="n">following</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//follwing</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileImageView</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">avatarUrl</span><span class="p">)</span>       <span class="c1">//프로필사진</span>
+            
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">setNeedsDisplay</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// MARK: - 깃허브 리포지토리 가져오기, 강한 순환 참조를 피하기 위해서 [weak self] 사용</span>
+<span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">page</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
+        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositories</span> <span class="o">=</span> <span class="n">repositories</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span> <span class="c1">//새로고침 끝내기</span>
+            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="4-pull-to-refresh는-모든-데이터를-다시-받아와서-테이블뷰를-그려주세요">4. Pull to refresh는 모든 데이터를 다시 받아와서 테이블뷰를 그려주세요.</h2>
+<h3 id="수정-전-2">수정 전</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - viewDidLoad()</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="c1">// 다른 코드 생략 </span>
+
+        <span class="c1">//Pull to refresh 추가</span>
+        <span class="nf">tableViewRefresh</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - Pull to refresh 컨트롤 추가</span>
+    <span class="kd">func</span> <span class="nf">tableViewRefresh</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
+        <span class="n">refreshControl</span><span class="o">.</span><span class="n">attributedTitle</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"새로고침"</span><span class="p">)</span>
+        <span class="n">refreshControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refreshData</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
+        <span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="n">refreshControl</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - pull to refresh 메서드</span>
+    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refreshData</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 테이블 뷰 리로드</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+            <span class="c1">// UIRefreshControl 종료</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="수정-후-2">수정 후</h3>
+<ul>
+  <li>기존 테이블 뷰 리로드에서 네트워크를 통해 새로 받아오도록 수정
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MARK: - 테이블뷰 설정</span>
+  <span class="kd">func</span> <span class="nf">configureTableView</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">//다른 코드 생략 </span>
+
+      <span class="k">let</span> <span class="nv">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
+      <span class="n">refreshControl</span><span class="o">.</span><span class="n">attributedTitle</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"새로고침"</span><span class="p">)</span>
+      <span class="n">refreshControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refreshData</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
+      <span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="n">refreshControl</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// MARK: - pull to refresh 메서드</span>
+  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refreshData</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">configureData</span><span class="p">()</span> <span class="c1">// 2,3 번 부분을 함수로 만들어 불러오기 </span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="5-페이징처리를-해주세요">5. 페이징처리를 해주세요.</h2>
+<ul>
+  <li>1차 제출때는 구현하지 못한 부분입니다.</li>
+</ul>
+
+<h3 id="tableviewdelegate에-willdisplay-함수-추가">TableViewDelegate에 willDisplay 함수 추가</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
+    <span class="c1">//특정 셀이 화면에 나타나기 전에 실행 (셀이 화면에 나타나기 전에 수행되어야 하는 작업이 필요할때)</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">willDisplay</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//셀의 마지막에 도착했을때 데이터 다시 로드</span>
+        <span class="k">if</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span> <span class="o">==</span> <span class="n">repositories</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
+            <span class="nf">loadMore</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="leadmore-함수-추가">leadMore 함수 추가</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 페이징 처리</span>
+<span class="kd">func</span> <span class="nf">loadMore</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">isLoadingLast</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"마지막 페이지까지 불러왔어요."</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="n">page</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
+        <span class="c1">// self에 대한 약한 참조를 만들어 strong reference cycle을 방지합니다.</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">// self가 nil이라면 함수를 종료합니다.</span>
+        
+        <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
+            
+            <span class="c1">//api 호출결과가 비어있으면 마지막으로 인식</span>
+            <span class="k">if</span> <span class="n">repositories</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">isLoadingLast</span> <span class="o">=</span> <span class="kc">true</span>   <span class="c1">//마지막 저장소 로딩</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+            
+            <span class="k">self</span><span class="o">.</span><span class="n">repositories</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">repositories</span> <span class="o">+</span> <span class="n">repositories</span>    <span class="c1">//기존 배열에 새로 불러온 데이터 추가하기</span>
+            <span class="c1">//UI 다시 그리기는 메인큐</span>
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="6-as-tableviewcell-대신-옵셔널-바인딩을-사용해주세요">6. as! TableViewCell 대신 옵셔널 바인딩을 사용해주세요.</h2>
+<h3 id="수정-전-3">수정 전</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"CellId"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">TableViewCell</span>
+    
+    <span class="c1">//깃허브에서 데이터를 불러오기도 전에 cellForRowAt이 실행되어 추가</span>
+    <span class="k">if</span> <span class="n">repoArr</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">cell</span><span class="o">.</span><span class="n">nameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">cell</span><span class="o">.</span><span class="n">descriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">description</span>
+        <span class="n">cell</span><span class="o">.</span><span class="n">languageLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">language</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="수정-후-3">수정 후</h3>
+<ul>
+  <li>guard let 사용
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+  <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"CellId"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">TableViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UITableViewCell</span><span class="p">()</span> <span class="p">}</span>
+    
+  <span class="k">let</span> <span class="nv">repositories</span> <span class="o">=</span> <span class="n">repositories</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
+  <span class="n">cell</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="n">repositories</span><span class="p">)</span>
+    
+  <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="실행화면">실행화면</h1>
+<p><img src="../../assets/images/categories/sparta/2024-04-21-챌린지반과제1-2.png" alt="실행화면" /></p>
+
+<p><br /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>구글에서 검색해서 구현한 이전 1차 제출보다 네트워크 작업 관련해서 한번 공부하고 다시 풀어보니 공부한 내용을 적용하면서 풀어볼 수 있었습니다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%EA%B3%BC%EC%A0%9C" class="page__taxonomy-item p-category" rel="tag">과제</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EA%B9%83%ED%97%88%EB%B8%8C%EC%95%B1" class="page__taxonomy-item p-category" rel="tag">깃허브앱</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%B1%8C%EB%A6%B0%EC%A7%80" class="page__taxonomy-item p-category" rel="tag">챌린지</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sparta" class="page__taxonomy-item p-category" rel="tag">sparta</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-04-21T00:00:00+09:00">April 21, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%82%B4%EB%B0%B0%EC%BA%A0%5D+%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98+%EA%B3%BC%EC%A0%9C+2%EC%B0%A8+%EC%A0%9C%EC%B6%9C+-+GitHub+App+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fsparta%2F%25EC%25B1%258C%25EB%25A6%25B0%25EC%25A7%2580%25EB%25B0%2598%25EA%25B3%25BC%25EC%25A0%259C1-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2F%25EC%25B1%258C%25EB%25A6%25B0%25EC%25A7%2580%25EB%25B0%2598%25EA%25B3%25BC%25EC%25A0%259C1-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2F%25EC%25B1%258C%25EB%25A6%25B0%25EC%25A7%2580%25EB%25B0%2598%25EA%25B3%25BC%25EC%25A0%259C1-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/sparta/wishList2/" class="pagination--pager" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/wishList2/" rel="permalink">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UIKit/UICollectionView/" rel="permalink">[UIKit] UICollectionView 예제 코드
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">UICollectionView 예제 코드
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til36/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL/til35/" rel="permalink">[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">내배캠 iOS앱 개발 공부 35일차 이야기 - 2024.04.16
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+<!-- 하단 광고 추가 -->
+<div style="text-align: center;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+      crossorigin="anonymous"></script>
+  <!-- 수평형 디스플레이 광고 -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8663638822726862"
+      data-ad-slot="5774789366"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
