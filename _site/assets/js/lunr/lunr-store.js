@@ -923,6 +923,12 @@ var store = [{
         "url": "/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/",
         "teaser": null
       },{
+        "title": "[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)",
+        "excerpt":"개인프로젝트     위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.   초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.   🔥 파이팅을 잊지 말것 ! 🔥            위시리스트 앱 만들기 1       위시리스트 앱 만들기 2       위시리스트 앱 만들기 3           챌린지반 과제     이번 주 네트워크 작업 관련해서 배우기도 전 알라모파이어를 사용 과제를 진행했는데 구글 검색으로 어찌저찌 만들었더니 좋은 방법은 아니라는 것을 알고 다시 수정했다.   챌린지반 사람들이 너무 잘해서 부지런히 따라가야하는 운명… 🏃🏻🏃🏻🏃🏻🏃🏻   다음주 목표     월요일부터 다시 팀 프로젝트를 진행하는데 지난번 프로젝트보다 잘 할 수 있을지 설렘반 기대반 …?  ","categories": ["TIL"],
+        "tags": ["TIL"],
+        "url": "/TIL/til38/",
+        "teaser": null
+      },{
     "title": "Hi, guys!!! 👋🏻👋🏻",
     "excerpt":"About     🧑🏻‍💻 iOS Developer   🌱 Swift   🌿 currently learning Storyboard, SwiftUI   ⚡ github blog: https://limlogging.github.io/  ","url": "http://localhost:4000/about/"
   },{
