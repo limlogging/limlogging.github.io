@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-24T12:49:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2</title><link href="http://localhost:4000/sparta/mega6box2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2" /><published>2024-04-23T00:00:00+09:00</published><updated>2024-04-23T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6box2</id><content type="html" xml:base="http://localhost:4000/sparta/mega6box2/"><![CDATA[<h1 id="영화-예약-앱-만들기-2">영화 예약 앱 만들기 2</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-25T01:30:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3</title><link href="http://localhost:4000/sparta/mega6box3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3" /><published>2024-04-24T00:00:00+09:00</published><updated>2024-04-24T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6box3</id><content type="html" xml:base="http://localhost:4000/sparta/mega6box3/"><![CDATA[<h1 id="영화-예약-앱-만들기-3">영화 예약 앱 만들기 3</h1>
+<ul>
+  <li>지난 이야기
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/mega6box1/" target="_blank">영화 예약 앱 만들기 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/mega6box2/" target="_blank">영화 예약 앱 만들기 2</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="역할-배분">역할 배분</h1>
+<ul>
+  <li>태담: 런치스크린, 회원가입/로그인</li>
+  <li>유진: 메인페이지, 마이페이지, 내 정보 관리</li>
+  <li>민희: 예매, 검색</li>
+  <li>형섭: 영화 세부정보, 감독/등장인물</li>
+</ul>
+
+<h1 id="영화-상세-페이지-구현-상황">영화 상세 페이지 구현 상황</h1>
+<ul>
+  <li>현재까지 구현한 내용입니다.</li>
+  <li>오토레이아웃을 잡아야하는데 하나라도 어긋나는 경우 배우 슬라이드 이미지가 사라져서 신경써서 수정이 필요합니다. ㅠ</li>
+  <li>배우 얼굴을 선택하면 필모그래피페이지로 넘어갑니다. 
+<img src="../../assets/images/categories/sparta/2024-04-24-mega6box9.png" alt="영화 상세 페이지" /></li>
+</ul>
+
+<h1 id="배우-필모그래피-페이지-구현-상황">배우 필모그래피 페이지 구현 상황</h1>
+<ul>
+  <li>여기 페이지는 코드로만 작성했다. 상세페이지보다는 그나마 수월하게 구현완료 
+<img src="../../assets/images/categories/sparta/2024-04-24-mega6box10.png" alt="배우 필모그래피 페이지" /></li>
+</ul>
+
+<h1 id="내일-할-일">내일 할 일</h1>
+<ul>
+  <li>오토레이아웃 수정 및 디테일 수정</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2</title><link href="http://localhost:4000/sparta/mega6box2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2" /><published>2024-04-23T00:00:00+09:00</published><updated>2024-04-23T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6box2</id><content type="html" xml:base="http://localhost:4000/sparta/mega6box2/"><![CDATA[<h1 id="영화-예약-앱-만들기-2">영화 예약 앱 만들기 2</h1>
 <ul>
   <li>지난 이야기
     <ul>
@@ -614,7 +649,34 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>구글에서 검색해서 구현한 이전 1차 제출보다 네트워크 작업 관련해서 한번 공부하고 다시 풀어보니 공부한 내용을 적용하면서 풀어볼 수 있었습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="챌린지" /><category term="과제" /><category term="깃허브앱" /><summary type="html"><![CDATA[챌린지반 과제 2차 제출 - GitHub App 만들기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3</title><link href="http://localhost:4000/sparta/wishList3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList3</id><content type="html" xml:base="http://localhost:4000/sparta/wishList3/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="챌린지" /><category term="과제" /><category term="깃허브앱" /><summary type="html"><![CDATA[챌린지반 과제 2차 제출 - GitHub App 만들기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
+<ul>
+  <li>위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.</li>
+  <li>초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.</li>
+  <li>🔥 파이팅을 잊지 말것 ! 🔥
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트 앱 만들기 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">위시리스트 앱 만들기 2</a></li>
+      <li><a href="https://limlogging.github.io/sparta/wishList3/" target="_blank">위시리스트 앱 만들기 3</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="챌린지반-과제">챌린지반 과제</h1>
+<ul>
+  <li>이번 주 네트워크 작업 관련해서 배우기도 전 알라모파이어를 사용 과제를 진행했는데 구글 검색으로 어찌저찌 만들었더니 좋은 방법은 아니라는 것을 알고 다시 수정했다.</li>
+  <li>챌린지반 사람들이 너무 잘해서 부지런히 따라가야하는 운명… 🏃🏻🏃🏻🏃🏻🏃🏻
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">깃허브 앱 만들기 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" target="_blank">깃허브 앱 만들기 2</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="다음주-목표">다음주 목표</h1>
+<ul>
+  <li>월요일부터 다시 팀 프로젝트를 진행하는데 지난번 프로젝트보다 잘 할 수 있을지 설렘반 기대반 …?</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 38일차 이야기 - 2024.04.19(금)]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3</title><link href="http://localhost:4000/sparta/wishList3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList3</id><content type="html" xml:base="http://localhost:4000/sparta/wishList3/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
 <ul>
   <li>지난 포스팅
     <ul>
@@ -769,34 +831,7 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>시간이 갈수록 잘하는 사람과의 격차가 벌어지는 것 같아 살짝 조급한 마음이 있었지만 신경쓰지 않고 하나씩 하나씩 해봐야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
-<ul>
-  <li>위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.</li>
-  <li>초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.</li>
-  <li>🔥 파이팅을 잊지 말것 ! 🔥
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트 앱 만들기 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">위시리스트 앱 만들기 2</a></li>
-      <li><a href="https://limlogging.github.io/sparta/wishList3/" target="_blank">위시리스트 앱 만들기 3</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="챌린지반-과제">챌린지반 과제</h1>
-<ul>
-  <li>이번 주 네트워크 작업 관련해서 배우기도 전 알라모파이어를 사용 과제를 진행했는데 구글 검색으로 어찌저찌 만들었더니 좋은 방법은 아니라는 것을 알고 다시 수정했다.</li>
-  <li>챌린지반 사람들이 너무 잘해서 부지런히 따라가야하는 운명… 🏃🏻🏃🏻🏃🏻🏃🏻
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">깃허브 앱 만들기 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" target="_blank">깃허브 앱 만들기 2</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="다음주-목표">다음주 목표</h1>
-<ul>
-  <li>월요일부터 다시 팀 프로젝트를 진행하는데 지난번 프로젝트보다 잘 할 수 있을지 설렘반 기대반 …?</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 38일차 이야기 - 2024.04.19(금)]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2</title><link href="http://localhost:4000/sparta/wishList2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2" /><published>2024-04-19T00:00:00+09:00</published><updated>2024-04-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList2</id><content type="html" xml:base="http://localhost:4000/sparta/wishList2/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2</title><link href="http://localhost:4000/sparta/wishList2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2" /><published>2024-04-19T00:00:00+09:00</published><updated>2024-04-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList2</id><content type="html" xml:base="http://localhost:4000/sparta/wishList2/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
 <ul>
   <li>지난 포스팅
     <ul>
@@ -963,22 +998,7 @@
 <ul>
   <li>선택 과제를 찾아서 하려고 했으나 기존에 데이터 가져오는 방식에 대해서 공부가 필요할 것 같아 기존 로직을 수정하였습니다.</li>
   <li>이번 과제를 통해서 URLSession, 동기, 비동기, 직렬, 동시성, GCD, 메인 큐, 글로벌 큐 등 다양한 키워드를 공부해볼 수 있었습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17</title><link href="http://localhost:4000/TIL/til36/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til36</id><content type="html" xml:base="http://localhost:4000/TIL/til36/"><![CDATA[<ul>
-  <li>민방위 사이버 훈련듣는다고 집중을 많이 못했다. 다음 영상보기를 계속 눌러줘야하기 때문…</li>
-</ul>
-
-<h3 id="개인-과제">개인 과제</h3>
-<ul>
-  <li>저번 팀 프로젝트간 컬렉션 뷰를 사용했지만 내가 직접 구현한 것은 아니라서 컬렉션 뷰 관련해서 공부했다.</li>
-  <li><a href="https://limlogging.github.io/UIKit/UICollectionView/" target="_blank">UICollectionView 예제코드</a></li>
-  <li>선택 과제는 우선 미뤄두고 필수과제에 대해서 다시 공부했다. 특히 동기, 비동기 정리해보고 포스팅 해봐야겠다.</li>
-  <li>갈수록 공부해야할 양이 많아지면서 초반만큼의 속도가 나지 않고 해야할 일들이 쌓이는 것 같다. 잘하는 사람을 보고 조급함도 생기는데 차근차근 공부해야겠다.</li>
-</ul>
-
-<h3 id="내일-목표">내일 목표</h3>
-<ul>
-  <li>개인 과제 수정 및 챌린지반 과제 수정하기</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17]]></summary></entry><entry><title type="html">[UIKit] UICollectionView 예제 코드</title><link href="http://localhost:4000/UIKit/UICollectionView/" rel="alternate" type="text/html" title="[UIKit] UICollectionView 예제 코드" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UICollectionViewDataSource</id><content type="html" xml:base="http://localhost:4000/UIKit/UICollectionView/"><![CDATA[<h1 id="uicollectionview란">UICollectionView란?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2]]></summary></entry><entry><title type="html">[UIKit] UICollectionView 예제 코드</title><link href="http://localhost:4000/UIKit/UICollectionView/" rel="alternate" type="text/html" title="[UIKit] UICollectionView 예제 코드" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UICollectionViewDataSource</id><content type="html" xml:base="http://localhost:4000/UIKit/UICollectionView/"><![CDATA[<h1 id="uicollectionview란">UICollectionView란?</h1>
 <ul>
   <li>UIKit에서 UICollectionView은 iOS 앱에서 사용자 인터페이스를 구성하는 데 사용되는 클래스입니다.</li>
   <li>이 클래스는 다양한 형식의 데이터 항목을 그리드나 리스트와 같은 다양한 레이아웃으로 표시할 수 있습니다.</li>
@@ -1187,31 +1207,19 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>collectionView는 tableview와 비슷하지만 UICollectionViewFlowLayout을 사용하여 레이아웃을 변경할 수 있습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UICollectionView" /><category term="UICollectionViewDataSource" /><category term="UICollectionViewFlowLayout" /><summary type="html"><![CDATA[UICollectionView 예제 코드]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16</title><link href="http://localhost:4000/TIL/til35/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 35일차 - 2024.04.16" /><published>2024-04-16T00:00:00+09:00</published><updated>2024-04-16T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til35</id><content type="html" xml:base="http://localhost:4000/TIL/til35/"><![CDATA[<h3 id="알고리즘">알고리즘</h3>
-<ul>
-  <li>토요일에 contains, replaceingOccurrences, allSatisfy를 사용해서 옹알이 문제를 풀었다.</li>
-  <li>월요일에 풀었던 문제가 11~16시간초과 문제로 통과하지 못했는데 어제 못풀던 문제를 오늘 풀어야하지만 과제가 급해서 과제를 진행했다.</li>
-  <li>풀이 보기
-    <ul>
-      <li><a href="https://limlogging.github.io/algorithm/%EC%98%B9%EC%95%8C%EC%9D%B4(2)/" target="_blank">옹알이(2)</a></li>
-    </ul>
-  </li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UICollectionView" /><category term="UICollectionViewDataSource" /><category term="UICollectionViewFlowLayout" /><summary type="html"><![CDATA[UICollectionView 예제 코드]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17</title><link href="http://localhost:4000/TIL/til36/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 36일차 - 2024.04.17" /><published>2024-04-17T00:00:00+09:00</published><updated>2024-04-17T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til36</id><content type="html" xml:base="http://localhost:4000/TIL/til36/"><![CDATA[<ul>
+  <li>민방위 사이버 훈련듣는다고 집중을 많이 못했다. 다음 영상보기를 계속 눌러줘야하기 때문…</li>
 </ul>
 
-<h3 id="챌린지반-과제">챌린지반 과제</h3>
+<h3 id="개인-과제">개인 과제</h3>
 <ul>
-  <li>피드백은 받았는데 개인 과제 시작도 못해서 개인과제를 시작했다.</li>
-</ul>
-
-<h3 id="개인과제---위시리스트-앱-만들기">개인과제 - 위시리스트 앱 만들기</h3>
-<ul>
-  <li><a href="https://limlogging.github.io/UIKit/URLSession/" target="_blank">URLSession이란?</a></li>
-  <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트앱만들기 1</a></li>
-  <li>레벨3단계까지 구현 완료, URLSession을 사용한 데이터 가져오기와 코어데이터 사용하기는 기본적인 프로세스를 익히고 외우는 수 밖에 없을 것같다.</li>
+  <li>저번 팀 프로젝트간 컬렉션 뷰를 사용했지만 내가 직접 구현한 것은 아니라서 컬렉션 뷰 관련해서 공부했다.</li>
+  <li><a href="https://limlogging.github.io/UIKit/UICollectionView/" target="_blank">UICollectionView 예제코드</a></li>
+  <li>선택 과제는 우선 미뤄두고 필수과제에 대해서 다시 공부했다. 특히 동기, 비동기 정리해보고 포스팅 해봐야겠다.</li>
+  <li>갈수록 공부해야할 양이 많아지면서 초반만큼의 속도가 나지 않고 해야할 일들이 쌓이는 것 같다. 잘하는 사람을 보고 조급함도 생기는데 차근차근 공부해야겠다.</li>
 </ul>
 
 <h3 id="내일-목표">내일 목표</h3>
 <ul>
-  <li>개인과제 4,5 단계 진행 및 챌린지 과제 마저 수정하기</li>
-  <li>시간 남으면 알고리즘, 깃 공부</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 35일차 이야기 - 2024.04.16]]></summary></entry></feed>
+  <li>개인 과제 수정 및 챌린지반 과제 수정하기</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 36일차 이야기 - 2024.04.17]]></summary></entry></feed>
