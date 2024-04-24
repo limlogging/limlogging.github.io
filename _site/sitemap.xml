@@ -4,6 +4,19 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/sparta/mega6box2/</loc>
+        
+        <lastmod>2024-04-23T00:00:00+09:00</lastmod>
+        
+        
+        <changefreq>weekly</changefreq>
+        
+        
+        <priority>0.5</priority>
+        
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/TIL/til39/</loc>
         
         <lastmod>2024-04-22T00:00:00+09:00</lastmod>
