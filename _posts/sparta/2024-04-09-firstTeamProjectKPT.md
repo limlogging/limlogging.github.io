@@ -1,5 +1,5 @@
 ---
-title: "[내배캠] iOS 앱 개발 입문 팀 프로젝트 만들기 / KPT 회고 "
+title: "[내배캠] iOS 앱 개발 입문 팀 프로젝트 키오스크 앱 만들기 / KPT 회고 "
 excerpt: "iOS 앱 개발 입문 팀 프로젝트 이후 KPT 회고 작성하기"
 categories: sparta
 tags: [KPT 회고]
@@ -9,8 +9,8 @@ toc: true           #On this page 보이기
 toc_sticky: true    #on this page 스크롤에 따라 움직이도록 
 comments: true      #댓글
 ---
-# 온보딩 프로젝트 KPT 회고 
-온보딩 프로젝트 발표가 끝났습니다. <br>
+# 앱 개발 입문 팀 프로젝트 KPT 회고 
+앱 개발 입문 프로젝트 발표가 끝났습니다. <br>
 팀원들과 프로젝트를 통해 느낀 "Keep (계속할 것)", "Problem (문제)", "Try (시도할 것)"의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다. 
 
 ## Keep
