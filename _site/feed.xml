@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-30T15:00:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-30T19:16:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
 <ul>
   <li>두 정수 X, Y의 임의의 자리에서 공통으로 나타나는 정수 k(0 ≤ k ≤ 9)들을 이용하여 만들 수 있는 가장 큰 정수를 두 수의 짝꿍이라 합니다(단, 공통으로 나타나는 정수 중 서로 짝지을 수 있는 숫자만 사용합니다). X, Y의 짝꿍이 존재하지 않으면, 짝꿍은 -1입니다. X, Y의 짝꿍이 0으로만 구성되어 있다면, 짝꿍은 0입니다.</li>
   <li>예를 들어, X = 3403이고 Y = 13203이라면, X와 Y의 짝꿍은 X와 Y에서 공통으로 나타나는 3, 0, 3으로 만들 수 있는 가장 큰 정수인 330입니다. 다른 예시로 X = 5525이고 Y = 1255이면 X와 Y의 짝꿍은 X와 Y에서 공통으로 나타나는 2, 5, 5로 만들 수 있는 가장 큰 정수인 552입니다(X에는 5가 3개, Y에는 5가 2개 나타나므로 남는 5 한 개는 짝 지을 수 없습니다.)</li>
@@ -135,7 +135,120 @@
 <h1 id="다른사람-풀이">다른사람 풀이</h1>
 <ul>
   <li>x의 최대 길이가 300만이라 공통되는 수 찾는 시간을 줄이는게 핵심인 것 같다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="swift" /><category term="coding test" /><category term="프로그래머스" /><category term="알고리즘" /><category term="숫자 짝꿍" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 짝꿍]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/mega6boxKPT/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고" /><published>2024-04-29T00:00:00+09:00</published><updated>2024-04-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6boxKPT</id><content type="html" xml:base="http://localhost:4000/sparta/mega6boxKPT/"><![CDATA[<h1 id="앱-개발-숙련-팀-프로젝트-kpt-회고">앱 개발 숙련 팀 프로젝트 KPT 회고</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="swift" /><category term="coding test" /><category term="프로그래머스" /><category term="알고리즘" /><category term="숫자 짝꿍" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 짝꿍]]></summary></entry><entry><title type="html">[UIKit] MVC(Model, View, Controller) 패턴이란?</title><link href="http://localhost:4000/UIKit/MVC/" rel="alternate" type="text/html" title="[UIKit] MVC(Model, View, Controller) 패턴이란?" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/MVC</id><content type="html" xml:base="http://localhost:4000/UIKit/MVC/"><![CDATA[<h1 id="mvc-패턴이란">MVC 패턴이란?</h1>
+<ul>
+  <li>MVC 패턴은 모델(Model), 뷰(View), 컨트롤러(Controller)의 약자</li>
+  <li>소프트웨어 아키텍처 디자인 패턴 중 하나입니다. 이 패턴은 앱 또는 소프트웨어를 구성하는 세 가지 주요 구성 요소를 분리하여 각각의 역할을 할당합니다.</li>
+</ul>
+
+<h2 id="모델model">모델(Model)</h2>
+<ul>
+  <li>앱의 데이터와 비즈니스 로직을 담당합니다. (로직보다는 데이터 모델의 비중이 높은듯)</li>
+  <li>데이터의 상태를 관리하고 조작합니다.</li>
+  <li>주로 데이터 구조, 데이터베이스 연결, API 통신 등을 처리합니다.</li>
+  <li>영화에 출연한 배우 정보가 담기는 데이터 모델</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">PersonResults</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">results</span><span class="p">:</span> <span class="p">[</span><span class="kt">Person</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">profilePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">knownFor</span><span class="p">:</span> <span class="p">[</span><span class="kt">KnownFor</span><span class="p">]</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">id</span>
+        <span class="k">case</span> <span class="n">name</span>
+        <span class="k">case</span> <span class="n">profilePath</span> <span class="o">=</span> <span class="s">"profile_path"</span>
+        <span class="k">case</span> <span class="n">knownFor</span> <span class="o">=</span> <span class="s">"known_for"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">KnownFor</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">backdropPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">originalTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">overview</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">posterPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">releaseDate</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">backdropPath</span> <span class="o">=</span> <span class="s">"backdrop_path"</span>
+        <span class="k">case</span> <span class="n">id</span>
+        <span class="k">case</span> <span class="n">originalTitle</span> <span class="o">=</span> <span class="s">"original_title"</span>
+        <span class="k">case</span> <span class="n">overview</span>
+        <span class="k">case</span> <span class="n">title</span>
+        <span class="k">case</span> <span class="n">posterPath</span> <span class="o">=</span> <span class="s">"poster_path"</span>
+        <span class="k">case</span> <span class="n">name</span>
+        <span class="k">case</span> <span class="n">releaseDate</span> <span class="o">=</span> <span class="s">"release_date"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="뷰view">뷰(View)</h2>
+<ul>
+  <li>사용자에게 데이터를 시각적으로 표시합니다. (모델이 가지고 있는 데이터를 뷰/화면에 표시)</li>
+  <li>사용자 인터페이스의 구성 요소를 표시하고 사용자 입력을 받습니다.</li>
+  <li>주로 UI 코드와 관련된 로직을 처리합니다.
+<img src="../../assets/images/categories/uikit/2024-04-30-MVC.png" alt="뷰" /></li>
+</ul>
+
+<h2 id="컨트롤러controller">컨트롤러(Controller)</h2>
+<ul>
+  <li>컨트롤러는 모델과 뷰 간의 상호 작용을 관리
+    <ul>
+      <li>사용자 입력을 받아 모델에 전달하고, 모델로부터 데이터를 가져와 뷰에 전달합니다.</li>
+    </ul>
+  </li>
+  <li>비즈니스 로직과 사용자 인터페이스 간의 통신을 조율합니다.</li>
+</ul>
+
+<h1 id="mvc-모델-장단점">MVC 모델 장단점</h1>
+<h2 id="장점">장점</h2>
+<ul>
+  <li>소프트웨어를 세 가지 주요 부분으로 분할하여 구조화하기 때문에 개발자들에게 직관적이고 이해하기 쉬운 구조를 제공합니다.</li>
+  <li>모델(Model), 뷰(View), 컨트롤러(Controller)로 구분하여 각 부분이 서로 독립적으로 작동하면서 전체적인 애플리케이션 로직을 구성합니다.</li>
+</ul>
+
+<h2 id="단점">단점</h2>
+<ul>
+  <li>컨트롤러가 매우 비대해지는 경향이 있습니다.</li>
+  <li>이는 하나의 뷰 컨트롤러에 많은 역할과 책임이 집중되어 복잡성을 증가시키고 유지보수를 어렵게 만듭니다.</li>
+  <li>테스트 코드를 작성하기가 힘듭니다.</li>
+  <li>뷰 컨트롤러안에 레이블, 버튼도 넣고, 모델도 선언하고 … (코드로 UI작성 시)
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// MARK: - 배우 정보 확인</span>
+<span class="kd">class</span> <span class="kt">ProfileViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>  
+  <span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="kt">Person</span><span class="p">?</span>         <span class="c1">//TMDB받아온 데이터를 담을 구조체 타입 변수</span>
+    
+  <span class="c1">// MARK: - 프로필 사진과 이름이 담기는 뷰</span>
+  <span class="k">var</span> <span class="nv">profileView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+      <span class="n">view</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="k">return</span> <span class="n">view</span>
+  <span class="p">}()</span>
+    
+  <span class="c1">// MARK: - 배우 프로필 사진</span>
+  <span class="k">var</span> <span class="nv">profileImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mi">75</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="k">return</span> <span class="n">imageView</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>각자의 역할과 책임을 나누기위해서 MVC 패턴 사용한다. (단순하게 코드 나누기)</li>
+  <li>뷰와 뷰 컨트롤러가 하나로 합쳐지는 경우가 많지만 그래도 MVC 패턴이다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="MVC" /><category term="MVC 패턴" /><summary type="html"><![CDATA[MVC 패턴이란?]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/mega6boxKPT/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고" /><published>2024-04-29T00:00:00+09:00</published><updated>2024-04-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6boxKPT</id><content type="html" xml:base="http://localhost:4000/sparta/mega6boxKPT/"><![CDATA[<h1 id="앱-개발-숙련-팀-프로젝트-kpt-회고">앱 개발 숙련 팀 프로젝트 KPT 회고</h1>
 <p>앱 개발 숙련 팀 프로젝트 발표가 끝났습니다. <br />
 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
 
@@ -492,411 +605,7 @@
 <ul>
   <li>오늘 10시 30분 부터 프로젝트 주제 정하기, 피그마로 디자인 그리기, API 찾아보기, 역할분담으로 시간을 다 써버렸습니다.</li>
   <li>내일은 깃허브에 프로젝트를 올리고 본격적으로 프로젝트를 시작해보겠습니다 ! 🔥🔥🔥</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1]]></summary></entry><entry><title type="html">[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기</title><link href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" rel="alternate" type="text/html" title="[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2</id><content type="html" xml:base="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/"><![CDATA[<h1 id="깃허브-앱-만들기-개선해보기">깃허브 앱 만들기 개선해보기</h1>
-<ul>
-  <li>이번 주차에 네트워크 작업과 관련해서 배웠습니다. 나중에 보니 구글 검색으로 알라모파이어로 어거지로 불러와서 구현은 됐는데 구조체에 Struct를 사용하지 않고 옛날 방식으로 데이터를 불러왔다는 것을 알았습니다.</li>
-  <li>배운 내용을 바탕으로 다시 개선해 보았습니다.</li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="1차-제출-보기">1차 제출 보기</h1>
-<ul>
-  <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">1차 제출 바로가기</a></li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="튜터님-피드백">튜터님 피드백</h1>
-<ol>
-  <li>Model에 있는 struct 2개에 Decodable을 적용해주세요.</li>
-  <li>API에서 받아온 데이터를 Decoding 하여 객체로 만들어주세요.</li>
-  <li>(responseJSON 대신 responseData 같은거를 사용하시면 됩니다)</li>
-  <li>Pull to refresh는 모든 데이터를 다시 받아와서 테이블뷰를 그려주세요.</li>
-  <li>페이징처리를 해주세요.</li>
-  <li>as! TableViewCell 대신 옵셔널 바인딩을 사용해주세요.</li>
-</ol>
-
-<h2 id="1-model에-있는-struct-2개에-decodable을-적용해주세요">1. Model에 있는 struct 2개에 Decodable을 적용해주세요.</h2>
-<h3 id="수정-전">수정 전</h3>
-<h4 id="githubprofile">GithubProfile</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="c1">// GitHub 프로필 정보를 저장할 구조체</span>
-<span class="kd">struct</span> <span class="kt">GithubProfile</span> <span class="p">{</span>
-    <span class="c1">//var myImage: UIImage?</span>
-    <span class="k">var</span> <span class="nv">myImage</span><span class="p">:</span> <span class="kt">URL</span>        <span class="c1">//프로필 사진</span>
-    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>        <span class="c1">//이름</span>
-    <span class="k">var</span> <span class="nv">login</span><span class="p">:</span> <span class="kt">String</span>       <span class="c1">//깃허브 ID</span>
-    <span class="k">var</span> <span class="nv">followers</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로워</span>
-    <span class="k">var</span> <span class="nv">following</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로잉</span>
-    <span class="k">var</span> <span class="nv">repoCnt</span><span class="p">:</span> <span class="kt">Int</span>        <span class="c1">//리포지토리 개수 </span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h4 id="githubrepositories">GithubRepositories</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="c1">// 리포지토리 정보를 저장할 구조체</span>
-<span class="kd">struct</span> <span class="kt">GithubRepositories</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>            <span class="c1">//리포지토리 이름</span>
-    <span class="k">var</span> <span class="nv">htmlUrl</span><span class="p">:</span> <span class="kt">String</span>         <span class="c1">//리포지토리 주소</span>
-    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>     <span class="c1">//리포지토리 설명</span>
-    <span class="k">var</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">String</span>        <span class="c1">//언어 </span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="수정-후">수정 후</h3>
-<ul>
-  <li>Decodable을 추가하였습니다.</li>
-</ul>
-
-<h4 id="githubprofile-1">GithubProfile</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="c1">// GitHub 프로필 정보를 저장할 구조체</span>
-<span class="kd">struct</span> <span class="kt">GithubProfile</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">login</span><span class="p">:</span> <span class="kt">String</span>       <span class="c1">//깃허브 ID</span>
-    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>           <span class="c1">//이름</span>
-    <span class="k">var</span> <span class="nv">bio</span><span class="p">:</span> <span class="kt">String</span>         <span class="c1">//bio</span>
-    <span class="k">var</span> <span class="nv">avatarUrl</span><span class="p">:</span> <span class="kt">URL</span>      <span class="c1">//프로필 사진</span>
-    <span class="k">var</span> <span class="nv">followers</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로워</span>
-    <span class="k">var</span> <span class="nv">following</span><span class="p">:</span> <span class="kt">Int</span>      <span class="c1">//팔로잉</span>
-    
-    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="n">login</span>
-        <span class="k">case</span> <span class="n">name</span>
-        <span class="k">case</span> <span class="n">bio</span>
-        <span class="k">case</span> <span class="n">followers</span>
-        <span class="k">case</span> <span class="n">following</span>
-        <span class="k">case</span> <span class="n">avatarUrl</span> <span class="o">=</span> <span class="s">"avatar_url"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h4 id="githubrepositories-1">GithubRepositories</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="c1">// 리포지토리 정보를 저장할 구조체</span>
-<span class="kd">struct</span> <span class="kt">GithubRepositories</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>             <span class="c1">//리포지토리 이름</span>
-    <span class="k">var</span> <span class="nv">language</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>        <span class="c1">//언어</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="2-3번-api에서-받아온-데이터를-decoding-하여-객체로-만들어주세요--responsedata-사용">2, 3번 API에서 받아온 데이터를 Decoding 하여 객체로 만들어주세요. / responseData 사용</h2>
-<h3 id="수정-전-1">수정 전</h3>
-<h4 id="깃허브에서-프로필-정보-가져오기">깃허브에서 프로필 정보 가져오기</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브에서 프로필 정보 가져오기</span>
-<span class="kd">func</span> <span class="nf">getGithubProfile</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">profileUrl</span><span class="p">)</span><span class="o">.</span><span class="n">responseJSON</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
-        <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
-        <span class="k">case</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">json</span> <span class="o">=</span> <span class="n">value</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span>
-                <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">login</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"login"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">followers</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"followers"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">following</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"following"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">repoCnt</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"public_repos"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">Int</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">avatarURLString</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"avatar_url"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
-                <span class="k">let</span> <span class="nv">avatarURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">avatarURLString</span><span class="p">)</span> <span class="p">{</span>
-                
-                <span class="k">let</span> <span class="nv">profile</span> <span class="o">=</span> <span class="kt">GithubProfile</span><span class="p">(</span><span class="nv">myImage</span><span class="p">:</span> <span class="n">avatarURL</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">login</span><span class="p">:</span> <span class="n">login</span><span class="p">,</span> <span class="nv">followers</span><span class="p">:</span> <span class="n">followers</span><span class="p">,</span> <span class="nv">following</span><span class="p">:</span> <span class="n">following</span><span class="p">,</span> <span class="nv">repoCnt</span><span class="p">:</span> <span class="n">repoCnt</span><span class="p">)</span>
-                
-                <span class="k">self</span><span class="o">.</span><span class="nf">showProfileInfo</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>                    
-            <span class="p">}</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-            <span class="nf">print</span><span class="p">(</span><span class="s">"error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// 구조체에서 데이터를 가져와 label 및 imageView에 보여주는 함수</span>
-<span class="kd">func</span> <span class="nf">showProfileInfo</span><span class="p">(</span><span class="n">_</span> <span class="nv">profile</span><span class="p">:</span> <span class="kt">GithubProfile</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">//SDWebImage를 사용하여 프로필 이미지 다운로드 및 출력</span>
-    <span class="n">profileImageView</span><span class="o">.</span><span class="nf">sd_setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">profile</span><span class="o">.</span><span class="n">myImage</span><span class="p">,</span> <span class="nv">placeholderImage</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">completed</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-    
-    <span class="n">profileName</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span>     <span class="c1">// 이름 출력</span>
-    <span class="n">profileLogin</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">login</span>   <span class="c1">// 로그인 출력</span>
-    <span class="n">profileFollowers</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Followers: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">followers</span><span class="p">)</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//followers</span>
-    <span class="n">profileFollowing</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Following: </span><span class="se">\(</span><span class="kt">String</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">following</span><span class="p">)</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//following</span>
-    
-    <span class="k">self</span><span class="o">.</span><span class="n">repoCnt</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">repoCnt</span>
-    <span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>  <span class="c1">//최초 실행하면 numberOfRowsInSection를 먼저 실행하고 깃허브 데이터를 받아와서 row 수가 0임, row수를 깃허브 repo수 만큼 보이도록 새로고침 추가</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h4 id="깃허브에서-리포지토리-정보-가져오기">깃허브에서 리포지토리 정보 가져오기</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브에서 리포지토리 정보 가져오기</span>
-<span class="kd">func</span> <span class="nf">getGithubRepositories</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">repositoriesUrl</span><span class="p">)</span><span class="o">.</span><span class="n">responseJSON</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
-        <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
-        <span class="k">case</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">value</span><span class="p">):</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">repositories</span> <span class="o">=</span> <span class="n">value</span> <span class="k">as?</span> <span class="p">[[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]]</span> <span class="p">{</span>
-                <span class="k">for</span> <span class="n">repo</span> <span class="k">in</span> <span class="n">repositories</span> <span class="p">{</span>
-                    <span class="k">if</span> <span class="k">let</span> <span class="nv">name</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span><span class="p">,</span>
-                        <span class="k">let</span> <span class="nv">htmlUrl</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"html_url"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">{</span>
-                            <span class="c1">//description, language는 없거나 Null 값이 있어서 닐 코얼레싱 추가</span>
-                            <span class="k">let</span> <span class="nv">description</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"description"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">??</span> <span class="s">""</span>
-                            <span class="k">let</span> <span class="nv">language</span> <span class="o">=</span> <span class="n">repo</span><span class="p">[</span><span class="s">"language"</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="p">??</span> <span class="s">""</span>
-                            
-                            <span class="c1">//배열에 저장</span>
-                            <span class="k">self</span><span class="o">.</span><span class="n">repoArr</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">GithubRepositories</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">htmlUrl</span><span class="p">:</span> <span class="n">htmlUrl</span><span class="p">,</span> <span class="nv">description</span><span class="p">:</span> <span class="n">description</span><span class="p">,</span> <span class="nv">language</span><span class="p">:</span> <span class="n">language</span><span class="p">))</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-            <span class="nf">print</span><span class="p">(</span><span class="s">"에러: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="수정-후-1">수정 후</h3>
-<h4 id="네트워크-작업을-전담할-파일-생성">네트워크 작업을 전담할 파일 생성</h4>
-<ul>
-  <li>NetworkManager.swift 생성</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="kd">import</span> <span class="kt">Alamofire</span>
-
-<span class="kd">final</span> <span class="kd">class</span> <span class="kt">NetworkManager</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="s">"https://api.github.com/users/"</span>
-    
-    <span class="c1">// MARK: - URLSession으로 깃허브 프로필 가져오기</span>
-    <span class="kd">func</span> <span class="nf">fetchUserProfile</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">GithubProfile</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//1. url 구조체 생성</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">url</span><span class="se">)\(</span><span class="n">userName</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="kt">NSError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"url 변환에 실패했어요."</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="mi">401</span><span class="p">)))</span>
-            <span class="k">return</span>
-        <span class="p">}</span>
-        
-        <span class="c1">//2. request 설정</span>
-        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
-        <span class="n">request</span><span class="o">.</span><span class="n">httpMethod</span> <span class="o">=</span> <span class="s">"GET"</span>
-        
-        <span class="c1">//3. 작업 만들기</span>
-        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
-                <span class="k">return</span>
-            <span class="p">}</span>
-            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="kt">NSError</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"Data가 없습니다."</span><span class="p">,</span> <span class="nv">code</span><span class="p">:</span> <span class="mi">402</span><span class="p">)))</span>
-                <span class="k">return</span>
-            <span class="p">}</span>
-            <span class="k">do</span> <span class="p">{</span>
-                <span class="k">let</span> <span class="nv">profile</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">GithubProfile</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
-                <span class="c1">//콜백함수로 데이터 전달</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">profile</span><span class="p">))</span>
-            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="c1">//4. 작업시작</span>
-        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// MARK: - 알라모파이어로 리포지토리 정보 가져오기</span>
-    <span class="kd">func</span> <span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">GithubRepositories</span><span class="p">],</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="k">self</span><span class="o">.</span><span class="n">url</span><span class="se">)\(</span><span class="n">userName</span><span class="se">)</span><span class="s">/repos?page=</span><span class="se">\(</span><span class="n">page</span><span class="se">)</span><span class="s">"</span>
-        
-        <span class="kt">AF</span><span class="o">.</span><span class="nf">request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="nf">responseDecodable</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="p">[</span><span class="kt">GithubRepositories</span><span class="p">]</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
-            <span class="k">switch</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
-            <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">repositories</span><span class="p">))</span>
-            <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h4 id="깃허브에서-프로필-및-리포지토리-정보-가져오기">깃허브에서 프로필 및 리포지토리 정보 가져오기</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 깃허브 프로필 가져오기, 강한 순환 참조를 피하기 위해서 [weak self] 사용</span>
-<span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserProfile</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">githubProfile</span><span class="p">):</span>
-        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="n">githubProfile</span>
-        
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileName</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">name</span>                             <span class="c1">//이름</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileLogin</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">login</span>                           <span class="c1">//ID</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileBio</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">bio</span>                               <span class="c1">//BIO</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileFollowers</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"followers: </span><span class="se">\(</span><span class="n">githubProfile</span><span class="o">.</span><span class="n">followers</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//follwers</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileFollowing</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"following: </span><span class="se">\(</span><span class="n">githubProfile</span><span class="o">.</span><span class="n">following</span><span class="se">)</span><span class="s">"</span>   <span class="c1">//follwing</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">profileImageView</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">githubProfile</span><span class="o">.</span><span class="n">avatarUrl</span><span class="p">)</span>       <span class="c1">//프로필사진</span>
-            
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">setNeedsDisplay</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// MARK: - 깃허브 리포지토리 가져오기, 강한 순환 참조를 피하기 위해서 [weak self] 사용</span>
-<span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">page</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
-        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositories</span> <span class="o">=</span> <span class="n">repositories</span>
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span> <span class="c1">//새로고침 끝내기</span>
-            <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-        <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="4-pull-to-refresh는-모든-데이터를-다시-받아와서-테이블뷰를-그려주세요">4. Pull to refresh는 모든 데이터를 다시 받아와서 테이블뷰를 그려주세요.</h2>
-<h3 id="수정-전-2">수정 전</h3>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - viewDidLoad()</span>
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-
-        <span class="c1">// 다른 코드 생략 </span>
-
-        <span class="c1">//Pull to refresh 추가</span>
-        <span class="nf">tableViewRefresh</span><span class="p">()</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// MARK: - Pull to refresh 컨트롤 추가</span>
-    <span class="kd">func</span> <span class="nf">tableViewRefresh</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
-        <span class="n">refreshControl</span><span class="o">.</span><span class="n">attributedTitle</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"새로고침"</span><span class="p">)</span>
-        <span class="n">refreshControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refreshData</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
-        <span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="n">refreshControl</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// MARK: - pull to refresh 메서드</span>
-    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refreshData</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">asyncAfter</span><span class="p">(</span><span class="nv">deadline</span><span class="p">:</span> <span class="o">.</span><span class="nf">now</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// 테이블 뷰 리로드</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
-            <span class="c1">// UIRefreshControl 종료</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="수정-후-2">수정 후</h3>
-<ul>
-  <li>기존 테이블 뷰 리로드에서 네트워크를 통해 새로 받아오도록 수정
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MARK: - 테이블뷰 설정</span>
-  <span class="kd">func</span> <span class="nf">configureTableView</span><span class="p">()</span> <span class="p">{</span>
-      <span class="c1">//다른 코드 생략 </span>
-
-      <span class="k">let</span> <span class="nv">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
-      <span class="n">refreshControl</span><span class="o">.</span><span class="n">attributedTitle</span> <span class="o">=</span> <span class="kt">NSAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"새로고침"</span><span class="p">)</span>
-      <span class="n">refreshControl</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refreshData</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
-      <span class="n">repositoriesTableView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="n">refreshControl</span>
-  <span class="p">}</span>
-    
-  <span class="c1">// MARK: - pull to refresh 메서드</span>
-  <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refreshData</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nf">configureData</span><span class="p">()</span> <span class="c1">// 2,3 번 부분을 함수로 만들어 불러오기 </span>
-  <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="5-페이징처리를-해주세요">5. 페이징처리를 해주세요.</h2>
-<ul>
-  <li>1차 제출때는 구현하지 못한 부분입니다.</li>
-</ul>
-
-<h3 id="tableviewdelegate에-willdisplay-함수-추가">TableViewDelegate에 willDisplay 함수 추가</h3>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
-    <span class="c1">//특정 셀이 화면에 나타나기 전에 실행 (셀이 화면에 나타나기 전에 수행되어야 하는 작업이 필요할때)</span>
-    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">willDisplay</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">//셀의 마지막에 도착했을때 데이터 다시 로드</span>
-        <span class="k">if</span> <span class="n">indexPath</span><span class="o">.</span><span class="n">row</span> <span class="o">==</span> <span class="n">repositories</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">{</span>
-            <span class="nf">loadMore</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="leadmore-함수-추가">leadMore 함수 추가</h3>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 페이징 처리</span>
-<span class="kd">func</span> <span class="nf">loadMore</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">isLoadingLast</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">"마지막 페이지까지 불러왔어요."</span><span class="p">)</span>
-        <span class="k">return</span>
-    <span class="p">}</span>
-    <span class="n">page</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">networkManager</span><span class="o">.</span><span class="nf">fetchUserRepositories</span><span class="p">(</span><span class="nv">userName</span><span class="p">:</span> <span class="n">userName</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="n">page</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
-        <span class="c1">// self에 대한 약한 참조를 만들어 strong reference cycle을 방지합니다.</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">self</span> <span class="o">=</span> <span class="k">self</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span> <span class="c1">// self가 nil이라면 함수를 종료합니다.</span>
-        
-        <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">repositories</span><span class="p">):</span>
-            
-            <span class="c1">//api 호출결과가 비어있으면 마지막으로 인식</span>
-            <span class="k">if</span> <span class="n">repositories</span><span class="o">.</span><span class="n">isEmpty</span> <span class="o">==</span> <span class="kc">true</span> <span class="p">{</span>
-                <span class="k">self</span><span class="o">.</span><span class="n">isLoadingLast</span> <span class="o">=</span> <span class="kc">true</span>   <span class="c1">//마지막 저장소 로딩</span>
-                <span class="k">return</span>
-            <span class="p">}</span>
-            
-            <span class="k">self</span><span class="o">.</span><span class="n">repositories</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">repositories</span> <span class="o">+</span> <span class="n">repositories</span>    <span class="c1">//기존 배열에 새로 불러온 데이터 추가하기</span>
-            <span class="c1">//UI 다시 그리기는 메인큐</span>
-            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-                <span class="k">self</span><span class="o">.</span><span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
-            <span class="p">}</span>
-        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
-            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="6-as-tableviewcell-대신-옵셔널-바인딩을-사용해주세요">6. as! TableViewCell 대신 옵셔널 바인딩을 사용해주세요.</h2>
-<h3 id="수정-전-3">수정 전</h3>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"CellId"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">TableViewCell</span>
-    
-    <span class="c1">//깃허브에서 데이터를 불러오기도 전에 cellForRowAt이 실행되어 추가</span>
-    <span class="k">if</span> <span class="n">repoArr</span><span class="o">.</span><span class="n">count</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="n">cell</span><span class="o">.</span><span class="n">nameLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
-        <span class="n">cell</span><span class="o">.</span><span class="n">descriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">description</span>
-        <span class="n">cell</span><span class="o">.</span><span class="n">languageLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">repoArr</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">language</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="n">repositoriesTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">cell</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h3 id="수정-후-3">수정 후</h3>
-<ul>
-  <li>guard let 사용
-    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
-  <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"CellId"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">TableViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UITableViewCell</span><span class="p">()</span> <span class="p">}</span>
-    
-  <span class="k">let</span> <span class="nv">repositories</span> <span class="o">=</span> <span class="n">repositories</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
-  <span class="n">cell</span><span class="o">.</span><span class="nf">bind</span><span class="p">(</span><span class="n">repositories</span><span class="p">)</span>
-    
-  <span class="k">return</span> <span class="n">cell</span>
-<span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h1 id="실행화면">실행화면</h1>
-<p><img src="../../assets/images/categories/sparta/2024-04-21-챌린지반과제1-2.png" alt="실행화면" /></p>
-
-<p><br /></p>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>구글에서 검색해서 구현한 이전 1차 제출보다 네트워크 작업 관련해서 한번 공부하고 다시 풀어보니 공부한 내용을 적용하면서 풀어볼 수 있었습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="챌린지" /><category term="과제" /><category term="깃허브앱" /><summary type="html"><![CDATA[챌린지반 과제 2차 제출 - GitHub App 만들기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
 <ul>
   <li>위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.</li>
   <li>초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.</li>

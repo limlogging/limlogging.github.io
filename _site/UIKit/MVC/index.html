@@ -1,0 +1,962 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[UIKit] MVC(Model, View, Controller) 패턴이란? - limlogging Devlog</title>
+<meta name="description" content="MVC 패턴이란?">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[UIKit] MVC(Model, View, Controller) 패턴이란?">
+<meta property="og:url" content="http://localhost:4000/UIKit/MVC/">
+
+
+  <meta property="og:description" content="MVC 패턴이란?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-04-30T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UIKit/MVC/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+
+<!-- 구글 애널리틱스 추가 Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B9ZRRL1X26');
+</script>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>🧑🏻‍💻 개발 블로그입니다. 😎</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(33)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(2)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(10)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(30)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(63)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(17)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[UIKit] MVC(Model, View, Controller) 패턴이란?">
+    <meta itemprop="description" content="MVC 패턴이란?">
+    <meta itemprop="datePublished" content="2024-04-30T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/UIKit/MVC/" class="u-url" itemprop="url">[UIKit] MVC(Model, View, Controller) 패턴이란?
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/UIKit/MVC/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/UIKit/MVC/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        <!-- 사이드 광고 추가 -->
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              
+                <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
+                <ul class="toc__menu"><li><a href="#mvc-패턴이란">MVC 패턴이란?</a><ul><li><a href="#모델model">모델(Model)</a></li><li><a href="#뷰view">뷰(View)</a></li><li><a href="#컨트롤러controller">컨트롤러(Controller)</a></li></ul></li><li><a href="#mvc-모델-장단점">MVC 모델 장단점</a><ul><li><a href="#장점">장점</a></li><li><a href="#단점">단점</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+
+              
+            </nav>
+            <!-- 사이드 광고 추가 -->
+            <nav class="toc-custom">
+              
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+     crossorigin="anonymous"></script>
+<!-- 수직형 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8663638822726862"
+     data-ad-slot="8971782438"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              
+            </nav>
+            <!-- 광고 추가 끝 -->
+          </aside>
+        
+        <h1 id="mvc-패턴이란">MVC 패턴이란?</h1>
+<ul>
+  <li>MVC 패턴은 모델(Model), 뷰(View), 컨트롤러(Controller)의 약자</li>
+  <li>소프트웨어 아키텍처 디자인 패턴 중 하나입니다. 이 패턴은 앱 또는 소프트웨어를 구성하는 세 가지 주요 구성 요소를 분리하여 각각의 역할을 할당합니다.</li>
+</ul>
+
+<h2 id="모델model">모델(Model)</h2>
+<ul>
+  <li>앱의 데이터와 비즈니스 로직을 담당합니다. (로직보다는 데이터 모델의 비중이 높은듯)</li>
+  <li>데이터의 상태를 관리하고 조작합니다.</li>
+  <li>주로 데이터 구조, 데이터베이스 연결, API 통신 등을 처리합니다.</li>
+  <li>영화에 출연한 배우 정보가 담기는 데이터 모델</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">PersonResults</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">results</span><span class="p">:</span> <span class="p">[</span><span class="kt">Person</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Person</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">profilePath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">knownFor</span><span class="p">:</span> <span class="p">[</span><span class="kt">KnownFor</span><span class="p">]</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">id</span>
+        <span class="k">case</span> <span class="n">name</span>
+        <span class="k">case</span> <span class="n">profilePath</span> <span class="o">=</span> <span class="s">"profile_path"</span>
+        <span class="k">case</span> <span class="n">knownFor</span> <span class="o">=</span> <span class="s">"known_for"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">KnownFor</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">backdropPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">let</span> <span class="nv">originalTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">overview</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">posterPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">releaseDate</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">backdropPath</span> <span class="o">=</span> <span class="s">"backdrop_path"</span>
+        <span class="k">case</span> <span class="n">id</span>
+        <span class="k">case</span> <span class="n">originalTitle</span> <span class="o">=</span> <span class="s">"original_title"</span>
+        <span class="k">case</span> <span class="n">overview</span>
+        <span class="k">case</span> <span class="n">title</span>
+        <span class="k">case</span> <span class="n">posterPath</span> <span class="o">=</span> <span class="s">"poster_path"</span>
+        <span class="k">case</span> <span class="n">name</span>
+        <span class="k">case</span> <span class="n">releaseDate</span> <span class="o">=</span> <span class="s">"release_date"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="뷰view">뷰(View)</h2>
+<ul>
+  <li>사용자에게 데이터를 시각적으로 표시합니다. (모델이 가지고 있는 데이터를 뷰/화면에 표시)</li>
+  <li>사용자 인터페이스의 구성 요소를 표시하고 사용자 입력을 받습니다.</li>
+  <li>주로 UI 코드와 관련된 로직을 처리합니다.
+<img src="../../assets/images/categories/uikit/2024-04-30-MVC.png" alt="뷰" /></li>
+</ul>
+
+<h2 id="컨트롤러controller">컨트롤러(Controller)</h2>
+<ul>
+  <li>컨트롤러는 모델과 뷰 간의 상호 작용을 관리
+    <ul>
+      <li>사용자 입력을 받아 모델에 전달하고, 모델로부터 데이터를 가져와 뷰에 전달합니다.</li>
+    </ul>
+  </li>
+  <li>비즈니스 로직과 사용자 인터페이스 간의 통신을 조율합니다.</li>
+</ul>
+
+<h1 id="mvc-모델-장단점">MVC 모델 장단점</h1>
+<h2 id="장점">장점</h2>
+<ul>
+  <li>소프트웨어를 세 가지 주요 부분으로 분할하여 구조화하기 때문에 개발자들에게 직관적이고 이해하기 쉬운 구조를 제공합니다.</li>
+  <li>모델(Model), 뷰(View), 컨트롤러(Controller)로 구분하여 각 부분이 서로 독립적으로 작동하면서 전체적인 애플리케이션 로직을 구성합니다.</li>
+</ul>
+
+<h2 id="단점">단점</h2>
+<ul>
+  <li>컨트롤러가 매우 비대해지는 경향이 있습니다.</li>
+  <li>이는 하나의 뷰 컨트롤러에 많은 역할과 책임이 집중되어 복잡성을 증가시키고 유지보수를 어렵게 만듭니다.</li>
+  <li>테스트 코드를 작성하기가 힘듭니다.</li>
+  <li>뷰 컨트롤러안에 레이블, 버튼도 넣고, 모델도 선언하고 … (코드로 UI작성 시)
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// MARK: - 배우 정보 확인</span>
+<span class="kd">class</span> <span class="kt">ProfileViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>  
+  <span class="k">var</span> <span class="nv">person</span><span class="p">:</span> <span class="kt">Person</span><span class="p">?</span>         <span class="c1">//TMDB받아온 데이터를 담을 구조체 타입 변수</span>
+    
+  <span class="c1">// MARK: - 프로필 사진과 이름이 담기는 뷰</span>
+  <span class="k">var</span> <span class="nv">profileView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+      <span class="n">view</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="k">return</span> <span class="n">view</span>
+  <span class="p">}()</span>
+    
+  <span class="c1">// MARK: - 배우 프로필 사진</span>
+  <span class="k">var</span> <span class="nv">profileImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mi">75</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="n">imageView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="k">return</span> <span class="n">imageView</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>각자의 역할과 책임을 나누기위해서 MVC 패턴 사용한다. (단순하게 코드 나누기)</li>
+  <li>뷰와 뷰 컨트롤러가 하나로 합쳐지는 경우가 많지만 그래도 MVC 패턴이다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+    
+      <a href="/tags/#mvc" class="page__taxonomy-item p-category" rel="tag">MVC</a><span class="sep">, </span>
+    
+      <a href="/tags/#mvc-%ED%8C%A8%ED%84%B4" class="page__taxonomy-item p-category" rel="tag">MVC 패턴</a><span class="sep">, </span>
+    
+      <a href="/tags/#swift" class="page__taxonomy-item p-category" rel="tag">swift</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-04-30T00:00:00+09:00">April 30, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BUIKit%5D+MVC%28Model%2C+View%2C+Controller%29+%ED%8C%A8%ED%84%B4%EC%9D%B4%EB%9E%80%3F%20http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FMVC%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FMVC%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUIKit%2FMVC%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/" class="pagination--pager" title="[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/" rel="permalink">[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">[프로그래머스/Swift] 숫자 짝꿍
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/mega6boxKPT/" rel="permalink">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 숙련 팀 프로젝트 이후 KPT 회고 작성하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/mega6box4/" rel="permalink">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 4 끝
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 4 끝
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/mega6box3/" rel="permalink">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+<!-- 하단 광고 추가 -->
+<div style="text-align: center;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+      crossorigin="anonymous"></script>
+  <!-- 수평형 디스플레이 광고 -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8663638822726862"
+      data-ad-slot="5774789366"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
