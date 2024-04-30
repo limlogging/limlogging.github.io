@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-30T01:08:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/mega6boxKPT/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고" /><published>2024-04-29T00:00:00+09:00</published><updated>2024-04-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6boxKPT</id><content type="html" xml:base="http://localhost:4000/sparta/mega6boxKPT/"><![CDATA[<h1 id="앱-개발-숙련-팀-프로젝트-kpt-회고">앱 개발 숙련 팀 프로젝트 KPT 회고</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-30T15:00:03+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️</title><link href="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/" rel="alternate" type="text/html" title="[프로그래머스/Swift] ⭐️숫자 짝꿍⭐️" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D</id><content type="html" xml:base="http://localhost:4000/algorithm/%EC%88%AB%EC%9E%90%EC%A7%9D%EA%BF%8D/"><![CDATA[<h1 id="문제-설명">문제 설명</h1>
+<ul>
+  <li>두 정수 X, Y의 임의의 자리에서 공통으로 나타나는 정수 k(0 ≤ k ≤ 9)들을 이용하여 만들 수 있는 가장 큰 정수를 두 수의 짝꿍이라 합니다(단, 공통으로 나타나는 정수 중 서로 짝지을 수 있는 숫자만 사용합니다). X, Y의 짝꿍이 존재하지 않으면, 짝꿍은 -1입니다. X, Y의 짝꿍이 0으로만 구성되어 있다면, 짝꿍은 0입니다.</li>
+  <li>예를 들어, X = 3403이고 Y = 13203이라면, X와 Y의 짝꿍은 X와 Y에서 공통으로 나타나는 3, 0, 3으로 만들 수 있는 가장 큰 정수인 330입니다. 다른 예시로 X = 5525이고 Y = 1255이면 X와 Y의 짝꿍은 X와 Y에서 공통으로 나타나는 2, 5, 5로 만들 수 있는 가장 큰 정수인 552입니다(X에는 5가 3개, Y에는 5가 2개 나타나므로 남는 5 한 개는 짝 지을 수 없습니다.)</li>
+  <li>두 정수 X, Y가 주어졌을 때, X, Y의 짝꿍을 return하는 solution 함수를 완성해주세요.</li>
+  <li><a href="https://school.programmers.co.kr/learn/courses/30/lessons/131128" target="_blank">문제 풀기</a></li>
+</ul>
+
+<h1 id="제한사항">제한사항</h1>
+<ul>
+  <li>3 ≤ X, Y의 길이(자릿수) ≤ 3,000,000입니다.</li>
+  <li>X, Y는 0으로 시작하지 않습니다.</li>
+  <li>X, Y의 짝꿍은 상당히 큰 정수일 수 있으므로, 문자열로 반환합니다.</li>
+</ul>
+
+<h1 id="입출력-예">입출력 예</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">X</th>
+      <th style="text-align: center">Y</th>
+      <th style="text-align: center">result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">“100”</td>
+      <td style="text-align: center">“2345”</td>
+      <td style="text-align: center">“-1”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">“100”</td>
+      <td style="text-align: center">“203045”</td>
+      <td style="text-align: center">“0”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">“100”</td>
+      <td style="text-align: center">“123450”</td>
+      <td style="text-align: center">“10”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">“12321”</td>
+      <td style="text-align: center">“42531”</td>
+      <td style="text-align: center">“321”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">“5525”</td>
+      <td style="text-align: center">“1255”</td>
+      <td style="text-align: center">“552”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<h3 id="입출력-예-1">입출력 예 #1</h3>
+<ul>
+  <li>X, Y의 짝꿍은 존재하지 않습니다. 따라서 “-1”을 return합니다.</li>
+</ul>
+
+<h3 id="입출력-예-2">입출력 예 #2</h3>
+<ul>
+  <li>X, Y의 공통된 숫자는 0으로만 구성되어 있기 때문에, 두 수의 짝꿍은 정수 0입니다. 따라서 “0”을 return합니다.</li>
+</ul>
+
+<h3 id="입출력-예-3">입출력 예 #3</h3>
+<ul>
+  <li>X, Y의 짝꿍은 10이므로, “10”을 return합니다.</li>
+</ul>
+
+<h3 id="입출력-예-4">입출력 예 #4</h3>
+<ul>
+  <li>X, Y의 짝꿍은 321입니다. 따라서 “321”을 return합니다.</li>
+</ul>
+
+<h3 id="입출력-예-5">입출력 예 #5</h3>
+<ul>
+  <li>지문에 설명된 예시와 같습니다.</li>
+</ul>
+
+<h1 id="나의-풀이-시간-초과-실패-코드">나의 풀이 (시간 초과 실패 코드)</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="kt">X</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="kt">Y</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">arrX</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">arrY</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="p">}</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">arrX</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">arrY</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">arrX</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">arrY</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
+                <span class="n">result</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">arrY</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+                <span class="n">arrY</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">j</span><span class="p">)</span>  <span class="c1">//중복된 수는 지우기</span>
+                <span class="k">break</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+        
+    <span class="c1">//중복된 수</span>
+    <span class="k">if</span> <span class="kt">Set</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"-1"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="kt">Set</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span> <span class="o">==</span> <span class="s">"0"</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"0"</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">sorted</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">&gt;</span> <span class="nv">$1</span> <span class="p">}</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="다른-사람-풀이">다른 사람 풀이</h1>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">func</span> <span class="nf">solution</span><span class="p">(</span><span class="n">_</span> <span class="kt">X</span><span class="p">:</span><span class="kt">String</span><span class="p">,</span> <span class="n">_</span> <span class="kt">Y</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">result</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="mi">10</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">xCount</span> <span class="o">=</span> <span class="kt">X</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="o">==</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+        <span class="k">let</span> <span class="nv">yCount</span> <span class="o">=</span> <span class="kt">Y</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span> <span class="o">==</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="kt">Array</span><span class="p">(</span><span class="nv">repeating</span><span class="p">:</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nv">count</span><span class="p">:</span> <span class="nf">min</span><span class="p">(</span><span class="n">xCount</span><span class="p">,</span> <span class="n">yCount</span><span class="p">))</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">isEmpty</span> <span class="p">?</span> <span class="s">"-1"</span> <span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">filter</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="s">"0"</span> <span class="p">}</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="n">result</span><span class="o">.</span><span class="n">count</span> <span class="p">?</span> <span class="s">"0"</span> <span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="nf">sorted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span><span class="o">.</span><span class="nf">joined</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="나의-풀이방법">나의 풀이방법</h1>
+<ul>
+  <li>11 ~ 15번 시간 초과문제로 다른사람 코드를 이용하여 풀었습니다.</li>
+  <li>반복문 부분만 다른 사람풀이로 했더니 여전히 문제가 발생하여 return도 삼항연산자를 사용해야 통과할 수 있습니다.</li>
+  <li>난이도가 올라갈 수록 시간초과 문제가 많이 발생하고 있다. 다양한 접근 방법을 생각해내야할듯!!!!</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="다른사람-풀이">다른사람 풀이</h1>
+<ul>
+  <li>x의 최대 길이가 300만이라 공통되는 수 찾는 시간을 줄이는게 핵심인 것 같다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="Algorithm" /><category term="Algorithm" /><category term="swift" /><category term="coding test" /><category term="프로그래머스" /><category term="알고리즘" /><category term="숫자 짝꿍" /><summary type="html"><![CDATA[[프로그래머스/Swift] 숫자 짝꿍]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/mega6boxKPT/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고" /><published>2024-04-29T00:00:00+09:00</published><updated>2024-04-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6boxKPT</id><content type="html" xml:base="http://localhost:4000/sparta/mega6boxKPT/"><![CDATA[<h1 id="앱-개발-숙련-팀-프로젝트-kpt-회고">앱 개발 숙련 팀 프로젝트 KPT 회고</h1>
 <p>앱 개발 숙련 팀 프로젝트 발표가 끝났습니다. <br />
 팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
 
@@ -355,189 +492,7 @@
 <ul>
   <li>오늘 10시 30분 부터 프로젝트 주제 정하기, 피그마로 디자인 그리기, API 찾아보기, 역할분담으로 시간을 다 써버렸습니다.</li>
   <li>내일은 깃허브에 프로젝트를 올리고 본격적으로 프로젝트를 시작해보겠습니다 ! 🔥🔥🔥</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3</title><link href="http://localhost:4000/sparta/wishList3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList3</id><content type="html" xml:base="http://localhost:4000/sparta/wishList3/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
-<ul>
-  <li>지난 포스팅
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">WishList 앱 만들기 - 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">WishList 앱 만들기 - 2</a></li>
-    </ul>
-  </li>
-</ul>
-
-<p><br /></p>
-
-<h1 id="과제-제출-후-피드백">과제 제출 후 피드백</h1>
-<ul>
-  <li>과제 제출 이후에 피드백을 받아 수정하였습니다.
-    <ol>
-      <li>가격이 1000달러가 넘어가면 1,000 이런식으로 표현해주시면 좋을거 같아요.</li>
-      <li>Product에서 Codable를 채택하고 있는데 Encode 하는 코드가 없으니 Decodable을 채택하는것도 좋을거 같아요.</li>
-      <li>코드를 보았을 때 엄청 잘 작성해주셔서 Lv5까지 도전해보시는것도 좋을거 같아요!</li>
-    </ol>
-  </li>
-</ul>
-
-<h1 id="1-가격이-1000달러가-넘어가면-1000-이런식으로-표현해주시면-좋을거-같아요">1. 가격이 1000달러가 넘어가면 1,000 이런식으로 표현해주시면 좋을거 같아요.</h1>
-<ul>
-  <li>formatter를 사용해서 자리수 표시를하고 임의로 환율을 정하여 원화도 보여주도록 했습니다.</li>
-</ul>
-
-<h2 id="viewcontroller">ViewController</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
-<span class="n">formatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
-<span class="k">let</span> <span class="nv">dollarPriceText</span> <span class="o">=</span> <span class="s">"$ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">wonPriceText</span> <span class="o">=</span> <span class="s">"￦ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mi">1400</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-
-<span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">dollarPriceText</span><span class="se">)</span><span class="s"> (</span><span class="se">\(</span><span class="n">wonPriceText</span><span class="se">)</span><span class="s">)"</span>
-</code></pre></div></div>
-
-<h2 id="wishlistviewcontroller">WishListViewController</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">productPrice</span> <span class="o">=</span> <span class="kt">Double</span><span class="p">(</span><span class="n">productList</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">price</span> <span class="p">??</span> <span class="s">"0.0"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
-    <span class="n">formatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
-    <span class="k">let</span> <span class="nv">dollarPriceText</span> <span class="o">=</span> <span class="s">"$ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">productPrice</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">wonPriceText</span> <span class="o">=</span> <span class="s">"￦ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">productPrice</span> <span class="o">*</span> <span class="mi">1400</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
-    <span class="n">cell</span><span class="p">?</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">dollarPriceText</span><span class="se">)</span><span class="s"> (</span><span class="se">\(</span><span class="n">wonPriceText</span><span class="se">)</span><span class="s">)"</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="2-product에서-codable를-채택하고-있는데-encode-하는-코드가-없으니-decodable을-채택하는것도-좋을거-같아요">2. Product에서 Codable를 채택하고 있는데 Encode 하는 코드가 없으니 Decodable을 채택하는것도 좋을거 같아요.</h1>
-<h2 id="수정-전">수정 전</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">struct</span> <span class="kt">Product</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
-    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">discountPercentage</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">stock</span><span class="p">:</span> <span class="kt">Int</span>
-    <span class="k">var</span> <span class="nv">brand</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">category</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h2 id="수정-후">수정 후</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
-
-<span class="kd">struct</span> <span class="kt">Product</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
-    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">discountPercentage</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="kt">Double</span>
-    <span class="k">var</span> <span class="nv">stock</span><span class="p">:</span> <span class="kt">Int</span>
-    <span class="k">var</span> <span class="nv">brand</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">category</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">String</span>
-    <span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h1 id="3-코드를-보았을-때-엄청-잘-작성해주셔서-lv5까지-도전해보시는것도-좋을거-같아요">3. 코드를 보았을 때 엄청 잘 작성해주셔서 Lv5까지 도전해보시는것도 좋을거 같아요!</h1>
-<ul>
-  <li>좋은 말씀을 해 주셔서 5단계까지 도전했습니다.</li>
-</ul>
-
-<h2 id="레벨4-위시리스트-보기에서-테이블뷰-스와이프해서-row-삭제하기">레벨4. 위시리스트 보기에서 테이블뷰 스와이프해서 row 삭제하기</h2>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 삭제 기능</span>
-<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="p">?</span><span class="o">.</span><span class="n">viewContext</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-        
-        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">MyWishList</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">products</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-        
-        <span class="c1">// 선택한 특정 인덱스의 객체를 가져옴</span>
-        <span class="k">let</span> <span class="nv">productToDelete</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
-        
-        <span class="n">context</span><span class="o">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">productToDelete</span><span class="p">)</span>
-        
-        <span class="c1">// 변경 사항 저장</span>
-        <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
-        
-        <span class="c1">//CoreData에서 데이터 가져오기</span>
-        <span class="nf">getCoreData</span><span class="p">()</span>
-        <span class="c1">//테이블뷰리로드</span>
-        <span class="n">wishListTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<h2 id="레벨5-메인화면에서-화면을-아래로-내리면-새로고침-창이-뜨면서-다른상품으로-변경하기">레벨5. 메인화면에서 화면을 아래로 내리면 새로고침 창이 뜨면서 다른상품으로 변경하기</h2>
-<h3 id="이미지-뷰-위에-스크롤-뷰-추가하기">이미지 뷰 위에 스크롤 뷰 추가하기</h3>
-
-<p><img src="../../assets/images/categories/sparta/2024-04-21-wishList6.png" alt="스크롤 뷰 추가" /></p>
-
-<h3 id="uirefreshcontrol-추가하기">UIRefreshControl 추가하기</h3>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 위시리스트 보기</span>
-<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-    
-    <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
-    <span class="p">})</span>
-    
-    <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refresh</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">//새로고침 추가 </span>
-<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">getData</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>시간이 갈수록 잘하는 사람과의 격차가 벌어지는 것 같아 살짝 조급한 마음이 있었지만 신경쓰지 않고 하나씩 하나씩 해봐야겠다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
-<ul>
-  <li>위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.</li>
-  <li>초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.</li>
-  <li>🔥 파이팅을 잊지 말것 ! 🔥
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트 앱 만들기 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">위시리스트 앱 만들기 2</a></li>
-      <li><a href="https://limlogging.github.io/sparta/wishList3/" target="_blank">위시리스트 앱 만들기 3</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="챌린지반-과제">챌린지반 과제</h1>
-<ul>
-  <li>이번 주 네트워크 작업 관련해서 배우기도 전 알라모파이어를 사용 과제를 진행했는데 구글 검색으로 어찌저찌 만들었더니 좋은 방법은 아니라는 것을 알고 다시 수정했다.</li>
-  <li>챌린지반 사람들이 너무 잘해서 부지런히 따라가야하는 운명… 🏃🏻🏃🏻🏃🏻🏃🏻
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">깃허브 앱 만들기 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" target="_blank">깃허브 앱 만들기 2</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="다음주-목표">다음주 목표</h1>
-<ul>
-  <li>월요일부터 다시 팀 프로젝트를 진행하는데 지난번 프로젝트보다 잘 할 수 있을지 설렘반 기대반 …?</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 38일차 이야기 - 2024.04.19(금)]]></summary></entry><entry><title type="html">[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기</title><link href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" rel="alternate" type="text/html" title="[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2</id><content type="html" xml:base="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/"><![CDATA[<h1 id="깃허브-앱-만들기-개선해보기">깃허브 앱 만들기 개선해보기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1]]></summary></entry><entry><title type="html">[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기</title><link href="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" rel="alternate" type="text/html" title="[내배캠] 챌린지반 과제 2차 제출 - GitHub App 만들기" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2</id><content type="html" xml:base="http://localhost:4000/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/"><![CDATA[<h1 id="깃허브-앱-만들기-개선해보기">깃허브 앱 만들기 개선해보기</h1>
 <ul>
   <li>이번 주차에 네트워크 작업과 관련해서 배웠습니다. 나중에 보니 구글 검색으로 알라모파이어로 어거지로 불러와서 구현은 됐는데 구조체에 Struct를 사용하지 않고 옛날 방식으로 데이터를 불러왔다는 것을 알았습니다.</li>
   <li>배운 내용을 바탕으로 다시 개선해 보았습니다.</li>
@@ -941,171 +896,186 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>구글에서 검색해서 구현한 이전 1차 제출보다 네트워크 작업 관련해서 한번 공부하고 다시 풀어보니 공부한 내용을 적용하면서 풀어볼 수 있었습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="챌린지" /><category term="과제" /><category term="깃허브앱" /><summary type="html"><![CDATA[챌린지반 과제 2차 제출 - GitHub App 만들기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2</title><link href="http://localhost:4000/sparta/wishList2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2" /><published>2024-04-19T00:00:00+09:00</published><updated>2024-04-19T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList2</id><content type="html" xml:base="http://localhost:4000/sparta/wishList2/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="챌린지" /><category term="과제" /><category term="깃허브앱" /><summary type="html"><![CDATA[챌린지반 과제 2차 제출 - GitHub App 만들기]]></summary></entry><entry><title type="html">[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)</title><link href="http://localhost:4000/TIL/til38/" rel="alternate" type="text/html" title="[TIL] 내배캠 iOS앱 개발 공부 38일차 - 2024.04.19(금)" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/TIL/til38</id><content type="html" xml:base="http://localhost:4000/TIL/til38/"><![CDATA[<h1 id="개인프로젝트">개인프로젝트</h1>
+<ul>
+  <li>위시리스트 만들기 개인 프로젝트를 진행하면서 네트워크 작업에 대해서 공부할 수 있었습니다.</li>
+  <li>초반에는 다들 비슷비슷 했으나 시간이 갈수록 잘하는 사람과의 차이가 벌어지는 것 같아 조금의 조급함이 생겼지만 그래도 하나씩 하나씩 해봐야겠다.</li>
+  <li>🔥 파이팅을 잊지 말것 ! 🔥
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">위시리스트 앱 만들기 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">위시리스트 앱 만들기 2</a></li>
+      <li><a href="https://limlogging.github.io/sparta/wishList3/" target="_blank">위시리스트 앱 만들기 3</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="챌린지반-과제">챌린지반 과제</h1>
+<ul>
+  <li>이번 주 네트워크 작업 관련해서 배우기도 전 알라모파이어를 사용 과제를 진행했는데 구글 검색으로 어찌저찌 만들었더니 좋은 방법은 아니라는 것을 알고 다시 수정했다.</li>
+  <li>챌린지반 사람들이 너무 잘해서 부지런히 따라가야하는 운명… 🏃🏻🏃🏻🏃🏻🏃🏻
+    <ul>
+      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-1/" target="_blank">깃허브 앱 만들기 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/%EC%B1%8C%EB%A6%B0%EC%A7%80%EB%B0%98%EA%B3%BC%EC%A0%9C1-2/" target="_blank">깃허브 앱 만들기 2</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="다음주-목표">다음주 목표</h1>
+<ul>
+  <li>월요일부터 다시 팀 프로젝트를 진행하는데 지난번 프로젝트보다 잘 할 수 있을지 설렘반 기대반 …?</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="TIL" /><category term="TIL" /><summary type="html"><![CDATA[내배캠 iOS앱 개발 공부 38일차 이야기 - 2024.04.19(금)]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3</title><link href="http://localhost:4000/sparta/wishList3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3" /><published>2024-04-21T00:00:00+09:00</published><updated>2024-04-21T00:00:00+09:00</updated><id>http://localhost:4000/sparta/wishList3</id><content type="html" xml:base="http://localhost:4000/sparta/wishList3/"><![CDATA[<h1 id="wishlist-앱-만들기">WishList 앱 만들기</h1>
 <ul>
   <li>지난 포스팅
     <ul>
       <li><a href="https://limlogging.github.io/sparta/wishList1/" target="_blank">WishList 앱 만들기 - 1</a></li>
+      <li><a href="https://limlogging.github.io/sparta/wishList2/" target="_blank">WishList 앱 만들기 - 2</a></li>
     </ul>
   </li>
-  <li>지난번 4,5번 선택 구현 과제가 있지만 네트워크 관련 복습이 더 중요하다고 생각하여 복습하면서 네트워크 작업 로직을 수정하였습니다. 
-<br /></li>
 </ul>
 
-<h1 id="네트워크-작업-수정">네트워크 작업 수정</h1>
-<h2 id="1-data-가져오기">1. Data 가져오기</h2>
+<p><br /></p>
+
+<h1 id="과제-제출-후-피드백">과제 제출 후 피드백</h1>
 <ul>
-  <li>속성감시자를 제거하고 getData 부분을 수정하였습니다.</li>
+  <li>과제 제출 이후에 피드백을 받아 수정하였습니다.
+    <ol>
+      <li>가격이 1000달러가 넘어가면 1,000 이런식으로 표현해주시면 좋을거 같아요.</li>
+      <li>Product에서 Codable를 채택하고 있는데 Encode 하는 코드가 없으니 Decodable을 채택하는것도 좋을거 같아요.</li>
+      <li>코드를 보았을 때 엄청 잘 작성해주셔서 Lv5까지 도전해보시는것도 좋을거 같아요!</li>
+    </ol>
+  </li>
 </ul>
 
-<h3 id="속성감시자-설정-삭제">속성감시자 설정 삭제</h3>
+<h1 id="1-가격이-1000달러가-넘어가면-1000-이런식으로-표현해주시면-좋을거-같아요">1. 가격이 1000달러가 넘어가면 1,000 이런식으로 표현해주시면 좋을거 같아요.</h1>
 <ul>
-  <li>지난번에 추가했던 아래 코드는 모두 삭제했습니다.</li>
+  <li>formatter를 사용해서 자리수 표시를하고 임의로 환율을 정하여 원화도 보여주도록 했습니다.</li>
 </ul>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">currentProduct</span><span class="p">:</span> <span class="kt">ProductsManager</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="k">didSet</span> <span class="p">{</span>
-        <span class="c1">//currentProduct가 nil이 아닌지 확인하고 종료하기 </span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">currentProduct</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-        
-        <span class="c1">//메인 스레드에서 UI 업데이트를 수행</span>
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kc">nil</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">title</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">productDescriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">description</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">currentProduct</span><span class="o">.</span><span class="n">price</span><span class="se">)</span><span class="s">$"</span>
-        <span class="p">}</span>
-        
-        <span class="c1">// 백그라운드 스레드에서 제품의 섬네일 이미지를 비동기적으로 가져오기 </span>
-        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">()</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
-            <span class="c1">// 제품의 섬네일 이미지 데이터를 가져와 UIImage로 변환</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">currentProduct</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">),</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// 가져온 이미지를 메인 스레드에서 productImageView에 설정하여 이미지 출력 </span>
-                <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span> <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<h2 id="viewcontroller">ViewController</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+<span class="n">formatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+<span class="k">let</span> <span class="nv">dollarPriceText</span> <span class="o">=</span> <span class="s">"$ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">wonPriceText</span> <span class="o">=</span> <span class="s">"￦ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mi">1400</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+
+<span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">dollarPriceText</span><span class="se">)</span><span class="s"> (</span><span class="se">\(</span><span class="n">wonPriceText</span><span class="se">)</span><span class="s">)"</span>
+</code></pre></div></div>
+
+<h2 id="wishlistviewcontroller">WishListViewController</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">productPrice</span> <span class="o">=</span> <span class="kt">Double</span><span class="p">(</span><span class="n">productList</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">price</span> <span class="p">??</span> <span class="s">"0.0"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+    <span class="n">formatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+    <span class="k">let</span> <span class="nv">dollarPriceText</span> <span class="o">=</span> <span class="s">"$ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">productPrice</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">wonPriceText</span> <span class="o">=</span> <span class="s">"￦ "</span> <span class="o">+</span> <span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">productPrice</span> <span class="o">*</span> <span class="mi">1400</span> <span class="k">as</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="p">??</span> <span class="s">""</span><span class="p">)</span>
+    <span class="n">cell</span><span class="p">?</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">dollarPriceText</span><span class="se">)</span><span class="s"> (</span><span class="se">\(</span><span class="n">wonPriceText</span><span class="se">)</span><span class="s">)"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="getdata-수정">getData() 수정</h3>
-<h4 id="수정-전">수정 전</h4>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">getData</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">productID</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">100</span><span class="p">)</span>
+<h1 id="2-product에서-codable를-채택하고-있는데-encode-하는-코드가-없으니-decodable을-채택하는것도-좋을거-같아요">2. Product에서 Codable를 채택하고 있는데 Encode 하는 코드가 없으니 Decodable을 채택하는것도 좋을거 같아요.</h1>
+<h2 id="수정-전">수정 전</h2>
 
-    <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://dummyjson.com/products/</span><span class="se">\(</span><span class="n">productID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">"url: </span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-        <span class="c1">//URLSessionDataTask를 사용하여 비동기적으로 데이터 요청</span>
-        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-            <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
-                <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="p">{</span>
-                <span class="k">do</span> <span class="p">{</span>
-                    <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">ProductsManager</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
-                    <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>   <span class="c1">//데이터 설정 </span>
-                <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="s">"Decode Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">struct</span> <span class="kt">Product</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">discountPercentage</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">stock</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">brand</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">category</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="수정-후">수정 후</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">struct</span> <span class="kt">Product</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">discountPercentage</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">rating</span><span class="p">:</span> <span class="kt">Double</span>
+    <span class="k">var</span> <span class="nv">stock</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">brand</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">category</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h1 id="3-코드를-보았을-때-엄청-잘-작성해주셔서-lv5까지-도전해보시는것도-좋을거-같아요">3. 코드를 보았을 때 엄청 잘 작성해주셔서 Lv5까지 도전해보시는것도 좋을거 같아요!</h1>
+<ul>
+  <li>좋은 말씀을 해 주셔서 5단계까지 도전했습니다.</li>
+</ul>
+
+<h2 id="레벨4-위시리스트-보기에서-테이블뷰-스와이프해서-row-삭제하기">레벨4. 위시리스트 보기에서 테이블뷰 스와이프해서 row 삭제하기</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 삭제 기능</span>
+<span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">commit</span> <span class="nv">editingStyle</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="o">.</span><span class="kt">EditingStyle</span><span class="p">,</span> <span class="n">forRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">editingStyle</span> <span class="o">==</span> <span class="o">.</span><span class="n">delete</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">persistentContainer</span><span class="p">?</span><span class="o">.</span><span class="n">viewContext</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">MyWishList</span><span class="o">.</span><span class="nf">fetchRequest</span><span class="p">()</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">products</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">// 선택한 특정 인덱스의 객체를 가져옴</span>
+        <span class="k">let</span> <span class="nv">productToDelete</span> <span class="o">=</span> <span class="n">products</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span>
+        
+        <span class="n">context</span><span class="o">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">productToDelete</span><span class="p">)</span>
+        
+        <span class="c1">// 변경 사항 저장</span>
+        <span class="k">try</span><span class="p">?</span> <span class="n">context</span><span class="o">.</span><span class="nf">save</span><span class="p">()</span>
+        
+        <span class="c1">//CoreData에서 데이터 가져오기</span>
+        <span class="nf">getCoreData</span><span class="p">()</span>
+        <span class="c1">//테이블뷰리로드</span>
+        <span class="n">wishListTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p><br /></p>
 
-<h4 id="수정-후">수정 후</h4>
-<ul>
-  <li>화면을 다시그리는 작업을 할때 디스패치 큐에 전달해야하는 것을 공부하여 코드를 수정하였습니다.</li>
-  <li>didSet이 아닌 콜백 함수를 사용하면 데이터를 저장할 수 있어 콜백함수를 사용했습니다.</li>
-</ul>
+<h2 id="레벨5-메인화면에서-화면을-아래로-내리면-새로고침-창이-뜨면서-다른상품으로-변경하기">레벨5. 메인화면에서 화면을 아래로 내리면 새로고침 창이 뜨면서 다른상품으로 변경하기</h2>
+<h3 id="이미지-뷰-위에-스크롤-뷰-추가하기">이미지 뷰 위에 스크롤 뷰 추가하기</h3>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//비동기적으로 실행되는 urlsession이 끝나면 데이터를 저장하기 위한 콜백함수 사용</span>
-    <span class="kd">func</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Product</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">productID</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="nf">random</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">1</span><span class="o">...</span><span class="mi">100</span><span class="p">)</span>
-        
-        <span class="c1">//1. url 구조체 만들어주기</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://dummyjson.com/products/</span><span class="se">\(</span><span class="n">productID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nf">print</span><span class="p">(</span><span class="s">"URL 주소를 불러오는데 실패했습니다."</span><span class="p">)</span>
-            <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
-            <span class="k">return</span>
-        <span class="p">}</span>
-        <span class="nf">print</span><span class="p">(</span><span class="s">"url: </span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-        
-        <span class="c1">//2. session 만들기</span>
-        <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span>
-        
-        <span class="c1">//3. 비동기적으로 데이터 요청 테스크 생성</span>
-        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-            <span class="k">guard</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">!</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
-                <span class="k">return</span>
-            <span class="p">}</span>
-            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
-                <span class="k">return</span>
-            <span class="p">}</span>
-            <span class="k">do</span> <span class="p">{</span>
-                <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Product</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
-                <span class="nf">completionHandler</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
-                
-                <span class="k">if</span> <span class="k">let</span> <span class="nv">thumbnailURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">product</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">),</span>
-                   <span class="k">let</span> <span class="nv">imageData</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">thumbnailURL</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="c1">//화면을 다시그릴때는 메인큐에서 작업 </span>
-                    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
-                        <span class="k">self</span><span class="o">.</span><span class="n">productPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">product</span><span class="o">.</span><span class="n">price</span><span class="p">)</span>
-                        <span class="k">self</span><span class="o">.</span><span class="n">productTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">title</span>
-                        <span class="k">self</span><span class="o">.</span><span class="n">productDescriptionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="n">description</span>
-                        <span class="k">self</span><span class="o">.</span><span class="n">productImageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">imageData</span><span class="p">)</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-                <span class="nf">print</span><span class="p">(</span><span class="s">"Decode Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="c1">//4. 작업 시작</span>
-        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
-    <span class="p">}</span>
-</code></pre></div></div>
+<p><img src="../../assets/images/categories/sparta/2024-04-21-wishList6.png" alt="스크롤 뷰 추가" /></p>
 
-<p><br /></p>
-
-<h2 id="2-getdata-사용하기">2. getData 사용하기</h2>
-<ul>
-  <li>콜백함수를 통하여 currentProduct에 데이터를 저장하고 위시리스트 담기 버튼을 선택하면 currentProduct에 저장된 데이터로 코어데이터에 저장을 합니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">var</span> <span class="nv">currentProduct</span><span class="p">:</span> <span class="kt">Product</span><span class="p">?</span>    <span class="c1">//현재 상품이 저장되는 변수</span>
-
-    <span class="c1">// MARK: - 위시리스트 보기</span>
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-        
-        <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
+<h3 id="uirefreshcontrol-추가하기">UIRefreshControl 추가하기</h3>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 위시리스트 보기</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
     
-    <span class="c1">// MARK: - 다른 상품 보기 버튼 선택</span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">otherProductButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
-            <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">getData</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
+    <span class="p">})</span>
+    
+    <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span> <span class="o">=</span> <span class="kt">UIRefreshControl</span><span class="p">()</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">refresh</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">valueChanged</span><span class="p">)</span>
+<span class="p">}</span>
 
-    <span class="c1">// MARK: - 위시 리스트 담기 버튼 선택</span>
-    <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">addToWishListButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">product</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-        <span class="c1">//나머지 코드 생략 </span>
+<span class="c1">//새로고침 추가 </span>
+<span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">getData</span> <span class="p">{</span> <span class="n">product</span> <span class="k">in</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">currentProduct</span> <span class="o">=</span> <span class="n">product</span>
+        <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">productScrollView</span><span class="o">.</span><span class="n">refreshControl</span><span class="p">?</span><span class="o">.</span><span class="nf">endRefreshing</span><span class="p">()</span>
+        <span class="p">}</span>
     <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
-
-<p><br /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>
-  <li>선택 과제를 찾아서 하려고 했으나 기존에 데이터 가져오는 방식에 대해서 공부가 필요할 것 같아 기존 로직을 수정하였습니다.</li>
-  <li>이번 과제를 통해서 URLSession, 동기, 비동기, 직렬, 동시성, GCD, 메인 큐, 글로벌 큐 등 다양한 키워드를 공부해볼 수 있었습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 2]]></summary></entry></feed>
+  <li>시간이 갈수록 잘하는 사람과의 격차가 벌어지는 것 같아 살짝 조급한 마음이 있었지만 신경쓰지 않고 하나씩 하나씩 해봐야겠다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="WishList" /><category term="ios" /><category term="uikit" /><category term="swift" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 개인 과제 - WishList 앱 만들기 3]]></summary></entry></feed>
