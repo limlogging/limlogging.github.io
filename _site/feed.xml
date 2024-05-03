@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-03T18:35:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1</title><link href="http://localhost:4000/sparta/iOS%EC%95%B1%EA%B0%9C%EB%B0%9C%EC%8B%AC%ED%99%94%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/sparta/iOS%EC%95%B1%EA%B0%9C%EB%B0%9C%EC%8B%AC%ED%99%94%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C1</id><content type="html" xml:base="http://localhost:4000/sparta/iOS%EC%95%B1%EA%B0%9C%EB%B0%9C%EC%8B%AC%ED%99%94%EA%B0%9C%EC%9D%B8%EA%B3%BC%EC%A0%9C1/"><![CDATA[<h1 id="ios-앱-개발-심화-개인-과제">iOS 앱 개발 심화 개인 과제</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-03T18:40:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1</title><link href="http://localhost:4000/sparta/MyBookApp1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp1</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp1/"><![CDATA[<h1 id="ios-앱-개발-심화-개인-과제">iOS 앱 개발 심화 개인 과제</h1>
 <ul>
   <li>팀프로젝트가 끝나면 찾아오는 개인 과제, 어렵지만 차근차근 해보기!</li>
 </ul>
@@ -13,7 +13,7 @@
 
 <h1 id="화면-구성하기">화면 구성하기</h1>
 <h2 id="예시-화면">예시 화면</h2>
-<p><img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제1.png" alt="" /></p>
+<p><img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp1.png" alt="" /></p>
 
 <h2 id="메인-스토리보드-삭제">메인 스토리보드 삭제</h2>
 <ul>
@@ -66,8 +66,8 @@
   <li>확인을 위해 백그라운드 색상은 임의로 변경하였습니다.</li>
 </ul>
 
-<p><img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제2.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제3.png" width="200" /></p>
+<p><img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp2.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp3.png" width="200" /></p>
 
 <h2 id="uisearchcontroller-추가하기">UISearchController 추가하기</h2>
 <ul>
@@ -95,8 +95,8 @@
   <li>searchbar를 선택하면 취소버튼이 자동 생성됩니다.</li>
 </ul>
 
-<p><img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제4.png" width="200" />
-<img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제5.png" width="200" /></p>
+<p><img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp4.png" width="200" />
+<img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp5.png" width="200" /></p>
 
 <h2 id="uisearchcontroller-추가-수정하기">UISearchController 추가 수정하기</h2>
 <h3 id="title-및-placeholder-추가">title 및 placeholder 추가</h3>
@@ -110,7 +110,7 @@
 </code></pre></div></div>
 <h3 id="title-및-placeholder-추가-후-실행화면">title 및 placeholder 추가 후 실행화면</h3>
 
-<p><img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제6.png" alt="" /></p>
+<p><img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp6.png" alt="" /></p>
 
 <h2 id="검색어-확인을-위한-uisearchbardelegate-델리게이트-채택">검색어 확인을 위한 UISearchBarDelegate 델리게이트 채택</h2>
 <h3 id="searchbarsearchbuttonclicked-추가">searchBarSearchButtonClicked 추가</h3>
@@ -134,7 +134,8 @@
 </code></pre></div></div>
 
 <h3 id="검색-후-검색어-확인">검색 후 검색어 확인</h3>
-<p><img src="../../assets/images/categories/sparta/2024-05-03-iOS앱개발심화개인과제7.png" alt="" /></p>
+
+<p><img src="../../assets/images/categories/sparta/2024-05-03-MyBookApp7.png" alt="" /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>
