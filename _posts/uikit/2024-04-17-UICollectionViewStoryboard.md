@@ -1,13 +1,13 @@
 ---
-title: "[UIKit] UICollectionView 예제 코드"
-excerpt: "UICollectionView 예제 코드"
+title: "[UIKit] UICollectionView 스토리보드 예제 코드"
+excerpt: "UICollectionView 스토리보드 예제 코드"
   
 categories:
   - UIKit
 tags:
   - [swift, iOS, UICollectionView, UICollectionViewDataSource, UICollectionViewFlowLayout]
 
-permalink: /UIKit/UICollectionView/ 
+permalink: /UIKit/UICollectionViewStoryboard/ 
 toc: true         
 toc_sticky: true   
 comments: true      

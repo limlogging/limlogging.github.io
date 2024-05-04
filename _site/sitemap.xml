@@ -4,6 +4,19 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/UIKit/UICollectionViewCodebase/</loc>
+        
+        <lastmod>2024-05-04T00:00:00+09:00</lastmod>
+        
+        
+        <changefreq>weekly</changefreq>
+        
+        
+        <priority>0.5</priority>
+        
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/UIKit/MainStoryBoardDelete/</loc>
         
         <lastmod>2024-05-03T00:00:00+09:00</lastmod>
@@ -199,7 +212,7 @@
     </url>
     
     <url>
-        <loc>http://localhost:4000/UIKit/UICollectionView/</loc>
+        <loc>http://localhost:4000/UIKit/UICollectionViewStoryboard/</loc>
         
         <lastmod>2024-04-17T00:00:00+09:00</lastmod>
         

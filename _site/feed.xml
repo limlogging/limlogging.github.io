@@ -1,4 +1,456 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-04T16:12:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1</title><link href="http://localhost:4000/sparta/MyBookApp1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp1</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp1/"><![CDATA[<h1 id="ios-앱-개발-심화-개인-과제">iOS 앱 개발 심화 개인 과제</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-05T01:56:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[UIKit] UICollectionView Codebase 예제 코드</title><link href="http://localhost:4000/UIKit/UICollectionViewCodebase/" rel="alternate" type="text/html" title="[UIKit] UICollectionView Codebase 예제 코드" /><published>2024-05-04T00:00:00+09:00</published><updated>2024-05-04T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/UICollectionViewCodebase</id><content type="html" xml:base="http://localhost:4000/UIKit/UICollectionViewCodebase/"><![CDATA[<h1 id="uicollectionview-코드로-구현하기">UICollectionView 코드로 구현하기</h1>
+<ul>
+  <li>스토리보드로만 UICollectionView 연습을 해봤었는데 코드로 UICollectionView를 만들어보았습니다.</li>
+  <li><a href="https://limlogging.github.io/UIKit/UICollectionViewStoryboard/" target="_blank">⭐️스토리보드로 CollectionView 만들기 바로가기⭐️</a></li>
+</ul>
+
+<h1 id="1-컬렉션뷰를-담을-뷰-만들기">1. 컬렉션뷰를 담을 뷰 만들기</h1>
+<ul>
+  <li>UICollectionView를 담을 UIView 하나를 추가했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">cvView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">cvView</span><span class="p">)</span>
+
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="mi">150</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>실행화면
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase1.png" alt="컬렉션뷰담을뷰" /></li>
+</ul>
+
+<h1 id="2-uicollectionview-추가하기">2. UICollectionView 추가하기</h1>
+<ul>
+  <li>TableView나 Button, Label처럼 추가 후 실행하면 에러가 발생합니다.</li>
+  <li>UICollectionViewFlowLayout를 추가해야 에러가 발생하지 않습니다.</li>
+</ul>
+
+<h2 id="uicollectionviewflowlayout-레이아웃-추가-전">UICollectionViewFlowLayout 레이아웃 추가 전</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 컬렉션뷰</span>
+    <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="p">()</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">collectionView</span>
+    <span class="p">}()</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">cvView</span><span class="p">)</span>             <span class="c1">//뷰에 컬렉션뷰를 담을 뷰 추가 </span>
+        <span class="n">cvView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">collectionView</span><span class="p">)</span>   <span class="c1">//컬렉션뷰를 담을 뷰에 컬렉션뷰 추가 </span>
+
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>   <span class="c1">//오토레이아웃설정</span>
+    <span class="p">}</span>
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//컬렉션뷰를 담을 뷰 </span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">cvView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="mi">150</span><span class="p">),</span>
+            <span class="c1">//컬렉션뷰</span>
+            <span class="n">collectionView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">cvView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">collectionView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">cvView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">collectionView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">cvView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">collectionView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">cvView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="에러메시지">🚨에러메시지🚨</h3>
+<ul>
+  <li>컬렉션뷰는 테이블뷰와 달리 레이아웃 없이 초기화할 수 없습니다 !</li>
+  <li>Thread 1: “UICollectionView must be initialized with a non-nil layout parameter”
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase2.png" alt="컬렉션뷰담을뷰" /></li>
+</ul>
+
+<h2 id="uicollectionviewflowlayout-레이아웃-추가-후">UICollectionViewFlowLayout 레이아웃 추가 후</h2>
+<ul>
+  <li>FlowLayout을 추가하고 다시 실행해보면 에러 없이 추가된 것을 확인할 수 있습니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 컬렉션뷰</span>
+<span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">flowLayout</span> <span class="o">=</span> <span class="kt">UICollectionViewFlowLayout</span><span class="p">()</span>    
+  <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="n">flowLayout</span><span class="p">)</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="k">return</span> <span class="n">collectionView</span>
+<span class="p">}()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>실행화면 
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase3.png" alt="컬렉션뷰실행" /></li>
+</ul>
+
+<h1 id="3uicollectionviewdatasource-프로토콜-채택하기">3.UICollectionViewDataSource 프로토콜 채택하기</h1>
+<ul>
+  <li>테이블뷰처럼 DataSource를 채택하면 필수메서드가 필요하다고 에러가 발생합니다.</li>
+  <li>임의로 Return 데이터를 추가하면 테이블 뷰는 실행이되지만 컬렉션뷰는 dequeueReusableCell를 사용하지 않으면 에러가 발생합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        
+      <span class="n">collectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>    <span class="c1">//ㄷ</span>
+
+      <span class="c1">//다른코드 생략 </span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span> <span class="p">{</span>
+  <span class="c1">//컬렉션뷰에서 보여줄 아이템의 개수</span>
+  <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">10</span>
+  <span class="p">}</span>
+    
+  <span class="c1">//컬렉션뷰의 셀에 포함할 데이터  </span>
+  <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="에러메시지-1">🚨에러메시지🚨</h2>
+<ul>
+  <li>컬렉션 뷰에서 셀을 반환할 때 재사용 큐에서 셀을 가져오지 않고 새로운 셀을 생성하여 반환하려고 할 때 에러 발생</li>
+  <li>Thread 1: “the cell returned from -collectionView:cellForItemAtIndexPath: does not have a reuseIdentifier - cells must be retrieved by calling -dequeueReusableCellWithReuseIdentifier:forIndexPath:”
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase4.png" alt="컬렉션뷰담을뷰" /></li>
+</ul>
+
+<h1 id="4-uicollectionviewcell를-상속받는-파일-추가">4. UICollectionViewCell를 상속받는 파일 추가</h1>
+<ul>
+  <li>UICollectionViewCell를 상속받는 MyCollectionViewCell 파일을 추가했습니다.</li>
+  <li>셀을 초기화하기위해서 init을 추가하면 required init? 메서드가 필요하다고 에러가 발생하고 required init?(coder: NSCoder)를 자동으로 추가해줍니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">MyCollectionViewCell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="mycollectionviewcell-전체-코드">MyCollectionViewCell 전체 코드</h2>
+<ul>
+  <li>Cell에 숫자를 보여주기위해서 Label 하나를 추가하고 오토레이아웃을 설정했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">class</span> <span class="kt">MyCollectionViewCell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+
+        <span class="k">self</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+
+        <span class="nf">addViews</span><span class="p">()</span>
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 숫자 추가</span>
+    <span class="k">var</span> <span class="nv">numberLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 뷰에 객체 추가</span>
+    <span class="kd">func</span> <span class="nf">addViews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">numberLabel</span><span class="p">]</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nf">addSubview</span><span class="p">(</span><span class="n">numberLabel</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">numberLabel</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">),</span>
+            <span class="n">numberLabel</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">centerYAnchor</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-viewcontroller에-컬렉션뷰에서-사용할-cell-등록-및-cellforitemat-메서드-수정">5. ViewController에 컬렉션뷰에서 사용할 Cell 등록 및 cellForItemAt 메서드 수정</h1>
+<ul>
+  <li>ViewController에 컬렉션뷰에서 사용할 Cell 등록
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+  <span class="c1">//다른코드 생략 </span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+      <span class="c1">//다른코드 생략 </span>
+
+      <span class="c1">//MyCollectionViewCell 클래스를 컬렉션 뷰에 등록하고 식별자 지정 </span>
+      <span class="n">collectionView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">MyCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellWithReuseIdentifier</span><span class="p">:</span> <span class="s">"MyCollectionViewCell"</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="c1">//다른코드 생략 </span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>cellForItemAt 메서드 수정
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span> <span class="p">{</span>
+ <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+      <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="s">"MyCollectionViewCell"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">MyCollectionViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span> <span class="p">}</span>
+      <span class="n">cell</span><span class="o">.</span><span class="n">numberLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+        
+      <span class="k">return</span> <span class="n">cell</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>실행화면
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase5.png" alt="컬렉션뷰에데이터가들어간모습" /></li>
+</ul>
+
+<h1 id="6-컬렉션뷰-수정-전-스크롤-방향에-따른-라인의-간격과-아이템간의-간격-차이-확인">6. 컬렉션뷰 수정 전 스크롤 방향에 따른 라인의 간격과 아이템간의 간격 차이 확인</h1>
+<ul>
+  <li>스크롤 방향에 따라서 최소 줄 간격과 최소항목간 간격이 변경됩니다.
+    <ul>
+      <li>빨간색 박스 = 라인의 범위</li>
+      <li>파란색 박스 = 라인의 간격 (minimumLineSpacing)</li>
+      <li>초록색 박스 = 아이템간의 간격 (minimumInteritemSpacing)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="스크롤-방향이-vertical-일때-기본-설정">스크롤 방향이 vertical 일때 (기본 설정)</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase6.png" alt="vertical" /></p>
+<h2 id="스크롤-방향이-horizontal-일때">스크롤 방향이 horizontal 일때</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase7.png" alt="horizontal" /></p>
+
+<h1 id="7-uicollectionviewflowlayout-수정하기">7. UICollectionViewFlowLayout 수정하기</h1>
+<ul>
+  <li>UICollectionViewFlowLayout를 수정해서 한 줄에 들어갈 아이템의 수와 아이템의 간격을 원하는대로 지정해보겠습니다.</li>
+</ul>
+
+<h2 id="1-아이템간의-간격과-라인에-들어갈-아이템-수-지정">1. 아이템간의 간격과 라인에 들어갈 아이템 수 지정</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">collectionViewItemSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">5</span>      <span class="c1">//아이템간의 간격</span>
+    <span class="k">let</span> <span class="nv">collectionViewItemCnt</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">4</span>          <span class="c1">//라인에 들어갈 아이템 수</span>
+    <span class="c1">//다른 코드 생략 </span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-컬렉션뷰-수정">2. 컬렉션뷰 수정</h2>
+<ul>
+  <li>스크롤 방향과 아이템간의 간격, 라인간의 간격을 설정합니다.</li>
+  <li>collectionViewItemSpacing 상수의 추가로 lazy를 추가하고 collectionViewItemSpacing 상수보다 나중에 초기화 되도록 합니다.
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 컬렉션뷰</span>
+<span class="kd">lazy</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">flowLayout</span> <span class="o">=</span> <span class="kt">UICollectionViewFlowLayout</span><span class="p">()</span>
+  <span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span>  <span class="c1">//스크롤 방향</span>
+  <span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumLineSpacing</span> <span class="o">=</span> <span class="mi">20</span>      <span class="c1">//라인 간격 </span>
+  <span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumInteritemSpacing</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionViewItemSpacing</span> <span class="c1">//아이템 간격</span>
+    
+  <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="n">flowLayout</span><span class="p">)</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="n">collectionView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+  <span class="k">return</span> <span class="n">collectionView</span>
+<span class="p">}()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="3-컬렉션뷰-델리게이트-설정">3. 컬렉션뷰 델리게이트 설정</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+    <span class="c1">//다른코드 생략 </span>
+    <span class="n">collectionView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="4-uicollectionviewdelegateflowlayout-프로토콜-채택-및-메서드-추가">4. UICollectionViewDelegateFlowLayout 프로토콜 채택 및 메서드 추가</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDelegateFlowLayout</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 컬렉션 뷰의 각 셀의 크기를 결정하는 메서드 </span>
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+        <span class="c1">//return 값으로 원하는 크기를 지정 </span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="스크롤-방향이-vertical-일때-한-줄에-4개-만큼-아이템-넣기">스크롤 방향이 vertical 일때 한 줄에 4개 만큼 아이템 넣기</h3>
+<ul>
+  <li>스크롤 방향 설정
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 컬렉션뷰</span>
+<span class="kd">lazy</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//다른코드 생략</span>
+  <span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span>  <span class="c1">//스크롤 방향</span>
+  <span class="c1">//다른코드 생략</span>
+<span class="p">}()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>스크롤 방향이 horizontal일때 한 줄이 width 기준
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDelegateFlowLayout</span> <span class="p">{</span>
+  <span class="c1">// MARK: - 컬렉션 뷰의 각 셀의 크기를 결정하는 메서드 </span>
+  <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">collectionView</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">collectionViewLineWidth</span> <span class="o">*</span> <span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">collectionViewItemCnt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">/</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionViewItemCnt</span>
+      <span class="k">return</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">width</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>실행화면 (한 줄에 아이템 수 4, 아이템 간격 5, 라인 간격 20)
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase8.png" alt="" /></li>
+  <li>실행화면 (한 줄에 아이템 수 5, 아이템 간격 1, 라인 간격 10)
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase10.png" alt="" /></li>
+</ul>
+
+<h3 id="스크롤-방향이-horizontal-일때-한-줄에-4개-만큼-아이템-넣기">스크롤 방향이 horizontal 일때 한 줄에 4개 만큼 아이템 넣기</h3>
+<ul>
+  <li>스크롤 방향 설정
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 컬렉션뷰</span>
+<span class="kd">lazy</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">//다른코드 생략</span>
+  <span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>  <span class="c1">//스크롤 방향</span>
+  <span class="c1">//다른코드 생략</span>
+<span class="p">}()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>스크롤 방향이 horizontal일때 한 줄이 height 기준
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDelegateFlowLayout</span> <span class="p">{</span>
+  <span class="c1">// MARK: - 컬렉션 뷰의 각 셀의 크기를 결정하는 메서드 </span>
+  <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">width</span> <span class="o">=</span> <span class="p">(</span><span class="n">collectionView</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="p">(</span><span class="n">collectionViewItemSpacing</span> <span class="o">*</span> <span class="p">(</span><span class="n">collectionViewItemCnt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">/</span> <span class="n">collectionViewItemCnt</span>
+      <span class="k">return</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">width</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>실행화면 (한 줄에 아이템 수 4, 아이템 간격 5, 라인 간격 20)
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase9.png" alt="" /></li>
+  <li>실행화면 (한 줄에 아이템 수 5, 아이템 간격 1, 라인 간격 10)
+<img src="../../assets/images/categories/uikit/2024-05-04-UICollectionViewCodebase11.png" alt="" /></li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>컬렉션뷰를 사용할때는 레이아웃 설정 필요함</li>
+  <li>스크롤 방향에 따라 라인이 변경됨</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UICollectionView" /><category term="UICollectionViewDataSource" /><category term="UICollectionViewFlowLayout" /><summary type="html"><![CDATA[UICollectionView Codebase 예제 코드]]></summary></entry><entry><title type="html">[UIKit] Code Base를 위한 main storyboard 삭제하기</title><link href="http://localhost:4000/UIKit/MainStoryBoardDelete/" rel="alternate" type="text/html" title="[UIKit] Code Base를 위한 main storyboard 삭제하기" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/storyboardDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/MainStoryBoardDelete/"><![CDATA[<h1 id="code-base를-위한-main-storyboard-삭제하기">Code Base를 위한 main storyboard 삭제하기</h1>
+<ul>
+  <li>코드를 기반으로 UI를 구성하기위해 main Storyboard 삭제 방법입니다.</li>
+</ul>
+
+<h1 id="1-main-storyboard-삭제">1. Main Storyboard 삭제</h1>
+<ul>
+  <li>Main Storyboard를 삭제합니다. 
+<img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete1.png" alt="스토리보드삭제" /></li>
+</ul>
+
+<h1 id="2-build-setting-변경">2. Build Setting 변경</h1>
+<ul>
+  <li>Build Settings에서 main를 검색해서 UIKit Main Storyboard File Base Name 삭제합니다.</li>
+  <li>UIKit Main Storyboard File Base Name 항목은 남아있고 text만 지워집니다.</li>
+</ul>
+
+<h2 id="삭제-전">삭제 전</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete2.png" alt="Build Setting 변경 " /></p>
+
+<h2 id="삭제-후">삭제 후</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete3.png" alt="Build Setting 변경 " /></p>
+
+<h1 id="3-infoplist-변경">3. Info.plist 변경</h1>
+<ul>
+  <li>Storyboard Name을 삭제합니다.</li>
+  <li>한줄이 모두 삭제 됩니다.</li>
+</ul>
+
+<h2 id="삭제-전-1">삭제 전</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete4.png" alt="Info.plist 변경" /></p>
+
+<h2 id="삭제-후-1">삭제 후</h2>
+<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete5.png" alt="Info.plist 변경" /></p>
+
+<h1 id="4-scenedelegateswift-파일-코드-수정">4. SceneDelegate.swift 파일 코드 수정</h1>
+<ul>
+  <li>첫 화면을 보여줄 컨트롤러 지정해주기</li>
+  <li>NavigationController나 TabBarController를 rootViewController로 가지고 싶다면 SceneDelegate 파일에서 아래 함수를 추가로 수정해야합니다.</li>
+</ul>
+
+<h2 id="수정-전">수정 전</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.</span>
+        <span class="c1">// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.</span>
+        <span class="c1">// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).</span>
+
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<h2 id="수정-후">수정 후</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.</span>
+        <span class="c1">// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.</span>
+        <span class="c1">// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).</span>
+        <span class="c1">//수정 전</span>
+        <span class="c1">//guard let _ = (scene as? UIWindowScene) else { return }</span>
+        <span class="c1">//수정 후</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">windowScene</span> <span class="o">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            
+        <span class="n">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">windowScene</span><span class="p">:</span> <span class="n">windowScene</span><span class="p">)</span>
+        <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kt">ViewController</span><span class="p">()</span>
+        <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-실행-확인">5. 실행 확인</h1>
+<ul>
+  <li>실행 유무를 확인하기 위해 배경을 노란색으로 변경하였습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete6.png" alt="정상실행 확인" /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>이제 코드베이스로 시작해봅시다!</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIKit" /><category term="Code Base" /><category term="main storyboard 삭제" /><summary type="html"><![CDATA[Code Base를 위한 main storyboard 삭제하기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1</title><link href="http://localhost:4000/sparta/MyBookApp1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp1</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp1/"><![CDATA[<h1 id="ios-앱-개발-심화-개인-과제">iOS 앱 개발 심화 개인 과제</h1>
 <ul>
   <li>팀프로젝트가 끝나면 찾아오는 개인 과제, 어렵지만 차근차근 해보기!</li>
 </ul>
@@ -140,93 +592,7 @@
 <h1 id="마무리">마무리</h1>
 <ul>
   <li>코드로 프로젝트를 진행하기 위한 셋팅 작업과 UINavigationController, UITabBarController, UISearchController를 추가했습니다.</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="iOS" /><category term="UIKit" /><category term="TabBarController" /><category term="Code Base" /><category term="UINavigationController" /><category term="UITabBarController" /><category term="UISearchController" /><summary type="html"><![CDATA[iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1]]></summary></entry><entry><title type="html">[UIKit] Code Base를 위한 main storyboard 삭제하기</title><link href="http://localhost:4000/UIKit/MainStoryBoardDelete/" rel="alternate" type="text/html" title="[UIKit] Code Base를 위한 main storyboard 삭제하기" /><published>2024-05-03T00:00:00+09:00</published><updated>2024-05-03T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/storyboardDelete</id><content type="html" xml:base="http://localhost:4000/UIKit/MainStoryBoardDelete/"><![CDATA[<h1 id="code-base를-위한-main-storyboard-삭제하기">Code Base를 위한 main storyboard 삭제하기</h1>
-<ul>
-  <li>코드를 기반으로 UI를 구성하기위해 main Storyboard 삭제 방법입니다.</li>
-</ul>
-
-<h1 id="1-main-storyboard-삭제">1. Main Storyboard 삭제</h1>
-<ul>
-  <li>Main Storyboard를 삭제합니다. 
-<img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete1.png" alt="스토리보드삭제" /></li>
-</ul>
-
-<h1 id="2-build-setting-변경">2. Build Setting 변경</h1>
-<ul>
-  <li>Build Settings에서 main를 검색해서 UIKit Main Storyboard File Base Name 삭제합니다.</li>
-  <li>UIKit Main Storyboard File Base Name 항목은 남아있고 text만 지워집니다.</li>
-</ul>
-
-<h2 id="삭제-전">삭제 전</h2>
-<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete2.png" alt="Build Setting 변경 " /></p>
-
-<h2 id="삭제-후">삭제 후</h2>
-<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete3.png" alt="Build Setting 변경 " /></p>
-
-<h1 id="3-infoplist-변경">3. Info.plist 변경</h1>
-<ul>
-  <li>Storyboard Name을 삭제합니다.</li>
-  <li>한줄이 모두 삭제 됩니다.</li>
-</ul>
-
-<h2 id="삭제-전-1">삭제 전</h2>
-<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete4.png" alt="Info.plist 변경" /></p>
-
-<h2 id="삭제-후-1">삭제 후</h2>
-<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete5.png" alt="Info.plist 변경" /></p>
-
-<h1 id="4-scenedelegateswift-파일-코드-수정">4. SceneDelegate.swift 파일 코드 수정</h1>
-<ul>
-  <li>첫 화면을 보여줄 컨트롤러 지정해주기</li>
-  <li>NavigationController나 TabBarController를 rootViewController로 가지고 싶다면 SceneDelegate 파일에서 아래 함수를 추가로 수정해야합니다.</li>
-</ul>
-
-<h2 id="수정-전">수정 전</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.</span>
-        <span class="c1">// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.</span>
-        <span class="c1">// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).</span>
-
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-<h2 id="수정-후">수정 후</h2>
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.</span>
-        <span class="c1">// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.</span>
-        <span class="c1">// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).</span>
-        <span class="c1">//수정 전</span>
-        <span class="c1">//guard let _ = (scene as? UIWindowScene) else { return }</span>
-        <span class="c1">//수정 후</span>
-        <span class="k">guard</span> <span class="k">let</span> <span class="nv">windowScene</span> <span class="o">=</span> <span class="p">(</span><span class="n">scene</span> <span class="k">as?</span> <span class="kt">UIWindowScene</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-            
-        <span class="n">window</span> <span class="o">=</span> <span class="kt">UIWindow</span><span class="p">(</span><span class="nv">windowScene</span><span class="p">:</span> <span class="n">windowScene</span><span class="p">)</span>
-        <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="n">rootViewController</span> <span class="o">=</span> <span class="kt">ViewController</span><span class="p">()</span>
-        <span class="n">window</span><span class="p">?</span><span class="o">.</span><span class="nf">makeKeyAndVisible</span><span class="p">()</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<h1 id="5-실행-확인">5. 실행 확인</h1>
-<ul>
-  <li>실행 유무를 확인하기 위해 배경을 노란색으로 변경하였습니다.</li>
-</ul>
-
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
-
-<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
-        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p><img src="../../assets/images/categories/uikit/2024-05-03-storyboardDelete6.png" alt="정상실행 확인" /></p>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>이제 코드베이스로 시작해봅시다!</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="UIKit" /><category term="swift" /><category term="iOS" /><category term="UIKit" /><category term="Code Base" /><category term="main storyboard 삭제" /><summary type="html"><![CDATA[Code Base를 위한 main storyboard 삭제하기]]></summary></entry><entry><title type="html">[UIKit] MVC(Model, View, Controller) 패턴이란?</title><link href="http://localhost:4000/UIKit/MVC/" rel="alternate" type="text/html" title="[UIKit] MVC(Model, View, Controller) 패턴이란?" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/MVC</id><content type="html" xml:base="http://localhost:4000/UIKit/MVC/"><![CDATA[<h1 id="mvc-패턴이란">MVC 패턴이란?</h1>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="iOS" /><category term="UIKit" /><category term="TabBarController" /><category term="Code Base" /><category term="UINavigationController" /><category term="UITabBarController" /><category term="UISearchController" /><summary type="html"><![CDATA[iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1]]></summary></entry><entry><title type="html">[UIKit] MVC(Model, View, Controller) 패턴이란?</title><link href="http://localhost:4000/UIKit/MVC/" rel="alternate" type="text/html" title="[UIKit] MVC(Model, View, Controller) 패턴이란?" /><published>2024-04-30T00:00:00+09:00</published><updated>2024-04-30T00:00:00+09:00</updated><id>http://localhost:4000/UIKit/MVC</id><content type="html" xml:base="http://localhost:4000/UIKit/MVC/"><![CDATA[<h1 id="mvc-패턴이란">MVC 패턴이란?</h1>
 <ul>
   <li>MVC 패턴은 모델(Model), 뷰(View), 컨트롤러(Controller)의 약자</li>
   <li>소프트웨어 아키텍처 디자인 패턴 중 하나입니다. 이 패턴은 앱 또는 소프트웨어를 구성하는 세 가지 주요 구성 요소를 분리하여 각각의 역할을 할당합니다.</li>
@@ -676,181 +1042,4 @@
 <h1 id="내일-할-일">내일 할 일</h1>
 <ul>
   <li>배우 필모그래피 관련페이지 구현하기 !</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1</title><link href="http://localhost:4000/sparta/mega6box1/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1" /><published>2024-04-22T00:00:00+09:00</published><updated>2024-04-22T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6box1</id><content type="html" xml:base="http://localhost:4000/sparta/mega6box1/"><![CDATA[<h1 id="영화-예약-앱-만들기">영화 예약 앱 만들기</h1>
-<ul>
-  <li>개인 프로젝트인 위시리스트 앱 만들기가 끝나고 팀프로젝트 발제가 있었습니다.</li>
-  <li>프로젝트 주제는 킥보드 앱 만들기 또는 영화예약 앱 만들기 중 선택할 수 있었고 팀원들의 의견을 모아 영화 예약 앱을 만들기로 하였습니다.</li>
-</ul>
-
-<h1 id="필수-구현-기능">필수 구현 기능</h1>
-<ul>
-  <li>로그인 화면/회원가입 화면
-    <ul>
-      <li>앱에 진입했을 때 로그인을 먼저 진행합니다.</li>
-      <li>회원가입 버튼을 누르면 아이디와 비밀번호를 입력받아 회원가입을 하고, 완료되면 다시 로그인 화면으로 이동합니다(아이디와 비밀번호 이외에 다른 정보들을 받아도 됩니다).</li>
-      <li>로그인이 완료되면 UserDefault에 아이디와 비밀번호를 저장해서 이후 로그인할 때 아이디와 비밀번호가 자동으로 입력되어 있도록 합니다.</li>
-      <li>로그인이 완료되면 상단 TapBar가 있는 화면으로 이동하면 됩니다.</li>
-      <li>필수 기능 요소
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">UserDefaults</code>를 활용하여 아이디와 비밀번호, 기타 정보를 저장해주세요.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>영화 목록 페이지
-    <ul>
-      <li>상단 <strong>TapBar의 첫번째 화면</strong>입니다.</li>
-      <li>영화 이미지들은 좌우 스크롤 가능하도록 구현해주세요</li>
-      <li>필수 기능 요소
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">UICollectionView</code>를 활용하여 영화 포스터를 표시해주세요.</li>
-          <li>사용자가 직접 상호 작용할 수 있는 다양한 기능을 제공해보세요.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>영화 세부 페이지
-    <ul>
-      <li>영화를 클릭시 영화의 세부 페이지로 이동해주세요</li>
-      <li>영화의 정보를 함께 페이지에 보여주세요</li>
-    </ul>
-  </li>
-  <li>영화 예매 입력 페이지
-    <ul>
-      <li>영화 세부 페이지에서 입력하기 버튼 클릭시 해당 페이지로 이동해주세요</li>
-      <li>예매를 위해 입력해야 할 것들을 입력 가능하도록 구성해주세요</li>
-      <li>결제하기 버튼을 누르면 결제 내역이 마이페이지에서 보이도록 해주세요</li>
-    </ul>
-  </li>
-  <li>영화 검색 페이지
-    <ul>
-      <li>상단 <strong>TapBar의 두번째 화면</strong>입니다.</li>
-      <li>검색창에 텍스트를 입력하고 검색 버튼 클릭시 해당 텍스트가 포함된 영화들을 보여주세요</li>
-      <li><code class="language-plaintext highlighter-rouge">UICollectionView</code>를 활용하여 영화 포스터를 표시해주세요.</li>
-    </ul>
-  </li>
-  <li>마이 페이지
-    <ul>
-      <li>상단 <strong>TapBar의 세번째 화면</strong>입니다.</li>
-      <li>사용자의 정보와 관련된 기능을 모아서 제공하는 페이지를 자유롭게 만들어보세요.</li>
-      <li>나의 필요한 계정 정보들을 표시해주세요(회원가입시 받은 정보들 활용)</li>
-      <li>예매한 영화 내역을 볼 수 있도록 해주세요</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="sa-starting-assignments-작성하기">S.A (Starting Assignments) 작성하기</h1>
-<ul>
-  <li>영화예매 및 영화정보 등장인물 필모그래피가 들어간 앱</li>
-  <li>프로젝트 제목
-    <ul>
-      <li>메가 6 박스 = 메가박스와 6조의 합작품</li>
-    </ul>
-  </li>
-  <li>프로젝트 설명
-    <ul>
-      <li>API를 사용한 영화 예매 앱 구현</li>
-      <li>API를 사용하여 영화 정보 받아오기</li>
-      <li>API를 사용하여 배우 정보 받아오기</li>
-      <li>코어데이터를 활용한 회원정보 및 영화 예매 정보 확인 구현</li>
-      <li>영화 정보를 활용한 영화 예매 기능 구현</li>
-      <li>싱글톤 패턴, 델리게이트 등을 사용한 구현</li>
-    </ul>
-  </li>
-  <li>프로젝트 구현 페이지
-    <ul>
-      <li>런치스크린</li>
-      <li>회원가입/로그인 선택</li>
-      <li>로그인</li>
-      <li>회원가입</li>
-      <li>메인(예매 가능 영화 목록)</li>
-      <li>영화 예매</li>
-      <li>영화 세부 정보</li>
-      <li>감독/등장인물</li>
-      <li>영화 검색</li>
-      <li>마이 페이지</li>
-      <li>내 정보 관리</li>
-    </ul>
-  </li>
-  <li>개발기능정리
-    <ul>
-      <li>API</li>
-      <li>sync / async</li>
-      <li>URLSession</li>
-      <li>CoreData</li>
-      <li>UICollectionView</li>
-      <li>UITableView</li>
-      <li>Searchbar</li>
-      <li>UIRefreshControl</li>
-      <li>Navigation Bar</li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="결과물에-대한목업mockup그려보기">결과물에 대한 목업(MOCKUP) 그려보기</h1>
-<ul>
-  <li>피그마를 사용해본 경험이 있는 팀장님과 팀원들 덕분에 피그마에서 작업을 해볼 수 있었습니다.</li>
-  <li>쉽게 디자인 할 수 있어 프로젝트 규모가 커져버렸습니다.</li>
-  <li>와이어 프레임 
-<img src="../../assets/images/categories/sparta/2024-04-22-mega6box1.png" alt="피그마1" /></li>
-</ul>
-
-<p><img src="../../assets/images/categories/sparta/2024-04-22-mega6box2.png" alt="피그마2" /></p>
-
-<ul>
-  <li>색상 입히기 및 화면 연결하기</li>
-</ul>
-
-<p><img src="../../assets/images/categories/sparta/2024-04-22-mega6box3.png" alt="피그마3" /></p>
-
-<ul>
-  <li>참고 자료</li>
-</ul>
-
-<p><img src="../../assets/images/categories/sparta/2024-04-22-mega6box4.png" alt="피그마4" /></p>
-
-<h1 id="영화-정보를-받아오기-위한-api-사용하기">영화 정보를 받아오기 위한 API 사용하기</h1>
-<ul>
-  <li>영화 정보 API
-    <ul>
-      <li><a href="https://www.kobis.or.kr/kobisopenapi/homepg/main/main.do" target="_blank">영화진흥위원회 오픈 API</a></li>
-      <li><a href="https://www.themoviedb.org/" target="_blank">The Movie Database(TMDB) API</a></li>
-      <li><a href="https://www.kmdb.or.kr/info/api/apiList?menuIndex=119" target="_blank">한국영화데이터베이스(KMDB) API</a></li>
-    </ul>
-  </li>
-  <li>영화 정보를 가져올 수 있는 곳을 구글검색하여 3가지로 추려서 TMDB를 사용하기로 결정하였습니다.</li>
-</ul>
-
-<h1 id="런치-스크린-이미지-만들기">런치 스크린 이미지 만들기</h1>
-<ul>
-  <li><a href="https://www.canva.com/" target="_blank">canva</a></li>
-  <li>canva에서 런치스크린 이미지를 만들었습니다. 
-<img src="../../assets/images/categories/sparta/2024-04-22-mega6box5.png" alt="런치스크린" /></li>
-</ul>
-
-<h1 id="tmdb-api-키-발급-받기">TMDB API 키 발급 받기</h1>
-<ul>
-  <li>회원가입 후 KEY 발급 요청하면 즉시 키를 발급해 줍니다. (사용용도 및 개인정보 입력해야합니다.)</li>
-</ul>
-
-<p><img src="../../assets/images/categories/sparta/2024-04-22-mega6box6.png" alt="API Key 발급" /></p>
-
-<h1 id="포스트맨으로-조회해보기">포스트맨으로 조회해보기</h1>
-<ul>
-  <li>필요할 것 같은 API 4개를 찾았습니다. 필요시 더 추가할 예정입니다.
-    <ul>
-      <li>지금 상영중인 영화 조회</li>
-      <li>영화명으로 영화 조회</li>
-      <li>영화배우이름으로 배우 조회</li>
-      <li>영화배우 이미지 조회</li>
-    </ul>
-  </li>
-  <li>영화 제목으로 파묘를 입력하여 영화 검색하기 
-<img src="../../assets/images/categories/sparta/2024-04-22-mega6box7.png" alt="포스트맨으로 조회하기" /></li>
-</ul>
-
-<h1 id="내일-할-일">내일 할 일</h1>
-<ul>
-  <li>오늘 10시 30분 부터 프로젝트 주제 정하기, 피그마로 디자인 그리기, API 찾아보기, 역할분담으로 시간을 다 써버렸습니다.</li>
-  <li>내일은 깃허브에 프로젝트를 올리고 본격적으로 프로젝트를 시작해보겠습니다 ! 🔥🔥🔥</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 1]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 2]]></summary></entry></feed>
