@@ -457,7 +457,7 @@
             <nav class="toc">
               
                 <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
-                <ul class="toc__menu"><li><a href="#uicollectionview란">UICollectionView란?</a></li><li><a href="#uicollectionview-주요-특징">UICollectionView 주요 특징</a></li><li><a href="#예제코드">예제코드</a><ul><li><a href="#1-이미지-파일-추가하기">1. 이미지 파일 추가하기</a></li><li><a href="#2-이미지-배열에-담기">2. 이미지 배열에 담기</a></li><li><a href="#3-스토리보드에-collectionview를-추가하기">3. 스토리보드에 CollectionView를 추가하기</a></li><li><a href="#4-cell-안에-imageview-추가하기">4. Cell 안에 imageView 추가하기</a></li><li><a href="#5-uicollectionviewcell을-상속받는-파일-만들기">5. UICollectionViewCell을 상속받는 파일 만들기</a></li><li><a href="#6-스토리보드에서-cell을-선택-후-클래스를-지정">6. 스토리보드에서 Cell을 선택 후 클래스를 지정</a></li><li><a href="#7-스토리보드에서-cell을-선택-후-리유저블-식별자명을-지정">7. 스토리보드에서 Cell을 선택 후 리유저블 식별자명을 지정</a></li><li><a href="#8-imageview-아울렛-변수-추가">8. imageView 아울렛 변수 추가</a></li><li><a href="#9-viewcontroller-수정하기">9. ViewController 수정하기</a><ul><li><a href="#collectionview-아울렛-변수-추가">collectionView 아울렛 변수 추가</a></li><li><a href="#uicollectionviewdatasource-채택">UICollectionViewDataSource 채택</a></li><li><a href="#datasource를-설정">datasource를 설정</a></li></ul></li></ul></li><li><a href="#실행화면---레이아웃-사용-전">실행화면 - 레이아웃 사용 전</a></li><li><a href="#uicollectionviewflowlayout-사용해서-컬렉션뷰-꾸미기">UICollectionViewFlowLayout 사용해서 컬렉션뷰 꾸미기</a></li><li><a href="#실행-화면---레이아웃-사용-후">실행 화면 - 레이아웃 사용 후</a><ul><li><a href="#let-columncnt-cgfloat--3">let columnCnt: CGFloat = 3</a></li><li><a href="#let-columncnt-cgfloat--4">let columnCnt: CGFloat = 4</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+                <ul class="toc__menu"><li><a href="#uicollectionview란">UICollectionView란?</a></li><li><a href="#uicollectionview-주요-특징">UICollectionView 주요 특징</a></li><li><a href="#예제코드">예제코드</a><ul><li><a href="#1-이미지-파일-추가하기">1. 이미지 파일 추가하기</a></li><li><a href="#2-이미지-배열에-담기">2. 이미지 배열에 담기</a></li><li><a href="#3-스토리보드에-collectionview를-추가하기">3. 스토리보드에 CollectionView를 추가하기</a></li><li><a href="#4-cell-안에-imageview-추가하기">4. Cell 안에 imageView 추가하기</a></li><li><a href="#5-uicollectionviewcell을-상속받는-파일-만들기">5. UICollectionViewCell을 상속받는 파일 만들기</a></li><li><a href="#6-스토리보드에서-cell을-선택-후-클래스를-지정">6. 스토리보드에서 Cell을 선택 후 클래스를 지정</a></li><li><a href="#7-스토리보드에서-cell을-선택-후-리유저블-식별자명을-지정">7. 스토리보드에서 Cell을 선택 후 리유저블 식별자명을 지정</a></li><li><a href="#8-imageview-아울렛-변수-추가">8. imageView 아울렛 변수 추가</a></li><li><a href="#9-viewcontroller-수정하기">9. ViewController 수정하기</a><ul><li><a href="#collectionview-아울렛-변수-추가">collectionView 아울렛 변수 추가</a></li><li><a href="#uicollectionviewdatasource-채택">UICollectionViewDataSource 채택</a></li><li><a href="#datasource를-설정">datasource를 설정</a></li></ul></li></ul></li><li><a href="#실행화면---레이아웃-사용-전">실행화면 - 레이아웃 사용 전</a></li><li><a href="#uicollectionviewflowlayout-사용해서-컬렉션뷰-꾸미기">UICollectionViewFlowLayout 사용해서 컬렉션뷰 꾸미기</a></li><li><a href="#실행-화면---레이아웃-사용-후">실행 화면 - 레이아웃 사용 후</a><ul><li><a href="#let-columncnt-cgfloat--3">let columnCnt: CGFloat = 3</a></li><li><a href="#let-columncnt-cgfloat--4">let columnCnt: CGFloat = 4</a></li></ul></li><li><a href="#️스크롤-방향-관련️">⭐️스크롤 방향 관련⭐️</a><ul><li><a href="#세로일때">세로일때</a></li><li><a href="#가로일때">가로일때</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
 
               
             </nav>
@@ -686,6 +686,31 @@
 <h2 id="let-columncnt-cgfloat--4">let columnCnt: CGFloat = 4</h2>
 
 <p><img src="../../assets/images/categories/uikit/2024-04-17-UICollectionView12.png" alt="한줄에 아이템 4개" /></p>
+
+<h1 id="️스크롤-방향-관련️">⭐️스크롤 방향 관련⭐️</h1>
+<ul>
+  <li>minimumInteritemSpacing, minimumLineSpacing는 스크롤 방향에 따라 달라집니다!</li>
+</ul>
+
+<h2 id="세로일때">세로일때</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">vertical</span>
+<span class="c1">//아이템 좌우 사이 간격 설정</span>
+<span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumInteritemSpacing</span> <span class="o">=</span> <span class="n">lineWidth</span>
+<span class="c1">//아이템 위아래 사이 간격 설정</span>
+<span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumLineSpacing</span> <span class="o">=</span> <span class="mi">30</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/categories/uikit/2024-04-17-UICollectionView13.png" alt="" /></p>
+
+<h2 id="가로일때">가로일때</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>
+<span class="c1">//아이템 위아래 간격 설정</span>
+<span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumInteritemSpacing</span> <span class="o">=</span> <span class="n">lineWidth</span>
+<span class="c1">//아이템 좌우 사이 간격 설정</span>
+<span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumLineSpacing</span> <span class="o">=</span> <span class="mi">30</span>
+</code></pre></div></div>
+
+<p><img src="../../assets/images/categories/uikit/2024-04-17-UICollectionView14.png" alt="" /></p>
 
 <h1 id="마무리">마무리</h1>
 <ul>

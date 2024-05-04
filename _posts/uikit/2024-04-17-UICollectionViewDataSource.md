@@ -189,5 +189,30 @@ override func viewDidLoad() {
 
 ![한줄에 아이템 4개](../../assets/images/categories/uikit/2024-04-17-UICollectionView12.png)
 
+# ⭐️스크롤 방향 관련⭐️
+- minimumInteritemSpacing, minimumLineSpacing는 스크롤 방향에 따라 달라집니다! 
+
+## 세로일때 
+```swift
+flowLayout.scrollDirection = .vertical
+//아이템 좌우 사이 간격 설정
+flowLayout.minimumInteritemSpacing = lineWidth
+//아이템 위아래 사이 간격 설정
+flowLayout.minimumLineSpacing = 30
+```
+
+![](../../assets/images/categories/uikit/2024-04-17-UICollectionView13.png)
+
+## 가로일때 
+```swift
+flowLayout.scrollDirection = .horizontal
+//아이템 위아래 간격 설정
+flowLayout.minimumInteritemSpacing = lineWidth
+//아이템 좌우 사이 간격 설정
+flowLayout.minimumLineSpacing = 30
+```
+
+![](../../assets/images/categories/uikit/2024-04-17-UICollectionView14.png)
+
 # 마무리 
 - collectionView는 tableview와 비슷하지만 UICollectionViewFlowLayout을 사용하여 레이아웃을 변경할 수 있습니다. 
