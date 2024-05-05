@@ -1,0 +1,1406 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2 - limlogging Devlog</title>
+<meta name="description" content="iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2">
+
+
+  <meta name="author" content="HyeongSub Lim">
+  
+  <meta property="article:author" content="HyeongSub Lim">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="limlogging Devlog">
+<meta property="og:title" content="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2">
+<meta property="og:url" content="http://localhost:4000/sparta/MyBookApp2/">
+
+
+  <meta property="og:description" content="iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-05-05T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sparta/MyBookApp2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "limlogging",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="B9n-ap1lRd2h2TkRZ7YJ0o4C6AnWUSXWrBq2xCjZ9ug" />
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="limlogging Devlog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+<!-- 구글 애드센스 추가 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862" crossorigin="anonymous"></script>
+
+<!-- 방문자 수 추가 -->
+<div style="text-align: right;">
+    <a href="https://hits.seeyoufarm.com">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Flimlogging.github.io&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+    </a>
+</div>
+
+<!-- 구글 애널리틱스 추가 Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9ZRRL1X26"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B9ZRRL1X26');
+</script>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          limlogging Devlog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://limlogging.github.io/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/lim.jpeg" alt="HyeongSub Lim" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">HyeongSub Lim</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>🧑🏻‍💻 개발 블로그입니다. 😎</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">iOS</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/swift/">Swift</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/swift/">Swift(8)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/UIKit/">UIKit</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/UIKit/">UIKit(34)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/SwiftUI/">SwiftUI</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/SwiftUI/">SwiftUI(0)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">git</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/git/">Git</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/git/">Git(2)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/GitHubBlog/">GitHub Blog</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/GitHubBlog/">GitHub Blog(10)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">etc</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/TIL/">Today I Learned</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/TIL/">Today I Learned(31)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/Algorithm/">알고리즘 문제</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/Algorithm/">알고리즘 문제(63)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">내배캠</span>
+        
+
+        
+        <ul>
+          
+            <!-- 기존 로직 주석  
+            <li><a href="/categories/sparta/">내배캠 부트캠프</a></li> 
+            -->
+            <!-- Posting Count 추가 시작 -->
+            
+            
+            <li><a href="/categories/sparta/">내배캠 부트캠프(19)</a></li>
+            <!-- Posting Count 추가 끝 -->
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2">
+    <meta itemprop="description" content="iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2">
+    <meta itemprop="datePublished" content="2024-05-05T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/sparta/MyBookApp2/" class="u-url" itemprop="url">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          
+          <!-- 포스팅 조회수 추가 -->
+          <div style="text-align: right;">
+            <a href="https://hits.seeyoufarm.com/localhost:4000/sparta/MyBookApp2/"target="_blank">
+              <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/sparta/MyBookApp2/&count_bg=%23555555&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+            </a>
+          </div>
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        <!-- 사이드 광고 추가 -->
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              
+                <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>                
+                <ul class="toc__menu"><li><a href="#지난이야기">지난이야기</a></li><li><a href="#1-컬렉션-뷰가-담길-뷰-추가하기">1. 컬렉션 뷰가 담길 뷰 추가하기</a><ul><li><a href="#실행화면">실행화면</a></li></ul></li><li><a href="#2-컬렉션뷰가-담길-뷰에-label-추가하기">2. 컬렉션뷰가 담길 뷰에 Label 추가하기</a><ul><li><a href="#실행화면-1">실행화면</a></li></ul></li><li><a href="#3-컬렉션-뷰가-담길-뷰에-컬렉션-뷰-추가하기">3. 컬렉션 뷰가 담길 뷰에 컬렉션 뷰 추가하기</a><ul><li><a href="#실행화면-2">실행화면</a></li></ul></li><li><a href="#4-컬렉션뷰에-cell-추가하고-레이아웃-설정하기">4. 컬렉션뷰에 Cell 추가하고 레이아웃 설정하기</a></li><li><a href="#5-cell-등록-및-datasource-프로토콜-채택하기">5. Cell 등록 및 DataSource 프로토콜 채택하기</a><ul><li><a href="#실행화면-3">실행화면</a></li></ul></li><li><a href="#6-컬렉션뷰-레이아웃-수정">6. 컬렉션뷰 레이아웃 수정</a><ul><li><a href="#실행화면-4">실행화면</a></li></ul></li><li><a href="#7-cell에-imageview와-label-추가하기">7. Cell에 imageView와 label 추가하기</a><ul><li><a href="#실행화면-5">실행화면</a></li></ul></li><li><a href="#8-테이블-뷰가-담길-뷰-추가하기">8. 테이블 뷰가 담길 뷰 추가하기</a><ul><li><a href="#실행화면-6">실행화면</a></li></ul></li><li><a href="#9-테이블-뷰가-담길-뷰에-label-추가하기">9. 테이블 뷰가 담길 뷰에 Label 추가하기</a><ul><li><a href="#실행화면-7">실행화면</a></li></ul></li><li><a href="#10-테이블-뷰가-담길-뷰에-테이블-뷰-추가하기">10. 테이블 뷰가 담길 뷰에 테이블 뷰 추가하기</a><ul><li><a href="#실행화면-8">실행화면</a></li></ul></li><li><a href="#11-tableview-row의-height-설정하기">11. TableView Row의 Height 설정하기</a><ul><li><a href="#실행화면-9">실행화면</a></li></ul></li><li><a href="#12-tableview-cell에-imageview-및-label-추가하기">12. TableView Cell에 imageView 및 Label 추가하기</a></li><li><a href="#13-tableviewcell-등록-및-cellforrowat-메서드-수정">13. TableViewCell 등록 및 cellForRowAt 메서드 수정</a><ul><li><a href="#실행화면-10">실행화면</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+
+              
+            </nav>
+            <!-- 사이드 광고 추가 -->
+            <nav class="toc-custom">
+              
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+     crossorigin="anonymous"></script>
+<!-- 수직형 디스플레이 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8663638822726862"
+     data-ad-slot="8971782438"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              
+            </nav>
+            <!-- 광고 추가 끝 -->
+          </aside>
+        
+        <h1 id="지난이야기">지난이야기</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp1/" target="_blank">⭐️책 검색 앱 만들기 1 보러가기⭐️</a></li>
+  <li>지난번에 이어 최근 본 책을 보여줄 컬렉션뷰와 책 검색 결과를 보여줄 테이블 뷰를 추가하도록 하겠습니다.</li>
+</ul>
+
+<h1 id="1-컬렉션-뷰가-담길-뷰-추가하기">1. 컬렉션 뷰가 담길 뷰 추가하기</h1>
+<ul>
+  <li>뷰를 추가해서 label과 컬렉션뷰를 담아보겠습니다.</li>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 최근 본 책의 title과 컬렉션뷰가 담길 뷰</span>
+<span class="kd">class</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">recentlyViewedBooksView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">setupAddView</span><span class="p">()</span>          
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//최근 본 책</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">recentlyViewedBooksView</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">),</span>   <span class="c1">//view 높이의 20%로 설정</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp1.png" alt="" /></p>
+
+<h1 id="2-컬렉션뷰가-담길-뷰에-label-추가하기">2. 컬렉션뷰가 담길 뷰에 Label 추가하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 최근 본 책 타이틀</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">recentlyViewedBooksTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"최근 본 책"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">recentlyViewedBooksTitleLabel</span><span class="p">)</span>
+    <span class="p">}</span>
+
+        <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//최근 본 책 </span>
+            <span class="n">recentlyViewedBooksTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-1">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp2.png" alt="" /></p>
+
+<h1 id="3-컬렉션-뷰가-담길-뷰에-컬렉션-뷰-추가하기">3. 컬렉션 뷰가 담길 뷰에 컬렉션 뷰 추가하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 최근 본 책 컬랙션 뷰</span>
+    <span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">recentlyViewedBooksCollectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">flowLayout</span> <span class="o">=</span> <span class="kt">UICollectionViewFlowLayout</span><span class="p">()</span>
+        <span class="k">let</span> <span class="nv">collectionView</span> <span class="o">=</span> <span class="kt">UICollectionView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">,</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="n">flowLayout</span><span class="p">)</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">collectionView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">collectionView</span>
+    <span class="p">}()</span>
+
+        <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">recentlyViewedBooksCollectionView</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//컬렉션뷰</span>
+            <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksTitleLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<h2 id="실행화면-2">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp3.png" alt="" /></p>
+
+<h1 id="4-컬렉션뷰에-cell-추가하고-레이아웃-설정하기">4. 컬렉션뷰에 Cell 추가하고 레이아웃 설정하기</h1>
+<ul>
+  <li>UICollectionViewCell을 상솓받는 RecentlyViewedBooksCollectionViewCell 이름의 파일을 만들었습니다.</li>
+  <li>Cell 등록을 위한 identifier만 설정하였습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="c1">// MARK: - Cell 등록 시 사용할 identifier 설정</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    
+    <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">}</span>
+    
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-cell-등록-및-datasource-프로토콜-채택하기">5. Cell 등록 및 DataSource 프로토콜 채택하기</h1>
+<ul>
+  <li>SearchBookViewController에 컬렉션뷰 cell 등록 및 DataSource 프로토콜 채택하여 오토레이아웃을 잡아보겠습니다.</li>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nf">setupCollectionView</span><span class="p">()</span>   <span class="c1">//컬렉션 뷰 설정</span>
+  <span class="p">}</span>
+
+  <span class="c1">// MARK: - 컬렉션뷰 설정</span>
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupCollectionView</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
+      <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellWithReuseIdentifier</span><span class="p">:</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>    <span class="c1">//최근 본 책 컬렉션 뷰에서 사용할 Cell 등록</span>
+  <span class="p">}</span>
+
+  <span class="c1">// MARK: - 컬렉션뷰 데이터소스 프로토콜 채택</span>
+  <span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDataSource</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="mi">10</span>
+      <span class="p">}</span>
+        
+      <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+          <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span> <span class="p">}</span>
+          <span class="k">return</span> <span class="n">cell</span> 
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+    <h2 id="실행화면-3">실행화면</h2>
+    <p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp4.png" alt="" /></p>
+  </li>
+</ul>
+
+<h1 id="6-컬렉션뷰-레이아웃-수정">6. 컬렉션뷰 레이아웃 수정</h1>
+<ul>
+  <li>컬렉션뷰의 스크롤 방향을 가로로 만들고 Cell이 1개씩만 보이도록 하겠습니다.</li>
+  <li>그 다음 Cell에는 이미지뷰와 label하나를 추가하겠습니다.</li>
+  <li>컬렉션 뷰 관련 참고 포스팅
+    <ul>
+      <li><a href="https://limlogging.github.io/UIKit/UICollectionViewStoryboard/" target="_blank">⭐️UICollectionView 스토리보드 예제 코드⭐️</a></li>
+      <li><a href="https://limlogging.github.io/UIKit/UICollectionViewCodebase/" target="_blank">⭐️UICollectionView Codebase 예제 코드⭐️</a></li>
+    </ul>
+  </li>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">recentlyViewedBooksCollectionViewItemSpacing</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1">//아이템 사이 간격</span>
+    <span class="k">let</span> <span class="nv">recentlyViewedBooksCollectionViewItemCnt</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1">//라인에 들어갈 아이템 수</span>
+
+    <span class="c1">// MARK: - 최근 본 책 컬랙션 뷰</span>
+    <span class="kd">private</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">recentlyViewedBooksCollectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">flowLayout</span><span class="o">.</span><span class="n">scrollDirection</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>    <span class="c1">//스크롤 방향 </span>
+        <span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumInteritemSpacing</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">recentlyViewedBooksCollectionViewItemSpacing</span>  <span class="c1">//아이템 사이 거리, 아이템 1개라 0으로 지정 </span>
+        <span class="n">flowLayout</span><span class="o">.</span><span class="n">minimumLineSpacing</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1">// 라인 사이 거리를 10으로 띄우기 </span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 컬렉션뷰 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupCollectionView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>   
+    <span class="p">}</span>
+<span class="p">}</span> 
+
+<span class="c1">// MARK: - 컬렉션뷰 플로우 레이아웃 프로토콜 채택</span>
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UICollectionViewDelegateFlowLayout</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">layout</span> <span class="nv">collectionViewLayout</span><span class="p">:</span> <span class="kt">UICollectionViewLayout</span><span class="p">,</span> <span class="n">sizeForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGSize</span> <span class="p">{</span>
+
+        <span class="k">let</span> <span class="nv">height</span> <span class="o">=</span> <span class="p">(</span><span class="n">recentlyViewedBooksCollectionView</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="p">(</span><span class="n">recentlyViewedBooksCollectionViewItemSpacing</span> <span class="o">*</span> <span class="p">(</span><span class="n">recentlyViewedBooksCollectionViewItemCnt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))</span> <span class="o">/</span> <span class="n">recentlyViewedBooksCollectionViewItemCnt</span>
+        
+        <span class="k">return</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">height</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-4">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp5.png" alt="" /></p>
+
+<h1 id="7-cell에-imageview와-label-추가하기">7. Cell에 imageView와 label 추가하기</h1>
+<ul>
+  <li>RecentlyViewedBooksCollectionViewCell 파일을 수정하였습니다.</li>
+  <li>전체 코드</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="p">:</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="c1">// MARK: - Cell 등록 시 사용할 identifier 설정</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    
+    <span class="c1">// MARK: - 책 이미지</span>
+    <span class="k">var</span> <span class="nv">bookImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">imageView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 제목</span>
+    <span class="k">var</span> <span class="nv">bookTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 제목"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="nf">addView</span><span class="p">()</span>
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">fatalError</span><span class="p">(</span><span class="s">"init(coder:) has not been implemented"</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">func</span> <span class="nf">addView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">bookImageView</span><span class="p">,</span> <span class="n">bookTitleLabel</span><span class="p">]</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nf">addSubview</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">widthAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">),</span>  <span class="c1">//Cell의 80%</span>
+            
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bottomAnchor</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">widthAnchor</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">),</span> <span class="c1">//Cell의 20%</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="실행화면-5">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp6.png" alt="" /></p>
+
+<h1 id="8-테이블-뷰가-담길-뷰-추가하기">8. 테이블 뷰가 담길 뷰 추가하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 검색 결과 타이틀과 검색결과 테이블뷰가 담길 뷰</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">searchResultView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//검색 결과</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">searchResultView</span><span class="p">)</span>
+    <span class="p">}</span>
+        
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//테이블 뷰와 타이틀을 담을 뷰</span>
+            <span class="n">searchResultView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">recentlyViewedBooksView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">searchResultView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">searchResultView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">searchResultView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<h2 id="실행화면-6">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp7.png" alt="" /></p>
+
+<h1 id="9-테이블-뷰가-담길-뷰에-label-추가하기">9. 테이블 뷰가 담길 뷰에 Label 추가하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MARK: - 검색 결과 타이틀</span>
+  <span class="kd">private</span> <span class="k">var</span> <span class="nv">searchResultTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+      <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"검색 결과"</span>
+      <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+      <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+      <span class="k">return</span> <span class="n">label</span>
+  <span class="p">}()</span>
+
+  <span class="c1">// MARK: - 뷰 추가</span>
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">searchResultView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">searchResultTitleLabel</span><span class="p">)</span>
+  <span class="p">}</span> 
+
+  <span class="c1">// MARK: - 오토레이아웃 설정</span>
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+          <span class="c1">//검색 결과 타이틀</span>
+          <span class="n">searchResultTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">searchResultView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+          <span class="n">searchResultTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">searchResultView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+      <span class="p">])</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+    <h2 id="실행화면-7">실행화면</h2>
+    <p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp8.png" alt="" /></p>
+  </li>
+</ul>
+
+<h1 id="10-테이블-뷰가-담길-뷰에-테이블-뷰-추가하기">10. 테이블 뷰가 담길 뷰에 테이블 뷰 추가하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 검색 결과 테이블 뷰</span>
+    <span class="kd">private</span> <span class="k">var</span> <span class="nv">searchResultTableView</span><span class="p">:</span> <span class="kt">UITableView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">tableView</span> <span class="o">=</span> <span class="kt">UITableView</span><span class="p">()</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">tableView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">tableView</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">setupTableView</span><span class="p">()</span>        <span class="c1">//테이블 뷰 설정</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">searchResultView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">searchResultTableView</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 테이블뷰 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupTableView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">searchResultTableView</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// MARK: - 테이블뷰 데이터소스 프로토콜 채택</span>
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UITableViewDataSource</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">10</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">UITableViewCell</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="실행화면-8">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp9.png" alt="" /></p>
+
+<h1 id="11-tableview-row의-height-설정하기">11. TableView Row의 Height 설정하기</h1>
+<ul>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 테이블뷰 설정</span>
+<span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupTableView</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">searchResultTableView</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+<span class="p">}</span>
+
+<span class="c1">// MARK: - 테이블뷰 델리게이트 프로토콜 채택</span>
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">120</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-9">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp10.png" alt="" /></p>
+
+<h1 id="12-tableview-cell에-imageview-및-label-추가하기">12. TableView Cell에 imageView 및 Label 추가하기</h1>
+<ul>
+  <li>UITableViewCell을 상속받는 SearchResultTableViewCell 파일을 만들었습니다.</li>
+  <li>SearchResultTableViewCell 파일 전체 코드</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SearchResultTableViewCell</span><span class="p">:</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+    <span class="c1">//TableView Cell을 등록하기위해 식별자 설정</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">identifier</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">describing</span><span class="p">:</span> <span class="kt">SearchResultTableViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+    
+    <span class="c1">// MARK: - 책 이미지</span>
+    <span class="k">var</span> <span class="nv">bookImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">imageView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 제목</span>
+    <span class="k">var</span> <span class="nv">bookTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 제목"</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 저자</span>
+    <span class="k">var</span> <span class="nv">bookAuthorsLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"저자"</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 가격</span>
+    <span class="k">var</span> <span class="nv">bookPriceLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 가격"</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 소개</span>
+    <span class="k">var</span> <span class="nv">bookContentsLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 소개"</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">setSelected</span><span class="p">(</span><span class="n">_</span> <span class="nv">selected</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">setSelected</span><span class="p">(</span><span class="n">selected</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="n">animated</span><span class="p">)</span>
+        <span class="nf">setupAddView</span><span class="p">()</span>
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">bookImageView</span><span class="p">,</span> <span class="n">bookTitleLabel</span><span class="p">,</span> <span class="n">bookAuthorsLabel</span><span class="p">,</span> <span class="n">bookPriceLabel</span><span class="p">,</span> <span class="n">bookContentsLabel</span><span class="p">]</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">item</span> <span class="k">in</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="n">contentView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 오토레이아웃 추가</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//책 이미지</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">contentView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">contentView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">contentView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="mi">100</span><span class="p">),</span>
+            
+            <span class="c1">//책 제목</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">contentView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//책 저자</span>
+            <span class="n">bookAuthorsLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookAuthorsLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//책 가격</span>
+            <span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookAuthorsLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//책 소개</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="13-tableviewcell-등록-및-cellforrowat-메서드-수정">13. TableViewCell 등록 및 cellForRowAt 메서드 수정</h1>
+<ul>
+  <li>SearchBookViewController 파일에서 tableView의 Cell을 등록합니다.</li>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 테이블뷰 설정</span>
+    <span class="kd">private</span> <span class="kd">func</span> <span class="nf">setupTableView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">searchResultTableView</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="kt">SearchResultTableViewCell</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">forCellReuseIdentifier</span><span class="p">:</span> <span class="kt">SearchResultTableViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span> <span class="c1">//검색 결과 테이블뷰에서 사용할 Cell 등록</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">collectionView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withReuseIdentifier</span><span class="p">:</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">RecentlyViewedBooksCollectionViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UICollectionViewCell</span><span class="p">()</span> <span class="p">}</span>
+        <span class="k">return</span> <span class="n">cell</span> 
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-10">실행화면</h2>
+<ul>
+  <li><img src="../../assets/images/categories/sparta/2024-05-05-MyBookApp11.png" alt="" /></li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>검색할 책의 데이터를 보여줄 컬렉션뷰와 검색결과를 보여줄 테이블뷰를 추가하였습니다.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#code-base" class="page__taxonomy-item p-category" rel="tag">Code Base</a><span class="sep">, </span>
+    
+      <a href="/tags/#ios" class="page__taxonomy-item p-category" rel="tag">iOS</a><span class="sep">, </span>
+    
+      <a href="/tags/#tabbarcontroller" class="page__taxonomy-item p-category" rel="tag">TabBarController</a><span class="sep">, </span>
+    
+      <a href="/tags/#uicollectionview" class="page__taxonomy-item p-category" rel="tag">UICollectionView</a><span class="sep">, </span>
+    
+      <a href="/tags/#uicollectionviewcell" class="page__taxonomy-item p-category" rel="tag">UICollectionViewCell</a><span class="sep">, </span>
+    
+      <a href="/tags/#uicollectionviewflowlayout" class="page__taxonomy-item p-category" rel="tag">UICollectionViewFlowLayout</a><span class="sep">, </span>
+    
+      <a href="/tags/#uikit" class="page__taxonomy-item p-category" rel="tag">UIKit</a><span class="sep">, </span>
+    
+      <a href="/tags/#uinavigationcontroller" class="page__taxonomy-item p-category" rel="tag">UINavigationController</a><span class="sep">, </span>
+    
+      <a href="/tags/#uisearchcontroller" class="page__taxonomy-item p-category" rel="tag">UISearchController</a><span class="sep">, </span>
+    
+      <a href="/tags/#uitabbarcontroller" class="page__taxonomy-item p-category" rel="tag">UITabBarController</a><span class="sep">, </span>
+    
+      <a href="/tags/#uitableview" class="page__taxonomy-item p-category" rel="tag">UITableView</a><span class="sep">, </span>
+    
+      <a href="/tags/#uitableviewcell" class="page__taxonomy-item p-category" rel="tag">UITableViewCell</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sparta" class="page__taxonomy-item p-category" rel="tag">sparta</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-05-05T00:00:00+09:00">May 5, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%82%B4%EB%B0%B0%EC%BA%A0%5D+iOS+%EC%95%B1+%EA%B0%9C%EB%B0%9C+%EC%8B%AC%ED%99%94+%EA%B0%9C%EC%9D%B8+%EA%B3%BC%EC%A0%9C+-+%EC%B1%85+%EA%B2%80%EC%83%89+%EC%95%B1+%EB%A7%8C%EB%93%A4%EA%B8%B0+2%20http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FMyBookApp2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FMyBookApp2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsparta%2FMyBookApp2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UIKit/UICollectionViewCodebase/" class="pagination--pager" title="[UIKit] UICollectionView Codebase 예제 코드
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UIKit/UICollectionViewCodebase/" rel="permalink">[UIKit] UICollectionView Codebase 예제 코드
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">UICollectionView Codebase 예제 코드
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UIKit/MainStoryBoardDelete/" rel="permalink">[UIKit] Code Base를 위한 main storyboard 삭제하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Code Base를 위한 main storyboard 삭제하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sparta/MyBookApp1/" rel="permalink">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 1
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UIKit/MVC/" rel="permalink">[UIKit] MVC(Model, View, Controller) 패턴이란?
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">MVC 패턴이란?
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+<!-- 하단 광고 추가 -->
+<div style="text-align: center;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663638822726862"
+      crossorigin="anonymous"></script>
+  <!-- 수평형 디스플레이 광고 -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-8663638822726862"
+      data-ad-slot="5774789366"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/limlogging" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 limlogging. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'limlogging/limlogging.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>
