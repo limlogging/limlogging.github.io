@@ -1,4 +1,293 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-05T15:19:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2</title><link href="http://localhost:4000/sparta/MyBookApp2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2" /><published>2024-05-05T00:00:00+09:00</published><updated>2024-05-05T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp2</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp2/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-07T11:53:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3</title><link href="http://localhost:4000/sparta/MyBookApp3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3" /><published>2024-05-07T00:00:00+09:00</published><updated>2024-05-07T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp3</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp3/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp1/" target="_blank">⭐️책 검색 앱 만들기 1 보러가기⭐️</a></li>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp2/" target="_blank">⭐️책 검색 앱 만들기 2 보러가기⭐️</a></li>
+  <li>지난번에 이어 카카오 api를 사용하여 책 이름으로 책을 검색하고 테이블 뷰에 보여주도록 하겠습니다.</li>
+</ul>
+
+<h1 id="1-카카오-rest-api-사용하기">1. 카카오 REST API 사용하기</h1>
+<ul>
+  <li>카카오 책 검색하기 API를 사용하였습니다.</li>
+  <li>회원가입 후 Key를 발급 받을 수 있으며 과정은 생략하겠습니다. 
+<a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book" target="_blank">⭐️카카오 책 검색 REST API 바로가기⭐️</a></li>
+  <li><img src="../../assets/images/categories/sparta/2024-05-07-MyBookApp1.png" alt="" /></li>
+</ul>
+
+<h1 id="2-postman으로-데이터-확인하기">2. Postman으로 데이터 확인하기</h1>
+<ul>
+  <li>포스트맨을 사용하여 세이노의 가르침 책을 받아오는데 성공하였습니다.</li>
+  <li>포스트맨 다운로드 및 사용 방법은 생략하겠습니다.</li>
+  <li><img src="../../assets/images/categories/sparta/2024-05-07-MyBookApp2.png" alt="" /></li>
+</ul>
+
+<h1 id="3-데이터-모델-만들기">3. 데이터 모델 만들기</h1>
+<ul>
+  <li>포스트맨을 통해 데이터 형식을 확인하고 데이터 모델을 만들었습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">Foundation</span>
+
+<span class="kd">struct</span> <span class="kt">Book</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">documents</span><span class="p">:</span> <span class="p">[</span><span class="kt">Documents</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">meta</span><span class="p">:</span> <span class="kt">Meta</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Documents</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">authors</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">contents</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">datetime</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">isbn</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">price</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">publisher</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">salePrice</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">thumbnail</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="k">var</span> <span class="nv">translators</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">authors</span>
+        <span class="k">case</span> <span class="n">contents</span>
+        <span class="k">case</span> <span class="n">datetime</span>
+        <span class="k">case</span> <span class="n">isbn</span>
+        <span class="k">case</span> <span class="n">price</span>
+        <span class="k">case</span> <span class="n">publisher</span>
+        <span class="k">case</span> <span class="n">salePrice</span> <span class="o">=</span> <span class="s">"sale_price"</span>
+        <span class="k">case</span> <span class="n">status</span>
+        <span class="k">case</span> <span class="n">thumbnail</span>
+        <span class="k">case</span> <span class="n">title</span>
+        <span class="k">case</span> <span class="n">translators</span>
+        <span class="k">case</span> <span class="n">url</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">struct</span> <span class="kt">Meta</span><span class="p">:</span> <span class="kt">Decodable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">isEnd</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="k">var</span> <span class="nv">pageableCount</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">totalCount</span><span class="p">:</span> <span class="kt">Int</span>
+    
+    <span class="kd">enum</span> <span class="kt">CodingKeys</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CodingKey</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">isEnd</span> <span class="o">=</span> <span class="s">"is_end"</span>
+        <span class="k">case</span> <span class="n">pageableCount</span> <span class="o">=</span> <span class="s">"pageable_count"</span>
+        <span class="k">case</span> <span class="n">totalCount</span> <span class="o">=</span> <span class="s">"total_count"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="4-networkmanager-만들기">4. NetworkManager 만들기</h1>
+<ul>
+  <li>지난 과제에서 싱글톤 패턴을 사용하여 네트워크 매니저를 구현했었는데요. 복습할 겸 다시 사용해보겠습니다.</li>
+  <li>최초 조회할때 한 번 API를 사용할 것 같은데 싱글톤으로 구현해보고 나중에 변경을 하던가 고민해보겠습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">NetworkManager</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">NetworkManager</span><span class="p">()</span>
+    <span class="kd">private</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">searchBook</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Book</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="s">"https://dapi.kakao.com/v3/search/book"</span>
+        <span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="s">"카카오에서 받은 API 키"</span>
+        
+        <span class="c1">// MARK: - 1. URL 객체 생성</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"</span><span class="se">\(</span><span class="n">url</span><span class="se">)</span><span class="s">?query=</span><span class="se">\(</span><span class="n">query</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="c1">// MARK: - 2. HTTP 요청 객체 생성</span>
+        <span class="k">var</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="nf">setValue</span><span class="p">(</span><span class="n">apiKey</span><span class="p">,</span> <span class="nv">forHTTPHeaderField</span><span class="p">:</span> <span class="s">"Authorization"</span><span class="p">)</span>
+  
+        <span class="c1">// MARK: - 3. HTTP 요청 보내기</span>
+        <span class="k">let</span> <span class="nv">task</span> <span class="o">=</span> <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">request</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">httpResponse</span> <span class="o">=</span> <span class="n">response</span> <span class="k">as?</span> <span class="kt">HTTPURLResponse</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="o">...</span><span class="mi">299</span><span class="p">)</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">httpResponse</span><span class="o">.</span><span class="n">statusCode</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// 응답 코드가 성공 범위가 아닐 경우 처리</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// 데이터가 없을 경우 처리</span>
+                <span class="k">return</span>
+            <span class="p">}</span>
+
+            <span class="k">do</span> <span class="p">{</span>
+                <span class="k">let</span> <span class="nv">decoder</span> <span class="o">=</span> <span class="kt">JSONDecoder</span><span class="p">()</span>
+                <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="k">try</span> <span class="n">decoder</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">Book</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+                <span class="c1">// 파싱된 데이터(result)를 사용하여 작업</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="c1">// 데이터 파싱 실패 시 처리</span>
+                <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">task</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-조회해보기">5. 조회해보기</h1>
+<ul>
+  <li>SearchBookViewController에서 검색어 확인을 위해 구현했던 메서드에 API 호출 후 데이터를 받아오는지 확인해보겠습니다.</li>
+  <li>
+    <font color="red">추가된 코드만 작성하였습니다.</font>
+  </li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 서치바 델리게이트 프로토콜 채택</span>
+<span class="kd">class</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>   
+    <span class="k">var</span> <span class="nv">bookData</span><span class="p">:</span> <span class="kt">Book</span><span class="p">?</span> <span class="c1">//api를 통해 받아온 정보를 담을 객체</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UISearchBarDelegate</span> <span class="p">{</span>
+    <span class="c1">// 사용자가 검색 버튼을 눌렀을 때 호출되는 메서드</span>
+    <span class="kd">func</span> <span class="nf">searchBarSearchButtonClicked</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="n">searchBar</span><span class="o">.</span><span class="n">text</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"검색어: </span><span class="se">\(</span><span class="n">searchText</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="kt">NetworkManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">searchBook</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="n">searchText</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
+                <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">resultData</span><span class="p">):</span>
+                    <span class="c1">//print("resultData: \(resultData)")</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">bookData</span> <span class="o">=</span> <span class="n">resultData</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Book: </span><span class="se">\(</span><span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">bookData</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>                    
+                <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"데이터를 가져오는데 실패했습니다. </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면">실행화면</h2>
+<ul>
+  <li>세이노의 가르침을 조회하고 정상적으로 데이터를 받아왔습니다.</li>
+  <li><img src="../../assets/images/categories/sparta/2024-05-07-MyBookApp3.png" alt="" /></li>
+</ul>
+
+<h1 id="6-테이블-뷰에-추가하기">6. 테이블 뷰에 추가하기</h1>
+<ul>
+  <li>numberOfRowsInSection 메서드의 return 값을 받아온 데이터의 수로 변경하였습니다.</li>
+  <li>tableViewCell에서 추가한 객체에 데이터를 할당합니다. (오토레이아웃을 조금 수정하였습니다.)
+    <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 테이블뷰 데이터소스 프로토콜 채택</span>
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UITableViewDataSource</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+      <span class="k">guard</span> <span class="k">let</span> <span class="nv">book</span> <span class="o">=</span> <span class="n">bookData</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span> <span class="p">}</span>
+        
+      <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">documents</span><span class="o">.</span><span class="n">count</span>
+  <span class="p">}</span>
+    
+  <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UITableViewCell</span> <span class="p">{</span>
+      <span class="k">guard</span> <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="n">tableView</span><span class="o">.</span><span class="nf">dequeueReusableCell</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="kt">SearchResultTableViewCell</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as?</span> <span class="kt">SearchResultTableViewCell</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">UITableViewCell</span><span class="p">()</span> <span class="p">}</span>
+        
+      <span class="c1">//책 이미지 불러오기</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">urlString</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">thumbnail</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                  <span class="n">cell</span><span class="o">.</span><span class="n">bookImageView</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+              <span class="p">}</span>                
+          <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">cell</span><span class="o">.</span><span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">title</span> <span class="c1">//책 제목</span>
+      <span class="c1">//저자</span>
+      <span class="k">let</span> <span class="nv">authors</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">authors</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">", "</span><span class="p">)</span>
+      <span class="n">cell</span><span class="o">.</span><span class="n">bookAuthorsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">authors</span>
+        
+      <span class="c1">//책 가격</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">price</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">price</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="n">price</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+              <span class="n">cell</span><span class="o">.</span><span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"무료"</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="k">let</span> <span class="nv">numberFormatter</span><span class="p">:</span> <span class="kt">NumberFormatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+              <span class="n">numberFormatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+                
+              <span class="k">if</span> <span class="k">let</span> <span class="nv">formatPrice</span> <span class="o">=</span> <span class="n">numberFormatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">price</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="n">cell</span><span class="o">.</span><span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">formatPrice</span> <span class="o">+</span> <span class="s">"원"</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="n">cell</span><span class="o">.</span><span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">contents</span>   <span class="c1">//책 소개</span>
+        
+      <span class="k">return</span> <span class="n">cell</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>검색 후 테이블 뷰에서 데이터가 보이지 않아 새로고침을 추가합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UISearchBarDelegate</span> <span class="p">{</span>
+    <span class="c1">// 사용자가 검색 버튼을 눌렀을 때 호출되는 메서드</span>
+    <span class="kd">func</span> <span class="nf">searchBarSearchButtonClicked</span><span class="p">(</span><span class="n">_</span> <span class="nv">searchBar</span><span class="p">:</span> <span class="kt">UISearchBar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">searchText</span> <span class="o">=</span> <span class="n">searchBar</span><span class="o">.</span><span class="n">text</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"검색어: </span><span class="se">\(</span><span class="n">searchText</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="kt">NetworkManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">searchBook</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="n">searchText</span><span class="p">)</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">result</span> <span class="k">in</span>
+                <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">resultData</span><span class="p">):</span>
+                    <span class="c1">//print("resultData: \(resultData)")</span>
+                    <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">bookData</span> <span class="o">=</span> <span class="n">resultData</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"Book: </span><span class="se">\(</span><span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">bookData</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>   
+                    
+                    <span class="c1">//검색 후 테이블 뷰 새로고침 </span>
+                    <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span>
+                        <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">searchResultTableView</span><span class="o">.</span><span class="nf">reloadData</span><span class="p">()</span>
+                    <span class="p">}</span>                 
+                <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"데이터를 가져오는데 실패했습니다. </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-1">실행화면</h2>
+<ul>
+  <li><img src="../../assets/images/categories/sparta/2024-05-07-MyBookApp4.png" alt="" /></li>
+</ul>
+
+<h1 id="7-tableview-cell-선택-시-상세-페이지로-이동하기">7. TableView Cell 선택 시 상세 페이지로 이동하기</h1>
+<ul>
+  <li>UIViewController를 상속받는 BookDetailViewController 파일을 만들었습니다.</li>
+  <li>
+    <p>Cell을 선택 시 BookDetailViewController 화면을 띄우도록 하겠습니다.</p>
+  </li>
+  <li>BookDetailViewController 파일 수정</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">BookDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>present로 이동</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// MARK: - 테이블뷰 델리게이트 프로토콜 채택</span>
+<span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">heightForRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGFloat</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">120</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - tableView Cell을 선택했을때 화면 이동</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">bookDetailVC</span> <span class="o">=</span> <span class="kt">BookDetailViewController</span><span class="p">()</span>        
+        <span class="nf">present</span><span class="p">(</span><span class="n">bookDetailVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-2">실행화면</h2>
+<ul>
+  <li><img src="../../assets/images/categories/sparta/2024-05-07-MyBookApp5.png" alt="" /></li>
+</ul>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>카카오 책 검색 REST API를 사용하여 데이터를 받아와 테이블 뷰에 출력했습니다.</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="iOS" /><category term="UIKit" /><category term="TabBarController" /><category term="Code Base" /><category term="UINavigationController" /><category term="UITabBarController" /><category term="UISearchController" /><category term="UICollectionViewCell" /><category term="UITableViewCell" /><category term="UICollectionViewFlowLayout" /><category term="UICollectionView" /><category term="UITableView" /><summary type="html"><![CDATA[iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2</title><link href="http://localhost:4000/sparta/MyBookApp2/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 2" /><published>2024-05-05T00:00:00+09:00</published><updated>2024-05-05T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp2</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp2/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
 <ul>
   <li><a href="https://limlogging.github.io/sparta/MyBookApp1/" target="_blank">⭐️책 검색 앱 만들기 1 보러가기⭐️</a></li>
   <li>지난번에 이어 최근 본 책을 보여줄 컬렉션뷰와 책 검색 결과를 보여줄 테이블 뷰를 추가하도록 하겠습니다.</li>
@@ -1518,39 +1807,4 @@
   <li>노션을 적극적으로 활용하여 현재까지 진행상황과 단기적인 목표를 잡고 소통이 더 필요할 것 같습니다.</li>
 </ul>
 
-<p>이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3</title><link href="http://localhost:4000/sparta/mega6box3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3" /><published>2024-04-24T00:00:00+09:00</published><updated>2024-04-24T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6box3</id><content type="html" xml:base="http://localhost:4000/sparta/mega6box3/"><![CDATA[<h1 id="영화-예약-앱-만들기-3">영화 예약 앱 만들기 3</h1>
-<ul>
-  <li>지난 이야기
-    <ul>
-      <li><a href="https://limlogging.github.io/sparta/mega6box1/" target="_blank">영화 예약 앱 만들기 1</a></li>
-      <li><a href="https://limlogging.github.io/sparta/mega6box2/" target="_blank">영화 예약 앱 만들기 2</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="역할-배분">역할 배분</h1>
-<ul>
-  <li>태담: 런치스크린, 회원가입/로그인</li>
-  <li>유진: 메인페이지, 마이페이지, 내 정보 관리</li>
-  <li>민희: 예매, 검색</li>
-  <li>형섭: 영화 세부정보, 감독/등장인물</li>
-</ul>
-
-<h1 id="영화-상세-페이지-구현-상황">영화 상세 페이지 구현 상황</h1>
-<ul>
-  <li>현재까지 구현한 내용입니다.</li>
-  <li>오토레이아웃을 잡아야하는데 하나라도 어긋나는 경우 배우 슬라이드 이미지가 사라져서 신경써서 수정이 필요합니다. ㅠ</li>
-  <li>배우 얼굴을 선택하면 필모그래피페이지로 넘어갑니다. 
-<img src="../../assets/images/categories/sparta/2024-04-24-mega6box9.png" alt="영화 상세 페이지" /></li>
-</ul>
-
-<h1 id="배우-필모그래피-페이지-구현-상황">배우 필모그래피 페이지 구현 상황</h1>
-<ul>
-  <li>여기 페이지는 코드로만 작성했다. 상세페이지보다는 그나마 수월하게 구현완료 
-<img src="../../assets/images/categories/sparta/2024-04-24-mega6box10.png" alt="배우 필모그래피 페이지" /></li>
-</ul>
-
-<h1 id="내일-할-일">내일 할 일</h1>
-<ul>
-  <li>오토레이아웃 수정 및 디테일 수정</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 3]]></summary></entry></feed>
+<p>이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry></feed>
