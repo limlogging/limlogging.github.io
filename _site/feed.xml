@@ -1,4 +1,544 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-07T11:53:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3</title><link href="http://localhost:4000/sparta/MyBookApp3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3" /><published>2024-05-07T00:00:00+09:00</published><updated>2024-05-07T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp3</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp3/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-08T11:30:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">limlogging Devlog</title><author><name>HyeongSub Lim</name></author><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 4</title><link href="http://localhost:4000/sparta/MyBookApp4/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 4" /><published>2024-05-07T00:00:00+09:00</published><updated>2024-05-07T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp4</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp4/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
+<ul>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp1/" target="_blank">⭐️책 검색 앱 만들기 1 보러가기⭐️</a></li>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp2/" target="_blank">⭐️책 검색 앱 만들기 2 보러가기⭐️</a></li>
+  <li><a href="https://limlogging.github.io/sparta/MyBookApp3/" target="_blank">⭐️책 검색 앱 만들기 3 보러가기⭐️</a></li>
+  <li>지난번에 이어 책 정보를 보여주는 BookDetailViewController에 데이터를 보여주도록 하겠습니다.</li>
+</ul>
+
+<h1 id="1-스크롤뷰와-버튼이-담길-뷰-추가하기">1. 스크롤뷰와 버튼이 담길 뷰 추가하기</h1>
+<ul>
+  <li>책 상세 정보를 담을 BookDetailViewController를 수정합니다.</li>
+  <li>스크롤뷰와 버튼이 담길 뷰를 추가했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">BookDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 버튼이 담길 뷰</span>
+    <span class="k">var</span> <span class="nv">buttonView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 책 데이터가 담길 스크롤 뷰</span>
+    <span class="k">var</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">scrollView</span> <span class="o">=</span> <span class="kt">UIScrollView</span><span class="p">()</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">cyan</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">scrollView</span>
+    <span class="p">}()</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        
+        <span class="nf">setupAddView</span><span class="p">()</span>
+        <span class="nf">setupAutoLayout</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 뷰 추가 </span>
+    <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">buttonView</span><span class="p">)</span>
+    <span class="p">}</span>
+
+        <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//버튼 추가후 스크롤 뷰</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+
+            <span class="c1">//버튼이 담기는 뷰</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-08-MyBookApp1.png" alt="" /></p>
+
+<h1 id="2-이미지-뷰-추가하기">2. 이미지 뷰 추가하기</h1>
+<ul>
+  <li>책 이미지를 담을 이미지뷰를 추가했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">BookDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 책 이미지</span>
+    <span class="k">var</span> <span class="nv">bookImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+        <span class="c1">//imageView.contentMode = .scaleAspectFill</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleToFill</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">imageView</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookImageView</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>           
+            <span class="c1">//책 이미지</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">50</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">),</span>
+        <span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-1">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-08-MyBookApp2.png" alt="" /></p>
+
+<h1 id="3-영화제목-저자-등-나머지-추가하기">3. 영화제목, 저자 등 나머지 추가하기</h1>
+<ul>
+  <li>나머지 필요한 내용을 추가했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">BookDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="c1">// MARK: - 책 데이터가 담길 스크롤 뷰</span>
+    <span class="k">var</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">scrollView</span> <span class="o">=</span> <span class="kt">UIScrollView</span><span class="p">()</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">scrollView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 이미지</span>
+    <span class="k">var</span> <span class="nv">bookImageView</span><span class="p">:</span> <span class="kt">UIImageView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">()</span>
+        <span class="c1">//imageView.contentMode = .scaleAspectFill</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleToFill</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">imageView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">imageView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 제목</span>
+    <span class="k">var</span> <span class="nv">bookTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 제목"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 저자와 번역 레이블을 담는 스택 뷰</span>
+    <span class="k">var</span> <span class="nv">bookAuthorsTranslatorsStackView</span><span class="p">:</span> <span class="kt">UIStackView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">stackView</span> <span class="o">=</span> <span class="kt">UIStackView</span><span class="p">()</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">fill</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">distribution</span> <span class="o">=</span> <span class="o">.</span><span class="n">fillEqually</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">stackView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 저자</span>
+    <span class="k">var</span> <span class="nv">bookAuthorsLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"저자"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">darkGray</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 번역</span>
+    <span class="k">var</span> <span class="nv">bookTranslatorsLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"번역"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">darkGray</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 할인율, 할인 가격, 정가를 담을 스택 뷰</span>
+    <span class="k">var</span> <span class="nv">bookPriceStackView</span><span class="p">:</span> <span class="kt">UIStackView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">stackView</span> <span class="o">=</span> <span class="kt">UIStackView</span><span class="p">()</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="c1">// 스택뷰의 distribution 속성 설정</span>
+        <span class="c1">//stackView.distribution = .fill</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">stackView</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 할인율</span>
+    <span class="k">var</span> <span class="nv">bookDiscountLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"할인율"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">red</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 세일 가격</span>
+    <span class="k">var</span> <span class="nv">bookSalePriceLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"세일가"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 가격</span>
+    <span class="k">var</span> <span class="nv">bookPriceLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"정가"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">darkGray</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 출판사</span>
+    <span class="k">var</span> <span class="nv">bookPublisherLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"출판사"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 소개 타이틀</span>
+    <span class="k">var</span> <span class="nv">bookContentsTitleLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 소개"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 책 소개</span>
+    <span class="k">var</span> <span class="nv">bookContentsLabel</span><span class="p">:</span> <span class="kt">UILabel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">label</span> <span class="o">=</span> <span class="kt">UILabel</span><span class="p">()</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"책 소개 내용"</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">numberOfLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">label</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">label</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 버튼이 담길 뷰</span>
+    <span class="k">var</span> <span class="nv">buttonView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">yellow</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="k">#colorLiteral</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+
+    <span class="c1">// MARK: - 뷰 추가</span>
+    <span class="kd">func</span> <span class="nf">setupAddView</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//저자 및 번역가</span>
+        <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">bookAuthorsLabel</span><span class="p">)</span>
+        <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">bookTranslatorsLabel</span><span class="p">)</span>
+        
+        <span class="c1">//할인율, 할인가, 정가</span>
+        <span class="n">bookPriceStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">bookDiscountLabel</span><span class="p">)</span>
+        <span class="n">bookPriceStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">bookSalePriceLabel</span><span class="p">)</span>
+        <span class="n">bookPriceStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">bookPriceLabel</span><span class="p">)</span>
+    
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookImageView</span><span class="p">)</span>                    <span class="c1">//책 이미지</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookTitleLabel</span><span class="p">)</span>                   <span class="c1">//책 제목</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookAuthorsTranslatorsStackView</span><span class="p">)</span>  <span class="c1">//저자 및 번역가</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookPublisherLabel</span><span class="p">)</span>               <span class="c1">//출판사</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookPriceStackView</span><span class="p">)</span>               <span class="c1">//할인율, 할인가, 정가</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookContentsTitleLabel</span><span class="p">)</span>           <span class="c1">//책 소개 텍스트</span>
+        <span class="n">scrollView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">bookContentsLabel</span><span class="p">)</span>                <span class="c1">//책 소개</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">scrollView</span><span class="p">)</span>
+        
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">buttonView</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 오토레이아웃 설정</span>
+    <span class="kd">func</span> <span class="nf">setupAutoLayout</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">NSLayoutConstraint</span><span class="o">.</span><span class="nf">activate</span><span class="p">([</span>
+            <span class="c1">//스크롤 뷰</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">scrollView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">),</span>
+           
+            <span class="c1">//책 이미지</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">50</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">centerXAnchor</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">),</span>
+            <span class="n">bookImageView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">),</span>
+                        
+            <span class="c1">//책 제목</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookImageView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">),</span>
+                        
+            <span class="c1">//저자 및 번역가</span>
+            <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//출판사</span>
+            <span class="n">bookPublisherLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookAuthorsTranslatorsStackView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookPublisherLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//할인율, 할인가, 정가</span>
+            <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookPublisherLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>            
+            <span class="n">bookDiscountLabel</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">),</span>
+            <span class="n">bookSalePriceLabel</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">widthAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">),</span>
+ 
+            <span class="c1">//책 소개 타이틀</span>
+            <span class="n">bookContentsTitleLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookPriceStackView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">bookContentsTitleLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            
+            <span class="c1">//책 소개</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">bookContentsTitleLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">greaterThanOrEqualTo</span><span class="p">:</span> <span class="n">scrollView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+            
+            <span class="c1">//버튼이 담기는 뷰</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">),</span>
+            <span class="n">buttonView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>      
+        <span class="p">])</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-2">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-08-MyBookApp3.png" alt="" /></p>
+
+<h1 id="4-검색화면에서-정보를-받아오기-위해-변수-설정">4. 검색화면에서 정보를 받아오기 위해 변수 설정</h1>
+<ul>
+  <li>검색 페이지에서 받은 데이터를 저장할 변수를 생성합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">BookDetailViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">tempTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>          <span class="c1">//책 제목</span>
+    <span class="k">var</span> <span class="nv">tempAuthors</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>      <span class="c1">//저자</span>
+    <span class="k">var</span> <span class="nv">tempTranslators</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span>  <span class="c1">//번역</span>
+    <span class="k">var</span> <span class="nv">tempPublisher</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>      <span class="c1">//출판사</span>
+    <span class="k">var</span> <span class="nv">tempImageView</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>      <span class="c1">//책 이미지</span>
+    <span class="k">var</span> <span class="nv">tempPrice</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>             <span class="c1">//책 가격</span>
+    <span class="k">var</span> <span class="nv">tempSalePrice</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span>         <span class="c1">//책 세일 가격</span>
+    <span class="k">var</span> <span class="nv">tempContents</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>       <span class="c1">//책 소개</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="5-상세페이지로-이동-시-테이블-뷰-정보-넘겨주기">5. 상세페이지로 이동 시 테이블 뷰 정보 넘겨주기</h1>
+<ul>
+  <li>셀을 선택하고 상세페이지로 이동할때 상세페이지 변수에 데이터를 전달합니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">SearchBookViewController</span><span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
+    <span class="c1">// MARK: - tableView Cell을 선택했을때 화면 이동</span>
+    <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">bookDetailVC</span> <span class="o">=</span> <span class="kt">BookDetailViewController</span><span class="p">()</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempTitle</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">title</span>               <span class="c1">//책 제목</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempAuthors</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">authors</span>           <span class="c1">//저자</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempTranslators</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">translators</span>   <span class="c1">//번역</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempPublisher</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">publisher</span>       <span class="c1">//출판사 </span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempImageView</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">thumbnail</span>       <span class="c1">//책 이미지</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempSalePrice</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">salePrice</span>       <span class="c1">//책 할인가</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempPrice</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">price</span>               <span class="c1">//책 가격</span>
+        <span class="n">bookDetailVC</span><span class="o">.</span><span class="n">tempContents</span> <span class="o">=</span> <span class="n">bookData</span><span class="p">?</span><span class="o">.</span><span class="n">documents</span><span class="p">[</span><span class="n">indexPath</span><span class="o">.</span><span class="n">row</span><span class="p">]</span><span class="o">.</span><span class="n">contents</span>         <span class="c1">//책 소개</span>
+        
+        <span class="nf">present</span><span class="p">(</span><span class="n">bookDetailVC</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="6-상세화면에서-옵셔널-해제하고-데이터-할당하기">6. 상세화면에서 옵셔널 해제하고 데이터 할당하기</h1>
+<ul>
+  <li>상세 페이지인 BookDetailViewController의 뷰디드로드에 옵셔널을 해제하고 데이터를 할당합니다.</li>
+  <li>숫자 자리수 및 취소선 처리를 위해 함수를 따로 만들었습니다.</li>
+  <li>이미지 처리를 위해 킹 피셔 라이브러리를 사용했습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">tempTitle</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">authors</span> <span class="o">=</span> <span class="n">tempAuthors</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">translators</span> <span class="o">=</span> <span class="n">tempTranslators</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">publisher</span> <span class="o">=</span> <span class="n">tempPublisher</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">imageView</span> <span class="o">=</span> <span class="n">tempImageView</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">salePrice</span> <span class="o">=</span> <span class="n">tempSalePrice</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">price</span> <span class="o">=</span> <span class="n">tempPrice</span><span class="p">,</span>
+           <span class="k">let</span> <span class="nv">contents</span> <span class="o">=</span> <span class="n">tempContents</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        
+        <span class="n">bookTitleLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="n">bookAuthorsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">authors</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">", "</span><span class="p">)</span> <span class="o">+</span> <span class="s">" 저자(글)"</span>
+ 
+        <span class="k">if</span> <span class="n">translators</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">bookTranslatorsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">""</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">bookTranslatorsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">translators</span><span class="o">.</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">", "</span><span class="p">)</span> <span class="o">+</span> <span class="s">" 번역"</span>
+        <span class="p">}</span>
+        <span class="n">bookPublisherLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">publisher</span>     <span class="c1">//출판사</span>
+
+        <span class="c1">//책 이미지         </span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">imageView</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="k">async</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="k">in</span>
+                <span class="k">self</span><span class="p">?</span><span class="o">.</span><span class="n">bookImageView</span><span class="o">.</span><span class="n">kf</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">let</span> <span class="nv">discountPercent</span> <span class="o">=</span> <span class="p">((</span><span class="kt">Double</span><span class="p">(</span><span class="n">price</span><span class="p">)</span> <span class="o">-</span> <span class="kt">Double</span><span class="p">(</span><span class="n">salePrice</span><span class="p">))</span> <span class="o">/</span> <span class="kt">Double</span><span class="p">(</span><span class="n">price</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">let</span> <span class="nv">formattedDiscount</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="s">"%.0f%%"</span><span class="p">,</span> <span class="n">discountPercent</span><span class="p">)</span>
+        <span class="n">bookDiscountLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"</span><span class="se">\(</span><span class="n">formattedDiscount</span><span class="se">)</span><span class="s">"</span>                 <span class="c1">//할인율</span>
+        <span class="n">bookSalePriceLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nf">setComma</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="n">salePrice</span><span class="p">)</span> <span class="o">+</span> <span class="s">"원"</span>     <span class="c1">//할인가</span>
+        <span class="k">let</span> <span class="nv">salePriceWithUnderline</span> <span class="o">=</span> <span class="nf">addStrikethrough</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="nf">setComma</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="n">price</span><span class="p">)</span> <span class="o">+</span> <span class="s">"원"</span><span class="p">)</span>
+        <span class="n">bookPriceLabel</span><span class="o">.</span><span class="n">attributedText</span> <span class="o">=</span> <span class="n">salePriceWithUnderline</span>          <span class="c1">//정가</span>
+        <span class="n">bookContentsLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">contents</span>   <span class="c1">//책 소개</span>
+    <span class="p">}</span>
+
+    <span class="c1">// MARK: - 가운데 밑줄 추가</span>
+    <span class="kd">func</span> <span class="nf">addStrikethrough</span><span class="p">(</span><span class="n">to</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSAttributedString</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">attributedString</span> <span class="o">=</span> <span class="kt">NSMutableAttributedString</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">string</span><span class="p">)</span>
+        <span class="n">attributedString</span><span class="o">.</span><span class="nf">addAttribute</span><span class="p">(</span><span class="o">.</span><span class="n">strikethroughStyle</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">NSUnderlineStyle</span><span class="o">.</span><span class="n">single</span><span class="o">.</span><span class="n">rawValue</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt">NSRange</span><span class="p">(</span><span class="nv">location</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">length</span><span class="p">:</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">attributedString</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// MARK: - 숫자 자리수 추가</span>
+    <span class="kd">func</span> <span class="nf">setComma</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">numberFormatter</span><span class="p">:</span> <span class="kt">NumberFormatter</span> <span class="o">=</span> <span class="kt">NumberFormatter</span><span class="p">()</span>
+        <span class="n">numberFormatter</span><span class="o">.</span><span class="n">numberStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">decimal</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">num</span> <span class="o">=</span> <span class="n">numberFormatter</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">num</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">String</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-3">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-08-MyBookApp4.png" alt="" /></p>
+
+<h1 id="7-닫기-버튼-및-등록-버튼-추가하기">7. 닫기 버튼 및 등록 버튼 추가하기</h1>
+<ul>
+  <li>버튼 추가를 위해 만들어 놓은 뷰에 스택뷰를 추가하고 스택뷰에 닫기 버튼과 등록 버튼을 추가했습니다.</li>
+  <li>이미지뷰를 제외한 나머지 객체들의 테두리를 없앴습니다.</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// MARK: - 버튼이 담길 뷰</span>
+    <span class="k">var</span> <span class="nv">buttonView</span><span class="p">:</span> <span class="kt">UIView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">view</span> <span class="o">=</span> <span class="kt">UIView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">view</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 닫기 버튼</span>
+    <span class="k">var</span> <span class="nv">closeButton</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">setImage</span><span class="p">(</span><span class="kt">UIImage</span><span class="p">(</span><span class="nv">systemName</span><span class="p">:</span> <span class="s">"xmark"</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>   <span class="c1">//버튼의 색상</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">darkGray</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">button</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 담기 버튼</span>
+    <span class="k">var</span> <span class="nv">addButton</span><span class="p">:</span> <span class="kt">UIButton</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">button</span> <span class="o">=</span> <span class="kt">UIButton</span><span class="p">()</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s">"책 담기"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">titleLabel</span><span class="p">?</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="kt">UIFont</span><span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="nf">setTitleColor</span><span class="p">(</span><span class="o">.</span><span class="n">white</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">button</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">button</span>
+    <span class="p">}()</span>
+    
+    <span class="c1">// MARK: - 닫기 및 담기 버튼이 담기는 스택 뷰</span>
+    <span class="k">var</span> <span class="nv">buttonStackView</span><span class="p">:</span> <span class="kt">UIStackView</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">stackView</span> <span class="o">=</span> <span class="kt">UIStackView</span><span class="p">()</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="o">.</span><span class="n">horizontal</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">stackView</span><span class="o">.</span><span class="n">translatesAutoresizingMaskIntoConstraints</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">return</span> <span class="n">stackView</span>
+    <span class="p">}()</span>
+
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">closeButton</span><span class="p">)</span>
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="nf">addArrangedSubview</span><span class="p">(</span><span class="n">addButton</span><span class="p">)</span>
+    <span class="n">buttonView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">buttonStackView</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">buttonView</span><span class="p">)</span>
+
+    <span class="c1">//버튼이 담기는 뷰</span>
+    <span class="n">buttonView</span><span class="o">.</span><span class="n">heightAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">heightAnchor</span><span class="p">,</span> <span class="nv">multiplier</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">),</span>
+    <span class="n">buttonView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">),</span>
+    <span class="n">buttonView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">),</span>
+    <span class="n">buttonView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">view</span><span class="o">.</span><span class="n">safeAreaLayoutGuide</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">),</span>
+    
+    <span class="c1">//닫기버튼과 담기 버튼을 스택뷰로 묶기</span>
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="n">topAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">topAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">leadingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="mi">10</span><span class="p">),</span>
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">trailingAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">buttonStackView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalTo</span><span class="p">:</span> <span class="n">buttonView</span><span class="o">.</span><span class="n">bottomAnchor</span><span class="p">,</span> <span class="nv">constant</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">),</span>
+    
+    <span class="c1">//leading, trailing, spacing때문에 -30, 버튼을 1:4 비율로</span>
+    <span class="n">closeButton</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">addButton</span><span class="o">.</span><span class="n">widthAnchor</span><span class="o">.</span><span class="nf">constraint</span><span class="p">(</span><span class="nv">equalToConstant</span><span class="p">:</span> <span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">30</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">),</span>
+</code></pre></div></div>
+
+<h2 id="실행화면-4">실행화면</h2>
+<p><img src="../../assets/images/categories/sparta/2024-05-08-MyBookApp5.png" alt="" /></p>
+
+<h1 id="마무리">마무리</h1>
+<ul>
+  <li>책 상세 페이지의 UI를 구성하고 검색페이지에서 넘겨 받은 데이터를 보여주도록 만들었습니다.</li>
+  <li>오토레이아웃하고 UI구성하는데 너무 시간을 많이 뺐겼습니다… 😭</li>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="iOS" /><category term="UIKit" /><category term="TabBarController" /><category term="Code Base" /><category term="UINavigationController" /><category term="UITabBarController" /><category term="UISearchController" /><category term="UICollectionViewCell" /><category term="UITableViewCell" /><category term="UICollectionViewFlowLayout" /><category term="UICollectionView" /><category term="UITableView" /><summary type="html"><![CDATA[iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 4]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3</title><link href="http://localhost:4000/sparta/MyBookApp3/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 심화 개인 과제 - 책 검색 앱 만들기 3" /><published>2024-05-07T00:00:00+09:00</published><updated>2024-05-07T00:00:00+09:00</updated><id>http://localhost:4000/sparta/MyBookApp3</id><content type="html" xml:base="http://localhost:4000/sparta/MyBookApp3/"><![CDATA[<h1 id="지난이야기">지난이야기</h1>
 <ul>
   <li><a href="https://limlogging.github.io/sparta/MyBookApp1/" target="_blank">⭐️책 검색 앱 만들기 1 보러가기⭐️</a></li>
   <li><a href="https://limlogging.github.io/sparta/MyBookApp2/" target="_blank">⭐️책 검색 앱 만들기 2 보러가기⭐️</a></li>
@@ -1763,48 +2303,4 @@
 <ul>
   <li>3주 가까이 캠켜놓고 공부했더니 오랜시간 함께한듯한 우리 팀원들, 성향도 비슷해 큰 문제없이 마무리 잘 할 수 있었던 것 같다.</li>
   <li>팀원들을 통해서 많이 배울 수 있었다. 🔥🔥🔥🔥🔥🔥</li>
-</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 4 끝]]></summary></entry><entry><title type="html">[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고</title><link href="http://localhost:4000/sparta/mega6boxKPT/" rel="alternate" type="text/html" title="[내배캠] iOS 앱 개발 숙련 팀 프로젝트 - 영화 앱 만들기 / KPT 회고" /><published>2024-04-29T00:00:00+09:00</published><updated>2024-04-29T00:00:00+09:00</updated><id>http://localhost:4000/sparta/mega6boxKPT</id><content type="html" xml:base="http://localhost:4000/sparta/mega6boxKPT/"><![CDATA[<h1 id="앱-개발-숙련-팀-프로젝트-kpt-회고">앱 개발 숙련 팀 프로젝트 KPT 회고</h1>
-<p>앱 개발 숙련 팀 프로젝트 발표가 끝났습니다. <br />
-팀원들과 프로젝트를 통해 느낀 “Keep (계속할 것)”, “Problem (문제)”, “Try (시도할 것)”의 세 가지 요소를 토대로 프로젝트의 경험을 돌아보고 이야기를 나누었습니다.</p>
-
-<h2 id="keep">Keep</h2>
-<ul>
-  <li>팀원끼리 모르는것 물어보기</li>
-  <li>서로 도우면서 작업하기</li>
-  <li>피그마, 캔버스 등을 사용한 협업하기</li>
-</ul>
-
-<h2 id="problem">Problem</h2>
-<ul>
-  <li>커밋메시지 정리
-    <ul>
-      <li>문제점 : 시간이 갈수록 규칙에 벗어난 커밋메시지 작성</li>
-      <li>해결방안 : 바쁘더라도 규칙을 지키기</li>
-    </ul>
-  </li>
-  <li>너무 많은 양의 StoryBoard
-    <ul>
-      <li>문제점 : 코드베이스가 익숙치 않아 스토리보드 사용</li>
-      <li>해결방안 : 코드로 많은 연습과 공부가 필요</li>
-    </ul>
-  </li>
-  <li>TMDB API의 일부 이미지 및 동영상을 활용하지 못한 것</li>
-</ul>
-
-<h2 id="try">Try</h2>
-<ul>
-  <li>코드 컨벤션 만들기</li>
-  <li>싱글톤 패턴 장단점 및 사용 이유 체크</li>
-  <li>코드베이스로 UI 적용하기</li>
-  <li>역할 및 진행 과정 세분화 해서 정리</li>
-  <li>깃허브 공부하기</li>
-</ul>
-
-<h1 id="마무리">마무리</h1>
-<ul>
-  <li>지난번 프로젝트보다 기획 단계에서 디자인 협업툴을 사용하여 충분한 이야기를 나누고 프로젝트를 시작했습니다.</li>
-  <li>깃허브 충돌로 인해 clone과 강제 push등을 사용하여 아쉬운점이 많습니다.</li>
-  <li>노션을 적극적으로 활용하여 현재까지 진행상황과 단기적인 목표를 잡고 소통이 더 필요할 것 같습니다.</li>
-</ul>
-
-<p>이번 프로젝트를 돌아보고 다음 프로젝트에서 발전된 방향으로 프로젝트를 진행하도록 하겠습니다.</p>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="KPT 회고" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 이후 KPT 회고 작성하기]]></summary></entry></feed>
+</ul>]]></content><author><name>HyeongSub Lim</name></author><category term="sparta" /><category term="sparta" /><category term="앱 개발 숙련" /><category term="movie app" /><category term="ios" /><category term="uikit" /><category term="swift" /><category term="영화 앱" /><summary type="html"><![CDATA[iOS 앱 개발 숙련 팀 프로젝트 - 영화 예약 앱 만들기 4 끝]]></summary></entry></feed>
